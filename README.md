@@ -6,7 +6,7 @@ I built an AI research pipeline, powered by Composio's own SDK, that looked into
 
 | | |
 |---|---|
-| **Case study (start here, ~2 min read)** | [Toolkit Feasibility Atlas](https://claude.ai/artifact/ASyvuUTbzYUGwmoS7pF5nK), or download this repo and open [`site/index.html`](site/index.html) in any browser |
+| **Case study (start here, ~2 min read)** | **[https://radhikakundnani.github.io/composio-toolkit-feasibility/](https://radhikakundnani.github.io/composio-toolkit-feasibility/)**, or download this repo and open [`site/index.html`](site/index.html) in any browser |
 | **All the data, machine-readable** | [`site/results.json`](site/results.json) |
 | **The code** | [`pipeline/`](pipeline/) |
 
@@ -95,7 +95,7 @@ Across all 100 apps, 77 were checked by 4 or 5 independent sources. Citations fr
 
 ## Run it yourself
 
-**Just look at the results (no setup):** download the repo and double-click `site/index.html`.
+**Just look at the results (no setup):** open [https://radhikakundnani.github.io/composio-toolkit-feasibility/](https://radhikakundnani.github.io/composio-toolkit-feasibility/), or download the repo and double-click `site/index.html`.
 
 **Re-check my accuracy numbers (no API key needed, about 1 minute):**
 ```bash
