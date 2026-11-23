@@ -15842,7 +15842,7 @@
  },
  "insights": {
   "run_date": "23 Nov 2026",
-  "lede": "An agent pipeline built on Composio's SDK researched 100 apps, a second agent tried to disprove every answer, and each answer was then checked against Composio's own toolkit catalog, the vendor's docs and a hand-checked sample. 90 apps can be built as toolkits today. Composio already ships 80. The other 20 split into 10 easy wins and 10 that need outreach or aren't hosted services.",
+  "lede": "An agent pipeline built on Composio's SDK researched 100 apps, a second agent tried to disprove every answer, and each answer was then checked against Composio's own toolkit catalog, the vendor's docs and a hand-checked sample. 90 apps can be built as toolkits today. Composio already ships 80. Of the 20 it doesn't, 9 can be built right away; the other 11 need a paid test account, a sales or partner conversation, or aren't hosted services.",
   "patterns": [
    {
     "title": "90 of 100 are buildable today. The gate is credentials, not the API.",
