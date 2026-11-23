@@ -1,0 +1,36 @@
+{
+  "id": 25,
+  "app": "Pumble",
+  "category": "Communications and Messaging",
+  "one_liner": "Free team chat app with channels and apps platform.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "API-key addon available on all plans (free included); full API needs OAuth app plus x-app-token.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "Pumble MCP, https://pumble.com/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Free plan limited to 3 addons; API-key addon covers only messaging basics.",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://cake-com.github.io/pumble-node-sdk/authorization.html",
+    "access": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+    "surface": "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+    "mcp": "https://pumble.com/mcp"
+  },
+  "identity_issue": ""
+}

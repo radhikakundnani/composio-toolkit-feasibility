@@ -1,0 +1,37 @@
+{
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "CRM / Marketing Automation",
+  "one_liner": "All-in-one CRM and marketing automation platform for agencies.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "paid_plan_required",
+  "access_notes": "API included with paid plans (Starter $97+); OAuth via Marketplace app or Private Integration Token; some endpoints need higher plans.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "HighLevel MCP Server (also LeadConnector MCP), OAuth, 600+ operations; vendor help article 155000005741",
+  "verdict": "ready_with_caveats",
+  "blocker": "paid_plan",
+  "blocker_note": "API requires paid subscription; some endpoints restricted to higher plans.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://marketplace.gohighlevel.com/docs/oauth/external-auth/OAuth2",
+    "access": "https://help.gohighlevel.com/support/solutions/articles/155000003054-private-integrations-everything-you-need-to-know",
+    "surface": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+    "mcp": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server"
+  },
+  "verified": true
+}

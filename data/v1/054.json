@@ -1,0 +1,35 @@
+{
+  "id": 54,
+  "app": "MrScraper",
+  "category": "Web scraping",
+  "one_liner": "AI-powered web scraping platform with scraper and platform APIs.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Free plan with 1,000 tokens/month, no card; create API token in dashboard, sent in x-api-token header.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://mcp.mrscraper.com/mcp ; github.com/mrscraper-com/mrscraper-mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Free tier is sufficient to obtain credentials.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.mrscraper.com/docs/api/authentication",
+    "access": "https://mrscraper.com/pricing",
+    "surface": "https://docs.mrscraper.com/docs/guides/programmatically",
+    "mcp": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+  }
+}

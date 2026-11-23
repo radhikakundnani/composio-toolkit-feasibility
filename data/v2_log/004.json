@@ -1,0 +1,20 @@
+{
+  "id": 4,
+  "app": "Attio",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://frontal.so/gtm-apis/crm-apis/attio-api-review",
+      "to": "https://attio.com/pricing",
+      "why": "replace third-party review with vendor pricing page showing Free plan",
+      "evidence": "https://attio.com/pricing"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

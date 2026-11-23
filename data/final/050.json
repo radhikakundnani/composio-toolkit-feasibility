@@ -1,0 +1,35 @@
+{
+ "id": 50,
+ "app": "fanbasis",
+ "category": "Ecommerce",
+ "one_liner": "Creator payments and checkout platform with checkout sessions, subscribers and webhooks.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "auth_primary": "api_key",
+ "access": "self_serve_free",
+ "access_notes": "API key from dashboard Account > API Keys (Authorization via key; sandbox at api-sandbox.commas.net with sandbox dashboard). Seller account required; payouts need approved account per support docs.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "Vendor API docs at apidocs.fan include an 'AI Agent / Commas MCP Connector' section and CLI; exact endpoint not seen in fetched text. Zapier MCP wrapper also exists (not vendor).",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Live payments/withdrawals require an approved seller account (merchant-of-record review); sandbox usable meanwhile.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "low"
+ },
+ "evidence": {
+  "auth": "https://apidocs.fan",
+  "access": "https://apidocs.fan",
+  "surface": "https://apidocs.fan",
+  "mcp": "https://apidocs.fan"
+ },
+ "verified": true
+}

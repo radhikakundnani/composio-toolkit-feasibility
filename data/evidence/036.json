@@ -1,0 +1,142 @@
+{
+ "id": 36,
+ "app": "Klaviyo",
+ "hint": "developers.klaviyo.com",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "Klaviyo API authentication OAuth API key access token developer docs developers.klaviyo.com",
+   "log_id": "log_zTaXG8eZ9w8O",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+     "title": "Make API calls using OAuth",
+     "snippet": ">\n> On March 31, 2025, Klaviyo started blocking all OAuth *token* traffic (`oauth/token` and `oauth/revoke`) routed through `www.klaviyo.com`. Ensure that your integration routes token traffic to `https://a.klaviyo.com/oauth/token` or `https://a.klaviyo.com/oauth/revoke` to avoid breakages.\n##\nBefore you begin\nBefore you can initiate an OAuth connection, you need to [create an app in Klaviyo](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app). If each user should install and authorize your app separately, see [Build a user-scoped app](https://developers.klaviyo.com/en/docs/user_scoped_apps) before you create it.\n> ##\n>\n> Note that only owner, admin, and manager roles can create OAuth apps in Klaviyo. Learn more about [user management and privileges](https://help.klaviyo.com/hc/en-us/articles/115005231648).\n\n> Your app must use OAuth in order to be considered for Klaviyo\u2019s App Marketplace.\nWhen a Klaviyo user installs your integration, they grant your app permission to use Klaviyo\u2019s APIs on their behalf. You will be able to authenticate these APIs using access tokens. These access tokens come from integration with Klaviyo\u2019s authorization code flow (shown below).\n##\nCo"
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+     "title": "Use API Keys to Authenticate Endpoint Requests | Klaviyo Developers",
+     "snippet": "Klaviyo provides 3 methods of authentication including private key authentication and OAuth (used to call server-side APIs) and public key authentication (used to call client-side APIs). Read the table below to learn more about how each method can be used for authenticating API calls:\n| Server-side APIs | | Client-side APIs |\n|---|---|---|\n| Private key authentication All /api endpoints use API private keys to authenticate requests. If you do not use an API key for your requests, or if you use a key from the wrong account, your call will return an error. A 400 error indicates an invalid or missing API key. | OAuth If you are a tech partner integrating with Klaviyo, we recommend using OAuth to [make authorized API calls](https://developers.klaviyo.com/en/docs/set_up_oauth). OAuth offers multiple benefits over a private key integration, including security, usability, improved rate limits, and the ability to be listed in Klaviyo's App Marketplace. | Public key authentication All /client endpoints use a public API key: your 6-character company ID, also known as a site ID. We recommend using the [Klaviyo object](https://developers.klaviyo.com/en/docs/introduction_to_the_klaviyo_object) "
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/v2023-12-15/docs/set_up_oauth",
+     "title": "Set up OAuth",
+     "snippet": ">\n> If a customer has adopted your OAuth app, you should only be making API calls for them using the OAuth access token. Making API calls to any v1/v2 or date-versioned endpoints with either private or public API keys will result in duplicate metrics and potentially other issues for the customer account.\n>\n\nLooking for OAuth example implementations? Head to Github:\n- [Javascript and Python examples](https://github.com/klaviyo-labs/api-examples/tree/main/oauth)\n- [Node SDK example](https://github.com/klaviyo-labs/node-integration-example). This example utilizes helpers from the [beta branch of the klaviyo-api package](https://github.com/klaviyo/klaviyo-api-node/tree/oauth-beta) to automatically keep access tokens up to date and simplify API calls to Klaviyo.\n##\nCreate an OAuth integration in Klaviyo\n1. Navigate to this page: [https://www.klaviyo.com/oauth/client](https://www.klaviyo.com/oauth/client).\n2. Select **Create app** to create your new application.\n3. Name your application. Then, securely save your client secret and client ID. You won\u2019t be able to view your client secret again, although you can generate a new one later.\n4. Set your scopes using a space-separated list. You s"
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/migrate_to_oauth_from_private_key_authentication",
+     "title": "Migrate to OAuth from private key authentication",
+     "snippet": "If you\u2019re here, it\u2019s likely that your Klaviyo app uses private key authentication. We now require all of our published partners to use OAuth when integrating with Klaviyo.\n\nSwitching your app from private key authentication to OAuth allows for greater exposure to our customers, simpler integration workflows, and access to all new items our R&D team is developing.\n\n- **Exclusive API access**\nUnlock powerful API features, including our Universal Content and Webhooks APIs.\n\nIf your app was previously published using private key authentication, we estimate that a single engineer will need 1-2 sprints (2-4 weeks) to complete the migration to OAuth. When migrating to OAuth, each step listed below should take roughly 1 week:\n1. **OAuth implementation**\n- [Create your OAuth app](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app). Please note that after creation, your app will require at least 5 active users to meet our listing requirements before submission.\n- Ensure you properly handle refresh tokens and token expiration.\n- Start completing our [Testing & Review Template](https://docs.google.com/document/d/1_KiNf2HnmiPujtmoSctrQIUWswhIRYfQNZaOMq-Rktg/edit?tab=t.0#heading=h."
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/get_started_with_the_conversations_api",
+     "title": "Get started with the Conversations API",
+     "snippet": "To request access, contact your Klaviyo representative or submit [this form](https://docs.google.com/forms/d/1Km75VfMTGwDwAItezaCHtxlTfsxfuxGqDWqFLOFRdZQ/viewform). Requests may include a short security review before access is granted.\n##\nAuthentication\nChoose one:\n- **Private key** \u2014 send `Authorization: Klaviyo-API-Key pk_your_private_key`.\n- **OAuth** \u2014 build a public OAuth app, obtain an access token through Klaviyo's authorization-code flow, then send `Authorization: Bearer your-access-token`. See [Set up OAuth](https://developers.klaviyo.com/en/docs/set_up_oauth) and [Create a public OAuth app](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app)."
+    }
+   ]
+  },
+  "access": {
+   "query": "Klaviyo developers.klaviyo.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_Cr1QEspsvOnd",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.klaviyo.com/en/reference/conversations_api_overview",
+     "title": "Conversations API overview",
+     "snippet": ">\n>\n> The Conversations API is available to approved accounts and apps only. To request access, submit [this form](https://docs.google.com/forms/d/1Km75VfMTGwDwAItezaCHtxlTfsxfuxGqDWqFLOFRdZQ/viewform). Access is granted either at the **account level** (for customers using a private API key) or at the **OAuth app level** (for approved partners whose app is allow-listed across their install base).\n\nThe Conversations API allows approved partners and businesses to send and retrieve conversation messages programmatically within the Klaviyo platform. It supports **SMS** and **WhatsApp** channels \u2014 the channel is determined automatically based on the conversation. This enables help desk and customer support integrations to participate in two-way conversations on behalf of Klaviyo accounts, using the account's existing Klaviyo sending number.\n\nthe conversation history but cannot be created via API.\n- Maximum message body length: **1,600 characters** for SMS, **1,024 characters** for WhatsApp.\n- The profile must have a valid, consented phone number on the relevant channel. Attempting to send to a profile without consent will return a 400 error.\n- The Klaviyo account must have the relevant "
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/v2024-02-15/docs/build_your_integration",
+     "title": "Build your integration",
+     "snippet": "1. Follow our Get Started series\nBy following our [developer Get Started series](/en/docs/get_started), you will create a free test account, generate sample data, send a test API request, and more. Here, you\u2019ll also learn about rate limits and error messages, our Postman collection, and other developer tools we offer.\n\nIf you want to make your integration accessible to a wider audience and have it featured in the Klaviyo Integration Directory, you need to be a Klaviyo partner. You can apply to become a partner by filling out our [tech partner application form](https://www.klaviyo.com/partners/partner-tech-form) (eligibility varies). Note that if you want to be featured in the integration directory, you must first [set up OAuth](/en/docs/set-up-oauth).\n\n- **Is there a platform fee or cost to integrate with Klaviyo?**\nThere are no platform or API usage fees with Klaviyo, so integrating and testing are free. To learn more about Klaviyo plans, read our guide on [understanding how free and paid plans differ](https://help.klaviyo.com/hc/en-us/articles/360050759151)."
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/authenticate_?:~:text=To%20create%20a%20private%20key_select%20Create%20Private%20API%20Key.",
+     "title": "Use API Keys to Authenticate Endpoint Requests | Klaviyo Developers",
+     "snippet": "| OAuth If you are a tech partner integrating with Klaviyo, we recommend using OAuth to [make authorized API calls](https://developers.klaviyo.com/en/docs/set_up_oauth). OAuth offers multiple benefits over a private key integration, including security, usability, improved rate limits, and the ability to be listed in Klaviyo's App Marketplace. | Public key authentication All /client endpoints use a public API key: your 6-character company ID, also known as a site ID. We recommend using the [Klaviyo object](https://developers.klaviyo.com/en/docs/introduction_to_the_klaviyo_object) or our [Mobile SDKs](https://developers.klaviyo.com/en/docs/sdk_overview#mobile-sdks) for interacting with our client-side APIs."
+    },
+    {
+     "url": "https://help.klaviyo.com/hc/en-us/articles/7423954176283",
+     "title": "How to create or clone a private API key | Klaviyo Help Center",
+     "snippet": "When you create a private API key, choose an access level for each API scope. These access levels determine whether a third party can:\n- Have no access to the data or actions covered by that scope.\n- View data covered by that scope without making changes (read access).\n- View data and create, delete, or make other changes covered by that scope (read/write access).\nFor example, to subscribe profiles to marketing and add them to a Klaviyo list from another application, use [Bulk Subscribe Profiles](https://developers.klaviyo.com/en/reference/bulk_subscribe_profiles). This endpoint requires `lists:write`, `profiles:write`, and `subscriptions:write`. Granting read/write access for these scopes covers this request; you do not need to grant access to unrelated scopes.\n\n- After you create a private API key, you cannot:\n- View the full private API key again after leaving its confirmation page.\n- Tip: securely save private API keys and note down what you want to use them for, such as in a password manager.\n- Add or edit its scopes.\n- If you need different scopes, create a new private API key with the required access. Update any integrations that use the old key and confirm they work before "
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/reference/bulk_export_api_overview",
+     "title": "Bulk Export APIs overview (beta)",
+     "snippet": ">\n>\n> The Bulk Export APIs are **invite-only during beta**. Access is limited to allow-listed API keys and OAuth applications, and is granted **selectively** \u2014 submitting a request does not guarantee access. To request access, submit [this form](https://forms.gle/bdLnik7HvuxFXwS96). Access is granted either at the **OAuth app level** (for approved partners building a multi-tenant integration across their install base) or at the **account level** (for a customer requesting access for their own account). During beta we review requests periodically and enable access at our discretion. We are evaluating a pricing model during this invite-only beta period and would welcome your feedback; eligibility, availability, and terms may change before GA."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Klaviyo API reference REST GraphQL endpoints documentation developers.klaviyo.com",
+   "log_id": "log_mdXRaYA5N4kb",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.klaviyo.com/en/reference/get_campaign_messages",
+     "title": "developers.klaviyo.com/en/reference/get_campaign_messages",
+     "snippet": "# Get Campaign Messages\nReturns campaign messages based on filters.<br><br>*Rate limits*:<br>Burst: `10/s`<br>Steady: `150/m`\n**Scopes:**\n`campaigns:read`\n[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/get_campaign_messages.json)"
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/reference/get_flows",
+     "title": "developers.klaviyo.com/en/reference/get_flows",
+     "snippet": "# Get Flows\nGet all flows in an account.\nReturns a maximum of 50 flows per request, which can be paginated with cursor-based pagination.<br><br>*Rate limits*:<br>Burst: `3/s`<br>Steady: `60/m`\n**Scopes:**\n`flows:read`"
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/reference/campaigns_omni_api_overview",
+     "title": "Campaigns API overview (omnichannel)",
+     "snippet": "Machine-readable spec for the Campaigns API: [stable/categories/campaigns.json](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/categories/campaigns.json)\n\nThe Campaigns API is organized into five endpoint groups:\n- **Campaigns** \u2014 Create, retrieve, update, delete, and clone campaigns.\n- **Campaign Audiences** \u2014 Manage targeted audience segments within a campaign, with priority ordering.\n- **Campaign Messages** \u2014 Configure and schedule individual sends within an audience.\n- **Campaign Variations** \u2014 Define per-channel content (email, SMS, push, WhatsApp) for each message.\n- **Scheduling** \u2014 Schedule all messages at once or individually, with support for multiple send strategies."
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/reference/create_campaign",
+     "title": "developers.klaviyo.com/en/reference/create_campaign",
+     "snippet": "# Create Campaign\nCreate a campaign with inline audiences, messages, and variations.<br><br>*Rate limits*:<br>Burst: `10/s`<br>Steady: `150/m`\n**Scopes:**\n`campaigns:write`\n[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/create_campaign.json)"
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/reference/get_profiles",
+     "title": "developers.klaviyo.com/en/reference/get_profiles",
+     "snippet": "# Get Profiles\nGet all profiles in an account.\nProfiles can be sorted by the following fields in ascending and descending order: `id`, `created`, `updated`, `email`, `subscriptions.email.marketing.suppression.timestamp`, `subscriptions.email.marketing.list_suppressions.timestamp`\n\n**Scopes:**"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Klaviyo developers.klaviyo.com MCP server Model Context Protocol official",
+   "log_id": "log_vumBFNlesNsg",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.klaviyo.com/en/v2025-10-15/docs/klaviyo_mcp_server",
+     "title": "Klaviyo MCP server",
+     "snippet": "The Klaviyo Model Context Protocol (MCP) server seamlessly integrates with Klaviyo\u2019s APIs, enabling AI clients to interact with your Klaviyo data. This guide will walk you through configuring various MCP clients for both the remote-hosted MCP server (recommended) and the local MCP server.\n##\nWhat is MCP?\n[MCP](https://modelcontextprotocol.io/introduction) (Model Context Protocol) is an open protocol that helps AI models securely interface with different data sources and tools. You\u2019ll connect Klaviyo\u2019s MCP server to an MCP client, i.e., an AI agent like Claude or Cursor, to get assistance with your Klaviyo data. Your MCP client can help with a [variety of tasks](/en/docs/klaviyo_mcp_server#available-tools) from campaign creation to flow performance reports.\n\n> ##\n>\n> This feature is only available to Klaviyo users with an Owner, Admin, or Manager role. Learn more about [Klaviyo user roles](https://help.klaviyo.com/hc/en-us/articles/115005231648).\nTo communicate with the Klaviyo MCP server, each MCP client needs specific configuration. Follow the steps below to get started:\n1. Make sure you are logged in to the Klaviyo account you'd like to use.\n2. Follow the steps below for the MCP "
+    },
+    {
+     "url": "https://klaviyo.com/solutions/ai/klaviyo-mcp-server",
+     "title": "Klaviyo MCP Server: Analyze Performance & Build Campaigns With AI - Klaviyo",
+     "snippet": "The Klaviyo MCP server connects compatible AI clients to Klaviyo APIs through an authorized Model Context Protocol connection. It supports permitted reporting and account actions, with configurable tools, scopes, and access controls.\n\n- **Flexible client support:** Documented connection options include Claude, ChatGPT, Cursor, VS Code, and other compatible remote MCP clients.\n---\n## What is the Klaviyo MCP server?\nThe Klaviyo MCP server connects compatible AI clients to Klaviyo APIs through Model Context Protocol (MCP). MCP is an open protocol that helps AI models securely interface with data sources and tools.\nThe server gives an AI client a defined set of Klaviyo tools. Depending on the tools and permissions available, you can ask the client to retrieve campaign results, compare flow performance, or create a campaign.\n### Why the Klaviyo MCP server matters\nAn AI client needs an authorized connection before it can work with data or tools in your Klaviyo account. The Klaviyo MCP server provides that connection, so the client can handle supported requests based on the access you approve.\n\nThe Klaviyo MCP server integrates with Klaviyo APIs and exposes supported tools to your AI clie"
+    },
+    {
+     "url": "https://help.klaviyo.com/hc/en-us/articles/52833598880923",
+     "title": "Klaviyo MCP Server Guide For Agencies | Klaviyo Help Center",
+     "snippet": "The Klaviyo MCP (Model Context Protocol) server is a secure bridge that lets AI assistants like Claude and ChatGPT connect directly to Klaviyo. Once connected, you can talk to your Klaviyo account in plain language: ask questions, pull reports, analyze performance, and draft or create campaigns and templates, without logging into the dashboard and exporting data by hand.\nUnder the hood it is a wrapper on top of Klaviyo's APIs. You authorize each account separately, and the AI assistant can then read that account's data and take supported actions within the permissions you grant.\n\nTo connect an account you will need:\n- **An Owner, Admin, or Manager role** on each Klaviyo account you want to connect.\n- **A Claude or ChatGPT account.** Connecting several accounts (custom connector) requires a paid Claude plan (Pro, Max, Team, or Enterprise) or ChatGPT developer mode. *This guide covers Claude setup.*\n- For Claude Team or Enterprise, someone with permission to add custom connectors must first add the connector to your organization. Members then connect it to their own Klaviyo accounts. See [Claude\u2019s custom connector setup instructions](https://support.claude.com/en/articles/11175166-ge"
+    },
+    {
+     "url": "https://klaviyo.com/newsroom/mcp-server",
+     "title": "Klaviyo MCP Server Helps Marketers Move Faster with AI - Klaviyo",
+     "snippet": "****BOSTON, MA\u2014August 20, 2025**\u2013 Klaviyo** (NYSE: KVYO), the only CRM built for consumer brands, today announced the general availability of its enhanced model context protocol (MCP) server, giving marketers the ability to connect AI tools like Claude Desktop, Cursor, VS Code, Windsurf, and other local or web-based tools directly with Klaviyo.\nAvailable to all Klaviyo customers, the enhanced MCP server includes improved reporting context and a new remote server for broader accessibility.\n\n\u201cAt Klaviyo, we\u2019re not building AI for show \u2014 we\u2019re building it to drive real value. That means making it intuitive and no\u2011code, so every marketer can take advantage without needing a data science team behind them,\u201d said Adil Wali, Chief Product Officer at Klaviyo. \u201cThe MCP server is one piece of that strategy: it connects directly to a brand\u2019s Klaviyo data and performance so they can move faster, get clearer insights, and identify the most impactful areas for improvement. In short, it\u2019s about making AI practical and actionable.\u201d\n\n\u201cThe Klaviyo MCP server is like chatting directly with Klaviyo,\u201d said Wiehan Britz, CEO of Magnet Monster. \u201cI\u2019m using conversational language to create and update profi"
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server_available_tools",
+     "title": "developers.klaviyo.com/en/docs/klaviyo_mcp_server_available_tools",
+     "snippet": "The Klaviyo MCP server exposes over 300 tools that your MCP client can call to interact with your Klaviyo data. The tools are grouped by category below. For each tool, the table shows whether it is read-only, whether it reads user-generated content, and whether it is available on the remote-hosted server.\nUse the columns to understand how each tool behaves:\n* **Read Only** \u2014 the tool only reads data and can't modify your Klaviyo account. These tools remain available when `read-only=true` (remote) or `READ_ONLY=true` (local) is set.\n* **Has User Generated Content** \u2014 the tool reads user-generated content (e.g., profile properties, event data, or reviews) that could be interpreted by your LLM. These tools are disabled when `disable-tools-with-user-generated-content=true` (remote) or `ALLOW_USER_GENERATED_CONTENT=false` (local) is set. Be sure to carefully review each tool call to ensure your client is not acting on malicious instructions.\n* **Available on Remote Server** \u2014 the tool is available on the [remote-hosted server](https://developers.klaviyo.com/en/docs/connect_to_the_klaviyo_mcp_server#configure-your-mcp-client-for-the-remote-hosted-server-recommended). Tools without a chec"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

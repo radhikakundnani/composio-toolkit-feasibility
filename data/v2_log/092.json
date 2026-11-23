@@ -1,0 +1,26 @@
+{
+  "id": 92,
+  "app": "Otter AI",
+  "changes": [
+    {
+      "field": "verdict",
+      "from": "ready_with_caveats",
+      "to": "needs_outreach",
+      "why": "REST API is Enterprise-only and docs say to contact the account manager to enable it; not self-serve.",
+      "evidence": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API"
+    },
+    {
+      "field": "blocker",
+      "from": "paid_plan",
+      "to": "contact_sales",
+      "why": "Access requires Enterprise plan plus contacting account manager.",
+      "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+    }
+  ],
+  "confirmed": [
+    "access",
+    "mcp",
+    "auth_primary"
+  ],
+  "searches": 3
+}

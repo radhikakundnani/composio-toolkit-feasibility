@@ -1,0 +1,27 @@
+{
+  "id": 34,
+  "app": "GoHighLevel",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://help.gohighlevel.com/support/solutions/articles/155000007981-highlevel-mcp-server-model-context-protocol-",
+      "to": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+      "why": "Previous MCP URL flagged 404; vendor help article is live and describes the official HighLevel (LeadConnector) MCP server with OAuth and 600+ operations.",
+      "evidence": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server"
+    },
+    {
+      "field": "mcp_note",
+      "from": "HighLevel MCP Server (help.gohighlevel.com article 155000007981)",
+      "to": "HighLevel MCP Server (also LeadConnector MCP), OAuth, 600+ operations; vendor help article 155000005741",
+      "why": "Update to live vendor doc",
+      "evidence": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server"
+    }
+  ],
+  "confirmed": [
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

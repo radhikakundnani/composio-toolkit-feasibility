@@ -1,0 +1,37 @@
+{
+ "id": 97,
+ "app": "higgsfield",
+ "category": "AI image and video generation",
+ "one_liner": "AI creative suite for generating video and images from many models.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "auth_primary": "api_key",
+ "access": "paid_plan_required",
+ "access_notes": "Self-serve API via Console key ID and secret; separate prepaid USD balance, not subscription credits. MCP and CLI use browser sign-in.",
+ "api_types": [
+  "rest",
+  "cli_or_library"
+ ],
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_note": "https://mcp.higgsfield.ai/mcp",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "API needs funded pay-as-you-go balance; surface is generation, status and cancel only.",
+ "identity_issue": "Hint names the CLI; API is a separate product with its own billing.",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.higgsfield.ai/docs/authentication",
+  "access": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+  "surface": "https://docs.higgsfield.ai/docs/openapi.json",
+  "mcp": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent"
+ },
+ "verified": true,
+ "adjudication": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth/CIMD is for the MCP server; generation API uses keys."
+}

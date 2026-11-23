@@ -1,0 +1,13 @@
+{
+  "id": 57,
+  "app": "Bright Data",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

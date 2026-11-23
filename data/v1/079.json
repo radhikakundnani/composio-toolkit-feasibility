@@ -1,0 +1,35 @@
+{
+  "id": 79,
+  "app": "Smartsheet",
+  "category": "Project Management / Spreadsheet",
+  "one_liner": "Work management with spreadsheet-style sheets and a REST API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "paid_plan_required",
+  "access_notes": "Docs say API token generation requires Business, Enterprise or Advanced Work Management plan; FAQ says no API fee; developer sandbox exists.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.smartsheet.com",
+  "verdict": "ready_with_caveats",
+  "blocker": "paid_plan",
+  "blocker_note": "API access tied to Business or higher plan per docs; sandbox account available.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "access": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+    "surface": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+    "mcp": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+  }
+}

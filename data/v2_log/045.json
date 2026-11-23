@@ -1,0 +1,40 @@
+{
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "changes": [
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "not_a_hosted_service",
+      "why": "'other' not allowed; per-store self-hosted/PaaS instances",
+      "evidence": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token"
+    },
+    {
+      "field": "evidence.auth",
+      "from": "https://developer.adobe.com/commerce/webapi/get-started/authentication",
+      "to": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+      "why": "Old auth URL 404; replaced with live Adobe doc on integration/admin/customer tokens",
+      "evidence": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://anchorterminal.com/tools/adobe-commerce",
+      "to": "https://developer.adobe.com/commerce/webapi/get-started/create-integration",
+      "why": "Replace third-party anchorterminal page with vendor doc on creating an integration",
+      "evidence": "https://developer.adobe.com/commerce/webapi/get-started/create-integration"
+    },
+    {
+      "field": "evidence.mcp",
+      "from": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
+      "to": "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools",
+      "why": "Adobe MCPs are developer tooling for App Builder (not store data); keep community as the data MCP is third-party; cite Adobe page that shows its MCPs are dev tooling",
+      "evidence": "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "auth_primary",
+    "api_types"
+  ],
+  "searches": 4
+}

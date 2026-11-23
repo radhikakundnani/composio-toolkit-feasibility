@@ -1,0 +1,34 @@
+{
+  "id": 98,
+  "app": "Mermaid CLI",
+  "category": "Diagramming CLI",
+  "one_liner": "Command-line tool rendering Mermaid diagram files to SVG, PNG or PDF.",
+  "auth_methods": [
+    "none"
+  ],
+  "auth_primary": "none",
+  "access": "no_public_api",
+  "access_notes": "Open-source npm CLI and Node.js library run locally; no hosted service or credentials.",
+  "api_types": [
+    "cli_or_library"
+  ],
+  "api_breadth": "none",
+  "mcp": "community",
+  "mcp_note": "andrewginns/mermaid-mcp-server wraps the CLI; vendor Mermaid Chart MCP is a different hosted product",
+  "verdict": "not_buildable",
+  "blocker": "not_a_hosted_service",
+  "blocker_note": "Local CLI/library only; no hosted API to integrate.",
+  "identity_issue": "Mermaid Chart (mermaid.ai) and MERMAID API (readthedocs) are different products from mermaid-cli.",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://github.com/mermaid-js/mermaid-cli/tree/master",
+    "access": "https://github.com/mermaid-js/mermaid-cli/tree/master",
+    "surface": "https://github.com/mermaid-js/mermaid-cli/tree/master",
+    "mcp": "https://github.com/andrewginns/mermaid-mcp-server"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": 91,
+  "app": "NotebookLM",
+  "changes": [
+    {
+      "field": "access",
+      "from": "self_serve_trial",
+      "to": "self_serve_free",
+      "why": "Gemini Notebook API is free during Public Preview for personal Google accounts (no licence needed); Workspace accounts unsupported.",
+      "evidence": "https://developers.google.com/notebook/docs/rate-limits"
+    },
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "narrow_api",
+      "why": "Surface is notebooks+sources only (no delete/Drive sources), preview, Workspace accounts unsupported; closest enum.",
+      "evidence": "https://developers.google.com/notebook/docs/roadmap"
+    },
+    {
+      "field": "access_notes",
+      "from": "(old)",
+      "to": "(new)",
+      "why": "Rewritten to reflect free Public Preview, personal accounts only, Workspace gets 403.",
+      "evidence": "https://developers.google.com/notebook/docs/quickstart"
+    }
+  ],
+  "confirmed": [
+    "auth",
+    "mcp",
+    "api_breadth",
+    "identity_issue"
+  ],
+  "searches": 5
+}

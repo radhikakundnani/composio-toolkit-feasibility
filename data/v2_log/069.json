@@ -1,0 +1,54 @@
+{
+ "id": 69,
+ "app": "Datadog",
+ "changes": [
+  {
+   "field": "access",
+   "from": "unknown",
+   "to": "self_serve_trial",
+   "why": "Vendor says new users can sign up for a free 14-day trial (no credit card); no ongoing free plan found",
+   "evidence": "https://datadoghq.com/blog/datadog-api-authentication"
+  },
+  {
+   "field": "blocker",
+   "from": "other",
+   "to": "partner_or_app_review",
+   "why": "was \"other\"; OAuth partner-only -> partner_or_app_review",
+   "evidence": "https://datadoghq.com/blog/datadog-api-authentication"
+  },
+  {
+   "field": "access_notes",
+   "from": "API key plus application key (or personal access token) from an org; OAuth requires Datadog Partner Network sandbox. Plan needs not shown.",
+   "to": "14-day free trial (no credit card required); API key plus application key from the org. OAuth requires Datadog Partner Network sandbox.",
+   "why": "updated",
+   "evidence": "https://datadoghq.com/blog/datadog-api-authentication"
+  },
+  {
+   "field": "blocker_note",
+   "from": "Keys are org/site-specific (regional domains); OAuth restricted to partners; free access not evidenced.",
+   "to": "OAuth restricted to Partner Network; keys are org/site-specific (regional domains); no free plan evidenced.",
+   "why": "rephrased",
+   "evidence": "https://datadoghq.com/blog/datadog-api-authentication"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://docs.datadoghq.com/extend/integrations/api_integration",
+   "to": "https://datadoghq.com/blog/datadog-api-authentication",
+   "why": "Datadog API auth blog referencing free trial",
+   "evidence": "https://datadoghq.com/blog/datadog-api-authentication"
+  },
+  {
+   "field": "confidence.access",
+   "from": "low",
+   "to": "medium",
+   "why": "trial evidenced",
+   "evidence": "https://datadoghq.com/blog/datadog-api-authentication"
+  }
+ ],
+ "confirmed": [
+  "mcp (datadog-labs/mcp-server + docs.datadoghq.com/mcp_server, vendor-managed)",
+  "auth_primary",
+  "verdict"
+ ],
+ "searches": 4
+}

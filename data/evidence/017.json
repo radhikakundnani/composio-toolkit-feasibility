@@ -1,0 +1,142 @@
+{
+ "id": 17,
+ "app": "Plain",
+ "hint": "plain.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Plain API authentication OAuth API key access token developer docs plain.com",
+   "log_id": "log_mJMn8ii5efgf",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plain.com/docs/graphql/oauth",
+     "title": "OAuth",
+     "snippet": "An OAuth app lets users in your workspace sign in to your app with their Plain account. Your app then calls the API as that user, with the permissions their role already has, and Plain records those actions as that user. To call the API as an integration rather than as a user, create a [machine user](/docs/graphql/authentication) instead.\n##\n\u200b\nChoose an OAuth app type\nThe OAuth app type determines how your app authenticates when it exchanges an authorization code for an access token. Pick the type before you create the app, because you can\u2019t change it afterwards:\n- **Client-side**: your app exchanges the code in a browser or a mobile or desktop app, where a secret wouldn\u2019t stay secret. The app has no client secret and must use Proof Key for Code Exchange (PKCE).\n- **Server-side**: your app exchanges the code from your backend, where you can keep a secret. Plain creates a client secret for the app and shows it once.\nPKCE proves that the token request comes from the app that started the sign-in. Your app generates a random code verifier, sends its SHA-256 hash as the code challenge when the user signs in, then sends the verifier itself with the authorization code. To switch types, cr"
+    },
+    {
+     "url": "https://plain.com/docs/api-reference/graphql/authentication",
+     "title": "Authentication",
+     "snippet": "A machine user can have several API keys, so you can rotate them without downtime. Each API key carries its own fine-grained permissions. To call the API as a user in your workspace, use an [OAuth app](/docs/graphql/oauth).\n1\nCreate a machine user\nGo to **Settings** \u2192 **Machine Users** and click **+ Add Machine User**A machine user has two fields:\n- **Name:** visible only to you and could indicate the usage e.g. \u201cAutoresponder\u201d\n- **Public name:** This is the name visible to customers (if the machine user interacts with customers) e.g. \u201cMr Robot\u201d\n2\nCreate an API Key\nClick \u201cAdd API key\u201d and select the permissions you need. When making API calls, if you have insufficient permissions, the error should tell you which permissions you need.The relevant documentation will tell you which permissions are required for each feature.Once you\u2019ve made an API key you should copy it and put it somewhere safe, as you will not be able to see it again once you navigate away.\n3\nGo build things \ud83d\ude80\nNow that you have an API key, pass it on any API call as a header:\n```\nAuthorization: Bearer plainApiKey_xxx\n```"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/plain/refs/heads/main/authentication/plain-authentication.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/plain/refs/heads/main/authentication/plain-authentication.yml",
+     "snippet": "schemes:\n- name: apiKey\ntype: apiKey\nin: header\nheader: Authorization\nformat: \"Bearer plainApiKey_xxx\"\nnote: >-\nAPI keys belong to Machine Users and carry fine-grained permissions\nselected at creation. A Machine User can hold multiple keys for rotation.\nKeys are shown once and cannot be retrieved again.\n- name: permissions\ntype: rbac\nnote: >-\nCalls are authorized against per-key permissions (e.g.\nindexedDocument:create, thread:reply). Insufficient permissions return an\nerror naming the permission required.\n- name: oauth2\ntype: oauth2\nnote: >-\nOAuth is used by the hosted MCP server (mcp.plain.com/mcp); an agent\nauthenticates as an existing Plain user and inherits that user's\npermissions.\n- name: mutualTLS\ntype: mutualTLS\ndocs: https://www.plain.com/docs/mtls\nnote: mTLS is supported for webhook delivery and customer-card requests.\nwebhook_verification:\nrequest_signing:\ndocs: https://www.plain.com/docs/request-signing\nheader: Plain-Request-Signature\nalgorithm: HMAC-SHA256\nencoding: hex\nnote: >-\nWorkspace-global HMAC secret (Settings -> Request signing). The signature\nis the HMAC-SHA256 of the raw request body, hex-encoded.\nbasic_auth: true\nmtls: true"
+    },
+    {
+     "url": "https://plain.com/docs/graphql/introduction",
+     "title": "Introduction",
+     "snippet": "## Key details\nOur API is compatible with all common GraphQL clients with the following details:\n- **API URL:** `https://core-api.uk.plain.com/graphql/v1`\n- **Allowed method**: POST\n- **Required headers:**\n- `Content-Type: application/json`\n- `Authorization: Bearer YOUR_TOKEN` where the token is your API key. See [authentication](/docs/graphql/authentication/) for more details.\n- **JSON body:**\n- `query`: the GraphQL query string\n- `variables`: a JSON object of variables used in the GraphQL query\n- `operationName`: the name of your GraphQL operation (used for tracking only; it does not affect the call or its result)\nIf you\u2019d like to use the **GraphQL schema to generate types** for your client code you can fetch the schema from: `https://core-api.uk.plain.com/graphql/v1/schema.graphql`\n## Your first API call\nIn this example, we\u2019re going to get a customer in your workspace by their email address. You can find a customer\u2019s email on the right-hand side when looking at one of their threads in Plain. You will need an API key with the `customer:read` permission. See [authentication](/docs/graphql/authentication/) for details on how to get an API key You\u2019ll need to set two shell variables:"
+    },
+    {
+     "url": "https://plain.com/docs/integrations/mcp-server.md",
+     "title": "plain.com/docs/integrations/mcp-server.md",
+     "snippet": "MCP (Model Context Protocol) is an open standard that lets AI tools connect to external platforms. The Plain MCP server at `https://mcp.plain.com/mcp` lets tools like Claude, ChatGPT, and Cursor work with your support data directly.\nYou authenticate with your existing Plain account, so the MCP server has the same permissions as your user. No API keys needed.\n\nTo add Plain's MCP as an app:\n1. Go to **Settings** \u2192 **Apps**\n2. Click **Create app,** Name it \"Plain\" and enter the URL `https://mcp.plain.com/mcp`\n3. Set authentication to **OAuth**, then click **Create** and complete the login flow.\n\n## Authentication\nPlain MCP uses OAuth to allow your MCP server connection to share the same context as your normal web app user. No additional managing of permissions required. This means replies to threads will appear as though they come from your user.\n### Required OAuth scopes\nThe Plain MCP server requires every OAuth token to include the `openid` and `offline_access` scopes. If your authorization request omits these, the server returns `403 Forbidden` , even when OAuth completes successfully and returns tokens.\nSet `scope` to `openid offline_access` (space-separated) in your authorization"
+    }
+   ]
+  },
+  "access": {
+   "query": "Plain plain.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_eEh5TqXgedhA",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plain.com/llms.txt",
+     "title": "plain.com/llms.txt",
+     "snippet": "## Pricing\nSeat + included-credits model. 7-day free trial, no credit card required.\n- **Foundation \u2014 $35/mo:** 1 seat (+$35/additional), 2,000 credits/mo, Slack/email/in-app chat, Ari, Sidekick, Linear & Jira integrations, customer cards, AI workflows.\n- **Horizon \u2014 $299/mo:** 3 seats (+$99/additional), 15,000 credits/mo, everything in Foundation plus Microsoft Teams, SLAs & business hours, escalation paths, Help Center, CRM integrations, reporting, AI suggested responses, priority Slack support.\n- **Frontier \u2014 Custom:** everything in Horizon plus Discord, custom credits, SSO & SCIM, advanced security, bring-your-own-agent, custom workspaces, and a dedicated CSM with white-glove onboarding.\n\n- Free trial: https://plain.com/get/trial (7 days, no credit card)"
+    },
+    {
+     "url": "https://plain.com/blog/api-first-support-platforms",
+     "title": "Best API-First Support Platforms for B2B Teams (2026)",
+     "snippet": "Plain, the API-first customer infrastructure platform for B2B SaaS, built this guide to help technical teams evaluate what actually matters when choosing a programmable support platform: API type, rate limits, webhook reliability, extensibility, and real-world integration depth.\n\nPlain is the most API-complete support platform available. If you are evaluating platforms by programmability \u2014 GraphQL vs REST, rate limits, webhook depth, SDK quality, AI agent connectivity \u2014 it is in a class of its own. The only platform with a GraphQL API, no restrictive rate limits, native MCP server support, full API-UI parity, and an open-source typed TypeScript SDK.\n\n| If you need... | Start here |\n|---|---|\n| GraphQL API, no rate limits, native MCP server, typed SDK | Plain |\n| Largest integration marketplace and broadest channel coverage | Zendesk |\n| Highest REST API rate limits (10,000 rpm) | Intercom |\n| Custom channel connectivity (Channels API) | Front |\n| Free tier with API access | Freshdesk |\n| CRM-first custom data modeling | Kustomer |\n| Unified support + product dev | DevRev |\n| Out-of-the-box account health, Slack-first | Pylon |\n\n| Freshdesk | REST | Not publicly documented | Yes | C"
+    },
+    {
+     "url": "https://plain.com/startups",
+     "title": "Plain for Startups \u2014 50% Off Enterprise-Grade Support Infrastructure",
+     "snippet": "Focus on growing your startup, not your costs.\nGet 50% off our Horizon plan: $6k flat fee, 12 months, 10 seats \u2013 no surprises.\n## One flat fee, 12 months\nof peace of mind\nNo surprises. No hidden fees, upsells, or surprise feature gating here. 50% off our Horizon plan for your team.\n\n## Book a demo\nJump on a call with our team to tell us more about your startup and support use cases. To be eligible for our startup program, you must:\n### Early stage\n#### VC backed, up to $5m in funding\n### Small teams\n#### 10 or less on your support team\n### New customer\n#### Not already a Plain customer"
+    },
+    {
+     "url": "https://plain.com/docs/graphql/introduction",
+     "title": "Introduction",
+     "snippet": "Our API is compatible with all common GraphQL clients with the following details:\n- **API URL:** `https://core-api.uk.plain.com/graphql/v1`\n- **Allowed method**: POST\n- **Required headers:**\n- `Content-Type: application/json`\n- `Authorization: Bearer YOUR_TOKEN` where the token is your API key. See [authentication](/docs/graphql/authentication/) for more details.\n- **JSON body:**\n- `query`: the GraphQL query string\n- `variables`: a JSON object of variables used in the GraphQL query\n- `operationName`: the name of your GraphQL operation (used for tracking only; it does not affect the call or its result)\n\nYou can find a customer\u2019s email on the right-hand side when looking at one of their threads in Plain. You will need an API key with the `customer:read` permission. See [authentication](/docs/graphql/authentication/) for details on how to get an API key You\u2019ll need to set two shell variables:"
+    },
+    {
+     "url": "https://help.plain.com/article/rate-limits",
+     "title": "What are the API rate limits?",
+     "snippet": "Plain applies rate limits to activity from machine users using the Plain API. The default limit depends on your plan.\n| Plan | Rate limit |\n|---|---|\n| Launch & Foundation | 450 requests/minute |\n| Grow & Horizon | 600 requests/minute |\n| Scale & Frontier | 1000 requests/minute |\nRate limits apply to all activity using an API key. Activity from within the Plain app is exempt.\n### Rate limit headers\nEvery request made with an API key returns these response headers:\n- `x-ratelimit-limit`: the limit for your workspace, for example `450`.\n- `x-ratelimit-remaining`: how many requests you have left, for example `0`.\n- `x-ratelimit-reset`: when the limit resets, for example `2026-01-06T15:30:00.000Z`.\nYou can calculate `retry-after` from the timestamp in the `x-ratelimit-reset` header."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Plain API reference REST GraphQL endpoints documentation plain.com",
+   "log_id": "log_H4LTHYgvsTmN",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plain.com/docs/graphql/introduction",
+     "title": "Introduction",
+     "snippet": "Plain itself is built on this same GraphQL API. This means that there are **no limitations** in what can be done via the API vs the UI. These docs cover the most used operations. For anything not documented here, read the [schema](/docs/graphql/schema) or [get in touch](mailto:help@plain.com).\n\n## Key details\nOur API is compatible with all common GraphQL clients with the following details:\n- **API URL:** `https://core-api.uk.plain.com/graphql/v1`\n- **Allowed method**: POST\n- **Required headers:**\n- `Content-Type: application/json`\n- `Authorization: Bearer YOUR_TOKEN` where the token is your API key. See [authentication](/docs/graphql/authentication/) for more details.\n- **JSON body:**\n- `query`: the GraphQL query string\n- `variables`: a JSON object of variables used in the GraphQL query\n- `operationName`: the name of your GraphQL operation (used for tracking only; it does not affect the call or its result)\nIf you\u2019d like to use the **GraphQL schema to generate types** for your client code you can fetch the schema from: `https://core-api.uk.plain.com/graphql/v1/schema.graphql`\n## Your first API call\nIn this example, we\u2019re going to get a customer in your workspace by their email addre"
+    },
+    {
+     "url": "https://plain.com/docs/graphql/customers/get",
+     "title": "Fetch customers",
+     "snippet": "There are five ways to fetch customers:\n- Get customers (To fetch more than one customer at a time)\n- Get customer by ID\n- Get customer by email\n- Get customer by external ID\n- Search for customers\nFor TypeScript, the [GraphQL SDK](/docs/graphql/sdk) gives you a fully typed client for these operations.\nThese operations require the following permissions:\n- `customer:read`\n## Get customers\nOur API allows you to fetch customers as a collection using the `customers` query in GraphQL. This endpoint supports [Pagination](/docs/graphql/pagination). This endpoint supports a range of filtering and sorting options, for full details try our [API explorer](https://app.plain.com/developer/api-explorer/).\nQuery\n```\nquery getCustomers($cursor: String!) {\ncustomers(\nafter: $cursor\nfirst: 50\nfilters: { isMarkedAsSpam: false }\nsortBy: { field: FULL_NAME, direction: ASC }\n) {\nedges {\nnode {\nid\nfullName\nshortName\nemail {\nemail\nisVerified\n}\nexternalId\nmarkedAsSpamAt {\niso8601\n}\n}\n}\ntotalCount\npageInfo {\nhasPreviousPage\nhasNextPage\nstartCursor\nendCursor\n}\n}\n}\n```\nVariables\n```\n{\n\"cursor\": \"eyJjdXN0b21lcnMuZnVsbF9uYW1lIjoiQWlkYSBTY2hpbm5lciIsImN1c3RvbWVycy5pZCI6ImNfMDFHMThFU01TWkdUWTQwU1pITk03M0hBQkIifQ="
+    },
+    {
+     "url": "https://plain.com/docs/graphql/sdk",
+     "title": "GraphQL SDK",
+     "snippet": "The `@team-plain/graphql` package provides a fully typed client for Plain\u2019s GraphQL API. It is auto-generated from the [GraphQL schema](/docs/graphql/schema), which means every query and mutation available in the API is available in the SDK. You can use any GraphQL client to interact with Plain\u2019s API, but this SDK adds type safety, automatic pagination, and structured error handling.\n## Installation\n```\nnpm install @team-plain/graphql\n```\nSupports both ESM and CJS.\n## Setup\n```\nimport { PlainClient } from \"@team-plain/graphql\";\nconst client = new PlainClient({ apiKey: \"plainApiKey_xxx\" });\n```\nYou will need an API key. See [authentication](/docs/graphql/authentication) for how to create one.\n## Queries\nQueries are available under `client.query`. Relations on returned models are lazy-loaded: accessing them triggers a separate API call automatically.\n```\nconst customer = await client.query.customer({ customerId: \"c_123\" });\nconsole.log(customer.fullName);\n// Relations are lazy-loaded \u2014 accessing them makes a separate API call\nconst account = await customer.account;\nconsole.log(account.name);\n```\n## Mutations\nMutations are available under `client.mutation`. Mutation errors are returne"
+    },
+    {
+     "url": "https://plain.com/docs/graphql/pagination.md",
+     "title": "plain.com/docs/graphql/pagination.md",
+     "snippet": "# Pagination\nOur GraphQL API follows the [Relay pagination spec](https://relay.dev/graphql/connections.htm).\nWhen fetching collections from our API you can control how much data is returned. We will return 25 records per request by default and the maximum page size is 100 records.\nWe support two forms of page control arguments:\n1. Forward pagination with `after` (cursor) & `first` (numeric count)\n2. Reverse pagination with `before` (cursor) & `last` (numeric count)\nNote that these must not be mixed, e.g performing a query with values for first & before will result in a validation error.\nEndpoints which return paginated results will return a `pageInfo` object along with a `totalCount` field which allows you to make subsequent calls with page controls. Using the `getCustomers` API as an example this would look as follows:\nThis will fetch a subsequent page of 50 entries by passing in the `endCursor` from an initial query."
+    },
+    {
+     "url": "https://plain.com/docs/graphql/attachments",
+     "title": "Attachments",
+     "snippet": "This page outlines how to upload attachments programmatically.\nFor TypeScript, the [GraphQL SDK](/docs/graphql/sdk) gives you a fully typed client for these operations.\nAt a high level to upload attachments you:\n- Make an API call to get an upload url and some metadata\n- You then upload your file, and metadata to that upload url.\n- Use the ID of the attachment you uploaded in other API calls (e.g. create a thread or send an email).\n## Step by step guide\nTo try this, you will need an [API key](/docs/graphql/authentication/) with the following permission:\n- `attachment:create`\n1\nCreating an upload url\n- `fileName` is the name under which the attachment will appear in the timeline\n- `fileSizeBytes` is the exact size of the attachment in bytes\n- `c_XXXXXXXXXXXXXXXXXXXXXXXXXX` is the customer id you are uploading the attachment for\nThe GraphQL mutation to create an attachment upload URL is the following:\nMutation\n```\nmutation createAttachmentUploadUrl($input: CreateAttachmentUploadUrlInput!) {\ncreateAttachmentUploadUrl(input: $input) {\nattachmentUploadUrl {\nattachment {\nid\n# There are more fields here but we are just selecting\n# the id for simplicity.\n}\nuploadFormUrl\nuploadFormData {\nke"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Plain plain.com MCP server Model Context Protocol official",
+   "log_id": "log_c0jtbvA8fdd5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plain.com/docs/integrations/mcp-server",
+     "title": "MCP server",
+     "snippet": "MCP (Model Context Protocol) is an open standard that lets AI tools connect to external platforms. The Plain MCP server at `https://mcp.plain.com/mcp` lets tools like Claude, ChatGPT, and Cursor work with your support data directly. You authenticate with your existing Plain account, so the MCP server has the same permissions as your user. No API keys needed.\n\n### ChatGPT\nIn ChatGPT, add the official Plain plugin:\n1. Open the [Plain plugin](https://chatgpt.com/plugins/plugin_asdk_app_6aec88addd3c8191bc0daa4b3fff3a4c) and add it\n2. Sign in with your Plain account and choose your workspace\n3. In a chat, type **@** and pick **Plain**\n### Cursor\nYou can add the Plain MCP to Cursor via your Cursor config at `~/.cursor/mcp.json`\n```\n{\n\"mcpServers\": {\n\"plain\": {\n\"type\": \"remote\",\n\"url\": \"https://mcp.plain.com/mcp\"\n}\n}\n}\n```\nGo to **Cursor Settings** \u2192 **Tools & MCP** and click **Connect** next to Plain to authenticate.\n### Claude.ai\n1. Go to \u201cCustomize\u201d \u2192 \u201cConnectors\u201d\n2. Click the \u2795 icon, then choose \u201cAdd custom connector\u201d\n3. Add a custom connector named \u201cPlain\u201d with the Remote MCP server URL `https://mcp.plain.com/mcp`\n4. Click the \u201cConnect\u201d button next to the newly created Plain connecto"
+    },
+    {
+     "url": "https://plain.com/docs/getting-started",
+     "title": "Set up Plain for a person",
+     "snippet": "You are an agent setting up Plain, a customer support platform, for the person you\u2019re working with. You do the setup through Plain\u2019s Model Context Protocol (MCP) server at `https://mcp.plain.com/mcp`, which signs in as that person with OAuth. Don\u2019t ask the person for an API key: the MCP server needs none, and an API key belongs to a machine user, not to them. Follow the steps in order. Steps 1 to 4 only read. In step 5, nothing in the workspace changes until the person agrees to it. When the person has to choose, such as which labels to create or which Slack channels to connect, use your host\u2019s question tool if it has one, such as `AskUserQuestion` in Claude Code. Otherwise ask in chat.\n\n1. Check for an existing connection\nIf Plain tools are already loaded in your session, call `getMyWorkspace`. When it returns a workspace, tell the person its name and ID and ask whether it\u2019s the workspace they want to set up. A connection is bound to one workspace, so it might be the wrong one. If it is the right one, go to step 4. If no Plain tools are loaded, ask whether the person already has a Plain workspace. If they do, or they gave you a workspace ID (it starts with `w_`), go to step 3 and "
+    },
+    {
+     "url": "https://plain.com/blog/mcp-server",
+     "title": "Plain's MCP Server: Connect Any AI Tool to Your Support Data",
+     "snippet": "Plain now has an MCP server. If you use Claude, ChatGPT, Cursor, or any other AI tool that supports the MCP standard, it can talk directly to your Plain workspace. Your threads, your customers, your help center, all accessible from the AI tools you already have open.\nHere's the same scenario with Plain's MCP server connected:\nYou open Claude, type \"What's going on with this customer?\", and it pulls their recent threads, looks up their profile, checks the tenant's other threads, finds the relevant help center article, and drafts a response with the right details. One prompt instead of ten minutes of digging.\n\nWith Plain's MCP server connected, your AI tools can do the same things you do in Plain's UI, on your behalf. We built 30 tools across five areas:\n1. **Threads.** Fetch, search, reply, assign, snooze, change priority, add labels, mark done, create internal notes. The daily workflow stuff that eats your time when you're doing it manually across dozens of threads.\n2. **Customers.** Look up profiles, search by name or email, pull a customer's full thread history.\n3. **Tenants.** Search and manage company-level data. Spot patterns across all of a company's threads. Useful when you'"
+    },
+    {
+     "url": "https://plain.com/blog/mcp-customer-support-2026",
+     "title": "MCP for Customer Support: Platforms and Permissions (2026)",
+     "snippet": "MCP for customer support means your support platform runs an MCP server, so the AI client your team already uses (Claude, ChatGPT, Cursor) can read customer context and act on threads through one standard interface, without an integration layer you build and maintain. Which platforms have a server matters less than whose access each connection runs under, because that decides what the AI can see, what it can change and whose name goes on a reply. Plain is the agentic infrastructure for customer work, a B2B customer support and help desk platform, and its MCP server signs each person in with their own Plain account over OAuth, so a connection carries that person's permissions and no one else's. As of November 2026, [Plain's MCP server](https://www.plain.com/docs/integrations/mcp-server) has **400+ tools**.\n## What is MCP for customer support?\nMCP (Model Context Protocol) is an open standard for connecting AI applications to outside systems. A platform runs an MCP server that describes its tools: a name, a description and an input schema for each. An AI client connects, authenticates and calls those tools when a request needs them, so nobody has to write code against the platform's A"
+    },
+    {
+     "url": "https://help.plain.com/article/does-the-plain-mcp-server-support-api-key-authentication-h7d83qtfdzxo4h49x4oyklwx",
+     "title": "Does the Plain MCP server support API key authentication?",
+     "snippet": "No. The Plain Model Context Protocol (MCP) server at `https://mcp.plain.com/mcp` supports OAuth only.\n### How authentication works\nYou authenticate with your existing Plain account through OAuth. The MCP session inherits your permissions, and replies and actions appear under your user, as in the app. This ties MCP activity to a real user for audit and attribution.\nEach person who uses the server needs a Plain account with any role, including Viewer, and must complete the OAuth flow once in their MCP client, such as Cursor, Claude or ChatGPT. There is no shared credential that lets several engineers connect.\n### Use a custom MCP server with a machine user API key\nTo give a team of engineers access to Plain data without individual Viewer accounts, build a lightweight custom MCP server that wraps Plain's GraphQL API with a single machine user API key.\n1. In Settings, open Machine Users and create a machine user with read-only permissions.\n2. Generate an API key for that machine user.\n3. Build an MCP server that uses the key to call Plain's GraphQL API and exposes the tools your team needs.\n4. Point your engineers' MCP clients at your custom server.\nThe trade-off is that all activity g"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

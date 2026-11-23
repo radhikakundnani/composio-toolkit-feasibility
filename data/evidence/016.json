@@ -1,0 +1,142 @@
+{
+ "id": 16,
+ "app": "LiveAgent",
+ "hint": "liveagent.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "LiveAgent API authentication OAuth API key access token developer docs liveagent.com",
+   "log_id": "log_0fufdggb5IhV",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md",
+     "title": "LiveAgent-api-python/docs/CallsApi.md at master \u00b7 QualityUnit/LiveAgent-api-python",
+     "snippet": "```\nfrom __future__ import print_function\nimport time\nimport liveagent_api\nfrom liveagent_api.rest import ApiException\nfrom pprint import pprint\n# Configure API key authorization: apikey\nconfiguration = liveagent_api.Configuration()\nconfiguration.api_key['apikey'] = 'YOUR_API_KEY'\n# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed\n# configuration.api_key_prefix['apikey'] = 'Bearer'\n# Configure OAuth2 access token for authorization: privileges\nconfiguration = liveagent_api.Configuration()\nconfiguration.access_token = 'YOUR_ACCESS_TOKEN'\n# create an instance of the API class\napi_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))\ncall_id = 'call_id_example' # str |\nbody = liveagent_api.CallMessage() # CallMessage |  (optional)\ntry:\n# Adds a message to the call group in corresponding ticket\napi_response = api_instance.call_add_message(call_id, body=body)\npprint(api_response)\nexcept ApiException as e:\nprint(\"Exception when calling CallsApi->call_add_message: %s\\n\" % e)\n\n# Configure API key authorization: apikey\nconfiguration = liveagent_api.Configuration()\nconfiguration.api_key['apikey'] = 'YOUR_API_KEY'\n# Uncomment below to setup prefix (e.g. "
+    },
+    {
+     "url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+     "title": "MCP Integration for agents",
+     "snippet": "LiveAgent exposes a built-in **MCP server** (Model Context Protocol) that lets you connect external AI tools, such as ChatGPT, Claude Desktop, Cursor, claude.ai, [FlowHunt](https://flowhunt.io), or any other MCP-compatible client, directly with your LiveAgent account. Once connected, your own AI tools/agents can read ticket data and perform actions on your behalf, using your agent identity and permissions.\n![](/public/article/15103/attachment/d4zg9jnagivhdk519aexdtiwte2an09c/view)\nThere are two ways to authenticate your MCP client - **OAuth 2.1 (recommended)**, where the AI tool discovers the authorization server automatically and redirects you to a consent screen, or **Bearer token**, where you generate an MCP access token in your profile and paste it into the AI tool's configuration manually.\n## Finding MCP Integration in your profile\n1. Click your avatar in the top-right corner of the LiveAgent panel and select **Edit profile**.\n2. In the left-hand menu, navigate to the **MCP Integration** section.\nThis screen shows your connection details and access tokens. Use these values to configure any MCP-compatible client:\n| Setting | Value |\n|---|---|\n| **MCP server URL** | https://<you"
+    },
+    {
+     "url": "https://github.com/QualityUnit/LiveAgent-api-python",
+     "title": "GitHub - QualityUnit/LiveAgent-api-python: Python client for LiveAgent API",
+     "snippet": "To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)\n\nPlease follow the installation procedure and then run the following:\n```\nfrom __future__ import print_function\nimport time\nimport liveagent_api\nfrom liveagent_api.rest import ApiException\nfrom pprint import pprint\n# Configure API key authorization: apikey\nconfiguration = liveagent_api.Configuration()\nconfiguration.api_key['apikey'] = 'YOUR_API_KEY'\n# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed\n# configuration.api_key_prefix['apikey'] = 'Bearer'\n# Configure OAuth2 access token for authorization: privileges\nconfiguration = liveagent_api.Configuration()\nconfiguration.access_token = 'YOUR_ACCESS_TOKEN'\n# create an instance of the API class\napi_instance = liveagent_api.AgentPhoneApi(liveagent_api.ApiClient(configuration))\nagent_id = 'agent_id_example' # str |\ntry:\n# Gets phone currently used by agent (use me as agentId for self)\napi_response = api_instance.get_agent_phone(agent_id)\npprint(api_response)\nexcept ApiException as e:\nprint(\"Exception when calling AgentPhoneApi->get_agent_phone: "
+    },
+    {
+     "url": "https://faq.liveagent.com/114892-MCP-Integration-Guide-for-LiveAgent-Agents-Early-Preview",
+     "title": "MCP Integration Guide for LiveAgent Agents (Early Preview)",
+     "snippet": "LiveAgent exposes a built-in **MCP server** (Model Context Protocol) that lets you connect external AI tools \u2014 such as Claude Desktop, Cursor, claude.ai, [FlowHunt](https://flowhunt.io), or any other MCP-compatible client \u2014 directly to your LiveAgent account. Once connected, those tools can read ticket data and perform actions on your behalf, using your agent identity and permissions.\n## Finding MCP Integration in Your Profile\n1. Click your avatar in the top-right corner of the LiveAgent panel and select **Edit profile**.\n2. In the left-hand menu, select **MCP Integration**.\nThis screen shows your connection details, access tokens, and authorized OAuth apps. Use these values when configuring any MCP-compatible client:\n| Setting | Value |\n|---|---|\n| **MCP server URL** | `https://<your-liveagent-domain>/public/api/mcp` |\n| **Transport protocol** | Streamable HTTP |\n| **Authentication** | Bearer token *or* OAuth 2.1 (Authorization Code + PKCE) |\n## Authentication Methods\nThere are two ways to authenticate your MCP client:\n- **Bearer token** \u2014 generate an MCP access token in your profile and paste it into the client manually. Best for desktop tools and scripts that require manual conf"
+    },
+    {
+     "url": "https://support.liveagent.com/347389-Single-sign-on-generic-example",
+     "title": "Single sign-on generic example",
+     "snippet": "In this example we'll show you how you can implement simple single sign-on (SSO) for any kind of PHP-based webpage/application. As a result, users of your php-based webpage/app can access LiveAgent KnowledgeBase or LiveAgent Agent panel directly through a link without going through the generic login process. Requirements - Users in php-based page/webapp must have the same e-mail address as their registered username/email in LiveAgent. - Customers in LiveAgent must be REGISTERED! You can automatically register new users in your customer portal using our APIv3 or manually through your LiveAgent customer portal page.\n\nHow does it work It is pretty simple. LiveAgent uses cookies on client side to store customer authentication info. Let's have a look how cookies look like when nobody is logged-in in the KB. We have 4 default cookies used by LiveAgent Knowledgebase for storing various application and customer-based info. Now lets login into the Knowledgebase and check the cookies again: There was a new cookie created: V_auth. and the content of visitor_la_sid was also changed. It holds the auth token of logged in user. To logout, you need to delete these two cookies or set their validity"
+    }
+   ]
+  },
+  "access": {
+   "query": "LiveAgent liveagent.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_x9QFTrtZIxs2",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://liveagent.com/blog/byok-ai",
+     "title": "BYOK AI in LiveAgent: Use Your Own AI Provider",
+     "snippet": "In LiveAgent you can connect OpenAI, Anthropic, Google Gemini or FlowHunt. LiveAgent adds no AI fees, no token markup and no per-resolution fees.\n\nYou pay two parties for two different things: LiveAgent for your plan, and your AI provider for the AI usage on your account, at its own prices.\n| Who you pay | What for | What LiveAgent adds |\n|---|---|---|\n| LiveAgent | Your plan | No AI fees, no token markup, no per-resolution fees |\n| Your AI provider | The AI usage on your own account, at the provider\u2019s prices | Nothing |\nPlans differ in how many AI agents you can create: 1 on Starter, 5 on Team, 50 on Business and unlimited on Enterprise. Check the [AI billing on the pricing page](https://liveagent.com/pricing/) for the current plans. LiveAgent does not publish your provider\u2019s prices, so look up the current rates with your provider before you decide.\n\nStart a free [30-day trial](https://liveagent.com/trial/), no credit card needed, and connect your AI provider."
+    },
+    {
+     "url": "https://liveagent.com/pricing",
+     "title": "Pricing",
+     "snippet": "Help desk software with live chat, email, AI agents and, from the Team plan, a call center.\n- **30-day free trial** no credit card\n- **Special offer until Nov 22** price locked while you keep the plan\n- **AI at your provider's price** 2\u20134\u00a2 a chat, no LiveAgent fee\n## Starter\nPer agent \u00b7 up to 5 agents\nFor a small team answering email and chat.\nSpecial offer\nOffer price $11 Regular price: $15. /agent/mo\n5 agents: **$55/mo**\n[Start free trial](/trial/?plan=starter)\nAI agents1\nDepartments10\nEmail accounts3\nStart with the essentials:\n- Email, live chat, contact forms, knowledge base\n- No social channels, [call center](/call-center-software/) or reporting\n- AI answer drafts and AI chatbot\n- [Single sign-on](/features/single-sign-on/) (SSO)\nRecommended for 5 agents\n## Team\nPer agent \u00b7 up to 15 agents\nFor a growing team on every channel, phone included.\nSpecial offer\nOffer price $22 Regular price: $29. /agent/mo\n5 agents: **$110/mo**\n[Start free trial](/trial/?plan=team)\nAI agents5\nDepartments20\nEmail accounts10\nLive chat buttons5\nEverything in Starter, plus:\n- Facebook, Instagram, X, Viber, WhatsApp, Telegram and calls\n- Reports: agent, department, channel, SLA compliance, time and tag r"
+    },
+    {
+     "url": "https://support.liveagent.com/802463-REST-API",
+     "title": "REST API",
+     "snippet": "[### API key\nWhat is an API key API key is an identity of your LiveAgent (like your username and password) which you can use to build your own custom integration solutions. Never give it to anybody you don't trust. If your API key is lost, do not hesitate to generate a new one! Anybody with your API key can fully access your LiveAgent. How can I get my API key While logged in as an admin navigate to Configuration> System> API which loads the API v3 section where you find existing API keys or ...](https://support.liveagent.com/741982-API-key)"
+    },
+    {
+     "url": "https://anchorterminal.com/tools/liveagent",
+     "title": "anchorterminal.com/tools/liveagent",
+     "snippet": "| Auth | OAuth or key \u00b7 API v3 takes a key in the `apikey` header. An admin creates keys under Configuration > System > API and sets each key's permissions, and a plan allows 1, 5, 10 or 100 keys. The legacy v1 API has its own key, sent as a URL or form parameter. The MCP server at `https://<account>/api/mcp` accepts OAuth 2.1 with PKCE and a consent screen, or a bearer token an agent generates in their profile (up to 10 active, two-year expiry). MCP calls act as that agent under their role. |\n| Pricing | Paid ($15 / seat-mo) \u00b7 Four plans at $15, $29, $49 and $69 an agent a month billed annually ($19, $35, $59 and $85 monthly), with the API on every plan. A 30-day trial needs no card, and there is no free plan on the pricing page. MCP actions draw on the account's AI credit budget, whose price was not found (https://www.liveagent.com/pricing/, checked 2026-10-09). |\n\n| Free tier | No free plan on the pricing page. 30-day trial with no card |\n| Auth and scopes | `apikey` header on v3 with per-key permissions such as `ticket.read`, `ticket.answer`, `ticket.change_state`, `contact.read` and `contact.delete`. v1 key as a URL or form parameter. MCP by OAuth 2.1 with PKCE or a bearer tok"
+    },
+    {
+     "url": "https://support.liveagent.com/567924-Documentation",
+     "title": "Documentation",
+     "snippet": "1. Consider registering a new [free Trial account](https://www.liveagent.com/trial/) for testing purposes, before using API with your live account.\n2. Generate API key for APIv3: [https://support.liveagent.com/741982-API-key](https://support.liveagent.com/741982-API-key)\n3. Authorize the LiveAgent API on https://**YOURDOMAIN.**ladesk.com/docs/api/v3/#/ and add scopes you need for the API to work:\n![](https://support.liveagent.com/public/article/12773/attachment/k912nbjf1k8z7ejg7nho8pa3m9dpbeen/view)\n4. Choose the object (agents, tickets, .) & method (get, post, delete) and press the \"Try it out\" button\n![](https://support.liveagent.com/public/article/12773/attachment/3hl5gjt6bzz426xqg7jh9lucmu9nkdao/view)\n5. Fill the required parameters, press the \"execute\" button & see the results\n![](https://support.liveagent.com/public/article/12773/attachment/isxt5mu5b6wua24d2kl0si6br404bp90/view)\nThere are limits related to API and API keys. [Here](https://support.liveagent.com/931802-API-rate-limit-API-requests-limit) you can find more info."
+    }
+   ]
+  },
+  "surface": {
+   "query": "LiveAgent API reference REST GraphQL endpoints documentation liveagent.com",
+   "log_id": "log___CA3Vwj7sn8",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.liveagent.com/911737-API-v3",
+     "title": "API v3",
+     "snippet": "[### Documentation\nWhere can I find the API v3 documentation? You can find whole LiveAgent API documentation within your LiveAgent account: https://YOURDOMAIN.ladesk.com/docs/api/v3/#/ You can also navigate into your agent panel > Configuration > System > API > API V3 DOCUMENTATION How can I try LiveAgent API v3 with my account? Within the documentation, you can find examples and use the possibility to test the API commands with your account. - Consider registering a new free Trial a...](https://support.liveagent.com/567924-Documentation)\n[### Filtering API v3 results\nWith API v3 you have an option to use filters to get specific results. Filters for the GET /tickets API to retrieve a list of tickets are especially limited, for more details and all available options please [see this article](https://support.liveagent.com/870644-Filtering-API-v3-GET-tickets-results). Simple filters Using a simple filterm you can filter results by searching for a specific column with an exact value: {\"parameter\":\"value\"} This simple filter allows you to retrieve e.g. ticket...](https://support.liveagent.com/513528-Filtering-API-v3-results)"
+    },
+    {
+     "url": "https://faq.liveagent.com/575658-API",
+     "title": "API",
+     "snippet": "[### Updating Ticket Custom Fields and Tags Using the LiveAgent API v3\nOverview Both tags and custom fields (along with other ticket parameters) can be updated using the API v3 through the PUT endpoint. This allows you to programmatically modify ticket properties without using the web interface. Endpoint Use the following endpoint to update ticket information: PUT /tickets/{ticketId} Replace {ticketId} with the ID of the ticket you want to update. Request Body Parameters The following parameters can be included in your request body: - owner_contactid (strin...](https://faq.liveagent.com/113754-Updating-Ticket-Custom-Fields-and-Tags-Using-the-LiveAgent-API-v3)\n\n[### Why are some API endpoints available in API v1 but not in v3 and vice versa?\nCustomer context: The customer would like to use specific API endpoints from both v1 and v3 versions and is curious about the discrepancy in available endpoints between the versions. Customer: Why are some API endpoints available in API v1 but not in v3 and vice versa? Answer: API v1 is deprecated, meaning no new endpoints will be added to it. On the other hand, API v3 is a newer version still under development, so enhancements and new endpoints"
+    },
+    {
+     "url": "https://support.liveagent.com/docs/api/v3/api-docs-generator.php?version=5.70.3.20261110122201",
+     "title": "support.liveagent.com/docs/api/v3/api-docs-generator.php",
+     "snippet": "[See this article for detailed info.](https:\\/\\/support.liveagent.com\\/741982-API-key)<br\\/><br\\/>Additional info about more advanced agent, contact or ticket API filters"
+    },
+    {
+     "url": "https://github.com/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md",
+     "title": "LiveAgent-api-python/docs/CallsApi.md at master \u00b7 QualityUnit/LiveAgent-api-python",
+     "snippet": "# liveagent_api.CallsApi\nAll URIs are relative to *[https://localhost/api/v3](https://localhost/api/v3)*\n| Method | HTTP request | Description |\n|---|---|---|\n| [**call_add_message**](/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket |\n| [**call_add_recording**](/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket |\n| [**call_answer**](/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent |\n| [**call_blind_transfer**](/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}/_blind_transfer | Transfers call to different department / agent |\n| [**call_change_channel_status**](/QualityUnit/LiveAgent-api-python/blob/master/docs/CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status |\n| [**call_create**](/QualityUnit/LiveAgent-api-py"
+    },
+    {
+     "url": "https://faq.liveagent.com/930701-Attaching-Files-to-Tickets-Using-the-LiveAgent-API",
+     "title": "Attaching Files to Tickets Using the LiveAgent API",
+     "snippet": "First, you need to upload your file to the LiveAgent system. You can use either of the following endpoints:\n### Option A: API v1 File Upload\nUse the **POST /api/files** endpoint to upload a file. For detailed information, see the [Complete API reference for file upload](https://support.liveagent.com/840770-Complete-API-reference#f6ee7d770d02e790089753359529196f).\n### Option B: API v3 File Upload\nAlternatively, you can use the **POST /files** endpoint in API v3. For detailed information, see the [API v3 documentation for file upload](https://support.liveagent.com/docs/api/v3/#/files/uploadFile).\n**Important:** Both endpoints work for uploading files, but you must use API v1 for creating ticket messages with attachments (see Step 2 below).\n## Step 2: Create a Ticket Message with the File Attachment\nAfter uploading the file, the API response will contain a `fileid` parameter. This is a unique identifier generated by the system for your uploaded file.\nUse this `fileid` in the **attachments** parameter when creating a new ticket message or note via the **POST /api/conversations/[conversationid]/messages** endpoint in API v1.\nFor detailed information on creating messages with attachments"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "LiveAgent liveagent.com MCP server Model Context Protocol official",
+   "log_id": "log_K28Df0WYmHQM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+     "title": "MCP Integration for agents",
+     "snippet": "LiveAgent exposes a built-in **MCP server** (Model Context Protocol) that lets you connect external AI tools, such as ChatGPT, Claude Desktop, Cursor, claude.ai, [FlowHunt](https://flowhunt.io), or any other MCP-compatible client, directly with your LiveAgent account. Once connected, your own AI tools/agents can read ticket data and perform actions on your behalf, using your agent identity and permissions.\n![](/public/article/15103/attachment/d4zg9jnagivhdk519aexdtiwte2an09c/view)\nThere are two ways to authenticate your MCP client - **OAuth 2.1 (recommended)**, where the AI tool discovers the authorization server automatically and redirects you to a consent screen, or **Bearer token**, where you generate an MCP access token in your profile and paste it into the AI tool's configuration manually.\n## Finding MCP Integration in your profile\n1. Click your avatar in the top-right corner of the LiveAgent panel and select **Edit profile**.\n2. In the left-hand menu, navigate to the **MCP Integration** section.\nThis screen shows your connection details and access tokens. Use these values to configure any MCP-compatible client:\n| Setting | Value |\n|---|---|\n| **MCP server URL** | https://<you"
+    },
+    {
+     "url": "https://liveagent.com/features/mcp-server",
+     "title": "Connect AI tools to LiveAgent with MCP",
+     "snippet": "# Connect AI tools to LiveAgent with MCP\nLet Claude Desktop and other MCP-compatible AI clients search, tag, and act on your tickets directly \u2014 inside the same permissions your agents already have.\n\nModel Context Protocol\n## A standard way for AI tools to plug into your help desk\nMCP is an open standard for connecting AI applications to outside tools and data. LiveAgent's MCP server exposes tickets, [ticket messages](/ticketing-software/), knowledge base articles, agents, and departments as tools an MCP-compatible AI client can call directly \u2014 no custom integration required.\n- Search and read tickets, messages, and knowledge base articles\n- Tag, assign, transfer, resolve, and reopen tickets\n- List agents and departments to route work correctly\n- Reply to WhatsApp conversations where enabled\nMCP Server \u00b7 Claude Desktop\nConnected\nsearch_tickets Idle Called\nget_ticket_messages Idle Called\nadd_tags_to_ticket Idle Called\nresolve_ticket Idle Called\nmcp.connect({ client: *\u201cClaude Desktop\u201d*, tools: *\u201c33\u201d*, scope: *\u201ctickets kb agents\u201d* })\n## MCP server\n### Built for teams already using an AI client\nIf your team already relies on Claude Desktop or another MCP-compatible AI client day-to-day,"
+    },
+    {
+     "url": "https://liveagent.com/blog/liveagent-may-2026-product-update",
+     "title": "LiveAgent monthly product update: May edition",
+     "snippet": "Continuing on the AI development trail, version 5.63 also comes with the integration of LiveAgent MCP!\nLiveAgent\u2019s built-in MCP ([Model Context Protocol](/features/mcp-server/)) server allows for easy connection with external AI tools such as Claude Desktop, Cursor, claude.ai, FlowHunt, and others. Once connected, these tools can access ticket data and perform tasks on your behalf in line with your agent identity and permissions."
+    },
+    {
+     "url": "https://faq.liveagent.com/114892-MCP-Integration-Guide-for-LiveAgent-Agents-Early-Preview",
+     "title": "MCP Integration Guide for LiveAgent Agents (Early Preview)",
+     "snippet": "LiveAgent exposes a built-in **MCP server** (Model Context Protocol) that lets you connect external AI tools \u2014 such as Claude Desktop, Cursor, claude.ai, [FlowHunt](https://flowhunt.io), or any other MCP-compatible client \u2014 directly to your LiveAgent account. Once connected, those tools can read ticket data and perform actions on your behalf, using your agent identity and permissions.\n## Finding MCP Integration in Your Profile\n1. Click your avatar in the top-right corner of the LiveAgent panel and select **Edit profile**.\n2. In the left-hand menu, select **MCP Integration**.\nThis screen shows your connection details, access tokens, and authorized OAuth apps. Use these values when configuring any MCP-compatible client:\n| Setting | Value |\n|---|---|\n| **MCP server URL** | `https://<your-liveagent-domain>/public/api/mcp` |\n| **Transport protocol** | Streamable HTTP |\n| **Authentication** | Bearer token *or* OAuth 2.1 (Authorization Code + PKCE) |\n## Authentication Methods\nThere are two ways to authenticate your MCP client:\n- **Bearer token** \u2014 generate an MCP access token in your profile and paste it into the client manually. Best for desktop tools and scripts that require manual conf"
+    },
+    {
+     "url": "https://support.liveagent.com/466386-AI-Agents-feature-overview",
+     "title": "AI Agents feature overview",
+     "snippet": "The **AI Agents** feature allows you to create reusable AI-powered agents and trigger them via [automatic rules](https://support.liveagent.com/038465-Automatic-Rules-Overview). AI agents utilize the built-in MCP server and its tools to perform various actions within your LiveAgent account. They serve as a background automation layer alongside other LiveAgent [AI-powered features](https://support.liveagent.com/150554-AI-features).\n\n**When an** [**automatic rule**](https://support.liveagent.com/038465-Automatic-Rules-Overview)** containing the action \"Run AI agent\" triggers,** the system dispatches the AI agent to your [AI provider](https://support.liveagent.com/838997-AI-providers), which processes the ticket and performs [actions](https://support.liveagent.com/578762-MCP-Tools-Reference) it is allowed to do, such as tagging the ticket, resolving it, assigning it to an agent, transferring it to another department, or writing a knowledge base article out of it - all without any human intervention.\nLiveAgent exposes a **built-in MCP server** (model context protocol) that your AI provider connects to when executing an AI agent. When the AI provider needs to read ticket data or perform "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

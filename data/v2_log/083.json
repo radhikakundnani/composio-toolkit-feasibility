@@ -1,0 +1,32 @@
+{
+ "id": 83,
+ "app": "Binance",
+ "changes": [
+  {
+   "field": "access",
+   "from": "unknown",
+   "to": "self_serve_free",
+   "why": "Any Binance account can create API keys on API Management page; no payment/sales contact (account KYC is caveat)",
+   "evidence": "https://developers.binance.com/en/docs/products/algo/general-info"
+  },
+  {
+   "field": "blocker",
+   "from": "other",
+   "to": "partner_or_app_review",
+   "why": "'other' not allowed; per-user OAuth/Fast API needs KYB",
+   "evidence": "https://developers.binance.com/en/docs/products/caas/integration-guide"
+  },
+  {
+   "field": "confidence.access",
+   "from": "low",
+   "to": "medium",
+   "why": "now evidenced",
+   "evidence": "https://developers.binance.com/en/docs/products/algo/general-info"
+  }
+ ],
+ "confirmed": [
+  "mcp",
+  "auth_primary"
+ ],
+ "searches": 3
+}

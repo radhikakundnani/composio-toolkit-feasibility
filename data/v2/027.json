@@ -1,0 +1,37 @@
+{
+  "id": 27,
+  "app": "Telegram",
+  "category": "Communications and Messaging",
+  "one_liner": "Messaging app with free Bot API and full client API (MTProto).",
+  "auth_methods": [
+    "api_key",
+    "session_login"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Bot tokens via @BotFather; user-account API needs api_id/api_hash from my.telegram.org. Free.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "community",
+  "mcp_note": "Third-party only, e.g. https://github.com/chaindead/telegram-mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "narrow_api",
+  "blocker_note": "Bot API acts only as a bot; user-level access needs MTProto sessions under API terms.",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://core.telegram.org/bots/api",
+    "access": "https://core.telegram.org/api/obtaining_api_id",
+    "surface": "https://core.telegram.org/bots/api",
+    "mcp": "https://raw.githubusercontent.com/chaindead/telegram-mcp/main/README.md"
+  },
+  "identity_issue": "",
+  "verified": true
+}

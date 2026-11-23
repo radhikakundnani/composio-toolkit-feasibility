@@ -1,0 +1,38 @@
+{
+ "id": 1,
+ "app": "Salesforce",
+ "category": "CRM",
+ "one_liner": "Enterprise CRM platform with broad REST, GraphQL and SOAP APIs.",
+ "auth_methods": [
+  "oauth2",
+  "jwt_service_account"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free developer org available; create an External Client/Connected App for OAuth. API needs an API-enabled edition.",
+ "api_types": [
+  "rest",
+  "graphql",
+  "soap"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "API access depends on org edition; Group/Professional editions need partner enablement.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html",
+  "access": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+  "surface": "https://developer.salesforce.com/docs/platform/api-rest/guide/resources-list.html",
+  "mcp": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html"
+ },
+ "verified": true
+}

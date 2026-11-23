@@ -1,0 +1,36 @@
+{
+  "id": 9,
+  "app": "Copper",
+  "category": "CRM",
+  "one_liner": "Google Workspace-native CRM with REST Developer API.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_trial",
+  "access_notes": "14-day trial, no free plan; API keys for individual users, OAuth2 for partner integrations.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "community",
+  "mcp_note": "https://copper.com/mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "paid_plan",
+  "blocker_note": "Trial-only access (no free plan); OAuth requires partner registration; official MCP announced (beta Nov 2026) but not confirmed live.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.copper.com/introduction/authentication.html",
+    "access": "https://onegtmlab.dev/tool-directory/crm/copper",
+    "surface": "https://developer.copper.com/leads/list-leads-search.html",
+    "mcp": "https://copper.com/mcp"
+  },
+  "verified": true
+}

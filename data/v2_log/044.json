@@ -1,0 +1,13 @@
+{
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "blocker",
+    "verdict",
+    "auth"
+  ],
+  "searches": 3
+}

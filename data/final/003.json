@@ -1,0 +1,36 @@
+{
+ "id": 3,
+ "app": "Pipedrive",
+ "category": "CRM",
+ "one_liner": "Sales-focused CRM with REST API (v1/v2) for deals, leads and users.",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_trial",
+ "access_notes": "API token on every plan (no free plan; 14-day free trial); OAuth 2.0 for marketplace apps.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://pipedrive.com/en/features/mcp-server",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+  "access": "https://pipedrive.com/en/pricing",
+  "surface": "https://developers.pipedrive.com/docs/api/v1/Deals",
+  "mcp": "https://pipedrive.com/en/features/mcp-server"
+ },
+ "verified": true
+}

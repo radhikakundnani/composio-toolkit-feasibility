@@ -1,0 +1,142 @@
+{
+ "id": 11,
+ "app": "Zendesk",
+ "hint": "zendesk.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Zendesk API authentication OAuth API key access token developer docs zendesk.com",
+   "log_id": "log_0mIGg79EQiNm",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.zendesk.com/documentation/authentication/api-tokens-to-oauth",
+     "title": "developer.zendesk.com/documentation/authentication/api-tokens-to-oauth",
+     "snippet": "This guide explains how to use OAuth access tokens to authenticate API requests to Zendesk. It covers the two supported OAuth flows, how to implement token refresh, and security best practices.\nOAuth is the recommended authentication method because it:\n- Doesn\u2019t require users to share their personal API token with your integration\n- Is tied to a user account, so tokens inherit that user's permissions and can't be used to access resources beyond what the authorizing user can access\n- Supports fine-grained permissions through scopes, so you can limit a token to only the access your integration actually needs\n- Uses short-lived tokens that expire automatically, reducing the risk if a token is compromised\n- Is optimal for long-term app security and maintenance\n## How OAuth authentication works\nInstead of sending a static API token with every request, your integration obtains an OAuth access token and includes that in the request header. Access tokens are short-lived and paired with a refresh token that your integration uses to automatically get a new access token when the current one expires.\n\nZendesk supports two OAuth flows. Identify which OAuth flow matches your integration:\n- **Aut"
+    },
+    {
+     "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+     "title": "How can I authenticate API requests?",
+     "snippet": "You must be a [verified user](https://support.zendesk.com/hc/en-us/articles/4408886752410-Verifying-an-end-user-s-email-address) to make authenticated API requests. To authenticate API requests, use basic authentication with your email address and password, your email address and an API token, or an OAuth access token.\n\n## API token authentication\nIf you use an [API token](https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token), combine your email address and API token to generate the authorization header. Format the email address and API token combination as a `Base-64` encoded string. For an example of how to format the authorization header, see the code block below.\n```auto\nAuthorization: Basic {base-64-encoded email_address/token:api_token}\n```\n## OAuth access token authentication\nIf you use OAuth to authenticate, format the authorization header this way:\n```auto\nAuthorization: Bearer oauth_access_token\n```\nFor more information, see [Using OAuth authentication with your application](https://support.zendesk.com/hc/en-us/articles/4408845965210-Using-OAuth-authentication-with-your-application).\n## Viewing your authorization header\nWarning: Do not se"
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "Creating and using OAuth access tokens with the API",
+     "snippet": "Developers typically use OAuth access tokens to authenticate Zendesk API requests on behalf of their users. Creating these tokens involves building an [OAuth authorization flow](https://support.zendesk.com/hc/en-us/articles/4408845965210#topic_ar1_mfs_qk) that requires interaction from the user.\nYou can also create OAuth access tokens on your own behalf without building an authorization flow. If you already have a valid OAuth access token, you can use the API to create additional access tokens. If you don't have one yet, see [Getting your first token](/documentation/authentication/oauth-migration/#getting-your-first-token) for one-time browser setup instructions to get your first token.\nThis guide shows how you can use the API to create OAuth access tokens on your own behalf. The guide also covers how to use OAuth access tokens to authenticate Zendesk API requests.\n## Creating an OAuth client\nTo create an access token, you need an OAuth client. You can use the same OAuth client to create multiple access tokens.\nYou can create an OAuth client in one of two ways:\n- Admin Center\n- Zendesk API request\n**Note:** OAuth clients are scoped to one Zendesk instance. To request a global OAuth"
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/authentication/oauth-migration",
+     "title": "Migrating from API tokens to OAuth access tokens",
+     "snippet": "# Migrating from API tokens to OAuth access tokens\nZendesk API tokens will be permanently deactivated on April 30, 2027. If your integration, script, or app currently uses an API token to call a Zendesk API, you need to migrate to OAuth before that date.\nThis guide shows you how to:\n- Choose the right OAuth flow\n- Get your first OAuth credentials\n- Keep your integration working automatically when tokens expire\n\nAPI tokens have limitations that make them a poor fit for long-term use:\n- **No expiry**: If a token is compromised, it stays valid until it's manually deactivated.\n- **No scope restrictions**: A token can access any endpoint the authenticating user is allowed to use.\n- **No application binding**: Any system that has the token and its associated email address can use it.\n## Migration timeline\nZendesk is retiring Support API tokens in three phases between July 2026 and April 2027.\n| Date | What changes |\n|---|---|\n| July 28, 2026 | **Phase 1: Auto-deactivation begins.** On July 28, 2026, these updates take effect: - Any API token that hasn't been used for 30 days will be automatically deactivated. Deactivated tokens can't be used to make API requests. - If a deactivated token"
+    },
+    {
+     "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+     "title": "developer.zendesk.com/api-reference/introduction/security-and-auth",
+     "snippet": "You must be a [verified user](https://support.zendesk.com/hc/en-us/articles/4408886752410) to make API requests. Zendesk supports using OAuth access tokens to authenticate API requests.\n**Note:** If you're an existing Zendesk customer and are currently using basic authentication or API tokens, you will have to [migrate to OAuth access tokens](https://developer.zendesk.com/documentation/authentication/oauth-vs-api-tokens/) for improved security and compatibility with future requirements.\nIf you plan on distributing an app, integration, or bot to multiple Zendesk customers, you must use global OAuth tokens to authenticate Zendesk API requests. See [Global OAuth tokens](#global-oauth-access-token) for details.\n\nThe Zendesk API supports OAuth authorization flows. For more information, see [Using OAuth authentication with your application](https://support.zendesk.com/hc/en-us/articles/4408845965210).\nAn OAuth token gives access to a single Zendesk instance (the one with the [OAuth client](https://support.zendesk.com/hc/en-us/articles/4408845965210#topic_s21_lfs_qk) used to create the token).\nOAuth access tokens also permit client-side API requests. See [Making cross-origin, browser-side"
+    }
+   ]
+  },
+  "access": {
+   "query": "Zendesk zendesk.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_mBjOfTARiQIb",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.zendesk.com/documentation/ticketing/events/getting-started-with-events",
+     "title": "Getting started with events",
+     "snippet": "Get a Zendesk Support account on a Zendesk Suite plan. It is automatically enabled to use the API.\nYou can [sign up](https://www.zendesk.com/product/pricing/#support) for a 14-day trial account. If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a [sponsored Zendesk Support account](/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development/)\nYou'll also need agent or admin permissions in the account to use the API."
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+     "title": "developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+     "snippet": "You can try out the Zendesk platform with a free, 14-day trial account. If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a sponsored Zendesk Support account.\nAs part of becoming a Zendesk developer partner, Zendesk sponsors an instance for up to 5 agents that you can use for developing, demoing, and troubleshooting your app or integration.\nUnlike a trial account, a sponsored account does not expire after 14 days.\nBy default, all Marketplace partners with a sponsored Support account receive the Suite Enterprise plan. A sponsored Sell account includes all features on the Sell Elite plan except the Firehouse, Sync, and Search APIs.\n\nA sponsored test account is reserved for developers creating applications for the [Zendesk Marketplace](https://www.zendesk.com/marketplace/). If you are interested in becoming a Zendesk Marketplace partner, you can convert your trial account into a sponsored Zendesk Support account. Customer developers or individual private app developers should use their own instances or sandboxes.\n1.  If not already done, sign up for a free Zendesk Support trial at [https://www.zendesk.com/register/free-trial/](https:"
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/ticketing/profiles/getting-started-with-profiles",
+     "title": "Getting started with profiles",
+     "snippet": "Get a Zendesk Support account on a Zendesk Suite plan. It is automatically enabled to use the API.\nYou can [sign up](https://www.zendesk.com/product/pricing/#support) for a 14-day trial account. If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a [sponsored Zendesk Support account](/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development/).\nYou'll also need agent or admin permissions in the account to use the API."
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/apps/getting-started/zendesk-app-quick-start",
+     "title": "developer.zendesk.com/documentation/apps/getting-started/zendesk-app-quick-start",
+     "snippet": "- A Zendesk account with the Zendesk Suite Growth plan or above, or the Support\nProfessional plan or above. To get a free eligible account for testing, see\n[Getting a trial or sponsored account for development](https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development/)."
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/channel_framework/build-a-channel-from-scratch/part-1-getting-started",
+     "title": "developer.zendesk.com/documentation/channel_framework/build-a-channel-from-scratch/part-1-getting-started",
+     "snippet": "-   Zendesk Support\nYou'll need access to a Zendesk account on the Zendesk Suite Professional plan or above. You can get a free, 15-day trial account. If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a [sponsored Zendesk Support account](https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development).\nYou'll also need agent or admin permissions in the account to use the API."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Zendesk API reference REST GraphQL endpoints documentation zendesk.com",
+   "log_id": "log_QU542I4N1nTm",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.zendesk.com/api-reference/sales-crm/search/schemas",
+     "title": "Schemas",
+     "snippet": "All schemas for Search API are exposed through the API itself. There are five main documents that describe interactions with the API.\n\n## GraphQL schema\n[GraphQL schema](http://graphql.org/learn/schema/) describes attributes, their\ntypes and properties available through GraphQL interface.\n### GraphQL Schema\n```\nGET /v3/graphql/schema\n```"
+    },
+    {
+     "url": "https://developer.zendesk.com/rest_api/docs/chat/conversations-api",
+     "title": "Chat Conversations API",
+     "snippet": "The reference documentation for the Conversations API is available at [https://zendesk.github.io/conversations-api/](https://zendesk.github.io/conversations-api/).\nThe Conversations API is the first GraphQL API released by Zendesk. The docs are hosted on a separate site to take advantage of the GraphQL schema. One benefit of using GraphQL is that high-quality API documentation can be generated directly from the GraphQL schema.\n\n### API path\nThe Conversations API uses one of the following paths:\n**WebSocket**\n`wss://chat-api.zopim.com/stream/0.1/graphql/{session_id}:{client_id}`\n**HTTP**\n`POST https://chat-api.zopim.com/graphql/request`\nUse HTTP for authentication. Make all other requests through a WebSocket connection.\nThe Chat REST API is unaffected by the introduction of the new path for the Conversations API."
+    },
+    {
+     "url": "https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_fields",
+     "title": "developer.zendesk.com/api-reference/ticketing/tickets/ticket_fields",
+     "snippet": "You can use this API to get system and custom ticket fields. For a list of system fields, see [About ticket fields](https://support.zendesk.com/hc/en-us/articles/4408886739098) in Help Center.\nYou can also use the API to create custom ticket fields. See [About custom field types](https://support.zendesk.com/hc/en-us/articles/4408838961562) in the Zendesk Help Center. New custom ticket fields become available in the Tickets API. See [Setting custom field values](https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/#setting-custom-field-values) in Tickets.\n\nTwo ticket field types create a relationship to another object:\n* `lookup` - References a single target record. See [Lookup relationships](https://developer.zendesk.com/api-reference/ticketing/lookup_relationships/lookup_relationships/).\n* `multi_lookup` - References multiple target records of the same object type, up to `max_selections`. See [About multi-lookup relationship fields](https://developer.zendesk.com/api-reference/ticketing/lookup_relationships/lookup_relationships/#about-multi-lookup-relationship-fields).\n\n* `GET /api/v2/ticket_fields/count`\nReturns an approximate count of system and custom ticket fie"
+    },
+    {
+     "url": "https://developer.zendesk.com/api-reference/sales-crm/search/graphql",
+     "title": "GraphQL",
+     "snippet": "# GraphQL\nSearch API provides [GraphQL](http://graphql.org) query API, currently for companies only. It has no filtering or sorting capabilities, but it is a convenient way of exploring company hierarchies.\nGraphQL companies query takes a list of company IDs as an argument and set of projections to apply on companies with those IDs. Projections may include all regular company attributes, but in GraphQL company has fields describing relations within company hierarchy, that can also be queried. Relations are defined as connections in [Relay format](https://facebook.github.io/relay/docs/en/graphql-in-relay.html).\nCurrently, query nesting is limited to one level (e.g. one can query children and ancestors for given company, but not children's children or ancestors' roots), with following exceptions:\n- Query parent for ancestor:\n```\n{ companies(ids: [1]) {   ancestors {     edges {       node {         id         parent {           edges {             node {               id             }           }         }       }     }   } }}\n```\n- Query children count for some relation\n```\n{ companies(ids: [2]) {   children {     edges {       node {         children {           count         }    "
+    },
+    {
+     "url": "https://developer.zendesk.com/rest_api/docs/support/search",
+     "title": "Search",
+     "snippet": "The Search API is a unified search API that returns tickets, users, and organizations. You can define filters to narrow your search results according to resource type, dates, and object properties, such as ticket requester or tag.\n\nTo use the API with Python or Node.js, see [Searching with the Zendesk API](/documentation/ticketing/using-the-zendesk-api/searching-with-the-zendesk-api).\n\n### Query syntax\nThe search endpoint has a `query` parameter:\n`.../api/v2/search?query={search_string}`\nThe `query` parameter value supports a syntax that lets you specify resource types and criteria. For example, you can search for \"users named Jane Doe\" or \"tickets with an open status\".\nFor more information about the query syntax and examples, see [Searching with the Zendesk API](/documentation/ticketing/using-the-zendesk-api/searching-with-the-zendesk-api).\n\n### List Search Results\n- `GET /api/v2/search?query={query}`\nReturns the search results. See Query syntax for details on the `query` parameter.\nUse the ampersand character (&) to append the `sort_by` or `sort_order` parameters to the URL."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Zendesk zendesk.com MCP server Model Context Protocol official",
+   "log_id": "log_-SGXtpuTE1uL",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Using-the-Zendesk-MCP-client-to-access-MCP-tools-in-action-flows-and-advanced-action-flows",
+     "title": "Using the Zendesk MCP client to access MCP tools in action flows and advanced action flows",
+     "snippet": "The Model Context Protocol (MCP) lets admins connect Zendesk to external MCP servers, discover the tools those servers provide, and use those tools as steps inaction flowsandadvanced action flows. This extends your Zendesk workflows to interact with third-party systems\u2014such as project management tools, e-commerce platforms, or internal knowledge systems\u2014without building custom API integrations.\n\nThe Model Context Protocol (MCP) lets admins connect Zendesk to external MCP servers, discover the tools those servers provide, and use those tools as steps in [action flows](https://support.zendesk.com/hc/en-us/articles/8855513857306) and [advanced action flows](https://support.zendesk.com/hc/en-us/articles/11149728300186). This extends your Zendesk workflows to interact with third-party systems\u2014such as project management tools, e-commerce platforms, or internal knowledge systems\u2014without building custom API integrations.\nMCP connections are created and managed in Admin Center. After you create a connection, Zendesk retrieves the available MCP tools from that server and displays them in the action builder so you can use them in workflows and, optionally, surface those flows through [auto as"
+    },
+    {
+     "url": "https://zendesk.com/blog/zendesk-insights/innovation/zendesk-ai-mcp-client",
+     "title": "Unlocking new possibilities: Revolutionizing service with the Zendesk AI MCP client",
+     "snippet": "At Zendesk, our mission is to enhance customer experiences with smarter, easier, more adaptable AI solutions. That\u2019s why we\u2019re bringing Model Context Protocol (MCP) into the Zendesk Resolution Platform. MCP\u2019s open-source model offers a simple, standardized path towards integrating AI with business data. With MCP, Zendesk\u2019s AI Agents and Copilots get the relevant, real-time data they need to go beyond isolated language models, improve AI accuracy, and drive better outcomes for agents and customers.\n### What is a Model Context Protocol (MCP)?\nAI assistants can connect to external tools with APIs, but this often requires custom, one-off integrations with limited extensibility and scalability. The Model Context Protocol (MCP), introduced by [Anthropic](https://www.anthropic.com/news/model-context-protocol), changes this. It\u2019s a standard, open framework that gives AI assistants a simple, unified way to access and interact with external data.\nThink of MCP as your personal concierge. To integrate a service and CRM system today, you would need to sift through developer documents and figure out how to connect your data. Each data point (ex. Account ID, subscription plan, etc.) might also re"
+    },
+    {
+     "url": "https://support.zendesk.com/hc/en-us/articles/11105393853210-Announcing-the-general-availability-of-the-MCP-client",
+     "title": "Announcing the general availability of the MCP client",
+     "snippet": "Zendesk is excited to announce the general availability of the MCP client, which makes it possible to use the tools on an MCP server in action flows to fetch data and take actions in external systems.\n\nWith this release, admins can connect their Zendesk account to MCP (model context protocol) servers. Both public MCP servers from vendors such as Asana, Stripe, or Github, and private MCP servers are supported.\nWhen you connect Zendesk to an MCP server, the MCP client finds all of the tools the MCP server has and lets you choose which ones you want to expose for use in action flows. When used in action flows, the MCP server tools can be used by AI-powered features, such as [auto assist](https://support.zendesk.com/hc/en-us/articles/7051314237466), [AI agents](https://support.zendesk.com/hc/en-us/articles/8966284087066), and [custom agents (EAP)](https://support.zendesk.com/hc/en-us/articles/10724438136858), streamlining how you fetch data from and perform actions in external systems and expanding what you can do with Zendesk in your business workflows.\n\nZendesk understands that there is a lot of setup and maintenance overhead involved in using traditional integrations based on APIs i"
+    },
+    {
+     "url": "https://zendesk.com/marketplace/connectors/53/mcp-client",
+     "title": "MCP Client Connector integration with Zendesk",
+     "snippet": "# MCP Client\n## Zendesk\u2019s MCP Client allows you to easily connect your Zendesk instance to external MCP Servers.\n### About this connector\nOAuth-based connections\nOur MCP Client takes care of Dynamic Client Registration, kicking off the OAuth flow, securely storing auth credentials, and securely using OAuth tokens to authenticate tool calls. For MCP Servers that require it, we also provide the ability to manually enter OAuth client details.\nTool discovery\nOnce connected the server\u2019s MCP tools are discovered and processed to capture the tool names, descriptions, input fields, and (if provided by the server) output fields.\nTool management\nYour Admins can select which tools they want to make available to Zendesk AI Agents and Action Flows.\nUse tools in Action Flows\nTools are made available as steps to use in Action Flows, easily adding new third-party functionality to event-driven workflows, and AI use cases like Auto Assist, AI Agents, and Custom Agents.\n\nMCP Client is available to use on any Zendesk Suite or Zendesk Support plan.\n### How to connect\nIn Admin Center, go to Apps and integrations > Connections > Connections"
+    },
+    {
+     "url": "https://zendesk.com/marketplace/apps/support/1191848/mcp-server",
+     "title": "MCP Server App Integration with Zendesk Support",
+     "snippet": "## Connect Zendesk to any MCP compatible AI assistant.\n### About this app\n**MCP Server for Zendesk** by Swifteq is a powerful, user friendly solution that brings the full potential of AI directly into your Zendesk Support workflows.\nThis app acts as a secure bridge between Zendesk and any MCP compatible AI assistant, letting you unlock smarter ticket analysis, AI powered suggestions, and insightful reporting without juggling extra tools.\nBest of all, **MCP Server for Zendesk is completely free to use**. You can get started in minutes and bring AI powered insights to your support team at zero cost.\n\n\u2705 **Connect Zendesk to Any MCP Enabled AI**\nSeamlessly link your Zendesk account to tools like Claude Desktop, Cursor, and other MCP compatible assistants through a secure, standards based interface.\n\u2705 **Insightful Ticket Analysis**\nAsk natural language questions like \"What issues increased this week?\" or \"Which topics cause the most friction?\"\n\n\u2705 **Flexible and Vendor Neutral Architecture**\nChoose the AI tools you prefer. Self host your MCP server or use a trusted managed version. Maintain full control over your data and workflows.\n\n### How to install\nGet started in few easy steps\n1. Cr"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

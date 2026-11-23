@@ -1,0 +1,38 @@
+{
+  "id": 78,
+  "app": "Coda",
+  "changes": [
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "narrow_api",
+      "why": "'other' not allowed; REST has token auth only, OAuth exists only for Packs",
+      "evidence": "https://community.coda.io/t/accessing-coda-api-from-a-3rd-party-software/47539"
+    },
+    {
+      "field": "auth_methods",
+      "from": [
+        "bearer_token",
+        "unknown"
+      ],
+      "to": [
+        "bearer_token"
+      ],
+      "why": "'unknown' is not a real method",
+      "evidence": "https://community.coda.io/t/accessing-coda-api-from-a-3rd-party-software/47539"
+    },
+    {
+      "field": "evidence.auth",
+      "from": "https://dlthub.com/context/source/coda-docs-migration",
+      "to": "https://community.coda.io/t/accessing-coda-api-from-a-3rd-party-software/47539",
+      "why": "Replace third-party blog with Coda community thread on REST API auth",
+      "evidence": "https://community.coda.io/t/accessing-coda-api-from-a-3rd-party-software/47539"
+    }
+  ],
+  "confirmed": [
+    "access",
+    "mcp",
+    "blocker"
+  ],
+  "searches": 4
+}

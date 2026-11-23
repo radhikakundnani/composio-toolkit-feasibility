@@ -1,0 +1,34 @@
+{
+  "id": 39,
+  "app": "Threads (Meta)",
+  "category": "Social Media",
+  "one_liner": "Publish and read Threads posts, replies and insights on behalf of users.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "approval_required",
+  "access_notes": "Create Meta app; own account needs no review, but permissions for other users require App Review. Free to use.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "community",
+  "mcp_note": "Community servers e.g. https://github.com/baguskto/threads-mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "partner_or_app_review",
+  "blocker_note": "App Review required for users without a role on the app.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developers.facebook.com/documentation/threads/get-started/get-access-tokens-and-permissions",
+    "access": "https://blog.lots.social/threads-api-free-access-posting-limits-app-review",
+    "surface": "https://developers.facebook.com/documentation/threads/reference.md",
+    "mcp": "https://github.com/baguskto/threads-mcp/blob/main/README.md"
+  }
+}

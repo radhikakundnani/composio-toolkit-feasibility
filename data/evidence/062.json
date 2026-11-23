@@ -1,0 +1,142 @@
+{
+ "id": 62,
+ "app": "Vercel",
+ "hint": "vercel.com/docs/rest-api",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "Vercel API authentication OAuth API key access token developer docs vercel.com/docs/rest-api",
+   "log_id": "log_Pjw_nf8ezzJG",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://vercel.com/docs/integrations/create-integration/short-lived-access-tokens",
+     "title": "Migrating to Short-Lived Access Tokens",
+     "snippet": "Your client secret still verifies webhooks from Vercel, and you also use it to request tokens. Tokens keep the scopes the customer approved for the installation. When Vercel calls your API, you still verify Vercel's OpenID Connect (OIDC) tokens as described in [Authentication](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication).\n\nSend a `POST` request to `https://api.vercel.com/v2/oauth/access_token` with an `application/x-www-form-urlencoded` body. Authenticate with HTTP Basic using your integration's client ID and client secret, and include these fields:\n| Field | Value |\n|---|---|\n| `grant_type` | `client_credentials` |\n| `installation_id` | The installation's configuration ID, which starts with `icfg_`. |\nReplace the placeholders with your integration's credentials and installation ID:\nterminal\n```\ncurl --request POST https://api.vercel.com/v2/oauth/access_token \\\n--user 'your_client_id_here:your_client_secret_here' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'installation_id=icfg_your_installation_id_here'\n```\nYou can also send `client_id` and `client_secr"
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "vercel.com/docs/rest-api/sdk/authentication/get-auth-token-metadata.md",
+     "snippet": "# Get Auth Token Metadata\n```http\nGET /v5/user/tokens/{tokenId}\n```\nRetrieve metadata about an authentication token belonging to the currently authenticated User.\n## Authentication\n**bearerToken**: HTTP bearer\n## Path parameters\n| Name | Type | Required | Description |\n|---|---|---|---|\n| `tokenId` | string | Yes | The identifier of the token to retrieve. The special value \"current\" may be supplied, which returns the metadata for the token that the current HTTP request is authenticated with. |\n## Example request\n```typescript\nimport { Vercel } from \"@vercel/sdk\";\nconst vercel = new Vercel({\nbearerToken: \"<YOUR_BEARER_TOKEN_HERE>\",\n});\nasync function run() {\nconst result = await vercel.authentication.getAuthToken({\ntokenId: \"5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391\",\n});\nconsole.log(result);\n}\nrun();\n```\n## Example response\n```json\n{\n\"token\": {\n\"id\": \"5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391\",\n\"name\": \"Example Name\",\n\"type\": \"oauth2-token\",\n\"prefix\": \"vcp_\",\n\"suffix\": \"abc123\",\n\"origin\": \"github\",\n\"scopes\": [\n{\n\"type\": \"user\",\n\"sudo\": {},\n\"origin\": \"app\",\n\"createdAt\": \"123\",\n\"expiresAt\": \"123\"\n}\n],\n\"createdAt\": \"1632816536002\",\n\"active"
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api/getting-started",
+     "title": "Make Your First Vercel API Request",
+     "snippet": "Use a Vercel access token to call the Vercel REST API with `curl`, then make the same request with `@vercel/sdk`. Both examples retrieve at most one project with `GET /v10/projects` and do not change your account.\n- A [Vercel account](https://vercel.com/signup)\n- A terminal with `curl`\n- An active Node.js LTS release and npm for the SDK steps\nBoth approaches call the same Vercel REST API operation and use the same access token:\n| Approach | When to use it |\n|---|---|\n| REST with `curl` | You want to call the API directly from a shell or another HTTP client. |\n| `@vercel/sdk` | You are using TypeScript or JavaScript and want generated methods and types. |\n\n1. Go to the [Account Tokens page](https://vercel.com/account/tokens) and enter a descriptive name for the token.\n2. Choose the narrowest scope that covers the projects you need to access with the API. The project-list operation works with Full Account, Team, and Project scopes. Then choose an expiration and select Create.\nSee [access token scopes](https://vercel.com/docs/accounts/access-tokens#token-scoping-levels) for the full behavior of each option.\n3. Copy the token when Vercel displays it. You cannot view its value again aft"
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api",
+     "title": "Vercel REST API Reference",
+     "snippet": "All endpoints live under the URL `https://api.vercel.com` and follow the REST architecture.\nVercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the `Authorization` header:\n`Authorization: Bearer <TOKEN>`\nCreate and manage Access Tokens in your [account settings](https://vercel.com/account/tokens).\nBy default, a request with a full-account token targets your default team. To access resources owned by another team, append the Team ID as a query string:\n`https://api.vercel.com/v6/deployments?teamId=[teamID]`"
+    },
+    {
+     "url": "https://vercel.com/docs/accounts/access-tokens?from=graph&relationship=semantic&source_path=/docs/rest-api/getting-started&source_site=vercel-docs&surface=html",
+     "title": "Access tokens",
+     "snippet": "Vercel access tokens authenticate requests to the [Vercel REST API](/docs/rest-api#creating-an-access-token) and the [Vercel CLI](/docs/cli/tokens) on your behalf. You create and manage them on the [Account Tokens page](https://vercel.com/account/tokens), under the Settings area of your account, and you can also create them without the dashboard using the [REST API](/docs/rest-api/authentication/create-an-auth-token) or the CLI.\nA token's value appears only once, at creation, so copy it then and store it somewhere secure because you cannot retrieve it again afterward. Every token carries a scope that determines which resources it can reach. This page explains the three scoping levels and walks through creating a project-scoped token, which limits a token to a single project.\nWhen you create a token, you choose how far its access reaches. Vercel supports three levels:\n| Scope | Access |\n|---|---|\n| Full Account | Acts on your personal account and every team you belong to. The Scope dropdown labels this option \"Full Account\". |\n| Team | Limited to a single team. The token can read and write that team's resources across all of its projects. |\n| Project | Limited to a single project wi"
+    }
+   ]
+  },
+  "access": {
+   "query": "Vercel vercel.com/docs/rest-api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_7Ugw9ULgAbwu",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://vercel.com/docs/rest-api",
+     "title": "Vercel REST API Reference",
+     "snippet": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests. You can deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables for projects.\n\nThe API is exposed as an HTTP/1 and HTTP/2 service over SSL. All endpoints live under the URL `https://api.vercel.com` and follow the REST architecture.\nVercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the `Authorization` header:\n`Authorization: Bearer <TOKEN>`\nCreate and manage Access Tokens in your [account settings](https://vercel.com/account/tokens).\nBy default, a request with a full-account token targets your default team. To access resources owned by another team, append the Team ID as a query string:\n`https://api.vercel.com/v6/deployments?teamId=[teamID]`\nThe API limits the number of calls you can make over a period of time. Rate limits are specified via response headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset`. See the [limits documentation](https://vercel.com/docs/limits#rate-limits) for details."
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api/getting-started",
+     "title": "Make Your First Vercel API Request",
+     "snippet": "Use a Vercel access token to call the Vercel REST API with `curl`, then make the same request with `@vercel/sdk`. Both examples retrieve at most one project with `GET /v10/projects` and do not change your account.\n- A [Vercel account](https://vercel.com/signup)\n- A terminal with `curl`\n\n1. Go to the [Account Tokens page](https://vercel.com/account/tokens) and enter a descriptive name for the token.\n2. Choose the narrowest scope that covers the projects you need to access with the API. The project-list operation works with Full Account, Team, and Project scopes. Then choose an expiration and select Create.\nSee [access token scopes](https://vercel.com/docs/accounts/access-tokens#token-scoping-levels) for the full behavior of each option."
+    },
+    {
+     "url": "https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token",
+     "title": "Access tokens",
+     "snippet": "Vercel access tokens authenticate requests to the [Vercel REST API](https://vercel.com/docs/rest-api#creating-an-access-token) and the [Vercel CLI](https://vercel.com/docs/cli/tokens) on your behalf. You create and manage them on the [Account Tokens page](https://vercel.com/account/tokens), under the Settings area of your account, and you can also create them without the dashboard using the [REST API](***REDACTED*** or the CLI.\n\nWhen you create a token, you choose how far its access reaches. Vercel supports three levels:\n| Scope | Access |\n|---|---|\n| Full Account | Acts on your personal account and every team you belong to. The Scope dropdown labels this option \"Full Account\". |\n| Team | Limited to a single team. The token can read and write that team's resources across all of its projects. |\n| Project | Limited to a single project within a team. The token can only read and write resources belonging to that one project. |"
+    },
+    {
+     "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+     "title": "Building Integrations with Vercel REST API",
+     "snippet": "To use Vercel REST API, you need to authenticate with an [access token](https://vercel.com/docs/rest-api#authentication) that contains the necessary scope. You can then provide the API token through the [`Authorization` header](https://vercel.com/docs/rest-api#authentication).\n\nShort-lived access tokens expire after one hour and work for both connected accounts and native Marketplace integrations. Your server requests them with the `client_credentials` grant, using your integration's client ID and client secret. You can start using them before you change any settings, and customers don't need to reinstall your integration.\n\nAccess billing information including charges. Only available to Pro and Enterprise teams."
+    },
+    {
+     "url": "http://vercel.co/docs/api",
+     "title": "Vercel REST API Reference",
+     "snippet": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests. You can deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables for projects.\n\nThe API is exposed as an HTTP/1 and HTTP/2 service over SSL. All endpoints live under the URL `https://api.vercel.com` and follow the REST architecture.\nVercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the `Authorization` header:\n`Authorization: Bearer <TOKEN>`\nCreate and manage Access Tokens in your [account settings](https://vercel.com/account/tokens).\nBy default, you can access resources in your personal account. To access resources owned by a team, append the Team ID as a query string:\n`https://api.vercel.com/v6/deployments?teamId=[teamID]`\nThe API limits the number of calls you can make over a period of time. Rate limits are specified via response headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset`. See the [limits documentation](/docs/limits#rate-limits) for details."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Vercel API reference REST GraphQL endpoints documentation vercel.com/docs/rest-api",
+   "log_id": "log_3p4h4nSq-DEk",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://vercel.com/docs/rest-api.md",
+     "title": "vercel.com/docs/rest-api.md",
+     "snippet": "summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.\ninstall_vercel_plugin: npx plugins add vercel/vercel-plugin\n---\n# Vercel REST API Reference\nVercel combines the best developer experience with an obsessive focus on end-user performance. Our platform enables frontend teams to do their best work.\n## access-groups\n| Method | Endpoint | Description |\n|---|---|---|\n| **GET** | [`/v1/access-groups/{idOrName}`](/docs/rest-api/access-groups/reads-an-access-group.md) | Reads an access group |\n| **POST** | [`/v1/access-groups/{idOrName}`](/docs/rest-api/access-groups/update-an-access-group.md) | Update an access group |\n| **DELETE** | [`/v1/access-groups/{idOrName}`](/docs/rest-api/access-groups/deletes-an-access-group.md) | Deletes an access group |\n| **GET** | [`/v1/access-groups/{idOrName}/members`](/docs/rest-api/access-groups/list-members-of-an-access-group.md) | List members of an access group |\n| **GET** | [`/v1/access-groups`](/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member.md) | List access groups for a team, project or member |\n| **POST** | [`/v1/access-groups`](/docs/rest-api/access-groups/creates-an-acc"
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api",
+     "title": "Vercel REST API Reference",
+     "snippet": "# Using the REST API\nInteract programmatically with your Vercel account using the SDK or direct HTTP requests. You can deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables for projects.\nThe API supports any programming language or framework that can send HTTP requests.\nThe API is exposed as an HTTP/1 and HTTP/2 service over SSL. All endpoints live under the URL `https://api.vercel.com` and follow the REST architecture.\nVercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the `Authorization` header:\n`Authorization: Bearer <TOKEN>`\nCreate and manage Access Tokens in your [account settings](https://vercel.com/account/tokens).\nBy default, a request with a full-account token targets your default team. To access resources owned by another team, append the Team ID as a query string:\n`https://api.vercel.com/v6/deployments?teamId=[teamID]`\nThe API limits the number of calls you can make over a period of time. Rate limits are specified via response headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset`. See the [limits documentation"
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api/reference/endpoints/aliases/assign-an-alias.md",
+     "title": "vercel.com/docs/rest-api/reference/endpoints/aliases/assign-an-alias.md",
+     "snippet": "# Assign an Alias\n```http\nPOST /v2/deployments/{id}/aliases\n```\nCreates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.\n## Authentication\n**bearerToken**: HTTP bearer\n## Path parameters\n| Name | Type | Required | Description |\n|---|---|---|---|\n| `id` | object | Yes | The deployment or alias ID or URL to assign from |\n## Query parameters\n| Name | Type | Required | Description |\n|---|---|---|---|\n| `teamId` | string | No | The Team identifier to perform the request on behalf of. |\n| `slug` | string | No | The Team slug to perform the request on behalf of. |\n## Request body\nRequired: Yes\nContent-Type: `application/json`\n```json\n{\n\"type\": \"object\",\n\"properties\": {\n\"alias\": {\n\"type\": \"string\",\n\"description\": \"The alias we want to assign to the deployment defined in the URL\"\n},\n\"redirect\": {\n\"type\": \"string\",\n\"description\": \"The redirect property will take precedence over the deployment id from the URL and consists of a hostname (like test.com) to which t"
+    },
+    {
+     "url": "https://docs.vercel.com/docs/rest-api/reference/endpoints/projects",
+     "title": "Retrieve a list of projects",
+     "snippet": "[  {    \"accountId\": \"example_id\",    \"alias\": [      {        \"configuredBy\": \"A\",        \"configuredChangedAt\": \"123\",        \"createdAt\": \"123\",        \"deployment\": {          \"alias\": [],          \"aliasAssigned\": \"123\",          \"aliasError\": {            \"code\": \"string\",            \"message\": \"string\"          },          \"aliasFinal\": \"string\",\n\n\"string\",            \"type\": \"endsWith\"          },          \"buildingAt\": \"123\",\n\n\"checksConclusion\": \"canceled\",          \"checksState\": \"completed\",          \"connectBuildsEnabled\": \"false\",          \"connectConfigurationId\": \"example_id\",          \"createdAt\": \"123\",          \"createdIn\": \"string\","
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api/deployments/list-deployments.md",
+     "title": "vercel.com/docs/rest-api/deployments/list-deployments.md",
+     "snippet": "# List deployments\n```http\nGET /v7/deployments\n```\nList deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.\n## Authentication\n**bearerToken**: HTTP bearer\n## Query parameters\n| Name | Type | Required | Description |\n|---|---|---|---|\n| `app` | string | No | Name of the deployment. |\n| `from` | number | No | Gets the deployment created after this Date timestamp. (default: current time) |\n| `limit` | number | No | Maximum number of deployments to list from a request. |\n| `projectId` | string | No | Filter deployments from the given ID or name. |\n| `projectIds` | array | No | Filter deployments from the given project IDs. Cannot be used when projectId is specified. |\n| `target` | string | No | Filter deployments based on the environment. |\n| `to` | number | No | Gets the deployment created before this Date timestamp. (default: current time) |\n| `users` | string | No | Filter out deployments based on users who have created the deployment. |\n| `since` | number | No | Get Deployments created after this JavaScript timestamp. |\n| `until` | number | No | Get Deployments created before th"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Vercel vercel.com/docs/rest-api MCP server Model Context Protocol official",
+   "log_id": "log_boiJaVZ_QE0Z",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://blog.vercel.com/docs/mcp",
+     "title": "Model Context Protocol",
+     "snippet": "Deploy Model Context Protocol (MCP) servers on Vercel with mcp-handler, then call their tools from agents built with the AI SDK, eve, or TanStack AI.\napp/api/mcp/route.ts\n```\nimport { createMcpHandler } from 'mcp-handler';\nimport { z } from 'zod';\nconst handler = createMcpHandler((server) => {\nserver.registerTool(\n'roll_dice',\n{\ndescription: 'Roll an N-sided die',\ninputSchema: z.object({ sides: z.number().int().min(2) }),\n},\nasync ({ sides }) => {\nconst value = 1 + Math.floor(Math.random() * sides);\nreturn { content: [{ type: 'text', text: `\ud83c\udfb2 You rolled a ${value}!` }] };\n},\n);\n});\nexport { handler as GET, handler as POST };\n```\nindex.mts\n```\nimport { createMCPClient } from '@ai-sdk/mcp';\nimport { generateText, isStepCount } from 'ai';\nconst client = await createMCPClient({\ntransport: { type: 'http', url: 'https://my-mcp-server.vercel.app/api/mcp' },\n});\ntry {\nconst { text } = await generateText({\nmodel: 'anthropic/claude-opus-5',\ntools: await client.tools(),\nprompt: 'Use roll_dice to roll a six-sided die once.',\nstopWhen: isStepCount(5),\n});\nconsole.log(text);\n} finally {\nawait client.close();\n}\n```\n[Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is a standard int"
+    },
+    {
+     "url": "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel",
+     "title": "Deploy MCP servers to Vercel",
+     "snippet": "Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of features](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel#deploy-mcp-servers-efficiently) like [Vercel Functions](https://vercel.com/docs/functions), [OAuth](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel#enabling-authorization), and [efficient scaling](https://vercel.com/docs/fluid-compute) for AI applications.\n\nVercel provides the following features for production MCP deployments:\n- Optimized cost and performance: [Vercel Functions](https://vercel.com/docs/functions) with [Fluid compute](https://vercel.com/docs/fluid-compute) handle MCP servers' irregular usage patterns (long idle times, quick message bursts, heavy AI workloads) through [optimized concurrency](https://vercel.com/docs/fundamentals/what-is-compute#optimized-concurrency), [dynamic scaling](https://vercel.com/docs/fundamentals/what-is-compute#dynamic-scaling), and [instance sharing](https://vercel.com/docs/fundamentals/what-is-compute#compute-instance-sharing). You only pay for compute resources you actually use with minimal idle time.\n- [Instant Rollback](https://vercel.com/docs/instant-rollback): Quickly revert to pr"
+    },
+    {
+     "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+     "title": "Use Vercel's MCP server",
+     "snippet": "Connect your AI tools to Vercel using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io), an open standard that lets AI assistants interact with your Vercel projects.\nUse the `add-mcp` CLI to add the Vercel MCP to all your tools.\nVercel MCP is Vercel's official MCP server. It's a remote MCP with OAuth that gives AI tools secure access to your Vercel projects available at:\n`https://mcp.vercel.com`\nIt integrates with popular AI assistants like Claude, enabling you to:\n- Search and navigate Vercel documentation\n- Manage projects and deployments\n- Analyze deployment logs\n- Query visitors, page views, and custom events\nVercel MCP implements the latest [MCP Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) and [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http) specifications.\nUse Vercel MCP to search documentation, manage projects, inspect deployments, and query Web Analytics. See the [tools reference](https://vercel.com/docs/agent-resources/vercel-mcp/tools) for the audited catalog and workflow guides. Your connection's tool list shows which tools and parameters are avai"
+    },
+    {
+     "url": "https://vercel.com/docs/mcp/integrations/ai-sdk",
+     "title": "AI SDK with MCP",
+     "snippet": "Use the [AI SDK](https://vercel.com/docs/ai-sdk) to call tools from a [Model Context Protocol (MCP)](https://vercel.com/docs/mcp) server hosted on Vercel. The `@ai-sdk/mcp` client discovers the server's tools, and [AI Gateway](https://vercel.com/docs/ai-gateway) handles model requests.\n\n- An [AI Gateway API key](https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys).\n- The `roll_dice` MCP server from [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel#deploy-an-mcp-server-on-vercel), deployed at a URL your client can reach.\nInstall the AI SDK and its MCP client:\nSave your AI Gateway API key and deployed MCP endpoint in a `.env` file. Replace `your-project` with your deployment's domain:\n.env\n```\nAI_GATEWAY_API_KEY=your_api_key_here\nMCP_SERVER_URL=https://your-project.vercel.app/api/mcp\n```\nIf your MCP server requires a bearer token, also set `MCP_SERVER_TOKEN` to a token the server accepts. For OAuth consent and token refresh, follow [Vercel Connect with AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp).\n\nindex.mts\n```\nimport { createMCPClient } from '@ai-sdk/mcp';\nimport { generateText, isStepCount } from '"
+    },
+    {
+     "url": "https://vercel.com/kb/guide/mcp-server-with-weather-tool-express",
+     "title": "Build an MCP Server with Weather tools using Express and Vercel",
+     "snippet": "In this tutorial, you will expose the functions of a weather API as tools that AI agents can discover and use through the Model Context Protocol (MCP) by:\n- Creating an Express API using Vercel's CLI and adding an endpoint that returns real time weather data.\n- Build an MCP server with four specialized tools\n- Test your MCP server with the MCP Inspector and the Cursor IDE\n\nThe complete code for this guide is available in this [Github repository.](https://github.com/vercel/examples/tree/main/guides/express-weather-mcp-server) You can [deploy it with one click](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/guides/express-weather-mcp-server&project-name=express-weather-mcp-server&repository-name=express-weather-mcp-server) on Vercel.\n\nAdding MCP to Express creates two layers:\n1. Express REST API: Your endpoints work as normal HTTP routes. They handle business logic, fetch data, process requests, and return JSON.\n2. MCP Tools: MCP tools wrap your Express endpoints. When an AI agent calls a tool, the tool requests your Express endpoint and formats the response.\nThe `mcp-handler` package handles MCP protocol details. Because it expects Web API R"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

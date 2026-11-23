@@ -1,0 +1,142 @@
+{
+ "id": 40,
+ "app": "SendGrid",
+ "hint": "sendgrid.com",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "SendGrid API authentication OAuth API key access token developer docs sendgrid.com",
+   "log_id": "log_zCi24pdgOIEq",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://rollout.com/integration-guides/sendgrid/how-to-build-a-public-sendgrid-integration-building-the-auth-flow",
+     "title": "How to build a SendGrid API integration",
+     "snippet": "## Configuring SendGrid API\nHead over to your SendGrid account and grab that API key. We'll use it to set up our environment variables:\n```\necho \"SENDGRID_API_KEY=your_api_key_here\" > .env\n```\nAlright, here's where the magic happens. We're going to create an authorization URL, handle the redirect, and exchange the authorization code for an access token.\nFirst, let's create our authorization URL:\n```\nconst authUrl = ` https://api.sendgrid.com/oauth/authorize?client_id= ${ CLIENT_ID } &redirect_uri= ${ REDIRECT_URI } &response_type=code ` ;\n```\n## Building the Express server\nTime to set up our Express server with routes for authorization and callback:\n```\nconst express = require ( 'express' ) ; const axios = require ( 'axios' ) ; require ( 'dotenv' ) . config ( ) ; const app = express ( ) ; app . get ( '/auth' , ( req , res ) => { res . redirect ( authUrl ) ; } ) ; app . get ( '/callback' , async ( req , res ) => { const { code } = req . query ; // Exchange code for token here } ) ; app . listen ( 3000 , ( ) => console . log ( 'Server running on port 3000' ) ) ;\n```\n## Securing the integration\nSecurity first! Let's implement CSRF protection and use the state parameter:\n```\nconst cryp"
+    },
+    {
+     "url": "https://docs.sendgrid.com/api-reference/webhooks/test-event-notification-settings",
+     "title": "Test Event Notification Settings | SendGrid Docs",
+     "snippet": "### Test OAuth configuration\nTo test your OAuth configuration, you must include the necessary OAuth properties: `oauth_client_id`, `oauth_client_secret`, and `oauth_token_url`.\nIf the webhook you are testing already has OAuth credentials saved, you will provide only the `oauth_client_id` and `oauth_token_url`\u2014we will pull the secret for you. If you are testing a new set of OAuth credentials that have not been saved with SendGrid, you must provide all three property values.\nYou can retrieve a previously saved `oauth_client_id` and `oauth_token_url` from the [**Get an Event Webhook**](/docs/sendgrid/api-reference/webhooks/get-an-event-webhook) endpoint; however, for security reasons, SendGrid will not provide your `oauth_client_secret`.\n---\n## Operation details\n### Authentication\n### Headers\nProperty nameTypeRequiredDescription\nAuthorizationstring\nrequired\nDefault: `Bearer <<YOUR_API_KEY_HERE>>`\n---\non-behalf-ofstring\nOptional\nThe `on-behalf-of` header allows you to make API calls from a parent account on behalf of the parent's Subusers or customer accounts. You will use the parent account's API key when using this header. When making a call on behalf of a customer account, the prope"
+    },
+    {
+     "url": "https://twilio.com/docs/sendgrid/for-developers/parsing-email/securing-your-parse-webhooks",
+     "title": "Securing your Inbound Parse Webhooks",
+     "snippet": "The Inbound Parse service supports three security mechanisms that you can apply to your webhook:\n- Signature Verification validates incoming Inbound Parse Webhook requests by verifying their Elliptic Curve Digital Signature Algorithm (ECDSA) cryptographic signature. Twilio SendGrid signs the payload with a private key, and you verify the signature included in the HTTP headers with the public key, which you download and store on your end.\n- OAuth Verification uses OAuth to authenticate webhook requests so that only requests with valid access tokens are processed. SendGrid fetches access tokens from an OAuth server that you designate and includes the access token in the `Authorization` header of the HTTP `POST` request.\n- The hybrid approach combines both signature validation and OAuth, adding multiple layers of protection to your webhooks.\n\n1curl -v -X POST https://api.sendgrid.com/v3/user/webhooks/security/policies \\\n2--header \"Authorization: bearer <<YOUR_API_KEY_HERE>>\" \\\n3--data '{\n4  \"name\": \"example policy\",\n5  \"oauth\": {\n6    \"client_id\": \"client_456\",\n7    \"client_secret\": \"secret\",\n8    \"token_url\": \"http://oauth.example.com/user/456/token\",\n9    \"scopes\": [\"webhooks:read\","
+    },
+    {
+     "url": "https://docs.sendgrid.com/for-developers/sending-email/authentication",
+     "title": "Authentication | SendGrid Docs | Twilio",
+     "snippet": "Twilio SendGrid supports API keys delivered via Bearer token or Basic authentication, depending on the Twilio SendGrid functionality you are using. In addition to Bearer API key authentication, Twilio SendGrid recommends two-factor authentication (2FA) to improve security.\n---\n## API key\nAuthenticate to the Twilio SendGrid API by creating an API Key in the [Settings section of the Twilio SendGrid console](https://app.sendgrid.com/settings/api_keys).\nTwilio SendGrid requires using API keys because they are a secure way to talk to the Twilio SendGrid API that is separate from your username and password. If your API key gets compromised, you can delete and create a new API key and update your environment variables with the new key. API key permissions can be set to provide access to different functions of your account, without providing access to your account as a whole.\nTo use an API key, pass an Authorization header with a value of `Bearer <Your-API-Key-Here>`, where you replace `<Your-API-Key-Here>` with the API Key that you created in the UI.\nExample header:\n```\n1 GET https://api.sendgrid.com/v3/resource HTTP/1.1 2 Authorization: Bearer < Your-API-Key-Her e >\n```\n```\ncurl -X \"GET\""
+    },
+    {
+     "url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+     "title": "Authentication",
+     "snippet": "The Twilio SendGrid Web API v3 supports API keys, which add an additional layer of security to your account. Using API keys, you can:\n- Use another method of authentication separate from your account username and password.\n- Assign [specific permissions](/docs/sendgrid/api-reference/api-key-permissions) to API keys that limit which areas of your account the key can access.\nYou can create [API keys in your account](https://app.sendgrid.com/settings/api_keys). To use an API key, include an `Authorization` header with the value `Bearer <YOUR_API_KEY_HERE>` in your request. Replace `<YOUR_API_KEY_HERE>` with your API secret key.\n#### Example API request header\n```\n1GET https://api.sendgrid.com/v3/resource HTTP/1.1\n2Authorization: Bearer <YOUR_API_KEY_HERE>\n```\n#### Example API request using bash\n```\n1curl -X \"GET\" \"https://api.sendgrid.com/v3/templates\" \\\n2     -H \"Authorization: Bearer <YOUR_API_KEY_HERE>\" \\\n3     -H \"Content-Type: application/json\"\n```"
+    }
+   ]
+  },
+  "access": {
+   "query": "SendGrid sendgrid.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_-FuV3YZ7vVk-",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.sendgrid.com/for-developers/sending-email/quickstart-go",
+     "title": "Email API Quickstart for Go",
+     "snippet": "When you sign up for a [SendGrid account](https://signup.sendgrid.com/), you can start a [free trial](https://docs.sendgrid.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan#free-trial)that allows you to send up to 100 emails per day for 60 days. After the 60-day trial period ends, you'll need to [upgrade your plan](https://docs.sendgrid.com/docs/sendgrid/ui/account-and-settings/upgrading-your-plan) to continue sending emails. For more plan options, see [SendGrid pricing](https://sendgrid.com/pricing/)."
+    },
+    {
+     "url": "https://sendgrid.com/en-us/free",
+     "title": "Email API Pricing",
+     "snippet": "# Start sending with a free SendGrid Email API trial\n- Sign up for a free trial\u2014no credit card required\n- Only pay for the volume and features you need\n- Unlock volume discounts as you scale\n## SendGrid Email API Plans\nPricing is determined by monthly email volume and features. Select your email volume below to see which plans are right for you.\nRecommended\nNo credit card, no commitment.\nWhat\u2019s included:\n- Analytics & deliverability optimization\n- Additional teammates:\n1\n- Event webhook:\n1\n- Email validation:\n0\n- Dynamic templates:\nEditor\nRecommended\nYou can upgrade any time after your free account is set up.\nTaxes and [overages may\napply](https://support.sendgrid.com/hc/en-us/articles/40779261694875-Twilio-SendGrid-Overage-Rates).\nWhat\u2019s included:\n\nWhat\u2019s included:\n- Analytics & deliverability optimization\n- Dedicated IPs included\n- Subuser management\n- Single sign-on (SSO)\n- Additional teammates:\n1,000\n- Event webhook:\n5\n- Email validation:\n2,500\n- Dynamic templates:\nEditor and testing\n\n| #### **Integration features** | #### **Free Trial** $0/mo for 60 days | #### **Essentials** starting at $19.95/mo | #### **Pro** starting at $89.95/mo |\n\n### Test the features with our free plan"
+    },
+    {
+     "url": "https://sendgrid.com/docs/for-developers/sending-email/quickstart-nodejs",
+     "title": "Email API Quickstart for Node.js | SendGrid Docs",
+     "snippet": "When you sign up for a [SendGrid account](https://signup.sendgrid.com/), you can start a [free trial](/docs/sendgrid/ui/account-and-settings/upgrading-your-plan#free-trial)that allows you to send up to 100 emails per day for 60 days. After the 60-day trial period ends, you'll need to [upgrade your plan](/docs/sendgrid/ui/account-and-settings/upgrading-your-plan) to continue sending emails. For more plan options, see [SendGrid pricing](https://sendgrid.com/pricing/)."
+    },
+    {
+     "url": "https://docs.sendgrid.com/for-developers/sending-email/quickstart-php",
+     "title": "Email API Quickstart for PHP | SendGrid Docs",
+     "snippet": "When you sign up for a [SendGrid account](https://signup.sendgrid.com/), you can start a [free trial](/docs/sendgrid/ui/account-and-settings/upgrading-your-plan#free-trial)that allows you to send up to 100 emails per day for 60 days. After the 60-day trial period ends, you'll need to [upgrade your plan](/docs/sendgrid/ui/account-and-settings/upgrading-your-plan) to continue sending emails. For more plan options, see [SendGrid pricing](https://sendgrid.com/pricing/).\n\nUnlike a username and password \u2014 credentials that allow access to your full account \u2014 an API key is authorized to perform a limited scope of actions. If your API key is compromised, you can also cycle it (delete and create another) without changing your other account credentials.\n\nTo complete this tutorial, you can create a Restricted Access API key with **Mail Send** > **Full Access** permissions only, which will allow you to send email and schedule emails to be sent later. You can edit the permissions assigned to an API key later to work with additional services."
+    },
+    {
+     "url": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Overview-of-60-Day-Free-Trial-Plans-for-New-SendGrid-Accounts",
+     "title": "Overview of 60-Day Free Trial Plans for New SendGrid Accounts",
+     "snippet": "Beginning March 25, 2025 and when creating a new Twilio SendGrid account for email sending through either [Twilio Console](http://www.twilio.com) (then navigating to SendGrid) or directly with [SendGrid](http://www.sendgrid.com), users will be given a 60 day timed free trial plan. This trial period provides your team with time to evaluate and test the email offerings of the Twilio SendGrid product before determining if an [Email API and Marketing Campaigns paid plan](https://www.twilio.com/en-us/products/email-api/pricing) makes sense for your business.\n## What You Need To Know\nTwilio SendGrid accounts are primarily separated into two main account plan types: \"Email API\" and \"Marketing Campaigns\". Accounts on a 60 day timed trial plan will grant temporary access to using both plan types--allowing time to test the functionality of each plan based on your team's needs. Both \"Email API\" and \"Marketing Campaigns\" have individual limitations (and can also be upgraded and downgraded independently) during the trial period as follows:\n### Email API\n- **Send up to 100 email messages via web API or SMTP per day**\n- **Try most of the features related to the \"Essentials\" Email API plan**\nAn ex"
+    }
+   ]
+  },
+  "surface": {
+   "query": "SendGrid API reference REST GraphQL endpoints documentation sendgrid.com",
+   "log_id": "log_ESOXle96hZ0E",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.sendgrid.com/api-reference/mail-send/mail-send",
+     "title": "Mail Send",
+     "snippet": "## Operation overview\n## POST/v3/mail/send\n### Base url: https://api.sendgrid.com (for global users and subusers)\n### Base url: https://api.eu.sendgrid.com (for EU regional subusers)\n*The Mail Send operation allows you to send email over SendGrid's v3 Web API*\nFor an overview of this API, including its features and limitations, please see the [Mail Send API overview page](https://docs.sendgrid.com/docs/sendgrid/api-reference/mail-send)\nThe overview page also includes links to SendGrid's Email API quickstarts and helper libraries to get you working with this endpoint even faster."
+    },
+    {
+     "url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/requests",
+     "title": "Requests",
+     "snippet": "### Base URL\nThe base URL for Web API v3 requests is `https://api.sendgrid.com/v3/` for global users and subusers, and `https://api.eu.sendgrid.com/v3/` for EU subusers.\n**All requests must be made over HTTPS. The API does not support HTTP.**\n### HTTP Verbs\n| **Verb** | **Description** |\n|---|---|\n| `GET` | Retrieve a resource or group of resources |\n| `POST` | Create a new resource |\n| `PUT` | Update an existing resource |\n| `DELETE` | Delete an existing resource |\n| `OPTIONS` | View allowed verbs against a specific resource |\n### Accept Header\nThe API provides JSON responses. The [accept header](https://www.soapui.org/docs/rest-testing/understanding-rest-parameters) is optional. If you don't set it, the API uses `application/json`.\n```\n1GET https://api.sendgrid.com/v3/endpoint HTTP/1.1\n2Accept: application/json\n```\n### Arrays of Data\nWhen you send an array of data in a `GET` request, you will include the parameter multiple times on the URL. The parameter name does not require brackets.\n#### Example Array in a GET request\n```\nGET https://api.sendgrid.com/v3/endpoint?parameter=data1&parameter=data2 HTTP/1.1\n```\n---\n## Formatting Your Request\n### Request Body\nWhen submitting data to"
+    },
+    {
+     "url": "https://docs.sendgrid.com/api-reference/contacts/get-contacts-by-emails",
+     "title": "Get Contacts by Emails | SendGrid Docs",
+     "snippet": "## POST/v3/marketing/contacts/search/emails\n### Base url: https://api.sendgrid.com (The Twilio SendGrid v3 API)\n**This endpoint allows you to retrieve up to 100 contacts matching the searched `email` address(es), including any `alternate_emails`.**\nEmail addresses are unique to a contact, meaning this endpoint can treat an email address as a primary key to search by. The contact object associated with the address, whether it is their `email` or one of their `alternate_emails` will be returned if matched.\nEmail addresses in the search request do not need to match the case in which they're stored, but the email addresses in the result will be all lower case. Empty strings are excluded from the search and will not be returned.\nThis endpoint should be used in place of the \"Search Contacts\" endpoint when you can provide exact email addresses and do not need to include other [Segmentation Query Language (SGQL)](/docs/sendgrid/for-developers/sending-email/segmentation-query-language) filters when searching.\nIf you need to access a large percentage of your contacts, we recommend exporting your contacts with the \"Export Contacts\" endpoint and filtering the client side results.\nThis endpoint"
+    },
+    {
+     "url": "https://docs.sendgrid.com/api-reference/campaigns-api/retrieve-all-campaigns",
+     "title": "Retrieve all Campaigns | SendGrid Docs",
+     "snippet": "## GET/v3/campaigns\n### Base url: https://api.sendgrid.com (The Twilio SendGrid v3 API)\n**This endpoint allows you to retrieve a paginated list of all of your campaigns.**\nReturns campaigns in reverse order they were created (newest first).\nReturns an empty array if no campaigns exist.\nYou can use the `limit` query parameter to set the page size. If your list contains more items than the page size permits, you can make multiple requests. Use the `offset` query parameter to control the position in the list from which to start retrieving additional items.\n\nYou will use the parent account's API key when using this header. When making a call on behalf of a customer account, the property value should be \"account-id\" followed by the customer account's ID (e.g., `on-behalf-of: account-id <account-id>`). When making a call on behalf of a Subuser, the property value should be the Subuser's username (e.g., `on-behalf-of: <subuser-username>`)."
+    },
+    {
+     "url": "https://docs.sendgrid.com/api-reference/send-test-email/send-a-test-marketing-email",
+     "title": "Send a Test Marketing Email | SendGrid Docs",
+     "snippet": "## POST/v3/marketing/test/send_email\n### Base url: https://api.sendgrid.com (The Twilio SendGrid v3 API)\n**This endpoint allows you to send a test marketing email to a list of email addresses**.\nBefore sending a marketing message, you can test it using this endpoint. You may specify up to **10 contacts** in the `emails` request body field. You must also specify a `template_id` and include either a `from_address` or `sender_id`. You can manage your templates with the [Twilio SendGrid App](https://mc.sendgrid.com/dynamic-templates) or the [Transactional Templates API](/docs/sendgrid/api-reference/transactional-templates).\n> Please note that this endpoint works with Dynamic Transactional Templates only. Legacy Transactional Templates will not be delivered."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "SendGrid sendgrid.com MCP server Model Context Protocol official",
+   "log_id": "log_ENS_ISnCterf",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/Garoth/sendgrid-mcp/blob/main/README.md",
+     "title": "sendgrid-mcp/README.md at main \u00b7 Garoth/sendgrid-mcp",
+     "snippet": "A Model Context Protocol (MCP) server that provides access to SendGrid's Marketing API for email marketing and contact management. [https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api](https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api)\n\n## Important Note on API Support\nThis server exclusively supports SendGrid's v3 APIs and does not provide support for legacy functionality. This includes:\n- Dynamic templates only - legacy templates are not supported\n- Marketing API v3 for all contact & contact list operations\n- Single Sends API for bulk email sending\n\n## Installation\n```\ngit clone https://github.com/Garoth/sendgrid-mcp.git\ncd sendgrid-mcp\nnpm install\n```\n\n2. Add it to your Cline MCP settings file inside VSCode's settings (ex. ~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json):\n```\n{\n\"mcpServers\": {\n\"sendgrid\": {\n\"command\": \"node\",\n\"args\": [\"/path/to/sendgrid-mcp/build/index.js\"],\n\"env\": {\n\"SENDGRID_API_KEY\": \"your-api-key-here\"\n},\n\"disabled\": false,\n\"autoApprove\": [\n\"list_contacts\",\n\"list_contact_lists\",\n\"list_templates\",\n\"list_single_sends\",\n\"get_single_send\",\n\"list_verified_senders\",\n\"list_suppression"
+    },
+    {
+     "url": "https://twilio.com/en-us/blog/developers/community/build-a-sendgrid-mcp-server-for-ai-email-workflows",
+     "title": "Build a SendGrid MCP Server for AI Email Workflows",
+     "snippet": "[Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol) is an open standard developed by Anthropic that lets you connect AI models to external services through [MCP servers](https://medium.com/@sebuzdugan/what-are-mcp-servers-the-new-ai-trend-explained-for-everyone-8936489c561f). Instead of stopping at producing drafts inside a chat window, a model uses MCP to take action such as sending emails, updating databases, or working with APIs. Before MCP, models could only suggest the next step and leave the implementation part to the user. In this article, you\u2019ll build a local MCP server that gives your AI workflows the ability to use SendGrid for email automation.\n\n- A SendGrid account. If you don't have one, create it [here](https://sendgrid.com/). You will receive a 60-day free trial that allows up to 100 email sends per day.\n- [Basic understanding of Python](https://www.learnpython.org/) and the command line interface.\n- Python 3.9 or later installed on your computer.\n\nStart by creating a folder named *sendgrid-mcp* at a location of your choice on your computer. This will be the root directory of your project and will hold all your code and configuration"
+    },
+    {
+     "url": "https://npmjs.com/package/sendgrid-mcp?activeTab=versions",
+     "title": "sendgrid-mcp",
+     "snippet": "# SendGrid MCP Server\nA Model Context Protocol (MCP) server that provides comprehensive access to SendGrid's API v3 for email marketing, transactional email operations, dynamic template management, and detailed analytics. Features 59 tools covering all aspects of email management and performance analysis.\n## Installation\n```\nnpm install -g sendgrid-mcp\n```\nThen configure with your preferred MCP client (see configuration examples below).\n## Supported MCP Clients\n\u2705 **Claude Desktop** - Official desktop app \u2705 **Claude Code** - Official CLI tool \u2705 **Cline** - VS Code extension \u2705 **Zed Editor** - Modern code editor \u2705 **Continue** - VS Code autopilot \u2705 **Any MCP-compatible client**\n## Features\n- **Marketing Automations**: Create and manage email automation workflows\n- **Single Send Campaigns**: Manage one-time email campaigns with detailed performance tracking\n- **Contact Management**: Complete CRUD operations for contacts with advanced search and bulk operations\n- **Email Statistics & Analytics**: Multi-dimensional performance analysis across browsers, devices, geography, and email providers with 13-month historical data\n- **Dynamic Segment Management**: Create, update, and delete conta"
+    },
+    {
+     "url": "https://github.com/garethcull/sendgrid-mcp",
+     "title": "GitHub - garethcull/sendgrid-mcp: An open source Sendgrid MCP server that helps marketing teams pull email stats and save html templates to sendgrid using AI Models. Built in Flask with Python.",
+     "snippet": "# SendGrid MCP Server\nA Model Context Protocol (MCP) server that exposes SendGrid Email Management and Reporting tools as MCP-compatible endpoints. This MCP Server provides endpoints for automated interaction with SendGrid \u2014 allowing AI Assistants, MCP Clients such as OpenAI\u2019s Responses API, Cursor, or the prototypr.ai MCP Client to read, create, analyze, and manage email templates or metrics through natural language.\nThis server is built using Flask and can be deployed to Google Cloud Run or any environment that supports Python-based web services.\nIt was originally designed as part of prototypr.ai's Studio product, to help streamline email marketing creation. When you connect this MCP in prototypr.ai Studio you can import any dynamic email template to the Studio canvas, make changes with leading models such as Gemini 3 Pro and save these changes back into your Sendgrid account.\n\n# MCP Features\nThis SendGrid MCP Server exposes multiple tools through the MCP protocol:\n- list_email_templates \u2013 Fetches a list of available SendGrid dynamic email templates.\n- get_html_template_by_id \u2013 Retrieves the HTML body for a specific template ID.\n- save_email_html_template \u2013 Saves a new or updated"
+    },
+    {
+     "url": "https://github.com/universal-mcp/sendgrid",
+     "title": "GitHub - universal-mcp/sendgrid",
+     "snippet": "# Sendgrid Universal MCP Server\nThis repository contains an implementation of an Sendgrid Universal MCP (Model Context Protocol) server. It provides a standardized interface for interacting with Sendgrid's tools and services through a unified API.\nThe server is built using the Universal MCP framework.\nThis implementation follows the MCP specification, ensuring compatibility with other MCP-compliant services and tools.\n## Usage\nYou can start using Sendgrid directly from [agentr.dev](https://agentr.dev). Visit [agentr.dev/apps](https://agentr.dev/apps) and enable Sendgrid.\nIf you have not used universal mcp before follow the setup instructions at [agentr.dev/quickstart](https://agentr.dev/quickstart)\n## Available Tools\nThe full list of available tools is at [./src/universal_mcp_sendgrid/README.md](/universal-mcp/sendgrid/blob/master/src/universal_mcp_sendgrid/README.md)\n\nFollow the steps below to set up your development environment:\n1. **Sync Project Dependencies**\n```\nuv sync\n```\nThis installs all dependencies from `pyproject.toml` into a local virtual environment (`.venv`).\n2. **Activate the Virtual Environment**\nFor Linux/macOS:\n```\nsource .venv/bin/activate\n```\nFor Windows (Power"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": 14,
+ "app": "Front",
+ "hint": "front.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Front API authentication OAuth API key access token developer docs front.com",
+   "log_id": "log_gTg7wAOLQm-E",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dev.frontapp.com/docs/oauth",
+     "title": "OAuth",
+     "snippet": "OAuth 2.0 is a protocol that lets external applications request authorization to API access in a secure way. When you set up OAuth in your app, you specify which scopes the OAuth token will have access to. Customers installing your app are then asked to authorize the requested scopes so that data is sent to you from their customer instance.\nEach OAuth application is assigned a unique Client ID and Client Secret which will be used in the authorization flow. The Client Secret should never be shared. To obtain your OAuth credentials, refer to [Create, manage, and publish apps](https://dev.frontapp.com/docs/create-and-manage-apps#obtain-oauth-credentials-for-your-app).\n\nThese are the main URLs that our OAuth process utilizes.\n| URL | Value |\n|---|---|\n| Authorization | `https://app.frontapp.com/oauth/authorize` |\n| Token & refresh URL | `https://app.frontapp.com/oauth/token` |\n##\nToken scopes\nRefer to the [Authentication](https://dev.frontapp.com/docs/authentication#token-scopes) topic to learn about the scopes available to your OAuth token.\n##\nUsing OAuth with Front\nFront's OAuth implementation only supports the authorization code grant type which defines a flow to get a temporary aut"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/authentication",
+     "title": "Authentication",
+     "snippet": "# Authentication\nThe Core API uses Bearer tokens to authenticate its user.\nYou MUST send the token for each request in the Authorization header. The token MUST be preceded by `Bearer`. See the `Authorization` header in the example request below.\n```\ncurl --request GET \\\n--url https://api2.frontapp.com/conversations/cnv_123/drafts\n--header 'Authorization: Bearer [REQUEST_TOKEN]'\n```\n#\nOAuth v Front API Tokens\n**There are two ways to get a Bearer token \u2014 through API tokens in your settings or through an OAuth implementation**.\nIn general, Front recommends implementing OAuth when feasible, which has the additional benefit of building within our [application framework](/docs/create-and-manage-apps). The app framework makes it easy for customers to install your integration and makes it easy for you to update the integration with new Front features as they are added to the framework.\nHowever, if you\u2019re just building an integration for your own Front instance or a single Front customer, or just want to test our API endpoints as you brainstorm what to build, you can [generate an API token](/docs/create-and-revoke-api-tokens) to get up and running more quickly.\nFor Partners looking to launc"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/create-and-manage-apps",
+     "title": "Create, manage, and publish apps",
+     "snippet": "- OAuth\u2014Allows users to authorize external system access to Front instances for purposes of syncing data or performing programmatic actions.\n\n> If your webhook is part of an app that you are publishing on our App Store, you must add OAuth to the app so that customers can authorize that Front events be sent to your webhook from their instance.\n\nEvery app you create on the Front Platform supports [OAuth](https://oauth.net/). Front recommends that you implement OAuth for apps that need to fetch or update data from Front on behalf of a Front user. If you are publishing your app to the App Store, OAuth becomes a requirement for receiving and utilizing data through the Core API or webhooks for any customers that install your app.\n\nYou can use OAuth to authorize requests to the [Core API](https://dev.frontapp.com/docs/core-api-overview) or to authorize users for your [app channel](https://dev.frontapp.com/docs/channels-overview) or to receive [webhook](https://dev.frontapp.com/docs/webhooks-1) events from other customer instances. By implementing an OAuth flow, an authorized app receives an access token to make requests to Front for authorized data.\nComplete the following steps to view yo"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/creating-a-partner-channel",
+     "title": "Fundamentals of Application Channels",
+     "snippet": "When Front sends the initial authorization request for your channel, it also includes a `channel_id` property. This value is different from the Front ID and secret credentials supplied for your channel. You need the `channel_id` to make calls to the Channel API, which allows you to sync inbound and outbound messages from the channel into Front.\n\nNow that you have an application channel set up, you\u2019ll need to build support for a few key functions. The first is channel authorization, which occurs when a Front user attempts to connect an instance of your channel from their Front settings.\nIf you set your authentication method to \u201cAPI Token\u201d, users will see the following when they attempt to connect your channel. If you haven\u2019t already, you\u2019ll need to set up some kind of mechanism to allow users to create an API token for your service. Note that the `API Key` that users are expected to submit here is *not* the same as the secret key you obtain from the **Settings** tab of your app. The API key discussed in this section is expected to be something that your users can get directly from you, and will allow you to identify which user is trying to connect the channel to Front.\n![](https://f"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+     "title": "API tokens",
+     "snippet": "API tokens allow you to test the Front [Core API](https://dev.frontapp.com/docs/core-api-overview) or implement integrations or scripts that make programmatic updates to Front via the API. Once you have an API token, you can use it to [authenticate](https://dev.frontapp.com/docs/authentication) Core API requests.\n\nOAuth access versus API tokens\nFront requires that partners implement OAuth instead of API tokens when building Core API integrations that make updates on behalf of a Front customer or their account, unless you obtain an exception from us. OAuth makes it easier for users to enable and use your integration by allowing users to simply authorize the app with an existing account. To learn more about this topic, refer to [Authentication](https://dev.frontapp.com/docs/authentication).\nTo learn how to configure OAuth, refer to the [Create, manage, and publish apps](https://dev.frontapp.com/docs/create-and-manage-apps) topic.\n##\nCreate an API token\n1. Go to **Settings > Developers**.\n2. Go to the **API Tokens** tab.\n3. Click **Create API token**.\n4. Specify an **API token name**.\n\nFeatures\nThe following features specify what functionality your token can be used for:\n- **Access re"
+    }
+   ]
+  },
+  "access": {
+   "query": "Front front.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_54VleOIHFny5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dev.frontapp.com/docs/partnering-with-front",
+     "title": "Partnering With Front",
+     "snippet": "Creating your developer account\nIf you don't already have an account, you'll want to [sign up for a free development account](https://front.com/signup?affiliate=developers). If your team is already using Front, you're welcome to opt out of creating a developer account and use your production account for testing. Both account types will give you the functionality you need to build on Front. However, a developer account is recommended if you don't want to test on production data or if you are not already a paying customer.\n\n> In order to simplify customer configuration steps and to easily maintain your app when new Front features are released, we require that partner integrations connect to the Core API via [OAuth](https://dev.frontapp.com/docs/oauth) unless you obtain an exception from us. The only exceptions we currently consider are ones where you cannot access certain Front resources via OAuth."
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/welcome",
+     "title": "Welcome",
+     "snippet": "If you are building an app you intend to publish on our App Store, you must build this app in a developer account. If you are building an app for use in a specific customer instance, creating a separate developer account is optional. The developer account will provide you with an environment that does not include production data so it will be safer to test in. The production account, however, will ultimately be where you want your app to live for your company to use it.\nYou can create a developer account by [signing up here](https://front.com/signup?affiliate=developers). You\u2019ll get access to a free developer environment that will provide everything you need to begin building with our APIs. Developer accounts are limited to 3 teammates, so we recommend sharing credentials using a team email like engineering@ if you have more developers working on your team."
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+     "title": "API tokens",
+     "snippet": "OAuth access versus API tokens\nFront requires that partners implement OAuth instead of API tokens when building Core API integrations that make updates on behalf of a Front customer or their account, unless you obtain an exception from us. OAuth makes it easier for users to enable and use your integration by allowing users to simply authorize the app with an existing account. To learn more about this topic, refer to [Authentication](/docs/authentication)."
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/rate-limiting",
+     "title": "Rate limits",
+     "snippet": "By default, Front's API rate limit starts at 50 requests per minute and varies depending on your [plan](https://frontapp.com/pricing). Rate limits are enforced on a per-company basis rather than a per-token basis.\n| Starter | Professional | Enterprise |\n|---|---|---|\n| 50 rpm | 100 rpm | 200 rpm |\nRate limit increases beyond the default limits require the Professional plan or higher.\n\nRate limits for the integrations you use / Partner rate limits\nNote that API requests made by a partner integration on behalf of a company via OAuth have a separate rate limit of 120 rpm (enforced on a per-company basis). This means that API requests made by integrations installed by a customer do not count against the customer\u2019s rate limit (the only exception to this is the Zapier integration)."
+    },
+    {
+     "url": "https://front.com/partners/integration",
+     "title": "Front Integration Partner Program",
+     "snippet": "Partners receive exclusive access to incentives, resources, and support.\n##### Standard\n###### Tech & product benefits\n- Free sandbox developer account\n- Technical support\n###### Marketing benefits\n- Considered for select marketing activities\n- Listed on Front\u2019s integration marketplace\n- Right to use the Front brand assets\n##### Plus\nFront\u2019s plus tier offers the standard benefits plus the ones listed below. Inclusion in this tier is by invitation only.\n###### Tech & product benefits\n- Premium technical support\n- Product demo led by Front product specialist\n- Previews into Platform & API roadmap\n###### Marketing benefits\n- Two-way lead sharing\n- Eligible for various co-marketing activities\n- Select account mapping and co-selling opportunities"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Front API reference REST GraphQL endpoints documentation front.com",
+   "log_id": "log_h_9lRm-CRZWn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dev.frontapp.com/reference/introduction",
+     "title": "Introduction",
+     "snippet": "Here is Front's Core API, a backend API that gives comprehensive control over all entities in Front from Contacts to Comments.\n##\nGuides\nRefer to the following guides to learn how to use the Core API:\n- [Getting Started](https://dev.frontapp.com/docs/core-api-getting-started)\n- [Fundamentals](https://dev.frontapp.com/docs/fundamentals)\n- [Tools](https://dev.frontapp.com/docs/tools)\n- [Sample Application](https://dev.frontapp.com/docs/sample-application)\n- [API Terminology 101](https://dev.frontapp.com/reference-link/api-terminology-101)\n##\nAuthentication\nFront supports OAuth2.0 as well as API Tokens. To learn about authenticating with Front, see our guide on [authentication](https://dev.frontapp.com/docs/authentication).\n##\nBase URL\nAPI calls will always work with `https://api2.frontapp.com` as the base URL. However, the API may return resource URLs that include your company's name, such as `https://acme.api.frontapp.com`. If the API is returning URLs like those, you can call it either with `api2.frontapp.com` or `acme.api.frontapp.com`.\n\nContent Type\nThe API is designed to communicate with your server using JSON. All responses coming from the API will send data in a valid JSON obj"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/welcome",
+     "title": "Welcome",
+     "snippet": "Welcome to the Front Platform \ud83d\udc4b\nWhether you\u2019re looking to build a custom integration just for your team or looking to publicly launch a Front integration, you\u2019re in the right place! Our documentation can help you build everything from contact synchronizing to automated message triaging to custom messaging channels.\nOur documentation is designed to get you up and running quickly, with walkthroughs, code examples, Postman collections and more. We\u2019re also available at [Front Community](https://community.front.com/developer-q-a-37) to help with any questions or feedback!\n\n###\nCore API\nOur primary backend API that allows you to read, create, update, and delete a wide range of data across Front\u2019s various entities, from Contacts to Comments to Tags. In general, if your use case involves programmatic syncing, export, or modification of Front data, the Core API is likely what you\u2019re looking for. Our webhooks also make it possible to respond to real-time events as actions and updates happen in Front.\nA few examples of how the Core API is used today:\n- Synchronizing Contacts into Front from a third party CRM\n- Automatically drafting replies to incoming messages\n- Exporting conversational meta"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/search-1",
+     "title": "Search",
+     "snippet": "The [Search Conversations](https://dev.frontapp.com/reference/search-conversations) endpoint allows you to search for conversations in team and private inboxes using the Core API.\n```\nhttps://api2.frontapp.com/conversations/search/lost shipment\n```\n```\nhttps://api2.frontapp.com/conversations/search/lost%20shipment\n```\n```\nhttps://api2.frontapp.com/conversations/search/is:archived is:unassigned\n```\n```\nhttps://api2.frontapp.com/conversations/search/is%3Aarchived%20is%3Aunassigned\n```\n##\nAccess\nThe search results are limited to the scope of the API token.\nFor example, an API token with a Shared Resources scope has access to all team inboxes . An API token with a scope limited to a specific team can only search for conversations in that team inbox. An API with a scope set to Private Resources can access personal inboxes, assuming the individual teammates or an admin have allowed API access to personal data in the settings.\n##\nSearch results\nThe API returns conversations that match the search query ordered by last activity date. There is no way to change the sort order at the moment. The API also returns the `_total` number of results and adheres to the Core API pagination pattern.\n##\n"
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/creating-a-partner-channel",
+     "title": "Fundamentals of Application Channels",
+     "snippet": "When Front sends the initial authorization request for your channel, it also includes a `channel_id` property. This value is different from the Front ID and secret credentials supplied for your channel. You need the `channel_id` to make calls to the Channel API, which allows you to sync inbound and outbound messages from the channel into Front.\n\nAuthenticating requests to Front\nWhen sending API requests to Front (as described in the next section), they must be authenticated by setting a bearer authorization token generated using your application secret key, application UID, and the channel ID you are trying to send to.\nThese authorization tokens must be generated as JSON web tokens (JWTs), and must contain specific claims:\n| Claim | Example | Description |\n|---|---|---|\n| `iss` | `64711a73def367ca` | **Issuer** identifier. This must be set to your Front application **App UID**. This is found on the **Settings** tab of your app. |\n| `jti` | `801f4e544049244b` | **JWT ID**. Can be any string, but should be unique per token. |\n| `sub` | `cha_123` | **Subject** of the token. This must be the channel ID the API request is being issued for. |\n| `exp` | `1694761200` | **Expiration time** "
+    },
+    {
+     "url": "https://dev.frontapp.com/reference/get-message.md",
+     "title": "dev.frontapp.com/reference/get-message.md",
+     "snippet": "# Get message\nFetch a message.\n> \u2139\ufe0f The HTTP Header `Accept` can be used to request the message in a different format.\n> By default, Front will return the documented JSON response. By requesting `message/rfc822`, the response will contain the message in the EML format (for email messages only).\nRequired scope: `messages:read`"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Front front.com MCP server Model Context Protocol official",
+   "log_id": "log_VfelZBWwaSjQ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dev.frontapp.com/docs/mcp-server",
+     "title": "MCP Server",
+     "snippet": "Front's MCP server (`mcp.frontapp.com/mcp`) lets AI agents act on Front conversation data using a single OAuth-authenticated endpoint. Agents authenticate as a specific Front user, with permissions matching that user's role (user-scoped authorization). The MCP server is separate from the [Admin MCP server](https://dev.frontapp.com/docs/admin-mcp-server), which manages Front configurations such as rules, setting up teammates, managing AI features, etc.\n\n| | |\n|---|---|\n| **Endpoint** | `https://mcp.frontapp.com/mcp` |\n| **Transport** | Streamable HTTP |\n| **MCP spec version** | 2025-11-25 |\n| **Auth** | OAuth 2.1 + PKCE compatibility **Note:** Front does not support Dynamic Client Registration. Your AI assistant must support a ***confidential connection that sends an OAuth client ID and secret***. Some popular AI assistants are currently not compatible. |\n| **Identity model** | Per-user tokens. Every tool call attributes to a specific Front teammate |\n| **Who can connect** | Any teammate |\n| **Scopes** | `read`, `write`, `send` |\nThe identity model is the part most worth internalizing: the agent's effective permissions are exactly the authorizing teammate's permissions. If the teamm"
+    },
+    {
+     "url": "https://help.front.com/en/articles/4883136",
+     "title": "Get started with Front's MCP server",
+     "snippet": "Front's MCP server lets you and your teammates connect Front to AI assistants like Claude, ChatGPT, Gemini, and Microsoft Copilot. Once connected, the AI assistant can use your conversations, draft replies, leave internal comments, and take other actions on your behalf \u2014 all while respecting the user permissions set within Front.\nBecause Front handles every channel \u2014 email, SMS, chat, and more \u2014 in one place, the AI assistant gets the full context of a conversation: messages across all channels, internal comments, tag and assignment history, and rule actions, all in one timeline.\nHead to Front Community to read the [official announcement](https://community.front.com/announcements-63/front-s-mcp-server-bring-front-into-your-ai-workflows-3958) and get the [starter guide](https://community.front.com/workflows-discussion-47/front-mcp-server-starter-guide-plug-and-play-prompts-3964) with ready-to-use templates for the MCP.\n---\n## What is the MCP server?\nMCP (Model Context Protocol) is an open standard that lets AI assistants connect to external tools. The *MCP server* specifically enables external AI assistants and similar tools to access a predetermined set of Front data and actions. C"
+    },
+    {
+     "url": "https://help.front.com/en/articles/5038272",
+     "title": "Get started with Front's Admin MCP server [open beta]",
+     "snippet": "- **Front's Admin MCP server allows external AI tools (e.g., Claude, ChatGPT) to manage your Front settings.** To let an AI tool work with your conversations instead, see [Get started with Front's MCP server](https://help.front.com/en/articles/4883136). To let Front's AI connect to an external tool, follow the steps for [MCP Connectors](https://help.front.com/en/articles/4971328).\n## Overview\nFront's Admin MCP server lets Front admins connect AI assistants like Claude and ChatGPT to their Front settings. Once connected, the AI assistant can read how your Front instance is set up and create or edit rules, inboxes, tags, message templates, knowledge bases, AI agents, and more, from a request written in plain language.\nEvery change is made as the admin who connected, only within what their Front role allows, and shows in your [audit log](https://help.front.com/en/articles/2925696).\n\nMCP (Model Context Protocol) is an open standard that lets AI assistants connect to external tools. The Admin MCP server gives an AI assistant a set of tools to read and change your Front configuration, the same work you would otherwise do in your settings one item at a time.\nIt is separate from Front's MC"
+    },
+    {
+     "url": "https://community.front.com/api-news-updates-40/the-front-mcp-server-is-here-beta-3712",
+     "title": "The Front MCP Server is here (beta)",
+     "snippet": "### UPDATE: There\u2019s a new version of the MCP server. Please join the following group to learn how to get started:\n[https://community.front.com/groups/beta-mcp-server-83](https://community.front.com/groups/beta-mcp-server-83)\nThe data access note for the original MCP server does not apply to the new one linked above.\nWe're excited to announce the beta release of the Front MCP server \u2014 and we'd love for you to try it.\nModel Context Protocol (MCP) is an open standard that lets AI applications securely connect to external data sources and tools. With the Front MCP server, AI-powered tools like Claude, Cursor, Windsurf, and others can interact directly with your Front account and API documentation using natural language \u2014 no manual API calls required.\n**What does that look like in practice?**\n- Ask your AI assistant to pull open conversations from a specific inbox, then tag or triage them\n- Query your Front account data in real time to inform what you're building\n- Explore Front's API endpoints and get full details about specific ones \u2014 without digging through docs\n- Generate integration code with full context about Front's capabilities already loaded in\nIt's a faster, more intuitive wa"
+    },
+    {
+     "url": "https://community.front.com/announcements-63/front-s-mcp-server-bring-front-into-your-ai-workflows-3958",
+     "title": "Front\u2019s MCP server: Bring Front into your AI workflows",
+     "snippet": "Front\u2019s MCP server is here! Connect Front to an AI tool like Claude, ChatGPT, Notion, Slack, and more so you can pull context from Front and create high quality replies through your AI agent.\n\nFront\u2019s MCP server lets AI clients interact with Front and take action:\n- **Start every shift with a triaged and drafted queue:** Top priorities ranked, explained, and replies ready-to-send\n- **Walk into customer calls prepared:** Get a full account briefing in minutes\n- **See what's driving your conversation volume:** Break down conversation themes over a time period\n- **Close your help center gaps:** Find what customers keep asking and get article drafts to review\nBy connecting Front to the rest of your AI tool suite, Front\u2019s MCP server helps your AI agent draft better replies, save time by reducing manual triage and follow-up, and complete workflows that depend on customer conversation context from multiple tools. It\u2019ll mirror the same permissions and access that your Front account has.\n**What you can do with it**\nWe\u2019ve compiled a [starter guide](https://community.front.com/workflows-discussion-47/front-mcp-server-starter-guide-plug-and-play-prompts-3964) with all the top use cases with pr"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

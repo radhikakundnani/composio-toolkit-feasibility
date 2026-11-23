@@ -1,0 +1,37 @@
+{
+  "id": 26,
+  "app": "Discord",
+  "category": "Communications and Messaging",
+  "one_liner": "Community chat platform with servers, channels, voice and bots.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Create an application in the Developer Portal to get bot token and OAuth2 client; free.",
+  "api_types": [
+    "rest",
+    "websocket"
+  ],
+  "api_breadth": "broad",
+  "mcp": "community",
+  "mcp_note": "Only third-party servers found, e.g. https://github.com/cappyeo/discord-mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "partner_or_app_review",
+  "blocker_note": "Privileged intents and some OAuth2 scopes need Discord review/approval at scale.",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://docs.discord.com/developers/reference",
+    "access": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+    "surface": "https://docs.discord.com/developers/reference",
+    "mcp": "https://github.com/cappyeo/discord-mcp"
+  },
+  "identity_issue": "",
+  "verified": true
+}

@@ -1,0 +1,36 @@
+{
+ "id": 88,
+ "app": "Brex",
+ "category": "Corporate cards / spend management",
+ "one_liner": "Corporate cards and spend platform with team, payments, and travel APIs.",
+ "auth_methods": [
+  "bearer_token",
+  "oauth2"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "approval_required",
+ "access_notes": "Requires an existing Brex account; admin accepts developer agreement and generates user token. Partner/OAuth access needs onboarding approval.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://api.brex.com/mcp (developer.brex.com/docs/mcp)",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Needs customer Brex account with admin; multi-tenant OAuth is partner-only with approval.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer.brex.com/guides/authentication",
+  "access": "https://developer.brex.com/docs/partner_onboarding",
+  "surface": "https://developer.brex.com/openapi/team_api.md",
+  "mcp": "https://developer.brex.com/docs/mcp"
+ },
+ "verified": true
+}

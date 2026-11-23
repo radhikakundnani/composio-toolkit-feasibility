@@ -1,0 +1,36 @@
+{
+ "id": 12,
+ "app": "Intercom",
+ "category": "Support and Helpdesk",
+ "one_liner": "Customer messaging, support inbox and AI agent platform.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free developer workspace available; access tokens for own workspace, OAuth for public apps requiring Intercom submission to publish.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://developers.intercom.com/docs/guides/mcp (US and EU hosted workspaces; endpoint mcp.intercom.com/mcp)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "Public app publishing requires review by Intercom; development is self-serve.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developers.intercom.com/building-apps/docs/authentication-types",
+  "access": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+  "surface": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io.md",
+  "mcp": "https://developers.intercom.com/docs/guides/mcp"
+ },
+ "verified": true
+}

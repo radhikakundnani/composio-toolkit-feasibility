@@ -1,0 +1,36 @@
+{
+  "id": 30,
+  "app": "Vonage",
+  "category": "Communications and Messaging",
+  "one_liner": "Cloud communications APIs for SMS, voice, messaging, video and verification.",
+  "auth_methods": [
+    "basic",
+    "jwt_service_account"
+  ],
+  "auth_primary": "basic",
+  "access": "self_serve_trial",
+  "access_notes": "Free account sign-up gives API key and secret; Messages/Voice use JWT from application keys.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "Vonage MCP servers (Tooling/Documentation), https://developer.vonage.com/en/mcp-server/technical-details",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Network APIs need company registration; Vonage Business Cloud APIs need a qualified developer account.",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "access": "https://developer.vonage.com/en/messages/getting-started",
+    "surface": "https://developer.vonage.com/en/api/developer/numbers",
+    "mcp": "https://developer.vonage.com/en/mcp-server/technical-details"
+  },
+  "identity_issue": "",
+  "verified": true
+}

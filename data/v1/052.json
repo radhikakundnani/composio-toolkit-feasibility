@@ -1,0 +1,35 @@
+{
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "SEO data API",
+  "one_liner": "SEO platform with Data and Project APIs for keywords, backlinks, audits, rankings.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_trial",
+  "access_notes": "14-day trial with 100K free API credits, no card; API key from API Dashboard; then wallet or plan credits.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://api.seranking.com/mcp ; github.com/seranking/seo-data-api-mcp-server",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Trial self-serve; ongoing use needs credits or paid plan.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://seranking.com/api/data/getting-started",
+    "access": "https://seranking.com/api-pricing.html",
+    "surface": "https://seranking.com/api/data/domain-analysis",
+    "mcp": "https://seranking.com/api/integrations/mcp"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": 22,
+  "app": "Twilio",
+  "changes": [
+    {
+      "field": "mcp",
+      "from": "official",
+      "to": "community",
+      "why": "Twilio MCP is read-only docs/OpenAPI-spec search for coding agents; does not expose account data/actions",
+      "evidence": "https://twilio.com/docs/ai/mcp"
+    }
+  ],
+  "confirmed": [
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 2
+}

@@ -1,0 +1,37 @@
+{
+ "id": 92,
+ "app": "Otter AI",
+ "category": "Meeting transcription",
+ "one_liner": "AI meeting assistant that records, transcribes and summarizes conversations.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2"
+ ],
+ "auth_primary": "api_key",
+ "access": "paid_plan_required",
+ "access_notes": "Public API is for Enterprise workspaces only; key from Developer settings, otherwise contact account manager. MCP uses OAuth.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://mcp.otter.ai/mcp (OAuth, streamable HTTP)",
+ "verdict": "needs_outreach",
+ "blocker": "contact_sales",
+ "blocker_note": "Public REST API only for Enterprise workspaces; contact Otter account manager to enable. OAuth MCP is a narrower alternative.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://integrations.sh/otter.ai",
+  "access": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+  "surface": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+  "mcp": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+ },
+ "verified": true
+}

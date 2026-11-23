@@ -1,0 +1,142 @@
+{
+ "id": 79,
+ "app": "Smartsheet",
+ "hint": "smartsheet.com/developers",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Smartsheet API authentication OAuth API key access token developer docs smartsheet.com/developers",
+   "log_id": "log_E74_pBwVYplN",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+     "title": "Authentication",
+     "snippet": "The API authenticates using access tokens (API keys). You can [generate access tokens](https://help.smartsheet.com/articles/2482389-generate-API-key) in the Smartsheet UI.\n> **Important:** Smartsheet Gov and Smartsheet Regions Europe use separate tokens from Smartsheet.com.\nEach API request requires passing in an access token as the `Bearer` value in your authorization header. For example,\n`Authorization: Bearer JKlMNOpQ12RStUVwxYZAbcde3F5g6hijklM789`\nThis article provides best practices to consider when working with the Smartsheet API and any access tokens (API keys), or other sensitive information.\n## Authentication Approaches\nWhen choosing an authentication method, it is important to consider your integration scenario. Is the integration machine-to-machine without user interaction, or do you want user consent and interaction?\n- **If your scenario involves user consent and interaction,** it's typically best to use OAuth with Smartsheet. Note that the Smartsheet implementation of OAuth 2.0 is a 3-legged process, which requires human intervention. See [OAuth Walkthrough](https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth) for details.\n- **If your scenario"
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+     "title": "OAuth",
+     "snippet": "OAuth 2.0 (OAuth) provides a way for your app users to grant limited access to their Smartsheet resources. Here, we demonstrate registering apps to use OAuth and implementing an OAuth flow with your apps.\n> **Note:** The Smartsheet [SDKs](https://developers.smartsheet.com/api/smartsheet/guides/additional-resources#sdks-and-samples) also support OAuth 2.0.\n## Register for Developer Tools\nDeveloper Tools is a Smartsheet user interface for registering client applications that use OAuth to access Smartsheet user resources with the user's consent. Here's how to register for Developer Tools.\n1. Designate a Smartsheet account for using OAuth with your apps.\n> **Tip:** A best practice is to use an additional Smartsheet account (a *service account*) that you don't personally use in the Smartsheet application.\n2. Go to the [Developer Tools Registration](https://developers.smartsheet.com/register) page.\n![](https://developers.smartsheet.com/assets/oauth-developer-tools-registration.948476e409c5b4304d8da2ce6a91815644c4fb24017a2d66d7e2ba5b68bc2c43.5ffd95b9.png)\n3. In the Developer Tools Registration page, enter the email address of a user account to associate with your apps.\n4. Read the [Smarts"
+    },
+    {
+     "url": "https://smartsheet.com/content-center/managing-work/it-management/authentication-mastery-smartsheet-api",
+     "title": "Authentication Mastery with Smartsheet API",
+     "snippet": "**Personal Access Tokens (PATs)** are the right choice for internal tools, scripts, and automation that runs on behalf of a single user. They don't expire unless revoked, they're simple to rotate, and they authenticate the user who created them \u2014 meaning the token inherits that user's sheet permissions exactly.\nPATs have three practical advantages in production: there's no token exchange overhead, so latency is minimal; permissions are fully predictable \u2014 the token can do exactly what the user can do, nothing more; and audit is straightforward \u2014 you always know which PAT triggered which action.\n**OAuth 2.0** is the right choice for multi-user integrations, SaaS products, or anything where you're acting on behalf of other people's Smartsheet accounts. It's more complex to implement, but it's the only appropriate model when your application serves more than one user.\n**OAuth** gives you three things PATs can't: you act on behalf of the user, not yourself \u2014 which means their permissions govern what the integration can touch, not yours; scopes let you request least-privilege access \u2014 if your integration only needs to read sheets, you request read-only and that's all the token can do; a"
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+     "title": "Get Started",
+     "snippet": "## Generate an API access token\n**Required plan:** Business, Enterprise, or Advanced Work Management\nGenerate an API access token in the Smartsheet UI.\n1. Go to the Smartsheet UI.\n2. Select your **Account** icon in the lower-left corner of the screen, and then select **Personal Settings**. The Personal Settings page for your account appears.\n3. Select the **API Access** tab.\n4. Click the **Generate new access token** button to generate an API access token.\n![](https://developers.smartsheet.com/assets/generate-api-token.88baa369e3a9a493b9b77c98f575bdedf4f5122f5a96b85e4414f44817635503.99ff9e22.png)\n5. Note your access token and store it in a secure location. See [Access Token Best Practices](https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication#access-token-best-practices).\n> **Note:** Tokens generated for Smartsheet, Smartsheet Regions instances, and Smartsheet Gov use the above generation process.\n>\n> However, these tokens aren't interchangeable.\n>\n> - A token generated on Smartsheet doesn't work on a Smartsheet Regions instance or Smartsheet Gov.\n> - Each environment requires a token specifically generated for it.\n## Call an API endpoint operation\nYou can c"
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+     "title": "developers.smartsheet.com/api/smartsheet/openapi.md",
+     "snippet": "- **Getting started:** <a href=\"https://help.smartsheet.com/articles/2482389-generate-API-key\" target=\"_blank\" rel=\"noopener noreferrer\">Generate an API access token</a> and [make a request](/api/smartsheet/guides/getting-started).\n\n## Security\n### OAuth2\nType: oauth2\n### APIToken\nAPI Token.\nType: http\nScheme: bearer\n\n## Tokens\nThe Smartsheet API utilizes OAuth 2.0 for authentication and authorization. An Authorization HTTP header containing an access token is required to authenticate all API requests except for the requests to GET Access Token or Refresh Access Token. For more information, see Authentication.\n### Gets or refreshes an access token\n- [POST /token](https://developers.smartsheet.com/api/smartsheet/openapi/tokens/tokens-getorrefresh.md): Gets or refreshes an access token, as part of the OAuth process.\n### Revoke access token\n- [DELETE /token](https://developers.smartsheet.com/api/smartsheet/openapi/tokens/tokens-delete.md): Revokes the access token used to make this request. The access token is no longer valid, and subsequent API calls made using the token fail."
+    }
+   ]
+  },
+  "access": {
+   "query": "Smartsheet smartsheet.com/developers API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_W5WQDms8g7-G",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+     "title": "Smartsheet API introduction",
+     "snippet": "**Required plan:** Business, Enterprise, or Advanced Work Management\n**Developer Agreement:** The [Developer Agreement](https://www.smartsheet.com/legal/developer-program-agreement) governs the use of the Smartsheet API and Smartsheet software development kits (SDKs)"
+    },
+    {
+     "url": "https://smartsheet.com/legal/developer-program-agreement",
+     "title": "Developer Agreement",
+     "snippet": "Please read this Developer Agreement (\u201c**Agreement**\u201d) carefully before utilizing or accessing Smartsheet Inc.\u2019s, including its affiliates\u2019 (collectively, \u201c**Smartsheet**\u201d) Smartsheet API, access tokens, app keys, HTML scripts, sample source code and other development materials and technology that Smartsheet makes available through its websites, including the Developer Portal (available at [https://developers.smartsheet.com](https://developers.smartsheet.com)) or in a public forum (e.g., GitHub) (collectively, \u201c**Developer Tools**\u201d).\n\nDEVELOPER SHALL NOT ACCESS OR USE THE DEVELOPER TOOLS WITHOUT PRIOR WRITTEN CONSENT OF SMARTSHEET IF DEVELOPER IS OR BECOMES A DIRECT COMPETITOR TO SMARTSHEET OR ITS AFFILIATES.\n\n**1. Developer Program.** The program offered by Smartsheet to Developer under this Agreement provides access to certain Smartsheet Properties in order to create a Developer Application which may be utilized by End Users (the \u201c**Program**\u201d). Participation in the Program requires an account with Smartsheet for the Subscription Service or other applicable online Service. Developer agrees to provide accurate, up-to-date information as required by Smartsheet during the term of th"
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+     "title": "Get Started",
+     "snippet": "## Generate an API access token\n**Required plan:** Business, Enterprise, or Advanced Work Management\nGenerate an API access token in the Smartsheet UI.\n1. Go to the Smartsheet UI.\n2. Select your **Account** icon in the lower-left corner of the screen, and then select **Personal Settings**. The Personal Settings page for your account appears.\n3. Select the **API Access** tab.\n4. Click the **Generate new access token** button to generate an API access token."
+    },
+    {
+     "url": "https://developers.smartsheet.com/api-faq",
+     "title": "API FAQ | Smartsheet Developers",
+     "snippet": "**Is there a fee to use the API?**\nNo. The use of the API is free to all Smartsheet customers, regardless of plan, and third party application developers.\n**How do I access the API?**\nIf you are a Smartsheet customer, you can use the API to directly access your data and integrate your Smartsheet account with other systems or applications. Simply go to your Personal Settings > API Access to generate an access token. Our detailed[ documentation](http://smartsheet.com/developers/api-documentation) will guide you through a variety of scenarios, from retrieving and updating your sheet contents to managing your users and executing org-wide data backups.\nIf you are an application developer, we are committed to making it easy to build on top of Smartsheet - whether you are developing a solution for your organization or creating an app for the Smartsheet customer community at large. Use standard OAuth2 authentication and authorization to safely access Smartsheet data on behalf of your users without requesting or storing their usernames or passwords. Take advantage of granular access scopes to request only the level of access required for your app. To get the ball rolling,[ sign up](http://s"
+    },
+    {
+     "url": "https://developers.smartsheet.com/register.html",
+     "title": "developers.smartsheet.com/register.html",
+     "snippet": "Developer Sandbox Account Registration Register for a Smartsheet Developer account if you would like to accomplish any of the following. Add Developer Tools to an existing Smartsheet account. Create a Sandbox Smartsheet account to keep your developer data separate from your production data. NOTE: You need to use a different email address than the one used for your production Smartsheet account. Build third party applications with Smartsheet using OAuth 2. No need to register if you already have a Smartsheet account and just want to generate an Access Token. NOTE: Only licensed Smartsheet users on Business and Enterprise plans have access to the API by generating Access Tokens. You can find this in API Access under the Personal Settings option of the Account menu."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Smartsheet API reference REST GraphQL endpoints documentation smartsheet.com/developers",
+   "log_id": "log_Fy0SwWDX5uiI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+     "title": "developers.smartsheet.com/api/smartsheet/openapi.md",
+     "snippet": "Welcome to the OpenAPI reference documentation for the Smartsheet API!\n\n- **Base URL:**\n```\nhttps://api.smartsheet.com/2.0/\n```\n- **Getting started:** <a href=\"https://help.smartsheet.com/articles/2482389-generate-API-key\" target=\"_blank\" rel=\"noopener noreferrer\">Generate an API access token</a> and [make a request](/api/smartsheet/guides/getting-started).\n\n## Servers\n```\nhttps://api.smartsheet.com/2.0\n```\n```\nhttps://api.smartsheet.eu/2.0\n```\n```\nhttps://api.smartsheet.au/2.0\n```\n## Security\n### OAuth2\nType: oauth2\n### APIToken\nAPI Token.\nType: http\nScheme: bearer\n## Download OpenAPI description\n[Smartsheet OpenAPI Reference](https://developers.smartsheet.com/_bundle/api/smartsheet/openapi.yaml)\n\n- [GET /sheets/{sheetId}/rows/{rowId}/columns/{columnId}/history](https://developers.smartsheet.com/api/smartsheet/openapi/cells/cellhistory-get.md): Gets the cell modification history.\n> Note: Fetching cell history is resource-intensive and is limited to 30 requests per minute per API token. For details, see Rate limiting.\n\n## Cross-sheet References\nTo create a formula that references data in another sheet, you must first create a cross-sheet\nreference between the detail sheet and the s"
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/http-and-rest",
+     "title": "HTTP and REST",
+     "snippet": "The REST URL structure follows typical resource-oriented conventions.\nTo get a list of sheets, use the following:\n`GET https://api.smartsheet.com/2.0/sheets`\nThis returns a list of Sheet objects, where each sheet has an **id** attribute.\nTo get details on the sheet with **id 123456**, use the following:\n`GET https://api.smartsheet.com/2.0/sheets/123456`\nThis ID pattern is repeated throughout the API. Columns, rows, cells, comments, attachments, or any other data element have a unique ID.\nIf you don't want to make raw HTTP calls, Smartsheet also has several Software Development Kits (SDKs) that provide a higher level interface for popular programming languages. For more information, see [SDKs and Samples](https://developers.smartsheet.com/api/smartsheet/guides/additional-resources#sdks-and-samples).\n## HTTP Verbs\nCall the API using the following [standard HTTP methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html):\n- GET (to retrieve an object or list multiple objects in a specific category)\n- POST (to create)\n- PUT (to modify)\n- DELETE\n## HTTP Headers\nUnless otherwise specified, all API endpoints expect request body data to be in [JSON](https://en.wikipedia.org/wiki/JSON)"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/smartsheet/refs/heads/main/graphql/smartsheet-graphql.md",
+     "title": "raw.githubusercontent.com/api-evangelist/smartsheet/refs/heads/main/graphql/smartsheet-graphql.md",
+     "snippet": "This document describes a conceptual GraphQL schema for the Smartsheet REST API. Smartsheet is a SaaS work management and collaboration platform that combines spreadsheet-style sheets, project plans, Gantt charts, dashboards, forms, and workflow automation. The GraphQL schema models the core domain objects available through the Smartsheet REST API v2.0.\n## Source\n- API Reference: https://developers.smartsheet.com/api/smartsheet/openapi\n- Documentation: https://developers.smartsheet.com/api/smartsheet/introduction\n- Authentication: https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication\n- Base URL: https://api.smartsheet.com/2.0\n## Schema Source\nSchema type: Conceptual\nDerived from: Smartsheet REST API v2.0 public documentation and OpenAPI specification.\n## Authentication\nThe Smartsheet REST API supports OAuth 2.0 and Bearer access token authentication. GraphQL requests would carry the same `Authorization: Bearer <token>` header.\n\n- This is a conceptual schema. Smartsheet does not currently expose a native GraphQL endpoint.\n- The schema models the domain objects from the Smartsheet REST API v2.0."
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/openapi/sheets/getsheet.md",
+     "title": "developers.smartsheet.com/api/smartsheet/openapi/sheets/getsheet.md",
+     "snippet": "# Get sheet\nGets a sheet in the format specified, based on the sheet Id.\nEndpoint: GET /sheets/{sheetId}\nVersion: 2.0.0\nSecurity: APIToken, OAuth2\n## Header parameters:\n- `Authorization` (string)\nAPI Access Token used to authenticate requests to Smartsheet APIs.\n- `smartsheet-integration-source` (string)\nUses the following metadata to distinguish between human-initiated API requests and third-party service-initiated calls by AI Connectors or ITSM:\n- Integration source type\n- Organization name\n- Integration source name\nFormat:\nTYPE,OrgName,SourceName\nExamples:\nAI,SampleOrg,My-AI-Connector-v2\nSCRIPT,SampleOrg2,Accounting-updater-script\nAPPLICATION,SampleOrg3,SheetUpdater\nExample: \"AI,SampleOrg,My-AI-Connector-v2\"\n- `Accept` (string)\nThe Accept request-header field can be used to specify certain media types which are acceptable for the response.\n## Path parameters:\n- `sheetId` (number, required)\nID of the sheet being accessed.\n## Query parameters:\n- `accessApiLevel` (number)\nAllows COMMENTER access for inputs and return values. For backwards-compatibility, VIEWER is the default. For example, to see whether a user has COMMENTER access for a sheet, use accessApiLevel=1."
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/pagination",
+     "title": "Pagination",
+     "snippet": "### cURL: Token-based pagination\nHere's how to page through 100 workspaces at a time using cURL:\n1. Make your initial call with the following query parameter settings:\nRequest:\n```\ncurl https://api.smartsheet.com/2.0/workspaces?maxItems=100 \\\n-H \"Authorization: Bearer YOUR_API_TOKEN\"\n```\n> **Note:** This example calls the [`GET /workspaces`](/api/smartsheet/openapi/workspaces/list-workspaces) operation.\nResponse:\n```\n{\n\"data\": [\n{\n// workspace 1\n},\n// ... more workspaces\n{\n// workspace 100\n}\n],\n\"lastKey\": \"XYZ123ABC456\"\n}\n```\nThe response includes 100 workspaces and a `lastKey` property, because there are more workspaces."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Smartsheet smartsheet.com/developers MCP server Model Context Protocol official",
+   "log_id": "log_oPBP9Wzz5ya-",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+     "title": "Install the Smartsheet MCP server",
+     "snippet": "# Install the Smartsheet MCP server\nYou can connect various AI assistants to the Smartsheet Model Context Protocol (MCP) server. Connected to the Smartsheet MCP server, you can interact with your Smartsheet data using natural language.\n**Required plan:** Business, Enterprise, or Advanced Work Management\n\nHere's what a Smartsheet MCP server connection requires:\n- Network access to a Smartsheet production server environment\n- Valid Smartsheet API token, unless you're connecting an AI tool that supports Smartsheet's OAuth, such as ChatGPT (web or mobile), Claude AI, Claude Desktop, Gemini Enterprise Plus, or Microsoft 365 Copilot.\nTo create an API token, refer to the [Get started](/api/smartsheet/guides/getting-started#generate-an-api-access-token) article.\n- URL for the MCP server production environment in your target region. Refer to the table below.\n**Region URLs**\n| **Region** | **Environment** | **MCP server URL** |\n|---|---|---|\n| United States | US production | `https://mcp.smartsheet.com` |\n| Europe | EU production | `https://mcp.smartsheet.eu` |\n| Australia | AU production | `https://mcp.smartsheet.au` |\n\n| **AI Assistant** | **Instructions** |\n|---|---|\n| Amazon Quick | [Ins"
+    },
+    {
+     "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+     "title": "Smartsheet MCP server introduction",
+     "snippet": "Interact with your project data in Smartsheet using the Smartsheet MCP server connected to Claude, ChatGPT, and other AI clients. Once connected, you can use natural language to read, analyze, and manage Smartsheet data to complement how you make decisions and get work done.\n**Required plan:** Business, Enterprise, or Advanced Work Management\n> ## \ud83d\ude80 What's new!\n>\n>\n>\n>\n>\n> - **MCP Connectors for ChatGPT, Microsoft 365 Copilot, Gemini Enterprise Plus, and Amazon Quick:** Work with your Smartsheet projects in [ChatGPT](https://help.smartsheet.com/articles/2483728-use-smartsheet-in-chatgpt), [Microsoft 365 Copilot](https://help.smartsheet.com/articles/2483717-microsoft-copilot-connector) (plus configuration [video](https://help.smartsheet.com/articles/2483726-configure-smartsheet-connector-in-microsoft-copilot)), [Gemini Enterprise Plus](https://help.smartsheet.com/articles/2483725-connect-smartsheet-gemini), and [Amazon Quick](https://help.smartsheet.com/articles/2483732-access-smartsheet-amazon-quick).\n\nOur [Quickstart](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-quickstart) walks you through connecting the Smartsheet MCP server as an interactive companion in Claude Code"
+    },
+    {
+     "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/manually-configure-the-mcp-server",
+     "title": "Manually configure the MCP server",
+     "snippet": "Here's an MCP server configuration from a `settings.json` file for Gemini CLI:\n```\n{\n\"mcpServers\": {\n\"smartsheet-mcp\": {\n\"httpUrl\": \"https://mcp.smartsheet.com\",\n\"headers\": {\n\"Authorization\": \"Bearer ${SMARTSHEET_API_TOKEN}\"\n}\n}\n}\n}\n```\nIn the above example, you would replace:\n- `smartsheet-mcp` with an arbitrary name you want to use for your connection.\n- The URL with [your region's URL](https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/manually-configure-the-mcp-server#prerequisites), if you're using a regional server outside the US.\n- `${SMARTSHEET_API_TOKEN}` with the [environment variable](https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/manually-configure-the-mcp-server#environment-variables) for your Smartsheet API token.\n\n```\n{\n\"mcpServers\": {\n\"smartsheet-us\": {\n\"httpUrl\": \"https://mcp.smartsheet.com\",\n\"headers\": {\n\"Authorization\": \"Bearer ${SMARTSHEET_API_TOKEN}\"\n}\n},\n\"smartsheet-eu\": {\n\"httpUrl\": \"https://mcp.smartsheet.eu\",\n\"headers\": {\n\"Authorization\": \"Bearer ${SMARTSHEET_API_TOKEN_EU}\"\n}\n},\n\"smartsheet-au\": {\n\"httpUrl\": \"https://mcp.smartsheet.au\",\n\"headers\": {\n\"Authorization\": \"Bearer ${SMARTSHE"
+    },
+    {
+     "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-quickstart",
+     "title": "Quickstart with the MCP server",
+     "snippet": "Here you'll connect to Claude Code and use the MCP server as your coding companion to explore sheet structure, understand your data, and prepare for writing API code. (These connection principles work across MCP-compatible AI clients.)\n## Step 1: Set an API token environment variable\nIf you don't already have a Smartsheet API token, generate one following the instructions [here](https://help.smartsheet.com/articles/2482389-generate-API-key).\nThen set an environment variable to hold your token value, for referencing in your configuration.\n```\nexport SMARTSHEET_API_TOKEN=\"token value\"\n```\n\n## Step 2: Configure your MCP server connection\nUse Claude Code's CLI, to configure your connection.\n```\nclaude mcp add --transport http smartsheet-mcp \\\nhttps://mcp.smartsheet.com \\\n-H \"Authorization:Bearer ${SMARTSHEET_API_TOKEN}\"\n```\nIf you're using a regional server outside of the US, replace the MCP server URL with one for your region:\n- For Europe, use `https://mcp.smartsheet.eu`\n- For Australia, use `https://mcp.smartsheet.au`\n\nConnected to the MCP server, AI is your Smartsheet coding companion.\nAlso, you can leverage the MCP server in agent development."
+    },
+    {
+     "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/connect-cursor",
+     "title": "Connect Cursor to the Smartsheet MCP server",
+     "snippet": "# Connect Cursor to the Smartsheet MCP server\nWith Cursor connected to the Smartsheet MCP server, you can interact with your Smartsheet data using natural language.\n**Required plan:** Business, Enterprise, or Advanced Work Management\n\n1. Select **Settings** (gear icon), in the top corner of the Cursor application. Your Cursor settings appear.\n2. Go to **Tools & MCP**, and select **Add Custom MCP**.\n\nAn `mcp.json` file editor tab displays a JSON object that has an `mcpServers` element.\n```\n{\n\"mcpServers\": {}\n}\n```\n3. In the `mcp.json` file, specify the Smartsheet MCP server connection.\nFor example,\n```\n{\n\"mcpServers\": {\n\"smartsheet\": {\n\"command\": \"npx\",\n\"args\": [\n\"-y\",\n\"mcp-remote\",\n\"https://mcp.smartsheet.com\",\n\"--header\",\n\"Authorization:${AUTH_HEADER}\"\n],\n\"env\": {\n\"AUTH_HEADER\": \"Bearer ${SMARTSHEET_API_TOKEN}\"\n}\n}\n}\n}\n```\nReplace:\nSave your changes.\n- the `smartsheet` server name with a name you're using for the server.\n- the URL with [your region's URL](/ai-mcp/smartsheet/install-the-smartsheet-mcp-server#prerequisites), if you're using a regional server outside the US.\n- `${SMARTSHEET_API_TOKEN}` with the [environment variable](/ai-mcp/smartsheet/install-the-smartsheet-mcp-serv"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

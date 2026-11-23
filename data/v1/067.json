@@ -1,0 +1,36 @@
+{
+ "id": 67,
+ "app": "Snowflake",
+ "category": "Cloud data warehouse",
+ "one_liner": "Cloud data platform for warehousing, analytics, and AI workloads.",
+ "auth_methods": [
+  "oauth2",
+  "jwt_service_account"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_trial",
+ "access_notes": "Needs a customer Snowflake account; OAuth security integration or key-pair JWT per account. Trial availability inferred, not explicit.",
+ "api_types": [
+  "rest",
+  "sdk_only"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Snowflake-managed MCP server (CREATE MCP SERVER)",
+ "verdict": "ready_with_caveats",
+ "blocker": "other",
+ "blocker_note": "Per-account setup of OAuth integration or key pair by an admin; no central app registration.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+  "access": "https://docs.snowflake.com/en/user-guide/ecosystem-partner-connect?utm_cta=website-resources-vhol",
+  "surface": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/reference",
+  "mcp": "https://docs.snowflake.com/en/sql-reference/sql/create-mcp-server"
+ }
+}

@@ -1,0 +1,27 @@
+{
+  "id": 29,
+  "app": "Aircall",
+  "changes": [
+    {
+      "field": "access_notes",
+      "from": "Requires an Aircall customer account for API keys; OAuth is limited to approved Technology Partners.",
+      "to": "Requires an Aircall customer account for API keys (private app); OAuth is limited to approved Technology Partners, who get a 4-month trial developer account. Direct Messaging API needs the Professional plan.",
+      "why": "Added detail from launch-process and SMS docs",
+      "evidence": "https://developer.aircall.io/docs/launch-process"
+    },
+    {
+      "field": "mcp_note",
+      "from": "Aircall MCP (beta, read-only), https://support.aircall.io/en-gb/articles/39677926959517",
+      "to": "Aircall MCP (read-only calls/conversation data), https://support.aircall.io/en-gb/articles/39677926959517; note developer.aircall.io mcp-faqs page still says no MCP server offered (likely stale)",
+      "why": "Conflicting vendor sources noted",
+      "evidence": "https://developer.aircall.io/docs/mcp-faqs"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 3
+}

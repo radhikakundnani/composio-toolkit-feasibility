@@ -1,0 +1,142 @@
+{
+ "id": 41,
+ "app": "Shopify",
+ "hint": "shopify.dev",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "Shopify API authentication OAuth API key access token developer docs shopify.dev",
+   "log_id": "log_gFasDoi8-Z-N",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://shopify.dev/docs/api/usage/authentication",
+     "title": "shopify.dev/docs/api/usage/authentication",
+     "snippet": "To call a Shopify API, your code sends an access token in a request header to authenticate the identity that token represents (your app or a buyer) and authorize what that identity can access. How you obtain the token and which header carries it [vary by API](#authentication-by-api).\n\nEvery authenticated Shopify API request follows the same shape:\n1. Your code obtains an access token scoped to the access it needs.\n2. Your code includes the token in a request header.\n3. Shopify checks the token on each request and returns the data the token is scoped to, or an error if the token doesn't grant the required [access scope](https://shopify.dev/docs/api/usage/access-scopes).\nAuthentication proves which identity is making a request, and authorization determines what that identity is allowed to do. The access token does both: it identifies your app or a buyer, and its access scopes determine what it can access.\nSome flows authenticate a user first. For example, embedded apps validate an [ID token](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens), then exchange it for an access token.\n***\n## Authentication by API\nWhich token you use depends on whose data you're wo"
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+     "title": "shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+     "snippet": "An access token is a credential your app sends with each API request. It authenticates your app to the API and carries a set of [access scopes](https://shopify.dev/docs/api/usage/access-scopes) that authorize what your app can access. Shopify enforces those scopes on every request, returning only the data they allow.\nYour app obtains a token through an authorization flow called a grant, such as [token exchange](#token-exchange-grant), then includes it in a request header on each call. Because a token is scoped to a specific set of permissions and can expire or be revoked, a leaked token exposes only what it was granted, and you can revoke access without rotating your app's core credentials.\nThis page covers access tokens for the [GraphQL Admin API](https://shopify.dev/docs/api/admin-graphql), which authenticates requests with a token sent in the `X-Shopify-Access-Token` header. Other Shopify APIs issue their own token types and use their own headers. For which token and header each API expects, see [Shopify API authentication](https://shopify.dev/docs/api/usage/authentication). If you're setting up authentication for an app, start with [About app authentication](https://shopify.dev"
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/build/authentication-authorization/client-credentials-grant",
+     "title": "shopify.dev/docs/apps/build/authentication-authorization/client-credentials-grant",
+     "snippet": "This tutorial shows how to use the [client credentials grant](https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens#client-credentials-grant) to get access tokens for a server-side app acting on stores in your own Shopify organization. Of the three grants, it takes the least setup: your app exchanges its own client ID and secret for a token, with no redirect flow to implement.\nWith a client credentials grant, you won't see a token in the Shopify admin. Instead, you request tokens programmatically when you need them.\n**Info:**\nIf you're building apps for other merchants, use [Shopify CLI](https://shopify.dev/docs/apps/build/cli-for-apps), which handles authentication automatically. To authenticate with a key pair instead of your client secret, or to get tokens for any store that has installed an app with public distribution, see [Get application-only access tokens for installed stores](https://shopify.dev/docs/apps/build/authentication-authorization/application-only-access-tokens). To learn how authentication works for other common approaches, see [About app authentication](https://shopify.dev/docs/apps/build/authentication-authorization).\n\n## Get your crede"
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/build/authentication-authorization/manage-credentials",
+     "title": "shopify.dev/docs/apps/build/authentication-authorization/manage-credentials",
+     "snippet": "Your app's client credentials consist of a client ID and a client secret. The client ID identifies your app to Shopify, and the client secret authorizes it to make OAuth calls. Some tools and documentation call these the API key and API secret: `SHOPIFY_API_KEY` holds your client ID, and `SHOPIFY_API_SECRET` holds your client secret.\nYour app can also add public keys. It signs client assertions with the matching private keys to get [application-only access tokens](https://shopify.dev/docs/apps/build/authentication-authorization/application-only-access-tokens) for stores that have installed it, without sending its client secret.\n\nA service account token is a separate credential for authenticating Shopify CLI in CI/CD, not for API requests. To create, use, or rotate one, refer to [Manage service accounts](https://shopify.dev/docs/apps/build/cli-for-apps/service-accounts).\n***\n## Find your credentials\nYour credentials are available in the Dev Dashboard:\n1. Open the [Dev Dashboard](https://shopify.dev/docs/apps/build/dev-dashboard).\n2. Click **Apps** and select your app.\n3. Click **Settings**.\n4. View or copy your client ID and secret under **Credentials**.\n\nYour client ID is permanent"
+    },
+    {
+     "url": "https://github.com/Shopify/shopify-app-js/blob/main/packages/apps/shopify-api/docs/guides/oauth.md",
+     "title": "shopify-app-js/packages/apps/shopify-api/docs/guides/oauth.md at main \u00b7 Shopify/shopify-app-js",
+     "snippet": "After you set up the library for your project, you'll be able to use it to interact with the APIs, and add your own functionality. The first thing your app will need to do is to get a token to access the Admin API by performing the OAuth process. Learn more about [OAuth on the Shopify platform](https://shopify.dev/docs/apps/auth/oauth).\n## Supported types of OAuth\n1. Token Exchange\n- Recommended for embedded apps\n- Doesn't require redirects, which makes it faster and prevents flickering when loading the app\n- Access scope changes are handled by Shopify if you use [Shopify managed installation](https://shopify.dev/docs/apps/auth/installation#shopify-managed-installation)\n2. Authorization Code Grant Flow\n- Suitable for non-embedded apps\n- Installations, and access scope changes are managed by the app\n3. Client Credentials Grant\n- Suitable for backend apps without UI\n- Doesn't require user interaction in the browser\n- Access scopes can be configured either in the Developer Dashboard when creating an app version or in your app's [TOML configuration file](https://shopify.dev/docs/apps/build/cli-for-apps/app-configuration#access_scopes)\n## Token Exchange\nOAuth process by exchanging the c"
+    }
+   ]
+  },
+  "access": {
+   "query": "Shopify shopify.dev API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_Ls7n6CxYpc_w",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://shopify.com/legal/api-terms",
+     "title": "Shopify API License and Terms of Use",
+     "snippet": "When you\u2019re granted a Shopify API license, you get access to millions of merchants who might be looking for an app just like yours. You\u2019ll still own your app, but Shopify owns the platform. As owners of the platform, we put reasonable limits on the use of the merchant data it allows you to access.\nOnly request the merchant data you need to provide your service, nothing more. Get merchants\u2019 permission to do so, and follow our rules for deleting [personal customer data](https://help.shopify.com/en/api/guides/gdpr-resources). If your public app captures customer data via a Shopify online store or POS, sync it back to the merchant\u2019s Shopify store, or let them do it manually.\n\nMake sure your developer system meets [internet security standards](https://www.owasp.org). Don\u2019t do anything criminal, irresponsible or sketchy, or disrupt or overburden our systems. Use only your Shopify API credentials to access the API. Stay within the limits we set for API calls, and keep your app up to date with API changes. Use the API to develop and operate your app, not for anything else.\n\n**\u201cPartner\u201d** means an individual or entity that has agreed to the terms of the Shopify Partner Program Agreement (av"
+    },
+    {
+     "url": "https://community.shopify.dev/t/dev-account-cannot-access-personal-information-any-longer/32953",
+     "title": "Dev account cannot access personal information any longer",
+     "snippet": "We have a developer account that we use to test and develop a custom fulfillment app. In the original App Store, Apps had full access to the fulfillment order. In the Dev Dashboard, all attempts to accept a fulfillment requests yield this response:\n\u201dThis app is not approved to access the FulfillmentOrder object. See [Work with protected customer data](https://shopify.dev/docs/apps/launch/protected-customer-data) for more details.\u201d\n\nHi [@Colin_Kuskie](https://community.shopify.dev/u/colin_kuskie),\nThis can be expected depending on the app type, and store plan, since the Fulfillment Order does contain protected customer data.\nEssentially, if the app was created in the Dev Dashboard from a Partner Account, and you\u2019ve selected Public Distribution, then you must request access to protected data via your Partner Dashboard before you can access the Fulfillment Order.\nIf the app is a Partner App, with Custom Distribution, it should have access to protected data automatically.\nIf the app was created in the Dev Dashboard from a Merchant Account, the store must be on the Shopify Growth Plan or higher in order be able to access protected customer data.\nHere\u2019s some Shopify.dev documentation wit"
+    },
+    {
+     "url": "https://shopify.dev/changelog/abandonedcheckouturl-now-requires-level-2-protected-customer-data-access",
+     "title": "shopify.dev/changelog/abandonedcheckouturl-now-requires-level-2-protected-customer-data-access",
+     "snippet": "Starting December 1, 2026 for public apps, and January 1, 2027 for custom apps, the abandoned checkout recovery URL requires approval for all four protected customer fields (name, email, phone, and address) on all supported Admin API versions and `unstable`.\n\n| App | Date | How to get access |\n| - | - | - |\n| **Public apps** | **December 1, 2026** | Request access; a [data protection review](https://shopify.dev/docs/apps/launch/protected-customer-data#data-protection-review) is required |\n| **Partner custom apps** (built by a partner for a specific store) | **January 1, 2027** | Enable the four fields yourself in the Dev Dashboard; no review |\n| **Merchant-created apps in the Dev Dashboard** (apps a store or organization builds for its own use) | **January 1, 2027** | Enable the four fields yourself in the Dev Dashboard; no review |\n| **Apps created in the Shopify admin** | Not affected | Nothing to do |\n\n## How to get access\nIf your app needs the recovery URL (for example, to send abandoned checkout recovery messages), [request access to protected customer data](https://shopify.dev/docs/apps/launch/protected-customer-data#request-access-to-protected-customer-data): in the Dev Dash"
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/launch/billing/shopify-app-pricing",
+     "title": "Shopify App Pricing",
+     "snippet": "Shopify hosts your app's plan selection page, and automates most common billing tasks, such as recurring charges, usage-based pricing, free trials, proration, no-charge testing, and price updates.\n\nYou can also configure [free trials](https://shopify.dev/docs/apps/launch/billing/shopify-app-pricing/subscription-billing/offer-free-trials), [public and private plans](https://shopify.dev/docs/apps/launch/billing/shopify-app-pricing/plans), and welcome links for each plan.\n---\n##\nShopify App Pricing is the default option when you submit a new public app for approval. Existing apps without active paid merchants can opt into Shopify App Pricing by selecting the option. This will be available for all developers soon. Learn more about [migrating](https://shopify.dev/docs/apps/launch/billing/shopify-app-pricing/migrating-to-shopify-app-pricing).\n\nWith Shopify App Pricing, you set up your plans, including their prices and default trial length, in the Partner Dashboard, so your app doesn't define billing configuration or create charges in code. To extend one merchant's trial or give them a discount, use the Dev Dashboard. Refer to [Offer free trials](https://shopify.dev/docs/apps/launch/billi"
+    },
+    {
+     "url": "https://shopify.dev/docs/admin-api/access-scopes",
+     "title": "shopify.dev/docs/admin-api/access-scopes",
+     "snippet": "Shopify grants access scopes only to [public or custom apps](https://shopify.dev/docs/apps/launch/distribution). Legacy app types, such as private or unpublished apps, don't get new access scopes.\nRequest only the data your app needs to function. Any scope that writes a resource also grants read access to it, so request the write scope only when your app needs both. Shopify restricts access to scopes for apps that don't have a legitimate use for the associated data.\n| Scope type | Description | Example use cases |\n| - | - | - |\n| [Authenticated](#authenticated-access-scopes) | Controls access to resources in the [GraphQL Admin API](https://shopify.dev/docs/api/admin-graphql), [Web Pixel API](https://shopify.dev/docs/api/web-pixels-api), and [Payments Apps API](https://shopify.dev/docs/api/payments-apps). Use authenticated access scopes to interact with a store on behalf of a user. | * Creating products\n* Managing discount codes |\n| [Unauthenticated](#unauthenticated-access-scopes) | Controls an app's access to [Storefront API](https://shopify.dev/docs/api/storefront) objects. Use unauthenticated access scopes to interact with a store on behalf of a customer. | - Viewing products\n- "
+    }
+   ]
+  },
+  "surface": {
+   "query": "Shopify API reference REST GraphQL endpoints documentation shopify.dev",
+   "log_id": "log_h3vxRVvPlKXI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://shopify.dev/docs/api/storefront/latest",
+     "title": "shopify.dev/docs/api/storefront/latest",
+     "snippet": "---\ntitle: Storefront API reference\ndescription: >-\nThe Storefront API provides commerce primitives to build custom, scalable, and\nperformant shopping experiences. Learn how to get started using efficient\nGraphQL queries.\napi_version: 2026-10\nsource_url:\nhtml: 'https://shopify.dev/docs/api/storefront/latest'\nmd: 'https://shopify.dev/docs/api/storefront/latest.md'\napi_name: storefront\napi_type: graphql\n---\n# GraphQL Storefront API\nCreate unique customer experiences with the Storefront API on any platform, including the web, apps, and games. The API offers a full range of commerce options making it possible for customers to view [products](https://shopify.dev/custom-storefronts/products-collections/getting-started) and [collections](https://shopify.dev/custom-storefronts/products-collections/filter-products), add products to a [cart](https://shopify.dev/custom-storefronts/cart/manage), and [check out](https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/cart/manage#step-7-retrieve-a-checkout-url).\n\n##### Tokenless (cURL)\n```bash\ncurl -X POST \\\nhttps://{shop}.myshopify.com/api/2026-10/graphql.json \\\n-H 'Content-Type: application/json' \\\n-d '{\n\"query\": \"{\nprod"
+    },
+    {
+     "url": "https://shopify.dev/docs/api/admin-rest/latest/resources/product",
+     "title": "shopify.dev/docs/api/admin-rest/latest/resources/product",
+     "snippet": "The REST Admin API is a legacy API as of October 1, 2024. Starting April 1, 2025, all new public apps must be built exclusively with the [GraphQL Admin API](https://shopify.dev/docs/api/admin-graphql).\n\n## Endpoints\n* [post](https://shopify.dev/docs/api/admin-rest/latest/resources/product.md#post-products)\n[/admin/api/latest/products.json](https://shopify.dev/docs/api/admin-rest/latest/resources/product.md#post-products)\nCreate a new product\n[productCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productCreate)\n* [get](https://shopify.dev/docs/api/admin-rest/latest/resources/product.md#get-products?ids=632910392,921728736)\n[/admin/api/latest/products.json?ids=632910392,921728736](https://shopify.dev/docs/api/admin-rest/latest/resources/product.md#get-products?ids=632910392,921728736)\nRetrieve a list of products\n[products](https://shopify.dev/docs/api/admin-graphql/latest/queries/products?example=retrieve-a-list-of-products)\n* [get](https://shopify.dev/docs/api/admin-rest/latest/resources/product.md#get-products-product-id)\n[/admin/api/latest/products/{product\\_id}.json](https://shopify.dev/docs/api/admin-rest/latest/resources/product.md#get-products-product-id)\n"
+    },
+    {
+     "url": "https://shopify.dev/docs/api/admin-graphql/2026-10/queries/productByIdentifier.md",
+     "title": "shopify.dev/docs/api/admin-graphql/2026-10/queries/productByIdentifier.md",
+     "snippet": "---\ntitle: productByIdentifier - GraphQL Admin\ndescription: Return a product by an identifier.\napi_version: 2026-10\nsource_url:\nhtml: >-\nhttps://shopify.dev/docs/api/admin-graphql/latest/queries/productByIdentifier\nmd: >-\nhttps://shopify.dev/docs/api/admin-graphql/latest/queries/productByIdentifier.md\napi_name: admin\napi_type: graphql\ntype: query\n---\n# productByIdentifier\nquery\nRequires `read_products` access scope.\nReturn a product by an identifier.\n## Arguments\n* identifier\n[ProductIdentifierInput!](https://shopify.dev/docs/api/admin-graphql/latest/input-objects/ProductIdentifierInput)\nrequired\nThe identifier of the product.\n***\n## Possible returns\n* Product\n[Product](https://shopify.dev/docs/api/admin-graphql/latest/objects/Product)\nThe `Product` object lets you manage products in a merchant\u2019s store.\nProducts are the goods and services that merchants offer to customers. They can include various details such as title, description, price, images, and options such as size or color. You can use [product variants](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariant) to create or update different versions of the same product. You can also add or update product [me"
+    },
+    {
+     "url": "https://shopify.dev/docs/api/admin-rest/latest/resources/order",
+     "title": "shopify.dev/docs/api/admin-rest/latest/resources/order",
+     "snippet": "The REST Admin API is a legacy API as of October 1, 2024. Starting April 1, 2025, all new public apps must be built exclusively with the [GraphQL Admin API](https://shopify.dev/docs/api/admin-graphql).\n# Order\n**Multiple access scopes needed \u2014 refer to each endpoint for access scope requirements.:**\n**Requires access to [protected customer data](https://shopify.dev/apps/store/data-protection/protected-customer-data).:**\nAn order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete orders using the Order resource.\n#### Usage notes\n![](https://shopify.dev/assets/api/reference/order.png)\n* When you create an order through the API, no payment information is collected, and no transaction is performed.\n* After an order is created, you can change only a few of its attributes using the API. You can't change the items or the quantities in an order using the REST API, but you can change them using the [GraphQL Admin API](https://shopify.dev/apps/fulfillment/order-management-apps/order-editing).\n* You can add [metafields](https://shopify.dev/docs/api/admin-rest/current/resources/metafield) to the Order resource.\n* You can allow mer"
+    },
+    {
+     "url": "https://shopify.dev/docs/api/admin-rest/latest/resources/shop",
+     "title": "shopify.dev/docs/api/admin-rest/latest/resources/shop",
+     "snippet": "The REST Admin API is a legacy API as of October 1, 2024. Starting April 1, 2025, all new public apps must be built exclusively with the [GraphQL Admin API](https://shopify.dev/docs/api/admin-graphql).\n# Shop\nThe Shop resource is a collection of general business and store management settings and information about the store. The resource lets you retrieve information about the store, but it doesn't let you update any information. Only the merchant can update this information from inside the Shopify admin.\n\\#\n## Endpoints\n* [get](https://shopify.dev/docs/api/admin-rest/latest/resources/shop.md#get-shop)\n[/admin/api/latest/shop.json](https://shopify.dev/docs/api/admin-rest/latest/resources/shop.md#get-shop)\nRetrieves the shop's configuration\n[shop](https://shopify.dev/docs/api/admin-graphql/latest/queries/shop?example=retrieves-the-shops-configuration)"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Shopify shopify.dev MCP server Model Context Protocol official",
+   "log_id": "log_ETuyaD3xi2uB",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://shopify.dev/docs/api/polaris/using-mcp",
+     "title": "shopify.dev/docs/api/polaris/using-mcp",
+     "snippet": "* You must have [node](https://nodejs.org/en) version 20 or higher installed.\n* You need a LLM-enabled development environment that's capable of integrating with [Model Context Protocol (MCP) servers](https://github.com/modelcontextprotocol).\n***\n## Run the MCP server\nRun the following command to start the Shopify dev MCP server:\n## Terminal\n```terminal\nnpx -y @shopify/dev-mcp@latest\n```\n***\n## MCP configuration\nYou can add the `npx -y @shopify/dev-mcp@latest` command for different dev environments to add the MCP integration:\n## File\n```json\n{\n\"mcpServers\": {\n\"shopify-dev-mcp\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"@shopify/dev-mcp@latest\"]\n}\n}\n}\n```"
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/build/customer-accounts-mcp",
+     "title": "shopify.dev/docs/apps/build/customer-accounts-mcp",
+     "snippet": "# Customer Accounts MCP server\nThe Customer Accounts MCP server provides tools for customer-specific actions, including order management and account details. Use this server when your AI assistant needs to handle authenticated customer requests, such as checking order status, retrieving order details, or managing account preferences.\n**Building a commerce agent?:**\nTo build an agent that searches, checks out, and tracks orders for buyers, start with [Shop MCP](https://shopify.dev/docs/agents/shop-mcp). You can also build with Catalog, cart and checkout MCP tools directly with the [Universal Commerce Protocol (UCP)](https://shopify.dev/docs/agents/ucp).\n\n1. [Scaffold an app](https://shopify.dev/docs/apps/build/scaffold-app) with Shopify CLI. If you already created the app in the Dev Dashboard, then run `shopify app config link` in your local project to connect it. For details, refer to [Manage app configuration files](https://shopify.dev/docs/apps/build/cli-for-apps/manage-app-config-files).\n2. Create a [dev store](https://shopify.dev/docs/apps/build/stores/development-stores). Make sure to add some sample products to test the AI agent functionality.\n3. In the [Dev Dashboard](https:"
+    },
+    {
+     "url": "https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp",
+     "title": "shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp",
+     "snippet": "Shop MCP lets your agent or app search Shopify Catalog, build carts, and complete Shop Pay checkout through a single MCP connection. It works with over 1 billion products in Shopify Catalog and doesn't require an API key for search. Nothing changes for existing Catalog API integrations, and no action is required.\n## What changed\nShop MCP is live at `https://mcp.shop.com`, with a skill description at `https://mcp.shop.com/skill.md` that MCP-compatible agents can read. One connection gives your agent tools, grouped into a few main flows:\n* **Search and product details:** `search_catalog`, `lookup_catalog`, and `get_product` read from Shopify Catalog.\n* **Sign-in with Shop:** the shopper signs in once, and search tools use their saved preferences.\n* **Carts and checkout on Shopify stores:** your agent builds a cart and creates a checkout at the store that sells the product. Carts and checkout work without sign-in. With a signed-in shopper, checkout can use their saved addresses and Shop Pay, and your agent completes the purchase with `complete_checkout` after the shopper confirms the total and payment method.\n* **Orders:** for a signed-in shopper, your agent finds orders and tracking "
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/build/ai-toolkit",
+     "title": "shopify.dev/docs/apps/build/ai-toolkit",
+     "snippet": "Shopify AI Toolkit gives your AI coding tool a Shopify-aware starting point. The toolkit connects your agent to:\n* **Developer docs and API schemas**: look up the relevant Shopify API surface and work from current reference material, rather than relying only on model memory or broad web search.\n* **Code validation**: validate GraphQL queries, Liquid templates, and Shopify Extensions against Shopify schemas to catch issues earlier.\n* **Store management**: prepare and run supported store-management tasks through Shopify CLI's authenticated store context, with you choosing when to execute them.\n\nIf you prefer MCP, you can connect to Shopify's developer resources through the Dev MCP server. The server runs locally and doesn't require authentication.\n#### Claude Code\n1. In your terminal, tell `claude` to add the MCP server:\n## Terminal\n```terminal\nclaude mcp add --transport stdio shopify-dev-mcp -- npx -y @shopify/dev-mcp@latest\n```\n2. Restart Claude Code to load the new configuration."
+    },
+    {
+     "url": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+     "title": "shopify.dev/docs/agents/catalog/storefront-catalog",
+     "snippet": "# Storefront Catalog MCP\nThe Storefront Catalog MCP server enables AI agents to search and discover products from a single merchant's catalog, helping buyers find and purchase products from that store.\nStorefront Catalog MCP implements the [UCP Catalog capability](https://ucp.dev/2026-08-25/specification/shopping/catalog/) and its [MCP binding](https://ucp.dev/2026-08-25/specification/shopping/catalog/mcp/). The names, request and response shapes of tools conform to the [UCP specification](https://ucp.dev/2026-08-25/specification/shopping/catalog/).\nThe same endpoint also implements the [UCP Location capability](https://ucp.dev/2026-08-25/specification/common/location/) and its [MCP binding](https://ucp.dev/2026-08-25/specification/common/location/mcp/), so agents can find the merchant's physical stores.\n## When to use Storefront Catalog MCP\nUse Storefront Catalog MCP whenever buyer intent and query are scoped to a single merchant. For example, use Storefront Catalog MCP when building a storefront AI agent. For cross-merchant product discovery, use [Global Catalog MCP](https://shopify.dev/docs/agents/catalog/global-catalog). To find the merchant's stores, use the [location tools](#"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

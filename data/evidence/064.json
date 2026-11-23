@@ -1,0 +1,142 @@
+{
+ "id": 64,
+ "app": "Cloudflare",
+ "hint": "developers.cloudflare.com/api",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "Cloudflare API authentication OAuth API key access token developer docs developers.cloudflare.com/api",
+   "log_id": "log_CJmietDDiBCN",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/api/get-started/token-formats",
+     "title": "Token formats",
+     "snippet": "Cloudflare API keys and API tokens use a prefixed, scannable format that makes them identifiable by credential scanning tools. Each credential type in the following table has a distinct prefix followed by 40 characters and a checksum.\n| Credential type | Description | Format |\n|---|---|---|\n| Global API Key | Global key tied to your user account (full access) | `cfk_[40 characters][checksum]` |\n| User API Token | Scoped token you create for specific permissions | `cfut_[40 characters][checksum]` |\n| Account API Token | Token owned by the account, not tied to a specific user | `cfat_[40 characters][checksum]` |\nExisting tokens continue to work. Every new token you create or [roll](https://developers.cloudflare.com/fundamentals/api/how-to/roll-token/) uses the scannable format automatically.\n\n| Credential type | Old format |\n|---|---|\n| Global API Key | 37\u201345 character lowercase hex string |\n| User API Token | 40-character alphanumeric string |\n| Account API Token | 40-character alphanumeric string |\n## Wrangler OAuth access tokens\nWhen you authenticate with [`wrangler login`](https://developers.cloudflare.com/workers/wrangler/commands/general/#login), Wrangler receives a user OAuth "
+    },
+    {
+     "url": "https://developers.cloudflare.com/api/resources/iam/subresources/oauth_clients/methods/create",
+     "title": "Create OAuth Client",
+     "snippet": "API Token\nThe preferred authorization scheme for interacting with the Cloudflare API. [Create a token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).\n**Example:**`Authorization: Bearer Sn3lZJTBX6kkg7OdcBUAxOO963GEIyGQqnFTOFYY`\nAPI Email + API Key\nThe previous authorization scheme for interacting with the Cloudflare API, used in conjunction with a Global API key.\n**Example:**`X-Auth-Email: user@example.com`\nThe previous authorization scheme for interacting with the Cloudflare API. When possible, use API tokens instead of Global API keys.\n**Example:**`X-Auth-Key: 144c9defac04969c7bfad8efaa8ea194`"
+    },
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/oauth/create-an-oauth-client",
+     "title": "Create your OAuth client",
+     "snippet": "To create OAuth clients with the Cloudflare API, create an API token with the `OAuth Clients Write` permission.\n```\ncurl -X POST \"https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/oauth_clients\" \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer $API_TOKEN\" \\\n-d '{\n\"client_name\": \"Cloudflare OAuth Client\",\n\"grant_types\": [\"authorization_code\"],\n\"redirect_uris\": [\"https://example.com/oauth/callback\"],\n\"scopes\": [\"workers-platform.read\", \"workers-platform.write\"],\n\"optional_scopes\": [\"workers-platform.read\"],\n\"post_logout_redirect_uris\": [\"https://example.com/logout\"],\n\"response_types\": [\"code\"],\n\"token_endpoint_auth_method\": \"client_secret_basic\",\n\"logo_uri\": \"https://example.com/logo.png\",\n\"policy_uri\": \"https://example.com/policy\",\n\"tos_uri\": \"https://example.com/tos\",\n\"client_uri\": \"https://example.com\",\n\"allowed_cors_origins\": [\"https://example.com\"]\n}'\n```\n## Select scopes\nOAuth scope names correspond to Cloudflare API token permission names. Use the Cloudflare API documentation to identify the permissions your client needs.\nWhen you create or edit an OAuth client, select at least one scope. All selected scopes are required by default.\nIn **Choose optiona"
+    },
+    {
+     "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/managed-oauth",
+     "title": "Managed OAuth",
+     "snippet": "## Enable managed OAuth on a self-hosted application\n1. In the [Cloudflare dashboard \u2197\ufe0e](https://dash.cloudflare.com/), go to **Zero Trust** > **Access controls** > **Applications**.\n2. Find the application you want to configure, then select the three dots on the right > **Edit**.\n3. Go to the **Advanced settings** tab and turn on **Managed OAuth**.\n4. (Optional) Configure Managed OAuth settings.\n5. Select **Save**.\n1. Get your existing Access application configuration:\nRequired API token permissions\nAt least one of the following [token permissions](https://developers.cloudflare.com/fundamentals/api/reference/permissions/) is required:\n- `Access: Apps and Policies Write`\n- `Access: Apps and Policies Read`\n```\ncurl \"https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/access/apps/$APP_ID\" \\\n--request GET \\\n--header \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\"\n```\n2. Make a `PUT` request and set `oauth_configuration.enabled` to `true`. To avoid overwriting your existing configuration, the request body should contain all fields returned by the previous `GET` request.\nRequired API token permissions\nAt least one of the following [token permissions](https://developers.cloudflare.co"
+    },
+    {
+     "url": "https://developers.cloudflare.com/api/resources/user/subresources/tokens/methods/create",
+     "title": "Create Token",
+     "snippet": "# Create Token\nPOST/user/tokens\nCreate a new access token.\n##### Security\nAPI Token\nThe preferred authorization scheme for interacting with the Cloudflare API. [Create a token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).\n**Example:**`Authorization: Bearer Sn3lZJTBX6kkg7OdcBUAxOO963GEIyGQqnFTOFYY`\n##### Accepted Permissions (at least one required)\n`API Tokens Write`\n\nprovisioner_id: optional string\nThe identifier of the service that provisioned the token. For an OAuth-provisioned token, this is the OAuth client identifier. Present when `provisioner_type` is present and null when the identifier is unavailable.\nprovisioner_type: optional string\nThe type of service that provisioned the token. Only present for provisioned Account Owned API Tokens.\n\n```\ncurl https://api.cloudflare.com/client/v4/user/tokens \\\n-H 'Content-Type: application/json' \\\n-H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\" \\\n-d '{\n\"name\": \"readonly token\",\n\"policies\": [\n{\n\"effect\": \"allow\",\n\"permission_groups\": [\n{\n\"id\": \"c8fed203ed3043cba015a93ad1616f1f\",\n\"meta\": {\n\"label\": \"load_balancer_admin\",\n\"scopes\": \"com.cloudflare.api.account\"\n}\n},\n{\n\"id\": \"82e64a83756745bbbb1c9c2701bf816b\""
+    }
+   ]
+  },
+  "access": {
+   "query": "Cloudflare developers.cloudflare.com/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_hriwPuzeWSms",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.cloudflare.com/tenant/tutorial/client-actions",
+     "title": "Get started",
+     "snippet": "### Channel and Alliance partner account setup\nBefore using the Tenant API, you need to [create an account](/fundamentals/account/create-account/), [verify your email address](/fundamentals/user-profiles/verify-email-address/), and [add your billing information](/billing/get-started/create-billing-profile/).\nAfter you sign your partner agreement with Cloudflare, Cloudflare will add [certain entitlements](/tenant/structure/) to your account that allow you to provision and manage custom accounts. If you have signed your partner agreement and your account has not yet been enabled, MSP partners should contact `partners@cloudflare.com` and Agency Partners should contact `agency@cloudflare.com`.\n### API access\nYou also need to [retrieve your API key](/fundamentals/api/get-started/keys/#view-your-global-api-key) to authenticate your requests to the Tenant API.\n\nYou can also grant access to the Cloudflare dashboard by using the API.\n```\ncurl 'https://api.cloudflare.com/client/v4/accounts/<CUSTOMER_ACCOUNT_ID>/members' \\ --header \"X-Auth-Email: <EMAIL>\" \\ --header \"X-Auth-Key: <API_KEY>\" \\ --header \"Content-Type: application/json\" \\ --data '{ \"email\": \"<CUSTOMER_EMAIL>\", \"roles\": [\"<USER_RO"
+    },
+    {
+     "url": "https://developers.cloudflare.com/changelog/product-group/core-platform/2",
+     "title": "Core platform Changelog",
+     "snippet": "Cloudflare Organizations is now generally available for Enterprise customers and MSSP/Distributor partners.\nOrganizations provides a top-level container for centrally managing accounts, members, analytics, and shared policies. Organization Super Administrators receive implicit access to every account in their Organization without requiring separate account memberships.\n\nAccount API token creation is no longer limited to Super Administrators. Members with the **API Token Provisioning** role can now create Account API tokens via the Dashboard, API, Terraform, or CF CLI, making it easier for developers and platform teams to provision credentials without depending on a Super Administrator for Account API Token Provisioning.\n\nWe're expanding how customers create accounts across Cloudflare, making it easier to self-serve account creation in the dashboard, automate standalone account creation with user-owned API tokens or OAuth access tokens, and create Free accounts directly within Enterprise Organizations.\n#### What's New\n**Dashboard account creation:** All cloudflare customers can create additional Free accounts directly through self-serve flows in the Cloudflare dashboard.\n**Enterpris"
+    },
+    {
+     "url": "https://developers.cloudflare.com/api-shield/index.md",
+     "title": "developers.cloudflare.com/api-shield/index.md",
+     "snippet": "Enterprise customers can preview this product as a [non-contract service](https://developers.cloudflare.com/billing/understand/preview-services/), which provides full access, free of metered usage fees, limits, and certain other restrictions.\n\nCustomers with the API Security entitlement already have access to Schema Profiles through Schema Learning and Schema Validation. Cloudflare is opening a closed beta to invited Enterprise customers without the API Security entitlement. Interested customers can contact their account team to express interest. Closed beta access does not imply future plan availability or pricing."
+    },
+    {
+     "url": "https://developers.cloudflare.com/tenant/reference/subscriptions",
+     "title": "Available subscriptions",
+     "snippet": "When [provisioning services for an account](/tenant/how-to/manage-subscriptions/), you need to include certain values with each API call to specify a particular service.\nThe subscriptions available to you will vary depending on your current partner program ([Agency Partner Program \u2197\ufe0e](https://www.cloudflare.com/cloudflare-partners-self-serve-program-closed-beta/) or [Enterprise Resellers and MSP Program \u2197\ufe0e](https://portal.cloudflarepartners.com)).\n\nWhen creating or updating a [zone plan](/api/resources/zones/subresources/subscriptions/methods/get/), Partners can use one of the following values for the `id` of the `rate_plan` field (which controls the zone-level plan subscription).\n| Partner program | Available subscriptions |\n|---|---|\n| Enterprise and self-serve resellers | `PARTNERS_FREE`, `PARTNERS_PRO`, `PARTNERS_BIZ`, `PARTNERS_ENT` |\n| Agency partners | `CF_FREE`, `CF_PRO_20_20`, `CF_BIZ` |\n| MSP partners | `msp_biz` |\n\n### Developer subscriptions\nThe following table lists sample values for various Developer platform subscriptions.\n| Feature | Subscription IDs |\n|---|---|\n| [Images](/images/) | `IMAGES_ENT`,`IMAGES_BASIC` |\n| [Image transformations](/images/optimization/trans"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+     "title": "raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+     "snippet": "\"x-cfPlanAvailability\": {\n\"business\": true,\n\"enterprise\": true,\n\"free\": true,\n\"pro\": true"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Cloudflare API reference REST GraphQL endpoints documentation developers.cloudflare.com/api",
+   "log_id": "log_ZefaZrb3X5os",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.cloudflare.com/api",
+     "title": "API Reference",
+     "snippet": "#### AccountsRoles\n##### [List Roles](https://developers.cloudflare.com/api/resources/accounts/subresources/roles/methods/list)\nDeprecated\nGET/accounts/{account_id}/roles\n##### [Role Details](https://developers.cloudflare.com/api/resources/accounts/subresources/roles/methods/get)\nDeprecated\nGET/accounts/{account_id}/roles/{role_id}\n#### AccountsSubscriptionsCancel Reason\n##### [Create Cancel Reason](https://developers.cloudflare.com/api/resources/accounts/subresources/subscriptions/subresources/cancel_reason/methods/create)\nPOST/accounts/{account_id}/subscriptions/{subscription_identifier}/cancel-reason\n##### [Get Cancel Reason](https://developers.cloudflare.com/api/resources/accounts/subresources/subscriptions/subresources/cancel_reason/methods/get)\nGET/accounts/{account_id}/subscriptions/{subscription_identifier}/cancel-reason"
+    },
+    {
+     "url": "https://github.com/watzon/claude-code/blob/main/skills/cloudflare-management/references/api-surface.md",
+     "title": "claude-code/skills/cloudflare-management/references/api-surface.md at main \u00b7 watzon/claude-code",
+     "snippet": "# Cloudflare API Surface\nComplete reference of Cloudflare's API services organized by category. All APIs use the base URL `https://api.cloudflare.com/client/v4/`.\n## Authentication\nAll API requests require authentication via one of these methods:\n```\n# Bearer token (recommended) curl -H \" Authorization: Bearer <token> \" https://api.cloudflare.com/client/v4/zones # Legacy API key (not recommended) curl -H \" X-Auth-Email: user@example.com \" -H \" X-Auth-Key: <key> \" https://api.cloudflare.com/client/v4/zones\n```\n\n## GraphQL Analytics API\nEndpoint: `https://api.cloudflare.com/client/v4/graphql`\n**Authentication**: Same as REST API (Bearer token)\n**Example query**:\n```\nquery { viewer { zones ( filter : { zoneTag : $zoneId }) { httpRequests1dGroups ( limit : 10 , filter : { date_gt : \" 2024-01-01 \" }) { sum { requests bytes } dimensions { date } } } } }\n```\n\n## Additional Resources\n- **API Documentation**: [https://developers.cloudflare.com/api/](https://developers.cloudflare.com/api/)\n- **OpenAPI Schema**: [https://github.com/cloudflare/api-schemas](https://github.com/cloudflare/api-schemas)\n- **GraphQL Explorer**: [https://developers.cloudflare.com/analytics/graphql-api/](https://devel"
+    },
+    {
+     "url": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-wan/analytics/query-bandwidth",
+     "title": "Querying Cloudflare WAN IPsec/GRE tunnel bandwidth analytics with GraphQL",
+     "snippet": "This example uses the GraphQL Analytics API to query Cloudflare WAN ingress tunnel traffic over a specified time period.\nThe following API call requests Cloudflare WAN ingress tunnel traffic over a one-hour period and outputs the requested fields. Replace `<CLOUDFLARE_ACCOUNT_TAG>` with your account ID, `<EMAIL>`, `<API_KEY>`1 (legacy), or `<API_TOKEN>`2 (preferred) with your API credentials, and adjust the `datetime_geq` and `datetime_leq` values as needed.\n\n```\nPAYLOAD='{ \"query\":\n\"query GetTunnelHealthCheckResults($accountTag: string, $datetimeStart: string, $datetimeEnd: string) {\nviewer {\naccounts(filter: {accountTag: $accountTag}) {\nmagicTransitTunnelTrafficAdaptiveGroups(\nlimit: 100,\nfilter: {\ndatetime_geq: $datetimeStart,\ndatetime_lt:  $datetimeEnd,\ndirection: $direction\n}\n) {\navg {\nbitRateFiveMinutes\n}\ndimensions {\ntunnelName\ndatetimeFiveMinutes\n}\n}\n}\n}\n}\",\n\"variables\": {\n\"accountTag\": \"<CLOUDFLARE_ACCOUNT_TAG>\",\n\"direction\": \"ingress\",\n\"datetimeStart\": \"2022-05-04T11:00:00.000Z\",\n\"datetimeEnd\": \"2022-05-04T12:00:00.000Z\"\n}\n}\n}'\n# curl with Legacy API Key\ncurl https://api.cloudflare.com/client/v4/graphql \\\n--header \"X-Auth-Email: <EMAIL>\" \\\n--header \"X-Auth-Key: <API_KEY>\""
+    },
+    {
+     "url": "https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/list",
+     "title": "List DNS Records",
+     "snippet": "API Token\nThe preferred authorization scheme for interacting with the Cloudflare API. [Create a token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).\n**Example:**`Authorization: Bearer Sn3lZJTBX6kkg7OdcBUAxOO963GEIyGQqnFTOFYY`"
+    },
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/api/how-to/make-api-calls",
+     "title": "Make API calls",
+     "snippet": "token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/), all API requests are authorized in the same way. Cloudflare uses the [RFC standard \u2197\ufe0e](https://tools.ietf.org/html/rfc6750#section-2.1) `Authorization: Bearer <API_TOKEN>` interface. An example request is shown below.\n```\ncurl \"https://api.cloudflare.com/client/v4/zones/$ZONE_ID\" \\\n--header \"Authorization: Bearer YQSn-xWAQiiEh9qM58wZNnyQS7FUdoqGIUAbrh7T\"\n```\n\n## Using Cloudflare's APIs\nEvery Cloudflare API element is fixed to a version number. The latest version is Version 4. The stable base URL for all Version 4 HTTPS endpoints is: `https://api.cloudflare.com/client/v4/`\nFor specific guidance on making API calls, refer to the following resources:\n- The product's [Developer Docs section](https://developers.cloudflare.com/directory/) for how-to guides.\n- [API schema docs](https://developers.cloudflare.com/api/) for request and response payloads for each endpoint.\n- The first-party libraries for [Go \u2197\ufe0e](https://github.com/cloudflare/cloudflare-go), [TypeScript \u2197\ufe0e](https://github.com/cloudflare/cloudflare-typescript), [Python \u2197\ufe0e](https://github.com/cloudflare/cloudflare-python), or [HashiCorp's Terra"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Cloudflare developers.cloudflare.com/api MCP server Model Context Protocol official",
+   "log_id": "log_Mc_ukZZeR7aF",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+     "title": "Cloudflare's own MCP servers",
+     "snippet": "Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like [Claude \u2197\ufe0e](https://modelcontextprotocol.io/quickstart/user), [Windsurf \u2197\ufe0e](https://docs.windsurf.com/windsurf/cascade/mcp), our own [AI Playground \u2197\ufe0e](https://playground.ai.cloudflare.com/) or any [SDK that supports MCP \u2197\ufe0e](https://github.com/cloudflare/agents/tree/main/packages/agents/src/mcp).\n\nThe [Cloudflare API MCP server \u2197\ufe0e](https://github.com/cloudflare/mcp) at `https://mcp.cloudflare.com/mcp` is the only MCP server you need to work with Cloudflare. It provides access to the entire [Cloudflare API](https://developers.cloudflare.com/api/) \u2014 over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product \u2014 and to the Cloudflare developer documentation.\nThe server provides the `search()` and `execute()` tools to find and call API endpoints, and the `docs()` tool to search Cloudflare developer documentation.\nIt uses [the search-and-execute Code Mode pattern](https://developers.cloudflare.com/agents/model-context-protocol/guides/build-codemode-mcp-server/#publish-a-large-api-with-search-and-execute), a technique where the model writes JavaScript against "
+    },
+    {
+     "url": "https://developers.cloudflare.com/agents/model-context-protocol/apis/handler-api",
+     "title": "MCP Server",
+     "snippet": "# MCP Server\n`createMcpHandler` from `agents/mcp/server` serves an MCP SDK v2 server from a Worker. The handler is stateless: it builds a fresh server for every request, so you do not need a Durable Object, protocol session, or WebSocket.\nTo move an existing `McpAgent` server, refer to [Migrate to MCP SDK v2](/agents/model-context-protocol/guides/migrate-to-mcp-sdk-v2/). The deprecated API is documented in the [`McpAgent` reference](/agents/model-context-protocol/apis/agent-api/).\n## Install dependencies\n```\nnpm i agents @modelcontextprotocol/server@2.3.1 zod\n```\n`@modelcontextprotocol/server` is an optional peer dependency of `agents`, so your package manager does not install it for you. Use the exact version required by your installed Agents release.\n## `createMcpHandler`\n`createMcpHandler` creates a callable stateless MCP request handler from an MCP SDK v2 server factory. Invoke it from a Worker's object `fetch()` export or compose it inside another handler.\n```\nimport {\ncreateMcpHandler,\ntype CreateMcpHandlerOptions,\ntype StatelessMcpHandler,\n} from \"agents/mcp/server\";\nimport type { McpServerFactory } from \"@modelcontextprotocol/server\";\nfunction createMcpHandler(\nfactory: Mcp"
+    },
+    {
+     "url": "https://developers.cloudflare.com/agents/model-context-protocol/guides/remote-mcp-server",
+     "title": "Build a Remote MCP server",
+     "snippet": "This guide shows how to deploy a remote MCP server on Cloudflare using [Streamable HTTP transport](https://developers.cloudflare.com/agents/model-context-protocol/protocol/transport/). You have two options:\n- **Without authentication** \u2014 anyone can connect and use the server (no login required).\n- **With [authentication and authorization](https://developers.cloudflare.com/agents/model-context-protocol/guides/remote-mcp-server/#add-authentication)** \u2014 users sign in before accessing tools, and you can control which tools an agent can call based on the user's permissions.\n## How the server works\nThe templates in this guide build the server with [`createMcpHandler`](https://developers.cloudflare.com/agents/model-context-protocol/apis/handler-api/) from the Agents SDK. The handler is stateless: each request gets a fresh `McpServer` from a factory function, so the server needs no Durable Object or session. Keep data that must outlive a request in a binding such as KV, D1, or a Durable Object.\nTo move an existing `McpAgent` server, refer to [Migrate to MCP SDK v2](https://developers.cloudflare.com/agents/model-context-protocol/guides/migrate-to-mcp-sdk-v2/). The deprecated API is document"
+    },
+    {
+     "url": "https://developers.cloudflare.com/agents/tools/mcp",
+     "title": "MCP",
+     "snippet": "Agents can use [Model Context Protocol (MCP)](https://developers.cloudflare.com/agents/model-context-protocol/) as clients. Connect an agent to external MCP servers, discover the tools those servers expose, and pass those tools into model calls.\nUse MCP when you want an agent to:\n- Call tools exposed by external MCP servers.\n- Reuse tools across agents, IDEs, and other AI clients.\n- Connect to services that already expose an MCP endpoint.\n- Add OAuth or token-based authorization around external tool access.\nTo build an MCP server instead, refer to [Model Context Protocol (MCP)](https://developers.cloudflare.com/agents/model-context-protocol/).\n## Basic pattern\nCall `addMcpServer()` to connect to a remote MCP server, then pass `this.mcp.getAITools()` to the AI SDK.\n```\nimport { Agent } from \"agents\";\nimport { generateText } from \"ai\";\nimport { createAI } from \"agents/models/ai-sdk\";\nexport class ToolAgent extends Agent {\nasync onStart() {\nawait this.addMcpServer(\"github\", \"https://mcp.github.com/mcp\");\n}\nasync onRequest(request) {\nconst ai = createAI({ binding: this.env.AI });\nconst response = await generateText({\nmodel: ai(\"@cf/zai-org/glm-4.7-flash\"),\nprompt: \"Use available tools "
+    },
+    {
+     "url": "https://github.com/cloudflare/mcp",
+     "title": "GitHub - cloudflare/mcp: MCP server for the Cloudflare API",
+     "snippet": "# Cloudflare MCP Server\n> A token-efficient MCP server for the entire Cloudflare API. 2500 endpoints in 1k tokens, powered by [Code Mode](https://blog.cloudflare.com/code-mode-mcp/).\n## Token Comparison\n| Approach | Tools | Token cost | Context used (200K) |\n|---|---|---|---|\n| Raw OpenAPI spec in prompt | \u2014 | ~2,000,000 | 977% |\n| Native MCP (full schemas) | 2,594 | 1,170,523 | 585% |\n| Native MCP (minimal \u2014 required params only) | 2,594 | 244,047 | 122% |\n| Code mode | 3 | ~1,100 | 0.5% |\n## Get Started\nMCP URL: `https://mcp.cloudflare.com/mcp`\n### Option 1: OAuth (Recommended)\nJust connect to the MCP server URL - you'll be redirected to Cloudflare to authorize and select permissions.\n#### Example JSON Configuration\n```\n{\n\"mcpServers\": {\n\"cloudflare-api\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.cloudflare.com/mcp\"\n}\n}\n}\n```\n### Option 2: API Token\nFor CI/CD, automation, or if you prefer managing tokens yourself.\nCreate a [Cloudflare API token](https://dash.cloudflare.com/profile/api-tokens) with the permissions you need. Both **user tokens** and **account tokens** are supported. For account tokens, include the **Account Resources : Read** permission so the server can auto-detect yo"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

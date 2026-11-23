@@ -1,0 +1,34 @@
+{
+  "id": 43,
+  "app": "BigCommerce",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://docs.bigcommerce.com/developer/docs/beta/store-management-mcp",
+      "to": "https://developer.bigcommerce.com/developer/docs/beta/store-management-mcp",
+      "why": "Cite page actually returned by search",
+      "evidence": "https://developer.bigcommerce.com/developer/docs/beta/store-management-mcp"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://docs.bigcommerce.com",
+      "to": "https://docs.bigcommerce.com/developer/docs/overview/sandboxes",
+      "why": "Generic docs homepage replaced with sandbox/trial page (free developer sandbox, 15-day no-card trial at bigcommerce.com/free-trial)",
+      "evidence": "https://docs.bigcommerce.com/developer/docs/overview/sandboxes"
+    },
+    {
+      "field": "mcp_note",
+      "from": "Store Management MCP (beta) and storefront MCP at docs.bigcommerce.com",
+      "to": "Store Management MCP (early access for all stores, no access request needed) plus storefront MCP, published by BigCommerce.",
+      "why": "Changelog says beta now open to all stores",
+      "evidence": "https://docs.bigcommerce.com/developer/changelog"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict"
+  ],
+  "searches": 3
+}

@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "app": "HubSpot",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

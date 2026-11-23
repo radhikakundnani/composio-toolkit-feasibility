@@ -1,0 +1,142 @@
+{
+ "id": 96,
+ "app": "Devin",
+ "hint": "docs.devin.ai (MCP)",
+ "given_category": "AI, Research and Media-native",
+ "queries": {
+  "auth": {
+   "query": "Devin API authentication OAuth API key access token developer docs docs.devin.ai MCP",
+   "log_id": "log_LjGABZFlEjcV",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.devin.ai/api-reference/authentication",
+     "title": "Authentication",
+     "snippet": "The Devin API uses a **principal + token** model. A **principal** is who you are (your identity), and a **token** is how you prove it (your credential). Understanding this distinction is the key to choosing the right authentication method for your use case.\n##\n\u200b\nPrincipals & tokens\n| Principal | Token | Description |\n|---|---|---|\n| **Service User** (non-human) | Service User API Key | For automated integrations and CI/CD pipelines |\n| **User** (human) | Personal Access Token (PAT) | For human programmatic access under your own identity |\nAll API credentials use the `cog_` prefix format. Include your token in the `Authorization` header of every request:\n```\ncurl -X GET \"https://api.devin.ai/v3/organizations/$DEVIN_ORG_ID/sessions\" \\\n-H \"Authorization: Bearer cog_your_token_here\"\n```\nThe key distinction is **which principal the token authenticates as**:\n- A **Service User API Key** authenticates as the **service user** \u2014 the service user\u2019s identity, permissions, and org memberships apply.\n- A **Personal Access Token** authenticates as the **human user** who created it \u2014 that user\u2019s identity, permissions, and org memberships apply.\n###\n\u200b\nPersonal access token or service user?\n| | Per"
+    },
+    {
+     "url": "https://docs.devin.ai/work-with-devin/mcp?utm%3C/em%3Esource=openai",
+     "title": "Devin MCP servers and marketplace",
+     "snippet": "To connect an MCP supplied by a plugin:\n1. Install the plugin at the **Personal**, **Organization**, or **Enterprise** scope where you want to use it.\n2. Wait for indexing to read its MCP configuration. If setup remains unavailable, follow [Resolve indexing issues](/product-guides/plugins#resolve-indexing-issues).\n3. Open the plugin\u2019s MCP from **Customize \u2192 MCPs**, choose **Connect**, and supply the required credentials or complete OAuth. Connecting a shared MCP requires the permissions to manage MCPs at that scope.\n4. Check its connection status before using it in a new session. Plugin installation alone does not authorize access to the external service.\nFor CLI plugin MCPs, follow the [CLI MCP configuration guide](/cli/extensibility/mcp/configuration); use `devin mcp login` for OAuth servers running locally.\n\nFor MCPs that authenticate with OAuth, Devin will prompt you to visit a URL to connect your account. How the connection is shared depends on the server\u2019s **Access** setting:\n- **Organization**: all members share a single authenticated connection. **We strongly recommend connecting a service account**, not your personal account, since every member\u2019s sessions will use it.\n- **"
+    },
+    {
+     "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+     "title": "Devin MCP",
+     "snippet": "Authentication Required\nTo use the Devin MCP server, you need a Devin API key:\n1. Sign up for a Devin account at [Devin.ai](https://devin.ai/)\n2. Generate an API key from your [account settings](/api-reference/authentication)\n3. Include the API key in your MCP client configuration\nThe MCP server supports the same authentication methods as the [Devin API](/api-reference/authentication):\n| Token type | Prefix | Org resolution |\n|---|---|---|\n| **Org-scoped service user key** | `cog_` | Automatic \u2014 org_id is resolved from the service user |\n| **Enterprise service user key** | `cog_` | Requires `X-Org-Id` header (see below) |\n| **Personal access token** | `cog_` | Requires `X-Org-Id` header (see below) |\nLegacy API keys (`apk_` / `apk_user_` prefix) only work with the repository documentation tools (`read_wiki_structure`, `read_wiki_contents`, `ask_wiki_question`, `list_wiki_repos`). The session, playbook, knowledge, schedule, and integration tools reject them because they cannot be resolved to an organization. Use a [service user API key](/api-reference/authentication#service-users-recommended-for-automation) for those.\n####\n\u200b\nEnterprise accounts: `X-Org-Id` header\nEnterprise service "
+    },
+    {
+     "url": "https://docs.devin.ai/cli/extensibility/mcp/configuration",
+     "title": "MCP Configuration",
+     "snippet": "You can also manage servers from the command line:\n```\ndevin mcp list              # List all configured servers\ndevin mcp get <name>        # Show details for a specific server\ndevin mcp remove <name>     # Remove a configured server\ndevin mcp login <name>      # Authenticate with a server via OAuth\ndevin mcp logout <name>     # Remove stored OAuth credentials\ndevin mcp enable <name>     # Enable a disabled server\ndevin mcp disable <name>    # Disable a server without removing it\n```\n\n```\n// .devin/mcp_config.json\n{\n\"mcpServers\": {\n\"server-name\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"@company/mcp-server\"],\n\"env\": {\n\"API_KEY\": \"your-key\"\n}\n}\n}\n}\n```\n\nSome remote MCP servers require OAuth authentication. After adding an OAuth-based server to your config, authenticate using the `login` command:\n```\ndevin mcp login <server-name>\n```\nFor example:\n```\ndevin mcp login notion    # Authenticate with Notion\ndevin mcp login linear    # Authenticate with Linear\n```\nThis opens a browser window where you can authorize access. The OAuth tokens are stored locally and refreshed automatically. You can optionally request specific OAuth scopes:\n```\ndevin mcp login notion --scopes read,write\n```\nTo remo"
+    },
+    {
+     "url": "https://docs.devin.ai/product-guides/plugin-mcp-setups",
+     "title": "Plugin MCP servers in Devin",
+     "snippet": "A plugin can include MCP servers (for example an issue tracker), so everyone who installs it gets the same server configuration without setting it up from scratch. After installing it, you supply any credentials the server needs, such as an API key or an OAuth sign-in. A connection can be personal or shared, depending on where the plugin is installed and the installation\u2019s **Access** setting.\n##\n\u200b\nThe declaration\nDeclare servers in a root `.mcp.json` as an `mcpServers` map. The manifest\u2019s inline `mcpServers` field takes the same map without the wrapper.\n```\n{\n\"mcpServers\": {\n\"example-mcp\": {\n\"url\": \"https://mcp.example.com/mcp\",\n\"tokenScope\": \"user\"\n},\n\"example-mcp-service-account\": {\n\"url\": \"https://mcp.example.com/mcp\",\n\"headers\": {\n\"Authorization\": \"Bearer ${EXAMPLE_MCP_SERVICE_ACCOUNT_TOKEN}\"\n}\n}\n}\n}\n```\n| Field | Type | What it does |\n|---|---|---|\n| `url` | string | The server\u2019s endpoint. Required. |\n| `transport` | string | Set `\"sse\"` for a legacy SSE endpoint. Omit it for Streamable HTTP. |\n| `headers` | object | HTTP headers sent with every request. Values may hold placeholders. |\n| `oauthClientId` | string | A pre-registered OAuth client, for providers without dynamic cl"
+    }
+   ]
+  },
+  "access": {
+   "query": "Devin docs.devin.ai MCP API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_JdLTwE6Pnd1R",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+     "title": "Devin MCP",
+     "snippet": "Authentication Required\nTo use the Devin MCP server, you need a Devin API key:\n1. Sign up for a Devin account at [Devin.ai](https://devin.ai/)\n2. Generate an API key from your [account settings](/api-reference/authentication)\n3. Include the API key in your MCP client configuration\nThe MCP server supports the same authentication methods as the [Devin API](/api-reference/authentication):\n| Token type | Prefix | Org resolution |\n|---|---|---|\n| **Org-scoped service user key** | `cog_` | Automatic \u2014 org_id is resolved from the service user |\n| **Enterprise service user key** | `cog_` | Requires `X-Org-Id` header (see below) |\n| **Personal access token** | `cog_` | Requires `X-Org-Id` header (see below) |\nLegacy API keys (`apk_` / `apk_user_` prefix) only work with the repository documentation tools (`read_wiki_structure`, `read_wiki_contents`, `ask_wiki_question`, `list_wiki_repos`). The session, playbook, knowledge, schedule, and integration tools reject them because they cannot be resolved to an organization. Use a [service user API key](/api-reference/authentication#service-users-recommended-for-automation) for those.\n####\n\u200b\nEnterprise accounts: `X-Org-Id` header\nEnterprise service "
+    },
+    {
+     "url": "https://docs.devin.ai/work-with-devin/mcp",
+     "title": "Devin MCP servers and marketplace",
+     "snippet": "**Connect**, and\n\nFor MCPs that authenticate with OAuth, Devin will prompt you to visit a URL to connect your account. How the connection is shared depends on the server\u2019s **Access** setting:\n- **Organization**: all members share a single authenticated connection. **We strongly recommend connecting a service account**, not your personal account, since every member\u2019s sessions will use it.\n- **Personal**: each organization member authenticates individually with their own account, so connecting your personal account is fine. Note that other users can still interact with your sessions, so this should not be treated as a security boundary."
+    },
+    {
+     "url": "https://docs.devin.ai/release-notes/2026",
+     "title": "2026",
+     "snippet": "##### Plugins, playbooks, skills, MCP servers and knowledge\nEach can be shared with a user group instead of the whole org, including MCP servers that do not use OAuth.\n\ncovers**The MCP tool approval card in sessions now names the tool and whether Always allow applies to all your sessions or everyone in the organization, and the resolved row shows Always allowed with a Change link.**Plugin\n\nsupport.**Personal Access Tokens Default to Approval Required**Enterprises that have not configured a PAT policy now default to approval required: members can request a PAT and an enterprise admin approves it. Admins can still switch to self-serve or disable PATs.**Budgets**Launching\n\nplugins.**Clearer MCP Server and Plugin Approval Cards**MCP server requests in a session now say which action is requested (delete, enable, disable) and keep showing the server\u2019s name after you approve or deny; plugin approval prompts in organizations without an enterprise say \u201corganization\u201d instead of \u201centerprise\u201d.**Repositories"
+    },
+    {
+     "url": "https://docs.devin.ai/product-guides/security-profiles",
+     "title": "Security Profiles",
+     "snippet": "MCP access\nBy default, sessions can use any [MCP server](/work-with-devin/mcp) installed in your organization. A profile can restrict this with **an allowlist of MCP servers** \u2014 sessions governed by the profile can only use the listed servers.\nMCP access is managed independently of the network policy: you do **not** need to add an MCP server\u2019s address to the network allowlist. Servers allowed by the profile are reachable automatically, and servers excluded by the profile stay unusable regardless of the network policy.\n###\n\u200b\nDevin MCP access\nSessions also have access to Devin\u2019s own management tools via the built-in Devin MCP \u2014 creating and messaging child sessions, editing knowledge and playbooks, managing schedules, and so on. A profile can restrict this surface with **Devin MCP read-only**: sessions governed by the profile can still read Devin resources (list sessions, look up knowledge, inspect playbooks) but cannot perform write operations like creating sessions or editing knowledge.\n\n- **Lower-level selections can only tighten, never loosen.** If a lower level pins another profile, the two are *intersected*:\n- Network allowlists narrow to the destinations allowed by **both** pr"
+    },
+    {
+     "url": "https://docs.devin.ai/cli/changelog/stable",
+     "title": "Changelog (Stable)",
+     "snippet": "- Provider billing: when your account can pay for a provider\u2019s models with a provider plan such as [your ChatGPT plan](/admin/billing/chatgpt), the model picker marks those models with an asterisk. Press `Ctrl+S` in the picker or use `/billing` (`/billing on|off`) to switch the plan on or off for your account.\n\n- MCP improvements:\n- Added support for MCP servers on protocol revision 2026-07-28.\n- `devin mcp list` and `devin mcp get` show a `Source:` line for each server, naming the config file or plugin it was loaded from.\n- HTTP and SSE requests to MCP servers send a `User-Agent: Devin-CLI/<version> (<ide>)` header unless the server\u2019s configured headers set one.\n- **[Private Preview]** Devin CLI can now connect to remote MCPs configured in Devin Cloud. Only enterprise-level MCPs will be reached.\n- When an MCP server rejects its saved OAuth sign-in and it cannot be refreshed, the credentials are removed and you are told once; the server asks you to sign in again the next time it is used.\n\n- MCP OAuth logins advertise `http://localhost:8765/callback` as the redirect URI (previously `http://127.0.0.1:8765/auth/callback`).\n\n- When prompted for an MCP tool permission, two additional se"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Devin API reference REST GraphQL endpoints documentation docs.devin.ai MCP",
+   "log_id": "log_osKhQg1P-KfM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+     "title": "Devin MCP",
+     "snippet": "The Devin MCP server provides programmatic access to Devin\u2019s platform capabilities for both private and public repositories. Beyond repository documentation and search, it gives any MCP-compatible AI agent or IDE full access to session management, playbooks, knowledge, and scheduling.\n\nThe Devin MCP server is an authenticated service that provides access to both public and private repositories, plus full platform management capabilities. **Base Server URL:** `https://mcp.devin.ai/`\n###\n\u200b\nAuthentication Required\nTo use the Devin MCP server, you need a Devin API key:\n1. Sign up for a Devin account at [Devin.ai](https://devin.ai/)\n2. Generate an API key from your [account settings](/api-reference/authentication)\n3. Include the API key in your MCP client configuration\nThe MCP server supports the same authentication methods as the [Devin API](/api-reference/authentication):\n| Token type | Prefix | Org resolution |\n|---|---|---|\n| **Org-scoped service user key** | `cog_` | Automatic \u2014 org_id is resolved from the service user |\n| **Enterprise service user key** | `cog_` | Requires `X-Org-Id` header (see below) |\n| **Personal access token** | `cog_` | Requires `X-Org-Id` header (see below)"
+    },
+    {
+     "url": "https://docs.devin.ai/api-reference/common-flows",
+     "title": "Common Flows",
+     "snippet": "This page walks through common end-to-end workflows with the Devin API. Each flow includes the full sequence of API calls with code examples. For individual endpoint details, see the relevant API reference pages.\n##\n\u200b\nSetup\nSet these environment variables before running any example:\n```\n# Required: your service user API key (starts with cog_)\nexport DEVIN_API_KEY=\"cog_your_key_here\"\n# Required: your organization ID (shown at the top of Settings > Devin API)\nexport DEVIN_ORG_ID=\"your_org_id\"\n```\n---\n##\n\u200b\nGetting started: API key to first session\nThe most common workflow \u2014 authenticate, discover your account, and create your first session.\n###\n\u200b\nStep 1: Verify your credentials\nOrganization-scoped service users can skip to Step 3 \u2014 you already know your org ID from the Settings page.\n```\ncurl \"https://api.devin.ai/v3/self\" \\\n-H \"Authorization: Bearer $DEVIN_API_KEY\"\n```\nResponse:\n```\n{\n\"principal_type\": \"service_user\",\n\"service_user_id\": \"service-user-abc123\",\n\"service_user_name\": \"CI Bot\",\n\"org_id\": null\n}\n```\n###\n\u200b\nStep 2: List your organizations\n**Enterprise service users** can list all organizations:\n```\ncurl \"https://api.devin.ai/v3/enterprise/organizations\" \\\n-H \"Authorization: "
+    },
+    {
+     "url": "https://docs.devin.ai/api-reference",
+     "title": "API Overview",
+     "snippet": "The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools. Use **service users** with role-based access control for secure, auditable API access.\n\nAPI structure\nThe API is organized into two scopes:\n###\n\u200b\nOrganization API\n**Base URL:** `https://api.devin.ai/v3/organizations/*` For managing resources within a single organization \u2014 sessions, knowledge, playbooks, secrets, and more. This is where most integrations start.\n###\n\u200b\nEnterprise API\n**Base URL:** `https://api.devin.ai/v3/enterprise/*` For cross-organization management \u2014 analytics, audit logs, user management, billing, and infrastructure. Available to enterprise customers. Both scopes use service user credentials (`cog_` prefix). See [Authentication](/api-reference/authentication) for setup.\n##\n\u200b\nSession attribution\nService users are separate identities from human users, but you can **create sessions on behalf of any user** in your organization using the `create_as_user_id` parameter. This means sessions appear in that user\u2019s session list and count toward their usage \u2014 just like they created it themselves.\n```\ncurl -X POST \"https://api.devin.ai/v3/organizations/$DEVIN_ORG"
+    },
+    {
+     "url": "https://docs.devin.ai/api-reference/authentication",
+     "title": "Authentication",
+     "snippet": "The Devin API uses a **principal + token** model. A **principal** is who you are (your identity), and a **token** is how you prove it (your credential). Understanding this distinction is the key to choosing the right authentication method for your use case.\n##\n\u200b\nPrincipals & tokens\n| Principal | Token | Description |\n|---|---|---|\n| **Service User** (non-human) | Service User API Key | For automated integrations and CI/CD pipelines |\n| **User** (human) | Personal Access Token (PAT) | For human programmatic access under your own identity |\nAll API credentials use the `cog_` prefix format. Include your token in the `Authorization` header of every request:\n```\ncurl -X GET \"https://api.devin.ai/v3/organizations/$DEVIN_ORG_ID/sessions\" \\\n-H \"Authorization: Bearer cog_your_token_here\"\n```\nThe key distinction is **which principal the token authenticates as**:\n- A **Service User API Key** authenticates as the **service user** \u2014 the service user\u2019s identity, permissions, and org memberships apply.\n- A **Personal Access Token** authenticates as the **human user** who created it \u2014 that user\u2019s identity, permissions, and org memberships apply."
+    },
+    {
+     "url": "https://docs.devin.ai/work-with-devin/mcp",
+     "title": "Devin MCP servers and marketplace",
+     "snippet": "MCP is an open protocol that enables Devin to use hundreds of external tools and data sources. Devin supports 3 transport methods (stdio, SSE, and HTTP).\n\nMCP servers are managed on the [**Customize \u2192 MCPs**](https://app.devin.ai/customize?tab=mcps) tab, alongside plugins, skills, hooks, and rules, at the personal, organization, or enterprise scope. (The older Settings \u2192 Connections \u2192 MCP servers page redirects there.)\n\nExpose your internal API as an MCP server so Devin can query it directly. Use the STDIO transport with a wrapper that translates MCP tool calls into API requests.\n```\n{\n\"transport\": \"STDIO\",\n\"command\": \"npx\",\n\"args\": [\"-y\", \"@example/api-mcp-bridge\"],\n\"env_variables\": {\n\"API_BASE_URL\": \"https://api.internal.example.com\",\n\"API_TOKEN\": \"your-internal-api-token\"\n}\n}\n```\nAlternatively, if your internal API is reachable over the network, use the HTTP transport:\n```\n{\n\"transport\": \"HTTP\",\n\"url\": \"https://api.internal.example.com/mcp\",\n\"headers\": {\n\"Authorization\": \"Bearer your-internal-api-token\"\n}\n}\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Devin docs.devin.ai MCP MCP server Model Context Protocol official",
+   "log_id": "log_aOMOnMIbFTHn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+     "title": "Devin MCP",
+     "snippet": "The Devin MCP server provides programmatic access to Devin\u2019s platform capabilities for both private and public repositories. Beyond repository documentation and search, it gives any MCP-compatible AI agent or IDE full access to session management, playbooks, knowledge, and scheduling.\nAny Devin session or MCP-compatible client can create sessions, manage playbooks and knowledge, set up schedules, and more.\n\nThe [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is an open standard that enables AI apps to securely connect to MCP-compatible data sources and tools. You can think of MCP like a USB-C port for AI applications \u2014 a standardized way to connect AI apps to different services.\n##\n\u200b\nDevin MCP Server\nThe Devin MCP server is an authenticated service that provides access to both public and private repositories, plus full platform management capabilities. **Base Server URL:** `https://mcp.devin.ai/`\n###\n\u200b\nAuthentication Required\nTo use the Devin MCP server, you need a Devin API key:\n1. Sign up for a Devin account at [Devin.ai](https://devin.ai/)\n2. Generate an API key from your [account settings](/api-reference/authentication)\n3. Include the API key in you"
+    },
+    {
+     "url": "https://docs.devin.ai/cli/extensibility/mcp/configuration",
+     "title": "MCP Configuration",
+     "snippet": "Via Command Line\nThe quickest way to add an MCP server:\n```\n# stdio server \u2014 just pass the command after --\ndevin mcp add <name> -- <command> [args...]\n# HTTP server \u2014 pass the URL as a positional argument\ndevin mcp add <name> <URL>\n# HTTP server \u2014 or use the --url flag\ndevin mcp add <name> --url <URL>\n```\nThe transport type is inferred automatically: a URL implies HTTP (Streamable HTTP), and trailing args (or `--command`) imply stdio.\nRemote MCP servers use Streamable HTTP by default. If the server responds with an HTTP 4xx error such as 404 or 405, the CLI falls back to SSE on the same URL. Authentication errors (a 401 or insufficient-scope 403 with a `WWW-Authenticate` challenge) don\u2019t trigger the fallback \u2014 they\u2019re reported directly so you can authenticate. Set `\"transport\": \"sse\"` explicitly if needed \u2014 see Legacy SSE fallback below.\nBy default, servers are saved to **local** scope (`.devin/mcp_config.local.json`, gitignored). Use `-s`/`--scope` to change:\n```\ndevin mcp add -s project <name> <URL>   # shared via .devin/mcp_config.json\ndevin mcp add -s user <name> <URL>      # global (~/.config/devin/mcp_config.json; %APPDATA%\\devin\\mcp_config.json on Windows)\n```\nYou can also "
+    },
+    {
+     "url": "https://docs.devin.ai/cli/extensibility/mcp/overview",
+     "title": "MCP Overview",
+     "snippet": "MCP (Model Context Protocol) lets you connect external tool servers to Devin CLI, giving the agent access to APIs, databases, issue trackers, and any other service you can wrap in an MCP server. When you configure an MCP server, its tools become available to the agent just like built-in tools. The agent can discover what tools are available and call them as needed.\n---\n##\n\u200b\nHow It Works\n1\nConfigure a server\nYou define an MCP server in your config file with a command, arguments, and optional environment variables.\n2\nServer launches\nDevin CLI starts the server process when needed. The server connects to the external API (GitHub, Linear, etc.).\n3\nTool discovery\nThe agent discovers what tools the server provides (e.g., `create_issue`, `list_repos`).\n4\nTool execution\nWhen the agent calls an MCP tool, the request flows through the server to the external service and the result is returned.\n---\n##\n\u200b\nQuick Example\nAdd a GitHub MCP server to your project:\n```\n// .devin/mcp_config.local.json  (gitignored \u2014 keep tokens out of committed config)\n{\n\"mcpServers\": {\n\"github\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"@modelcontextprotocol/server-github\"],\n\"env\": {\n\"GITHUB_TOKEN\": \"ghp_your_token_here\"\n}\n"
+    },
+    {
+     "url": "https://docs.devin.ai/work-with-devin/mcp",
+     "title": "Devin MCP servers and marketplace",
+     "snippet": "MCP is an open protocol that enables Devin to use hundreds of external tools and data sources. Devin supports 3 transport methods (stdio, SSE, and HTTP).\n##\n\u200b\nWhy use MCP?\nWith MCP, Devin can help you:\n- dig through Sentry, Datadog and Vercel logs\n- [use Devin as a data analyst](https://devin.ai/ai-data-analyst-1) in Slack with database MCPs\n- dig into SonarQube, CircleCI, and Jam issues\n- bulk create Linear tickets, Notion docs, Google Docs (through Zapier) and more\n- pull in context from and interact with Airtable, Stripe, and Hubspot\n- a lot more!\n##\n\u200b\nGet started with MCPs\nMCP servers are managed on the [**Customize \u2192 MCPs**](https://app.devin.ai/customize?tab=mcps) tab, alongside plugins, skills, hooks, and rules, at the personal, organization, or enterprise scope. (The older Settings \u2192 Connections \u2192 MCP servers page redirects there.) The recommended way to add an integration is to install its **plugin** from the plugin marketplace (**Browse marketplace** on the Customize page): most marketplace plugins are a single MCP server, often with skills that teach Devin how to use it, and installing one at the organization scope makes it available to everyone. The legacy MCP marketpla"
+    },
+    {
+     "url": "https://docs.devin.ai/product-guides/plugin-mcp-setups",
+     "title": "Plugin MCP servers in Devin",
+     "snippet": "A plugin can include MCP servers (for example an issue tracker), so everyone who installs it gets the same server configuration without setting it up from scratch. After installing it, you supply any credentials the server needs, such as an API key or an OAuth sign-in. A connection can be personal or shared, depending on where the plugin is installed and the installation\u2019s **Access** setting.\n##\n\u200b\nThe declaration\nDeclare servers in a root `.mcp.json` as an `mcpServers` map. The manifest\u2019s inline `mcpServers` field takes the same map without the wrapper.\n```\n{\n\"mcpServers\": {\n\"example-mcp\": {\n\"url\": \"https://mcp.example.com/mcp\",\n\"tokenScope\": \"user\"\n},\n\"example-mcp-service-account\": {\n\"url\": \"https://mcp.example.com/mcp\",\n\"headers\": {\n\"Authorization\": \"Bearer ${EXAMPLE_MCP_SERVICE_ACCOUNT_TOKEN}\"\n}\n}\n}\n}\n```\n| Field | Type | What it does |\n|---|---|---|\n| `url` | string | The server\u2019s endpoint. Required. |\n| `transport` | string | Set `\"sse\"` for a legacy SSE endpoint. Omit it for Streamable HTTP. |\n| `headers` | object | HTTP headers sent with every request. Values may hold placeholders. |\n| `oauthClientId` | string | A pre-registered OAuth client, for providers without dynamic cl"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

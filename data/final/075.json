@@ -1,0 +1,36 @@
+{
+ "id": 75,
+ "app": "Asana",
+ "category": "Project Management",
+ "one_liner": "Work management platform with REST API for tasks, projects, and teams.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Register an app in the developer console for OAuth, or generate a personal access token; developer sandbox available.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://mcp.asana.com/v2/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developers.asana.com/docs/authentication",
+  "access": "https://developers.asana.com/docs/developer-sandbox.md",
+  "surface": "https://developers.asana.com/reference/rest-api-reference",
+  "mcp": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server"
+ },
+ "verified": true
+}

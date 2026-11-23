@@ -1,0 +1,142 @@
+{
+ "id": 97,
+ "app": "higgsfield",
+ "hint": "higgsfield.ai/cli (content suite)",
+ "given_category": "AI, Research and Media-native",
+ "queries": {
+  "auth": {
+   "query": "higgsfield API authentication OAuth API key access token developer docs higgsfield.ai/cli content suite",
+   "log_id": "log_4zTYdfNK1M0p",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.higgsfield.ai/docs/authentication",
+     "title": "Authentication",
+     "snippet": "Create and manage API credentials in [Higgsfield Console](https://console.higgsfield.ai). Each credential consists of a key ID and a secret. Send both values in the `Authorization` header:\n```\nAuthorization: Key YOUR_KEY_ID:YOUR_KEY_SECRET\n```\n```\ncurl https://api.higgsfield.ai/requests/REQUEST_ID/status \\\n--header \"Authorization: Key ${HF_API_KEY_ID}:${HF_API_KEY_SECRET}\"\n```\nThe API also accepts the legacy `hf-api-key` and `hf-secret` headers. New integrations should use the `Authorization` header.\n##\n\u200b\nKeep credentials server-side\nDo not call the API directly from browser or mobile application code. Anyone who can inspect the application can extract its API secret and use your account.\n- Store credentials in a secrets manager or encrypted environment variables.\n- Use separate credentials for development and production.\n- Never include credentials in URLs, logs, screenshots, or support messages.\n- Rotate a credential immediately if it may have been exposed.\n##\n\u200b\nAuthentication errors\nMissing, malformed, or invalid credentials return `401 Unauthorized`:\n```\n{\n\"detail\": \"Invalid credentials\"\n}\n```\nAuthentication identifies the account, but individual models may have separate access"
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/openapi.json",
+     "title": "docs.higgsfield.ai/docs/openapi.json",
+     "snippet": "\"securitySchemes\": {\n\"authKey\": {\n\"type\": \"apiKey\",\n\"in\": \"header\",\n\"name\": \"Authorization\",\n\"description\": \"Use `Key {api_key_id}:{api_key_secret}`.\"\n}\n}"
+    },
+    {
+     "url": "https://github.com/higgsfield-ai/cli/issues/114",
+     "title": "Remote MCP: every tool call returns \"session has expired\" (FNF API GET /mcp/workspaces failed (401)) for a DCR client, even with a fresh token",
+     "snippet": "## Our client A personal app on Cloudflare Workers that paints through the remote MCP on the user's own subscription. It worked every day from 2026-10-04 to 2026-11-07. - Dynamic client registration at `https://clerk.higgsfield.ai/oauth/register` (`token_endpoint_auth_method: none`, grant types `authorization_code` + `refresh_token`) - Authorization code + PKCE S256, scope `openid email offline_access`, `resource=https://mcp.higgsfield.ai/mcp` - Token refresh with `grant_type=refresh_token` when `expires_in` (86400) runs out - Streamable HTTP, `initialize` \u2192 `notifications/initialized` \u2192 `tools/call` with `Authorization: Bearer ` ## Timeline (UTC) |\n\n## What we think The MCP gateway accepts the token, but the FNF API behind it refuses the same token with 401. `/.well-known/oauth-protected-resource/mcp` now lists `potential_clients: [\"anthropic\",\"claude\",\"claude-ai\",\"claude-code\",\"openclaw\",\"hermes\"]`, while `/oauth/register` still accepts new clients and issues tokens that this endpoint then refuses."
+    },
+    {
+     "url": "https://higgsfield.ai/blog/higgsfield-cli",
+     "title": "How to Generate AI Video From Your Terminal With Higgsfield CLI",
+     "snippet": "[Higgsfield CLI](https://higgsfield.ai/cli) is an open-source command-line client for Higgsfield, an AI-native creative suite for video and image generation. The code and releases are on [GitHub](https://github.com/higgsfield-ai/cli). The command is `higgsfield`, with `higgs` as a shorter alias.\nThree things define how it works:\n- No API key. You sign in through the browser with a regular Higgsfield account.\n- Same credits. Every generation is charged to that account's plan credits at standard rates.\n- Web-only access stays on the web. Unlimited model access and free generations do not apply to CLI generations.\n\nCLI vs MCP vs API\n| Criteria | CLI | MCP | Higgsfield API |\n|---|---|---|---|\n| Made for | Terminal, scripts, coding agents | Chat agents such as Claude and other MCP-compatible clients | Your own application |\n| Sign-in | Browser, no key | Browser, no key | API key from open.higgsfield.ai |\n| Billing | Plan credits, standard rates | Plan credits, standard rates | Separate prepaid API balance in US dollars |\n| Unlimited models | No | No | No |\n| Output | Text or --json | Tool results in the chat | REST responses |\n| Guide | This article | Generate AI videos from Claude with"
+    },
+    {
+     "url": "https://higgsfield.ai/blog/higgsfield-mcp-moves-to-cimd",
+     "title": "Higgsfield MCP Moves to CIMD: What Developers Need to Know",
+     "snippet": "Higgsfield MCP is moving client identification from Dynamic Client Registration (DCR) to Client ID Metadata Documents (CIMD). DCR is switched off on January 1, 2027, and CIMD becomes the only way for a third-party client to identify itself. Developers whose MCP client registers through DCR must migrate before that date.\n\nBoth methods work now. Only the way a client identifies itself to `https://mcp.higgsfield.ai/mcp` changes. The rest of the OAuth flow stays the same.\n\nWith DCR, a client sends a registration request, and the authorization server issues a `client_id` and stores it. With CIMD, the `client_id` is an HTTPS URL that the developer controls, and the authorization server reads the client metadata from that URL.\nHow Is CIMD Different From DCR?\n| Criteria | DCR | CIMD |\n|---|---|---|\n| `client_id` | Opaque string issued by the server | HTTPS URL of the metadata document |\n| Registration request | Required for every installation | None |\n| Where metadata lives | On the authorization server | On the developer's domain |\n| Updating metadata | Re-register | Edit the document |\n| Identity | Unverified, anyone can register any name | Tied to a domain the developer controls |\n| Cli"
+    }
+   ]
+  },
+  "access": {
+   "query": "higgsfield higgsfield.ai/cli content suite API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_K_gI5gNfErgP",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli.md",
+     "title": "higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli.md",
+     "snippet": "selection, while CLI and Skills is optimized for coding agents, where each skill has a defined structure that reduces token overhead and produces consistent output. Accessing Higgsfield through the CLI falls under the Developer Terms in the [Terms of Use](https://higgsfield.ai/terms-of-use-agreement): keep your session secure, and you're responsible for what a coding agent generates through your account. Both use the same Higgsfield account and plan credits with no API key (API keys belong to the Higgsfield API, a separate developer product), and Unlimited models and free generations don't apply to either.\n\n| **Criteria** | **CLI + Skills** | **MCP** |\n| --- | --- | --- |\n| Best for | Coding agents (Claude Code, Cursor, Codex) | Chat agents (Claude web, Cowork) |\n| Token overhead | Minimal | Full schema per call |\n| Output format | Structured through skills | Agent picks parameters freely |\n| Credits | Same account, same rates | Same account, same rates |\n| Unlimited models | No | No |\n| API key required | No | No |"
+    },
+    {
+     "url": "https://higgsfield.ai/blog/higgsfield-cli",
+     "title": "How to Generate AI Video From Your Terminal With Higgsfield CLI",
+     "snippet": "Three things define how it works:\n- No API key. You sign in through the browser with a regular Higgsfield account.\n- Same credits. Every generation is charged to that account's plan credits at standard rates.\n- Web-only access stays on the web. Unlimited model access and free generations do not apply to CLI generations.\n\nCLI vs MCP vs API\n| Criteria | CLI | MCP | Higgsfield API |\n|---|---|---|---|\n| Made for | Terminal, scripts, coding agents | Chat agents such as Claude and other MCP-compatible clients | Your own application |\n| Sign-in | Browser, no key | Browser, no key | API key from open.higgsfield.ai |\n| Billing | Plan credits, standard rates | Plan credits, standard rates | Separate prepaid API balance in US dollars |\n| Unlimited models | No | No | No |\n| Output | Text or --json | Tool results in the chat | REST responses |\n| Guide | This article | Generate AI videos from Claude with Higgsfield MCP | Generate AI videos from the Higgsfield API |\nCLI and MCP share one account and one credit balance, so switching between them changes the interface, while the account, credits and Assets stay the same. The API is a separate product with its own API key and a prepaid balance in US"
+    },
+    {
+     "url": "https://higgsfield.ai/blog/higgsfield-api",
+     "title": "Meet the Higgsfield API: How It Works and What You Get",
+     "snippet": "The Higgsfield API is a self-serve API for developers that provides direct access to more than 50 current video and image generation models with pay-as-you-go billing in US dollars. There is no subscription: you top up a balance, pay per generation at published rates, and spending stops automatically at zero.\n\nThe Higgsfield API gives developers programmatic access to a curated catalog of video and image generation models. If you are building a product that generates video or images, you normally assemble model access from several providers, each with its own billing logic, expiration rules, and rate structures. Estimating what a month of production traffic will cost becomes a separate task. The Higgsfield API is built around a different setup: one key, one balance in US dollars, and a public price list, so you can calculate your costs on your own volume before you commit to anything.\nThe API is a separate product from the [higgsfield.ai](http://higgsfield.ai) website. A plan on [higgsfield.ai](http://higgsfield.ai) does not affect API access, and API usage is billed independently.\n\nSetting up access takes four steps:\n1. Create an account and choose between personal and company use"
+    },
+    {
+     "url": "https://higgsfield.ai/blog/ai-video-api-pricing-vs-subscriptions",
+     "title": "AI Video API Pricing vs Subscriptions in 2026: Which Is Cheaper at Scale",
+     "snippet": "Higgsfield, an AI-native creative suite with 35+ models and tools, offers both paths: plan credits reachable from code through MCP and CLI, and a separate Higgsfield API with its own US dollar balance.\n\nHiggsfield works differently. Higgsfield MCP and CLI + Skills are how Higgsfield handles integration for people who already have a plan: a script or an AI agent generates on the credits of that plan, with no API key and no second balance.\n- Higgsfield MCP at mcp.higgsfield.ai connects Claude, Cursor and any MCP-compatible agent to your account; generations deduct plan credits at the same cost as on the website.\n- Higgsfield CLI + Skills installs three skills for coding agents with one command and signs in with your Higgsfield account; billing is the same plan credits.\n- Soul Characters trained with Soul ID are available through MCP, so a scripted batch helps keep a consistent face across clips without re-uploading references.\n- Supercomputer can run scheduled batches on the same credits when you want recurring automation without maintaining your own script.\nOne rule applies to every automated path: Unlimited models and Free Generations on plans are accessible only on [higgsfield.ai]"
+    },
+    {
+     "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+     "title": "What is the Higgsfield API, and how do I get started?",
+     "snippet": "A subscription on [higgsfield.ai](http://higgsfield.ai) and the API are two separate products with separate billing. Your plan, credits, and Unlimited access exist only on the website; the API runs on its own account balance in US dollars.\nHow is the API different from my Higgsfield plan?\n| Criteria | Higgsfield plan ([higgsfield.ai](https://higgsfield.ai/)) | Higgsfield API |\n|---|---|---|\n| Who it's for | Creators working in the visual interface | Developers building generation into their own products |\n| Billing | Subscription plus credits | US dollar balance, pay per generation |\n| Unlimited models | Yes, where included in plan | Not applicable |\n| Requires the other | No | No |\n\nBilling is pay-as-you-go from a US dollar balance, and the minimum top-up is $5. Video models are priced per second of output and image models per image; DoP is the exception, priced per generation. Each model has a fixed rate for every configuration: the rate depends on settings like resolution and audio, is listed publicly, and stays the same regardless of how much you top up. An estimate endpoint returns the cost of a request before you run it. Funds expire one year after they are added to the balan"
+    }
+   ]
+  },
+  "surface": {
+   "query": "higgsfield API reference REST GraphQL endpoints documentation higgsfield.ai/cli content suite",
+   "log_id": "log_jGtbcCpIdIc4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.higgsfield.ai/docs/openapi.json",
+     "title": "docs.higgsfield.ai/docs/openapi.json",
+     "snippet": "\"title\": \"Higgsfield API\",\n\"version\": \"2.0.0\",\n\"description\": \"Submit generation requests and retrieve their status and outputs.\"\n},\n\"servers\": [\n{\n\"url\": \"https://api.higgsfield.ai\""
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/llms-full.txt",
+     "title": "docs.higgsfield.ai/docs/llms-full.txt",
+     "snippet": "# API reference\nSource: https://docs.higgsfield.ai/docs/api-reference/overview\nReference for Higgsfield image and video generation operations, request status, and cancellation.\nThe API reference is generated from the public OpenAPI specification. It includes model-specific generation schemas plus the shared status and cancellation operations.\n**Base URL:** `https://api.higgsfield.ai`\nAll endpoints require the [`Authorization` header](/docs/authentication).\nUse the generation endpoint available to your account. Use **Get request status** in the sidebar to retrieve state and output for an existing request. Use **Cancel a queued request** to stop work that has not started processing.\nFor the complete integration flow, start with the [Quickstart](/docs/quickstart) and [Requests and lifecycle](/docs/concepts/requests).\n# Cancel a queued request\nSource: https://docs.higgsfield.ai/docs/api-reference/requests/cancel-a-queued-request\n/openapi.json post /requests/{request_id}/cancel\nCancel a request that has not started processing. A successful response has no body.\n# Get request status\nSource: https://docs.higgsfield.ai/docs/api-reference/requests/get-request-status\n/openapi.json get /reque"
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/models/genjutsu/restyle",
+     "title": "Genjutsu \u2014 Restyle API",
+     "snippet": "[\u2190 Genjutsu](/docs/models/genjutsu) **Endpoint:** `POST https://api.higgsfield.ai/higgsfield/genjutsu/restyle/v1.0` **Endpoint ID:** `higgsfield/genjutsu/restyle/v1.0` [\u25b6Open API PlaygroundGenjutsu \u00b7 Restyle\u2197](https://console.higgsfield.ai/models/higgsfield%2Fgenjutsu%2Frestyle%2Fv1.0/playground)\n##\n\u200b\nUsage notes\n- Restyle changes the visual style of a source video while retaining its motion, shot composition, and source audio. Each request produces one video.\n- Select a current style from GET /models/higgsfield/genjutsu/restyle/v1.0/presets and send its UUID as preset_id. The example UUID below is illustrative of a published preset; fetch the current catalog before submitting.\n\nQuick start\nReplace the example media URLs with publicly accessible URLs for your own files before submitting.\n```\ncurl --request POST \\\n--url https://api.higgsfield.ai/higgsfield/genjutsu/restyle/v1.0 \\\n--header \"Authorization: Key ${HF_API_KEY_ID}:${HF_API_KEY_SECRET}\" \\\n--header \"Content-Type: application/json\" \\\n--header \"Idempotency-Key: ${IDEMPOTENCY_KEY}\" \\\n--data '{\n\"video_url\": \"https://example.com/input.mp4\",\n\"preset_id\": \"c2143317-f28d-4c3c-a0b8-39bd547e08a7\",\n\"image_urls\": [],\n\"prompt\": \"Preserv"
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/models/soul-standard/generate",
+     "title": "SOUL \u2014 Text to image API",
+     "snippet": "Quick start\n```\ncurl --request POST \\\n--url https://api.higgsfield.ai/higgsfield-ai/soul/standard \\\n--header \"Authorization: Key ${HF_API_KEY_ID}:${HF_API_KEY_SECRET}\" \\\n--header \"Content-Type: application/json\" \\\n--header \"Idempotency-Key: ${IDEMPOTENCY_KEY}\" \\\n--data '{\n\"prompt\": \"A ceramic vase on a wooden table beside a sunlit window, soft natural shadows, editorial photograph.\",\n\"resolution\": \"720p\",\n\"aspect_ratio\": \"1:1\",\n\"enhance_prompt\": true,\n\"batch_size\": 1\n}'\n```"
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/models/cinema-studio-4/generate.md",
+     "title": "docs.higgsfield.ai/docs/models/cinema-studio-4/generate.md",
+     "snippet": "**Endpoint:** `POST https://api.higgsfield.ai/higgsfield/cinema-studio/4.0`\n**Endpoint ID:** `higgsfield/cinema-studio/4.0`\n\n```bash cURL theme={\"theme\":{\"light\":\"github-light\",\"dark\":\"github-dark\"}}\ncurl --request POST \\\n--url https://api.higgsfield.ai/higgsfield/cinema-studio/4.0 \\\n--header \"Authorization: Key ${HF_API_KEY_ID}:${HF_API_KEY_SECRET}\" \\\n--header \"Content-Type: application/json\" \\\n--header \"Idempotency-Key: ${IDEMPOTENCY_KEY}\" \\\n--data '{\n\"prompt\": \"A cinematic wide shot of ocean waves at sunset, with gentle camera movement.\"\n}'\n```\n```python Python theme={\"theme\":{\"light\":\"github-light\",\"dark\":\"github-dark\"}}\nimport higgsfield_client\narguments = (\n{'prompt': 'A cinematic wide shot of ocean waves at sunset, with gentle camera '\n'movement.'}\n)\nresult = higgsfield_client.subscribe(\n\"higgsfield/cinema-studio/4.0\",\narguments=arguments,\n)\nprint(result[\"video\"][\"url\"])\n```\n```typescript TypeScript theme={\"theme\":{\"light\":\"github-light\",\"dark\":\"github-dark\"}}\nimport { config, higgsfield } from \"@higgsfield/client/v2\";\nconfig({ credentials: process.env.HF_CREDENTIALS });\nconst result = await higgsfield.subscribe(\"higgsfield/cinema-studio/4.0\", {\ninput:\n{\n\"prompt\": \"A cinemat"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "higgsfield higgsfield.ai/cli content suite MCP server Model Context Protocol official",
+   "log_id": "log_v8SwuXOjlwsy",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://higgsfield.ai/blog/Generate-AI-Videos-From-Claude-with-Higgsfield-MCP",
+     "title": "How to Generate AI Videos in Claude With the Higgsfield MCP Connector (2026)",
+     "snippet": "To generate AI videos in Claude, add Higgsfield as a custom connector with the URL [https://mcp.higgsfield.ai/mcp](https://mcp.higgsfield.ai/mcp), sign in to your Higgsfield account, and describe the video in a chat. Claude picks a Higgsfield model, runs the generation and returns the clip in the conversation.\n\n- Higgsfield connects to Claude on [claude.ai](http://claude.ai/) and Claude Desktop as a custom MCP connector, and to Claude Code through the Higgsfield CLI and Skills.\n\nThe Higgsfield MCP connector is a custom connector that lets Claude generate video, images and audio with Higgsfield models directly from a chat. MCP (Model Context Protocol) is an open standard that lets AI assistants use external tools. Higgsfield is a generative platform for creative production, with 35+ frontier models for generating images and turning them into video scenes.\nThree parts share the work:\n- **Claude** reads your request, picks a model and settings, and writes the prompt. In our test, it split a one-paragraph request into four shots before generating.\n- **MCP** lets Claude call Higgsfield\u2019s tools. You connect once with the connector URL, and no API key is needed.\n- **Higgsfield** runs the "
+    },
+    {
+     "url": "https://higgsfield.ai/cli",
+     "title": "Higgsfield CLI | AI Image & Video Tools for Any Agent",
+     "snippet": "Higgsfield uses MCP (Model Context Protocol), an open standard that gives AI agents access to external tools. Once connected, your agent can generate images, create videos, train characters, and browse your creation history, all within a single session.\nHiggsfield MCP works with Claude (web, Cowork, and Claude Code), OpenClaw, Hermes Agent, and NemoClaw. Any agent or client that supports MCP can connect to Higgsfield.\nHiggsfield gives your agent access to 35+ models and tools including Soul, Cinema Studio, Flux, Seedream, Kling, Minimax Hailuo, Veo, and more. Your agent automatically selects the best model for the task, or you can specify one yourself.\nImages up to 8K resolution, videos up to 30 seconds across multiple cinematic styles, consistent characters using Soul training, and more. You can generate from text prompts, reference images, or a combination of both.\nNo. Add the Higgsfield MCP server URL in your agent's settings and authenticate through your Higgsfield account. No API keys to manage or configure.\n\nYes. Any MCP-compatible client can connect. If you're running OpenClaw on a VPS, Hermes Agent on your local machine, or NemoClaw on NVIDIA hardware, just point it to the "
+    },
+    {
+     "url": "https://higgsfield-enterprise-help.higgsfield.app/docs/mcp-cli-integrations",
+     "title": "MCP, CLI & Integrations",
+     "snippet": "Beyond the web app, Higgsfield runs where your pipeline runs: an MCP server for chat agents, CLI + Skills for coding agents, and official plugins for design and video tools. None of them need an API key - they connect to your existing account and use your existing plan credits.\n## Higgsfield MCP\nMCP (Model Context Protocol) lets AI agents call Higgsfield directly. Connect once and generate images, videos, characters and audio from Claude or any MCP-compatible agent without opening the app. Server URL: **https://mcp.higgsfield.ai/mcp**\n1\nAdd the connector\nIn Claude (web or Desktop): Settings \u2192 Connectors \u2192 Add custom connector, paste https://mcp.higgsfield.ai/mcp and click Connect.\n2\nAuthorize\nSign in to your Higgsfield account in the authorization window - if you're already logged in on higgsfield.ai, this step is automatic.\n3\nVerify\nAsk 'What is my Higgsfield credit balance?' in a new conversation - Claude should call the MCP tools and return your account data.\nThrough MCP you can run image and video generation on all models, upscaling, background removal, expand/reframe, Kling Motion Control, Soul characters and reference Elements, audio (voiceover, voice cloning, dubbing), and c"
+    },
+    {
+     "url": "https://higgsfield.ai/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent",
+     "title": "How do I connect Higgsfield to Claude, ChatGPT, or another AI agent?",
+     "snippet": "Higgsfield connects to Claude, ChatGPT, Cursor, and other MCP-compatible agents, with no API key. In Claude, add a custom connector with the URL `https://mcp.higgsfield.ai/mcp`. In ChatGPT, add the Higgsfield Plugin from the Plugins Directory. In Cursor, add Higgsfield from the marketplace. In Claude Code, OpenClaw, and Hermes, the agent installs the Higgsfield CLI. An active paid subscription is required.\n\n| Agent | How it connects |\n|---|---|\n| Claude (claude.ai and Claude Desktop) | Custom connector with the MCP server URL |\n| ChatGPT | Official Higgsfield Plugin from the Plugins Directory |\n| Cursor | Higgsfield from the marketplace |\n| Claude Code, OpenClaw, Hermes | Higgsfield CLI, set up by the agent itself |\n| Any other MCP-compatible client | MCP server URL in the agent's settings |\n## How do I connect in Claude?\n1. Open [claude.ai](http://claude.ai/) or Claude Desktop and go to **Settings** \u2192 **Connectors**.\n2. Click **Add custom connector**.\n3. Name it Higgsfield and paste the MCP server URL: `https://mcp.higgsfield.ai/mcp`\n4. Click **Connect**: a Higgsfield authorization window opens.\n5. Sign in to your Higgsfield account and authorize. If you're already logged in on [h"
+    },
+    {
+     "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp.md",
+     "title": "higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp.md",
+     "snippet": "Higgsfield MCP connects Higgsfield to AI agents. Connect once and generate images, videos, characters, and audio from Claude or any MCP-compatible agent, without leaving your agent. The main difference from generating on the web: MCP always uses credits. Unlimited access and free generations apply only on [higgsfield.ai](https://higgsfield.ai/), so anything generated through MCP, CLI, Canvas, Supercomputer, or other automated tools deducts credits at standard rates.\n## What is Higgsfield MCP?\nMCP (Model Context Protocol) is an open protocol that lets AI agents connect to external services and call their tools. Higgsfield MCP is a connector that lets you generate images, videos, characters, and audio from Higgsfield directly inside Claude or another MCP-compatible agent. It isn't the Higgsfield API: MCP connects to your existing account and uses your existing plan credits, with no API key required. For building generation into your own product with per-request billing, see [What is the Higgsfield API, and how do I get started?](https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api)\nBecause MCP connects programmatically, using Higgsfield through it fal"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

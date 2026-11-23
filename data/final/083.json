@@ -1,0 +1,38 @@
+{
+ "id": 83,
+ "app": "Binance",
+ "category": "Crypto exchange",
+ "one_liner": "Crypto exchange with spot, futures, and wallet trading APIs.",
+ "auth_methods": [
+  "api_key",
+  "signature_hmac",
+  "oauth2"
+ ],
+ "auth_primary": "signature_hmac",
+ "access": "self_serve_free",
+ "access_notes": "Signed endpoints use API key plus request signing; OAuth Fast API and partner products require KYB or partner application. Key creation steps not in evidence.",
+ "api_types": [
+  "rest",
+  "websocket"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Binance MCP Server / Agent OS at developers.binance.com/en/docs/agent-native/mcp-server",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Per-user OAuth (Fast API) needs KYB onboarding; trading involves financial-risk actions.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developers.binance.com/en/docs/products/oms/Fast-API/base-urls",
+  "access": "https://developers.binance.com/en/docs/products/oms/integration-guide",
+  "surface": "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/rest-api/general",
+  "mcp": "https://developers.binance.com/en/docs/agent-native/mcp-server"
+ },
+ "verified": true
+}

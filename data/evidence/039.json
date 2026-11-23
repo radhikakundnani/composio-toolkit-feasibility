@@ -1,0 +1,142 @@
+{
+ "id": 39,
+ "app": "Threads (Meta)",
+ "hint": "developers.facebook.com/docs/threads",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "Threads (Meta) API authentication OAuth API key access token developer docs developers.facebook.com/docs/threads",
+   "log_id": "log_TJwNmGUb23VR",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/documentation/threads/get-started/get-access-tokens-and-permissions",
+     "title": "Get access tokens",
+     "snippet": "The Authorization Window allows app users to grant your app permissions and short-lived Threads user access tokens. After a user logs in and chooses which data to allow your app to access, Threads will redirect the user to your app and include an authorization code, which you can then exchange for a short-lived access token.\nTo begin the process, get the Authorization Window and present it to the user:\n```\nhttps://threads.com/oauth/authorize\n?client_id=<THREADS_APP_ID>\n&redirect_uri=<REDIRECT_URI>\n&scope=<SCOPE>\n&response_type=code\n&state=<STATE> // Optional\n```\n\n| Name | Description |\n|---|---|\n| `client_id` numeric string | **Required.** Your Threads app ID displayed in **App Dashboard** > **App settings** > **Basic** > **Threads App ID**. **Example:** `990602627938098` |\n| `redirect_uri` string | **Required.** The URI that Threads will redirect users to after they allow or deny permission requests. Make sure this exactly matches one of the base URIs in your list of [valid OAuth URIs](https://developers.facebook.com/documentation/development/create-an-app/threads-use-case#settings). Keep in mind that the App Dashboard might have added a trailing slash to your URIs, so we recommen"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/get-started/app-access-tokens",
+     "title": "App Access Tokens",
+     "snippet": "Use an app access token to make requests to the Threads API on behalf of an app rather than a user. Certain APIs require app access tokens instead of user access tokens, such as the [oEmbed API](/documentation/threads/tools-and-resources/embed-a-threads-post).\nTo generate an app access token, you need:\n- Your Threads app ID\n- Your Threads app secret\n### Example request\n```\ncurl -X GET https://graph.threads.com/oauth/access_token\n?client_id=<APP_ID>\n&client_secret=<APP_SECRET>\n&grant_type=client_credentials\n```\n### Example response\n```\n{\n\"access_token\":\u00a0\"TH|<APP_ID>|<APP_SECRET>\",\n\"token_type\":\u00a0\"bearer\"\n}\n```\nThis call returns an app access token that you can use in place of a user access token to make API calls as noted above.\n**Note:** Because this request uses your app secret, it must never be made in client-side code or in an app binary that could be decompiled. Never share your app secret with anyone. Make this API call only from server-side code.\n## Alternate method\nAnother method to call the Threads API on behalf of an app does not require a generated app access token. You can pass your app ID and app secret as the `access_token` parameter when you make a call.\n### Example re"
+    },
+    {
+     "url": "https://developers.facebook.com/docs/threads/get-started?locale=en_US",
+     "title": "Get started with the Threads API",
+     "snippet": "Data access authorization is controlled by your app users through the use of the permissions listed below. Users must grant your app these permissions through the Authorization Window before your app can access their data. For more details, see the [Permissions guide](https://developers.facebook.com/documentation/development/permissions#t).\n- `threads_basic` \u2014 Required for all Threads endpoints.\n- `threads_content_publish` \u2014 Required for Threads publishing endpoints only.\n- `threads_manage_replies` \u2014 Required for making `POST` calls to reply endpoints.\n- `threads_read_replies` \u2014 Required for making `GET` calls to reply endpoints.\n- `threads_manage_insights` \u2014 Required for making `GET` calls to insights endpoints.\n\n### Threads user access tokens\nAPI authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol. Access tokens are app-scoped (unique to the app and user pair) and can be short-lived or long-lived. API requests that query Threads users or publish Threads media must include a Threads user access token. Use the [Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken/) to debug your Threads user access token.\n#### Sho"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/get-started/long-lived-tokens.md",
+     "title": "Threads long-lived access tokens",
+     "snippet": "By default, Threads user access tokens are short-lived and are valid for one hour. However, short-lived tokens can be exchanged for long-lived tokens.\nLong-lived tokens are valid for 60 days and can be refreshed as long as they are at least 24 hours old but have not expired, and the app user has granted your app the `threads_basic` permission. Refreshed tokens are valid for 60 days from the date at which they are refreshed. Tokens that have not been refreshed in 60 days expire and can no longer be refreshed.\nPermission grants are valid for 90 days. Refreshing an app user's long-lived access token extends the permission grant for another 90 days only if the user has a public profile. For app users with private profiles, refreshing a token does not extend the permission grant. They must grant permissions to your app again when the grant expires.\n\n## Get a long-lived token\nUse the `GET /access_token` endpoint to exchange a short-lived Threads user access token for a long-lived token. Once you have a long-lived token, you can use it in server-side requests or send it to the client for use there.\nYour request must be made server-side and include:\n* A valid (unexpired) short-lived Thread"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/retrieve-and-discover-posts/retrieve-posts",
+     "title": "Retrieve user posts",
+     "snippet": "Use the `GET /{threads-user-id}/threads` endpoint to return a paginated list of all posts created by a user.\nRetrieving posts requires an appropriate access token and permissions based on the endpoint you are calling. While you are testing, you can generate tokens and grant your app permissions by using the Graph API Explorer.\n- `threads_basic` \u2014 Required for making any calls to all Threads API endpoints.\n\nThe Threads Profile Discovery API requires an appropriate access token and permissions based on the endpoint you are calling. While you are testing, you can generate tokens and grant your app permissions by using the Graph API Explorer.\n\nWith [standard access](https://developers.facebook.com/documentation/development/graph-api/overview/access-levels), only posts from some of the official Meta accounts can be retrieved. These include @meta, @threads, @instagram, and @facebook.\n\n| Name | Description |\n|---|---|\n| `access_token` string | **Required.** Threads API user access token. |\n| `username` string | **Required.** Unique username on Threads. Must be an exact match. |"
+    }
+   ]
+  },
+  "access": {
+   "query": "Threads (Meta) developers.facebook.com/docs/threads API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_-CRMpPH2EA5L",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/documentation/threads/create-posts",
+     "title": "Create posts",
+     "snippet": "You can use the Threads API to publish image, video, text, or carousel posts as well as quote and repost other posts.\nPosting to Threads requires an appropriate access token and permissions based on the endpoint you are calling. While you are testing, you can generate tokens and grant your app permissions by using the Graph API Explorer.\n- `threads_basic` \u2014 Required for making any calls to all Threads API endpoints.\n- `threads_content_publish` \u2014 Required for Threads publishing endpoints only.\nIf your app has not been approved for advanced access for the `threads_content_publish` permission, you can only post on behalf of [Threads testers](https://developers.facebook.com/documentation/threads/get-started#threads-testers) on your app. After your app is published and approved, you can post on behalf of any Threads user who grants your app the permission."
+    },
+    {
+     "url": "https://developers.secure.facebook.com/documentation/threads/get-started.md",
+     "title": "developers.secure.facebook.com/documentation/threads/get-started.md",
+     "snippet": "[Threads testers](#threads-testers) can grant your app these permissions at any time. In order for app users without a role on your app to be able to grant your app these permissions, each permission must first be approved through the [App Review](https://developers.facebook.com/documentation/resp-plat-initiatives/individual-processes/app-review) process, and your app must be published."
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/get-started/create-an-app.md",
+     "title": "Create an app for the Threads API",
+     "snippet": "The following table shows the permissions available for the Threads API use case.\n| Permission | Usage | Allowed actions |\n| --- | --- | --- |\n| [`threads_basic`](https://developers.facebook.com/docs/permissions#threads_basic) | **Required** | **Cannot be removed.** |\n| [`threads_content_publish`](https://developers.facebook.com/docs/permissions#threads_content_publish) |"
+    },
+    {
+     "url": "https://blotato.com/blog/threads-api-pricing",
+     "title": "Threads API Pricing 2026: Free, but Rate-Limited",
+     "snippet": "Threads API pricing in 2026: Meta publishes no paid tier or per-call fee. Rate-limit formula, 24-hour caps, app review timeline, and wrapper options.\n\nThreads API pricing in 2026 is free. Meta publishes no paid tier, no per-call fee, and no pricing page in the official Threads developer docs.\n**Is the Threads API free in 2026?** There is no dollar cost, but \u201cfree\u201d hides two ceilings you plan around instead of a price. Production access waits on Meta App Review, and every call is metered by a 4,800-times-impressions rate formula with hard 24-hour publishing caps (250 posts, 1,000 replies, 100 deletions per profile).\n\n| Threads API (Meta, official) | No paid tier or per-call fee published | Posting, replying, reading insights on your own account | Meta App Review for non-tester users, 60-day long-lived tokens, 500-char text cap |\n\nThe honest answer is that Meta has not published a paid tier or per-call fee for the Threads API, which is what most readers mean by \u201cfree.\u201d The catch is that production access is still gated by Meta App Review and capped by a rate-limit formula tied to your account\u2019s impression volume, which we walk through below.\n\n### Official Threads API (no published pa"
+    },
+    {
+     "url": "https://blog.lots.social/threads-api-free-access-posting-limits-app-review",
+     "title": "Threads API: Free Access, Posting Limits and App Review (2026)",
+     "snippet": "**Yes, the Threads API is free to use.** Meta's Threads documentation lists no price, per-call fee or paid tier. Posting to your own account needs a Meta app and no review. Posting for other people needs App Review, and each profile can publish 250 API posts per 24 hours.\n\n3. **Permissions from the Threads user.** Every call needs `threads_basic`. Publishing needs `threads_content_publish`. Replies need `threads_manage_replies` to write and `threads_read_replies` to read, and insights need `threads_manage_insights`.\n4. **A user access token** from the OAuth flow at `threads.com/oauth/authorize`.\n\n## Is the Threads API really free?\nNothing in Meta's Threads documentation mentions a fee, a pricing page or a paid tier. I searched every page I read for pricing terms and found none. The real costs are indirect: somewhere to host media, and the time App Review takes if you need it.\n\n| Your situation | App Review needed? |\n|---|---|\n| Only people with a role on your app (admin, developer, Threads tester) use it | No |\n| You post to your own Threads account | No, add yourself as a Threads tester |\n| Anyone without a role on the app connects their account | Yes, per permission |\n| You only "
+    }
+   ]
+  },
+  "surface": {
+   "query": "Threads (Meta) API reference REST GraphQL endpoints documentation developers.facebook.com/docs/threads",
+   "log_id": "log_53UYZpfIbqxs",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/docs/threads/posts",
+     "title": "Threads Posts",
+     "snippet": "You can use the Threads API to publish image, video, text, or carousel posts.\nThis document covers:\n- Single Thread Posts\n- Carousel Posts\n- Label AI-Generated Content\n- Topic Tags, Links, and GIFs\n- Media Specifications\nPublishing posts requires the following permissions:\n- `threads_basic` \u2014 Required for making any calls to all Threads API endpoints.\n- `threads_content_publish` \u2014 Required for Threads publishing endpoints only.\nIf your app has not been approved for advanced access for the `threads_content_publish` permission, you can only post on behalf of [Threads testers](/documentation/threads/get-started#threads-testers) on your app. After your app is published and approved, you can post on behalf of any Threads user who grants your app the permission.\nPublishing a single image, video, or text post is a two-step process:\n1. Create a media container with text only or with an image or video hosted on your public server with optional text using the `POST /{threads-user-id}/threads` endpoint.\n2. Publish the media container using the `POST /{threads-user-id}/threads_publish` endpoint.\n\nUse the `POST /{threads-user-id}/threads` endpoint to create a Threads media container."
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/retrieve-and-discover-posts/retrieve-posts",
+     "title": "Retrieve user posts",
+     "snippet": "This document shows you how to retrieve:\n- A list of all posts created by an app-scoped user\n- A list of all posts created by a public profile\n- A single Threads media object\n- A list of all ghost posts created by an app-scoped user\n\n## Retrieve a list of an app-scoped user\u2019s posts\nUse the `GET /{threads-user-id}/threads` endpoint to return a paginated list of all posts created by a user.\nRetrieving posts requires an appropriate access token and permissions based on the endpoint you are calling. While you are testing, you can generate tokens and grant your app permissions by using the Graph API Explorer.\n- `threads_basic` \u2014 Required for making any calls to all Threads API endpoints.\n\n`media_product_type` | Surface where the media is published. In the case of Threads, the value is `THREADS`.\n\n\"https://graph.threads.com/v1.0/me/threads?fields=id,media_product_type,media_type,media_url,permalink,owner,username,text,topic_tag,timestamp,shortcode,thumbnail_url,children,is_quote_post&since=2023-10-15&until=2023-11-18&limit=1&access_token=<ACCESS_TOKEN>\""
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/reference.md",
+     "title": "Threads API Reference",
+     "snippet": "The Threads API consists of the following endpoints. Refer to each endpoint's reference document for usage requirements.\n**Warning:** The Threads API can be accessed by either `graph.threads.com` or `graph.threads.net`.\n| Endpoint | Description |\n| --- | --- |\n| [Publishing](https://developers.facebook.com/documentation/threads/reference/publishing) | Upload and publish Threads media objects, check their status, and repost and delete posts. |\n| [Media Retrieval](https://developers.facebook.com/documentation/threads/reference/media-retrieval) | Retrieve Threads media objects by ID or keyword. |\n| [Reply Management](https://developers.facebook.com/documentation/threads/reference/reply-management) | Retrieve replies and conversations and hide/unhide replies. |\n| [User](https://developers.facebook.com/documentation/threads/reference/user) | Retrieve a Threads user's profile, posts, replies, mentions, ghost posts, and publishing limit, and look up public profiles and their posts. |\n| [Locations](https://developers.facebook.com/documentation/threads/reference/locations) | Retrieve Threads location objects by individual ID. |\n| [Location Search](https://developers.facebook.com/documentati"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/overview",
+     "title": "Threads API overview",
+     "snippet": "You can use the Threads API to enable people to create and publish content on a person\u2019s behalf on Threads, and to display those posts within your app solely to the person who created it.\nThe Threads API can be accessed by either `graph.threads.com` or `graph.threads.net`.\n## Rate limiting\nCalls to the Threads API are counted against the calling app\u2019s call count. An app\u2019s call count is unique for each app and app user pair and is the number of calls the app has made in a rolling 24-hour window. It is calculated as follows:\n`Calls within 24 hours = 4800 * Number of Impressions`\n\nThreads profiles are limited to 250 API-published posts within a rolling 24-hour period. Carousels count as a single post. The `POST /{threads-user-id}/threads_publish` endpoint enforces this limit when attempting to publish a media container. Enforce the publishing rate limit in your app, especially if it allows app users to schedule posts for future publishing.\n**Note:** This endpoint requires the `threads_basic` and `threads_content_publish` permissions.\n#### Fields\n| Name | Description |\n|---|---|\n| `quota_usage` | Threads publishing count over the last 24 hours. |\n| `config` | Threads publishing rate li"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/threads/trending-topics",
+     "title": "Threads trending topics",
+     "snippet": "The Threads Trending Topics API provides businesses with data on current trending topics being surfaced on the Threads app, and lets you retrieve the top and recent posts for each trend.\n## Before you begin\n- All API requests must include the app\u2019s [Threads access token](https://developers.facebook.com/documentation/threads/get-started/app-access-tokens).\n## Limitations\n- The Threads Trending Topics API is only for retrieving public trends and their related Threads posts. You may not transfer or modify trending Threads data, and you must restrict your app users from transferring or modifying trending Threads data.\n- Only trending topics being surfaced on the Threads app for the following jurisdictions are available through the API:\n- USA\n- Japan\n\n- **Threads Trending Topics** feature \u2014 Required for making `GET` calls to the `/trending_topics` and `/<trend_id>/posts` endpoints.\nIf your app has not been approved for the **Threads Trending Topics** feature, you can only call the `/trending_topics` endpoint with **basic** access. Calling `/<trend_id>/posts` endpoint to retrieve posts related to a trending topic requires **advanced** access for the **Threads Trending Topics** feature.\n\n"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Threads (Meta) developers.facebook.com/docs/threads MCP server Model Context Protocol official",
+   "log_id": "log_OAlJkEjNWGZq",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/baguskto/threads-mcp/blob/main/README.md",
+     "title": "threads-mcp/README.md at main \u00b7 baguskto/threads-mcp",
+     "snippet": "# Threads MCP Server\nAn [MCP](https://modelcontextprotocol.io) server for the **official Meta Threads API**. Let Claude (or any MCP client) publish posts, carousels, polls, replies and quotes, read your posts, replies, mentions and insights, search public posts, and schedule posts \u2014 using only endpoints Meta documents.\n- Built on the MCP TypeScript SDK v2 (`@modelcontextprotocol/server`), works with clients on protocol 2024-11-05 through 2025-11-25\n- 42 tools, each annotated as read-only or write so clients can auto-approve reads and confirm writes\n- Waits for media processing before publishing, retries transient errors, and validates posts before anything goes live\n- Optional read-only mode, and no token required just to start the server and list tools\n> **v6 is a rewrite.** Tools that called endpoints the Threads API does not have (likes, follows, blocks, follower lists, trending) were removed, and several were renamed or merged. See Migrating from v5.\n## Quick start\n### 1. Get an access token\n1. Create an app at [developers.facebook.com](https://developers.facebook.com/apps) and add the **Threads API** use case.\n2. Add yourself as a Threads tester and accept the invite in Thread"
+    },
+    {
+     "url": "https://github.com/poisonstefani-dev/threads-mcp",
+     "title": "GitHub - poisonstefani-dev/threads-mcp",
+     "snippet": "# Threads MCP Server\n`threads-mcp` is a stdio MCP server for the official Threads API. It is designed to stay close to the published Meta Threads documentation while exposing a practical MCP tool surface for auth, publishing, reading, moderation, insights, discovery, locations, and setup diagnostics.\nThe current build is intentionally limited to officially documented Threads capabilities and the official Postman collection. It does not rely on undocumented fallback endpoints or convenience wrappers that would be difficult to maintain in a public package.\n## Highlights\n- Official Threads API scope only\n- MCP tools for auth, profile lookup, publishing, reading, replies, insights, search, locations, oEmbed, and diagnostics\n- Publish inputs modeled in camelCase and serialized internally to the snake_case parameters expected by Threads\n- Multi-step carousel publishing support\n- Shared client layer for retries, polling, pagination, and normalized Meta API errors\n## Quick start\n1. Install dependencies:\n```\nnpm install\n```\n1. Build the server:\n```\nnpm run build\n```\n1. Create your local environment file and set at least `THREADS_ACCESS_TOKEN`.\n2. If you still need a token, run the local OAu"
+    },
+    {
+     "url": "https://github.com/andreaselmi/threads-mcp",
+     "title": "GitHub - andreaselmi/threads-mcp: MCP server for the Threads API: publish posts, read your own posts, insights and publishing quota.",
+     "snippet": "# threads-mcp\nAn [MCP](https://modelcontextprotocol.io) server for the [Threads API](https://developers.facebook.com/docs/threads). It does platform I/O and nothing else: publish a post, read your own posts, read their insights, check the publishing quota. No editorial logic, no scheduling, no opinions about what you should write.\nIt is the piece an agent needs in order to *reach* Threads. What to post is your problem.\n```\nnpx -y @andreaselmi/threads-mcp    # needs THREADS_ACCESS_TOKEN in the environment\n```\n\nRequires **Node 20 or newer**. You do not need to install anything: MCP clients run the server with `npx`, which fetches it on first use.\n1. Get a long-lived access token \u2014 full walkthrough below. This is the only genuinely fiddly part, and it is Meta's fault, not this package's.\n2. Export it in the shell you start your MCP client from:\n```\nexport THREADS_ACCESS_TOKEN=\"THQ...\"\n```\n3. Add the server to your client's MCP config:\n```\n{\n\"mcpServers\": {\n\"threads\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"@andreaselmi/threads-mcp\"]\n}\n}\n}\n```\n4. Restart the client and ask it who you are. It should call `threads_whoami` and answer with your username.\nTo check the server works before involv"
+    },
+    {
+     "url": "https://github.com/griffinwork40/threads-mcp",
+     "title": "GitHub - griffinwork40/threads-mcp: Model Context Protocol server for Meta's Threads API \u2014 26 tools for AI agents (post, reply, insights, search), no App Review required for self-use.",
+     "snippet": "# threads-mcp\nA Model Context Protocol (MCP) server for the [Threads API](https://developers.facebook.com/docs/threads). Exposes 26 tools covering profile management, content reading, publishing, replies, and discovery.\n---\n## Quick Start\n### 1. Get a Threads Access Token\nYou can start using Threads API immediately for **your own account** via the Threads Tester \u2014 no App Review required for self-use.\n1. Go to [developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer)\n2. Select your **Threads App** from the app dropdown (or create one at [developers.facebook.com/apps](https://developers.facebook.com/apps) with the Threads product)\n3. In the **Threads Tester**, generate a short-lived token\n4. To get a **long-lived token** (60 days), call:\n```\ncurl \"https://graph.threads.net/access_token?grant_type=th_exchange_token&client_id=YOUR_APP_ID&client_secret=YOUR_APP_SECRET&access_token=SHORT_LIVED_TOKEN\"\n```\n1. To **refresh** a long-lived token before it expires:\n```\ncurl \"https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token=LONG_LIVED_TOKEN\"\n```\n> **Note:** Long-lived tokens expire after 60 days. Refresh them at least once pe"
+    },
+    {
+     "url": "https://docs.getthread.com/super-magic/thread-mcp-server-developer-guide",
+     "title": "Thread MCP Server: Developer Guide",
+     "snippet": "Thread exposes its service-desk actions over the [Model Context Protocol](https://modelcontextprotocol.io), so any MCP-capable client \u2014 Claude Desktop, ChatGPT, Claude Code, Cursor, partner agents, your own app \u2014 can drive Thread workflows the same way Super Magic does in-product: search tickets, look up clients and devices, and (with the right permissions) take real actions.\n```\nEndpoint:   <https://api.getthread.com/mcp>\nTransport:  Streamable HTTP\nAuth:       OAuth 2.1 \u2014 sign in with your Thread account (no tokens to manage)\n```\n`https://api.getthread.com/mcp/thread` is a supported alias for the same server \u2014 use it if a client\u2019s connector directory already has a \u201cthread\u201d entry, or to keep the name unambiguous when you connect multiple MCP servers.\n\n### Get your connector URL\n1. In Thread Inbox, select **Magic** in the left navigation, then **Connectors**.\n2. Scroll to the **Thread MCP access** section.\n3. Click **Copy** next to the connector URL:\n```\n<https://api.getthread.com/mcp>\n```\nIf the section says **Connecting AI apps is turned off for your account**, a workspace admin has limited who can connect AI apps. Ask an admin for access. See [Control who can connect AI apps to "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

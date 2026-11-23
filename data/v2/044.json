@@ -1,0 +1,35 @@
+{
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "one_liner": "Salesforce B2C Commerce platform with Shopper and Admin commerce APIs (SCAPI).",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "partner_or_sales_gated",
+  "access_notes": "API clients are created in Account Manager/SLAS against an existing B2C Commerce instance; requires being a B2C Commerce customer.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "B2C DX MCP and B2C Commerce shopper-tools MCP (Salesforce)",
+  "verdict": "needs_outreach",
+  "blocker": "contact_sales",
+  "blocker_note": "Credentials need a licensed B2C Commerce instance and Account Manager access; no public self-serve signup shown.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html",
+    "access": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+    "surface": "https://developer.salesforce.com/docs/commerce/commerce-api/references/about-commerce-api/about.html",
+    "mcp": "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/agentic-mcp-shopper-tools-quick-start.html"
+  },
+  "verified": true
+}

@@ -1,0 +1,102 @@
+{
+  "id": 50,
+  "app": "fanbasis",
+  "changes": [
+    {
+      "field": "mcp",
+      "from": "none_found",
+      "to": "official",
+      "why": "Vendor docs (apidocs.fan, linked from Fanbasis; brand 'Commas') list an 'AI Agent > Commas MCP Connector' section with Available Tools; Zapier wrapper is not the evidence. Endpoint URL not seen, so low confidence",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "mcp_note",
+      "from": "Only Zapier MCP wrapper found, not vendor-maintained",
+      "to": "Vendor API docs at apidocs.fan include an 'AI Agent / Commas MCP Connector' section and CLI; exact endpoint not seen in fetched text. Zapier MCP wrapper also exists (not vendor).",
+      "why": "Explain basis",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "access",
+      "from": "unknown",
+      "to": "self_serve_free",
+      "why": "Docs: get API key in dashboard (Account > API Keys); sandbox environment with separate sandbox key; seller signup is a short self-serve form",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "access_notes",
+      "from": "API key from seller dashboard (x-api-key header); official plan/approval requirements not shown in evidence.",
+      "to": "API key from dashboard Account > API Keys (Authorization via key; sandbox at api-sandbox.commas.net with sandbox dashboard). Seller account required; payouts need approved account per support docs.",
+      "why": "Vendor docs found",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "partner_or_app_review",
+      "why": "'other' not allowed; seller account/merchant acceptance review applies to live payments",
+      "evidence": "https://support.fanbasis.com/articles/5388113488-seller-withdrawal-guide"
+    },
+    {
+      "field": "blocker_note",
+      "from": "Evidence for public API mostly from third-party/mirrored docs; access terms unconfirmed.",
+      "to": "Live payments/withdrawals require an approved seller account (merchant-of-record review); sandbox usable meanwhile.",
+      "why": "Match blocker",
+      "evidence": "https://support.fanbasis.com/articles/5388113488-seller-withdrawal-guide"
+    },
+    {
+      "field": "identity_issue",
+      "from": "Evidence mixes Fanbasis with unrelated 'Fanbase API' (openstage.live) and mirrored docs titled 'Commas API'; official docs not directly in bundle.",
+      "to": "",
+      "why": "Official docs apidocs.fan describe the Fanbasis public API (base URL www.fanbasis.com; 'Commas' is the API/SDK brand name); the openstage 'Fanbase API' is unrelated and excluded.",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "evidence.auth",
+      "from": "https://demo.embedded.fanbasis.io/docs/checkout-session-secret",
+      "to": "https://apidocs.fan",
+      "why": "Official docs replace demo/mirror",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://demo.embedded.fanbasis.io/docs/getting-started",
+      "to": "https://apidocs.fan",
+      "why": "Official quick start",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "evidence.surface",
+      "from": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+      "to": "https://apidocs.fan",
+      "why": "Official API reference replaces third-party Laravel mirror",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "evidence.mcp",
+      "from": "http://zapier.com/mcp/fanbasis",
+      "to": "https://apidocs.fan",
+      "why": "Zapier link 404; vendor docs nav lists MCP connector",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "confidence.access",
+      "from": "low",
+      "to": "medium",
+      "why": "Now backed by vendor docs",
+      "evidence": "https://apidocs.fan"
+    },
+    {
+      "field": "confidence.surface",
+      "from": "medium",
+      "to": "high",
+      "why": "Official docs",
+      "evidence": "https://apidocs.fan"
+    }
+  ],
+  "confirmed": [
+    "auth_primary",
+    "api_types"
+  ],
+  "searches": 9
+}

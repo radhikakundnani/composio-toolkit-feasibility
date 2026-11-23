@@ -1,0 +1,26 @@
+{
+  "id": 20,
+  "app": "Gladly",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly",
+      "to": "https://developer.gladly.com/rest",
+      "why": "v1 cited third-party alloy page; vendor REST docs describe sandbox enablement on request",
+      "evidence": "https://developer.gladly.com/rest"
+    },
+    {
+      "field": "access_notes",
+      "from": "Account with API user role creates API tokens; Gladly typically needs demo and custom pricing, no self-serve trial shown.",
+      "to": "Account with API user role creates API tokens; API sandbox is enabled on request; pricing from $1500/month, demo-led; a 14-day trial exists only on a Shopify-oriented signup page (API availability in it unverified).",
+      "why": "",
+      "evidence": "https://gladly.com/shopify-get-started"
+    }
+  ],
+  "confirmed": [
+    "mcp community only (StackOne, usefulapi, Vinkius third-party; no vendor MCP found)",
+    "verdict needs_outreach",
+    "blocker contact_sales"
+  ],
+  "searches": 4
+}

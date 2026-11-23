@@ -1,0 +1,19 @@
+{
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+      "to": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction",
+      "why": "Vendor-domain doc confirms Lark Open Platform publishes OpenAPI MCP tool (also vendor org larksuite on GitHub); flag was only URL provenance"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

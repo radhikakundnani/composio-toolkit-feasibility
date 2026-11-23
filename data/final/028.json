@@ -1,0 +1,36 @@
+{
+ "id": 28,
+ "app": "WhatsApp Business",
+ "category": "Communications and Messaging",
+ "one_liner": "Meta's Cloud API for business messaging and calling on WhatsApp.",
+ "auth_methods": [
+  "bearer_token",
+  "oauth2"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "self_serve_free",
+ "access_notes": "Meta developer account, business portfolio, and WhatsApp account; system-user token. Partners onboard via Embedded Signup.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "WhatsApp Business Tools MCP (setup/debug focus), https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Serving other businesses requires Meta App Review and Tech Provider onboarding; messaging is usage-billed.",
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "surface": "medium",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://developers.facebook.com/docs/whatsapp/access-tokens",
+  "access": "https://developers.facebook.com/docs/whatsapp/permissions",
+  "surface": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+  "mcp": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp"
+ },
+ "identity_issue": "",
+ "verified": true
+}

@@ -1,0 +1,142 @@
+{
+ "id": 60,
+ "app": "Clay",
+ "hint": "clay.com",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "Clay API authentication OAuth API key access token developer docs clay.com",
+   "log_id": "log_qY1kXYHaY9ex",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+     "title": "Connect your platform to Clay MCP",
+     "snippet": "Clay exposes a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that lets an external platform \u2014 an AI assistant, IDE, agent host, or partner product \u2014 run Clay's find-and-enrich tools and custom functions on behalf of a signed-in Clay user. Dynamic Client Registration (DCR) is the self-service path onto that server: your platform registers itself at connect time to obtain OAuth client credentials, with no manual setup on Clay's side.\n## How your platform discovers Clay\nClay advertises its OAuth endpoints through standard metadata documents, so a compliant client can find everything it needs starting from a single unauthenticated request.\n**1.** Make an unauthenticated `POST` to `https://api.clay.com/v3/mcp`.\n**2.** Clay responds `401 Unauthorized` with a `WWW-Authenticate` header pointing at the protected-resource metadata:\n`WWW-Authenticate: Bearer resource_metadata=\"<https://api.clay.com/.well-known/oauth-protected-resource/v3/mcp>\"`\n**3.** Fetch that document to learn the resource and its authorization server:\n`{ \"resource\": \"<https://api.clay.com/v3/mcp>\", \"issuer\": \"<https://api.clay.com>\", \"authorization_servers\": [\"<https://api.clay.com>\"], \"scopes_su"
+    },
+    {
+     "url": "https://developers.clay.com/public-api/authentication",
+     "title": "Authentication",
+     "snippet": "Every request to the Clay Public API must include a Clay API key in the `clay-api-key` header. Store your key in an environment variable and pass it in the header:\n```\nexport CLAY_PUBLIC_API_KEY=\"your_api_key\"\ncurl https://api.clay.com/public/v0/me \\\n-H \"clay-api-key: $CLAY_PUBLIC_API_KEY\"\n```\nAPI keys are tied to a Clay user and workspace access. Create one under [API and CLI \u2192 API keys](https://app.clay.com/workspaces/~/api-and-cli?tab=api-keys), with `clay api-keys create --name \"<key name>\"` in the CLI, or by asking your agent after installing the [agent plugin](/quickstart#agent-plugin). Keep keys server-side and do not expose them in browser code, mobile apps, public repositories, logs, or analytics tools.\n##\n\u200b\nHeader\n| Header | Required | Description |\n|---|---|---|\n| `clay-api-key` | Yes | Personal API key for the Clay Public API. |\n##\n\u200b\nFailed authentication\nRequests without a valid API key return a non-2xx response with the standard error shape:\n```\n{\n\"message\": \"Authentication failed\"\n}\n```"
+    },
+    {
+     "url": "https://university.clay.com/docs/http-api-with-jwt-authentication-integration-overview",
+     "title": "HTTP API with JWT authentication - Clay Docs",
+     "snippet": "The **HTTP API with JWT Authentication** action connects Clay to APIs that issue short-lived JWT tokens as part of their authentication flow. Before making API calls, Clay authenticates to your provider's token endpoint using stored credentials, then automatically injects the resulting JWT into each request's authorization header.\n## What is JWT authentication?\nJWT (JSON Web Token) authentication is a two-step process:\n1. **Token fetch** \u2014 Clay calls your API's token endpoint (e.g., `https://api.example.com/oauth/token`) using the username and password stored in your JWT account, and receives a JWT in response.\n2. **Authenticated request** \u2014 Clay attaches the JWT as a header (e.g., `Authorization: Bearer <token>`) on every API call made by the enrichment.\nThe token is automatically refreshed approximately every 55 minutes, so you don't need to manage token expiry manually.\n## How JWT authentication differs from standard HTTP API\nUse this table to decide which action to use:\n| | HTTP API | HTTP API with JWT Authentication |\n|---|---|---|\n| **Auth flow** | Direct \u2014 pre-stored headers sent with every request | Two-step \u2014 token fetch, then API call |\n| **Account required?** | Optional "
+    },
+    {
+     "url": "https://developers.clay.com/quickstart",
+     "title": "Quickstart",
+     "snippet": "API\nUse the Public API to call Clay from your own applications and services \u2014 backend jobs, internal tools, queues, and product features. Requests authenticate with a Clay API key in the `clay-api-key` header.\n\nGet an API key\nYou can create an API key three ways:\n- Ask your agent to generate one for you after installing the agent plugin.\n- Run `clay api-keys create --name \"<key name>\"` with the `clay` CLI. The key is returned once, in the `apiKey` field.\n- Create one yourself in Clay under [API and CLI \u2192 API keys](https://app.clay.com/workspaces/~/api-and-cli?tab=api-keys).\nKeep keys server-side. Do not expose them in browser code, mobile apps, public repositories, logs, or analytics tools. See [Authentication](/public-api/authentication) for details."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/clay-com/refs/heads/main/scopes/clay-com-scopes.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/clay-com/refs/heads/main/scopes/clay-com-scopes.yml",
+     "snippet": "Clay's OpenAPI declares NO oauth2 security scheme \u2014 the Public API is api-key only\n(`clay-api-key` header), so derive-oauth-scopes.py correctly found nothing in the spec.\nBut Clay does run a real OAuth 2.0 authorization server, published as RFC 8414 metadata\nat https://api.clay.com/.well-known/oauth-authorization-server, and it is what gates the\n`clay` CLI and the remote MCP server at https://api.clay.com/v3/mcp. The scope surface\nbelow is read verbatim from that metadata document, not inferred."
+    }
+   ]
+  },
+  "access": {
+   "query": "Clay clay.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_vHhGkRsowtBU",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://university.clay.com/docs/clay-api-cli",
+     "title": "Installing Clay Plugin (API & CLI)",
+     "snippet": "You'll need:\n- **A paid coding agent plan:** Claude (Pro, Max, Team, or Enterprise) for Claude Code, or ChatGPT (Plus, Pro, Business, Edu, or Enterprise) for Codex. If your company manages Claude, check that Claude Code is enabled for you.\n- **Editor or Admin access** in the Clay workspace you'll connect.\n- **On Windows, admin rights** (or help from IT) for one step.\n\nThe developer platform is available across all Clay plans, including free, trial, and Legacy plans.\nSearch result limits apply to the results returned across the CLI and Public API together, and they scale with your plan:\n| Plan | Results per request | Results per search | Results per period |\n|---|---|---|---|\n| **Free** | 50 | 50 | 100 per 30 days |\n| **Trial** | 50 | 50 | 10,000 per 14 days |\n| **Flex** | 500 | Up to your period limit | 50,000 per 30 days |\n| **Paid self-serve plans** | 500 | Up to your period limit | 1,000,000 per 30 days |\n| **Legacy paid plans** | 500 | Up to your period limit | 1,000,000 per year |\n| **Enterprise** | 500 | Up to your period limit | 10,000,000 per 30 days |\n\n### Who can approve a device sign-in?\nWhoever opens the verification link. They need to be signed in to Clay in that brows"
+    },
+    {
+     "url": "https://cleanlist.ai/blog/2026-10-16-clay-api-guide",
+     "title": "Clay API in 2026: Public API, Webhooks and HTTP API Explained",
+     "snippet": "**Yes, Clay has an API.** Clay's Public API is a REST API at `api.clay.com/public/v0`, launched July 9, 2026 with the Clay CLI and generally available since September 15, 2026. It runs your Clay functions and searches from your own code, reads tables and checks your credit balance, with a `clay-api-key` header. It cannot create or write to tables; inbound webhooks still do that. Runs cost the same Actions and Data Credits as in the app, with no surcharge. We make Clu, which gives you AI agents that run your GTM and an enrichment API on Pro ($89 a seat a month) that also works inside Clay, so read this as a vendor's guide. Older \"Clay API\" features, webhooks into tables and the HTTP API column, need the Growth or Enterprise plan.\n\nYes, and \"the Clay API\" can mean four different things:\n| What people mean | What it does | Plans |\n|---|---|---|\n| **Public API** (new in 2026) | Your code calls Clay: run functions and searches, read tables, check credits | All plans, with caps by plan |\n| **Webhook source** | Other apps POST JSON rows into a Clay table | Growth and Enterprise |\n| **HTTP API column** | Clay calls any other API from a table | Growth and Enterprise |\n| **Clay MCP** | AI to"
+    },
+    {
+     "url": "https://developers.clay.com/searches",
+     "title": "Searches",
+     "snippet": "| Plan | Results per request | Results per search | Results per period | Reset date |\n|---|---|---|---|---|\n| Free | 50 | 50 | 100 per 30 days | Rolling (ages out daily at midnight UTC) |\n| Trial | 50 | 50 | 10,000 for trial duration | Not applicable |\n| Paid | 500 | Up to your period limit | 1,000,000 per 30 days | Rolling (ages out daily at midnight UTC) |\n| Legacy paid (Starter, Explorer, Pro) | 500 | Up to your period limit | 1,000,000 per year | January 1 (UTC) |\n| Enterprise | 500 | Up to your period limit | 10,000,000 per 30 days | Rolling (ages out daily at midnight UTC) |\n\nLegacy Starter, Explorer, and Pro plans keep the yearly period limit. Legacy Enterprise plans use the Enterprise row. Moving to a current paid plan or Enterprise is what switches a workspace to the rolling 30-day limit. When you exceed a limit, Clay returns HTTP `402` with a message naming the limit you hit. Period-limit errors also state when the limit resets. Malformed filters or other invalid input still return HTTP `400`. To increase a limit, paid customers can contact Clay Support; Enterprise customers should contact their assigned Clay GTME."
+    },
+    {
+     "url": "https://enrow.io/en/blog/clay-api-integrations",
+     "title": "Clay API and Integrations: Getting Data In, Out and Wired by Hand",
+     "snippet": "> **Key takeaway** Clay ships a public API: `https://api.clay.com/public/v0`, a `clay-api-key` header, 13 documented operations, and a 67,151-byte OpenAPI 3.1.0 spec live at `developers.clay.com/openapi.json` on 29 August 2026.\n\nYes. Clay's public API sits at `https://api.clay.com/public/v0`, authenticates on a `clay-api-key` header issued under Settings \u2192 Account \u2192 API keys \u2014 still marked beta \u2014 and exposes 13 operations spanning an identity check, routine runs, batch runs, Searches and table queries. A rejected key answers `{\"message\": \"Authentication failed\"}`; keys stay server-side.\n\nOne disagreement to carry before you plan around that last block. `university.clay.com/docs/clay-api-cli` says the developer platform is \"available across all Clay plans, including free and trial plans\", with API and CLI calls consuming \"the same credits and actions as the equivalent work done in-product\". The pricing FAQ lists \"Clay API access\" as an Enterprise bullet, and the compare table carries no API row. Check your own workspace first.\n\nLaunch is $185/mo, $167 billed annually; Growth is $495, or $446; the ladders sit in [Clay pricing](/en/blog/clay-pricing). Clay counts that provider directo"
+    },
+    {
+     "url": "https://university.clay.com/docs/plans-and-billing",
+     "title": "Plans & billing",
+     "snippet": "### Trials\nClay offers a 14-day free trial with 1,000 data credits, giving you access to webhooks, CRM integrations, email sequencers, and HTTP API capabilities.\nPhone number enrichments aren't available during the trial period. To access this feature, upgrade to a paid plan.\nIf your team wants to do a trial, each team member can create their own trial account to explore Clay independently."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Clay API reference REST GraphQL endpoints documentation clay.com",
+   "log_id": "log_bGTCzHVn4Ik4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.clay.com/tables",
+     "title": "Tables (Enterprise)",
+     "snippet": "Tables let Enterprise customers read structured data from known Clay tables. Use table queries when your integration already knows which table it needs\n\nClay tables can act as a GTM database for your downstream systems. You can build dashboards, internal tools, QA views, scoring jobs, and interactive apps on top of data that already exists in Clay. The current public API does not include a list-tables endpoint. You need the table identifiers your integration uses before querying table data. You can find the table id in a Clay URL after `/tables/`, for example `https://app.clay.com/workspaces/{workspaceId}/tables/t_0te9i4tZEHwc9hihBXu`.\n\nTable queries are structured. You select fields, apply filters, and page through results with a cursor.\n```\ncurl --request POST \\\n--url https://api.clay.com/public/v0/tables/query \\\n--header \"Content-Type: application/json\" \\\n--header \"clay-api-key: $CLAY_PUBLIC_API_KEY\" \\\n--data '{\n\"query\": {\n\"tables\": [\n{\n\"id\": \"t_0te9i4tZEHwc9hihBXu\"\n}\n],\n\"select\": [\n{\n\"field\": \"Company Name\",\n\"as\": \"company_name\"\n},\n{\n\"field\": \"Domain\",\n\"as\": \"domain\"\n}\n],\n\"filter\": {\n\"field\": \"Domain\",\n\"op\": \"is_not_empty\"\n},\n\"field_mode\": \"names\"\n},\n\"limit\": 20\n}'\n```\n`query` "
+    },
+    {
+     "url": "https://developers.clay.com/searches/advanced",
+     "title": "Search with advanced queries",
+     "snippet": "Get the query reference\nFetch the query reference before writing a query. It describes the available fields and grammar.\n```\ncurl --request GET \\\n--url https://api.clay.com/public/v0/search/query-mode/reference \\\n--header \"clay-api-key: $CLAY_PUBLIC_API_KEY\"\n```\n##\n\u200b\nCreate and run a people search\nThis pattern returns current software engineers whose employer is in the Software Development industry.\n```\nQUERY='select from people where experiences.any('\\\n'is_current = true and '\\\n'job_title is_similar_to (\"software engineer\") and '\\\n'company.industry = \"Software Development\")'\nSEARCH_ID=$(curl --request POST \\\n--url https://api.clay.com/public/v0/search/query-mode \\\n--header \"Content-Type: application/json\" \\\n--header \"clay-api-key: $CLAY_PUBLIC_API_KEY\" \\\n--data \"$(jq -n --arg query \"$QUERY\" '{query: $query}')\" \\\n| jq -r '.search_id')\ncurl --request POST \\\n--url \"https://api.clay.com/public/v0/search/query-mode/$SEARCH_ID/run\" \\\n--header \"Content-Type: application/json\" \\\n--header \"clay-api-key: $CLAY_PUBLIC_API_KEY\" \\\n--data '{\"limit\": 20}'\n```"
+    },
+    {
+     "url": "https://developers.clay.com/routines/api",
+     "title": "Routines API",
+     "snippet": "To start a run, call `POST /routines/{routine_id}/run`. Replace `function:t_abc123` and the input names with your function\u2019s routine id and inputs. Give each item an id you can use to match its result later.\n```\nROUTINE_RUN_ID=$(curl --request POST \\\n--url \"https://api.clay.com/public/v0/routines/function:t_abc123/run\" \\\n--header \"Content-Type: application/json\" \\\n--header \"clay-api-key: $CLAY_PUBLIC_API_KEY\" \\\n--data '{\n\"items\": [\n{\n\"id\": \"row-1\",\n\"inputs\": {\n\"domain\": \"clay.com\"\n}\n},\n{\n\"id\": \"row-2\",\n\"inputs\": {\n\"domain\": \"example.com\"\n}\n}\n]\n}' | jq -r '.routine_run_id')\n```\n##\n\u200b\nRead the results\nUse the returned `routine_run_id` to request the run\u2019s results:\n```\ncurl --request GET \\\n--url \"https://api.clay.com/public/v0/routines/run/$ROUTINE_RUN_ID/results\" \\\n--header \"clay-api-key: $CLAY_PUBLIC_API_KEY\"\n```"
+    },
+    {
+     "url": "https://developers.clay.com/api-reference/tables/run-a-structured-query-across-one-or-more-tables.md",
+     "title": "developers.clay.com/api-reference/tables/run-a-structured-query-across-one-or-more-tables.md",
+     "snippet": "# Run a structured query across one or more tables\n> Runs a structured query against Clay table data and returns records with field metadata. Results are paginated: pass the returned cursor back to fetch the next page. Scans return rows in least-recently-updated-first order and reflect writes that land while you paginate \u2014 a scan returns every record visible when it started and picks up records written while it runs, and a record updated mid-scan can be returned again with fresher data, so deduplicate by id if you need each record once.\n## OpenAPI\n````yaml /openapi.json post /tables/query\nopenapi: 3.1.0\ninfo:\ncontact:\nname: Clay\nurl: https://www.clay.com\ndescription: Programmatic access to Clay.\ntitle: Clay Public API\nversion: '0'\nservers:\n- description: production\nurl: https://api.clay.com/public/v0\nsecurity:\n- ClayApiKey: []\ntags:\n- description: Authenticated user and workspace endpoints.\nname: me\n- description: Workspace credit balances.\nname: credits\n- description: Search creation and pagination endpoints.\nname: search\n- description: Structured table query endpoints.\nname: tables\n- description: Routine discovery and execution endpoints.\nname: routines\n- description: Search work"
+    },
+    {
+     "url": "http://developers.clay.com/llms.txt",
+     "title": "developers.clay.com/llms.txt",
+     "snippet": "- [Quickstart](https://developers.clay.com/quickstart.md): Build with Clay from your coding agent, or call the Clay API from your own applications.\n\n- [Routines API](https://developers.clay.com/routines/api.md): Run Clay-managed functions and custom functions through the Public API."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Clay clay.com MCP server Model Context Protocol official",
+   "log_id": "log_NCPh0xYPwCTi",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+     "title": "Connect your platform to Clay MCP",
+     "snippet": "Clay exposes a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that lets an external platform \u2014 an AI assistant, IDE, agent host, or partner product \u2014 run Clay's find-and-enrich tools and custom functions on behalf of a signed-in Clay user. Dynamic Client Registration (DCR) is the self-service path onto that server: your platform registers itself at connect time to obtain OAuth client credentials, with no manual setup on Clay's side.\n## How your platform discovers Clay\nClay advertises its OAuth endpoints through standard metadata documents, so a compliant client can find everything it needs starting from a single unauthenticated request.\n**1.** Make an unauthenticated `POST` to `https://api.clay.com/v3/mcp`.\n**2.** Clay responds `401 Unauthorized` with a `WWW-Authenticate` header pointing at the protected-resource metadata:\n`WWW-Authenticate: Bearer resource_metadata=\"<https://api.clay.com/.well-known/oauth-protected-resource/v3/mcp>\"`\n**3.** Fetch that document to learn the resource and its authorization server:\n`{ \"resource\": \"<https://api.clay.com/v3/mcp>\", \"issuer\": \"<https://api.clay.com>\", \"authorization_servers\": [\"<https://api.clay.com>\"], \"scopes_su"
+    },
+    {
+     "url": "https://developers.clay.com/concepts/mcp",
+     "title": "MCP server",
+     "snippet": "The Clay plugin has two halves: the Clay CLI for scripting and ephemeral operations, and a local MCP server that exposes Clay\u2019s tools to a coding-agent host such as Claude Code, Codex, or Cursor. Installing the plugin wires up both. The plugin needs a coding-agent host that can run `clay mcp` as a local process, call its tools, and also run the `clay` CLI directly \u2014 Claude Code, Codex, and Cursor all support this. General-purpose chat apps like Claude Desktop, claude.ai, and ChatGPT can call MCP tools, but they have no shell tied to the session, so they can\u2019t run the `clay` CLI.\n##\n\u200b\nHow it works\nAn MCP host spawns `clay mcp`, which runs as a long-running server over stdio and forwards the host\u2019s tool calls to Clay. It authenticates with the same credentials as the rest of the CLI \u2014 the session from `clay login`. You do not put an API key into the host config. The server resolves its session once at startup, so if you sign in after it launches, restart your agent so its MCP server picks up the new session.\n##\n\u200b\nWorkspace pinning\nBecause the server resolves its session once at startup, an MCP connection stays pinned to whichever workspace was active then \u2014 re-running `clay login` on"
+    },
+    {
+     "url": "https://clay.com/guides/clay-mcp",
+     "title": "What Is Clay MCP? Clay in Claude & ChatGPT (2026)",
+     "snippet": "Clay MCP is the layer that brings Clay's data and workflows into the AI tools your team already works in, so reps act on Clay without opening Clay. Built on the open Model Context Protocol, it exposes 150+ data providers, AI research agents, and your team's prebuilt workflows inside ChatGPT, Claude, and Codex.\n\nMCP, the Model Context Protocol, is an open standard for connecting an AI assistant to an outside system. Clay's MCP server uses it to expose 150+ data providers, AI research agents, and your team's prebuilt workflows inside ChatGPT, Claude, and Codex.\n\nClay MCP is a connector, not a new app to learn. Historically Clay was a workflow platform built for ops: deep, but it took time to learn and was easy to burn credits in, which kept most reps out of it. MCP changes the access model. The same data and workflows now surface inside the assistant, so a rep types a request in plain language and Clay answers in the conversation. RevOps still builds the logic in Clay; reps just consume it where they already are.\n\nMCP makes Clay a tool the assistant can call, the same way it calls any other connector. When a rep asks the assistant to find people, research a company, or run a workflow"
+    },
+    {
+     "url": "https://university.clay.com/docs/mcp-security-privacy",
+     "title": "MCP Security & Privacy",
+     "snippet": "Clay's MCP (Model Context Protocol) connects your workspace to AI tools like Claude, ChatGPT, Microsoft Copilot, and Glean. Because that means an external application acts on workspace data on a user's behalf, this doc covers how those connections are authenticated, which roles can create them, and how Clay handles the data involved.\n## How MCP connections are authenticated\nMCP connections use browser-based OAuth \u2014 there are no shared secrets or API keys to distribute:\n- A team member starts the connection from their AI tool and signs in to Clay in the browser.\n- They select which Clay workspace to connect. A user who belongs to several workspaces connects each one separately.\n- The resulting access token is scoped to that one user and that one workspace, and Clay stores only a hash of it.\n- A connection only reaches the one workspace it was authorized for, and only the Functions and workflows an admin or editor has enabled for MCP. What a user can do through MCP is not identical to what they can do in the web app \u2014 see the roles below.\nAdmins can also limit which applications are allowed to connect at all. On the `Agent users` page, which they open from the sidebar on the Clay hom"
+    },
+    {
+     "url": "https://github.com/cursor/plugins/blob/5bf2b154/third_party/clay/README.md?plain=1",
+     "title": "plugins/third_party/clay/README.md at 5bf2b1544db739998121a306340631963c2ff3de \u00b7 cursor/plugins",
+     "snippet": "# Clay\nCursor plugin that connects agents to [Clay](https://www.clay.com) through Clay's official hosted [Model Context Protocol](https://modelcontextprotocol.io/) server.\nFind and enrich people and companies across 150+ data providers, run AI research agents (Claygent), and trigger your team's approved Clay workflows from the signed-in Clay workspace.\n\n## MCP\n```json\n{\n\"mcpServers\": {\n\"clay\": {\n\"type\": \"http\",\n\"url\": \"https://api.clay.com/v3/mcp\"\n}\n}\n}\n```\nAuth is OAuth 2.1 against Clay with Dynamic Client Registration (DCR) and PKCE. Cursor registers itself and prompts for Clay sign-in when the plugin connects \u2014 there is no API key or client ID to configure.\n## Before you connect\nYou need a Clay account with access to a workspace.\nYour Clay workspace admin may need to allow MCP client connections under Clay workspace **Settings \u2192 MCP**. If sign-in succeeds but tools fail, check with your admin.\n## What agents can do\n| Category | Capabilities |\n| --- | --- |\n| People & companies | Search Clay's data universe with natural-language criteria |\n| Enrichment | Pull emails, phone numbers, firmographics, technographics, and other data points across 150+ providers |\n| Research | Ask Clayg"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": 77,
+ "app": "ClickUp",
+ "hint": "clickup.com/api",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "ClickUp API authentication OAuth API key access token developer docs clickup.com/api",
+   "log_id": "log_cZfHnCHqSEvg",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.clickup.com/docs/authentication",
+     "title": "Authentication",
+     "snippet": "To use the ClickUp API, you must authenticate every request.\nFor personal use, authenticate with your [personal API token](https://developer.clickup.com/docs/authentication#personal-token).\nFor apps or integrations that other people use, use the [OAuth flow](https://developer.clickup.com/docs/authentication#oauth-flow), allowing users to authorize Workspaces for your app.\nInclude the token in the **Authorization** header of your requests.\nBoth methods ensure that you and your users only have access to the information permitted by ClickUp.\n> ###\n#\nPersonal Token\nUse a personal API token for individual or testing purposes. Personal tokens begin with `pk_`.\nAdd the token to the header: `Authorization: {personal_token}`. This is also needed to use the Try-It feature in the API docs.\n##\nGenerate or regenerate a Personal API Token\n1. Log in to ClickUp.\n2. In the upper-right corner, click your avatar.\n3. Select **Settings**.\n4. In the sidebar, click **Apps**. Or click [here](https://app.clickup.com/settings/apps) to go directly to your settings.\n5. Under **API Token**, click **Generate** or **Regenerate**.\n> ###\n> Note\n>\n>\n>\n> You'll need to sign in to your ClickUp account in order to gen"
+    },
+    {
+     "url": "https://developer.clickup.com/reference/getaccesstoken.md",
+     "title": "developer.clickup.com/reference/getaccesstoken.md",
+     "snippet": "# Get Access Token\nThese are the routes for authing the API and going through the [OAuth flow](doc:authentication).\\\n\\\nApplications utilizing a personal API token don't use this endpoint.\\\n\\\n***Note:** OAuth tokens are not supported when using the [**Try It** feature](doc:trytheapi) of our Reference docs. You can't try this endpoint from your web browser.*\n\nAuthentication\\nThe API supports two authentication methods:\\n- **Personal API Token**: Use for testing and personal integrations. Add token to requests with header: `Authorization: pk_...`\\n- **OAuth 2.0**: Required for building apps for other users.\n\nTwo types of tokens are supported:\\n**Personal API Key** Obtain from ClickUp's settings page under 'Apps' and add it to the header as `Authorization: pk_...`\\n**OAuth2 Access Token** Generated through the OAuth2 flow and add it to the header as `Authorization: Bearer {access_token}`\""
+    },
+    {
+     "url": "https://docs.clickup.com/integrations/getting-started-with-the-clickup-api",
+     "title": "Getting Started with the ClickUp API",
+     "snippet": "Full [API](https://clickup.com/blog/how-apis-improve-workflows/) documentation available [here](https://clickup.com/api).\n## Create a ClickUp App\n#### Use OAuth2 to create an App\n- Navigate to `Integrations` page in `team settings`\n- Select the `ClickUp API` tab\n- Create an app to generate a Client ID and Client Secret\n- Send users to the API URL with the required parameters to accept the authorization request\n- Acquire access token via the Get access token post request\n## Personal API Key\n#### Use your token to create apps for yourself\n**Finding your token:**\n- Navigate to your personal `Settings`\n- Click `Apps` in the left sidebar\n- Click `Generate` to create your API token\n- Click `Copy` to copy the key to your clipboard\n***Note****: If you're using the API for personal use, feel free to use your personal API token. If you're creating an application for others to use, it is recommended to use the OAuth2 flow.*\nYou may now use the Personal or OAuth2 access tokens in the `Authorization` header of your API requests."
+    },
+    {
+     "url": "https://help.clickup.com/hc/en-us/articles/6303426241687-Use-the-ClickUp-API",
+     "title": "Create your own app with the ClickUp API",
+     "snippet": "Want to create an app that integrates with ClickUp? Give your users the ability to sign in using OAuth 2.0!\nBe sure to also check out our [API documentation](https://clickup.com/api)!\n# What you'll need\n- The ClickUp API is available on all [ClickUp plans](https://clickup.com/pricing).\n- Workspace owners or admins can manage integration settings and create OAuth apps in the Workspace.\n- Members and limited members with full edit permissions can use personal API tokens.\n- Limited members with view-only permissions cannot access or manage the API.\n# OAuth 2 flow\nWhen you want to develop an application that others can use, you must use an OAuth2 authentication flow.\nWith OAuth 2, everyone who uses your app gets assigned an individualized token. Each user can only access the content available to their individual ClickUp user account.\nIf you are unfamiliar with OAuth2, Digital Ocean has put together a great [guide](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2) that should get you started. We also recommend checking out [OAuth's website](https://www.oauth.com/) for additional details.\n# Create an app\nThe first step for using OAuth 2 is to create an app in y"
+    },
+    {
+     "url": "https://developer.clickup.com/reference/startatimeentry.md",
+     "title": "developer.clickup.com/reference/startatimeentry.md",
+     "snippet": "Authentication\\nThe API supports two authentication methods:\\n- **Personal API Token**: Use for testing and personal integrations. Add token to requests with header: `Authorization: pk_...`\\n- **OAuth 2.0**: Required for building apps for other users.\n\n\"Authorization_Token\": {\n\"name\": \"Authorization\",\n\"type\": \"apiKey\",\n\"in\": \"header\",\n\"description\": \"API token required for authentication. Two types of tokens are supported:\\n**Personal API Key** Obtain from ClickUp's settings page under 'Apps' and add it to the header as `Authorization: pk_...`\\n**OAuth2 Access Token** Generated through the OAuth2 flow and add it to the header as `Authorization: Bearer {access_token}`\"\n}\n}"
+    }
+   ]
+  },
+  "access": {
+   "query": "ClickUp clickup.com/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_O-P_8tdr8Dga",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.clickup.com/hc/en-us/articles/6303426241687-Use-the-ClickUp-API",
+     "title": "Create your own app with the ClickUp API",
+     "snippet": "# What you'll need\n- The ClickUp API is available on all [ClickUp plans](https://clickup.com/pricing).\n- Workspace owners or admins can manage integration settings and create OAuth apps in the Workspace.\n- Members and limited members with full edit permissions can use personal API tokens.\n- Limited members with view-only permissions cannot access or manage the API."
+    },
+    {
+     "url": "https://clickup.com/terms/developer-terms",
+     "title": "ClickUp\u2122 | Developer Terms of Use",
+     "snippet": "- **API License.** Subject to your compliance with the Terms, ClickUp grants you a limited, non-transferable, nonexclusive, revocable royalty-free license, without a right to sublicense, to use the API to develop, implement, integrate, and interface your App with the ClickUp Services as defined in our Terms of Service and distribute Your App to end users that are also customers of ClickUp Service.\n\n### 3. API Access Requirements.\nEach App must maintain absolute compatibility with the API in order to be granted access to the API and Services, including by (a) applying all SDK and API updates provided by ClickUp, (b) providing all functionalities identified as critical by ClickUp, and (c) supporting any standards (including encryption standards) required by ClickUp. You agree to abide by any limitations on access, calls, or use of the API or Services (any \u201cService Limits\u201d) that may be set by ClickUp and will not attempt to circumvent such Service Limits without the separate prior written consent of ClickUp. You may not use or access the API or Services for the purposes of monitoring the availability, performance, or functionality of the API or Services or for any other benchmarking o"
+    },
+    {
+     "url": "https://clickup.com/blog/clickup-api",
+     "title": "How to Build Two-Way Integrations With the ClickUp Public API",
+     "snippet": "[ClickUp](https://clickup.com/) and external software using the [ClickUp Public API](https://clickup.com/api).\n\nYou can\u2019t access ClickUp data without authenticating. If you don\u2019t have an account yet, you can [sign up for free](https://app.clickup.com/signup) and create your first Workspace!\nThere are two ways to authenticate:\nThere are two ways to authenticate:\n- **OAuth:** If you are building an app, you can use [OAuth](https://developer.clickup.com/docs/authentication) to have users securely sign into ClickUp to authenticate their API requests\n- **Personal token:** If you\u2019re just tinkering or building something for yourself, you can use a [personal token](https://developer.clickup.com/docs/authentication)\n\nWe can send an API request to the ClickUp Public API to [create a webhook](https://developer.clickup.com/reference/createwebhook) to listen for specific events. When those events occur in ClickUp, we\u2019ll receive a message with the details, allowing us to update the accounting software."
+    },
+    {
+     "url": "https://developer.clickup.com/docs/apis-available-by-plan",
+     "title": "API availability by Plan",
+     "snippet": "# API availability by Plan\nOur Public API is available on all [ClickUp Plans](https://clickup.com/pricing) . Some endpoints and parameters are limited by plan.\n#\nEndpoints available on the Enterprise Plan\nThe following endpoints are only available on the Enterprise Plan:\n**Manage users**\n- [Invite User To Workspace](https://developer.clickup.com/reference-link/inviteusertoworkspace)\n- [Get User](https://developer.clickup.com/reference-link/getuser)\n- [Edit User On Workspace](https://developer.clickup.com/reference-link/edituseronworkspace)\n- [Remove User From Workspace](https://developer.clickup.com/reference-link/removeuserfromworkspace)\n**Manage guests**\n- [Invite Guest To Workspace](https://developer.clickup.com/reference-link/inviteguesttoworkspace)\n- [Get Guest](https://developer.clickup.com/reference-link/getguest)\n- [Edit Guest On Workspace](https://developer.clickup.com/reference-link/editguestonworkspace)\n- [Remove Guest From Workspace](https://developer.clickup.com/reference-link/removeguestfromworkspace)\n- [Add Guest To Task](https://developer.clickup.com/reference-link/addguesttotask)\n- [Remove Guest From Task](https://developer.clickup.com/reference-link/removeguestfro"
+    },
+    {
+     "url": "https://developer.clickup.com/docs/authentication.md",
+     "title": "developer.clickup.com/docs/authentication.md",
+     "snippet": "# Authentication\nTo use the ClickUp API, you must authenticate every request.\nFor personal use, authenticate with your [personal API token](https://developer.clickup.com/docs/authentication#personal-token).\nFor apps or integrations that other people use, use the [OAuth flow](https://developer.clickup.com/docs/authentication#oauth-flow), allowing users to authorize Workspaces for your app.\nInclude the token in the **Authorization** header of your requests.\nBoth methods ensure that you and your users only have access to the information permitted by ClickUp.\n\n## Step 3: Request a Token\nUse the [Get Access Token](https://developer.clickup.com/reference/getaccesstoken) endpoint with `client_id`, `client_secret`, and `code` to get the access token. This token is used in the `Authorization: Bearer {access_token}` header for all API requests made on behalf of the user.\nThe access token currently does not expire. This is subject to change."
+    }
+   ]
+  },
+  "surface": {
+   "query": "ClickUp API reference REST GraphQL endpoints documentation clickup.com/api",
+   "log_id": "log_kP88kV1ZIIh2",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.clickup.com/openapi/clickup-api-v2-reference.json",
+     "title": "developer.clickup.com/openapi/clickup-api-v2-reference.json",
+     "snippet": "supports two authentication methods:\\n- **Personal API Token**: Use for testing and personal integrations. Add token to requests with header: `Authorization: pk_...`\\n- **OAuth 2.0**: Required for building apps for other users."
+    },
+    {
+     "url": "https://clickup.com/blog/clickup-api",
+     "title": "How to Build Two-Way Integrations With the ClickUp Public API",
+     "snippet": "Whether you\u2019re building a proper integration or just love tinkering with no-code and low-code tools, this guide walks you through how to set up a two-way sync between [ClickUp](https://clickup.com/) and external software using the [ClickUp Public API](https://clickup.com/api).\n\nAn API (Application Programming Interface) is a structured way for software applications to communicate, exchange data, and trigger actions.\n**Here\u2019s how it works:** humans write code to tell one software application (like an app running in your web browser) to send a request to another application (often a server). The server replies with a response, and the requesting app does something with that response.\n\nSome of the common features of an API request include:\n| **Request** | **Description** | **Example** |\n|---|---|---|\n| **Methods** (more info below) | The type of request you\u2019re making | [POST Create task](https://developer.clickup.com/reference/createtask)[ GET Tasks](https://developer.clickup.com/reference/gettasks) |\n| **Endpoint URL** | The web address you are sending the request to | https://api.clickup.com/api/v2/team |\n| **Headers** | Additional metadata sent to the server | Authentication: Your "
+    },
+    {
+     "url": "https://developer.clickup.com/reference/gettasks.md",
+     "title": "developer.clickup.com/reference/gettasks.md",
+     "snippet": "# Get Tasks\nView the tasks in a List. Responses are limited to 100 tasks per page. You can only view task information of tasks you can access. \\\n\\\nThis endpoint only includes tasks where the specified `list_id` is their home List. Tasks added to the `list_id` with a different home List are not included in the response by default. To include tasks that exist in multiple lists, use the `include_timl` parameter. \\\n\\\nThe `time_spent` field displays time tracked in milliseconds, and is only included in the response for tasks with time entries.\\\n\\\nEach task's `custom_fields` array only includes Custom Fields applicable to that task's `custom_item_id`.\n\nAuthentication\\nThe API supports two authentication methods:\\n- **Personal API Token**: Use for testing and personal integrations. Add token to requests with header: `Authorization: pk_...`\\n- **OAuth 2.0**: Required for building apps for other users. Uses authorization code flow.\\n\\n## Getting Started\\nOur [Getting Started Guide](https://developer.clickup.com/docs/index) provides a comprehensive overview of how to use the ClickUp API.\\n\\n##"
+    },
+    {
+     "url": "https://developer.clickup.com/reference/gettask.md",
+     "title": "developer.clickup.com/reference/gettask.md",
+     "snippet": "# Get Task\nView information about a task. You can only view task information of tasks you can access. \\\n\\\nTasks with attachments will return an \"attachments\" response. \\\n\\\nDocs attached to a task are not returned.\\\n\\\nThe `custom_fields` array only includes Custom Fields applicable to the task's `custom_item_id`. Use [Get Custom Fields](ref:getaccessiblecustomfields) and each field's `applied_objects` to discover which fields apply to which task types."
+    },
+    {
+     "url": "https://developer.clickup.com/reference/getfolders.md",
+     "title": "developer.clickup.com/reference/getfolders.md",
+     "snippet": "Authentication\\nThe API supports two authentication methods:\\n- **Personal API Token**: Use for testing and personal integrations. Add token to requests with header: `Authorization: pk_...`\\n- **OAuth 2.0**: Required for building apps for other users."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "ClickUp clickup.com/api MCP server Model Context Protocol official",
+   "log_id": "log_JtGoxN_AudKG",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+     "title": "ClickUp's MCP Server",
+     "snippet": "The Model Context Protocol (MCP) is a secure, standardized framework that lets external AI agents interact with ClickUp Workspace data\u2014like tasks, lists, folders, and docs\u2014using natural language. MCP helps users, especially developers, automate workflows, connect third-party AI tools, and enable agentic AI features in their preferred apps, all while keeping security and user control tight.\nClickUp's MCP Server is available on [all plans](https://clickup.com/pricing).\n#\nSetup instructions\nLearn how to [setup your AI assistant](https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1) with ClickUp's MCP server.\nOur MCP server URL is `https://mcp.clickup.com/mcp`.\n#\nWhat you can do\nWith ClickUp's MCP server, you can:\n- **Orchestrate task workflows**: Manage tasks with assignees, priorities, and due dates across lists and spaces.\n- **Build executive reports**: Create release notes, status updates, and portfolio summaries from tasks and docs.\n- **Track time**: Log time entries and manage timers.\n- **Answer work questions**: Search tasks, docs, and comments for quick answers.\n- **Collaborate in comments and chat**: Summarize threads, extract action items, and p"
+    },
+    {
+     "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1",
+     "title": "MCP Server Setup Instructions",
+     "snippet": "Claude\nSet up Claude to use the ClickUp MCP server!\n###\nPro, Team, Enterprise\nIf you're on the Pro, Team, or Enterprise plan:\n1. In a browser or the desktop app, navigate to Settings in the sidebar.\n2. Scroll to Connectors at the bottom and click Add.\n3. In the prompt, enter the following:\n- Name: ClickUp\n- Remote MCP Server URL: [https://mcp.clickup.com/mcp](https://mcp.clickup.com/mcp)\n###\nFree\nIf you're on the Free plan of Claude, you'll set up the MCP server from the Claude desktop app:\n1. Go to your Claude desktop settings page.\n2. Click on Developer section.\n3. Click on edit config then open the `claude_desktop_config.json` with your editor of choice.\n4. Add the following and restart the Claude desktop app:\n```\n{\n\"mcpServers\": {\n\"clickup\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"mcp-remote\", \"https://mcp.clickup.com/mcp\"]\n}\n}\n}\n```\n###\nClaude Code\nUse the follow command: `claude mcp add --transport http clickup https://mcp.clickup.com/mcp`\n\nSet up [Devin](https://devin.ai/) to use the ClickUp MCP Server.\n###\nManual installation\n1. Open your **Devin settings**.\n2. Navigate to the **MCP Marketplace**.\n3. Click the button to **Add your own MCP**.\n4. Enter a name for the server (e.g."
+    },
+    {
+     "url": "https://clickup.com/blog/how-to-use-clickup-mcp-server",
+     "title": "How to Use the ClickUp MCP Server: Setup, Tools, and Real Examples",
+     "snippet": "The ClickUp MCP server puts the protocol to work in your Workspace. Connect a supported client, such as Claude, ChatGPT, Cursor, or VS Code, and authorize access. From there, the client can read and act on tasks, Docs, comments, time entries, and more, all through natural-language prompts.\n\n| At a glance | What to know |\n|---|---|\n| **Best for** | AI-assisted workflows that read, act on, and connect work across your ClickUp Workspace |\n| **Official endpoint** | `https://mcp.clickup.com/mcp` |\n| **Authentication** | OAuth; API keys and personal access tokens aren\u2019t supported |\n| **Works with** | Claude, ChatGPT, Cursor, VS Code, and other supported MCP clients |\n| **Can access** | Tasks, Docs, comments, Chat, time tracking, Workspace hierarchy, reporting, and more |\n| **Use the ClickUp API when** | You need deterministic logic, webhooks, scheduled jobs, or higher-volume integrations |\n| **Watch for** | Workspace permissions, shared MCP limits, and AI Search boundaries |\n| **Advanced setup** | ClickUp can also act as an MCP client. Connect external MCP servers so Brain and Super Agents can use tools outside your Workspace |\n## What Is the ClickUp MCP Server?\n[ClickUp\u2019s MCP server](ht"
+    },
+    {
+     "url": "https://developer.clickup.com/docs/mcp-tools",
+     "title": "Supported Tools",
+     "snippet": "# Supported Tools\nUse these supported tools with ClickUp's MCP Server.\nThe ClickUp MCP exposes many of the capabilities available in our API. The real magic happens when your AI assistant combines several tools to complete a larger request.\n***Note:** Your AI assistant will only be able to perform actions in ClickUp that you have permission to do.*\n#\nSearch\n| Tool | Definition | Example usage (for an AI assistant) |\n|---|---|---|\n| Search Workspace | Searches for items across the entire ClickUp Workspace, including tasks, Docs, dashboards, attachments, whiteboards, Chats, and forms. | \"Find all tasks related to the 'Q4 Marketing Launch'.\" |\n| Search tasks by tag | Retrieves tasks filtered by tags. | \"Show me the tasks with the 'UX-quality' tag.\" |\n\nTo connect a client and sign in, see [MCP Server Setup Instructions](https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1). Tool names below are the exact names your MCP client sees.\nEvery tool acts as the signed-in user, with that user's ClickUp permissions, exactly as in the app. The server adds no access of its own. In ChatGPT Team, Enterprise and Edu workspaces, only owners and admins can configure MCP "
+    },
+    {
+     "url": "https://clickup.com/blog/mcp-tools",
+     "title": "ClickUp Model Context Protocol (MCP) and MCP tools: How the protocol works",
+     "snippet": "The Model Context Protocol (MCP) specification says servers can expose tools that language models can invoke. Each tool has a name, description, and input schema. ClickUp\u2019s developer documentation lists the MCP server URL as `https://mcp.clickup.com/mcp` and states that OAuth is the supported authentication method. This article explains the tool model and host-client-server relationship. For step-by-step setup, use the [ClickUp MCP setup guide](https://clickup.com/blog/how-to-use-clickup-mcp-server/) and [ClickUp\u2019s developer documentation](https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server).\n\nAn MCP server can expose tools that language models invoke. Each tool definition includes a name, a human-readable description of its functionality, and an input schema defining expected parameters. Clients send a `tools/list` request to discover available tools and a `tools/call` request to invoke one. See the [MCP specification\u2019s server tools section](https://modelcontextprotocol.io/specification/2026-07-28/server/tools).\n## How hosts and clients connect to servers\nMCP follows a client-host-server architecture. The specification states that each host can run mu"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": 55,
+ "app": "Apify",
+ "hint": "docs.apify.com",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "Apify API authentication OAuth API key access token developer docs docs.apify.com",
+   "log_id": "log_EtfmWFIrxhrM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.apify.com/integrations/api",
+     "title": "docs.apify.com/integrations/api",
+     "snippet": "To access the Apify API in your integrations, you need to authenticate using your secret API token. You can find it on the [API & Integrations](https://console.apify.com/settings/integrations) page in Apify Console. Give your token a reasonable description, and never use one token for several services, much like you shouldn't use the same password for different accounts.\n\nDo not share the API token with untrusted parties, or use it directly from client-side code, unless you fully understand the consequences! You can also consider limiting the permission scope of the token, so that it can only access what it really needs.\n## Authentication\nYou can authenticate the Apify API in two ways. You can either pass the token via the `Authorization` HTTP header or the URL `token` query parameter. We always recommend you use the authentication via the HTTP header as this method is more secure.\nNote that some API endpoints, such as [Get list of key-value store keys](https://docs.apify.com/api/v2/key-value-store-keys-get.md), do not require an authentication token because they contain a hard-to-guess identifier that effectively serves as an authentication key.\n## Expiration\nAPI tokens include se"
+    },
+    {
+     "url": "https://docs.apify.com/api/v2",
+     "title": "docs.apify.com/api/v2",
+     "snippet": "## Authentication\n**You can create an API token on the [Integrations](https://console.apify.com/settings/integrations) page in the Apify Console.** The Console shows the token only once, right after you create or rotate it, so copy it and store it somewhere safe. For details, see [API token](https://docs.apify.com/integrations/api#api-token).\nTo use your token in a request, either:\n* *(Recommended)* Add the token to your request's `Authorization` header as `Bearer <token>`. E.g., `Authorization: Bearer xxxxxxx`. For details, see the [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) on MDN.\n* Add it as the `token` parameter to your request URL. (Less secure).\nUsing your token in the request header is more secure than using it as a URL parameter because URLs are often stored in browser history and server logs. This creates a chance for someone unauthorized to access your API token.\n**Never share your API token or password with untrusted parties!**\nFor more information, see our [integrations](https://docs.apify.com/platform/integrations) documentation.\n\nIf the Actor is not runnable anonymously, you will receive a 401 or 403 [response code]"
+    },
+    {
+     "url": "https://docs.apify.com/account/settings",
+     "title": "docs.apify.com/account/settings",
+     "snippet": "The **API & Integrations** tab provides essential tools for accessing the Apify platform programmatically. Here, you can manage your **API tokens**, which are necessary for using the [Apify API](https://docs.apify.com/api/v2). Apify Console shows a token's value only once, right after you create or rotate it, so copy it and store it somewhere safe. For details, see [Create an API token](https://docs.apify.com/integrations/api.md#create-api-token). The tab also shows **third-party apps and services** connected to your account, **account-level integrations**, and **Actor OAuth accounts**. For detailed guidance on utilizing these integrations, refer to the [Integrations documentation](https://docs.apify.com/integrations).\n\n3. Choose an authentication method:\n* *API key* - the MCP server uses a static API key, bearer token, or personal access token. Enter the key. Apify verifies it by connecting to the MCP server.\n* *OAuth* - the server supports OAuth and Apify can either register an OAuth client automatically (Dynamic Client Registration) or use an Apify-managed OAuth client. A consent screen opens in a popup. Grant access and close the popup.\n* *Your own OAuth client* - the server su"
+    },
+    {
+     "url": "https://docs.apify.com/integrations/integrate",
+     "title": "docs.apify.com/integrations/integrate",
+     "snippet": "### Authentication methods\nApify supports two main authentication methods for secure API access.\n*OAuth 2.0* - Use OAuth 2.0 to allow users to authorize your integration without sharing their credentials.\n*API token* - Apify user generates personal API token from Apify account settings page. For more information, see [API Token documentation](https://docs.apify.com/integrations/api#api-token).\n\nThe skill enforces the cross-cutting rules every Apify integration needs: asynchronous runs through the [Run Actor](https://docs.apify.com/api/v2/actors-runs-post.md) endpoint with bounded polling and cost controls (`maxTotalChargeUsd`, `maxItems`), attribution headers, OAuth2 and API-token authentication, and [webhooks](https://docs.apify.com/integrations/webhooks.md) over polling."
+    },
+    {
+     "url": "https://docs.apify.com/api/client/js/docs/introduction/quick-start",
+     "title": "docs.apify.com/api/client/js/docs/introduction/quick-start",
+     "snippet": "To use the client, you need an [API token](https://docs.apify.com/platform/integrations/api#api-token). You can find your token under [Integrations](https://console.apify.com/account/integrations) tab in Apify Console. Copy the token and initialize the client by providing the token (`MY-APIFY-TOKEN`) as a parameter to the `ApifyClient` constructor.\n```\nimport { ApifyClient } from 'apify-client';\n// Client initialization with the API token\nconst client = new ApifyClient({\ntoken: 'MY-APIFY-TOKEN',\n});\n```\nSecure access\nThe API token is used to authorize your requests to the Apify API. You can be charged for the usage of the underlying services, so do not share your API token with untrusted parties or expose it on the client side of your applications."
+    }
+   ]
+  },
+  "access": {
+   "query": "Apify docs.apify.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_uulel3rl4DTu",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://apify.com/pricing.md",
+     "title": "apify.com/pricing.md",
+     "snippet": "| Plan     | Monthly price | Annual price / month | Included usage / month | Apify Store discount        | Support               |\n| -------- | ------------- | -------------------- | ---------------------- | --------------------------- | --------------------- |\n| Free     | $0            | $0                   | $5                     | No Apify Store discount     | Community support     |\n| Starter  | $19           | $17                  | $19                    | Bronze Apify Store discount | Chat support          |\n| Scale    | $199          | $179                 | $199                   | Silver Apify Store discount | Priority chat support |\n| Business | $999          | $899                 | $999                   | Gold Apify Store discount   | Account manager       |\n\n### Can I try Apify for free?\nAbsolutely! We offer a [free plan](/pricing) that lets you use most of the features of the Apify platform, but with certain limits. No credit card is required. The free plan includes Apify Proxy, which is limited to use within the platform and does not extend to external clients."
+    },
+    {
+     "url": "https://use-apify.com/docs/what-is-apify/apify-free-plan",
+     "title": "Apify Free Plan: $5 Credits = ~1,250 Maps Places",
+     "snippet": "Yes. Apify's Free plan is permanent, requires **no credit card**, and grants **$5 in prepaid platform usage every billing cycle** at a [**$0.20/CU compute rate**](https://apify.com/pricing?fpr=use-apify). You get full access to the [Apify Store](https://apify.com/store?fpr=use-apify), up to **16 GB RAM per Actor**, 5 datacenter proxy IPs, and residential proxy at $8/GB. Concurrent-run limits are disputed between Apify's own pages \u2014 see below. Credits do not roll over, and the platform blocks new runs when the $5 budget is exhausted.\n\n| Resource | Free plan limit |\n|---|---|\n| Monthly prepaid usage | **$5** (does not roll over) |\n| CU rate | $0.20/CU ([apify.com/pricing](https://apify.com/pricing?fpr=use-apify)) |\n| Max Actor RAM | **16 GB** per run ([platform limits](https://docs.apify.com/platform/limits?fpr=use-apify)) |\n| Max combined memory | 16 GB across all running jobs |\n| Max concurrent runs | 5\u201325 (disputed, see note below) |\n| Datacenter proxy | 5 IPs included |\n| Residential proxy | $8/GB, in-platform only on Free |\n| SERP proxy | $2.50 per 1,000 SERPs |\n| Storage retention | Your **10 most recent runs kept for 4 months**; named storages kept indefinitely ([storage docs]"
+    },
+    {
+     "url": "https://docs.apify.com/agents/quickstart",
+     "title": "docs.apify.com/agents/quickstart",
+     "snippet": "Sign up for an [Apify account](https://console.apify.com/sign-up). The free plan includes monthly platform usage credits with no credit card required.\nTo get an API token, go to [Settings > API & Integrations](https://console.apify.com/settings/integrations) in Apify Console, select **Create a new token**, enter a description, select **Create**, and copy the token. You can view it only once, so store it somewhere safe, such as a password manager. If you lose it, [rotate the token](https://docs.apify.com/integrations/api.md#rotation) or create a new one."
+    },
+    {
+     "url": "https://docs.apify.com/integrations/integrate",
+     "title": "docs.apify.com/integrations/integrate",
+     "snippet": "Apify supports two main authentication methods for secure API access.\n*OAuth 2.0* - Use OAuth 2.0 to allow users to authorize your integration without sharing their credentials.\n*API token* - Apify user generates personal API token from Apify account settings page. For more information, see [API Token documentation](https://docs.apify.com/integrations/api#api-token).\n\n### Pricing options\nChoose between two pricing models based on your integration setup.\n#### Direct user billing\nUsers create their own Apify accounts and are billed directly by Apify for their usage. This model gives users full control over their Apify usage and billing.\n#### Whitelabel access\nUsers access Apify through your platform without needing an Apify account. Apify bills you based on consumption, and you factor costs into your pricing."
+    },
+    {
+     "url": "https://use-apify.com/docs/apify-for-developers",
+     "title": "Apify for Developers: API, SDKs & Integrations",
+     "snippet": "**What this costs:** the [Free plan](https://apify.com/pricing?fpr=use-apify) includes $5 of usage credit a month, no card required. The Google Maps run in the example below (50 places) runs about $0.20 in per-result charges, but Apify bills a $0.50 minimum per run, so that's what you pay, roughly ten runs like it before the free credit is gone.\n\nStart free\n[**Create a free Apify account**](https://apify.com?fpr=use-apify) \u2014 no credit card required. Monthly free credits cover your first runs while you work through the guides above.\n\nPublish an Actor to the Apify Store and choose a pricing model. Other users pay per usage; you earn revenue. Details are in the monetize Actors guide."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Apify API reference REST GraphQL endpoints documentation docs.apify.com",
+   "log_id": "log_icoyl1Dr_ZcM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.apify.com/api/openapi.json",
+     "title": "docs.apify.com/api/openapi.json",
+     "snippet": "It's part of the Actor's URL in Apify Console: `https://console.apify.com/actors/<ACTOR_ID>`. For example, `reGe1ST3OBgYZSsZJ`.\\n- The username of the Actor owner plus the Actor name, separated by a tilde (`~`)."
+    },
+    {
+     "url": "https://docs.apify.com/api/v2/getting-started",
+     "title": "docs.apify.com/api/v2/getting-started",
+     "snippet": "The Apify API provides programmatic access to the [Apify platform](https://docs.apify.com). The API is organized around [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) HTTP endpoints.\n\nBefore you can start using the API, check if you have all the necessary prerequisites:\n* An Apify account with an API token. Most requests need to be authenticated with the Apify API token passed via the `Authorization` HTTP header. For details, see [Authentication](https://docs.apify.com/api/v2.md#authentication).\n* A tool to make HTTP requests (cURL, Postman, or your preferred programming language)."
+    },
+    {
+     "url": "https://docs.apify.com/api",
+     "title": "docs.apify.com/api",
+     "snippet": "## REST API\nThe Apify API is built around HTTP REST, uses predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n[View API reference](https://docs.apify.com/api/v2.md)"
+    },
+    {
+     "url": "https://docs.apify.com/api/v2/actor-run-get",
+     "title": "docs.apify.com/api/v2/actor-run-get",
+     "snippet": "# Get Actor run\n```\nGET\nhttps://api.apify.com/v2/actor-runs/:runId\n```\nThis is not a single endpoint, but an entire group of endpoints that lets you retrieve the run or any of its default storages.\n##### Convenience endpoints for Actor run default storages\n* [Dataset](https://docs.apify.com/api/v2/default-dataset.md)\n* [Key-value store](https://docs.apify.com/api/v2/default-key-value-store.md)\n* [Request queue](https://docs.apify.com/api/v2/default-request-queue.md)\nGets an object that contains all the details about a specific run of an Actor.\nBy passing the optional `waitForFinish` parameter the API endpoint will synchronously wait for the run to finish. This is useful to avoid periodic polling when waiting for Actor run to complete. Note that the first response after completion can still show preliminary `stats`, costs, and event counts. For stable figures, wait about 10 seconds and call the endpoint again.\nThis endpoint does not require the authentication token. Instead, calls are authenticated using a hard-to-guess ID of the run. However, if you access the endpoint without the token, certain attributes, such as `usageUsd` and `usageTotalUsd`, will be hidden.\n## Request\n### Path"
+    },
+    {
+     "url": "https://docs.apify.com/api/v2",
+     "title": "docs.apify.com/api/v2",
+     "snippet": "The Apify API (version 2) provides programmatic access to the [Apify platform](https://docs.apify.com). The API is organized around [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) HTTP endpoints.\nYou can download the complete OpenAPI schema of Apify API in the [YAML](http://docs.apify.com/api/openapi.yaml) or [JSON](http://docs.apify.com/api/openapi.json) formats. The source code is also available on [GitHub](https://github.com/apify/apify-docs/tree/master/apify-api/openapi).\n\nImportant Request Details\n* `Content-Type` header: For requests with a JSON body, you must include the `Content-Type: application/json` header.\n* Method override: You can override the HTTP method using the `method` query parameter. This is useful for clients that can only send `GET` requests. For example, to call a `POST` endpoint, append `?method=POST` to the URL of your `GET` request."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Apify docs.apify.com MCP server Model Context Protocol official",
+   "log_id": "log_kzR6E2Kop6yb",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://apify.com/docs/mcp",
+     "title": "Apify MCP server | Platform | Apify Documentation",
+     "snippet": "The Apify's MCP server ([mcp.apify.com](https://mcp.apify.com)) allows AI applications and agents to interact with the Apify platform using [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) (MCP). The MCP server enables AI agents to discover and run Actors from [Apify Store](https://apify.com/store), access storages and results, and enables AI coding assistants to access Apify documentation and tutorials.\nTo connect a coding agent such as Claude Code, Cursor, GitHub Copilot, or Codex, install the [Apify plugin](/agents/plugins) instead. It sets up this server together with [Agent Skills](/agents/skills) in one step.\n\nThis page covers the Apify MCP server, which exposes Apify Actors as tools to outside AI clients. If you are building an Actor that needs to call third-party MCP servers (such as Notion or Slack) on a user's behalf, see [MCP connectors](/integrations/mcp-connectors) instead.\nThe Apify MCP server and [Apify AI](/account/apify-ai) share the same Actor search and execution backend, but they serve different audiences:\n- *MCP server* - a programmatic interface for external AI agents, IDEs, and CLIs. Use it when you build or operate your ow"
+    },
+    {
+     "url": "https://docs.apify.com/sdk/python/docs/3.4/guides/mcp-servers",
+     "title": "Deploying MCP servers | SDK for Python | Apify Documentation",
+     "snippet": "In this guide, you'll learn how to deploy a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server as an Apify Actor.\n## Introduction\nThe [Model Context Protocol](https://modelcontextprotocol.io) is an open standard that lets AI applications connect to external tools and data. An MCP server exposes tools, resources, and prompts, and any MCP client (such as Claude or an IDE assistant) can call them. Hosting that server as an Apify Actor turns it into a remote, always-ready service.\nApify Actors are a good fit for MCP servers:\n- With [Actor Standby](https://docs.apify.com/platform/actors/development/programming-interface/standby), the platform keeps the Actor running in the background and routes incoming HTTP requests to it, so your server is always ready to answer an MCP client.\n- The platform scales instances with demand, keeps logs, and handles the network, so you don't operate any infrastructure.\n- Every request carries an Apify API token, so the platform authenticates clients for you.\n- Pay-per-event charging lets you monetize the server, for example per tool call.\n## Before you start\nTo follow along, install the [Apify CLI](https://docs.apify.com/cli/docs/instal"
+    },
+    {
+     "url": "https://blog.apify.com/build-and-deploy-mcp-servers-typescript",
+     "title": "Build and deploy MCP servers in minutes",
+     "snippet": "Model Context Protocol ([MCP](https://blog.apify.com/what-is-model-context-protocol/)) is transforming and simplifying how AI applications connect with external tools. While [we\u2019ve covered how to use MCP with tools that give agents context from the web](https://blog.apify.com/how-to-use-mcp/), this guide digs deeper into the developer side: how to build and deploy your own MCP servers on the Apify platform.\nWith Apify's MCP templates, you can transform any stdio or remote MCP server into a scalable, cloud-hosted service in minutes. There are currently two templates available: [for Python](https://apify.com/templates/python-mcp-server) and [for TypeScript](https://apify.com/templates/ts-mcp-server).\n\nBefore we get into implementation, here\u2019s why the Apify platform is ideal for hosting MCP servers:\n- **1. Instant scalability**: Apify's infrastructure automatically scales based on demand, from a single request to thousands of concurrent connections.\n- **2. Built-in monetization**: With the [pay-per-event](https://help.apify.com/en/articles/10700066-what-is-pay-per-event) (PPE) model, you can charge users for each tool request, API call, or custom event, turning your MCP server into a "
+    },
+    {
+     "url": "https://blog.apify.com/mcp-for-beginners",
+     "title": "What is MCP? A beginner's guide to Model Context Protocol",
+     "snippet": "Model Context Protocol, or MCP, is one of the technologies making this possible.\nMCP is an open standard for connecting AI applications to external tools and data. Instead of building a completely different integration every time you want an AI application to use a new tool, MCP gives them a common way to communicate.\n\nModel Context Protocol (MCP) lets AI applications connect to external tools, data sources, and services. Think of it as a common language between an AI application and the things you want it to use.\nAn LLM can generate an answer based on information available in its context, but it can't reach databases, websites, files, or software on its own. For that, it needs a way to interact with external systems, and an MCP server can expose capabilities to an AI application. For example, a server might give an AI agent tools for searching the web, working with GitHub repositories, or running an automation.\nThe important part is that the same protocol can be used across many different AI applications and [MCP tools](https://www.wisdom.ai/resources/guides/ai-context/mcp-tools-and-ai-agents).\n\nLanguage models can reason about what they want to do, but they need tools to interact"
+    },
+    {
+     "url": "https://blog.apify.com/how-to-use-mcp",
+     "title": "How to use MCP with Apify Actors",
+     "snippet": "[Model Context Protocol](https://blog.apify.com/mcp-for-beginners/) (MCP) makes it possible. MCP is an open standard that lets AI applications connect to tools and data sources through a common interface. Instead of building a separate integration for every service, developers can connect an AI application to an MCP server and make its capabilities available to the model.\nWith the [Apify MCP server](https://mcp.apify.com/), an AI agent can discover and run Actors from Apify Store, extract live web data, and retrieve the results. You can connect the server to Claude, Cursor, or another compatible MCP client without building custom API integrations for each Actor.\n\nApify is uniquely positioned to take full advantage of MCP, as it offers thousands of public tools, available as [Actors on Apify Store](https://apify.com/store), that can be exposed to LLM applications through an MCP server.\n\n### MCP hosts and clients\nAn MCP host is the AI application that users interact with, such as Claude Desktop or an AI-enabled development environment. The host creates and manages MCP clients, which maintain connections to MCP servers. Each client communicates with a server using the MCP protocol.\nFo"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

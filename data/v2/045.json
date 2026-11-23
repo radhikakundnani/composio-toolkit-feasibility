@@ -1,0 +1,38 @@
+{
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "one_liner": "Open-source and Adobe ecommerce platform with REST, SOAP and GraphQL web APIs.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "access": "self_serve_free",
+  "access_notes": "Merchant creates an integration in admin to get tokens (OAuth 1.0a/token); SaaS edition uses Adobe IMS OAuth in Developer Console.",
+  "api_types": [
+    "rest",
+    "graphql",
+    "soap"
+  ],
+  "api_breadth": "broad",
+  "mcp": "community",
+  "mcp_note": "Third-party servers e.g. github.com/magenable/magento-adobe-commerce-mcp-server; Adobe MCPs target developer tooling",
+  "verdict": "ready_with_caveats",
+  "blocker": "not_a_hosted_service",
+  "blocker_note": "Per-store self-hosted instances; auth differs between PaaS (token/OAuth1a) and SaaS (Adobe IMS).",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "low"
+  },
+  "evidence": {
+    "auth": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+    "access": "https://developer.adobe.com/commerce/webapi/get-started/create-integration",
+    "surface": "https://raw.githubusercontent.com/api-evangelist/magento-2/refs/heads/main/apis.yml",
+    "mcp": "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools"
+  },
+  "verified": true
+}

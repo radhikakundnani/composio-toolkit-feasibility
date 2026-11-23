@@ -1,0 +1,142 @@
+{
+ "id": 9,
+ "app": "Copper",
+ "hint": "copper.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "Copper API authentication OAuth API key access token developer docs copper.com",
+   "log_id": "log_FXb4v6dKl0XA",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.copper.com/introduction/oauth/flow.html",
+     "title": "Documentation - Copper Developer API",
+     "snippet": "Third-party integrations may take advantage of [OAuth 2.0](https://oauth.net/2) for the purpose of authorizing and authenticating access to the Copper Developer API. Employing the widely used [Authorization Code Grant](https://oauth.net/2/grant-types/authorization-code/) flow, Copper ensures a seamless and quick authentication process. This approach is particularly well-suited for integrations that cater to existing Copper customers, facilitating the establishment of a robust and secure connection between the integration and Copper.\n### 1.1 Prerequisites\u00b6\n- Your application provides an HTTPS callback endpoint capable of receiving POST requests\n- You have [registered your application](mailto:partners@copper.com) and received your `client_id` and `client_secret` credentials\nThe authorization code grant flow involves the following steps:\n1. Authorization Request: The application initiates the flow by redirecting the user to the authorization server's authorization endpoint.\n2. User Authentication: The user logs in and grants permission to the application.\n3. Authorization Grant: The authorization server provides an authorization code to the application.\n4. Token Request: The applicati"
+    },
+    {
+     "url": "https://developer.copper.com/introduction/oauth",
+     "title": "Copper Developer API",
+     "snippet": "You can now access the Copper Developer API via [OAuth2.0](https://oauth.net/2/). This authentication method is an alternative to Copper's legacy [API Keys](../authentication.html), and is particularly well-suited for third-party integrations looking to create a seamless and secure link between their users and Copper.\nOAuth2.0 offers several advantages over the API Key flow:\n- Authentication is open to all users, not just administrators\n- No need to generate and copy API keys from Copper to your application\n- Readily available client libraries help with smooth integration\n## 2. Prerequisites\u00b6\nTo use OAuth2.0 with Copper, you must first register your application. This step protects requests from forgery and keeps your users secure.\nTo register your application, [contact us](mailto:partners@copper.com). You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback.\nYou will receive two credentials, `client_id` and `client_secret`, required for all authorization flows.\n| Parameter | Description |\n|---|---|\n| client_id | A public alphanumeric string that uniquely identifies your application |\n| client_secret"
+    },
+    {
+     "url": "https://developer.copper.com/introduction/authentication.html",
+     "title": "Overview - Copper Developer API",
+     "snippet": "There are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations.\n## API Keys\u00b6\nThe Dev API uses token based authentication. You have to include the token in the header of every request, along with the email address of the user who generated the token. Users can hold multiple valid tokens at the same time. Admins can see all user generated tokens and generate new ones.\nTo generate an API token, in the Copper web app go to System settings > API Keys and click the 'GENERATE API KEY' button. Copper allows you to label each key for its unique purpose. You'll need to generate an API key to make an API Request.\n## OAuth2.0\u00b6\n[Click here](https://developer.copper.com/introduction/oauth/index.html) to get started."
+    },
+    {
+     "url": "https://developer.copper.com/introduction/oauth/quickstart.html",
+     "title": "Quickstart Guide - Copper Developer API",
+     "snippet": "Start by adding a form to your web application that makes a GET request to `https://app.copper.com/oauth/authorize`:\n```\n<form action=\"https://app.copper.com/oauth/authorize\" method=\"GET\">\n<input type=\"hidden\" name=\"response_type\" value=\"code\">\n<input type=\"hidden\" name=\"client_id\" value=\"{client_id}\">\n<input type=\"hidden\" name=\"redirect_uri\" value=\"{redirect_uri}\">\n<input type=\"hidden\" name=\"scope\" value=\"developer/v1/all\">\n<button type=\"submit\">Integrate with Copper!</button>\n</form>\n```\nWhen the user submits this form, the authorization process begins. First, the user will be prompted to log in to their Copper account, followed by a request to authorize your application.\n![Accept Scopes](assets/accept-screen.png)\nOnce the user clicks \"Authorize\", they will be redirected back to your application's `redirect_uri` via a POST request. Use the `code` parameter supplied in the request body, and exchange it for an access token:\n```\ncurl -X POST \\\n-H \"Content-Type: application/x-www-form-urlencoded\" \\\n-d \"grant_type=authorization_code\" \\\n-d \"code={code}\" \\\n-d \"redirect_uri={redirect_uri}\" \\\n-d \"client_id={client_id}\" \\\n-d \"client_secret={client_secret}\" \\\nhttps://app.copper.com/oauth/to"
+    },
+    {
+     "url": "https://developer.copper.co/api-reference/authentication",
+     "title": "Authentication",
+     "snippet": "Authentication to the API is performed via the Authorization header with an API key. Each request requires an API key to authenticate the user and a signature to verify the request\u2019s integrity, ensuring safe and authorized access to our API. To provide access to the API, all requests must contain the following headers:\n| Header | Description |\n|---|---|\n| `Authorization` | API key obtained on the Copper Platform |\n| `X-Signature` | Signature of your request |\n| `X-Timestamp` | Timestamp of your request in UNIX Timestamp format (in milliseconds) |\nGenerated API keys have no expiration date. However, they will be disabled if they are not used during a 6-month period. Users manage the full lifecycle of their API keys, including creation and revocation, through the platform. For information on creating an API key, see [Create an API key](/api-reference/create-api-key).\n1\nConcatenate the following strings:\n- Value of the `X-Timestamp` header\n- HTTP request method uppercase\n- Path of the requested endpoint including the `platform` prefix and all additional parameters (e.g., `/platform/orders?limit=1000`)\n- All fields of the request body (use an empty string if the request does not includ"
+    }
+   ]
+  },
+  "access": {
+   "query": "Copper copper.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_79-fW8_UUiXH",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://onegtmlab.dev/tool-directory/crm/copper",
+     "title": "onegtmlab.dev/tool-directory/crm/copper",
+     "snippet": "## Pricing, plan by plan\nUS dollars, as Copper's pricing page shows them on 25 Oct 2026. Monthly and annual billing are shown apart.\nFree tier No free plan. 14-day free trial, no credit card; signup is Google-only ('Continue with Google', Copper only works with Gmail & Google Workspace).\n### Basic\n$29/mo\nbilled monthly\n$23/mo\nbilled annually\nper seat; 2,500 contact limit; 25 custom fields; no Leads or Sales opportunities objects\nNo API\n### Professional\n$69/mo\nbilled monthly\n$59/mo\nbilled annually\nper seat; 15,000 contact limit; 50 custom fields; workflows, bulk email, integrations\nAPI included\n### Business\n$134/mo\nbilled monthly\n$99/mo\nbilled annually\nper seat; unlimited contacts and custom fields; email series, custom reports, Okta SSO\nAPI included\n## Rate limits\nAll API calls: 180 requests per minute on a rolling window, 429 when exceeded.\n\nCopper uses API key. The steps below follow Copper's own docs.\n1.  Create a Copper account. API access starts on the Professional plan.\n2.  Copper web app > System settings > API Keys > GENERATE API KEY; OAuth 2.0 for partner integrations\n3.  Send it with every request: headers: X-PW-AccessToken: <API key>, X-PW-Application: developer\\_api, X-"
+    },
+    {
+     "url": "https://nango.dev/docs/integrations/all/copper-api-key",
+     "title": "Copper API Key",
+     "snippet": "Access requirements\n| Pre-Requisites | Status | Comment |\n|---|---|---|\n| Paid dev account | \u2753 | |\n| Paid test account | \u2753 | |\n| Partnership | \u2753 | |\n| App review | \u2753 | |\n| Security audit | \u2753 | |\n\n- Copper offers both OAuth and API_KEY authentication modes. To use OAuth2.0 with Copper, you must first register your application.\n- To register your application, [contact](https://developer.copper.com/introduction/oauth/index.html#:~:text=To%20register%20your,all%20authorization%20flows.) copper.\n- You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback. You will receive two credentials, client_id and client_secret, required for all authorization flows.\n- To generate an API token, in the Copper web app navigate to `System settings` > `Integrations` > `API Keys` and click the `GENERATE API KEY` button."
+    },
+    {
+     "url": "https://developer.copper.com/download/copper_postman_collection.json",
+     "title": "developer.copper.com/download/copper_postman_collection.json",
+     "snippet": "The Dev API respects team permissions. It is recommended to use the API credentials of an admin user when using the Dev API because Admins have unrestricted data access.\\n\\n**Create a Developer User**\\n\\nIf you use the Dev API to create records in Copper, it is advisable to create a separate (non-personal) user just for integration purposes. Generate API credentials for this user and use those for integration. This way records created thru the Dev API will be owned by this integration user and can be filtered accordingly.\\n\\n**Entity"
+    },
+    {
+     "url": "https://frontal.so/gtm-apis/crm-apis/copper-api-review",
+     "title": "Copper API review: contact caps and 180 a minute",
+     "snippet": "The Copper API is the developer side of the CRM built for Google Workspace, and its metering is unusual. Requests are limited to 180 a minute on a rolling window, the same on every plan that has the API. What the plan changes is how many contacts you may store: 2,500 on Basic, 15,000 on Professional, unlimited on Business.\n\nAuthentication is an API key sent in three custom headers, or OAuth 2.0 for applications other people install. Copper calls the product the Developer API, and its documentation lives at developer.copper.com, with a Postman collection to start from.\n\nA Copper user's access can be restricted by team permissions, and the API honors those restrictions. Copper's own advice is to use an admin's credentials for integrations, and to create a separate, non-personal user so records written through the API are owned by the integration rather than by a person.\n## Copper API pricing, plan by plan\nCopper API pricing is seat pricing: the API comes with the subscription, and the plan you choose sets the contact cap rather than the request rate.\n### Basic\n$23\n/seat/mo billed annually, $29 month to month\n- 2,500 contact limit\n- Pipelines and task automation\n- Contact enrichment\n#"
+    },
+    {
+     "url": "https://copper.com/partners",
+     "title": "Partners | Copper CRM",
+     "snippet": "## Join Copper\u2019s Partner Program.\nPartner with the only CRM that\u2019s a Recommended for Google Workspace app. Access competitive commissions, exclusive training resources and the opportunity to diversify your service offerings.\n\n### Integration partners\nBest for SaaS companies that want to integrate with Copper. We support natively embedded apps, API integrations, co-marketing, marketplace listings, and more.\n\nAre there any costs involved?\nNo there isn't a cost to join, we just require that partners purchase once business license if a demo account is needed. We offer a discount on our listed price."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Copper API reference REST GraphQL endpoints documentation copper.com",
+   "log_id": "log_y0sDus4bavHa",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.copper.com/leads/list-leads-search.html",
+     "title": "List Leads (Search) - Copper Developer API",
+     "snippet": "# List Leads (Search)\u00b6\n`POST https://api.copper.com/developer_api/v1/leads/search`\nThe /search endpoint provides the ability to list Leads and sort the results by certain parameters. When multiple criteria are\nprovided, records meeting ALL criteria will be returned (the filtering criteria have an 'AND' relationship).\nCertain fields can be filtered by an empty value, i.e., filter records where the field is not specified. For Leads, these fields are: city, state, postal_code, tags, custom dropdown, custom multi-select fields.\nFor an example of how this works, see `Search by Empty Field`. Some fields (e.g. assignee_ids) can also filter for an empty value by specifying -2 as the ID.\nTo search by custom fields, see [`Search Entity by Custom Field`](https://developer.copper.com/custom-fields/general/search-entity-leads-people-etc-by-custom-field.html) in the `Custom Fields` section of the docs.\nNote that this endpoint is eligible to return computed custom field values, click [here](https://developer.copper.com/custom-fields/general/computed_cf_values.html) for more information."
+    },
+    {
+     "url": "https://developer.copper.com/people/update-a-person.html",
+     "title": "Update a Person - Copper Developer API",
+     "snippet": "# Update a Person\u00b6\n`PUT https://api.copper.com/developer_api/v1/people/{{example_person_id}}`\nUpdates are only applied to fields explicitly specified in the request body. For example, if an update request is made with an empty body, no updates will be made. To remove the value from a field, the request body must specify the target field value as 'null'.\nConnect fields\nIf your integration reads a record and sends it back as an update, be careful with connect fields. They appear in `custom_fields` as `[]` on read, so sending that back deletes their connections. Send only the fields you're changing, and add or remove connections through the connect field endpoints. See [Updating records that have connect fields](https://developer.copper.com/custom-fields/connect-fields/updating-records-with-connect-fields.html).\nThe field `company_id` is returned in the JSON response, However, if you would like to unrelate and relate a new `company_id`, use the related items API call to delete and then add a new `company_id` to the person record. For more info, see `Related Items` folder.\nNote that this endpoint is eligible to return computed custom field values, click [here](https://developer.copper."
+    },
+    {
+     "url": "https://developer.copper.com/field-layouts/list-field-layout-by-entity-type.html",
+     "title": "List Field Layout by Entity Type",
+     "snippet": "# List Field Layout by Entity Type\u00b6\n`GET https://api.copper.com/developer_api/v1/field_layouts/by_entity/{{entity_name_in_plural}}?pipeline_id={{pipeline_id}}`\n# Field Layouts\u00b6\nA field layout is an array of field objects. It defines which fields are applicable to a given entity type, as well as the order in which they are displayed. Field layouts are configured in app.copper.com under Settings > Manage Fields On Records.\nWhen requesting a field layout for the \"opportunities\" entity_type, you MUST specify a pipeline_id as well.\n\n```\ncurl --location --request GET \"https://api.copper.com/developer_api/v1/field_layouts/by_entity/people\" \\\n--header \"X-PW-AccessToken: YOUR_TOKEN_HERE\" \\\n--header \"X-PW-Application: developer_api\" \\\n--header \"X-PW-UserEmail: YOUR_EMAIL_HERE\" \\\n--header \"Content-Type: application/json\"\n```\n\n```\ncurl --location --request GET \"https://api.copper.com/developer_api/v1/field_layouts/by_entity/opportunities?pipeline_id=123\" \\\n--header \"X-PW-AccessToken: YOUR_TOKEN_HERE\" \\\n--header \"X-PW-Application: developer_api\" \\\n--header \"X-PW-UserEmail: YOUR_EMAIL_HERE\" \\\n--header \"Content-Type: application/json\"\n```"
+    },
+    {
+     "url": "https://developer.copper.com/custom-fields/general/search-entity-leads-people-etc-by-custom-field.html",
+     "title": "Search Entity (Leads, People, etc) by Custom Field",
+     "snippet": "# Search Entity (Leads, People, etc) by Custom Field\u00b6\n`POST https://api.copper.com/developer_api/v1/{{entity_name_in_plural}}/search`\nCustom fields are available for each of the entities (Leads, People, Companies, Opportunities, Projects, and Tasks). Custom field types include: Text Field, Text Area, Dropdown, Date, Checkbox, Number Field, URL, Percentage, Currency, and Multi-Select Dropdown. Text fields are not searchable at this point. The table below summarizes the behavior of each of these fields.\n| Field | Type | Search for Empty Value? | Any, All, None Options |\n|---|---|---|---|\n| Dropdown | number array | Yes | No |\n| Date | number range | No | No |\n| Checkbox | boolean | No | No |\n| Number Field | numeric | No | No |\n| Percentage | numeric range | No | No |\n| Currency | number range | No | No |\n| Multi-Select Dropdown | number array | Yes | Yes |\nExcept for text-related fields, each custom field can be searched via the dev API search endpoint for any of the entities. For Leads, this would be the endpoint `/leads/search`.\n\n```\ncurl --location --request POST \"https://api.copper.com/developer_api/v1/leads/search\" \\\n--header \"X-PW-AccessToken: YOUR_TOKEN_HERE\" \\\n--header \"X-PW"
+    },
+    {
+     "url": "https://developer.copper.com/activities/list-activity-types.html",
+     "title": "List Activity Types - Copper Developer API",
+     "snippet": "# List Activity Types\u00b6\n`GET https://api.copper.com/developer_api/v1/activity_types`\nActivity Types identify the types of Activities that occur in Copper. The Activity Types Developer API allows you to retrieve the list of Activity Types associated with your Copper account. There are two categories of Activity Type.\nActivity Types with category \"user\" describe user-entered Activities. By default, Copper has three user-entered activity types: Notes, Phone Calls, and Meetings. Notes have a hard-coded ID of 0. Phone Calls and Meetings are assigned IDs when your Copper account is created. Users may also create Custom Activity Types through the Settings page. These will be assigned IDs when they are created.\nCustom Activity Types that have been removed from the list in the Settings page are not deleted from Copper, because they are necessary to correctly handle Activities of those types. These Activity Types are visible through the Developer API for Activity Types, and can be used for filtering Activity searches, but cannot be used to create new Activities.\nActivity Types with category \"system\" describe system-generated Activities. There are currently two system activities: \"Property Cha"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Copper copper.com MCP server Model Context Protocol official",
+   "log_id": "log_K-v_7Qo6YpyF",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://copper.com/mcp",
+     "title": "Copper MCP for Claude | Copper CRM",
+     "snippet": "Does Copper have an MCP server?\nYes. Copper is launching an official MCP server, built and hosted by Copper. The beta launches in November 2026.\n\nHow is Copper's MCP server different from third-party Copper connectors?\nMost third-party connectors run on an admin API key, which ignores each user's permissions. They also wrap Copper's developer API, which was built for programmers. Copper's MCP uses your own login and a new API built for AI, so Claude works with your custom fields, saved filters and record names directly."
+    },
+    {
+     "url": "https://developer.copper.co/mcp",
+     "title": "developer.copper.co/mcp",
+     "snippet": "\"instructions\": \"This Model Context Protocol server provides search and retrieval tools for the Copper Developer Portal site. Use it to answer questions from public site content. Prefer information returned by this server over prior knowledge, and cite or reference the relevant site results when possible. Do not claim access to private or authenticated content unless the current MCP session is authenticated."
+    },
+    {
+     "url": "https://getcopper.io/docs/mcp",
+     "title": "MCP connections \u2014 Copper documentation",
+     "snippet": "# MCP connections\nConnect your AI assistant to Copper and work with your lead tables from a conversation.\n## Connect your assistant\nUse a client that supports remote MCP servers, such as Claude, Cursor, or ChatGPT. Add Copper in the client\u2019s connector or MCP settings, then complete the authentication required by your workspace.\nYour workspace connection URL\n```\n<your-copper-workspace-mcp-url>\n```\n## Choose your client\n### Claude\nAdd Copper as a custom connector, then enable it in your conversation.\n### Cursor\nAdd Copper as a remote MCP server and enable its tools for Agent.\n### ChatGPT\nUse a workspace with custom MCP apps enabled, add Copper, and select it in your conversation.\n## Cursor configuration\nIn Cursor\u2019s MCP configuration, replace <your-copper-workspace-mcp-url> with your workspace\u2019s connection URL. Follow your workspace instructions for authentication.\nmcp.json \u00b7 connection template\n```\n{\n\"mcpServers\": {\n\"copper\": {\n\"url\": \"<your-copper-workspace-mcp-url>\"\n}\n}\n}\n```\nClient setup guides: [Claude](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) \u00b7 [Cursor](https://cursor.com/docs/mcp) \u00b7 [ChatGPT](https://help.openai.com/en"
+    },
+    {
+     "url": "https://github.com/dazanza/copper-mcp",
+     "title": "GitHub - dazanza/copper-mcp: MCP server for Copper CRM API - contact search, activity logging, opportunity tracking",
+     "snippet": "# copper-mcp\nMCP server for the [Copper CRM](https://www.copper.com/) API. Search contacts, log activities, manage opportunities, and query companies.\n## Tools\n| Tool | Description |\n|---|---|\n| `search_people` | Search contacts by name, email, or phone |\n| `get_person` | Get full contact details by ID |\n| `create_person` | Create a new contact |\n| `update_person` | Update contact fields |\n| `search_companies` | Search companies by name |\n| `list_activity_types` | List available activity types |\n| `create_activity` | Log a meeting, call, or note against a contact/company |\n| `list_activities` | Search activities with filters and resolved parent names |\n| `list_opportunities` | Search deals/opportunities |\n## Setup\n1. Install dependencies:\n```\nnpm install\n```\n2. Copy `.env.example` to `.env` and fill in your credentials:\n```\ncp .env.example .env\n```\nRequired environment variables:\n- `COPPER_API_KEY` - Your Copper API key\n- `COPPER_USER_EMAIL` - Your Copper account email\n- `COPPER_USER_ID` - Your Copper user ID\n## Usage with Claude Code\nAdd to your Claude Code MCP config (`~/.claude.json`):\n```\n{\n\"mcpServers\": {\n\"copper-crm\": {\n\"command\": \"node\",\n\"args\": [\"/path/to/copper-mcp/server."
+    },
+    {
+     "url": "https://synchub.io/connectors/copper/knowledge-base/mcp",
+     "title": "Connecting to our Copper MCP server | Copper",
+     "snippet": "The Model Context Protocol (MCP) allows you easily query your Copper data from within your favourite AI chatbot by simply connecting to our MCP server. > **What is MCP?** MCP is a globally accepted protocol for connecting AI clients to external tools where they obtain additional context for their conversations. In this case, that additional context is the data from your cloud services. MCP uses the latest standard security protocols such as OAuth2 and PKCE, so your connection is extremely secure. ### How to connect to your Copper MCP Server First, you'll need the address of our MCP server: **https://api.synchub.io/mcp** > **Running multiple accounts with SyncHub?** Some MCP clients only let you register a single unique MCP server. In these cases, you can suffix an arbitrary string to the end of our URL - our system will route it to the actual URL, no problem. For example: **https://api.synchub.io/mcp/acme**. This is usually the only thing you'll need in order to connect. Some MCP Clients such as Copilot Studio require that you configure authorisation options is well. For these cases the SyncHub MCP server uses OAuth2.0 and supports Dynamic Discovery. The most recent MCP specificati"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

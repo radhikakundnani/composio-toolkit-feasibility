@@ -1,0 +1,35 @@
+{
+  "id": 32,
+  "app": "Meta Ads",
+  "category": "Advertising",
+  "one_liner": "Create, manage and report on Facebook/Instagram ads via Marketing API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "approval_required",
+  "access_notes": "Create a Meta app; Limited access automatic for dev, Full access requires App Review for production use across advertisers.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.facebook.com/ads",
+  "verdict": "ready_with_caveats",
+  "blocker": "partner_or_app_review",
+  "blocker_note": "App Review needed for Full access tier and production rate limits.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md",
+    "access": "https://developers.facebook.com/docs/marketing-api/access",
+    "surface": "https://developers.facebook.com/docs/marketing-apis",
+    "mcp": "https://developers.facebook.com/documentation/mcp"
+  }
+}

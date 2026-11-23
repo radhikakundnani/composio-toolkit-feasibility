@@ -1,0 +1,142 @@
+{
+ "id": 3,
+ "app": "Pipedrive",
+ "hint": "pipedrive.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "Pipedrive API authentication OAuth API key access token developer docs pipedrive.com",
+   "log_id": "log_p9qG52cjttS5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+     "title": "Pipedrive API v1 Dev References (Oauth) - Learn - Test",
+     "snippet": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace. Authorization via OAuth 2.0 is a well-known and stable way to get fine-grained access to an API. To retrieve OAuth2 tokens you should send requests to the `https://oauth.pipedrive.com` domain. After registering the app, you must add the necessary server-side logic to your app to establish the OAuth flow. Please read more about authorization step on the [Pipedrive Developers page](https://pipedrive.readme.io/docs/marketplace-oauth-authorization).\n#### Requesting authorization\nAuthorize a user by redirecting them to the Pipedrive OAuth authorization page and request their permissions to act on their behalf. This step is necessary to implement only when you allow app installation outside of the Marketplace.\n###### Request\nGET\n/oauth/authorize\n###### Query parameters\nclient_id\nstring\nrequired\nThe client ID provided to you by the Pipedrive Marketplace when you register your app\nredirect_uri\nstring\nrequired\nThe callback URL you provided when you registered your app. Authorization code will be sent to that URL (if it matches with the value you entered in the registration form) if a user appro"
+    },
+    {
+     "url": "https://pipedrive.readme.io/docs/marketplace-oauth-api",
+     "title": "OAuth 2.0 overview",
+     "snippet": "The recommended authorization protocol for all public apps available in the Pipedrive Marketplace is the industry-standard [OAuth 2.0 protocol](https://oauth.net/2/). OAuth 2.0 allows apps granular access to users\u2019 data and provides a secure and easy-to-use connection between the app and Pipedrive.\n\nUsing OAuth 2.0 authorization allows all requests you make to Pipedrive API to be authorized by a user. A Pipedrive user must grant access to their data for the app. As proof of this grant, every request to our API must contain a valid `access_token`. Every `access_token` is bound to:\n- The Pipedrive user who granted the access\n- The company of the user (if a user is connected to multiple accounts, then it\u2019s dependent on the company they\u2019re logged into when authorizing the app)\n- The 3rd party app which asked for this access\n- A [set of permissions](/docs/marketplace-scopes-and-permissions-explanations) that will be allowed\n- An expiration date\nTo get access to the users\u2019 data, the app must be registered in the Pipedrive Marketplace as this is where the app installation (i.e. access-granting) process starts.\n---\n##\nSteps to take to get the `access_token`\n---\n1. Get your [developer sandb"
+    },
+    {
+     "url": "https://github.com/pipedrive/client-nodejs/blob/master/README.md",
+     "title": "client-nodejs/README.md at master \u00b7 pipedrive/client-nodejs",
+     "snippet": "### With a pre-set API token\nYou can retrieve the api_token from your existing Pipedrive account\u2019s settings page. A step-by-step guide is available [here](https://pipedrive.readme.io/docs/how-to-find-the-api-token).\n```\nimport express from 'express';\nimport { Configuration, DealsApi } from 'pipedrive/v2';\nconst app = express();\nconst PORT = 3000;\n// Configure Client with API key authorization\nconst apiConfig = new Configuration({\napiKey: 'YOUR_API_TOKEN_HERE',\n});\napp.listen(PORT, () => {\nconsole.log(`Listening on port ${PORT}`);\n});\napp.get('/', async (req, res) => {\nconst dealsApi = new DealsApi(apiConfig);\nconst responseAllDeals = await dealsApi.getDeals();\nconst { data: deals } = responseAllDeals;\nconst responseOneDeal = await dealsApi.getDeal({ id: 1 });\nconst { data: deal } = responseOneDeal;\nres.send({ deals, deal });\n});\n```\n### With OAuth 2\nIf you would like to use an OAuth access token for making API calls, then make sure the API key described in the previous section is not set or is set to an empty string. If both API token and OAuth access token are set, then the API token takes precedence.\nTo set up authentication in the API client, you need the following information. "
+    },
+    {
+     "url": "https://developers.pipedrive.com/tutorials/adding-leads-to-pipedrive",
+     "title": "\u27a4 Adding Leads to the API",
+     "snippet": "First, you need to think about how you authenticate your request to our API. You can use either an API token (see the code snippet below) or [OAuth](https://pipedrive.readme.io/docs/marketplace-oauth-api). For more information about authenticating your requests, see [authentication](https://pipedrive.readme.io/docs/core-api-concepts-authentication).\n\n**For authentication with api_token:**\nReplace `companydomain` and `apitoken` with your own values:\n```\nhttps://{COMPANYDOMAIN}.pipedrive.com/v1/leads?api_token=APITOKEN\n```\n**For authentication with OAuth 2.0**\nIn the case of OAuth, access_token is used without having to pass the API token via the query params:\n```\nhttps://{COMPANYDOMAIN}.pipedrive.com/api/v1/leads\n```\nHere's a simple payload for create a lead with title \"Slack lead\" associated with person who has ID 33 in that Pipedrive account.\n```\n{\n\"title\": \"Slack lead\",\n\"person_id\": 33\n}\n```\n\nconst pipedrive = require('pipedrive');\nconst defaultClient = new pipedrive.ApiClient();\n// Configure authorization by settings api key\n// PIPEDRIVE_API_KEY is an environment variable that holds real api key\ndefaultClient.authentications.api_key.apiKey = process.env.PIPEDRIVE_API_KEY;"
+    },
+    {
+     "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+     "title": "Authentication",
+     "snippet": "> All requests to our API need **authentication**.\n##\nIf you're creating an app\nContinue to [OAuth 2.0 overview](https://pipedrive.readme.io/docs/marketplace-oauth-api).\nYou can find our step-by-step guide to getting OAuth 2.0 implemented in your app in [OAuth authorization](https://pipedrive.readme.io/docs/marketplace-oauth-authorization) .\n##\nIf you're working with an API token integration\nThe API token must be provided in the `x-api-token` header for all requests, for example:\n```\ncurl --request GET \\\n--url \"https://companydomain.pipedrive.com/api/v2/deals\" \\\n--header \"x-api-token: 659c9fddb16335e48cc67114694b52074e812e03\"\n```\n> Keep in mind that an API token is tied to a specific user and company, giving access to all user's data. You can only have one active API token at any time. If you change the API token, all existing integrations using this API token will not be able to make successful requests against our API and stop working."
+    }
+   ]
+  },
+  "access": {
+   "query": "Pipedrive pipedrive.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_bKCCF9gHC6JQ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pipeline.zoominfo.com/sales/pipedrive-api",
+     "title": "Pipedrive API Review [August 2026]: Features & Limits",
+     "snippet": "**Pipedrive's API** is a mature REST surface with two active versions (v1 and v2), [OAuth 2.0 support](https://developers.pipedrive.com/docs/api/v1/Oauth), published [OpenAPI 3 specs](https://developers.pipedrive.com/docs/api/v1), official SDKs for Node.js and PHP, full [webhook support](https://pipedrive.readme.io/docs/guide-for-webhooks-v2), and API access on every plan, including the entry-level Lite tier.\nThe [developer hub](https://developers.pipedrive.com/) is public, the changelog announces breaking changes with lead time, and a free sandbox account lets you build without touching production data.\n\n| **Pricing / access** | API access included on all plans, including Lite ($14/month per seat) |\n\n| **What works well** | **What to plan around** |\n|---|---|\n| API access on every plan, including the $14/month Lite tier | Token-based daily budget shared across all users in the company account |\n| OAuth 2.0 with scoped permissions for Marketplace apps | API token auth is static, no rotation: fine for internal scripts, risky if leaked |\n| OpenAPI 3 specs for both v1 and v2, importable into Postman/Insomnia | v2 is still expanding; some resources remain v1-only |\n| Free developer san"
+    },
+    {
+     "url": "https://pipedrive.com/en/features/crm-api",
+     "title": "CRM API | REST API integration",
+     "snippet": "##### Free API access with every plan\nGrab your API token and unlock a world of possibilities with our RESTful Pipedrive API v1. Access what you need via webhooks, API endpoints, Postman, Insomnia, client libraries, SDKs and more.\n\n## Access the Pipedrive CRM API for free\nEvery Pipedrive plan comes with an API token that gives you access to our RESTful API for free. This means you can extend and customize your Pipedrive experience to streamline your business processes and improve your CRM software\u2019s functionality and efficiency.\n- Pull call lists and customer information and make them appear in your call center software\n- Create new leads based on shared custom data in your data warehouse or any other tool in your tech stack\n- Assign new tasks to your after-sales team via project management software once a deal is closed\n- Integrate marketing automation and communication tools so you can streamline workflows and never miss notifications\n\nAccess to the Pipedrive API is only possible using the API key or an access token when using OAuth 2.0."
+    },
+    {
+     "url": "https://blog.coupler.io/pipedrive-api-guide/amp",
+     "title": "Your Guide to Pipedrive API",
+     "snippet": "The first step to getting started is securing a sandbox account at [the Pipedrive Developers site](https://developers.pipedrive.com/start-here). It\u2019s a requirement if you plan to build a public app for the Pipedrive Marketplace. Shortly after you\u2019ve signed up, you\u2019ll be granted access to the Marketplace Manager you can later use to fine-tune and publish your app.\n\nNote: You\u2019ll need to be on a paid Pipedrive plan to access the sandbox for testing. However, you can publish apps to the marketplace even from a free tier.\n\nTo validate your Pipedrive API requests, you need to use an individual API token. The token is required when building integrations with Pipedrive and guarantees that only authorized users can access the information on your account.\nTo generate and/or copy your API token, open the Pipedrive web app. Click on your profile icon in the top-right corner and choose **Company settings**. Then, select **Personal preferences** and switch to the **API tab**.\nIf you don\u2019t see the API tab, you don\u2019t have sufficient permissions to access the API token. Contact your company administrator and ask them to upgrade your access.\nYou can only have one value API token at a time. Generatin"
+    },
+    {
+     "url": "https://rollout.com/integration-guides/pipedrive/api-essentials",
+     "title": "Pipedrive API Essentials",
+     "snippet": "- It uses JSON format for output.\n- It is capable of handling CORS (Cross-Origin Resource Sharing) requests.\n- The API is stateless \u2013 all requests are validated against an API token.\n- API access is available with every Pipedrive plan for free.\nRegarding security, access to the Pipedrive API is only possible using the API key or an access token when using OAuth 2.0. Pipedrive encrypts disks, enforces HTTPS from outside the network, and encrypts certain data inside the database when necessary. They follow the OWASP Framework for security.\nPipedrive provides extensive developer resources, including an API Reference with hundreds of endpoints, Developer Documentation, API client libraries and SDKs on Github, and a ready-to-import Open API 3 specification file for Postman, Insomnia, or any API tool of choice.\n\n### Rate Limits for api_token Authentication\n- Essential plan: 20 requests per 2 seconds\n- Advanced plan: 40 requests per 2 seconds\n- Professional plan: 80 requests per 2 seconds\n- Power plan: 100 requests per 2 seconds\n- Enterprise plan: 120 requests per 2 seconds\n### Rate Limits for OAuth access_token\n- Essential plan: 80 requests per 2 seconds\n- Advanced plan: 160 requests per"
+    },
+    {
+     "url": "https://pipedrive.com/en/developer-agreement",
+     "title": "Pipedrive Developer Agreement",
+     "snippet": "**THE INDIVIDUAL AGREEING TO THE TERMS OF THIS AGREEMENT (\u201cAGREEMENT\u201d) ON BEHALF OF THE DEVELOPER ORGANIZATION OR ENTITY, BY CLICKING \u201cI AGREE\u201d, USING, OR INTEGRATING YOUR APPLICATIONS WITH THE PIPEDRIVE SERVICES OR PUBLISHING YOUR APPLICATIONS ON THE MARKETPLACE, OR OTHERWISE SIGNIFYING YOUR ACCEPTANCE OF THE TERMS OF THIS AGREEMENT, YOU REPRESENT AND WARRANT THAT YOU HAVE READ AND UNDERSTAND AND AGREE THAT YOU (AND YOUR ORGANIZATION) AND EACH USER SHALL BE BOUND BY THE TERMS OF THIS AGREEMENT, PIPEDRIVE\u2019S TERMS OF SERVICE FOR CLIENTS (**[**HTTPS://WWW.PIPEDRIVE.COM/EN/TERMS-OF-SERVICE**](https://www.pipedrive.com/en/terms-of-service)**) (\u201cTERMS OF SERVICE\u201d) AND PIPEDRIVE\u2019S PRIVACY POLICY (**[**HTTPS://WWW.PIPEDRIVE.COM/EN/PRIVACY**](https://www.pipedrive.com/en/privacy)**) (THE \u201cPRIVACY POLICY\u201d) AS EACH MAY BY MODIFIED IN ACCORDANCE WITH THEIR RESPECTIVE TERMS. IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF AN ENTITY, SUCH AS YOUR EMPLOYER, OR THE COMPANY YOU WORK FOR, YOU REPRESENT AND WARRANT THAT YOU HAVE THE LEGAL AUTHORITY TO BIND SUCH ENTITY, IN WHICH CASE THE TERMS \u201cYOU,\u201d \u201cYOUR\u201d, \u201cDEVELOPER\u201d OR A RELATED CAPITALIZED TERM HEREIN WILL REFER TO SUCH ENTITY. IF YOU DO NO"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Pipedrive API reference REST GraphQL endpoints documentation pipedrive.com",
+   "log_id": "log_uLUYBev2Dmzb",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1/Leads",
+     "title": "Pipedrive API v1 Dev References (Leads) - View Lead API Get, Post & More - Learn - Test",
+     "snippet": "Leads are potential deals stored in Leads Inbox before they are archived or converted to a deal.\n\n#### Search leads\nSearches all leads by title, notes and/or custom fields. This endpoint is a wrapper of [/v1/itemSearch](https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem) with a narrower OAuth scope. Found leads can be filtered by the person ID and the organization ID.\n\nCreates a lead. A lead always has to be linked to a person or an organization or both. All leads created through the Pipedrive API will have a lead source and origin set to `API`."
+    },
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1/Deals",
+     "title": "Pipedrive API v1\u2013v2 Dev References (Deals)",
+     "snippet": "###### Request\nGET\n/api/v2/deals\n###### Query parameters\nfilter_id\n\nSearches all deals by title, notes and/or custom fields. This endpoint is a wrapper of [/v1/itemSearch](https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem) with a narrower OAuth scope. Found deals can be filtered by the person ID and the organization ID.\n\n#### Convert a deal to a lead\nInitiates a conversion of a deal to a lead. The return value is an ID of a job that was assigned to perform the conversion. Related entities (notes, files, emails, activities, ...) are transferred during the process to the target entity. There are exceptions for entities like invoices or history that are not transferred and remain linked to the original deal. If the conversion is successful, the deal is marked as deleted. To retrieve the created entity ID and the result of the conversion, call the [/api/v2/deals/{deal_id}/convert/status/{conversion_id}](https://developers.pipedrive.com/docs/api/v1/Deals#getDealConversionStatus) endpoint."
+    },
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1/Subscriptions",
+     "title": "Pipedrive API Reference and Documentation",
+     "snippet": "Subscriptions Subscriptions represent the revenue that is occurring over time with payments of varying amounts and payment dates (installment subscription) or over fixed intervals of time with payments of the same amount (recurring subscription). Get details of a subscription Returns details of an installment or a recurring subscription. Cost 2 Request GET /v1/subscriptions/{id} Path parameters id integer required The ID of the subscription Response 200 OK Expand all Copy code true \u25b6 { ... } Find subscription by deal Returns details of an installment or a recurring subscription by the deal ID. Cost 2 Request GET /v1/subscriptions/find/{dealId} Path parameters dealId integer required The ID of the deal Response 200 OK Expand all Copy code true \u25b6 { ... } Get all payments of a subscription Returns all payments of an installment or recurring subscription. Cost 20 Request GET /v1/subscriptions/{id}/payments Path parameters id integer required The ID of the subscription Response 200 OK Expand all Copy code true \u25b6 [ ... ] Add a recurring subscription Adds a new recurring subscription. Cost 10 Request POST /v1/subscriptions/recurring Body parameters application/json deal_id integer require"
+    },
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1/Users",
+     "title": "Pipedrive API v1 Dev References (Users) - View 'me' GET Requests & More - Learn - Test",
+     "snippet": "Users are people with access to your Pipedrive account. A user may belong to one or many Pipedrive accounts, so deleting a user from one Pipedrive account will not remove the user from the data store if he/she is connected to multiple accounts. Users should not be confused with persons."
+    },
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v2/openapi.json",
+     "title": "developers.pipedrive.com/docs/api/v2/openapi.json",
+     "snippet": "\"description\": \"Beta endpoints are endpoints that may have changes without a regular 60-90 day notice period.\\n\""
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Pipedrive pipedrive.com MCP server Model Context Protocol official",
+   "log_id": "log_O31ooglQG-p2",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants",
+     "title": "Pipedrive launches native MCP server, bringing CRM workflows directly into AI assistants",
+     "snippet": "New York, June 30, 2026 \u2013 [Pipedrive](https://www.pipedrive.com/), the easy and intelligent CRM for small and medium-sized businesses, today announced the launch of its native [Model Context Protocol (MCP)](https://www.pipedrive.com/en/features/mcp-server) server, enabling customers to securely connect Pipedrive with AI assistants such as ChatGPT, Claude and other MCP-compatible tools.\nMCP is an open standard that enables AI assistants to securely connect to external tools and data sources. Through Pipedrive\u2019s native MCP server, AI assistants can interact with live CRM data in real time while respecting existing user permissions and maintaining a full audit trail of actions performed.\nUsing the Pipedrive MCP server, customers can:\n- Search deals, contacts, organizations and leads using natural language\n- Create and update CRM records without manual data entry\n- Convert leads into deals and manage activities\n- Generate pipeline insights and sales analysis\n- Turn meeting notes into structured CRM records\n- Automate follow-up actions and multi-step sales workflows\n- Execute other intelligent automations and continuously evolving AI capabilities\n\nuseful,\u201d said Joe Futty, Chief Product "
+    },
+    {
+     "url": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+     "title": "Pipedrive MCP for ChatGPT - Knowledge Base | Pipedrive",
+     "snippet": "**Note:** ChatGPT can only access data and perform actions that your Pipedrive user account is authorized to access. Permissions are inherited from your existing Pipedrive role and visibility settings. You **must** have a Pro, Business, Enterprise or Edu ChatGPT plan to connect the Pipedrive MCP.\nYou can connect the Pipedrive MCP server to ChatGPT to allow your AI assistant to securely access and interact with your Pipedrive data.\n\nOnce developer mode is enabled, go to **\u201dPlugins\u201d** on the left-hand side of the screen and click ****\u201d+\u201d**** to create a new plugin.\n![](https://kb-cms.pipedriveassets.com/mcp%20chatgpt%204.png)\nEnter Pipedrive MCP as the app name and in the **\u201dConnection\u201d** field enter [https://mcp.pipedrive.ai/mcp](https://mcp.pipedrive.ai/mcp). Then, click **\u201dCreate\u201d**.\n![](https://kb-cms.pipedriveassets.com/mcp%20chatgpt%205-1.png)\nAfter creating the app, you\u2019ll be redirected to Pipedrive to complete the installation.\n\nBefore starting your conversation, add the plugin **\u201dPipedrive MCP\u201d** to the conversation.\n![](https://kb-cms.pipedriveassets.com/mcp%20chatgpt%208-1.png)\nYour AI assistant can now access Pipedrive data and perform supported actions based on the permi"
+    },
+    {
+     "url": "https://pipedrive.com/en/features/mcp-server",
+     "title": "Pipedrive MCP Server | Connect Claude & ChatGPT to Your CRM",
+     "snippet": "Pipedrive is an official connector in Claude and ChatGPT. Find it in the connector directory and connect your account. No manual server setup required.\n\nThe Model Context Protocol (MCP) is an open standard that lets AI assistants securely connect to external tools and data sources. With Pipedrive MCP, your AI assistant can securely access and act on your CRM data using natural language.\n**Step 1: Connect securely**\nConnect your AI assistant to Pipedrive in minutes via a secure OAuth login. No coding, APIs, middleware or developer support required.\n**Step 2: Ask your AI to act**\nSimply tell ChatGPT or Claude what you want to do, using plain language directly from its input box.\n**Step 3: Get instant results**\nYour AI assistant can find information, update records, create activities and automate workflows using live Pipedrive data.\n\nMCP gives your AI assistant access to Pipedrive. Skills are ready-made instructions that show Claude, ChatGPT and other AI tools how to handle everyday sales tasks, using your live Pipedrive data. Skills handle the busywork behind a good sales week: where to focus, what\u2019s slipping and whether you\u2019re on track. Every rep starts each day knowing what matters"
+    },
+    {
+     "url": "https://support.pipedrive.com/en/article/mcp?category=pipedrive-mcp",
+     "title": "Native Model Context Protocol (MCP) from Pipedrive - Knowledge Base | Pipedrive",
+     "snippet": "## Native Model Context Protocol (MCP) from Pipedrive\nYS\nYssel Salas\nLast updated: November 4, 2026\nA model context protocol, or **MCP**, is an open standard that allows large language models (**LLMs**) and AI assistants to securely interact with structured data and external services.\nMCPs provide a standardized way for AI assistants to securely access business data, tools and [APIs](https://support.pipedrive.com/article/what-is-api). This allows AI applications to retrieve information, update records and automate workflows across connected systems.\nSo, rather than building separate integrations for every AI tool, businesses can use MCP to make their data and functionality available to any MCP-compatible AI application through a single and consistent interface.\n---\n## How does MCP work?\nMCP acts as a bridge between an AI application and a business tool such as Pipedrive.\nWhen a user asks an AI assistant a question or requests an action, the AI can use MCP to retrieve information from connected systems, perform approved actions on behalf of a user, combine data from multiple sources to complete a task or automate workflows across business applications.\nFor example, an AI assistant c"
+    },
+    {
+     "url": "https://support.pipedrive.com/en/article/mcp-tools",
+     "title": "Pipedrive MCP tools - Knowledge Base | Pipedrive",
+     "snippet": "In MCP, **tools** are the actions that an AI assistant can perform in Pipedrive. Each tool is designed for a specific task, such as creating a deal, retrieving a contact's details or updating an activity.\nWhen an AI assistant connects to Pipedrive through MCP, it can use these tools to access information and perform actions on your behalf, based on the permissions you grant.\nTool names follow a consistent naming pattern:\n| getX (plural) | Fetch a list |\n|---|---|\n| getX (singular) | Fetch one specific record |\n| addX | Create a new record |\n| updateX | Edit an existing record |\n| searchX | Find records by keyword or criteria |\n\n### Context\nIf your permissions don't cover part of this information, the tool skips that part and returns the rest.\n| **Tool** | **Action** |\n|---|---|\n| getAccountContext | Fetch account details: your user, pipelines and their stages, custom fields for deals, persons, organizations, products and activities, and the other users in your company |"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

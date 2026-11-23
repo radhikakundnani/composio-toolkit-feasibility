@@ -1,0 +1,36 @@
+{
+  "id": 76,
+  "app": "Monday.com",
+  "category": "Project Management / Work OS",
+  "one_liner": "Work OS with a GraphQL API for boards, items, and columns.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Free developer sandbox account; create an app in the Developer Center for OAuth, or use a personal API token.",
+  "api_types": [
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.monday.com/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developer.monday.com/apps/docs/choosing-auth",
+    "access": "https://developer.monday.com/api-reference/docs/developer-sandbox",
+    "surface": "https://developer.monday.com/api-reference/docs/introduction-to-graphql",
+    "mcp": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp"
+  },
+  "verified": true
+}

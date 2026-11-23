@@ -1,0 +1,36 @@
+{
+  "id": 78,
+  "app": "Coda",
+  "category": "Productivity / Docs",
+  "one_liner": "Doc platform combining documents, tables, and apps, with a REST API.",
+  "auth_methods": [
+    "bearer_token",
+    "unknown"
+  ],
+  "auth_primary": "bearer_token",
+  "access": "self_serve_free",
+  "access_notes": "Generate API token in account settings on Free or paid workspaces; Bearer auth. OAuth evidence relates to Packs SDK, not the REST API.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://coda.io/apis/mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "other",
+  "blocker_note": "REST OAuth for multi-tenant use not evidenced; token auth confirmed.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://dlthub.com/context/source/coda-docs-migration",
+    "access": "https://coda.io/developers/apis/v1?ad_group_id=137901396152&ad_id=REMOVED&campaign_id=17400847121",
+    "surface": "https://coda.io/developers/apis/v1?ad_group_id=137901396152&ad_id=REMOVED&campaign_id=17400847121",
+    "mcp": "https://help.coda.io/hc/en-us/articles/44722756780173-Using-the-Coda-MCP"
+  }
+}

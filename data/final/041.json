@@ -1,0 +1,37 @@
+{
+ "id": 41,
+ "app": "Shopify",
+ "category": "Ecommerce",
+ "one_liner": "Hosted ecommerce platform with merchant storefront, products, orders and checkout.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Create an app in the Dev Dashboard and obtain access tokens via OAuth/token exchange or client credentials; protected customer data needs approval.",
+ "api_types": [
+  "graphql",
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Shopify-hosted MCP servers for storefront/catalog, cart, checkout and Customer Accounts (shopify.dev/docs/agents, mcp.shop.com); no Admin/merchant-management MCP seen. @shopify/dev-mcp (AI Toolkit) is docs/schema dev tooling only and not counted.",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Protected customer data access and public app distribution require Shopify review.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+  "access": "https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard",
+  "surface": "https://shopify.dev/docs/api/admin-rest/latest/resources/product",
+  "mcp": "https://shopify.dev/docs/agents/catalog/storefront-catalog"
+ },
+ "verified": true
+}

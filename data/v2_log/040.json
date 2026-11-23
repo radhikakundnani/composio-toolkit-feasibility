@@ -1,0 +1,13 @@
+{
+  "id": 40,
+  "app": "SendGrid",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

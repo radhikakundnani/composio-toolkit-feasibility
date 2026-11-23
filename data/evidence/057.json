@@ -1,0 +1,142 @@
+{
+ "id": 57,
+ "app": "Bright Data",
+ "hint": "brightdata.com",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "Bright Data API authentication OAuth API key access token developer docs brightdata.com",
+   "log_id": "log_Vp1WXpaOEuQk",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.brightdata.com/api-reference/authentication",
+     "title": "Authentication",
+     "snippet": "Bright Data ensures secure access to its services. Bright Data provides two primary methods for authentication:\n1. **API Access** - Authenticate and interact with the Bright Data platform using an API key/token.\n2. **Native Access** - Authenticate and interact with the Bright Data platform using proxy protocol `username` and `password`.\nBoth API and Native access methods are billed at the same rate. Usage is charged according to your pricing plan for each Bright Data product.\n##\n\u200b\nHow do I authenticate with API Key?\nAn API key is a secure hashed token used to authenticate with Bright Data API. We create a default key for you upon account creation automatically. You can create additional API keys for different users and with different permissions.\nManage your API Keys anytime in the [Account settings](https://brightdata.com/cp/setting/users).\n###\n\u200b\nHow do I relay the API key within a request?\nHere\u2019s an example request:\nSample Request\n```\ncurl --request POST \\\n--url https://api.brightdata.com/request \\\n--header 'Authorization: Bearer <token>' \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"zone\": \"my_unlocker_zone\",\n\"url\": \"https://example.com/page\",\n\"format\": \"json\",\n\"metho"
+    },
+    {
+     "url": "https://docs.brightdata.com/products/mcp-server/remote/oauth",
+     "title": "Bright Data MCP OAuth 2.1 setup - Bright Data Docs",
+     "snippet": "This guide shows you how to authenticate an MCP client to the Bright Data MCP server with OAuth 2.1, so a user signs in through a browser instead of pasting a Bright Data API key into a config file. The Bright Data MCP server at `https://mcp.brightdata.com` is an OAuth 2.1 protected resource. It advertises its authorization server through RFC 9728 discovery metadata, and any MCP client that implements the Model Context Protocol authorization spec can connect without hardcoded credentials. The authorization server is `https://brightdata.com`. Four requirements are enforced on every request. Get these wrong and the flow fails before a token is ever issued:\n1. **PKCE with `S256` is mandatory.** The `plain` method is rejected.\n2. **The `resource` parameter is mandatory** on both the authorization request and the token request, per RFC 8707.\n3. **Clients are public.** The token endpoint accepts `token_endpoint_auth_method: none`, so there is no client secret.\n4. **The only scope is `mcp`.**\n## Which authentication methods does the Bright Data MCP server support?\nThe Bright Data MCP server accepts two authentication methods. Both reach the same tools and draw on the same account credits."
+    },
+    {
+     "url": "https://brightdata.com/auth.md",
+     "title": "brightdata.com/auth.md",
+     "snippet": "| Component | Status |\n| :---- | :---- |\n| Hosted MCP \\+ OAuth (`mcp.brightdata.com`) | \u2705 Live |\n| CLI login (browser, device flow, GitHub) | \u2705 Live |\n| `/.well-known/oauth-authorization-server` | \u2705 Live (includes the `agent_auth` block; `scopes_supported` is currently `[\"mcp\"]` only) |\n| `/.well-known/oauth-protected-resource` | \ud83d\udea7 NEW \u2014 not built yet |\n| `POST /auth` \u2014 email registration (`verified_email`) | \u2705 Live |\n| `POST /claim` (resend) \\+ `POST /claim/complete` | \u2705 Live |\n| `github_id` assertion + GitHub gist verification | :white_check_mark: Live |\n| Anonymous registration | \ud83d\udd1c Planned \u2014 not scheduled, out of scope for the current release |\n\n## Current fallback paths (all live today)\n1. **MCP with a user present:** connect to `https://mcp.brightdata.com/mcp` and complete OAuth in the browser.\n2. **API token:** ask the user for a Bright Data API token from `https://brightdata.com/cp/setting/users` and send it as `Authorization: Bearer <API_TOKEN>`.\n3. **CLI with a user present:** `npx @brightdata/cli login` (browser or device flow), or `brightdata login --github` if the GitHub CLI is installed and authenticated.\n4. **Email registration, no user browser session needed:** see S"
+    },
+    {
+     "url": "https://docs.brightdata.com/api-reference/rest-api/scraper/asynchronous-requests",
+     "title": "Scraper async requests",
+     "snippet": "#### Authorizations\nUse your Bright Data API Key as a Bearer token in the Authorization header.\nHow to authenticate:\n1. Obtain your API Key from the Bright Data account settings at [https://brightdata.com/cp/setting/users](https://brightdata.com/cp/setting/users)\n2. Include the API Key in the Authorization header of your requests\n3. Format: `Authorization: Bearer YOUR_API_KEY`\nExample:\n```\nAuthorization: Bearer b5648e1096c6442f60a6c4bbbe73f8d2234d3d8324554bd6a7ec8f3f251f07df\n```\nLearn how to get your Bright Data API key: [https://docs.brightdata.com/api-reference/authentication](https://docs.brightdata.com/api-reference/authentication)"
+    },
+    {
+     "url": "https://docs.brightdata.com/products/serp-api/send-your-first-request",
+     "title": "Send your first SERP API request",
+     "snippet": "## Direct API access (recommended)\nA simple and RESTful way to interact with Bright Data\u2019s SERP API. Direct API access abstracts proxy management and allows you to send requests via a central endpoint, ensuring ease of use and straightforward REST API integration.\n### When to use direct API access\n- Centralized endpoint: Access SERP API via a single, RESTful endpoint.\n- Streamlined direct integration: Eliminating the complexity of managing proxies or routing.\n- Single API key authentication: Secure and easy to use, replacing the need for username-password management.\n\nDirect API access - cURL\n```\ncurl -H \"Content-Type: application/json\" -H \"Authorization: Bearer [INSERT_YOUR_API_KEY]\" -d '{\"zone\": \"[INSERT_YOUR_SERP_API_ZONE_NAME]\",\"url\": \"[INSERT_YOUR_TARGET_URL]\", \"format\": \"raw\"}' https://api.brightdata.com/request\n```\n### Request breakdown\n1. API Endpoint: [`https://api.brightdata.com/request`](https://api.brightdata.com/request)\n2. Authorization Header: `Authorization: Bearer [INSERT YOUR API key]`\n- Your API key is found within your SERP API zone.\n3. Payload:\n- `zone`: Your specific SERP API **zone name**.\n- `url`: The full SERP target URL (including SERP query params) that y"
+    }
+   ]
+  },
+  "access": {
+   "query": "Bright Data brightdata.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_VNwMTorqcy54",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.brightdata.com/general/faqs",
+     "title": "Bright Data general FAQs",
+     "snippet": "Start by using the $5 voucher for free data-center traffic to test Bright Data\u2019s benefits and then ask for access to our residential network for cheap and reliable data collection.\n\nWhen you sign up, your account automatically enters a free trial \u201cPlayground mode\u201d for the first 7 days, allowing you to instantly try different Bright Data solutions. No credit card or any other form of payment method is needed.Separately, every new account also gets a recurring [free tier](/general/account/billing-and-pricing/free-tier) of 5,000 credits per month for the Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API. These credits renew on the first of each month and do not expire with the trial.You can extend this free trial to **30 days** and **unlock Proxy and Web Unlocker API usage**. To do so and receive a $5 free credit, [verify your account](https://brightdata.com/cp/billing_flow) to start our Limited 30-day trial. Note that the 30-day trial does not apply to certain countries.\n\nThe recurring [free tier](/general/account/billing-and-pricing/free-tier) of 5,000 credits per month for the Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API is u"
+    },
+    {
+     "url": "https://docs.brightdata.com/general/account/billing-and-pricing/free-tier",
+     "title": "Free tier",
+     "snippet": "Every new Bright Data account gets **5,000 free credits per month** (~$7.50 value), usable across the Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API. No credit card, no promo code, no commitment. **The Browser API is also included in the monthly free credits.** The Browser API consumes 5 credits per MB of traffic, so a full 5,000-credit allowance gives you nearly 1 GB of free Browser API traffic every month.\n## What is the Bright Data free tier?\nThe free tier is a recurring monthly credit allowance that applies automatically to every new account. Credits renew on the first of each month and draw from a single shared pool, so you can spend them on any combination of the eligible products. The Web Unlocker API, SERP API and Web Scraper API cost one credit per request or record. Scraper Studio draws from the same pool and costs one credit per page load. The Browser API draws from the same pool at 5 credits per MB of traffic. Bright Data operates on a **pre-paid wallet model**: you are only ever charged for funds you have explicitly deposited. A free tier account has a hard stop when credits are exhausted, never a surprise bill.\n## What can I use the free c"
+    },
+    {
+     "url": "https://docs.brightdata.com/api-reference/authentication",
+     "title": "Authentication",
+     "snippet": "Bright Data ensures secure access to its services. Bright Data provides two primary methods for authentication:\n1. **API Access** - Authenticate and interact with the Bright Data platform using an API key/token.\n2. **Native Access** - Authenticate and interact with the Bright Data platform using proxy protocol `username` and `password`.\nBoth API and Native access methods are billed at the same rate. Usage is charged according to your pricing plan for each Bright Data product."
+    },
+    {
+     "url": "https://docs.brightdata.com/products/mcp-server/remote/quickstart",
+     "title": "How to get started with remote MCP server",
+     "snippet": "You might be eligible for our Startup Program. Get fully funded access to the infrastructure you\u2019re reading about right now (up to $20K value).\n1\nPrerequisites\nBefore getting started, make sure you have the following:\n## Bright Data Account\n*Sign up for free and receive **5,000 requests** per month at no cost.*\n\nof the"
+    },
+    {
+     "url": "https://docs.brightdata.com/quickstart",
+     "title": "Bright Data quickstart",
+     "snippet": "- A [Bright Data account](https://brightdata.com/products/web-scraper?hs_signup=1&utm_source=docs). New accounts get **5,000 free credits every month**, no credit card required\n- One of:\n- cURL\n\nNew accounts receive an API key in the Bright Data welcome email. Use that key for this guide.If you no longer have that email, open [Account settings](https://brightdata.com/cp/setting/users) and click **Add API key** to create a new one. Only admins can create API keys.\n\nYes, and new accounts get 5,000 free credits every month with no credit card, drawn from a single shared pool across eligible products. See the [free tier](/general/account/billing-and-pricing/free-tier)."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Bright Data API reference REST GraphQL endpoints documentation brightdata.com",
+   "log_id": "log_ECvmbWevt55i",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.brightdata.com/api-reference/rest-api/scraper/asynchronous-requests",
+     "title": "Scraper async requests",
+     "snippet": "#### Authorizations\nUse your Bright Data API Key as a Bearer token in the Authorization header.\nHow to authenticate:\n1. Obtain your API Key from the Bright Data account settings at [https://brightdata.com/cp/setting/users](https://brightdata.com/cp/setting/users)\n2. Include the API Key in the Authorization header of your requests\n3. Format: `Authorization: Bearer YOUR_API_KEY`\nExample:\n```\nAuthorization: Bearer b5648e1096c6442f60a6c4bbbe73f8d2234d3d8324554bd6a7ec8f3f251f07df\n```\nLearn how to get your Bright Data API key: [https://docs.brightdata.com/api-reference/authentication](https://docs.brightdata.com/api-reference/authentication)\n\nendpoint\nstring\nSpecify the Webhook URL that should be called for the data collection process.\nExample:\n`\"https://example.com/webhook\"`"
+    },
+    {
+     "url": "https://docs.brightdata.com/products/scrapers/fetch-api/send-first-request",
+     "title": "Fetch API endpoints",
+     "snippet": "Request structure\nEvery synchronous request follows the same pattern:\n```\nPOST https://api.brightdata.com/datasets/v3/scrape?dataset_id=gd_m6gjtfmeh43we6cqc&format=json\nAuthorization: Bearer YOUR_API_KEY\nContent-Type: application/json\n[{\"url\": \"https://...\"}]\n```\nEach input object takes a required `url` and an optional `country`. The Fetch API has one endpoint, so the `dataset_id` is always `gd_m6gjtfmeh43we6cqc`.\nThe `/scrape` endpoint is built for real-time requests. The endpoint returns the data in the response when collection finishes within 1 minute. Bright Data recommends one input per request, because more inputs are less likely to finish within 1 minute. If collection takes longer, the response is HTTP `202` with a `snapshot_id` instead of data, and collection continues asynchronously. Fetch the result with [async requests](/products/scrapers/scrapers-library/async-requests) or have it pushed to you with [webhook delivery](/products/scrapers/scrapers-library/data-delivery).\n##\n\u200b\nHow to fetch a web page by URL\n**Dataset ID:** `gd_m6gjtfmeh43we6cqc`\n```\ncurl -X POST \\\n\"https://api.brightdata.com/datasets/v3/scrape?dataset_id=gd_m6gjtfmeh43we6cqc&format=json\" \\\n-H \"Authorizati"
+    },
+    {
+     "url": "https://docs.brightdata.com/api-reference/marketplace-dataset-api/search-dataset",
+     "title": "Search dataset (sync, Elasticsearch)",
+     "snippet": "The Search endpoint of the Bright Data Marketplace Dataset API runs a real-time, Elasticsearch-powered query against a Marketplace dataset: send a filter, get records back in the response with sub-second latency.\nPaste your API key into the authorization field. To get an API key, [create an account](https://brightdata.com/?hs_signup=1&utm_source=docs&utm_campaign=playground) and learn [how to generate an API key](/api-reference/authentication#how-do-i-generate-a-new-api-key%3F).\n\n## Run your first Search query\nSend a `POST` request to `/datasets/search/:dataset_id` with a `filter` object. The example below searches the LinkedIn people profiles dataset for records whose `name` includes `Egor`:\n```\ncurl -X POST \"https://api.brightdata.com/datasets/search/gd_l1viktl72bvl7bjuj0\" \\\n-H \"Authorization: Bearer YOUR_API_KEY\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n\"size\": 10,\n\"filter\": {\n\"name\": \"name\",\n\"operator\": \"includes\",\n\"value\": \"Egor\"\n}\n}'\n```\nSearch returns the records inline. There is no polling and no snapshot IDs:\n```\n{\n\"hits\": [ /* records */ ],\n\"total_hits\": 579859,\n\"took\": 142\n}\n```\n## Which datasets does Search support?\nSearch is in alpha and currently supports three L"
+    },
+    {
+     "url": "https://github.com/brightdata/skills/raw/refs/heads/main/skills/bright-data-best-practices/references/serp-api.md",
+     "title": "github.com/brightdata/skills/raw/refs/heads/main/skills/bright-data-best-practices/references/serp-api.md",
+     "snippet": "## REST API (Recommended)\n**Endpoint:** `POST https://api.brightdata.com/request`\n**Header:** `Authorization: Bearer YOUR_API_KEY`\n### Google Search\n```python\nimport requests\nresponse = requests.post(\n\"https://api.brightdata.com/request\",\nheaders={\"Authorization\": f\"Bearer {API_KEY}\"},\njson={\n\"zone\": \"YOUR_SERP_ZONE\",\n\"url\": \"https://www.google.com/search?q=python+web+scraping\",\n\"format\": \"raw\"\n}\n)\nhtml = response.text\n```\n### Google Search with Parsed JSON\n```python\nresponse = requests.post(\n\"https://api.brightdata.com/request\",\nheaders={\"Authorization\": f\"Bearer {API_KEY}\"},\njson={\n\"zone\": \"YOUR_SERP_ZONE\",\n\"url\": \"https://www.google.com/search?q=python+web+scraping&brd_json=1\",\n\"format\": \"raw\"\n}\n)\ndata = response.json()\nfor result in data.get(\"organic\", []):\nprint(result[\"title\"], result[\"link\"])\n```\n```javascript\nconst response = await fetch(\"https://api.brightdata.com/request\", {\nmethod: \"POST\",\nheaders: {\n\"Authorization\": `Bearer ${API_KEY}`,\n\"Content-Type\": \"application/json\"\n},\nbody: JSON.stringify({\nzone: \"YOUR_SERP_ZONE\",\nurl: \"https://www.google.com/search?q=python+web+scraping&brd_json=1\",\nformat: \"raw\"\n})\n});\nconst data = await response.json();\n```\n```bash\ncurl -H \"Aut"
+    },
+    {
+     "url": "https://github.com/brightdata/skills/blob/main/skills/discover-api/references/api-reference.md",
+     "title": "skills/skills/discover-api/references/api-reference.md at main \u00b7 brightdata/skills",
+     "snippet": "Docs: [https://docs.brightdata.com/api-reference/discover/overview](https://docs.brightdata.com/api-reference/discover/overview)\n## REST endpoints\n### Trigger\n```\nPOST https://api.brightdata.com/discover\nAuthorization: Bearer <BRIGHTDATA_API_TOKEN>\nContent-Type: application/json\n```\nBody: see the parameter matrix below. Response:\n```\n{ \"status\": \"ok\", \"task_id\": \"bde85a92-3232-4f26-98f6-5ed0328b8288\" }\n```\n### Retrieve results\n```\nGET https://api.brightdata.com/discover?task_id=<task_id>\nAuthorization: Bearer <BRIGHTDATA_API_TOKEN>\n```\nResponse while running:\n```\n{ \"status\": \"processing\", \"duration_seconds\": 4.1 }\n```\nResponse when complete:\n```\n{\n\"status\": \"done\",\n\"duration_seconds\": 12.4,\n\"results\": [\n{ \"link\": \"\u2026\", \"title\": \"\u2026\", \"description\": \"\u2026\", \"relevance_score\": 0.87, \"content\": \"\u2026\" }\n]\n}\n```\n- `status`: `\"processing\"` \u2192 `\"done\"`.\n- Poll on an interval (2\u20135s is reasonable). Tasks can expire after a period \u2014 retrieve promptly."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Bright Data brightdata.com MCP server Model Context Protocol official",
+   "log_id": "log_j4S5bgZtq1-D",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/brightdata/brightdata-mcp/blob/main/README.md",
+     "title": "brightdata-mcp/README.md at main \u00b7 brightdata/brightdata-mcp",
+     "snippet": "Logo](https://private-user-images.githubusercontent.com/182499612/476485580-c21b3f7b-7ff1-40c3-b3d8-66706913d62f.svg?jwt=[REDACTED_JWT]) ](https://brightdata.com/ai/mcp-server)\n# Bright Data MCP\n**Web search, page scraping, structured data extraction, and browser automation for AI agents and LLMs over the Model Context Protocol.**\nWorks with AI agents, coding agents, chat assistants, and any MCP-compatible client.\n\nThe Bright Data MCP server gives AI agents real-time access to public web da"
+    },
+    {
+     "url": "https://github.com/brightdata-com/brightdata-mcp/blob/a649a9b5/README.md?plain=1",
+     "title": "brightdata-mcp/README.md at a649a9b5db4d71263b69c67203c32e731048ecee \u00b7 brightdata/brightdata-mcp",
+     "snippet": "Welcome to the official Bright Data Model Context Protocol (MCP) server, enabling LLMs, agents and apps to access, discover and extract web data in real-time. This server allows MCP clients, such as Claude Desktop, Cursor, Windsurf and others, to seamlessly search the web, navigate websites, take action and retrieve data - without getting blocked - perfect for scraping tasks.\n\n## \u2728 Features\n- **Real-time Web Access**: Access up-to-date information directly from the web\n- **Bypass Geo-restrictions**: Access content regardless of location constraints\n- **Web Unlocker**: Navigate websites with bot detection protection\n- **Browser Control**: Optional remote browser automation capabilities\n- **Seamless Integration**: Works with all MCP-compatible AI assistants\n## \ud83d\ude80 Quickstart with Claude Desktop\n1. Install `nodejs` to get the `npx` command (node.js module runner). Installation instructions can be found on the [node.js website](https://nodejs.org/en/download)\n2. Go to Claude > Settings > Developer > Edit Config > claude_desktop_config.json to include the following:\n```json\n{\n\"mcpServers\": {\n\"Bright Data\": {\n\"command\": \"npx\",\n\"args\": [\"@brightdata/mcp\"],\n\"env\": {\n\"API_TOKEN\": \"<insert-you"
+    },
+    {
+     "url": "https://docs.brightdata.com/general/docs-mcp",
+     "title": "Query Bright Data docs from your agent",
+     "snippet": "The Docs MCP server at `https://docs.brightdata.com/mcp` exposes all Bright Data documentation as searchable MCP resources. Any MCP-compatible coding agent can connect and query the docs in real-time, directly inside its reasoning loop.\n**Two Bright MCP servers - two different jobs:**\n| MCP Server | URL | Purpose |\n|---|---|---|\n| **Docs MCP** | `https://docs.brightdata.com/mcp` | Search and retrieve Bright Data documentation |\n| **Bright Data MCP** | `https://mcp.brightdata.com/mcp?token=<token>` | Access live web data - scraping, search, unlocker |\nThis page covers the **Docs MCP**.\n\n## Connect your agent\n- Claude Code\n- Cursor\n- VS Code (Copilot)\n- Claude Desktop\n- Windsurf / Any MCP client\n```\nclaude mcp add --transport http brightdata-docs https://docs.brightdata.com/mcp\n```\nVerify the connection:\n```\nclaude mcp list\n# brightdata-docs: https://docs.brightdata.com/mcp (HTTP) - \u2713 Connected\n```\n\nFor maximum capability, connect **both** MCP servers in a single session:\n```\n# Docs: know how to use Bright Data\nclaude mcp add --transport http brightdata-docs https://docs.brightdata.com/mcp\n# Data: actually use Bright Data\nclaude mcp add --transport sse brightdata https://mcp.brightda"
+    },
+    {
+     "url": "https://docs.brightdata.com/products/mcp-server/remote/oauth",
+     "title": "Bright Data MCP OAuth 2.1 setup - Bright Data Docs",
+     "snippet": "The Bright Data MCP server at `https://mcp.brightdata.com` is an OAuth 2.1 protected resource. It advertises its authorization server through RFC 9728 discovery metadata, and any MCP client that implements the Model Context Protocol authorization spec can connect without hardcoded credentials. The authorization server is `https://brightdata.com`. Four requirements are enforced on every request. Get these wrong and the flow fails before a token is ever issued:\n1. **PKCE with `S256` is mandatory.** The `plain` method is rejected.\n2. **The `resource` parameter is mandatory** on both the authorization request and the token request, per RFC 8707.\n3. **Clients are public.** The token endpoint accepts `token_endpoint_auth_method: none`, so there is no client secret.\n4. **The only scope is `mcp`.**\n## Which authentication methods does the Bright Data MCP server support?\nThe Bright Data MCP server accepts two authentication methods. Both reach the same tools and draw on the same account credits.\n| Method | How the credential is sent | Best for |\n|---|---|---|\n| API key | `?token=YOUR_API_TOKEN` query parameter on `/mcp` or `/sse` | Server-side agents, CI jobs and scripts you control end to "
+    },
+    {
+     "url": "https://docs.brightdata.com/products/mcp-server/integrations/codex",
+     "title": "Codex MCP server integration",
+     "snippet": "Add the Bright Data MCP server to OpenAI\u2019s Codex CLI so your coding agent can search, scrape and browse the live web without getting blocked. Codex reads MCP server definitions from `~/.codex/config.toml`, which you can edit directly or update with the `codex mcp add` command.\n## Prerequisites\n- [Codex CLI](https://github.com/openai/codex) is installed and signed in\n- [Node.js](https://nodejs.org/en/download) is installed and up to date (required only for the self-hosted server)\n- [A Bright Data account](https://brightdata.com/?hs_signup=1&utm_source=docs) (new users get free credit for testing, and then you can pay as you go)\n- An API key from the [user settings page](https://brightdata.com/cp/setting/users) (new users receive an API key in the welcome email)\n## Hosted MCP\nThe hosted server needs no local install. Add the following table to `~/.codex/config.toml`, replacing `YOUR_API_KEY` with your Bright Data API key:\n```\n[mcp_servers.brightdata]\nurl = \"https://mcp.brightdata.com/mcp?token=YOUR_API_KEY\"\n```\nThe `[mcp_servers.<id>]` table uses `url` for streamable HTTP servers. The Bright Data hosted MCP accepts the API key as the `token` query parameter, so no separate authentica"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

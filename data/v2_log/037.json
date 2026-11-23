@@ -1,0 +1,40 @@
+{
+  "id": 37,
+  "app": "systeme.io",
+  "changes": [
+    {
+      "field": "evidence.auth",
+      "from": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+      "to": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+      "why": "Live vendor help page for API key creation (limit 3 keys).",
+      "evidence": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+    },
+    {
+      "field": "blocker_note",
+      "from": "No gating found; OAuth claim only from third-party guide, unverified.",
+      "to": "No gating found; vendor docs state API key (X-API-Key) is the only auth option, no OAuth.",
+      "why": "Vendor docs confirm API key only",
+      "evidence": "https://developer.systeme.io/reference/api"
+    },
+    {
+      "field": "confidence.auth",
+      "from": "medium",
+      "to": "high",
+      "why": "Official API reference states API key is the only auth method.",
+      "evidence": "https://developer.systeme.io/reference/api"
+    },
+    {
+      "field": "access_notes",
+      "from": "Generate public API key in Settings > MCP & API keys; free plan exists (2,000 contacts); API plan gating not confirmed.",
+      "to": "Generate public API key in Settings > MCP & API keys (max 3 keys); free plan exists (2,000 contacts, no credit card) and vendor states API access is available on Free plan.",
+      "why": "Vendor page states API on Free plan",
+      "evidence": "https://systeme.io/circle-alternative"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "verdict"
+  ],
+  "searches": 4
+}

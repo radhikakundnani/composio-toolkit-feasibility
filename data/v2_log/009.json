@@ -1,0 +1,46 @@
+{
+  "id": 9,
+  "app": "Copper",
+  "changes": [
+    {
+      "field": "mcp",
+      "from": "official",
+      "to": "community",
+      "why": "Copper's own page says official MCP is 'launching'/'coming soon' (beta Nov 2026); no live vendor server confirmed; only third-party servers exist",
+      "evidence": "https://copper.com/mcp"
+    },
+    {
+      "field": "confidence.mcp",
+      "from": "medium",
+      "to": "medium",
+      "why": "announced but not confirmed live",
+      "evidence": "https://support.copper.com/en/articles/10324524-chapter-1-where-do-i-start-here"
+    },
+    {
+      "field": "auth_primary",
+      "from": "oauth2",
+      "to": "api_key",
+      "why": "OAuth requires registering via partners@copper.com; API keys are what a developer can use today",
+      "evidence": "https://developer.copper.com/introduction/oauth/quickstart.html"
+    },
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "paid_plan",
+      "why": "Trial-only, no free plan; 'other' not allowed",
+      "evidence": "https://cleanform.io/blog/copper-crm-pricing"
+    },
+    {
+      "field": "blocker_note",
+      "from": "Trial-only access; official MCP is in beta (launching Nov 2026).",
+      "to": "Trial-only access (no free plan); OAuth requires partner registration; official MCP announced (beta Nov 2026) but not confirmed live.",
+      "why": "align with fixes",
+      "evidence": "https://copper.com/mcp"
+    }
+  ],
+  "confirmed": [
+    "access trial",
+    "verdict"
+  ],
+  "searches": 4
+}

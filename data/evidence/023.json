@@ -1,0 +1,142 @@
+{
+ "id": 23,
+ "app": "Zoho Cliq",
+ "hint": "zoho.com/cliq",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Zoho Cliq API authentication OAuth API key access token developer docs zoho.com/cliq",
+   "log_id": "log_Nz96UUnt8C-e",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v3/oauth",
+     "title": "Introduction to OAuth 2.0 | Zoho Cliq",
+     "snippet": "The first step in using OAuth authentication is registering your app with the [**Zoho API console**](https://api-console.zoho.com/). Once you register your client, you will get a Client ID and Client secret for your application. This Client ID and Client secret are used to authorize your app's OAuth requests. Ensure the redirect URI used in OAuth requests exactly matches the one configured in the API Console.\n**Note:** Head to [https://www.zoho.com/accounts/protocol/oauth.html](https://www.zoho.com/accounts/protocol/oauth.html) to know in detail about authenticating with Zoho APIs and types of clients.\n\n## Step 2: Obtain an access token\nAn access token is an OAuth token that allows access to Zoho's protected resources. The method for generating an access token depends on the type of application. For instance, server-based applications can use the authorization code flow, while client-based applications can utilize the implicit flow. However, in all cases, the access token is provided only after the user grants permission through consent. Access tokens are always assigned specific scopes, which are outlined in the request, and these scopes will be presented to the user during the pe"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v2",
+     "title": "Rest API documentation | Cliq",
+     "snippet": "## Authentication\nZoho Cliq's Rest API's follows the OAuth 2.0 protocol to authorize and authenticate requests. Each API request must include an OAuth token in order to receive a success response. All API requests must be made over HTTPS. Calls made over plain HTTP and using API without authentication will also fail.\n**Note:** You must use domain specific Zoho Cliq URL to generate and refresh tokens.\n## OAuth Token Generation\nThe steps to generate an OAuth token are as folllows:\n1. Generate Client ID and Client Secret\n2. Authorization by generating the grant token\n3. Generating Access and Refresh Token\n4. Generate Access Token from Refresh Token\n## Step 1: Generate Client ID and Client Secret\nRegister your application as a new client by accessing this website:\n`https://accounts.zoho.com/developerconsole`\n**Note:** Make sure to use domain specific Zoho Accounts URL while registering\n1.Click on `Add Client ID`and give the following :\n- Client Name\n- Client Domain\n- Authorized redirect URIs\n2.Click `Create`.\nUpon providing the necessary details for registering, you will be given a set of OAuth credentials known as the `client id` and `client secret` exclusive for your application. The"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v3/postman",
+     "title": "Postman Collection | Zoho Cliq",
+     "snippet": "## Prerequisites\n- A Zoho Cliq account.\n- A registered OAuth client to generate access tokens. If you have not yet registered a client, follow the steps on the [OAuth 2.0](https://zoho.com/cliq/help/restapi/v2/oauth/) page.\n- Postman installed version 8 or above. [Download Postman](https://www.postman.com/downloads/).\n\nOnce filled in, click **Save** and select this environment from the dropdown in the top-right corner of Postman.\n| Variable | Description |\n|---|---|\n| `client-id` | The consumer key generated from the connected app. You get this value when you register your application. |\n| `client-secret` | The consumer secret generated from the connected app. You get this value when you register your application. |\n| `redirect-uri` | A valid URL of your application to which Zoho Accounts redirects you with a grant token (code) after successful authentication. |\n| `authorization-code` | The grant token. |\n| `access-token` | The access token to access Zoho Cliq APIs. The system automatically adds the value to this variable once the access token is generated. |\n| `refresh-token` | The refresh token to obtain new access tokens. The system automatically adds the value to this variable "
+    },
+    {
+     "url": "https://zoho.com/cliq/help/platform/faq.html",
+     "title": "Developers FAQ | Cliq",
+     "snippet": "You can easily integrate any external service with Zoho Cliq by establishing Connections. To create a connection, go to Settings --> Integrations --> Click \"Manage Connections\". To create a connection, click Add Connection. You can select from the list of available services or add a custom service and enter the Service Name, Authentication Type, Param Type, Connection Name and Scope. Check our [platform guide](https://www.zoho.com/cliq/help/platform/connections.html) to learn more about how to create a connection.\n\n- #### Does Cliq use a token based authentication to authenticate all requests?\nZoho Cliq API is organized around REST, and follows HTTP rules. Cliq REST APIs are authenticated with an OAuth token. Register as a new client in Zoho's Developer Console . Click on \"Add client ID\" and give the required details to register and obtain an OAuth token provided exclusively for your application. The [OAuthentication flow ](https://www.zoho.com/cliq/help/restapi/#authentication)is explained in the Rest API document.\nAPI tokens are also provided while creating an application with the integration components. These tokens should be used as a request parameter with the appropriate key "
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v3/registerclient",
+     "title": "Register your application | Zoho Cliq",
+     "snippet": "To access Zoho's resources through the Zoho Cliq APIs, you first need to register your application. Applications can be registered as one of the following client types:\n- Server-based application\n- Client-based application\n- Mobile-based application\n- Non-browser based application\n- Self client\n**Note:** Head to [https://www.zoho.com/accounts/protocol/oauth.html](https://www.zoho.com/accounts/protocol/oauth.html) to know in detail about authenticating with Zoho APIs and types of clients.\n## Registering your application\nUpon successful registration of your application, you will receive a Client ID and Client Secret. These credentials are used to obtain an access token, which is required to make API calls to Zoho Cliq.\nFollow the steps below to register your application:\n1. Go to the [Zoho API Console](https://api-console.zoho.com/), then click **GET STARTED.**\n![Zoho API Console Client Types](https://www.zohowebstatic.com/sites/zweb/images/accounts/rya1.png)\n2. Hover over your application's client type and click **CREATE NOW.** If you've previously added an application, click **ADD CLIENT** in the top-right corner.\n![Zoho API Console Client Types](https://www.zohowebstatic.com/sites"
+    }
+   ]
+  },
+  "access": {
+   "query": "Zoho Cliq zoho.com/cliq API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_3b-JgrEfcsD6",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/cliq/pricing.html",
+     "title": "Cliq - Chat Pricing | Free Chat plans for all Teams size",
+     "snippet": "Standard [Start free trial](https://zoho.com/cliq/signup.html?planname=standard&source=Pricing)[Get Started](https://cliq.zoho.com)\n\nEnterprise(Minimum 10 users)[Start free trial](https://zoho.com/cliq/signup.html?planname=enterprise&source=Pricing)[Get Started](https://cliq.zoho.com)\n\nPlansUsersStoragePrice /month\nMini101-500 users200GB storage\nStandard501-2K users500GB storage\nUltimate2K<10K users1TB storage\n\nAfter your 14-day trial expires you will need to purchase a subscription to convert your trial account into a permanent account with all your data, and integrations and advanced features squarely intact. If you choose to not subscribe to Zoho Cliq after your trial ends, your account will be downgraded to our free plan, where you can continue to communicate and collaborate with your colleagues.\n\n| Plan | Monthly Billing | Annual Billing |\n|---|---|---|\n| Free | Free | Free |\n| Standard | US$18/month (up to 25 users) | US$16.20/month (up to 25 users) |\n| Professional | US$2/user/month | US$1.80/user/month |\n| Enterprise | US$4/user/month | US$3.60/user/month |"
+    },
+    {
+     "url": "https://zoho.com/cliq/plan-comparison.html",
+     "title": "Plans and Pricing Comparison | Zoho Cliq",
+     "snippet": "| | ### Free [GET STARTED](https://zoho.com/cliq/signup.html?planname=free&source=Pricing-com)[GET STARTED](https://cliq.zoho.com/index.do) | ### Standard [TRY NOW](https://zoho.com/cliq/signup.html?planname=unlimited&source=Pricing-com)[TRY NOW](https://cliq.zoho.com/index.do) | ### Professional (Minimum 10 users) [TRY NOW](https://zoho.com/cliq/signup.html?planname=unlimited&source=Pricing-com)[TRY NOW](https://cliq.zoho.com/index.do) | ### Enterprise (Minimum 10 users) [TRY NOW](https://zoho.com/cliq/signup.html?planname=unlimited&source=Pricing-com)[TRY NOW](https://cliq.zoho.com/index.do) |\n|---|---|---|---|---|\n| PRICING | | | | |\n| Billed Monthly | - | Up to 25 users | /user | /user |\n| Billed Annually | - | Up to 25 users/month | /user/month | /user/month |\n\n| Developer platform | | | | |\n| API support | Yes | Yes | Yes | Yes |"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v2",
+     "title": "Rest API documentation | Cliq",
+     "snippet": "Cliq network is a dedicated space for collaborating with external business stakeholders such as partners, vendors, agencies, consultants, volunteers, and more. It equips you with an extensive set of configurable permissions to facilitate controlled, secure, and full-fledged external collaboration.\n\n## Authentication\nZoho Cliq's Rest API's follows the OAuth 2.0 protocol to authorize and authenticate requests. Each API request must include an OAuth token in order to receive a success response. All API requests must be made over HTTPS. Calls made over plain HTTP and using API without authentication will also fail.\n**Note:** You must use domain specific Zoho Cliq URL to generate and refresh tokens.\n\nRegister your application as a new client by accessing this website:\n`https://accounts.zoho.com/developerconsole`\n**Note:** Make sure to use domain specific Zoho Accounts URL while registering\n1.Click on `Add Client ID`and give the following :\n- Client Name\n- Client Domain\n- Authorized redirect URIs\n2.Click `Create`.\n\n### Required OAuth Scope :\nThis API can be accessed with the OAuth scope : `ZohoCliq.Users.CREATE`\n### Quota limit\nThe quota limit for this API is **5 requests per minute per "
+    },
+    {
+     "url": "https://zoho.com/cliq/help/platform/faq.html",
+     "title": "Developers FAQ | Cliq",
+     "snippet": "Yes, Cliq allows you to change your pricing plan when you are about to release an extension upgrade. But this will be applicable only for Major version releases. On a side note, you can also convert your extension from a paid app to a free extension while releasing an upgrade. Note: When you change your extension pricing plan from free to paid, the changes will be reflected only to new customers. Existing customers can continue to use your extension.\n\nZoho Cliq API is organized around REST, and follows HTTP rules. Cliq REST APIs are authenticated with an OAuth token. Register as a new client in Zoho's Developer Console . Click on \"Add client ID\" and give the required details to register and obtain an OAuth token provided exclusively for your application. The [OAuthentication flow ](https://www.zoho.com/cliq/help/restapi/#authentication)is explained in the Rest API document."
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v3/postman",
+     "title": "Postman Collection | Zoho Cliq",
+     "snippet": "## Prerequisites\n- A Zoho Cliq account.\n- A registered OAuth client to generate access tokens. If you have not yet registered a client, follow the steps on the [OAuth 2.0](https://zoho.com/cliq/help/restapi/v2/oauth/) page.\n- Postman installed version 8 or above. [Download Postman](https://www.postman.com/downloads/)."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Zoho Cliq API reference REST GraphQL endpoints documentation zoho.com/cliq",
+   "log_id": "log_Pvfmwc-Tl4Zs",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v2/messages",
+     "title": "Messages | Zoho Cliq | API Documentation",
+     "snippet": "# Messages\n## Get Messages\nRetrieves messages from a chat conversation that the user has access to.\n**Threshold limit**: 15 requests per min per user\nNumber of API calls allowed within a minute.\n**Lock period**: 5 minutes\nWait time before consecutive API requests.\n`OAuth Scope : ZohoCliq.Messages.READ`\n### Path Parameters\n### Query Parameters\nRequest Example\nClick to copy\n`headers_data = Map(); headers_data.put(\"Authorization\", \"Bearer 1000.41d9xxxxxxxxxxxxxxxxxxxxxxxxc2d1.8fccxxxxxxxxxxxxxxxxxxxxxxxx125f\"); response = invokeUrl [ url: \"https://cliq.zoho.com/api/v2/chats/CHAT_ID/messages\" type: GET headers: headers_data connection: <connection_name> ]; info response;`\n`OkHttpClient client = new OkHttpClient(); Request request = new Request.Builder() .url(\"https://cliq.zoho.com/api/v2/chats/CHAT_ID/messages\") .get() .addHeader(\"Authorization\", \"Bearer 1000.41d9xxxxxxxxxxxxxxxxxxxxxxxxc2d1.8fccxxxxxxxxxxxxxxxxxxxxxxxx125f\") .build(); Response response = client.newCall(request).execute();`\n`const options = { method: 'GET', headers: { Authorization: 'Bearer 1000.41d9xxxxxxxxxxxxxxxxxxxxxxxxc2d1.8fccxxxxxxxxxxxxxxxxxxxxxxxx125f' } }; fetch('https://cliq.zoho.com/api/v2/chats/CHAT_ID/mes"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v2",
+     "title": "Rest API documentation | Cliq",
+     "snippet": "REST is a kind of web-service architecture used for communication between two applications. REST API is organized around HTTP protocols, making it simple to use.\n**API Root Endpoint**\n> API Root End Point\n```\nhttps://cliq.zoho.com\n```\nCliq API is standardized around REST, allowing you to perform read and write operations that you do with our web client.\nThe relative path prefix /v2/ means that we are currently using version 2 of our API.\nThis API follows HTTP rules, identifies Cliq users using OAuth and provides response as a JSON Object.\nEvery resource URL is recognised as a resource identifier. The URL of each resource can be obtained by accessing the API Root Endpoint.\n**Networks**\n> API Root Endpoint for Networks\n```\nhttps://cliq.zoho.com/network/{NETWORK_UNIQUE_NAME}\nhttps://cliq.zoho.com/network/{NETWORK_ID}\n```\nCliq network is a dedicated space for collaborating with external business stakeholders such as partners, vendors, agencies, consultants, volunteers, and more. It equips you with an extensive set of configurable permissions to facilitate controlled, secure, and full-fledged external collaboration.\nIn the case of networks, the API Root endpoint differs. All the network"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v3/messagecards",
+     "title": "Message Cards | Zoho Cliq",
+     "snippet": "Message Cards are structured, interactive message formats in Zoho Cliq that go beyond plain text to deliver rich, engaging content inside conversations. They are used to present polls, inline data displays, and interactive prompts directly within a chat or channel, enabling bots and integrations to collect input, display structured information, and drive actions from users without leaving the conversation.\n\n- In V3, Message Cards are currently supported via chat conversations using `POST /chats/{CHAT_ID}/messages`.\n## Post a message card to a channel\nSend a structured Message Card to a specific channel. Use this to deliver polls, inline data cards, or approval prompts into a channel conversation. The `card` object in the request body varies depending on the card type: `poll`, `modern-inline`, or `prompt`.\n**Threshold limit**: 20 requests per min per user\nNumber of API calls allowed within a minute.\n**Lock period**: 10 minutes\nWait time before consecutive API requests.\n`OAuth Scope : ZohoCliq.Channels.CREATE`\n\n`parameters_data='{\"field1\":\"value1\",\"field2\":\"value2\"}'; headers_data = Map(); headers_data.put(\"Authorization\", \"Bearer 1000.41d9xxxxxxxxxxxxxxxxxxxxxxxxc2d1.8fccxxxxxxxxxxx"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v3/mentions",
+     "title": "Mentions | Zoho Cliq | API Documentation",
+     "snippet": "## Retrieve Mentions and Replies\nFetches a list of messages in which the authenticated user has been mentioned or replied to.\nThe results are returned in descending order (newest to oldest) and can be filtered using various query parameters such as time range, chat IDs, sender user IDs, and activity type (mentions or replies).\nThis endpoint allows users to easily track conversations that require their attention based on mentions and replies.\n**Threshold limit**: 30 requests per min per user\nNumber of API calls allowed within a minute.\n**Lock period**: 10 minutes\nWait time before consecutive API requests.\n`OAuth Scope : ZohoCliq.Chats.READ`\n\nchid\nstring\nFilter mentions by a specific chat ID.\nTo learn how to retrieve this ID, see [CHAT_ID](/cliq/help/restapi/v3/glossary/#CHAT_ID) in the Glossary page.\n\n`headers_data = Map(); headers_data.put(\"Authorization\", \"Bearer 1000.41d9xxxxxxxxxxxxxxxxxxxxxxxxc2d1.8fccxxxxxxxxxxxxxxxxxxxxxxxx125f\"); response = invokeUrl [ url: \"https://cliq.zoho.com/api/v3/mentions\" type: GET headers: headers_data connection: <connection_name> ]; info response;`\n\n**Note:** `CHAT_ID1` is a documentation alias for `CHAT_ID`, used to document the \"Silent mentions\""
+    },
+    {
+     "url": "https://zoho.com/cliq/help/restapi/v2/glossary",
+     "title": "Glossary | Zoho Cliq | API Documentation",
+     "snippet": "Every resource in Zoho Cliq, such as chats, messages, channels, users, and bots, is uniquely identified by an ID or a unique name. These identifiers are crucial and appear as path parameters in API endpoint URLs.\n- For example, in the endpoint `GET /api/v2/chats/{CHAT_ID}/messages`, the `{CHAT_ID}` is a path parameter that specifies which chat or conversation to retrieve messages from.\n- Understanding which identifier to use and how to find it is a common challenge when integrating with the API for the first time.\n\nThis glossary page lists all identifiers used across the Zoho Cliq REST API. It provides details on what each identifier represents, along with instructions for retrieving it via the Cliq UI and the API endpoint that returns it.\n## CHAT_ID\nThe unique identifier of a conversation, whether it's a direct message, group chat, channel, or thread, which is used across messaging endpoints to send, retrieve, or act on messages.\n**Note:** A channel has both a `CHANNEL_ID` (the channel object) and a `CHAT_ID` (the message stream). The two values are different. Do not use them interchangeably.\nVia UI\n- In the Cliq app, open the chat or channel. The `CHAT_ID` is the numeric value in"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Zoho Cliq zoho.com/cliq MCP server Model Context Protocol official",
+   "log_id": "log_8IgKTuAumKhd",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html",
+     "title": "Configuring Your Zoho MCP Server",
+     "snippet": "To configure your Zoho MCP server:\n1. Navigate to the **Zoho MCP console**. ([mcp.zoho.com](https://mcp.zoho.com/mcp-client#))\n2. Provide a name for your Zoho MCP server and click **Create Server**.\n![Naming Zoho MCP server](https://www.zohowebstatic.com/sites/zweb/images/cliq/naming-a-mcp-server.png)\n3. The Zoho MCP Server will be created. Click the **Configure Tools** button to configure the required tools\n4. Choose **Zoho Cliq**.\n![Zoho Cliq tool in Zoho MCP Server](https://www.zohowebstatic.com/sites/zweb/images/cliq/zoho-cliq-in-mcp-product-list.png)\n5. You will be presented with a list of tools. These tools provide the appropriate context and access to perform the required actions instructed in the prompt. You can also search for your required tools using the search-bar.\n\n6. Click **Add Now**, once you have selected the required tools.\n7. All the required tools will be added to your Zoho MCP server.\n\nA unique and secure URL will be generated by the Zoho MCP service each time you create a Zoho MCP server. This MCP URL will serve as the endpoint invoked when a prompt is executed from your MCP Client.\n![Setting up MCP URL](https://www.zohowebstatic.com/sites/zweb/images/cliq/mcp"
+    },
+    {
+     "url": "https://zoho.com/cliq/mcp-server.html",
+     "title": "Bring AI into your workflow with Zoho Cliq\u2019s Model Context Protocol (MCP)",
+     "snippet": "With Zoho Cliq's Model Context Protocol (MCP), AI in Cliq goes beyond conversation by letting your AI agent take action across Cliq, Zoho apps and beyond, not just chat.\nMCP is a standardized bridge between AI agents (like Claude, Windsurf, VS Code) and Cliq, layered on top of your data, apps, and actions - so you can say what you need in plain language, and watch it happen instantly\n\nThe Cliq MCP Server exposes Cliq's core capabilities as standardized tools, so MCP-compatible AI clients can read context, take action, and coordinate work across Zoho and third-party systems.\n\n### Understand what's happening\nAI reads your workspace, not just messages.\nCliq MCP gives AI access to channels, threads, users, roles, and past conversations \u2014 so it understands context, ownership, and decisions.\n### Coordinate teams in real time\nAI can organize people, not just data.\nCreate channels, route updates, notify the right teams, and respect org structure automatically.\n### Monitor and surface what matters\nImportant signals reach you before you look for them.\nAI monitors connected systems and brings critical updates into Cliq, where teams already work\n### Retrieve context instantly\nAsk once. Get the"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+     "title": "Guide to Zoho Cliq's MCP Server",
+     "snippet": "Model Context Protocol (MCP) is an open protocol that establishes the standardized way applications can interact with Large Language Models (LLMs). An MCP allows you to carry out your desired workflow on your preferred LLMs by providing the instructions to an AI model in the proper context.\nWith an MCP, you can instruct popular AI agents, or even custom AI agents, to interact with native or third-party applications and complete complex workflows with little to no human intervention.\n### **Zoho Cliq MCP Server**\nThe Zoho Cliq MCP Server brings your chats into the world of AI using the Model Context Protocol (MCP). This open protocol defines how AI agents can connect to real-world tools and data sources in a structured, predictable way.\nThe following diagram will provide you with an overview of what Zoho MCP will allow your AI agents to achieve:\n\nAny AI model or agent can use our official MCP server to access your Cliq data and do:\n- **More work, less chat**: Send quick messages to colleagues or groups with prompts like, \"Post a product launch announcement in the #marketing-updates channel\" or \"Schedule a message about the agenda of the competitor campaign to the brand strategy group"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/platform/connect-zoho-cliq-mcp-with-claude.html",
+     "title": "Connect Zoho Cliq MCP to Claude",
+     "snippet": "# **Integrate Zoho Cliq MCP server with MCP clients**\nNow, you can connect your MCP Server to your MCP Client with the MCP URL. To connect your Zoho MCP server with your MCP Client, ensure you have:\n- Created your Zoho MCP Server\n- Collected your MCP URL endpoint\n---\n# **Connecting Zoho Cliq MCP with Claude**\nLink [Claude](https://claude.ai/) with Zoho MCP to facilitate real-world workflows in Zoho Cliq through a secure and simple setup within your conversation window.\n#####\n### **Setting up Zoho Cliq MCP in Claude**\nNote: Only a Claude organization admin can complete these steps. Once connected, the integration is available to everyone in your Claude organization. However, only the admin can manage which tools are linked to the Zoho MCP instance.\n1. Navigate to the bottom right corner of the Claude desktop and click on your profile.\n2. Then, go to the **Settings**. Alternatively, you can open this link directly in your browser: [claude.ai/settings/connectors.](https://claude.ai/settings/connectors)\n![Claude with Zoho Cliq MCP](//www.zohowebstatic.com/sites/zweb/images/cliq/claude-settings-1.jpg)\n3. Click \"**Connectors**\" and select \"**Add Custom Connecto**r\" to create a new connec"
+    },
+    {
+     "url": "https://zoho.com/cliq/help/platform/zoho-cliq-mcp-tools.html",
+     "title": "Zoho Cliq MCP Tools",
+     "snippet": "# **Zoho Cliq MCP Tools**\nThe Zoho MCP server provides various tools for interacting with Zoho Cliq. The table below lists the available tools, along with their descriptions and everyday use cases.\n## **Bots**\nBots\n| Operation ID | Summary | Description |\n|---|---|---|\n| list_bots | List all bots | List all bots available to the authenticated user. |\n| create_bot | Create a bot | Create a new bot in Cliq with a display name, description, and access level. |\n| get_bot | Retrieve details of a specific bot | Retrieve the full configuration and details of a specific bot. |\n| update_bot | Update an existing bot | Update an existing bot's display name, description, access level, or logo. |\n| delete_bot | Delete a specific bot | Permanently delete a bot and all its handlers and configuration. |\n| get_bot_handler | Get details of a specific bot handler | Retrieve the configuration and Deluge code of a specific bot handler. |\n| create_bot_handler | Create a handler for a specific bot | Create a handler for a bot to define its behavior for a trigger event. |\n| update_bot_handler | Update a handler for a specific bot | Update a bot handler's execution logic or configuration. |\n| delete_bot_ha"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

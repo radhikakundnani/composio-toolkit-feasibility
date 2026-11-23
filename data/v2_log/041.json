@@ -1,0 +1,35 @@
+{
+  "id": 41,
+  "app": "Shopify",
+  "changes": [
+    {
+      "field": "mcp_note",
+      "from": "@shopify/dev-mcp (docs/schema tooling) and Storefront/Customer Accounts MCP at shopify.dev",
+      "to": "Shopify-hosted MCP servers for storefront/catalog, cart, checkout and Customer Accounts (shopify.dev/docs/agents, mcp.shop.com); no Admin/merchant-management MCP seen. @shopify/dev-mcp (AI Toolkit) is docs/schema dev tooling only and not counted.",
+      "why": "Clarify that official status rests on hosted Storefront Catalog/Cart/Checkout/Customer Accounts MCP, not dev-mcp",
+      "evidence": "https://shopify.dev/docs/agents/catalog/storefront-catalog"
+    },
+    {
+      "field": "evidence.mcp",
+      "from": "https://shopify.dev/docs/apps/build/ai-toolkit",
+      "to": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+      "why": "ai-toolkit page is developer tooling; cite the hosted data MCP instead",
+      "evidence": "https://shopify.dev/docs/agents/catalog/storefront-catalog"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://shopify.dev/changelog/abandonedcheckouturl-now-requires-level-2-protected-customer-data-access",
+      "to": "https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard",
+      "why": "Old cite was an unrelated changelog about abandonedCheckoutUrl; cite the Dev Dashboard app-creation doc",
+      "evidence": "https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard"
+    }
+  ],
+  "confirmed": [
+    "auth_primary",
+    "access",
+    "api_types",
+    "blocker",
+    "verdict"
+  ],
+  "searches": 5
+}

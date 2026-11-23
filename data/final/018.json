@@ -1,0 +1,35 @@
+{
+ "id": 18,
+ "app": "Help Scout",
+ "category": "Support and Helpdesk",
+ "one_liner": "Email-first help desk with shared inboxes, live chat and knowledge base.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_trial",
+ "access_notes": "OAuth2 app; 15-day trial on Plus plan includes API, no credit card; Free plan excludes API so paid Standard+ needed after trial.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "Trial includes API; afterwards paid plan needed (no API on Free; Standard lacks reporting endpoints).",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+  "access": "https://docs.helpscout.com/article/1140-mailbox-api",
+  "surface": "https://developer.helpscout.com/llms.txt",
+  "mcp": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports"
+ },
+ "verified": true
+}

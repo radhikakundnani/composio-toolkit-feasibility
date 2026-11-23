@@ -1,0 +1,21 @@
+{
+  "id": 53,
+  "app": "Ahrefs",
+  "changes": [
+    {
+      "field": "mcp_note",
+      "from": "https://api.ahrefs.com/mcp/mcp ; docs.ahrefs.com/docs/mcp/introduction",
+      "to": "https://api.ahrefs.com/mcp/mcp ; docs.ahrefs.com/docs/mcp/introduction (hosted MCP requires Lite plan or higher)",
+      "why": "Docs state hosted MCP is for Lite plan or higher; keeps official",
+      "evidence": "https://docs.ahrefs.com/mcp/docs/introduction.md"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 3
+}

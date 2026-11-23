@@ -1,0 +1,35 @@
+{
+ "id": 68,
+ "app": "MongoDB Atlas",
+ "category": "Database / DBaaS",
+ "one_liner": "Managed cloud MongoDB service with an Administration API for clusters and projects.",
+ "auth_methods": [
+  "oauth2",
+  "basic"
+ ],
+ "auth_primary": "oauth2",
+ "access": "unknown",
+ "access_notes": "Org Owner creates a service account (OAuth2 client credentials) or legacy digest API key; Atlas OAuth 2.1 App Connections exists for third parties.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://github.com/mongodb-js/mongodb-mcp-server",
+ "verdict": "ready_with_caveats",
+ "blocker": "other",
+ "blocker_note": "Admin API does not expose stored data; data access needs DB user credentials; free-tier access not shown.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://mongodb.com/docs/atlas/api/api-authentication",
+  "access": "https://mongodb.com/docs/atlas/configure-api-access",
+  "surface": "https://mongodb.com/docs/atlas/api/atlas-admin-api-ref",
+  "mcp": "https://mongodb.com/docs/mcp-server/overview"
+ }
+}

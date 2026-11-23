@@ -1,0 +1,35 @@
+{
+  "id": 20,
+  "app": "Gladly",
+  "category": "Support and Helpdesk",
+  "one_liner": "Customer service platform with unified customer timeline and app platform.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "access": "partner_or_sales_gated",
+  "access_notes": "Account with API user role creates API tokens; Gladly typically needs demo and custom pricing, no self-serve trial shown.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "community",
+  "mcp_note": "https://stackone.com/connectors/gladly/mcp",
+  "verdict": "needs_outreach",
+  "blocker": "contact_sales",
+  "blocker_note": "Trial requires demo request; no public self-serve signup in evidence.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "low"
+  },
+  "evidence": {
+    "auth": "https://help.gladly.com/generate-api-tokens-and-create-webhooks",
+    "access": "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly",
+    "surface": "https://developer.gladly.com/rest",
+    "mcp": "https://stackone.com/connectors/gladly/mcp"
+  }
+}

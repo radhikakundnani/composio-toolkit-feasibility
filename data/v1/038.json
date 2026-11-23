@@ -1,0 +1,34 @@
+{
+  "id": 38,
+  "app": "Pinterest",
+  "category": "Social Media",
+  "one_liner": "Manage Pinterest pins, boards, ads, audiences and analytics via API v5.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "approval_required",
+  "access_notes": "Create app with business account; app approved for Trial access (1,000 req/day), upgrade to Standard requires review.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "Pinterest MCP Server (https://developer.pinterest.com/about-pinterest-mcp)",
+  "verdict": "ready_with_caveats",
+  "blocker": "partner_or_app_review",
+  "blocker_note": "Trial approval and Standard upgrade review required; reported delays/denials.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+    "access": "https://developers.pinterest.com/docs/key-concepts/developer-guidelines",
+    "surface": "https://developers.pinterest.com/docs/api/v5/pins-list",
+    "mcp": "https://developer.pinterest.com/about-pinterest-mcp"
+  }
+}

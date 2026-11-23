@@ -1,0 +1,33 @@
+{
+  "id": 3,
+  "app": "Pipedrive",
+  "changes": [
+    {
+      "field": "access",
+      "from": "self_serve_free",
+      "to": "self_serve_trial",
+      "why": "No free plan; API token on every paid plan with 14-day free trial",
+      "evidence": "https://pipedrive.com/en/pricing"
+    },
+    {
+      "field": "access_notes",
+      "from": "API token on every plan; OAuth 2.0 via developer sandbox account for marketplace apps.",
+      "to": "API token on every plan (no free plan; 14-day free trial); OAuth 2.0 for marketplace apps.",
+      "why": "pricing shows trial only",
+      "evidence": "https://pipedrive.com/en/pricing"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://pipedrive.com/en/features/crm-api",
+      "to": "https://pipedrive.com/en/pricing",
+      "why": "pricing page is direct evidence of plan/trial",
+      "evidence": "https://pipedrive.com/en/pricing"
+    }
+  ],
+  "confirmed": [
+    "mcp (official native MCP launched 2026-06-30)",
+    "auth",
+    "verdict"
+  ],
+  "searches": 4
+}

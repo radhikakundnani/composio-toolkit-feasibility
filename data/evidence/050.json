@@ -1,0 +1,142 @@
+{
+ "id": 50,
+ "app": "fanbasis",
+ "hint": "fanbasis.com",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "fanbasis API authentication OAuth API key access token developer docs fanbasis.com",
+   "log_id": "log_xlkRU1-y_i1-",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://demo.embedded.fanbasis.io/docs/checkout-session-secret",
+     "title": "Vite + React + TS",
+     "snippet": "A checkout session secret is a secure token that authenticates your application with the FanBasis payment system. It's required for all SDK initializations and can be reused across multiple checkout sessions.\n\nTo create a checkout session secret, you need to make a request to the FanBasis API using your API key from your seller portal.\n### API Request\nUse the following API endpoint to create a checkout session secret:\n```\ncurl --location --request POST 'https://www.fanbasis.com/public-api/checkout-sessions/embedded' \\ --header 'x-api-key: [api key]'\n```\n### \u26a0\ufe0f Important\nReplace `[api key]` with your actual API key from your FanBasis seller portal. You can find your API key in your merchant dashboard under the API section.\n### Response Format\nThe API will return a response containing your checkout session secret:\n```\n{\n\"status\": \"success\",\n\"message\": \"Embedded checkout session created successfully\",\n\"data\": {\n\"id\": 2,\n\"checkout_session_secret\": \"84efcbc9-c8c9-49cf-8c7b-8b6b18939984\",\n\"metadata\": {\n\"allowed_payment_methods\": [\"card\", \"cashapp\"] // You can enable/disable payment methods here while creating the session secret\n... // Other metadata you can add here\n},\n\"created_at\": \"202"
+    },
+    {
+     "url": "https://docs.aura-app.ai/integrations/fanbasis",
+     "title": "Fanbasis | Aura Docs",
+     "snippet": "The Fanbasis integration is **Phase 1**: OAuth connection and identity. Product and order sync (Phase 1.5) will land once Fanbasis publishes those endpoints. Connect today to be ready when those features ship \u2014 your historical sales will backfill automatically.\n\n### Step 1: Make sure Fanbasis is enabled for your account\nFanbasis is currently a gated integration. If you don't see it in your Aura **Integrations** list, contact support \u2014 we'll enable it on request.\n### Step 2: Open the integrations page\nIn Aura, go to **Integrations \u2192 Fanbasis**. (Or visit `/integrations/fanbasis` directly.)\n### Step 3: Click \"Connect\"\nYou'll be redirected to Fanbasis to authorize Aura. Fanbasis uses **OAuth 2.0 with PKCE** for the authorization flow \u2014 Aura never sees your Fanbasis password and stores nothing beyond the access token.\n### Step 4: Confirm in Fanbasis\nFanbasis shows a consent screen with the scopes Aura is requesting. Click **Authorize**. You're sent back to Aura.\n### Step 5: Verify the connection\nYou should see \"Connected\" with your Fanbasis account name. Connection complete.\n## What Phase 1 does today\n- **Identity sync**: Aura knows which Fanbasis account you've connected.\n- **Token li"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+     "title": "raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+     "snippet": "```env\nFANBASIS_API_KEY=your-api-key\nFANBASIS_WEBHOOK_SECRET=whsec_your-secret\nFANBASIS_CREATOR_HANDLE=your-handle   # only needed for embedded checkout\n```\n### What You Need from Fanbasis\n1. **API Key** \u2014 [FanBasis Dashboard \u2192 API Keys](https://www.fanbasis.com). Required for all API calls.\n2. **Webhook Secret** \u2014 returned once when you create a webhook subscription. Used for HMAC-SHA256 signature verification.\n3. **Creator Handle** \u2014 your FanBasis username (visible in your profile URL). Only needed for embedded checkout URLs.\nNo OAuth, no client ID/secret pairs \u2014 Fanbasis uses a single API key with separate test/live environments.\n\n**Signature verification** is automatic when `FANBASIS_WEBHOOK_SECRET` is set. Uses HMAC-SHA256 on the raw request body per [Fanbasis docs](https://apidocs.fan/#webhooks)."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+     "title": "raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+     "snippet": "## Authentication\nAll requests require an `x-api-key` header:\n```\nx-api-key: YOUR_API_KEY\n```\nEvery response carries `status` (`\"success\"` or `\"error\"`), a human-readable `message`, and `data`. Most responses also carry an opaque `request_id` string \u2014 include it when contacting support so the exact request can be traced. `request_id` is **not** on every response: the discount-code and embedded-checkout responses omit it.\n### API Key Scopes\nEvery API key carries a set of scopes. A key that lacks the scope for a route is rejected with `403`:\n```json\n{\n\"status\": \"error\",\n\"message\": \"API key does not have permission for this resource. Required scope(s): refunds\"\n}\n```\n| Scope | Routes it covers |\n|---|---|\n| `checkout-sessions` | `/public-api/checkout-sessions/*` (everything except the refund endpoint), `/public-api/products/*`, `/public-api/discount-codes/*` |\n| `refunds` | `POST /public-api/checkout-sessions/transactions/:transactionId/refund` |\n| `payments` | `/public-api/transactions/*` |\n| `webhooks` | `/public-api/webhook-subscriptions/*` |\n| `customers` | `/public-api/customers/*`, `/public-api/subscribers` |\n| `subscriptions` | The Subscription Proration endpoints (`/api/seller"
+    },
+    {
+     "url": "https://mintlify.wiki/MatthewSabia1/AdRecon/api/fanbasis",
+     "title": "Fanbasis Integration",
+     "snippet": "The Fanbasis integration provides payment-gated access to AdRecon. It consists of two endpoint groups:\n1. **Admin endpoints** (`/api/admin/fanbasis`) \u2014 Manage products, webhook registration, and view logs\n2. **Webhook endpoint** (`/api/fanbasis/webhook`) \u2014 Public webhook receiver for payment events\nFanbasis is a payment platform for digital products. This integration automatically provisions Supabase auth accounts when users purchase enabled offers.\n##\n\u200b\nConfiguration\nSet these environment variables:\n| Variable | Purpose | Required |\n|---|---|---|\n| `FANBASIS_API_KEY` | Fanbasis API key for admin actions | Yes (admin features) |\n| `SUPABASE_URL` | Supabase project URL | Yes |\n| `SUPABASE_SERVICE_ROLE_KEY` | Server-side auth key | Yes |\n| `FANBASIS_MAGIC_LINK_REDIRECT_URL` | Post-login redirect URL | No (falls back to request host) |\nWebhook secret is stored in Supabase (`integration_secrets` table) after registration.\n---\n##\n\u200b\nAdmin Endpoints\nAll admin endpoints require:\n```\nAuthorization : Bearer <admin_access_token>\n```\n\n####\n\u200b\nAction: test_connection\nVerify API key by making a test request to Fanbasis.\nRequest\n```\n{ \"action\" : \"test_connection\" }\n```\nResponse (Success)\n```\n{ \"ok"
+    }
+   ]
+  },
+  "access": {
+   "query": "fanbasis fanbasis.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_TUyehERDRzGv",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+     "title": "Vite + React + TS",
+     "snippet": "You need these values from your Fanbasis dashboard:\n- **creatorId**: Your unique creator identifier\n- **productId**: The product you want to sell\n- **checkoutSessionSecret**: A secure session secret\n- **environment**: Either 'sandbox' or 'production'\n### Getting Your Credentials\n1. Log in to your Fanbasis merchant dashboard\n2. Navigate to the API section\n3. Copy your creator ID and generate a session secret\n4. Create or select a product to get the product ID"
+    },
+    {
+     "url": "https://fanbaseapi.openstage.live/guides.html",
+     "title": "Guides - Fanbase API Documentation",
+     "snippet": "Fanbase API is available exclusively to artists on the Legendary plan. If you are on Legendary and ready to get started, everything you need is in this documentation.\nYour Artist ID is available from your Artist Success Account Manager. No additional provisioning is required to access the staging environment. When you are ready to go live, switch to the live base URL.\n\n### Access Tokens\nMost APIs require an Access Token identifying the Fan.\n#### New Fans\nA new Access Token is obtained in a two-step process:\n1. Call `fan/email/signup` (no auth required). This will generate an email to the given email address. This email contains a Signup Token appended to the returnUrl you supply.\n2. Call `fan/signup` using the Signup Token acquired in step 1. This will return a Fan record containing an Access Token. This should be stored and used for subsequent requests.\n#### Existing Fans\nExisting Fans can obtain an Access Token in two ways:\n- Use `fan/login` API\n- Use `fan/email/magic-link` to receive an email containing a Magic Link token which can be exchanged for an Access Token by calling `fan/login/magic-link` API.\n## FAQ\n### How do I get access to Fanbase API?\nFanbase API is available exclu"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+     "title": "raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+     "snippet": "### What You Need from Fanbasis\n1. **API Key** \u2014 [FanBasis Dashboard \u2192 API Keys](https://www.fanbasis.com). Required for all API calls.\n2. **Webhook Secret** \u2014 returned once when you create a webhook subscription. Used for HMAC-SHA256 signature verification.\n3. **Creator Handle** \u2014 your FanBasis username (visible in your profile URL). Only needed for embedded checkout URLs.\nNo OAuth, no client ID/secret pairs \u2014 Fanbasis uses a single API key with separate test/live environments.\n\n### Subscription\n```php\nPayment::gateway('fanbasis')->checkout(new CheckoutRequest(\namount: 29.99,\nproductName: 'Pro Monthly',\nwebhookUrl: route('payments.webhook', 'fanbasis'),\nextra: [\n'subscription' => [\n'frequency_days'  => 30,\n'free_trial_days' => 7,\n],\n],\n));\n```\n\n```php\n$fb = Payment::gateway('fanbasis');\n```"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
+     "title": "raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
+     "snippet": "## Authentication\nAll requests require an `x-api-key` header:\n```\nx-api-key: YOUR_API_KEY\n```\nEvery response carries `status` (`\"success\"` or `\"error\"`), a human-readable `message`, and `data`. Most responses also carry an opaque `request_id` string \u2014 include it when contacting support so the exact request can be traced. `request_id` is **not** on every response: the discount-code and embedded-checkout responses omit it.\n### API Key Scopes\nEvery API key carries a set of scopes. A key that lacks the scope for a route is rejected with `403`:\n```json\n{\n\"status\": \"error\",\n\"message\": \"API key does not have permission for this resource. Required scope(s): refunds\"\n}\n```\n| Scope | Routes it covers |\n|---|---|\n| `checkout-sessions` | `/public-api/checkout-sessions/*` (everything except the refund endpoint), `/public-api/products/*`, `/public-api/discount-codes/*` |\n| `refunds` | `POST /public-api/checkout-sessions/transactions/:transactionId/refund` |\n| `payments` | `/public-api/transactions/*` |\n| `webhooks` | `/public-api/webhook-subscriptions/*` |\n| `customers` | `/public-api/customers/*`, `/public-api/subscribers` |\n| `subscriptions` | The Subscription Proration endpoints (`/api/seller"
+    },
+    {
+     "url": "https://whop.com/blog/fanbasis-alternatives",
+     "title": "FanBasis (now Commas) alternatives: 10 best options for 2026",
+     "snippet": "Subscription billing, event ticketing, and free trial features are available, as well as ways to recruit, track, and pay affiliates."
+    }
+   ]
+  },
+  "surface": {
+   "query": "fanbasis API reference REST GraphQL endpoints documentation fanbasis.com",
+   "log_id": "log_NaQEqK4UsvJ8",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+     "title": "raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+     "snippet": "# Commas API Reference\n> **AI-optimized reference** \u2014 every endpoint, parameter, request/response example, webhook event, and error code in the Commas public API.\n## Base URL\n```\nhttps://www.fanbasis.com\n```\nAll endpoint paths are documented with the full route (including the `/public-api/...` prefix), so a complete request URL is `{base}{path}` \u2014 e.g. `https://www.fanbasis.com/public-api/products`.\n## Authentication\nAll requests require an `x-api-key` header:\n```\nx-api-key: YOUR_API_KEY\n```\nEvery response carries `status` (`\"success\"` or `\"error\"`), a human-readable `message`, and `data`. Most responses also carry an opaque `request_id` string \u2014 include it when contacting support so the exact request can be traced. `request_id` is **not** on every response: the discount-code and embedded-checkout responses omit it.\n### API Key Scopes\nEvery API key carries a set of scopes. A key that lacks the scope for a route is rejected with `403`:\n```json\n{\n\"status\": \"error\",\n\"message\": \"API key does not have permission for this resource. Required scope(s): refunds\"\n}\n```\n| Scope | Routes it covers |\n|---|---|\n| `checkout-sessions` | `/public-api/checkout-sessions/*` (everything except the refu"
+    },
+    {
+     "url": "https://demo.embedded.fanbasis.io/docs/checkout-session-secret",
+     "title": "Vite + React + TS",
+     "snippet": "To create a checkout session secret, you need to make a request to the FanBasis API using your API key from your seller portal.\n### API Request\nUse the following API endpoint to create a checkout session secret:\n```\ncurl --location --request POST 'https://www.fanbasis.com/public-api/checkout-sessions/embedded' \\ --header 'x-api-key: [api key]'\n```\n### \u26a0\ufe0f Important\nReplace `[api key]` with your actual API key from your FanBasis seller portal. You can find your API key in your merchant dashboard under the API section.\n### Response Format\nThe API will return a response containing your checkout session secret:\n```\n{\n\"status\": \"success\",\n\"message\": \"Embedded checkout session created successfully\",\n\"data\": {\n\"id\": 2,\n\"checkout_session_secret\": \"84efcbc9-c8c9-49cf-8c7b-8b6b18939984\",\n\"metadata\": {\n\"allowed_payment_methods\": [\"card\", \"cashapp\"] // You can enable/disable payment methods here while creating the session secret\n... // Other metadata you can add here\n},\n\"created_at\": \"2025-11-13T16:39:51.000000Z\"\n}\n}\n```"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
+     "title": "raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md",
+     "snippet": "# Commas API Reference\n> **AI-optimized reference** \u2014 every endpoint, parameter, request/response example, webhook event, and error code in the Commas public API.\n## Base URL\n```\nhttps://www.fanbasis.com\n```\nAll endpoint paths are documented with the full route (including the `/public-api/...` prefix), so a complete request URL is `{base}{path}` \u2014 e.g. `https://www.fanbasis.com/public-api/products`.\n## Authentication\nAll requests require an `x-api-key` header:\n```\nx-api-key: YOUR_API_KEY\n```\nEvery response carries `status` (`\"success\"` or `\"error\"`), a human-readable `message`, and `data`. Most responses also carry an opaque `request_id` string \u2014 include it when contacting support so the exact request can be traced. `request_id` is **not** on every response: the discount-code and embedded-checkout responses omit it.\n### API Key Scopes\nEvery API key carries a set of scopes. A key that lacks the scope for a route is rejected with `403`:\n```json\n{\n\"status\": \"error\",\n\"message\": \"API key does not have permission for this resource. Required scope(s): refunds\"\n}\n```\n| Scope | Routes it covers |\n|---|---|\n| `checkout-sessions` | `/public-api/checkout-sessions/*` (everything except the refu"
+    },
+    {
+     "url": "https://npmjs.com/package/@fanbasis/checkout-sdk?activeTab=readme",
+     "title": "@fanbasis/checkout-sdk",
+     "snippet": "This library provides convenient access to the Fanbasis Checkout REST API from server-side TypeScript or JavaScript.\nThe full API of this library can be found in [api.md](https://github.com/FanBasis/fanbasis-sdk/blob/HEAD/api.md).\nIt is generated with [Stainless](https://www.stainless.com/).\n## Installation\n```\nnpm install @fanbasis/checkout-sdk\n```\n## Usage\nThe full API of this library can be found in [api.md](https://github.com/FanBasis/fanbasis-sdk/blob/HEAD/api.md).\n```\nimport FanbasisCheckout from '@fanbasis/checkout-sdk' ; const client = new FanbasisCheckout ( { apiKey : process . env [ 'FANBASIS_CHECKOUT_API_KEY' ] , // This is the default and can be omitted environment : 'sandbox' , // defaults to 'production' } ) ; const checkoutSession = await client . checkoutSessions . create ( ) ; console . log ( checkoutSession . data ) ;\n```\n### Request & Response types\nThis library includes TypeScript definitions for all request params and response fields. You may import and use them like so:\n```\nimport FanbasisCheckout from '@fanbasis/checkout-sdk' ; const client = new FanbasisCheckout ( { apiKey : process . env [ 'FANBASIS_CHECKOUT_API_KEY' ] , // This is the default and can be om"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+     "title": "raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+     "snippet": "# Fanbasis Gateway\nFull Fanbasis API integration: checkout sessions, customers, subscribers, discount codes, products, transactions, refunds, and webhook management.\n> **API Reference:** [apidocs.fan](https://apidocs.fan)\n---\n## Setup\n```env\nFANBASIS_API_KEY=your-api-key\nFANBASIS_WEBHOOK_SECRET=whsec_your-secret\nFANBASIS_CREATOR_HANDLE=your-handle   # only needed for embedded checkout\n```\n### What You Need from Fanbasis\n1. **API Key** \u2014 [FanBasis Dashboard \u2192 API Keys](https://www.fanbasis.com). Required for all API calls.\n2. **Webhook Secret** \u2014 returned once when you create a webhook subscription. Used for HMAC-SHA256 signature verification.\n3. **Creator Handle** \u2014 your FanBasis username (visible in your profile URL). Only needed for embedded checkout URLs.\nNo OAuth, no client ID/secret pairs \u2014 Fanbasis uses a single API key with separate test/live environments.\n---\n## Checkout Modes\n### One-Time Payment\n```php\nPayment::gateway('fanbasis')->checkout(new CheckoutRequest(\namount: 299.00,\nproductName: 'Funded Account',\nproductDescription: '$10K challenge',\nsuccessUrl: 'https://app.com/success',\nwebhookUrl: route('payments.webhook', 'fanbasis'),\nmetadata: ['invoice_id' => 'inv_123'], "
+    }
+   ]
+  },
+  "mcp": {
+   "query": "fanbasis fanbasis.com MCP server Model Context Protocol official",
+   "log_id": "log_zPed1WvWyOQn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "http://zapier.com/mcp/fanbasis",
+     "title": "FanBasis MCP Server - MCP AI | Zapier",
+     "snippet": "Zapier FanBasis MCP lets you connect FanBasis's actions with any AI tool that supports MCP, all without managing integrations or writing glue code. It's built for developers who want flexibility without complexity.\n### Step 1: Generate your secure MCP URL\nGet your unique, dynamic MCP server URL instantly. This endpoint securely connects your AI assistant to Zapier's vast integration network.\n### Step 2: Choose your Zapier Actions\nCustomize the specific actions your AI assistant can perform within FanBasis. Select and scope actions to align with your FanBasis workflows.\n\n### Step 3: Connect with your tool of choice\nIntegrate your AI Assistant seamlessly using your generated MCP endpoint, enabling your AI Assistant to execute real-world tasks securely and reliably.\n\nWhat is MCP?\nModel Context Protocol allows your AI apps to securely interact with tools. Zapier MCP connects you to Zapier's vast ecosystem of 9,000+ integrations."
+    },
+    {
+     "url": "https://zapier.com/apps/fanbasis/integrations/manychat",
+     "title": "FanBasis Manychat Integration - Quick Connect - Zapier",
+     "snippet": "Beyond Zap workflows. Call FanBasis and Manychat actions directly from your AI client or your codebase, using the same 9,000+ app integrations Zapier already runs.\nNo code\n### Connect via Zapier MCP\nExpose FanBasis and Manychat actions as tools in any MCP client. Authenticate once, then call them in natural language.\nExample actions on this page\nWorks with\nClaude \u00b7 ChatGPT \u00b7 Cursor \u00b7 any MCP-compatible client\n[Connect Zapier MCP](https://mcp.zapier.com)\nTypescript\n### Call from code with the Zapier SDK\nTrigger FanBasis and Manychat actions from backend services, scripts, or agent code.\nInstall\n```\n# TypeScript / Node npm install @zapier/zapier-sdk\n```\nRun an action\n```\nimport { createZapierSdk } from '@zapier/zapier-sdk'; const zapier = createZapierSdk(); await zapier.runAction({ /* fanbasis / manychat action */ });\n```\n[Run the SDK docs](https://docs.zapier.com/sdk/quickstart)\nThere is no Python package yet. SDK is TypeScript-only (@zapier/zapier-sdk). The MCP server URL is personal to your account; get it at zapier.com/mcp."
+    },
+    {
+     "url": "https://github.com/modelcontextprotocol/servers",
+     "title": "GitHub - modelcontextprotocol/servers: Model Context Protocol Reference Servers",
+     "snippet": "# Model Context Protocol servers\nThis repository is a collection of *reference implementations* for the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), as well as references to community-built servers and additional resources.\nImportant\nIf you are looking for a list of MCP servers, you can browse published servers on [the MCP Registry](https://registry.modelcontextprotocol.io/). The repository served by this README is dedicated to housing just the small number of reference servers maintained by the MCP steering group.\nWarning\nThe servers in this repository are intended as **reference implementations** to demonstrate MCP features and SDK usage. They are meant to serve as educational examples for developers building their own MCP servers, not as production-ready solutions. Developers should evaluate their own security requirements and implement appropriate safeguards based on their specific threat model and use case.\nThe servers in this repository showcase the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with a"
+    },
+    {
+     "url": "https://zapier.com/apps/fanbasis/integrations/aweber",
+     "title": "FanBasis AWeber Integration - Quick Connect - Zapier",
+     "snippet": "# Connect FanBasis and AWeber to power AI-driven automation\n- No-code AI automation\n- Full audit trails and controls\n- SOC 2 and GDPR compliant\n- Easy visual workflow builder\n- 9,000+ apps, 450+ AI tools\n- Free tier available\n\nBeyond Zap workflows. Call FanBasis and AWeber actions directly from your AI client or your codebase, using the same 9,000+ app integrations Zapier already runs.\nNo code\n### Connect via Zapier MCP\nExpose FanBasis and AWeber actions as tools in any MCP client. Authenticate once, then call them in natural language.\nExample actions on this page\nWorks with\nClaude \u00b7 ChatGPT \u00b7 Cursor \u00b7 any MCP-compatible client\n[Connect Zapier MCP](https://mcp.zapier.com)\nTypescript\n### Call from code with the Zapier SDK\nTrigger FanBasis and AWeber actions from backend services, scripts, or agent code.\nInstall\n```\n# TypeScript / Node npm install @zapier/zapier-sdk\n```\nRun an action\n```\nimport { createZapierSdk } from '@zapier/zapier-sdk'; const zapier = createZapierSdk(); await zapier.runAction({ /* fanbasis / aweber action */ });\n```\n[Run the SDK docs](https://docs.zapier.com/sdk/quickstart)\nThere is no Python package yet. SDK is TypeScript-only (@zapier/zapier-sdk). The MCP serve"
+    },
+    {
+     "url": "https://github.com/resources/articles/what-is-mcp-model-context-protocol",
+     "title": "What is Model Context Protocol (MCP)? \u00b7 GitHub",
+     "snippet": "Model Context Protocol (MCP) connects AI models to tools, data, and services in a standardized way, enabling AI systems to take controlled actions.\n## MCP Defined\nThe Model Context Protocol (MCP) is an open-source client\u2013server protocol that defines how AI systems discover capabilities, exchange structured context, and execute actions through external tools and services. Instead of building custom integrations for every application, MCP establishes a standardized interface between an MCP client\u2014such as an integrated development environment (IDE) or AI assistant\u2014and an MCP server that exposes tools, APIs, data sources, and workflows. Through this architecture, AI systems can dynamically discover available capabilities, send structured requests, and receive validated responses in a consistent and secure way. MCP provides a structured method for helping AI systems to interact with real-world applications without requiring custom integrations for every tool.\nThe protocol was originally introduced by Anthropic and later adopted and expanded by GitHub in collaboration with other industry leaders. GitHub took ownership of the specification, rewrote it for broader applicability, and releas"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

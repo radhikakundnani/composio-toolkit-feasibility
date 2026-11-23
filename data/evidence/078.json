@@ -1,0 +1,142 @@
+{
+ "id": 78,
+ "app": "Coda",
+ "hint": "coda.io/developers",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Coda API authentication OAuth API key access token developer docs coda.io/developers",
+   "log_id": "log_O16JpIA2Ocl4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://coda.github.io/packs-sdk/guides/advanced/authentication",
+     "title": "Coda Pack SDK",
+     "snippet": "One of the key use cases for Packs is integrating Coda with other apps and services, which often involves some form of authentication. When building a Pack you specify the type of authentication required by the API and Coda handles the credentials exchange, token storage, and account management.\n\nThere are two supported forms of authentication: per-user and system-wide.\n### Per-user authentication\u00b6\nUser authentication requires that users of the Pack provide their own credentials. This is the most common form of authentication, as it allows the Pack to access the private data of each user. To add per-user authentication use the `setUserAuthentication()` method:\n```\npack.setUserAuthentication({\n// A variety of different authentication types are supported.\ntype: coda.AuthenticationType.HeaderBearerToken,\n// Additional settings...\n});\n```\nThe types of authentication supported, as well as the additional settings, are described in the sections below.\n### System-wide authentication\u00b6\nSystem authentication requires the Pack maker to provide a single set of credentials that all users will share. This form of authentication is often used for APIs that require an API key or token, but don't pr"
+    },
+    {
+     "url": "https://community.coda.io/t/two-new-types-of-authentication-supported-in-the-pack-sdk/44952",
+     "title": "Two new types of authentication supported in the Pack SDK",
+     "snippet": "To help ensure more APIs are compatible with Packs, we\u2019ve recently added two new types of authentication that you can use:\n### `OAuth2ClientCredentials`\nAn increasingly popular variant of OAuth2, the `client_credentials` flow involves directly trading in a client ID and secret for a short-lived access token. Previously you could employ workarounds using `Custom` authentication and generating new tokens on every execution, but we\u2019ve now added support for this form of OAuth directly in the SDK:\n```typescript\npack.setSystemAuthentication({ type: coda.AuthenticationType.OAuth2ClientCredentials, // This URL comes from the API's developer documentation. tokenUrl: \"https://api.example.com/token\", });\n```\nYou can read more about this authentication type, and how it compares to the other flows, in the [OAuth2 guide](https://coda.io/packs/build/latest/guides/basics/authentication/oauth2/#supported-oauth-flows).\n### `MultiHeaderToken`\nWhat\u2019s better than one header token? Two header tokens of course! And with the new `MultiHeaderToken` authentication type you can pass any number of tokens in HTTP headers, if your API requires it.\n```typescript\npack.setUserAuthentication({ type: coda.Authentica"
+    },
+    {
+     "url": "https://rollout.com/integration-guides/coda/how-to-build-a-public-coda-integration-building-the-auth-flow",
+     "title": "How to build a Coda API integration",
+     "snippet": "First things first, head over to Coda's developer portal and create a new integration. It's pretty straightforward:\n1. Log in to the Coda developer portal\n2. Click on \"Create New Integration\"\n3. Fill in the basic details\nOnce you've done that, you'll get a client ID and client secret. These are like your integration's username and password, so keep them safe!\nNow for the fun part \u2013 let's build this auth flow!\n### Initiating the auth request\nWe'll start by constructing the authorization URL. It'll look something like this:\n```\nconst authUrl = ` https://coda.io/oauth2/authorize?client_id= ${ clientId } &redirect_uri= ${ redirectUri } &scope= ${ scope } &response_type=code ` ;\n```\nWhen a user wants to connect their Coda account, you'll redirect them to this URL. Coda will handle the heavy lifting of authenticating the user.\n### Handling the callback\nAfter the user grants permission, Coda will redirect them back to your specified redirect URI with an authorization code. You'll need to set up a route to handle this:\n```\napp . get ( '/callback' , async ( req , res ) => { const code = req . query . code ; // Exchange this code for an access token } ) ;\n```\n### Exchanging the code for an a"
+    },
+    {
+     "url": "https://coda.io/packs/build/latest/guides/basics/authentication/oauth2",
+     "title": "Authenticating using OAuth - Superhuman Packs SDK",
+     "snippet": "types, which specify how exactly credentials are exchanged. The Pack SDK currently supports two of these flows:\n- ****Authorization Code** (`grant_type=authorization_code`)** This is the standard OAuth2 flow that most people are familiar with, meant for accessing a user's private data. The user at the keyboard is redirected to a screen where they login to the application, approve access, and then are redirected back.\nTo use this flow in the Pack SDK select the authentication type [`OAuth2`](../../../../reference/sdk/core/type-aliases/OAuth2Authentication/).\n- ****Client Credentials** (`grant_type=client_credentials`)** This OAuth2 flow doesn't usually involve the user and the keyboard at all, but is a way for the Pack to authenticate itself with the application. It's essentially a more secure version of an API key, since it uses short-lived tokens.\nTo use this flow in the Pack SDK select the authentication type [`OAuth2ClientCredentials`](../../../../reference/sdk/core/interfaces/OAuth2ClientCredentialsAuthentication/).\n\nTo enable your Pack to authenticate users with OAuth you need to configure the OAuth flow and enter your developer credentials.\n### Add configuration code\u00b6\nTo conf"
+    },
+    {
+     "url": "https://coda.io/packs/build/latest/reference/sdk/core/interfaces/OAuth2DynamicCodeAuthentication",
+     "title": "Interface: OAuth2DynamicCodeAuthentication - Coda Pack SDK",
+     "snippet": "Defined in: [types.ts:625](https://github.com/coda/packs-sdk/blob/9f37f0e6dd85972eb9c035c2bb489cbeb06120bc/types.ts#L625)\nOAuth2 authentication with Dynamic Client Registration (DCR) enabled. `authorizationUrl` and `tokenUrl` are optional because they are automatically discovered using the pack's declared MCP servers and network domains.\n\n### endpointKey?\u00b6\n> `optional`**endpointKey**: `string`\nDefined in: [types.ts:564](https://github.com/coda/packs-sdk/blob/9f37f0e6dd85972eb9c035c2bb489cbeb06120bc/types.ts#L564)\nIn rare cases, OAuth providers will return the specific API endpoint domain for the user as part of the OAuth token exchange response. If so, this is the property in the OAuth token exchange response JSON body that points to the endpoint.\nThe endpoint will be saved along with the account and will be available during execution as [ExecutionContext.endpoint](../ExecutionContext/#endpoint).\n\n### tokenUrl?\u00b6\n> `optional`**tokenUrl**: `string`\nDefined in: [types.ts:632](https://github.com/coda/packs-sdk/blob/9f37f0e6dd85972eb9c035c2bb489cbeb06120bc/types.ts#L632)\nThe URL for token exchange. Optional when using DCR, as it is automatically discovered.\n\n### useProofKeyForCodeExchan"
+    }
+   ]
+  },
+  "access": {
+   "query": "Coda coda.io/developers API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_L7BvMEMuUTpA",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://coda.io/developers/apis/v1?ad_group_id=137901396152&ad_id=REMOVED&campaign_id=17400847121",
+     "title": "API Reference (1.5.0) - Coda",
+     "snippet": "The Coda API is a RESTful API that lets you programmatically interact with Coda docs:\n- List and search Coda docs\n- Create new docs and copy existing ones\n- Share and publish docs\n- Discover pages, tables, formulas, and controls\n- Read, insert, upsert, update, and delete rows\n\n## Free and Paid Workspaces\nWe make the Coda API available to all of our users free of charge, in both free and paid workspaces. However, API usage is subject to the role of the user associated with the API token in the workspace applicable to each API request. What this means is:\n- For the `#createDoc` endpoint specifically, the owner of the API token must be a Doc Maker (or Admin) in the workspace. If the \"Any member can create docs\" option in enabled in the workspace settings, they can be an Editor and will get auto-promoted to Doc Maker upon using this endpoint. Lastly, if in addition, the API key owner matches the \"Auto-join email domains\" setting, they will be auto-added to the workspace and promoted to Doc Maker upon using this endpoint\nThis behavior applies to the API as well as any integrations that may use it, such as Zapier."
+    },
+    {
+     "url": "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits",
+     "title": "Overview: Doc limits",
+     "snippet": "## **API rate limits**\nAPI rate limits are not plan-dependent. The following limits apply to Free, Pro, Team, and Enterprise plans. Limits apply per-user across all endpoints that share the same limit and across all docs.\n- Reading data (with the exceptions below): 100 requests per 6 seconds\n- Writing data (POST/PUT/PATCH): 10 requests per 6 seconds\n- Writing doc content data (POST/PUT/PATCH): 3 requests per 10 seconds\n- Listing docs: 4 requests per 6 seconds\n- Reading analytics: 100 requests per 6 seconds"
+    },
+    {
+     "url": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+     "title": "Connect to the Coda MCP",
+     "snippet": "To acquire these access tokens from Coda, you can [click here](https://coda.io/account?openDialog=CREATE_API_TOKEN&scopeType=mcp#apiSettings) (or scroll to the **API settings** section of your account page, then click **Generate API token**). Give your token a memorable name, ensure that the restriction type is **MCP**, and choose the type of access. Then click the** Generate API token** button to create. Once created, click the **Copy token** button to copy it to your clipboard.\n\nDoc Makers on **free** plans can utilize a \u201cfree taste\u201d of the Coda MCP (30 requests per week, with a max of 60 requests per month). During this \u201cfree taste,\u201d you can utilize all of the tools of the MCP.\nEditors also have access to a \u201cfree taste\u201d of the Coda MCP (30 requests per week, with a max of 60 requests per month)."
+    },
+    {
+     "url": "https://help.coda.io/hc/en-us/articles/39555941038349-Does-Coda-have-an-API",
+     "title": "Does Coda have an API?",
+     "snippet": "Why do I get a 401 error when trying to connect Coda to Zapier?\nGo to [coda.io/account](http://coda.io/account) and check that there aren\u2019t any restrictions on the API token for Zapier. Zapier can\u2019t connect to Coda with anything less than a full access API token."
+    },
+    {
+     "url": "https://help.coda.io/en/articles/2414841-authenticating-with-packs",
+     "title": "Authenticating with Packs | Coda Help Center",
+     "snippet": "In order to enable the Greenhouse Recruiting / Coda integration, you will need the developer permission **Can manage ALL organization\u2019s API Credentials**.\nContact a Greenhouse Recruiting user in your organization with **Site Admin** level permissions with the additional user-specific permission **Can edit another user's advanced permissions** to apply the API credential management permission to your account. Have the user with Site Admin level permissions edit your user account's permissions by navigating to"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Coda API reference REST GraphQL endpoints documentation coda.io/developers",
+   "log_id": "log_i_SKBHdraDx5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://coda.io/developers/apis/v1?ad_group_id=137901396152&ad_id=REMOVED&campaign_id=17400847121",
+     "title": "API Reference (1.5.0) - Coda",
+     "snippet": "The Coda API is a RESTful API that lets you programmatically interact with Coda docs:\n- List and search Coda docs\n- Create new docs and copy existing ones\n- Share and publish docs\n- Discover pages, tables, formulas, and controls\n- Read, insert, upsert, update, and delete rows\n\nThis API uses a base path of `https://coda.io/apis/v1`.\n## Resource IDs and Links\nEach resource instance retrieved via the API has the following fields:\n- `id`: The resource's immutable ID, which can be used to refer to it within its context\n- `type`: The type of resource, useful for identifying it in a heterogenous collection of results\n- `href`: A fully qualified URI that can be used to refer to and get the latest details on the resource\nMost resources can be queried by their name or ID. We recommend sticking with IDs where possible, as names are fragile and prone to being changed by your doc's users.\n### List Endpoints\nEndpoints supporting listing of resources have the following fields:\n- `items`: An array containing the listed resources, limited by the `limit` or `pageToken` query parameters\n- `nextPageLink`: If more results are available, an API link to the next page of results\n- `nextPageToken`: If more"
+    },
+    {
+     "url": "https://community.coda.io/t/more-powerful-page-endpoints-in-the-coda-api/44103",
+     "title": "More powerful page endpoints in the Coda API",
+     "snippet": "You can do many things with the Coda API, but for a long time there was one part of a Coda doc that was almost completely inaccessible: pages. While it did provide some basic metadata about the pages in a doc, the content of those pages was off limits.\n\nHowever we heard from our developer community pretty consistently over the years that you want some way to work with page content, and over the last few months we\u2019ve rolled out some changes that we think you\u2019ll like. Specifically:\n- Page content can now be read or written in either HTML or markdown format.\n- When updating a page, you can replace the page content or append to it.\n- We\u2019ve added new endpoints for creating pages and for exporting pages.\n## [Creating a page](https://coda.io/developers/apis/v1#tag/Pages/operation/createPage)\nTo create a page, send a POST request to the endpoint [https://coda.io/apis/v1/docs/{docId}/pages](https://coda.io/apis/v1/docs/%7BdocId%7D/pages). You can optionally include metadata like the page name, subtitle, icon, cover image, and parent page.\nYou can also set the initial content of the page at the same time, specified as HTML or Markdown, or a URL to use as the source of an Embed page. (Note th"
+    },
+    {
+     "url": "https://github.com/api-evangelist/coda/raw/refs/heads/main/apis.yml",
+     "title": "github.com/api-evangelist/coda/raw/refs/heads/main/apis.yml",
+     "snippet": "Coda is an all-in-one doc platform combining documents, spreadsheets, and apps. The Coda API exposes docs, pages,\ntables, rows, columns, controls, formulas, automations, packs, permissions, and analytics for programmatic\nintegration.\n\nAt this time, the API exposes some limited information about your account. However, `/whoami` is a\ngood endpoint to hit to verify that you're hitting the API correctly and that your token is working\nas expected."
+    },
+    {
+     "url": "https://dlthub.com/context/source/coda-docs-migration",
+     "title": "Coda Python API Docs | dltHub",
+     "snippet": "Coda is a productivity platform that provides a REST API for programmatically interacting with documents, tables, and account information. The REST API base URL is `https://coda.io/apis/v1` and all requests require a Bearer token in the Authorization header.\n\nHere are some of the endpoints you can load from Coda:\n| Resource | Endpoint | Method | Data selector | Description |\n|---|---|---|---|---|\n| docs | /docs | GET | items | List available docs |\n| doc_pages | /docs/{docId}/pages | GET | items | List pages in a document |\n| doc_tables | /docs/{docId}/tables | GET | items | List tables in a document |\n| doc_formulas | /docs/{docId}/formulas | GET | items | List formulas in a document |\n| doc_controls | /docs/{docId}/controls | GET | items | List controls in a document |\n---\n## How do I authenticate with the Coda API?\nThe API requires an 'Authorization' header with the value 'Bearer <api_token>'. The token is generated via the Coda account settings page.\n**1. Get your credentials**\n1. Log in to your Coda account at [coda.io/account](https://coda.io/account). Alternatively, click your profile icon in the top-right corner of the Coda dashboard, select Account settings, and locate the"
+    },
+    {
+     "url": "https://codaio.readthedocs.io/en/latest",
+     "title": "codaio documentation \u2014 codaio documentation",
+     "snippet": "# codaio documentation\u00b6\nPython wrapper for [coda.io](https://coda.io/developers/apis/v1beta1) API\nProject home: [https://github.com/blasterai/codaio](https://github.com/blasterai/codaio)\n- ***class* `codaio.``Coda`(*api_key: str*, *href: str = 'https://coda.io/apis/v1beta1'*)\u00b6** Raw API client. It is used in codaio objects like Document to access the raw API endpoints. Can also be used by itself to access Raw API.\n- **`account`() \u2192 Dict\u00b6** At this time, the API exposes some limited information about your account. However, /whoami is a good endpoint to hit to verify that you\u2019re hitting the API correctly and that your token is working as expected.\n- **`create_doc`(*title: str*, *source_doc: Optional[str] = None*, *tz: Optional[str] = None*) \u2192 Dict\u00b6** Creates a new Coda doc, optionally copying an existing doc.\nDocs: [https://coda.io/developers/apis/v1beta1#operation/createDoc](https://coda.io/developers/apis/v1beta1#operation/createDoc)\n- **Parameters**\n- **title** \u2013 Title of the new doc.\n- **source_doc** \u2013 An optional doc ID from which to create a copy.\n- **tz** \u2013 The timezone to use for the newly created doc.\n- **Returns**\n- **`delete`(*endpoint: str*) \u2192 Dict\u00b6** Make a DELETE reques"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Coda coda.io/developers MCP server Model Context Protocol official",
+   "log_id": "log_z7HKQE6plSPx",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+     "title": "Connect to the Coda MCP",
+     "snippet": "The **Coda MCP** (Model Context Protocol) is a connection layer that enables AI clients - like Cursor, Claude, etc. - to read and write to your Coda docs using plain-language prompts. Instead of clicking through the Coda UI, you describe what you want in the chat window of your chosen client, and the AI carries it out directly in your doc. Think of it as giving an AI agent the same access to your Coda workspace that you have, and letting it act on your behalf based on your instructions.\n\nThe table below lists the clients for which Coda MCP is currently well supported. We've also included the method of authentication available for each client. To learn more about these different authentication methods, [refer to this article](https://help.coda.io/hc/en-us/articles/44722769665549).\n\n# **Connect ChatGPT with Coda MCP**\nFollow the steps below to connect ChatGPT with Coda MCP:\n1. Within ChatGPT, click into the **Apps** tab of the left panel\n2. Enter \"Coda\" in the search bar\n3. Select **Coda** from the search results, then click **Connect**\n1. *Note: If you see **Disabled by admin** instead of **Connect**, this likely indicates that the admin of your account has disabled connecting to ne"
+    },
+    {
+     "url": "https://help.coda.io/hc/en-us/articles/44722769665549-Security-recommendations-for-the-Coda-MCP",
+     "title": "Security recommendations for the Coda MCP",
+     "snippet": "Coda\u2019s MCP server is officially published and available at:\n| Protocol | Endpoint |\n|---|---|\n| http, stdio | [https://coda.io/apis/mcp](https://coda.io/apis/mcp) |\n# **Trust & source verification**\nOnly use MCP clients from trusted sources. The MCP connection grants the AI assistant access to your Coda docs and tables using scoped API tokens or OAuth2 credentials associated with your account. These credentials can have read, write, or read/write permissions on docs and tables that you have access to. This enables agents that use the MCP to:\n- Read document content, pages, and tables\n- Create, modify, and delete documents\n- Add, update, and delete table rows and columns\n- Search across your docs\n- Access formulas and controls\n\n### **2. Ensure you are connecting to the official Coda MCP**\nThere are many 3rd party MCPs available on the web, but our MCP is hosted on `coda.io` at [https://coda.io/apis/mcp](https://coda.io/apis/mcp). Ensure this is the MCP you are connecting to."
+    },
+    {
+     "url": "https://help.coda.io/hc/en-us/articles/44722756780173-Using-the-Coda-MCP",
+     "title": "Using the Coda MCP",
+     "snippet": "The **Coda MCP** (Model Context Protocol) is a connection layer that enables AI tools - like Cursor, Claude, etc. - to read and write to your Coda docs using plain-language prompts. Instead of clicking through the Coda UI, you describe what you want in a chat window, and the AI carries it out directly in your doc. Think of it as giving an AI assistant the same access to your Coda workspace that you have, and letting it act on your behalf based on your instructions.\n\nThe Coda MCP has access to a wide array of abilities in Coda. Most of the actions you can do yourself within a doc can also be performed via the MCP. This includes...\n- Creating, deleting, and searching docs\n- Creating, deleting, updating, and reading pages - with access to a variety of building blocks including callouts, codeblocks, grids, and more\n- Creating tables, adding and modifying rows, adding and modifying columns, configuring views, and deleting table content\n- Configuring views, including detail layouts, filters, conditional formatting, and more\n- Creating charts\n- Writing and executing formulas\n- Creating and triggering controls and buttons\n- Resolving and reopening comment threads\n- and more being added wee"
+    },
+    {
+     "url": "https://coda.io/packs/build/latest/guides/blocks/mcp",
+     "title": "Connect to an MCP server - Superhuman Packs SDK",
+     "snippet": "MCP servers are only supported in Go.\nThe [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) offers a standard way to expose resources and tools to LLMs. Many apps are adopting this standard and hosting MCP servers, making it easy for AI tools to interact with their data and features.\nConnectors can integrate with MCP servers to take advantage of the tools provided. Adding an MCP server to a connector requires only a few lines of code, specifying an internal name and the server's URL.\n```\npack . addMCPServer ({ name : \"Icons8\" , endpointUrl : \"https://mcp.icons8.com/mcp/\" , });\n```\nOnly one MCP server per-connector\nA connector is limited to connecting to only a single MCP server. The platform expects each connector to connect to a single external application, and users wishing to work across multiple applications would install multiple connectors.\n## Compatibility\u00b6\nMCP is a large, rapidly evolving standard, and not all MCP servers are compatible with the platform.\n- **Hosted servers only** - Local MCP servers (installed via `npm`, etc) are not supported.\n- **Streamable HTTP transport only** - Most MCP servers use the more modern Streamable HTTP transport, but the olde"
+    },
+    {
+     "url": "https://github.com/dustinrgood/coda-mcp",
+     "title": "GitHub - dustinrgood/coda-mcp: MCP Server for Coda",
+     "snippet": "# Coda MCP Server\nThis project implements a Model Context Protocol (MCP) server that acts as a bridge to interact with the [Coda](https://coda.io/) API. It allows an MCP client (like an AI assistant) to perform actions on Coda pages, such as listing, creating, reading, updating, duplicating, and renaming.\n## Features\nThe server exposes the following tools to the MCP client:\n### Document Operations\n- **`coda_list_documents`**: List or search available documents with optional filtering\n- **`coda_get_document`**: Get detailed information about a specific document\n- **`coda_create_document`**: Create a new document, optionally from a template\n- **`coda_update_document`**: Update document properties like title and icon\n- **`coda_get_document_stats`**: Get comprehensive statistics and insights about a document\n### Page Operations\n- **`coda_list_pages`**: List pages in a document with pagination support\n- **`coda_create_page`**: Create a new page, optionally under a parent page with initial content\n- **`coda_delete_page`**: Delete a page from the document\n- **`coda_get_page_content`**: Retrieve the content of a page as markdown\n- **`coda_peek_page`**: Get a preview of the beginning of a p"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

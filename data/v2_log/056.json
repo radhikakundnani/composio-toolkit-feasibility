@@ -1,0 +1,13 @@
+{
+  "id": 56,
+  "app": "Firecrawl",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

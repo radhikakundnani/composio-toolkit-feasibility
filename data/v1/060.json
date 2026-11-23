@@ -1,0 +1,35 @@
+{
+  "id": 60,
+  "app": "Clay",
+  "category": "GTM data enrichment",
+  "one_liner": "GTM platform enriching people and companies via 150+ data providers and workflows.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Public API key created in Clay workspace on all plans with caps (Free 100 results/30 days); tables read is Enterprise.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "narrow",
+  "mcp": "official",
+  "mcp_note": "https://api.clay.com/v3/mcp (hosted, OAuth with DCR)",
+  "verdict": "ready_with_caveats",
+  "blocker": "narrow_api",
+  "blocker_note": "Public API runs functions/searches and reads tables; cannot write tables; webhooks need Growth plan.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.clay.com/public-api/authentication",
+    "access": "https://cleanlist.ai/blog/2026-10-16-clay-api-guide",
+    "surface": "https://developers.clay.com/routines/api",
+    "mcp": "https://university.clay.com/docs/connect-to-clay-mcp"
+  }
+}

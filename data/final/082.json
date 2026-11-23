@@ -1,0 +1,36 @@
+{
+ "id": 82,
+ "app": "Plaid",
+ "category": "Fintech data/banking API",
+ "one_liner": "Connects apps to bank accounts for transactions, auth, and payment initiation.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "auth_primary": "api_key",
+ "access": "self_serve_trial",
+ "access_notes": "Dashboard signup gives client_id/secret; free Sandbox and free Trial plan (real data, 10 Items) for US/CA teams created after Apr 2026.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_note": "Plaid Dashboard MCP (diagnostics/usage for approved Production teams) and sandbox MCP in plaid/ai-coding-toolkit are developer tooling, not product data access",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Full Production and some OAuth institutions need approval; Trial plan is capped.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://plaid.com/docs/quickstart",
+  "access": "https://plaid.com/docs/account/billing",
+  "surface": "https://plaid.com/docs/api",
+  "mcp": "https://plaid.com/docs/resources/mcp"
+ },
+ "verified": true,
+ "adjudication": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth hit is Plaid Exchange (a different product for banks); Plaid API uses client_id/secret keys."
+}

@@ -1,0 +1,142 @@
+{
+ "id": 31,
+ "app": "Google Ads",
+ "hint": "developers.google.com/google-ads",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "Google Ads API authentication OAuth API key access token developer docs developers.google.com/google-ads",
+   "log_id": "log_ZyN3pb2h9Zze",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.google.com/google-ads/api/rest/auth",
+     "title": "Authorization and HTTP Headers",
+     "snippet": "- A developer token is required in the `developer-token` HTTP header for every API call.\n\nThe Google Ads API uses OAuth 2.0 for authorizing API requests. Both OAuth 2.0 [user authentication flow](https://developers.google.com/google-ads/api/docs/oauth/single-user-authentication) and [service account flow](https://developers.google.com/google-ads/api/docs/oauth/service-accounts) are supported. For more details, see [OAuth 2.0 in the Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview).\n\n### Service accounts\nWhen you have the **service account email** and **service account key**, follow the [Using OAuth 2.0 for Server to Server Applications](https://developers.google.com/identity/protocols/oauth2/service-account#authorizingrequests) guide to generate a **JWT claim set**, which can then be exchanged to obtain an OAuth 2.0 access token. Make sure to select the `HTTP/REST` tab while following the guide. The OAuth 2.0 `scope` to use for Google Ads API access is `https://www.googleapis.com/auth/adwords`. In addition, you can skip the `sub` parameter when constructing the JWT claim set, because the setup steps grant the service account direct access to the Goog"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/oauth/credential-management",
+     "title": "Credential management",
+     "snippet": "- Different Google Ads API app types require various credentials, including Developer Tokens, OAuth client IDs, and access/refresh tokens.\n- App credentials, specific to your application, should be stored securely, ideally using a secrets manager and never committed to public code repositories.\n- User credentials, representing user authorization, must be handled securely by never transmitting them in plaintext, encrypting them at rest, and revoking/deleting them when no longer needed.\n- Be aware that refresh tokens for user authentication can be invalidated or expire, and integrate with Cross-Account Protection if real-time notification of revocation is needed.\n- Reuse user credentials, specifically access tokens, across API requests, either relying on client libraries for management or implementing a strategy to track and refresh tokens before expiration.\n\n| Authentication workflow | Credential | Type of credential | Purpose |\n|---|---|---|---|\n| JavaScript web apps Android apps | OAuth client ID | App credentials | Uniquely identifies the app during an OAuth flow. |\n| Access token & refresh token | User credentials | Represents the user's authorization to let the app access their"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/get-started/make-first-call",
+     "title": "Quick start",
+     "snippet": "- A developer token is required to make API calls to the Google Ads API and its access level controls the number of daily calls and environments.\n- You need a Google Ads manager account to obtain a developer token and a Google Ads client account is the target of your API calls, identified by a 10-digit client customer ID.\n- Making an API call requires obtaining a developer token, configuring a Google Cloud project with a service account and key for authentication, and setting up your Google Ads client account, including granting the service account access.\n\n- To make an API call using a client library or curl, you will need to provide your developer token, client customer ID, and the JSON key file path for your service account credentials in the configuration.\n\n- [**Google Cloud project:**](https://developers.google.com/google-ads/api/docs/oauth/cloud-project) A Google Cloud project forms the basis for creating, enabling, and using all the Google services, including managing APIs and OAuth 2.0 API credentials. You can create one from the [Google Cloud Console](https://console.cloud.google.com/).\n- [**API access level:**](https://developers.google.com/google-ads/api/docs/api-policy/"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/oauth/single-user-authentication",
+     "title": "Single-user authentication workflow",
+     "snippet": "3. The user authorizing the Google Ads account should [enable passkeys](/google-ads/api/docs/oauth/security-requirements#passkey-requirements) in their Google Account to defend against their Google Account getting compromised due to poor security, malware, or phishing.\n\n1. [Configure an OAuth consent screen](/workspace/guides/configure-oauth-consent) for your application and add `https://www.googleapis.com/auth/adwords` as an OAuth 2.0 scope. See [Setting up your OAuth consent screen](//support.google.com/cloud/answer/10311615) for details.\n2. Create a client ID and client secret by following the [instructions](/workspace/guides/create-credentials#oauth-client-id). Once you create the OAuth 2.0 client, download the client's JSON file by clicking the **Download JSON** button on the confirmation dialog. Save the file as `credentials.json`.\n3. Identify a user account that has access to all the Google Ads accounts you want to manage using your app. If there are accounts with missing access, [grant account access](//support.google.com/google-ads/answer/6372672) to that user.\n4.\n\n5. Generate an OAuth 2.0 refresh token by running the gcloud CLI tool with the `credentials.json` file from t"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/client-libs/java/authentication",
+     "title": "Authentication and authorization",
+     "snippet": "Like other Google APIs, the Google Ads API uses the OAuth 2.0 protocol for authentication and authorization. OAuth 2.0 enables your Google Ads API client app to access a user's Google Ads account without having to handle or store the user's login info.\n\nAccess to the Google Ads API requires OAuth 2.0 credentials and, in some cases, a login customer ID.\n### OAuth 2.0 credentials\nTo authorize as Google Account users with access to Google Ads accounts, you must provide a set of OAuth 2.0 credentials. The type of credentials required varies depending on the OAuth 2.0 flow being used.\nThe library supports three flows:\n- Service account flow\n- Single-user authentication flow\n- Multi-user authentication flow\nRefer to the [OAuth overview](https://developers.google.com/google-ads/api/docs/oauth/overview) for details on Google Ads API OAuth flows, and follow the instructions for the flow that best meets your needs to obtain the required credentials.\n### Login customer ID\nOptionally, specify the customer ID of a manager account that provides access to the serving account. This must be specified if your access to the customer account is through a manager account. There is no need to specify al"
+    }
+   ]
+  },
+  "access": {
+   "query": "Google Ads developers.google.com/google-ads API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_w02LJF8OJHX8",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/productionize/access-levels",
+     "title": "Access levels and RMF",
+     "snippet": "The Google Ads API is free to use; there are no charges for using the Google Ads API at Explorer access, Basic access, or Standard access levels. However, if you are subject to [Required Minimum Functionality (RMF)](https://developers.google.com/google-ads/api/docs/api-policy/rmf), the API Review Team audits your tool for compliance. If the audit results in a finding of non-compliance, you may be required to pay [non-compliance fees](https://developers.google.com/google-ads/api/docs/api-policy/non-compliance-fee)."
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels.md.txt",
+     "title": "developers.google.com/google-ads/api/docs/api-policy/access-levels.md.txt",
+     "snippet": "> **Key Point:** **Getting started with the Google Ads API?** Developer tokens were [sunset on September 9, 2026](https://developers.google.com/google-ads/api/docs/api-policy/developer-token), and API access levels are now managed per Google Cloud project. After you [enable the Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/cloud-project#enable-api) (which grants **Test** access), you can immediately [apply](https://developers.google.com/google-ads/api/docs/api-policy/access-levels#how-to-apply-for-explorer-access) on the [Google Ads API Overview page](https://console.cloud.google.com/google/ads-apis/overview) in the Google Cloud Console for [Explorer access](https://developers.google.com/google-ads/api/docs/api-policy/access-levels#explorer-access) (automated review and approval in most cases, for up to 2,880 operations per day against production accounts).\n\nIf your Google Cloud project has been approved for Standard access level, you\ncan fill out the [application to update permissible use](https://support.google.com/adspolicy/contact/tool_change). Fill out\nthe application if you would like to update your permissible use or grant your\nclients access to you"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/get-started/onboarding",
+     "title": "Google Ads API comprehensive onboarding guide",
+     "snippet": "## 2. Obtain a developer token\nThe developer token uniquely identifies your application to the Google Ads API and controls your call volume access tier.\n### Steps to apply\n1. Sign in to your **Google Ads Manager Account**.\n2. Navigate to **Tools and settings > Setup > API Center** (or **Admin > API Center**).\n3. Fill out the developer details form and agree to the API Terms of Service.\n4. Submit your application.\n### Access levels\n- **Pending Approval:** Newly created tokens immediately receive a \"Pending\" status. You can use a pending token to connect to **Test Accounts** immediately, but it will not work against production accounts.\n- **Basic Access:** Allows up to 15,000 API operations per day once approved.\n- **Standard Access:** Unlimited daily API operations for applications that meet the Required Minimum Functionality (RMF).\n\n### Pricing and billing note\n- **No API Fees:** Creating a Google Cloud project, enabling the Google Ads API, and generating OAuth 2.0 credentials is **100% free**. Google does not charge any fees for calling or using the Google Ads API itself.\n- **Other Cloud Resources:** You will only incur Google Cloud fees if you actively use other billable Google C"
+    },
+    {
+     "url": "https://ads-developers.googleblog.com/2026/09/new-onboarding-experience-for-google-ads-api.html",
+     "title": "A new onboarding experience for Google Ads API developers | Google for Developers",
+     "snippet": "API](https://ads-developers.googleblog.com/google-ads/api/docs/start?utm_source=googleblog-adsdevs&utm_medium=blog&utm_campaign=adr-adsapi-devtoken-sunset&utm_content=learnmore-docs) in the [Google Cloud Console](https://console.cloud.google.com/). Basic Access applications are now automated for developers who have completed [brand verification](https://ads-developers.googleblog.com/identity/protocols/oauth2/production-readiness/brand-verification)."
+    },
+    {
+     "url": "https://activepieces.com/blog/google-ads-api-access-levels-costs-and-setup-2026",
+     "title": "Google Ads API: Access Levels, Costs and Setup (2026)",
+     "snippet": "[Activepieces](https://www.activepieces.com), and it **costs nothing per call**.\nIt needs three things before a request works: a developer token, OAuth credentials and a Google Ads account.\nGoogle issues the approval for the token, and **no route around that exists**. Checked against Google's developer documentation on 1 Nov 2026.\n\nYou will not be billed per call: Google doesn't charge for Google Ads API requests. The price of a request is zero.\nThat's not the same as \"free of limits\": usage is still governed by quotas and access levels tied to your developer token. A call can fail on a quota without ever costing you money.\nWhen a request is rejected, the error response says which limit you hit, and that's the part worth reading closely.\n\n| Item | Where you get it | Who issues it | What fails without it |\n|---|---|---|---|\n| Developer token | Google Ads API Center in a manager account | Google, after review | Every request is rejected |\n| OAuth credentials | Google Cloud project, plus a user consent step | Google Cloud, you configure them | Requests fail authentication |\n| Google Ads account | Google Ads sign-up | Google Ads, you own the account | No data to query or change |\n| Cos"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Google Ads API reference REST GraphQL endpoints documentation developers.google.com/google-ads",
+   "log_id": "log_OsWNGzLn41O0",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.google.com/google-ads/api/rest/examples",
+     "title": "Examples",
+     "snippet": "repository](https://github.com/googleads/google-ads-rest), including the [`rest_guide` directory](https://github.com/googleads/google-ads-rest/tree/master/rest_guide).\nTo view the request and response bodies for each API method, refer to the reference documentation for specific service endpoints.\nFor example, the [reference page](https://developers.google.com/google-ads/api/reference/rpc/v26/GoogleAdsService/Search?transport=rest) for `GoogleAdsService.Search` shows the request and response bodies for the `Search` method.\n\n### GAQL\n```\nSELECT campaign.name,\ncampaign_budget.amount_micros,\ncampaign.status,\ncampaign.optimization_score,\ncampaign.advertising_channel_type,\nmetrics.clicks,\nmetrics.impressions,\nmetrics.ctr,\nmetrics.average_cpc,\nmetrics.cost_micros,\ncampaign.bidding_strategy_type\nFROM campaign\nWHERE segments.date DURING LAST_7_DAYS\nAND campaign.status != 'REMOVED'\n```\n\n### GAQL\n```\nSELECT campaign.name,\ncampaign_budget.amount_micros,\ncampaign.status,\ncampaign.optimization_score,\ncampaign.advertising_channel_type,\nmetrics.clicks,\nmetrics.impressions,\nmetrics.ctr,\nmetrics.average_cpc,\nmetrics.cost_micros,\ncampaign.bidding_strategy_type\nFROM campaign\nWHERE segments.date DURING"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/reference/rpc/v25/overview",
+     "title": "Google Ads API v25 - Reference | Google for Developers",
+     "snippet": "| **Core Reporting & Mutation** | [`GoogleAdsService`](https://developers.google.com/google-ads/api/reference/rpc/v25/GoogleAdsService) ([`SearchStream`](https://developers.google.com/google-ads/api/reference/rpc/v25/GoogleAdsService/SearchStream), [`Search`](https://developers.google.com/google-ads/api/reference/rpc/v25/GoogleAdsService/Search), [`Mutate`](https://developers.google.com/google-ads/api/reference/rpc/v25/GoogleAdsService/Mutate)), [`GoogleAdsRow`](https://developers.google.com/google-ads/api/reference/rpc/v25/GoogleAdsRow),\n\n| [`GoogleAdsService`](https://developers.google.com/google-ads/api/reference/rpc/v25/GoogleAdsService) | Service to fetch data and metrics across resources. Use the interactive [Google Ads Query Builder](https://developers.google.com/google-ads/api/fields/latest/overview_query_builder) to construct and validate Google Ads Query Language (GAQL) queries."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/google-ads/refs/heads/main/graphql/google-ads-graphql.md",
+     "title": "raw.githubusercontent.com/api-evangelist/google-ads/refs/heads/main/graphql/google-ads-graphql.md",
+     "snippet": "This is a conceptual GraphQL schema for the Google Ads API. It is derived from the [Google Ads API v19 REST and Proto/gRPC services](https://developers.google.com/google-ads/api/reference/rpc) and represents the full breadth of resources available through the platform, including account management, campaign hierarchy, ad creatives, assets, audience targeting, bidding strategies, conversion tracking, and reporting.\nThe Google Ads API natively exposes REST and gRPC (Protobuf) endpoints. This GraphQL schema is a semantic translation that maps the core resource types and operations into a strongly typed graph, suitable for building unified API layers, developer tooling, or internal platforms.\n## Source\n- **API Version:** Google Ads API v19\n- **Reference:** https://developers.google.com/google-ads/api/reference/rpc\n- **GitHub:** https://github.com/googleads\n- **Base URL:** https://googleads.googleapis.com\n## Authentication\nThe Google Ads API uses OAuth 2.0 for authentication. All requests require:\n- A valid OAuth 2.0 access token in the `Authorization` header.\n- A `developer-token` header containing your Google Ads developer token.\n- Optionally a `login-customer-id` header when accessin"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/rest/common/search",
+     "title": "Search & SearchStream",
+     "snippet": "- The Google Ads API provides a unified mechanism for attribute retrieval and metrics reporting using the Google Ads Query Language.\n- You can use either the `Search` or `SearchStream` methods to create queries, both supporting the same queries and returning equivalent results.\n- The `Search` method returns data in fixed-size pages of 10,000 rows, enabling pagination and suitable for low bandwidth conditions.\n\nThe Google Ads API has a unified [attribute retrieval and metrics reporting mechanism](https://developers.google.com/google-ads/api/docs/reporting/overview) that lets you create queries using the [Google Ads Query Language](https://developers.google.com/google-ads/api/docs/query/overview). This enables complex queries that can return large quantities of data about individual Google Ads accounts.\n\nBoth `Search` and `SearchStream` use the same base URL:\n```\nhttps://googleads.googleapis.com/v26/customers/CUSTOMER_ID/googleAds\n```\n```\nPOST /v26/customers/CUSTOMER_ID/googleAds:search HTTP/1.1\nHost: googleads.googleapis.com\nContent-Type: application/json\nAuthorization: Bearer ACCESS_TOKEN\n{\n\"query\": \"SELECT ad_group_criterion.keyword.text, ad_group_criterion.status FROM ad_group_cr"
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/query/cookbook?hl=en",
+     "title": "Query cookbook",
+     "snippet": "- The `curl` tabs demonstrate how to use the Google Ads API's REST interface directly.\n\n### curl\n```\ncurl -f --request POST \"https://googleads.googleapis.com/v${API_VERSION}/customers/${CUSTOMER_ID}/googleAds:searchStream\" \\\n--header \"Content-Type: application/json\" \\\n--header \"login-customer-id: ${MANAGER_CUSTOMER_ID}\" \\\n--header \"Authorization: Bearer ${OAUTH2_ACCESS_TOKEN}\" \\\n--data '{\n\"query\": \"\nSELECT campaign.name,\ncampaign_budget.amount_micros,\ncampaign.status,\ncampaign.optimization_score,\ncampaign.advertising_channel_type,\nmetrics.clicks,\nmetrics.impressions,\nmetrics.ctr,\nmetrics.average_cpc,\nmetrics.cost_micros,\ncampaign.bidding_strategy_type\nFROM campaign\nWHERE segments.date DURING LAST_7_DAYS\nAND campaign.status != 'REMOVED'\n\"\n}'\n```\n\n### GAQL\n```\nSELECT geo_target_constant.canonical_name,\ngeo_target_constant.country_code,\ngeo_target_constant.id,\ngeo_target_constant.name,\ngeo_target_constant.status,\ngeo_target_constant.target_type\nFROM geo_target_constant\nWHERE geo_target_constant.country_code = 'US'\nAND geo_target_constant.target_type = 'City'\nAND geo_target_constant.name = 'Mountain View'\nAND geo_target_constant.status = 'ENABLED'\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Google Ads developers.google.com/google-ads MCP server Model Context Protocol official",
+   "log_id": "log_KPmpXSiRMP-6",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+     "title": "Google Ads MCP server: Developer integration guide",
+     "snippet": "The **Model Context Protocol (MCP)** is an open standard that lets large language models (LLMs) securely interact with external data and applications. The **Google Ads MCP server** provides a standardized bridge to the Google Ads API. It lets AI agents retrieve and analyze account data, create assets, upload videos, and manage labels by using natural language.\n## Community resources and support\n- **GitHub repository:** Find demos and examples, report bugs, or suggest features in the [google-ads-mcp repository](https://github.com/googleads/google-ads-mcp).\nUse the [Issues tab](https://github.com/googleads/google-ads-mcp/issues) for bug reports and feature requests.\n- **Community:** Join the `#ads-api-ai-tools` channel on the [Google Advertising Community Discord](https://goo.gle/google-ads-discord).\n## Technical overview\nIntegrating the Google Ads MCP server removes the need to write custom code for Google Ads API authentication, resource fetching, data parsing, and supported asset or label mutations. The server exposes callable **tools** and reference **resources** (see Core capabilities) that an LLM can inspect and invoke.\n### Key specifications\n- **Protocol:** MCP (Model Context "
+    },
+    {
+     "url": "https://github.com/googleads/google-ads-mcp/blob/main/README.md",
+     "title": "google-ads-mcp/README.md at main \u00b7 googleads/google-ads-mcp",
+     "snippet": "# Google Ads MCP Server\nAn [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that enables LLMs and AI agents to query and manage [Google Ads](https://developers.google.com/google-ads/api) accounts.\n\nThe Google Ads MCP Server exposes [MCP Tools](https://modelcontextprotocol.io/docs/concepts/tools) and [MCP Resources](https://modelcontextprotocol.io/docs/concepts/resources) backed by the [Google Ads API](https://developers.google.com/google-ads/api/reference/rpc/latest/overview). It supports:\n- **Read & reporting workflows**: GAQL queries, accessible customer discovery, resource field metadata, and API reference resources.\n- **Guarded account mutations**: Asset creation, video uploads, and label management protected by a two-step **Propose & Confirm** workflow.\n- **Flexible deployment**: Run locally over `stdio` with Application Default Credentials, or over **Streamable HTTP** with FastMCP's OAuth proxy and structured audit logging.\n> **Notes:**\n>\n> - Connecting an LLM or agent to this server exposes your accessible Google Ads account data to that client.\n> - API calls made by this server include an MCP telemetry header used by Google to collect usage statistics "
+    },
+    {
+     "url": "https://raw.githubusercontent.com/googleads/google-ads-mcp/main/README.md",
+     "title": "raw.githubusercontent.com/googleads/google-ads-mcp/main/README.md",
+     "snippet": "# Google Ads MCP Server\nThis repo contains the source code for running an\n[MCP](https://modelcontextprotocol.io) server that interacts with the\n[Google Ads API](https://developers.google.com/google-ads/api).\n## Tools\nThe server uses the\n[Google Ads API](https://developers.google.com/google-ads/api/reference/rpc/latest/overview)\nto provide several\n[Tools](https://modelcontextprotocol.io/docs/concepts/tools) and [Resources](https://modelcontextprotocol.io/docs/concepts/tools) for use with LLMs and AI agents.\n### Tools available\n- `search`: Retrieves information about the Google Ads account using GAQL.\n- `get_resource_metadata`: Retrieves metadata about a Google Ads API resource type, for example \"campaign\". This is useful to understand the structure of the data and what fields are available for querying.\n- `list_accessible_customers`: Returns IDs of customers directly accessible\nby the user authenticating the call.\n- `create_asset`: Creates Google Ads assets (`TEXT`, `IMAGE`, `YOUTUBE_VIDEO`, `SITELINK`, `CALLOUT`, `STRUCTURED_SNIPPET`, and other asset types via `extra_params`). Note: `image_asset_path` is supported in local `stdio` mode only; use base64 `image_asset_data` for remote"
+    },
+    {
+     "url": "https://developers-dot-devsite-v2-prod.appspot.com/google-ads/api/docs/developer-toolkit/mcp-server",
+     "title": "Google Ads MCP server: Developer integration guide",
+     "snippet": "The **Model Context Protocol (MCP)** is an open standard that enables Large Language Models (LLMs) to securely interact with external data and applications. The **Google Ads MCP server** provides a standardized bridge to the Google Ads API, which lets AI agents analyze and retrieve campaign data using natural language.\n## Community resources and support\n- **GitHub repository:** Find demos, examples, and report bugs or suggest features in the [google-ads-mcp repository](//github.com/googleads/google-ads-mcp).\nUse the [Issues tab](//github.com/googleads/google-ads-mcp/issues) for bug reports and feature requests.\n\nBy implementing this MCP server, you eliminate the need to write custom \"glue code\" for Google Ads API authentication, resource fetching, and data parsing. The server exposes specific **tools** that an LLM can discover and invoke autonomously.\n### Key specifications\n- **Protocol:** MCP (Model Context Protocol)\n- **Mode:** **Read-only** (current release)\n- **Language:** Python\n- **Transport:** Standard input/output (`stdio`)\n- **Authentication:** OAuth 2.0 or service account\n### How the interaction loop works\n1. **Request:** A user submits a query such as *\"How is my campaig"
+    },
+    {
+     "url": "https://github.com/google-marketing-solutions/google_ads_mcp/blob/main/README.md",
+     "title": "google_ads_mcp/README.md at main \u00b7 google-marketing-solutions/google_ads_mcp",
+     "snippet": "The Google Ads MCP Server is an implementation of the Model Context Protocol (MCP) that enables Large Language Models (LLMs), such as Gemini, to interact directly with the Google Ads API.\nNote\nThis is NOT an officially supported Google product. It is mainly for experimental purposes and not intended for production use. Consider using the official [Google Ads MCP Server](https://github.com/google-ads/google-ads-mcp-python) instead.\n\n#### For Direct Use\nThis project needs Python 3.12 with `pipx` or `uv`.\n#### For Development\nThis project uses [`uv`](https://github.com/astral-sh/uv) for dependency management.\nInstall `uv` and then run the following command to install the required Python packages:\n```\nuv pip sync\n```\n### 2. Configure Google Ads credentials\nThis tool requires you to have a `google-ads.yaml` file with your Google Ads API credentials. By default, the application will look for this file in your home directory.\nIf you don't have one, you can generate it by running the following example from the `google-ads-python` library: [authentication example](https://github.com/googleads/google-ads-python/blob/main/examples/authentication/generate_user_credentials.py)\nMake sure your `g"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": 18,
+  "app": "Help Scout",
+  "changes": [
+    {
+      "field": "access",
+      "from": "paid_plan_required",
+      "to": "self_serve_trial",
+      "why": "15-day no-obligation trial (no card) on Plus plan includes full API access; Free plan has no API",
+      "evidence": "https://docs.helpscout.com/article/470-helpscout-trial"
+    },
+    {
+      "field": "access_notes",
+      "from": "OAuth2 app with client credentials; API excluded from Free plan so paid Standard plan or higher needed.",
+      "to": "OAuth2 app; 15-day trial on Plus plan includes API, no credit card; Free plan excludes API so paid Standard+ needed after trial.",
+      "why": "",
+      "evidence": "https://docs.helpscout.com/article/470-helpscout-trial"
+    },
+    {
+      "field": "blocker_note",
+      "from": "No API on Free plan; reporting endpoints restricted by plan.",
+      "to": "Trial includes API; afterwards paid plan needed (no API on Free; Standard lacks reporting endpoints).",
+      "why": "",
+      "evidence": "https://docs.helpscout.com/article/1140-mailbox-api"
+    }
+  ],
+  "confirmed": [
+    "mcp official (docs.helpscout.com MCP article)",
+    "auth oauth2",
+    "blocker paid_plan"
+  ],
+  "searches": 5
+}

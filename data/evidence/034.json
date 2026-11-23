@@ -1,0 +1,142 @@
+{
+ "id": 34,
+ "app": "GoHighLevel",
+ "hint": "highlevel.stoplight.io",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "GoHighLevel API authentication OAuth API key access token developer docs highlevel.stoplight.io",
+   "log_id": "log_GkuGFH0TEgGF",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/oauth/external-auth/OAuth2",
+     "title": "HighLevel API Documentation - Developer Portal",
+     "snippet": "OAuth v2 is the **recommended** External Authentication method. HighLevel redirects the user to your authorization page, where they grant access. Your provider returns an authorization code, HighLevel exchanges it for an access/refresh token pair, stores the tokens securely, and includes them in the external calls your app makes (for example, in your [Workflow Actions and Triggers](/docs/marketplace-modules/WorkflowActionsAndTriggers)).\n> Currently, only the **Authorization Code** grant type is supported.\n1. The user installs your app and is redirected to your **Authorization URL**.\n2. They log in and approve access on your site.\n3. Your site redirects back to HighLevel's **OAuth redirect URL** with an authorization `code`.\n4. HighLevel calls your **Access Token Request** endpoint, exchanging the code for an `access_token` and `refresh_token`.\n5. HighLevel stores the tokens and calls your **Test API endpoint** to confirm they work.\n6. When the access token later expires, HighLevel calls your **Refresh Token Request** endpoint to obtain a new one.\nEnter a name for the external application you're integrating (e.g. \"My OAuth App\"). This is used to identify the app within the system.\nH"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+     "title": "How to get started with the Developer&#39;s Marketplace",
+     "snippet": "The OAuth API for the CRM Marketplace offers developers two types of access: Location Level Access (also known as Sub-Account) and Agency Level Access (also know n as Company). These access levels provide comprehensive control over location data at either the individual location or agency-wide level. With Location Level Access, developers can perform operations specific to a sub-account, while Agency Level Access enables them to manage data across the entire agency. This distinction ensures efficient data handling and enhanced CRM Marketplace API v2.0 interoperability.\n\n- **Access Token:** An Access Token is a credential an app uses to access protected resources for a user or account. In the Developer's Marketplace, developers obtain an Access Token through the OAuth process, which allows their app to make authenticated API requests to GoHighLevel. The Access Token is usually included in the Authorization header of API requests.\n\n- **Refresh Token:** A Refresh Token is a credential that can be used to obtain a new Access Token without requiring the user to reauthorize the app. It provides a longer-lasting authorization mechanism and helps maintain continuous access to GoHighLevel r"
+    },
+    {
+     "url": "https://github.com/GoHighLevel/highlevel-api-sdk/blob/main/README.md",
+     "title": "highlevel-api-sdk/README.md at main \u00b7 GoHighLevel/highlevel-api-sdk",
+     "snippet": "The official TypeScript/JavaScript SDK for the HighLevel (GoHighLevel) API. This SDK provides a comprehensive interface to interact with all HighLevel API endpoints with built-in authentication, error handling, and automatic token refresh.\n\nThe HighLevel API supports three types of authentication tokens with different levels of access:\n### 1. Private Integration Token\n- **Highest priority** - Used for private integrations\n- Full access to all API endpoints\n- Managed through your HighLevel app settings\n### 2. Agency Access Token\n- Used for agency-level operations\n- Access to agency and sub-account data\n- Obtained through OAuth 2.0 flow\n### 3. Location Access Token\n- Used for location-specific operations\n- Access to single location data\n- Obtained through OAuth 2.0 flow\n## Getting Started\n### Basic Setup\n#### TypeScript\n```\nimport HighLevel, { MongoDBSessionStorage, LogLevel } from '@gohighlevel/api-client';\n// or\nimport { HighLevel } from '@gohighlevel/api-client';\n// Initialize with private integration token\nconst ghl = new HighLevel({\nprivateIntegrationToken: 'your-private-integration-token',\nlogLevel: LogLevel.INFO\n});\n// Initialize with clientId, clientSecret, and MongoDB storag"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+     "title": "HighLevel API Documentation",
+     "snippet": "The official API documentation provides information about available endpoints, authentication, request parameters, response formats, and supported API versions. Developers can use this documentation to:\n- Explore available API endpoints.\n- Review authentication requirements.\n- Check supported API versions.\n- Build and maintain custom integrations.\n- Understand endpoint-specific restrictions.\n**Note:** New legacy API key generation is being phased out. Private Integration Tokens and OAuth 2.0 are the recommended authentication methods.\n\nHighLevel offers API access across its subscription plans, including Starter, Unlimited, and Founder.\nBoth OAuth 2.0 and Private Integration Tokens (PIT) are available across plans. However, access to specific API endpoints depends on subscription eligibility, permissions, and scopes.\n**API Availability by Plan\n**\n| API Capability | Starter ($97/month) | Unlimited ($297/month) | Founder ($497/month) |\n|---|---|---|---|\n| OAuth 2.0 | Available | Available | Available |\n| Private Integration Tokens | Available | Available | Available |\n| Standard API Endpoints | Available* | Available | Available |\n| Higher-Tier Restricted Endpoints | Restricted | Rest"
+    },
+    {
+     "url": "https://github.com/GoHighLevel/highlevel-api-python/blob/main/README.md",
+     "title": "highlevel-api-python/README.md at main \u00b7 GoHighLevel/highlevel-api-python",
+     "snippet": "Official Python SDK for the GoHighLevel API. This library provides a convenient way to interact with GoHighLevel's APIs from applications written in Python.\n\n### Basic Usage\n```\nfrom highlevel import HighLevel\n# Initialize with OAuth credentials\nclient = HighLevel(\nclient_id=\"your_client_id\",\nclient_secret=\"your_client_secret\"\n)\n```\n### OAuth Flow Example\n```\nimport asyncio\nfrom highlevel import HighLevel\nasync def oauth_example():\nclient = HighLevel(\nclient_id=\"your_client_id\",\nclient_secret=\"your_client_secret\"\n)\n# Step 1: Get authorization URL\nauth_url = client.oauth.get_authorization_url(\nclient_id=\"your_client_id\",\nredirect_uri=\"https://your-app.com/callback\",\nscope=\"contacts.readonly campaigns.readonly\"\n)\nprint(f\"Visit: {auth_url}\")\n# Step 2: Exchange code for tokens (after user authorization).\n# The request body uses camelCase keys.\ntoken_data = await client.oauth.get_access_token({\n\"clientId\": \"your_client_id\",\n\"clientSecret\": \"your_client_secret\",\n\"grantType\": \"authorization_code\",\n\"code\": \"authorization_code_from_callback\",\n})\n# token_data is the raw token response, with camelCase keys:\n# accessToken, refreshToken, expiresIn, userType, and locationId or companyId.\n# Persi"
+    }
+   ]
+  },
+  "access": {
+   "query": "GoHighLevel highlevel.stoplight.io API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_1XFpB3ChWbBZ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+     "title": "HighLevel API Documentation",
+     "snippet": "## **API Access Across HighLevel Plans**\nHighLevel provides API access across all subscription plans, including Starter, Unlimited, and Agency Pro.\nBoth **OAuth 2.0** and **Private Integration Tokens (PIT)** are available across all plans, allowing developers to build integrations and access supported APIs without requiring an Agency Pro subscription.\nAPI Availability\n| API capability | Starter ($97) | Unlimited ($297) | Agency Pro ($497) |\n|---|---|---|---|\n| OAuth 2.0 authentication | Available | Available | Available |\n| Private Integration Tokens (PIT) | Available | Available | Available |\n| Standard API endpoints | Available | Available | Available |\n| Agency Pro-restricted endpoints | Not available | Not available | Available |\n**Agency Pro-Restricted Endpoints**\nWhile standard API access is available across all plans, certain endpoints require an Agency Pro ($497/month) subscription.\nThe following endpoints are currently documented as requiring Agency Pro:\n| Endpoint | Purpose |\n|---|---|\n| [Create Sub-Account](https://marketplace.gohighlevel.com/docs/ghl/locations/create-location) | Create a new sub-account programmatically. |\n| [Enable SaaS for Sub-Account](https://marketp"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/155000003054-private-integrations-everything-you-need-to-know",
+     "title": "https://marketplace.gohighlevel.com/docs/",
+     "snippet": "HighLevel supports API access across its subscription plans. Both OAuth 2.0 and Private Integration Tokens are available, but some API endpoints have additional plan requirements.\n**Current Subscription Plans\n**\n| Plan | Monthly Price | API Access |\n|---|---|---|\n| Starter | $97 | Standard API access, subject to endpoint restrictions |\n| Unlimited | $297 | Basic API Access |\n| Founder | $497 | Advanced API Access |\n| Enterprise | Custom Pricing | Full highest-tier feature set; increased API limits available by request |\n**API Availability**\n| API Capability | Starter | Unlimited | Founder $497 |\n|---|---|---|---|\n| OAuth 2.0 | Available | Available | Available |\n| Private Integration Tokens | Available | Available | Available |\n| Standard API Endpoints | Available | Available | Available |\n| Higher-Tier Restricted Endpoints | Restricted | Restricted | Subject to endpoint eligibility |\n**Plan-Restricted API Endpoints**\nCertain API operations require higher-tier access. The API documentation currently identifies the following Agency Pro-restricted endpoints:\n- **Create Sub-Account:** Create new sub-accounts programmatically.\n- **Enable SaaS for Sub-Account:** Enable SaaS functionalit"
+    },
+    {
+     "url": "https://cleanform.io/blog/gohighlevel-api",
+     "title": "GoHighLevel API: access, keys and rate limits",
+     "snippet": "It comes with the paid plans, the old v1 API keys are end of life, and new work uses a Private Integration token or OAuth 2.0 under a limit of 100 requests per 10 seconds.\n\n| GoHighLevel API at a glance | |\n|---|---|\n| Versions | v3 (latest), plus dated versions back to 2021; v1 keys ended support December 31, 2025 |\n| How you sign in | Private Integration token (your own account) or OAuth 2.0 (Marketplace apps) |\n| Plans | Basic API on Unlimited ($297), Advanced on Agency Pro ($497); Starter per the help center only |\n| Rate limit | 100 requests per 10 seconds, 200,000 per day, per app per sub-account |\n| Webhooks | More than 70 events, retried up to 12 times |\n| API fee | None published; usage and premium workflow steps are billed |\n\nGoHighLevel's [pricing page](https://www.gohighlevel.com/pricing) lists Basic API Access on Unlimited ($297 a month) and Advanced API Access on Agency Pro ($497). Starter ($97) has no API line on the pricing page, but HighLevel's help center says Basic access is included with Starter too.\n\n| Plan | Price a month | Pricing page | Help center |\n|---|---|---|---|\n| Starter | $97 | No API line | Basic API access |\n| Unlimited | $297 | Basic API Access | "
+    },
+    {
+     "url": "https://jonathanmontoya.com/post/gohighlevel-api",
+     "title": "GoHighLevel API: A Beginner's Guide to Private Integrations",
+     "snippet": "change data in your HighLevel account, like contacts, opportunities, and calendars. Today you connect with a Private Integration Token (PIT) that you create in settings, or with OAuth 2.0 for Marketplace apps. Old V1 API keys reached end of support on December 31, 2025. The limits are 100 requests per 10 seconds and 200,000 a day per app, per agency or sub-account. Trial and sandbox accounts get lower limits. HighLevel's help center says Basic API access comes with Starter and Unlimited, and Advanced access with Agency Pro.\n\nThis is one place where HighLevel's pages do not say quite the same thing, so here are both, checked October 20, 2026:\n- **The help center** says \"Basic API access is included with our Starter and Unlimited plans, while Advanced API access is available on our Agency Pro plan.\"\n- **The pricing page** lists API Access as a core feature. On the plan cards, it shows Basic API Access under Unlimited ($297 a month) and Advanced API Access under Agency Pro ($497 a month).\nThe help center adds that Advanced access unlocks Agency API keys and the agency-level OAuth API. If you are on Starter and need API access for a big project, ask HighLevel support to confirm before "
+    },
+    {
+     "url": "https://havstock.com/post/gohighlevel-api",
+     "title": "GoHighLevel API: Keys, Plans, Limits and How to Connect",
+     "snippet": "GoHighLevel's help center says Starter and Unlimited get basic API access, and Agency Pro gets advanced access. For a one-account tool, make a Private Integration token in Settings and send it as a Bearer token with a Version header. For an app many accounts install, use OAuth 2.0. Limits: 100 requests per 10 seconds and 200,000 a day.\n\nAll three plans have some API access, but only Agency Pro has the advanced kind. Here is what GoHighLevel's pricing page and its help article said on 18 October 2026:\n| Plan | Price | Pricing page says | Help article says |\n|---|---|---|---|\n| Starter | $97 a month or $970 a year | No API line in the plan card | Basic API access |\n| Unlimited | $297 a month or $2,970 a year | \"Basic API Access\" | Basic API access |\n| Agency Pro | $497 a month or $4,970 a year | \"Advanced API Access\" | Advanced API access |\n| Enterprise | No price listed | \"Increase API Limit by request\" | Not covered |\nSources: GoHighLevel's pricing page and the help article \"HighLevel API Documentation\" (last updated 14 October 2026), both checked 18 October 2026.\nWhat is the difference? The help article says advanced access adds agency-level keys and \"the upcoming OAuth 2.0 endpoi"
+    }
+   ]
+  },
+  "surface": {
+   "query": "GoHighLevel API reference REST GraphQL endpoints documentation highlevel.stoplight.io",
+   "log_id": "log_UgY-POekbeQ8",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/GoHighLevel/highlevel-api-docs/blob/main/docs/oauth/Scopes.md",
+     "title": "highlevel-api-docs/docs/oauth/Scopes.md at main \u00b7 GoHighLevel/highlevel-api-docs",
+     "snippet": "# **Scopes**\nHere is a list of the scopes you require to access the API Endpoints and Webhook Events.\n| Scope | API Endpoints | Webhook Events | Access Type |\n|---|---|---|---|\n| businesses.readonly | GET /businesses | | Sub-Account |\n| | GET /businesses/:businessId | | Sub-Account |\n| businesses.write | POST /businesses | | Sub-Account |\n| | PUT /businesses/:businessId | | Sub-Account |\n| | DELETE /businesses/:businessId | | Sub-Account |"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+     "title": "HighLevel API Documentation",
+     "snippet": "HighLevel provides a comprehensive API platform that enables developers to build **integrations, automations, and custom applications** with the HighLevel CRM and Marketplace. Our API includes REST endpoints for contacts, messaging, workflows, calendars, payments, webhooks, and more.\n\nHighLevel API documentation is now available at **[https://marketplace.gohighlevel.com/docs/](https://marketplace.gohighlevel.com/docs/).** If you previously used the legacy Stoplight documentation, update your bookmarks. Stoplight documentation will be deprecated in the coming months.\nHighLevel API documentation now supports versioned API references. Developers can use the version switcher inside the API documentation to view endpoints, schemas, parameters, and examples for a specific API version. This helps teams maintain stable integrations, reference older API versions when needed, and plan upgrades to newer versions with more confidence.\n```\nPlease Note: API v3 is now available for supported endpoints. HighLevel continues to maintain documentation for earlier API versions to support existing integrations. Developers should refer to the official API documentation\u00a0and\u00a0API Versioning guide to review"
+    },
+    {
+     "url": "https://github.com/GoHighLevel/highlevel-api-sdk/blob/main/README.md",
+     "title": "highlevel-api-sdk/README.md at main \u00b7 GoHighLevel/highlevel-api-sdk",
+     "snippet": "# HighLevel API SDK\nThe official TypeScript/JavaScript SDK for the HighLevel (GoHighLevel) API. This SDK provides a comprehensive interface to interact with all HighLevel API endpoints with built-in authentication, error handling, and automatic token refresh.\n\n## Authentication\nThe HighLevel API supports three types of authentication tokens with different levels of access:\n### 1. Private Integration Token\n- **Highest priority** - Used for private integrations\n- Full access to all API endpoints\n- Managed through your HighLevel app settings\n### 2. Agency Access Token\n- Used for agency-level operations\n- Access to agency and sub-account data\n- Obtained through OAuth 2.0 flow\n### 3. Location Access Token\n- Used for location-specific operations\n- Access to single location data\n- Obtained through OAuth 2.0 flow\n## Getting Started\n### Basic Setup\n#### TypeScript\n```\nimport HighLevel, { MongoDBSessionStorage, LogLevel } from '@gohighlevel/api-client';\n// or\nimport { HighLevel } from '@gohighlevel/api-client';\n// Initialize with private integration token\nconst ghl = new HighLevel({\nprivateIntegrationToken: 'your-private-integration-token',\nlogLevel: LogLevel.INFO\n});\n// Initialize with clie"
+    },
+    {
+     "url": "https://github.com/GoHighLevel/highlevel-api-docs/issues/43",
+     "title": "[Bug Report: API Field Missing] contacts/search endPoint not returning dndSettings",
+     "snippet": "### \ud83d\udc1b Describe the Bug I'm using API v2 with base_url = services.leadconnectorhq.com The API endpoint contacts/search in the documentation (https://highlevel.stoplight.io/docs/integrations/dbe4f3a00a106-search-contacts) should be returning dndSettings field which is an object. I have modified a contact with the objects/id PUT method in order to add this information and if I use the endpoint to GET the contact, the response includes \"dndSettings\" (see image for capture of Postman GET contact) But when I use the contacts/search POST method to retrieve contact information, even when documentation defines dndSettings is part of the response, this field is not present (even with field \"dnd\" to value true). See image for capture of Postman POST contacts/search. ### \ud83d\udccd API Endpoint /contacts/search ### \u2705 Expected Behavior The API should return a response as defined in the documentation . This is what appears in documentation https://highlevel.stoplight.io/docs/integrations/dbe4f3a00a106-search-contacts, in the \"Response example\" including this dndSettings: { \"contacts\": [ { \"id\": \"102goXVW3lIExEQPOnd3\", \"phoneLabel\": \"Mobile\", \"country\": \"United States\", \"address\": \"123 Main Street\", \"sour"
+    },
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/Authorization/Scopes",
+     "title": "HighLevel API Documentation - Developer Portal",
+     "snippet": "# **Scopes**\nHere is a list of the scopes you require to access the API Endpoints and Webhook Events.\n| Scope | API Endpoints | Webhook Events | Access Type |\n|---|---|---|---|\n| adPublishing.readOnly | GET /ad-publishing/campaigns | | Sub-Account |\n| | GET /ad-publishing/markup | | Sub-Account |\n| | GET /ad-publishing/subscriptions | | Sub-Account |\n| | GET /ad-publishing/onboarding | | Sub-Account |\n| | GET /ad-publishing/facebook/reporting | | Sub-Account |\n| | GET /ad-publishing/facebook/reporting/campaign/:campaignId | | Sub-Account |\n| | GET /ad-publishing/facebook/reporting/list | | Sub-Account |\n| | GET /ad-publishing/facebook/oauth/start | | Sub-Account |\n| | GET /ad-publishing/facebook/me | | Sub-Account |"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "GoHighLevel highlevel.stoplight.io MCP server Model Context Protocol official",
+   "log_id": "log_GdIvHijQZ3sE",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/155000007981-highlevel-mcp-server-model-context-protocol-",
+     "title": "HighLevel MCP Server Setup and Configuration Guide",
+     "snippet": "The HighLevel MCP (Model Context Protocol) Server provides a secure way for AI agents and MCP-compatible applications to interact with HighLevel tools and services. Using the MCP Server, AI assistants can retrieve records, update data, automate workflows, and execute actions directly inside HighLevel.\nThe MCP Server supports integrations across multiple HighLevel services, including contacts, conversations, calendars, opportunities, payments, and locations.\n**Production MCP Endpoint**\n```plaintext\nhttps://services.leadconnectorhq.com/mcp/\n```\n---\n## **Key Benefits of HighLevel MCP Server**\nThe MCP Server helps developers and AI builders create secure, scalable, and AI-powered workflows inside HighLevel.\n- **Centralized AI Access:** Connect AI agents to multiple HighLevel services through a single MCP endpoint.\n- **Secure Authentication:** Use Private Integration Tokens with scoped permissions for secure access.\n- **Natural Language Automation:** Allow AI assistants to execute workflows using conversational prompts.\n- **Multi-Service Connectivity:** Access contacts, conversations, opportunities, calendars, payments, and more.\n- **MCP-Compatible Flexibility:** Connect with Cursor, Wi"
+    },
+    {
+     "url": "https://gohighlevel.com/post/introducing-the-mcp-server",
+     "title": "HighLevel VS",
+     "snippet": "With the launch of the Model Context Protocol (MCP) Server, HighLevel is unlocking a new level of intelligent automation. It\u2019s the difference between AI that makes suggestions and AI that gets stuff done.\nWhether you're running a fast-paced agency or juggling a dozen client pipelines, the MCP Server helps you delegate repetitive, time-consuming tasks to AI agents that can take real action across your HighLevel account, automatically and securely.\n\nThe MCP Server changes that. It acts as the automation adapter between AI agents and the HighLevel ecosystem, giving those agents permissioned access to tools like Calendars, Contacts, Pipelines, Conversations and Payments. That means an AI agent can now schedule appointments, follow up with leads, update [CRM](https://www.gohighlevel.com/crm) records, manage pipeline stages and even pull transaction data\u2026without anyone logging in, clicking around or writing a single line of code.\n\nOne of the best parts about the MCP Server is that it works with AI tools you already know, like Cursor, Windsurf or OpenAI\u2019s Playground. There\u2019s no need for custom middleware, complex SDKs or developer resources. Just generate a secure token from your HighLeve"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/155000008197-connect-external-mcp-servers-to-ai-agents-in-workflows",
+     "title": "Connect External MCP Servers to AI Agents | HighLevel",
+     "snippet": "AI Agents in HighLevel Workflows can now connect to external services using the Model Context Protocol (MCP). This allows your AI Agent to access real-time information from compatible tools such as web search providers, browser automation platforms, databases, and custom APIs. By extending your AI Agent beyond CRM data, you can automate research, enrich records, and perform more intelligent workflow actions.\n\nModel Context Protocol (MCP) is an open standard that enables AI applications to securely communicate with external tools and services. With MCP Connections in HighLevel Workflows, AI Agents can connect to compatible MCP servers and use their available tools while executing workflow actions.\nUnlike standard AI Agent capabilities that rely primarily on information available within HighLevel, MCP Connections allow agents to retrieve live information, automate browser tasks, perform searches, and interact with external systems in real time.\n---\n## **Key Benefits of MCP Connections**\nConnecting external MCP servers expands what your AI Agent can accomplish during workflow execution.\n- **Real-Time Data Access:** Retrieve current information from external services while the workflow"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server?fp_ref=ghlcentral",
+     "title": "How to Use the HighLevel MCP Server",
+     "snippet": "This article will show you how to leverage the new GoHighLevel MCP (Model Context Protocol) server to empower your AI agents and copilots to access GoHighLevel data and tools seamlessly \u2014 all via a secure, standardized HTTP protocol.\n\nThe GoHighLevel MCP server is a standardized, secure protocol that allows AI agents to read and write data in GoHighLevel without needing SDKs or deep custom integrations. You can now give agents access to critical tools like Calendar, Contacts, Conversations, Opportunities, and Payments through a single, unified interface.\n## Key Benefits of Using the MCP Server\nConnecting your AI agents to GoHighLevel has never been easier or safer.\n- Standardized Access: Query and update data through a unified protocol.\n- Fast Integration: No SDKs required; works with any HTTP-supporting client.\n- Secure: Uses private integration tokens (PITs) for granular, permission-based access.\n- Scalable: Designed for future expansion to 250+ tools.\n- Flexible: Supports popular clients like Cursor, Windsurf, and OpenAI Playground.\n\n| 1 | Get Calendar Events | calendars_get-calendar-events | Get calendar events using userId, groupId, or calendarId.\n\nHow To Set Up the MCP Server"
+    },
+    {
+     "url": "https://help.gohighlevel.com/support/solutions/articles/155000009291-how-to-connect-and-use-mcp-servers-in-conversation-ai",
+     "title": "Connect MCP Servers to Conversation AI Bots | HighLevel",
+     "snippet": "Conversation AI bots can now connect to MCP (Model Context Protocol) servers to use external applications and tools during supported customer conversations. This allows bots to perform actions such as booking appointments through Cal.com, sending Stripe payment links, and updating Google Sheets without leaving the conversation. You can connect ready-made MCP servers from the Marketplace or add your own custom server. This guide covers connecting servers, configuring usage instructions, managing tool access, and monitoring MCP activity in Agent Logs.\n\nMCP Servers Support allows prompt-based Conversation AI bots to connect with external applications and use their available tools while responding to customers. Instead of only providing information, a bot can perform supported actions in connected systems based on the customer's request and the instructions you configure.\nModel Context Protocol (MCP) provides a standardized way for AI agents to interact with external tools and services.\nFor example, a Conversation AI bot can check appointment availability through Cal.com, create a booking, or use Stripe to send a payment link. It can also work with external applications such as Google "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

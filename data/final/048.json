@@ -1,0 +1,36 @@
+{
+ "id": 48,
+ "app": "Gumroad",
+ "category": "Ecommerce",
+ "one_liner": "Platform for creators to sell digital products, subscriptions and memberships.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Register an OAuth application in settings, or generate an access token for own account; no plan gates API.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://gumroad.com/mcp (Gumroad-run MCP server)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://gumroad.com/help/article/280-create-application-api",
+  "access": "https://gumroad.com/help/article/280-create-application-api",
+  "surface": "https://gumroad.com/api",
+  "mcp": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad"
+ },
+ "verified": true
+}

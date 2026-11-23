@@ -1,0 +1,35 @@
+{
+  "id": 16,
+  "app": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "one_liner": "Help desk software with live chat, email, call center and AI agents.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_trial",
+  "access_notes": "30-day free trial; admin generates API key in Configuration > System > API (v3 uses apikey header).",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Per-tenant API key; no central OAuth app confirmed.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://anchorterminal.com/tools/liveagent",
+    "access": "https://liveagent.com/pricing",
+    "surface": "https://support.liveagent.com/911737-API-v3",
+    "mcp": "https://support.liveagent.com/647358-MCP-Integration-for-agents"
+  }
+}

@@ -1,0 +1,142 @@
+{
+ "id": 98,
+ "app": "Mermaid CLI",
+ "hint": "github.com/mermaid-js/mermaid-cli",
+ "given_category": "AI, Research and Media-native",
+ "queries": {
+  "auth": {
+   "query": "Mermaid CLI API authentication OAuth API key access token developer docs github.com/mermaid-js/mermaid-cli",
+   "log_id": "log_80VhorVJYUNn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/blob/f87dcd0c9049a58ba75eda6d6dc890e2285be850/building.md",
+     "title": "mermaid-cli/building.md at f87dcd0c9049a58ba75eda6d6dc890e2285be850 \u00b7 mermaid-js/mermaid-cli",
+     "snippet": "# Simple steps to test this locally\n1. Add a .npmrc file\n```\nregistry=https://registry.npmjs.com/\n@mermaid-js:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=\"YOUR-TOKEN\"\n```\nGenerate the auth token from the github profile page => settings => developer settings => personal access tokens. Click on the button \u201cGenerate new token\u201d and check the checkboxes concerning repo and github registry.\nInstead of creating a .npmrc file on your own you can also use npm login --registry=[https://npm.pkg.github.com](https://npm.pkg.github.com) which gives you an interactive prompt for entering your credentials."
+    },
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/building.md",
+     "title": "mermaid-cli/building.md at master \u00b7 mermaid-js/mermaid-cli",
+     "snippet": "1. Add a .npmrc file\n```\nregistry=https://registry.npmjs.com/\n@mermaid-js:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=\"YOUR-TOKEN\"\n```\nGenerate the auth token from the github profile page => settings => developer settings => personal access tokens. Click on the button \u201cGenerate new token\u201d and check the checkboxes concerning repo and github registry.\nInstead of creating a .npmrc file on your own you can also use npm login --registry=[https://npm.pkg.github.com](https://npm.pkg.github.com) which gives you an interactive prompt for entering your credentials."
+    },
+    {
+     "url": "https://mermaid.ai/docs/ai/mcp-server",
+     "title": "MCP Server \u2014 Mermaid Chart",
+     "snippet": "The Mermaid MCP Server supports multiple transport modes, and **every tool call requires authentication** with a Mermaid account. Authentication is free \u2014 you can sign up for a free Mermaid account (the Basic tier) to get started. Authenticate automatically via **OAuth 2.1 with Dynamic Client Registration** (for clients that support OAuth discovery, such as VS Code, Cursor, and Antigravity via `mcp-remote`), or manually by pasting a Mermaid token into your client configuration. See Authentication Setup below for details on both options.\n\n**Authentication:** Every tool call requires a valid Mermaid login \u2014 free to create \u2014 either through automatic OAuth or a manually configured Authorization header.\n\n> **Using a client that supports OAuth discovery?** (VS Code, Cursor, Antigravity via `mcp-remote`, and others) You can use the plain, header-free configuration below \u2014 the first tool call will trigger a browser login/consent popup automatically. No token needs to be stored in your config. The examples with an `Authorization` header are for manual token-based authentication instead.\n\nEvery tool call requires you to be logged in to your Mermaid account. Signing up is free \u2014 the Basic tie"
+    },
+    {
+     "url": "https://mermaid-api.readthedocs.io/en/latest/authentication.html",
+     "title": "Authentication \u2014 MERMAID API documentation",
+     "snippet": "MERMAID secures its API in two ways, for two different kinds of client:\n- **Writing a script, notebook, or any other code that talks to the API?** Use an API key. It is the simplest option, and does not expire every few hours like a JWT does, so it is almost always what you want.\n- **Building an interactive application where a person signs in through a browser?** Use OAuth2 tokens instead; an API key cannot be used to complete a browser login.\nEither way, you first need a MERMAID account.\n## 1. Create a MERMAID Account\uf0c1\nBefore you can request a token or an API key, you must first create a MERMAID user account. If you already have an account, skip ahead to whichever of the two sections above applies to you. If not, an account can be created at [https://app.datamermaid.org/](https://app.datamermaid.org/).\n## 2. API keys\uf0c1\nAn API key is a long-lived credential for scripts, notebooks and other machine clients that cannot complete a browser login. A key acts as the user who created it: every request it authenticates has exactly the projects and roles that user has, and loses access the moment a project membership is removed. It does **not** have its own, separate scope \u2014 anyone holding t"
+    },
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/tree/master",
+     "title": "GitHub - mermaid-js/mermaid-cli: Command line tool for the Mermaid library",
+     "snippet": "This is a command-line interface (CLI) for [mermaid](https://mermaid.js.org/). It takes a mermaid definition file as input and generates an SVG/PNG/PDF file as output."
+    }
+   ]
+  },
+  "access": {
+   "query": "Mermaid CLI github.com/mermaid-js/mermaid-cli API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_So1Xe9kvwjhu",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/tree/master",
+     "title": "GitHub - mermaid-js/mermaid-cli: Command line tool for the Mermaid library",
+     "snippet": "This is a command-line interface (CLI) for [mermaid](https://mermaid.js.org/)."
+    },
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/building.md",
+     "title": "mermaid-cli/building.md at master \u00b7 mermaid-js/mermaid-cli",
+     "snippet": "1. Add a .npmrc file\n```\nregistry=https://registry.npmjs.com/\n@mermaid-js:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=\"YOUR-TOKEN\"\n```\nGenerate the auth token from the github profile page => settings => developer settings => personal access tokens. Click on the button \u201cGenerate new token\u201d and check the checkboxes concerning repo and github registry."
+    },
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/releases",
+     "title": "Releases \u00b7 mermaid-js/mermaid-cli",
+     "snippet": "- Require Puppeteer v25 or later [@aloisklink](https://github.com/aloisklink) ([#1183](https://github.com/mermaid-js/mermaid-cli/pull/1183))\n- Require Node.JS v22.13 or later [@aloisklink](https://github.com/aloisklink) ([#1181](https://github.com/mermaid-js/mermaid-cli/pull/1181))"
+    },
+    {
+     "url": "https://api.github.com/repos/mermaid-js/mermaid-cli/releases/latest",
+     "title": "api.github.com/repos/mermaid-js/mermaid-cli/releases/latest",
+     "snippet": "mermaid from 12.0.0 to 12.1.0"
+    },
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/package-lock.json",
+     "title": "mermaid-cli/package-lock.json at master \u00b7 mermaid-js/mermaid-cli",
+     "snippet": "\"version\":\n\n\"name\": \"@mermaid-js/mermaid-cli\",\n\n\"p-limit\": \"^7.0.0\""
+    }
+   ]
+  },
+  "surface": {
+   "query": "Mermaid CLI API reference REST GraphQL endpoints documentation github.com/mermaid-js/mermaid-cli",
+   "log_id": "log_u-1mgUZ5hGtL",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/tree/master",
+     "title": "GitHub - mermaid-js/mermaid-cli: Command line tool for the Mermaid library",
+     "snippet": "This is a command-line interface (CLI) for [mermaid](https://mermaid.js.org/). It takes a mermaid definition file as input and generates an SVG/PNG/PDF file as output. There's basic support for converting mermaid code blocks embedded within Markdown files.\n\n## Use Node.JS API\nIt's possible to call `mermaid-cli` via a Node.JS API. Please be aware that **the NodeJS API is not covered by semver**, as `mermaid-cli` follows `mermaid`'s versioning.\n```\nimport { run } from \"@mermaid-js/mermaid-cli\";\nawait run(\n\"input.mmd\",\n\"output.svg\", // {optional options},\n);\n```"
+    },
+    {
+     "url": "https://github.com/mermaid-js/mermaid-cli/blob/f87dcd0c/src/index.js.bak",
+     "title": "mermaid-cli/src/index.js.bak at f87dcd0c9049a58ba75eda6d6dc890e2285be850 \u00b7 mermaid-js/mermaid-cli",
+     "snippet": "export { run, renderMermaid, cli, error }"
+    },
+    {
+     "url": "https://pypi.org/project/mermaid-cli",
+     "title": "mermaid-cli",
+     "snippet": "# Mermaid CLI (Python)\nA command-line interface and Python library for [mermaid](https://mermaidjs.github.io/), which allows you to generate diagrams and flowcharts from text.\nThis code has been ported to Python from the following library: [https://github.com/mermaid-js/mermaid-cli](https://github.com/mermaid-js/mermaid-cli)\n\n### render_mermaid\n```\nasync def render_mermaid ( definition : str , output_format : str = \"svg\" , viewport : Dict [ str , int ] = None , background_color : str = \"white\" , mermaid_config : Dict [ str , Any ] = None , css : str = None , pdf_fit : bool = False , svg_id : str = None , icon_packs : List [ str ] = None , playwright_config : Dict [ str , Any ] = None , ) -> Tuple [ Optional [ str ], Optional [ str ], bytes ]\n```\nRenders a Mermaid diagram definition to the specified format.\n**Parameters:**\n- `definition`: Mermaid diagram definition string\n- `output_format`: Output format (svg, png, pdf)\n- `viewport`: Viewport dimensions (width, height, deviceScaleFactor)\n- `background_color`: Background color\n- `mermaid_config`: Mermaid configuration dictionary\n- `css`: Custom CSS string\n- `pdf_fit`: Scale PDF to fit chart\n- `svg_id`: ID attribute for the SVG elemen"
+    },
+    {
+     "url": "https://github.com/silver0510/mermail-mcp",
+     "title": "GitHub - silver0510/mermail-mcp",
+     "snippet": "### Web Interface\nOpen your browser and navigate to `http://localhost:5000` to use the web interface.\n### API Endpoint\nSend a POST request to `/generate` with a JSON body containing your Mermaid diagram:\n```\n{\n\"mermaid\": \"graph TD\\nA[Client] --> B[Load Balancer]\\nB --> C[Server1]\\nB --> D[Server2]\",\n\"theme\": \"default\",  // optional: default, dark, forest, neutral\n\"background\": \"white\" // optional: white, transparent\n}\n```\nThe server will return a PNG image of the rendered diagram.\nExample using curl:\n```\ncurl -X POST http://localhost:5000/generate \\\n-H \"Content-Type: application/json\" \\\n-d '{\"mermaid\":\"graph TD\\nA[Client] --> B[Load Balancer]\"}' \\\n--output diagram.png\n```"
+    },
+    {
+     "url": "https://api.github.com/repos/mermaid-js/mermaid-cli/releases/latest",
+     "title": "api.github.com/repos/mermaid-js/mermaid-cli/releases/latest",
+     "snippet": "(#1220)\\r\\n- feat: add description to output when called with --help"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Mermaid CLI github.com/mermaid-js/mermaid-cli MCP server Model Context Protocol official",
+   "log_id": "log_fk2WoS7ghHG3",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/andrewginns/mermaid-mcp-server",
+     "title": "GitHub - andrewginns/mermaid-mcp-server: Python MCP Server abstracting the official mermaid-cli for ease of use",
+     "snippet": "# Mermaid MCP Server\nA Model Context Protocol (MCP) server for validating Mermaid diagrams.\nImplements a minimal Python wrapper over [https://github.com/mermaid-js/mermaid-cli](https://github.com/mermaid-js/mermaid-cli) for simpler out of the box use.\n## Overview\nPython MCP server for validating Mermaid diagrams and (optionally) rendering them as PNG images. It uses the Mermaid CLI tool to perform the validation and rendering.\nThe server provides LLMs with structured validation results including:\n- **Boolean validation status** (`is_valid: true/false`) indicating whether the Mermaid diagram syntax is correct\n- **Detailed error messages** explaining exactly what went wrong if validation fails (e.g., syntax errors, unsupported diagram types, malformed nodes)\n- **Optional base64-encoded PNG images** of successfully rendered diagrams for visual verification\nThis enables LLMs to programmatically validate Mermaid diagram syntax, understand specific errors to provide helpful corrections, and optionally receive visual confirmation of the rendered output.\nAlso provides a simple Pydantic-AI MCP Client to invoke the MCP server using a Gemini model for testing.\n## Prerequisites\n**Important**: "
+    },
+    {
+     "url": "https://pypi.org/project/mcp-mermaid-image-gen",
+     "title": "mcp-mermaid-image-gen",
+     "snippet": "# MCP Mermaid Image Gen\nAn MCP server that generates diagrams from Mermaid code in multiple formats (primarily PNG and PDF, with SVG also available). This server enables AI assistants and other MCP clients to create diagrams using the Mermaid diagram syntax, with support for multiple themes, formats, and customizable backgrounds.\n## Overview\nThis MCP server wraps the Mermaid CLI (`@mermaid-js/mermaid-cli`) to provide diagram generation capabilities through the Model Context Protocol (MCP). It offers two operation modes:\n1. File-based: Save diagrams to disk and return the file path\n2. Stream-based: Return the diagram directly as base64-encoded data\nBoth modes work with either STDIO or SSE transport, but the stream-based mode requires an MCP client capable of handling image data.\nThe server is designed to be used by AI coding assistants and other tools that support the MCP protocol, allowing them to generate diagrams without needing direct access to the Mermaid CLI.\n## Features\n- Generate diagrams from Mermaid syntax (flowcharts, sequence diagrams, class diagrams, etc.)\n- Multiple output formats:\n- PNG: Raster graphics, recommended for general use and broad compatibility.\n- PDF: Docu"
+    },
+    {
+     "url": "https://mermaid.ai/docs/ai/mcp-server",
+     "title": "MCP Server \u2014 Mermaid Chart",
+     "snippet": "# Mermaid MCP Server\nThe Mermaid MCP Server enables AI assistants to create, validate, and render Mermaid diagrams seamlessly, plus full integration with your Mermaid account for advanced diagram management. When you ask your AI assistant to create a flowchart, sequence diagram, or any other Mermaid diagram, this server handles the entire process automatically - from syntax validation to PNG generation, interactive playground links, and direct integration with your Mermaid projects.\nThe Mermaid MCP Server supports multiple transport modes, and **every tool call requires authentication** with a Mermaid account. Authentication is free \u2014 you can sign up for a free Mermaid account (the Basic tier) to get started. Authenticate automatically via **OAuth 2.1 with Dynamic Client Registration** (for clients that support OAuth discovery, such as VS Code, Cursor, and Antigravity via `mcp-remote`), or manually by pasting a Mermaid token into your client configuration. See Authentication Setup below for details on both options.\n**Available Transport Types:**\n- **HTTP**: `https://mcp.mermaid.ai/mcp` with `\"type\": \"http\"`\n- **SSE (Server-Sent Events)**: `https://mcp.mermaid.ai/sse` with `\"type\": "
+    },
+    {
+     "url": "https://github.com/andrewginns/mermaid-mcp-server/blob/main/mermaid_mcp_server.py",
+     "title": "mermaid-mcp-server/mermaid_mcp_server.py at main \u00b7 andrewginns/mermaid-mcp-server",
+     "snippet": "# /// script\n# dependencies = [\n#     \"pydantic>=2.11.5\",\n#     \"mcp[cli]>=1.9.2\",\n# ]\n# ///\nimport os\nimport tempfile\nimport subprocess\nimport base64\nimport json\nfrom typing import Optional\nfrom pydantic import BaseModel, Field\nfrom mcp.server.fastmcp import FastMCP\nmcp = FastMCP(\"mermaid-validator\")\n\n@mcp.tool()\nasync def validate_mermaid_diagram(\ndiagram_text: str, return_image: bool = False\n) -> MermaidValidationResult:\n\"\"\"\nValidate a mermaid diagram and optionally render it as a PNG image.\nUses mermaid-cli to validate and render the diagram. Requires mermaid-cli\nto be installed globally via npm: npm install -g @mermaid-js/mermaid-cli\nArgs:\n\nif __name__ == \"__main__\":\ntransport = os.getenv(\"MCP_TRANSPORT\", \"stdio\")\nmcp.run(transport=transport)"
+    },
+    {
+     "url": "https://ibm.github.io/mcp-context-forge/latest/using/servers/python/mermaid-server",
+     "title": "Mermaid Server - ContextForge AI Gateway",
+     "snippet": "The Mermaid MCP Server provides comprehensive capabilities for creating, editing, and rendering Mermaid diagrams. It supports multiple diagram types including flowcharts, sequence diagrams, Gantt charts, and class diagrams, with structured input options and template systems. The server is powered by FastMCP for enhanced type safety and automatic validation.\n### Key Features\u00b6\n- **Multiple Diagram Types**: Flowcharts, sequence diagrams, Gantt charts, class diagrams\n- **Structured Input**: Create diagrams from data structures\n- **Template System**: Built-in templates for common diagram types\n- **Validation**: Syntax validation for Mermaid code\n- **Multiple Output Formats**: SVG, PNG, PDF export\n- **FastMCP Implementation**: Modern decorator-based tools with automatic validation\n## Quick Start\u00b6\n### Prerequisites\u00b6\n**Mermaid CLI must be installed:**\n```\nnpm install -g @mermaid-js/mermaid-cli\n```\n### Installation\u00b6\n```\n# Install in development mode make dev-install # Or install normally make install\n```\n### Running the Server\u00b6\n```\n# Start the FastMCP server make dev # Or directly python -m mermaid_server.server_fastmcp # HTTP bridge for REST API access make serve-http\n```\n\n**Parameters:**\n"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

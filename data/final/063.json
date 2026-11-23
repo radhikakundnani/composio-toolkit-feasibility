@@ -1,0 +1,36 @@
+{
+ "id": 63,
+ "app": "Netlify",
+ "category": "Cloud hosting / deployment",
+ "one_liner": "Web hosting platform for deploying sites, functions, forms and DNS.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free plan ($0, 300 credits/mo, deploy via API); generate a personal access token in the Netlify UI or register an OAuth2 app.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://github.com/netlify/netlify-mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+  "access": "https://netlify.com/pricing.md",
+  "surface": "https://github.com/netlify/open-api/blob/HEAD/swagger.yml",
+  "mcp": "https://github.com/netlify/netlify-mcp"
+ },
+ "verified": true
+}

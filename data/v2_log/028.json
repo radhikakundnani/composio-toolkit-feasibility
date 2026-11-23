@@ -1,0 +1,12 @@
+{
+  "id": 28,
+  "app": "WhatsApp Business",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict"
+  ],
+  "searches": 2
+}

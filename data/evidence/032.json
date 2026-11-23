@@ -1,0 +1,142 @@
+{
+ "id": 32,
+ "app": "Meta Ads",
+ "hint": "developers.facebook.com/docs/marketing-apis",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "Meta Ads API authentication OAuth API key access token developer docs developers.facebook.com/docs/marketing-apis",
+   "log_id": "log_LdCoNLAN2Ru5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/docs/marketing-apis/overview/authentication",
+     "title": "Authentication - Marketing API - Documentation",
+     "snippet": "Obtain User Access Token Go to Graph API Explorer. In Facebook App, select an app used to obtain the access token. In User or Page, select User Token. Under Permissions, check ads_read. Click Generate Access Token. The box on top of the button is populated with the access token. Store that token for later use. Debug To get more information in the token you just generated, click on the i button shown before the token. After the click, a pop-up screen opens and displays some basic information about the token. Click on Open in Access Token Tool to be redirected to the Access Token Debugger. You can also directly access the Access Token Debugger and paste the token you generated in the text box. While debugging, check: App ID: The app ID mentioned in the prerequisite section. Expires: A time stamp. A short-lived token expires in an hour or two Scopes: Contains the permissions added on Graph API Explorer.\n\nGet token manually If the user clicks the Allow button when you prompt for the extended permissions, the user is redirected to a URL that contains the value of the redirect_uri parameter and an authorization code: http://YOUR_URL? code=<AUTHORIZATION_CODE> Build a URL that includes th"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md",
+     "title": "Authentication",
+     "snippet": "Every Marketing API call requires an access token as a parameter.\nSee [Access Tokens for Meta Technologies](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens) for more information on the various types of access tokens.\n## Get an access token for your app\n### User access tokens\n#### Graph API Explorer\nYou can get a user access token using the [Graph API Explorer](https://developers.facebook.com/tools/explorer). To learn how to use the Graph API Explorer to make API calls, see the [Graph API Explorer Guide](https://developers.facebook.com/docs/graph-api/explorer).\n1. In the **Meta App** field, select an app to obtain the access token for.\n2. In the **User or Page** field, select **User Token**.\n3. In the **Add a Permission** drop-down under **Permissions**, select the permissions you need (for example, `ads_read` or `ads_management`).\n4. Click **Generate Access Token**. The box on top of the button displays the access token; [store the token](#storing-the-token) for later use.\n#### Debug\nTo get more information in the token you just generated, click on the information icon (**i**) in front of the token to open the **Access Token Info** table, which dis"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/facebook-login/guides/access-tokens",
+     "title": "Access Tokens for Meta Technologies",
+     "snippet": "An access token is an opaque string that identifies a user, app, or Facebook Page and can be used by the app to make Graph API calls. The token includes information about when it expires and which app generated it. Most API calls on Meta apps require an access token for privacy checks. Different types of access tokens support different use cases.\n\n| Access Token Type | Description |\n|---|---|\n| App Access Token | App access tokens let you read and modify app settings. Generate one using your Meta app secret via a server-to-server call. |\n| Client Token | Client tokens identify your app when calling app-level APIs from native or desktop apps. Because client tokens are embedded in apps, they are not secret. Find your client token in the Meta App Dashboard. |\n| Page Access Token | Page access tokens let you read, write, and modify data belonging to a Facebook Page. To obtain one, first get a user access token, then exchange it for a Page access token via the Graph API. |\n| System User Access Token | System User access tokens let your app perform programmatic, automated actions on Ad objects or Pages without requiring input from an app user or re-authentication. |\n| User Access Token |"
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/reference/sdks/python/ad-image",
+     "title": "GitHub - meta/facebook-python-business-sdk: Python SDK for Meta Marketing APIs",
+     "snippet": "The Facebook [Business SDK](https://developers.facebook.com/docs/business-sdk) is a one-stop-shop to help our partners better serve their businesses. Partners are using multiple Facebook API's to serve the needs of their clients. Adopting all these API's and keeping them up to date across the various platforms can be time consuming and ultimately prohibitive. For this reason Facebook has developed the Business SDK bundling many of its APIs into one SDK to ease implementation and upkeep. The Business SDK is an upgraded version of the Marketing API SDK that includes the Marketing API as well as many Facebook APIs from different platforms such as Pages, Business Manager, Instagram, etc.\n\nTo manage the Marketing API, please visit your [ App Dashboard ](https://developers.facebook.com/apps/<YOUR APP ID>/dashboard) and add the **Marketing API** product to your app.\n**IMPORTANT**: For security, it is recommended that you turn on 'App Secret Proof for Server API calls' in your app's Settings->Advanced page.\n### Obtain An Access Token\nWhen someone connects with an app using Facebook Login and approves the request for permissions, the app obtains an access token that provides temporary, secu"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/development/create-an-app/marketing-api-use-cases",
+     "title": "Marketing API Use Cases",
+     "snippet": "The following products have been automatically added to your app:\n- [Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business) \u2013 Authenticate your app users and create configuration that requests the business assets and permissions from your app users that your app needs to work properly.\n- [Webhooks](https://developers.facebook.com/docs/graph-api/webhooks/getting-started/webhooks-for-ad-accounts) \u2013 Subscribe to changes and receive updates in real time without calling the API.\n\n| [Ads Management Standard Access](https://developers.facebook.com/docs/features-reference/ads-management-standard-access) | **Required for all use cases**. | **Cannot be removed for any use case.** Can request a higher Marketing API rate limit for any use case.\ufe61 |\n\n7. Click **Generate Access Token**.\n8. In the popup select the permissions to associate with your access token and click **Get Token**. This token is valid for 2 months. Click **Next**.\n\nConfigurations allow you to choose:\n- The type of login variation to present to your app users.\n- The type of access token you want to request from your business clients, a User access token or System-u"
+    }
+   ]
+  },
+  "access": {
+   "query": "Meta Ads developers.facebook.com/docs/marketing-apis API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_5VBMyKNA8Otn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/access",
+     "title": "Authorization | Meta for Developers",
+     "snippet": "| | Limited access (default) | Full access (after App Review) |\n|---|---|---|\n| **How to get** | Automatically granted when you add the Marketing API product to your app. | Click **+Upgrade** for the Marketing API Access Tier feature in your App Dashboard. Your app must meet the requirements below. |\n| **Rate limits** | Heavily rate-limited per ad account. For development only. Not for production apps running for live advertisers. | Lightly [rate limited](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/rate-limiting) per ad account. |\n| **Account limits** | Manage an unlimited number of ad accounts. App admins or developers can make API calls on behalf of ad account admins or advertisers. | Manage an unlimited number of ad accounts, assuming you get `ads_read` or `ads_management` permission from the ad account. |\n| **Business Manager** | Limited access to [Business Manager](https://developers.facebook.com/docs/business-manager-api) and [Catalog](https://developers.facebook.com/documentation/ads-commerce/catalog) APIs. No Business Manager access to manage ad accounts, user permissions, and Pages. | Access to all [Business Manager](https://developers"
+    },
+    {
+     "url": "https://variafy.com/guides/meta-marketing-api",
+     "title": "Meta (Facebook) ads API explained: access, keys and cost",
+     "snippet": "The Meta Marketing API is how software creates, changes and reports on Facebook and Instagram ads \u2014 the same things you do in Ads Manager, through code. There is no \u201cAPI key\u201d: you create an app at developers.facebook.com, get an app ID and secret, and make calls with an access token. Meta charges nothing for the calls; for your own ad account an app with basic access is enough, while managing other people\u2019s accounts needs app review and business verification. If you don\u2019t want to write code, you don\u2019t need your own app at all: Meta\u2019s official MCP connector or a\n\nNo. When you create an app, you Receive a unique App ID and App Secret, which are required for authentication. ([source](https://developers.facebook.com/documentation/development/create-an-app)) Calls then carry an access token ([source](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication)):\n| | How long it lasts | Good for |\n|---|---|---|\n| User token, short-lived | \u201can hour or two\u201d | Trying calls in Graph API Explorer |\n| User token, long-lived | About 60 days | Small scripts you renew by hand |\n| System user token | does not expire | Automation that runs unattended |\n\n## Ho"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/rate-limiting",
+     "title": "Marketing API Rate Limiting",
+     "snippet": "**Ads Management Standard Access is now Marketing API Access Tier**\n**No code changes are needed.**\nTier labels have been updated: \u201cStandard Access\u201d is now **Limited Access**, and \u201cAdvanced Access\u201d is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).\n\nThe feature that impacts the Marketing API rate limit quota is [Marketing API Access Tier](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier). When you add the Marketing API product in your [App Dashboard](https://developers.facebook.com/apps), you will get the **Limited tier** of Marketing API Access Tier by default. This will give you development access to the Marketing API. If you need to upgrade to get more rate limiting quota, upgrade to **Full access** of Marketing API Access Tier in [App Review](https://developers.facebook.com/documentation/ads-"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api",
+     "title": "Dataset Quality API",
+     "snippet": "**Ads Management Standard Access is now Marketing API Access Tier**\n**No code changes are needed.**\nTier labels have been updated: \u201cStandard Access\u201d is now **Limited Access**, and \u201cAdvanced Access\u201d is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).\n\n### Ownership and access\n1. In Meta Business Suite, go to the Users section and select the **System User** tab. Click on the specific system user you are using for the Conversions API.\n2. Go to the Assign Asset dialog and choose **Pixels**. Then, select the pixels you want to send events on behalf of.\n3. For each pixel, select the Manage Pixel permission, and click **Save Changes**.\n4. Go back to your system user\u2019s details page. Verify that the selected pixels are visible there.\n5. To generate the access token, follow instructions [here\u2060](https://www.facebook.com/business/help/503306"
+    },
+    {
+     "url": "https://developers.meta.com/blog/updates-to-ads-management-standard-access-feature",
+     "title": "Blog | Meta Horizon OS Developers",
+     "snippet": "Today, we're announcing updates to **Ads Management Standard Access (AMSA)** \u2014 the App Review feature that unlocks higher Marketing API rate limits, system user quotas, and other enhanced capabilities for your app.\nBased on developer feedback, we're making three key improvements: (1) renaming the feature for clarity; (2) revising the qualification threshold; and (3) making eligibility criteria fully transparent in the product UI.\n**These changes take effect on May 4, 2026.** This is not a breaking change \u2014 no code updates are required, and existing access levels are preserved automatically.\n## \u201cAds Management Standard Access\u201d is now \"Marketing API Access Tier\"\nThe AMSA feature is being renamed to \u201c**Marketing API Access Tier\u201d** feature.\nThe old name caused persistent confusion: developers frequently mixed AMSA up with the separate `ads_management` permission. The new name clearly communicates what this feature controls \u2014 your app's tier of access to Marketing API functionality.\n\n| **Before** | **After** |\n|---|---|\n| Feature: \"Ads Management Standard Access\" | Feature: **\"Marketing API Access Tier\"** |\n| Lower tier: \"Standard Access\" | Lower tier: **\"Limited Access\"** |\n| Upper tie"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Meta Ads API reference REST GraphQL endpoints documentation developers.facebook.com/docs/marketing-apis",
+   "log_id": "log_I5PcHOaNV1hI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/docs/marketing-apis",
+     "title": "Marketing API",
+     "snippet": "# Marketing API\nThe Marketing API is a collection of [Graph API](https://developers.facebook.com/docs/graph-api) endpoints and other features that can be used to help you advertise across Meta technologies. Before advertising on Facebook, Instagram, Messenger, and WhatsApp, we recommend you learn about Meta's [ad campaign structure](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview#how-it-works) to understand the objects you're working with and how they relate to each other.\n\n## Get Started\nBegin creating and managing Meta ad campaigns by following step-by-step guidance on setting up campaigns, ad sets, and creatives using the Marketing API\nBasic Ad Creation\nGet detailed guidance on how to set up campaigns, ad sets, and ad creatives, including code samples that illustrate the implementation process.\nManage Campaigns\nLearn key operations you can perform using the Marketing API, including how to modify, pause and delete campaigns.\nAd Optimization Basics\nUse Marketing API endpoints that serve as essential tools for developers to manage audiences and analyze ad campaign insights.\nExplore additional APIs to enhance ad targeting, manage catalogs, maintain "
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/get-started/basic-ad-creation",
+     "title": "Basic Ad Creation",
+     "snippet": "The Marketing API provides several endpoints to create and manage advertising campaigns. The primary creation endpoints include `campaigns`, `adsets`, and `ads`. This document describes these endpoints and what they do.\nThe `campaigns`, `adsets`, `ads`, and `adcreatives` endpoints support idempotent requests, so you can retry a failed create request without creating a duplicate object. See [Idempotent requests](/documentation/ads-commerce/marketing-api/idempotent-requests).\n### The `campaigns` endpoint\nUse the [`campaigns` endpoint](/documentation/ads-commerce/marketing-api/reference/ad-account/campaigns) to create and manage campaigns. Use this endpoint to set the overall objectives for your marketing efforts, such as brand awareness or conversions.\n**Example API request:**\n```\ncurl -X POST \\\nhttps://graph.facebook.com/v27.0/act_<AD_ACCOUNT_ID>/campaigns \\\n-F 'name=My Campaign' \\\n-F 'objective=LINK_CLICKS' \\\n-F 'status=PAUSED' \\\n-F 'access_token=<ACCESS_TOKEN>'\n```\n### The `adsets` endpoint\nThe [`adsets` endpoint](/documentation/ads-commerce/marketing-api/reference/ad-account/adsets) organizes ads within campaigns based on specific targeting criteria and budget allocation. Ad sets"
+    },
+    {
+     "url": "https://developers.facebook.com/blog/post/2026/07/29/introducing-graph-api-v26-and-marketing-api-v26",
+     "title": "Introducing Graph API v26.0 and Marketing API v26.0",
+     "snippet": "- Graph API - Commerce Order Management: Calls to affected endpoints on v26.0 and later are blocked beginning July 29, 2026. The endpoints are removed from all remaining Graph API versions on October 27, 2026, after which calls return errors. No replacement API is available.\n\n- Marketing API - Ads in WhatsApp Status: v26.0 adds expanded identity, targeting, optimization, and creative capabilities beginning July 29, 2026.\n- Marketing API - Advantage+ Audience for Housing, Employment, and Financial Products and Services campaigns:\n\n**The following endpoints are affected:**\n- [POST /{ad_account_id}/adcreatives](https://developers.facebook.com/docs/marketing-api/reference/adcreative)\n- [POST /{ad_account_id}/ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/ads#Creating)\n- [POST /{ad_id}](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup#Updating)\n- [GET /{ad_account_id}/generatepreviews](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/generatepreviews)\n\nThe Meta Business SDK v26 release will be published shortly after the release of Graph API v26. Thi"
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/call-ads",
+     "title": "Call Ads",
+     "snippet": "This guide explains how to create and publish call ads using the Marketing API from Meta.\n## Before you start\nThis guide assumes you have:\n- An [ad account with Meta\u2060](https://adsmanager.facebook.com/adsmanager/) with a valid payment method\n- Uploaded any assets, such as images or videos, to be used in your ads to Meta servers\nTo make successful calls to all endpoints in this guide, you will need:\n- A Page access token requested by a person who can perform the `ADVERTIZE` task on the Page\n- A person using your app must grant the following permissions:\n- `ads_management`\n- `pages_manage_ads`\n- `pages_read_engagement`\n- `pages_show_list`\n\n## Step 1: Create a Campaign\nTo create your ad campaign send a `POST` request to the `act_ad_account_id/campaigns` endpoint where ***ad_account_id*** is the ID for your Meta ad account. Your request must include:\n- `name`\n- `objective` \u2013 set to one of the following supported objectives:\n- `OUTCOME_AWARENESS`\n- `OUTCOME_ENGAGEMENT`\n- `OUTCOME_LEADS`\n- `OUTCOME_SALES`\n- `OUTCOME_TRAFFIC`\n- `special_ad_categories`\n#### Example request\n*Formatted for readability. Replace **bold, italics values**, such as **ad_account_id**, with your values.*\n```\ncurl -X"
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/creative/reels-ads?_fb_noscript=1",
+     "title": "Reels Ads",
+     "snippet": "**Ads Management Standard Access is now Marketing API Access Tier**\n**No code changes are needed.**\nTier labels have been updated: \u201cStandard Access\u201d is now **Limited Access**, and \u201cAdvanced Access\u201d is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](/docs/features-reference#marketing-api-access-tier).\n\n## Step 1: Access Asset\nAn [access token](/documentation/facebook-login/guides/access-tokens) is an opaque string that identifies a user, app, or Page and can be used by the app to make graph API calls. You can see when it expires and which app generated it. Marketing API calls on Meta apps need to include an access token.\nGet an access token with necessary permissions:\n- `ads_management`: make changes in selected ad accounts\n- `ads_read`: read out ads data\n- `read_insights`: read out performance insights\nUse system access tokens as they have longer expiration times.\nTo access Marketing API endpoints, you need to "
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Meta Ads developers.facebook.com/docs/marketing-apis MCP server Model Context Protocol official",
+   "log_id": "log_P2TQSy6MKQ_N",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.facebook.com/documentation/mcp",
+     "title": "Connect AI agents to Meta with MCP",
+     "snippet": "Meta runs official remote Model Context Protocol (MCP) servers that bring Facebook, Instagram, WhatsApp, and Meta Ads capabilities to your agentic workflows.\n**This page is documentation, not an MCP server.** Don\u2019t add this page\u2019s URL to your MCP client. Use one of these server URLs instead:\n- Meta Ads MCP: `https://mcp.facebook.com/ads`\n- Meta Social Technologies MCP: `https://mcp.facebook.com/devtools`\n- WhatsApp Business Tools MCP: `https://mcp.facebook.com/whatsapp_business_tools`\n## Benefits\n- **One protocol, built for agent workflows.** Your agent connects to a Meta MCP server and discovers available tools at runtime. Tool descriptions, parameter schemas, and error responses are designed for large language models (LLMs) to interpret correctly. This design minimizes hallucination and failed tool calls.\n- **Standard authentication.** OAuth-based authentication with permissions that you control from your Meta account settings. Each server defines its own permissions, so check the server-specific page for the ones it requests. Revoke access at any time.\n## Available MCP servers\nThe following table lists the available Meta MCP servers:\n| Server | Description | Type |\n|---|---|---|"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started",
+     "title": "Get started",
+     "snippet": "To use the ads MCP server with your own Meta app, you must follow some key steps to set up your environment and gain access.\n1. Go to [developers.facebook.com/apps](https://developers.facebook.com/apps) and create a new app, or open an existing app.\n2. Add the **Create & manage ads with ads MCP server** use case.\n\n### OAuth\nThe MCP client redirects you to the Facebook Login for Business dialog. You sign in with your Facebook account or your Meta Managed Account (MMA) and approve the requested permissions. No manual token setup is required.\nMake sure your Meta developer app\u2019s **redirect URL** is configured correspondingly with your choice of MCP client in the [**Facebook Login for Business**](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business) settings.\n### User access token\n### System user access token\nYou can also use a [system user access token](https://developers.facebook.com/docs/business-management-apis/system-users) to access the ads MCP server, for example for programmatic or server-to-server setups. See [System Users](https://developers.facebook.com/docs/business-management-apis/system-users) for how to create a system user and generate"
+    },
+    {
+     "url": "https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server",
+     "title": "Meta's ads MCP server is now available for developers",
+     "snippet": "Today, we are opening up our ads MCP server to any developer with their own Meta app. You can now connect your AI application directly to Meta's advertising capabilities, enabling your users to create and optimize campaigns, pull performance insights, manage product catalogs, and more through natural language. This means any developer can now bring Meta's ads MCP capabilities into the tools their customers already use \u2014 whether that's a marketing platform, a data warehouse, or a custom internal system.\n\n## How do I connect using my own app?\n1. Go to the [developer dashboard](https://developers.facebook.com/apps/) and select the app you'd like to use.\n2. Click **Use cases** in the left navigation, then **Add use cases**.\n3. In the popup, click **Ads and monetization**, select **Create & manage ads with ads MCP server**, and click **Save.**\n4. **OPTIONAL** If you manage data on behalf of other businesses, for example you are an agency or a partner, you need to submit your app for review.\n- Request Advanced Access on the *ads_mcp_management* permission.\n- On the 'Use cases' screen, click **Customize** for the ads MCP server use case.\n- On the 'Permissions and features' tab, click **Ac"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/mcp/connect-an-mcp-client",
+     "title": "Connect an MCP client to Meta",
+     "snippet": "Use this guide to connect a supported AI client to a remote Meta MCP server and authorize access with OAuth. When you finish, your client can discover and execute the server\u2019s available tools.\n## Before you begin\nTo connect a client, you need:\n- A current version of a supported AI client.\n- A Meta account with access to the assets that the server manages. Assets are the businesses, apps, and accounts that you select when you grant consent.\n- A Meta app, only if the server-specific page requires a client ID.\nOpen the documentation for the MCP server that you want to use, starting from the [list of available Meta MCP servers](https://developers.facebook.com/documentation/mcp#available-mcp-servers). A client is supported on a given server only if that server\u2019s page lists it.\n\nUse a developer-provided client ID when the server-specific page requires one, or when the server doesn\u2019t recognize your client. Follow that page\u2019s instructions to create or configure a Meta app, including its redirect URI. Then use the app\u2019s **App ID** as the OAuth client ID.\nFor example, connecting to the Meta Ads MCP server with your own Meta app uses this path. Its [Get started](https://developers.facebook.co"
+    },
+    {
+     "url": "https://developers.facebook.com/documentation/mcp/ads-mcp-server",
+     "title": "Meta Ads MCP",
+     "snippet": "The Ads MCP Server lets you manage Meta ads from an AI agent. See [Ads MCP Server](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview) for setup instructions, available tools, and supported clients."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

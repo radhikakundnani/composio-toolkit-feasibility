@@ -1,0 +1,142 @@
+{
+ "id": 91,
+ "app": "NotebookLM",
+ "hint": "cloud.google.com/gemini (Enterprise API)",
+ "given_category": "AI, Research and Media-native",
+ "queries": {
+  "auth": {
+   "query": "NotebookLM API authentication OAuth API key access token developer docs cloud.google.com/gemini Enterprise API",
+   "log_id": "log_ZH0uJ3qDJJfI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+     "title": "Create and manage notebooks (API)",
+     "snippet": "Before you start working with your notebooks, do the following:\n- [Set up Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm).\n- [Get licenses for Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing) and assign a license to your user account.\n- [Grant the Cloud NotebookLM User role](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm#grant-roles) (`roles/discoveryengine.notebookLmUser`) to your user account.\n- In a local terminal or [Cloud Shell](https://docs.cloud.google.com/shell/docs), sign in to the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) with your user credentials by running the [`gcloud auth login`](https://docs.cloud.google.com/sdk/gcloud/reference/auth/login) command:\n```\ngcloud auth login\n```\nSigning in with your user credentials ensures that `gcloud auth print-access-token` generates an access token for your user account. The [`projects.locations.notebooks` REST API](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.noteb"
+    },
+    {
+     "url": "https://developers.google.com/notebook/docs/authentication",
+     "title": "Authentication",
+     "snippet": "The Gemini Notebook API uses [OAuth 2.0](https://developers.google.com/identity/protocols/oauth2) to authenticate requests on behalf of a Google user. Every request must include an OAuth 2.0 Bearer token in the `Authorization` HTTP header. The API doesn't accept API keys.\n\n- **Use a personal Google Account.** During the Public Preview, the Gemini Notebook API is only available for personal Google Accounts. Requests authenticated with a Google Workspace account fail with `403 PERMISSION_DENIED` (`WORKSPACE_ACCOUNT_NOT_SUPPORTED`).\n- **Sign in to Gemini Notebook once.** The API reads and writes the notebooks of the authorizing user, so each Google Account must have signed in to [Gemini Notebook](https://notebook.google.com) at least once before calling the API. If an account has never signed in to Gemini Notebook, `CreateNotebook` requests fail with `404 NOT_FOUND` (`Account not found for user.`).\n## OAuth 2.0 scopes\nRequests must be authenticated with an OAuth 2.0 token granted one of the following scopes:\n| Scope | Access | Supported methods |\n|---|---|---|\n| `https://www.googleapis.com/auth/notebook` | Read and write access to notebooks and sources | `CreateNotebook`, `GetNotebook"
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha",
+     "title": "Package google.cloud.notebooklm.v1alpha | Gemini Enterprise | Google Cloud Documentation",
+     "snippet": "- **Authorization scopes** Requires one of the following OAuth scopes: For more information, see the [Authentication Overview](https://docs.cloud.google.com/docs/authentication#authorization-gcp).\n\n- **Authorization scopes** Requires one of the following OAuth scopes: For more information, see the [Authentication Overview](https://docs.cloud.google.com/docs/authentication#authorization-gcp). - `https://www.googleapis.com/auth/cloud-platform` - `https://www.googleapis.com/auth/discoveryengine.readwrite` - `https://www.googleapis.com/auth/discoveryengine.serving.readwrite` - **IAM Permissions** Requires the following [IAM](https://cloud.google.com/iam/docs) permission on the `name` resource: For more information, see the [IAM documentation](https://cloud.google.com/iam/docs). - `discoveryengine.sources.get` |\n\n## CmekConfig\nCustomer-managed encryption configuration for Notebooks.\n| Fields | |\n|---|---|\n| `kms_key` | `string` Required. KMS key resource name which will be used to encrypt resources `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`. |"
+    },
+    {
+     "url": "https://integrations.sh/notebooklm.google/notebooklm-enterprise-api",
+     "title": "NotebookLM Enterprise API \u2014 REST",
+     "snippet": "- **URL** `https://discoveryengine.googleapis.com`\n- **Docs** [https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks)\nAuthentication\nGoogle Cloud access token (Application Default Credentials or user OAuth via gcloud) oauth2 discovered [ Set up OAuth \u2197 ](https://docs.cloud.google.com/gemini/enterprise/docs/authentication)\n`Authorization: Bearer <credential>`\nFollow [Authenticate to Gemini Enterprise](https://docs.cloud.google.com/gemini/enterprise/docs/authentication). The easiest path is to use Google Cloud Application Default Credentials, for example by running `gcloud auth application-default login`, or to authenticate with a service account in Google Cloud and let client libraries/SDKs obtain an access token. You also need NotebookLM Enterprise enabled in your Google Cloud project and the required IAM roles/licensing described in the NotebookLM Enterprise docs."
+    },
+    {
+     "url": "https://developers.google.com/notebook/docs/mcp",
+     "title": "Model Context Protocol (MCP)",
+     "snippet": "The Gemini Notebook API provides a remote **Model Context Protocol (MCP)** server at `https://notebook.googleapis.com/mcp`. Connecting an MCP-compatible agent or IDE to this endpoint exposes tools for creating notebooks and ingesting sources over Streamable HTTP (JSON-RPC 2.0).\n\nHelp me connect to the remote Gemini Notebook MCP server (`https://notebook.googleapis.com/mcp`). Follow these exact steps:\n1. Check if `gcloud` is installed and ask me which Google Cloud PROJECT_ID to use (you can list my projects with `gcloud projects list --limit=10` or check `gcloud config get-value project`).\n2. Enable the Gemini Notebook API on that project:\ngcloud services enable notebook.googleapis.com --project=\"$PROJECT_ID\"\n3. Authenticate Application Default Credentials (ADC) with a personal Google Account (Google Workspace accounts are not yet supported) that has signed in to https://notebook.google.com at least once, requesting the `notebook` OAuth scope (standard `gcloud auth print-access-token` lacks this scope):\ngcloud auth application-default login --scopes=\"https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/notebook\"\n4. Mint an access token:\nACCESS_TOKEN=$(gclou"
+    }
+   ]
+  },
+  "access": {
+   "query": "NotebookLM cloud.google.com/gemini Enterprise API API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_oIzAxtEMC74F",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+     "title": "Set up Gemini Notebook Enterprise",
+     "snippet": "Sign in to your Google Cloud account. If you're new to Google Cloud, [ create an account](https://console.cloud.google.com/freetrial) to evaluate how our products perform in real-world scenarios. New customers also get $300 in free credits to run, test, and deploy workloads."
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+     "title": "Create and manage notebooks (API)",
+     "snippet": "Before you start working with your notebooks, do the following:\n- [Set up Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm).\n- [Get licenses for Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing) and assign a license to your user account.\n- [Grant the Cloud NotebookLM User role](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm#grant-roles) (`roles/discoveryengine.notebookLmUser`) to your user account.\n- In a local terminal or [Cloud Shell](https://docs.cloud.google.com/shell/docs), sign in to the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) with your user credentials by running the [`gcloud auth login`](https://docs.cloud.google.com/sdk/gcloud/reference/auth/login) command:\n```\ngcloud auth login\n```\nSigning in with your user credentials ensures that `gcloud auth print-access-token` generates an access token for your user account. The [`projects.locations.notebooks` REST API](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.noteb"
+    },
+    {
+     "url": "https://kortex-notebooklm.com/blog/gemini-notebook-api",
+     "title": "Gemini Notebook (formerly NotebookLM) API: Key and Pricing",
+     "snippet": "No, not for personal accounts. Google\u2019s only documented Gemini Notebook API belongs to Gemini Notebook Enterprise on Google Cloud, and its setup steps require Enterprise licenses before you make a single call ([Google Cloud](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks), 2026). Free, Plus, Pro and Ultra accounts have nothing official to call. As a result, every consumer integration you\u2019ll find works around the app, not through it.\n\n**The Gemini Notebook Enterprise API** is Google\u2019s v1alpha API for notebooks in the Google Cloud edition. It manages notebooks, sources and audio, but it doesn\u2019t chat. Google\u2019s docs list methods to create, get, list recently viewed, delete and share notebooks, add or upload sources, and create or delete audio overviews (Google Cloud, 2026). Specifically, every call goes to a v1alpha endpoint under Google\u2019s Pre-GA terms, which \u201cmight have limited support\u201d. In addition, calls carry an OAuth access token from `gcloud auth print-access-token`. That\u2019s why there\u2019s no \u201cNotebookLM API key\u201d to copy from a settings page.\n\nAccess costs money and admin work. Google\u2019s product page lists Gemini Notebook for Enterprise at $9 "
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+     "title": "Get licenses for Gemini Notebook Enterprise",
+     "snippet": "There are two subscription *tiers* for Gemini Notebook Enterprise:\n- **The free-trial tier:** With this tier, you get a full-featured, 14-day trial subscription of 5000 licenses.\n- **The paid tier:** You can buy a monthly subscription or a year-long subscription. Both the monthly and the yearly subscriptions can be set to renew automatically.\n## Before you begin\nBefore starting the procedures on this page, make sure that:\n- You have completed the tasks on the [Set up Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm). This includes granting at least the **Cloud NotebookLM User** (`roles/discoveryengine.notebookLmUser`) role to any users who you'll license to use Gemini Notebook Enterprise (including free-trial users).\n- You have the following roles:\n- Cloud NotebookLM Admin (`roles/discoveryengine.notebookLmOwner`)\n- Gemini Enterprise Admin (`roles/discoveryengine.agentspaceAdmin`)"
+    },
+    {
+     "url": "https://discuss.ai.google.dev/t/how-to-access-notebooklm-via-api/5084?page=2",
+     "title": "How to Access NotebookLM Via API?",
+     "snippet": "The NotebookLM API requires Google Cloud\u2019s NotebookLM Enterprise product which requires identity/auth setup and buying a subscription which contains at least 15 licenses and can contain up to 5,000 licenses. (More rules about regions.)\nOfficial Google Cloud Documentation: \u2026\nUpdate for anyone still looking (Sept 2026): Google now has an official API, but only for Gemini Notebook Enterprise (NotebookLM\u2019s new name).\nIt needs Enterprise licenses in a Google Cloud project and covers notebooks, sources and Audio Overviews.\nFor regular Google accounts there is still no official API."
+    }
+   ]
+  },
+  "surface": {
+   "query": "NotebookLM API reference REST GraphQL endpoints documentation cloud.google.com/gemini Enterprise API",
+   "log_id": "log_IAtifHUQhb3f",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha",
+     "title": "Package google.cloud.notebooklm.v1alpha | Gemini Enterprise | Google Cloud Documentation",
+     "snippet": "## CreateNotebookRequest\nRequest for `NotebookService.CreateNotebook` method.\n| Fields | |\n|---|---|\n| `parent` | `string` Required.\n\n## GetNotebookRequest\nRequest for `NotebookService.GetNotebook` method.\n| Fields | |\n|---|---|\n| `name` | `string` Required. Full resource name of `Notebook`, such as `projects/{project}/locations/{location}/notebooks/{notebook_id}`. |"
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+     "title": "Create and manage notebooks (API)",
+     "snippet": "Gemini Notebook Enterprise is a powerful tool for generating insights and summaries from your documents. This page describes the APIs that let you perform the following notebook management tasks programmatically:\n- Create a notebook\n- Retrieve a notebook\n- List recently viewed notebooks\n- Delete a notebook\n- Share a notebook\n## Before you begin\nBefore you start working with your notebooks, do the following:\n- [Set up Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm).\n- [Get licenses for Gemini Notebook Enterprise](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing) and assign a license to your user account.\n- [Grant the Cloud NotebookLM User role](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm#grant-roles) (`roles/discoveryengine.notebookLmUser`) to your user account.\n- In a local terminal or [Cloud Shell](https://docs.cloud.google.com/shell/docs), sign in to the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) with your user credentials by running the [`gcloud auth login`](https://docs.cloud.google.com/"
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha.md.txt",
+     "title": "docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha.md.txt",
+     "snippet": "## GetNotebookRequest\nRequest for `https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha#google.cloud.notebooklm.v1alpha.NotebookService.GetNotebook` method.\n| Fields ||\n|---|---|\n| `name` | `string` Required. Full resource name of `https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha#google.cloud.notebooklm.v1alpha.Notebook`, such as `projects/{project}/locations/{location}/notebooks/{notebook_id}`. |\n\n## ListRecentlyViewedNotebooksResponse\nResponse for `https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha#google.cloud.notebooklm.v1alpha.NotebookService.ListRecentlyViewedNotebooks` method.\n| Fields ||\n|---|---|\n| `notebooks[]` | `https://docs.cloud.google.com/gemini/enterprise/docs/reference/rpc/google.cloud.notebooklm.v1alpha#google.cloud.notebooklm.v1alpha.Notebook` The list of recently viewed notebooks. |\n| `next_page_token` | `string` The page token, provide this to retrieve the subsequent page. |\n## Notebook\nNotebook is a resource where users can store their content (as sources) and interacts with the content.\n| Fields ||\n|---|---|\n| `name` "
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks-sources",
+     "title": "Add and manage data sources in a notebook (API)",
+     "snippet": "## Use the US multi-regional endpoint\nIf your Gemini Notebook Enterprise subscription is in the US multi-region, you can send the requests on this page to the US multi-regional endpoint, `discoveryengine.us.rep.googleapis.com`. A multi-regional endpoint processes your requests and terminates TLS within the multi-region, so your request data stays in the US while it's in transit. Using this endpoint doesn't change where your notebooks are stored. For more information, see [Regional and multi-regional API endpoints overview](https://docs.cloud.google.com/docs/security/compliance/about-regional-endpoints) in the Google Cloud security guide.\n\nTo add sources to a notebook, call the [`notebooks.sources.batchCreate`](https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.notebooks.sources/batchCreate) method.\n### REST\n```\ncurl -X POST \\\n-H \"Authorization:Bearer $(gcloud auth print-access-token)\" \\\n-H \"Content-Type: application/json\" \\\n\"https://ENDPOINT_LOCATION-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/LOCATION/notebooks/NOTEBOOK_ID/sources:batchCreate\" \\\n-d '{\n\"userContents\": [\n{\nUSER_CONTENT\n}\n]\n}'\n```\nReplace the fo"
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-usage-audit-logs-for-nblme",
+     "title": "Configure usage audit logging for Gemini Notebook Enterprise",
+     "snippet": "### REST\n```\ncurl -X PATCH \\\n-H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\\n-H \"Content-Type: application/json\" \\\n-H \"X-Goog-User-Project: PROJECT_ID\" \\\n\"https://ENDPOINT_LOCATION-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_ID?updateMask=customerProvidedConfig.notebooklmConfig.observabilityConfig\" \\\n-d '{\n\"customerProvidedConfig\": {\n\"notebooklmConfig\": {\n\"observabilityConfig\": {\n\"observabilityEnabled\": true,\n\"sensitiveLoggingEnabled\": true\n}\n}\n}\n}'\n```\nReplace the following:\n- `ENDPOINT_LOCATION`: the multi-region for your API request. Specify one of the following values: For more information, see [Specify a multi-region for your data store](https://docs.cloud.google.com/gemini/enterprise/docs/locations#specify_a_multi-region_for_your_data_store).\n- `us` for the US multi-region\n- `eu` for the EU multi-region\n- `global` for the Global location\n- `PROJECT_ID`: the ID of your project."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "NotebookLM cloud.google.com/gemini Enterprise API MCP server Model Context Protocol official",
+   "log_id": "log_wXd4cP37iT2_",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.google.com/notebook/docs/mcp",
+     "title": "Model Context Protocol (MCP)",
+     "snippet": "The Gemini Notebook API provides a remote **Model Context Protocol (MCP)** server at `https://notebook.googleapis.com/mcp`. Connecting an MCP-compatible agent or IDE to this endpoint exposes tools for creating notebooks and ingesting sources over Streamable HTTP (JSON-RPC 2.0).\n\n```\nHelp me connect to the remote Gemini Notebook MCP server (`https://notebook.googleapis.com/mcp`). Follow these exact steps:\n1. Check if `gcloud` is installed and ask me which Google Cloud PROJECT_ID to use (you can list my projects with `gcloud projects list --limit=10` or check `gcloud config get-value project`).\n2. Enable the Gemini Notebook API on that project:\ngcloud services enable notebook.googleapis.com --project=\"$PROJECT_ID\"\n3. Authenticate Application Default Credentials (ADC) with a personal Google Account (Google Workspace accounts are not yet supported) that has signed in to https://notebook.google.com at least once, requesting the `notebook` OAuth scope (standard `gcloud auth print-access-token` lacks this scope):\ngcloud auth application-default login --scopes=\"https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/notebook\"\n4. Mint an access token:\nACCESS_TOKEN=$(g"
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/mcp",
+     "title": "MCP Reference: aiplatform.googleapis.com | Gemini Enterprise Agent Platform | Google Cloud Documentation",
+     "snippet": "Model Context Protocol (MCP) server that provides Agent Platform tools for building, deploying, and scaling both predictive machine learning and generative AI applications on Google Cloud.\nA [Model Context Protocol (MCP) server](https://modelcontextprotocol.io/docs/learn/server-concepts) acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application. MCP servers connect AI applications to external systems such as databases and web services, translating their responses into a format that the AI application can understand.\n### Server Setup\nYou must [enable MCP servers](https://docs.cloud.google.com/mcp/enable-disable-mcp-servers) and [set up authentication](https://docs.cloud.google.com/mcp/authenticate-mcp) before use. For more information about using Google and Google Cloud remote MCP servers, see [Google Cloud MCP servers overview](https://docs.cloud.google.com/mcp/overview).\n### Server Endpoints\nAn MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection"
+    },
+    {
+     "url": "https://cloud.google.com/blog/topics/developers-practitioners/devs-guide-to-mcp-apps-in-gemini",
+     "title": "Devs guide to MCP Apps in Gemini",
+     "snippet": "[MCP Apps](https://github.com/modelcontextprotocol/ext-apps) (SEP-1865) solves this. This open Model Context Protocol (MCP) extension pairs a tool with a live UI. In [Gemini Enterprise](https://business.gemini.google/?utm_source=cloud.google.com/blog), that UI renders directly in the chat flow inside a sandboxed iframe, and can expand to fullscreen or a side panel. Edits run locally while the workspace and assistant stay synchronized.\nYou also avoid rebuilding core foundations: Gemini provides workforce sign-in, governed data access, and the Default Assistant, while you host your MCP server on a private [Cloud Run](https://cloud.google.com/run) service.\n\nThree decoupled tiers work together:\n- **Client browser:** Shows the chat alongside the MCP App widget in the side panel.\n- **Gemini Enterprise:** The default assistant calls tools, the AppBridge proxy relays widget messages, and the connector manages OAuth.\n- **Google Cloud (your project):** You deploy and host the MCP server on Cloud Run, which exposes one JSON-RPC endpoint (/mcp), runs background jobs, and serves the single-file HTML widget.\n\n- **Build on Google Cloud:** [MCP Apps Specification (SEP-1865)](https://github.com/mod"
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/use-agent-platform-mcp?authuser=82",
+     "title": "Use the Agent Platform remote MCP server",
+     "snippet": "# Use the Agent Platform remote MCP server\nThis document shows you how to use the Gemini Enterprise Agent Platform remote Model Context Protocol (MCP) server to connect with AI applications including Antigravity, ChatGPT, Claude, and custom applications you are developing. The Agent Platform remote MCP server lets you manage Agent Platform resources from your AI application. The Gemini Enterprise Agent Platform remote MCP server is enabled when you enable the Gemini Enterprise Agent Platform API.\n[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) (MCP) standardizes how large language models (LLMs) and AI applications or agents connect to external data sources. MCP servers let you use their tools, resources, and prompts to take actions and get updated data from their backend service.\n## What's the difference between local and remote MCP servers?\n- **Local MCP servers** Typically run on your local machine and use the standard input and output streams (stdio) for communication between services on the same device.\n- **Remote MCP servers** Run on the service's infrastructure and offer an HTTP endpoint to AI applications for communication between the AI "
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+     "title": "Gemini Enterprise release notes",
+     "snippet": "Support for 3-legged OAuth (3LO) authentication with Agent Identity auth manager for Agent2Agent (A2A) agents is generally available (GA).\nThis integration lets A2A agents built with the Agent Development Kit (ADK) and deployed on Agent Runtime authenticate to downstream Model Context Protocol (MCP) servers, Google Cloud services, and third-party APIs on behalf of the signed-in Gemini Enterprise user. When a tool requires user consent, Gemini Enterprise automatically prompts the user, validates the callback at `https://vertexaisearch.cloud.google.com/validateUserId`, finalizes credentials with Agent Identity auth manager, and resumes the A2A conversation.\n\nYou can configure Virtual Private Cloud (VPC) connectivity for custom Model Context Protocol (MCP) server data stores by routing outbound tool traffic through Agent Gateway (supported in `us-central1` and `europe-west1`). You can host private MCP servers inside your VPC network by using Private Service Connect (PSC) network attachments and agent connectivity templates. You can also route traffic to public MCP servers through Cloud NAT with static external IP addresses for strict IP allowlists.\n\n**Gemini Enterprise: Configure cita"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

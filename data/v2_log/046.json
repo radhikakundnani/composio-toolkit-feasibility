@@ -1,0 +1,12 @@
+{
+  "id": 46,
+  "app": "Squarespace",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "blocker"
+  ],
+  "searches": 3
+}

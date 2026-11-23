@@ -1,0 +1,54 @@
+{
+ "id": 68,
+ "app": "MongoDB Atlas",
+ "changes": [
+  {
+   "field": "access",
+   "from": "unknown",
+   "to": "self_serve_free",
+   "why": "Docs: Free clusters never expire and can be created via CLI/API; service accounts creatable by org owner with no paid tier required (was unknown)",
+   "evidence": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster"
+  },
+  {
+   "field": "blocker",
+   "from": "other",
+   "to": "narrow_api",
+   "why": "was \"other\"; admin API does not expose data -> narrow_api",
+   "evidence": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster"
+  },
+  {
+   "field": "access_notes",
+   "from": "Org Owner creates a service account (OAuth2 client credentials) or legacy digest API key; Atlas OAuth 2.1 App Connections exists for third parties.",
+   "to": "Free Atlas account; Free clusters never expire. Org Owner creates a service account (OAuth2 client credentials) or legacy digest API key for the Admin API.",
+   "why": "updated",
+   "evidence": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster"
+  },
+  {
+   "field": "blocker_note",
+   "from": "Admin API does not expose stored data; data access needs DB user credentials; free-tier access not shown.",
+   "to": "Admin API manages Atlas resources, not stored data; data access needs DB user credentials.",
+   "why": "rephrased",
+   "evidence": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://mongodb.com/docs/atlas/configure-api-access",
+   "to": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster",
+   "why": "Free cluster doc",
+   "evidence": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster"
+  },
+  {
+   "field": "confidence.access",
+   "from": "low",
+   "to": "medium",
+   "why": "Free tier documented; admin API on free tier inferred",
+   "evidence": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster"
+  }
+ ],
+ "confirmed": [
+  "mcp (mongodb-js/mongodb-mcp-server, MongoDB-published)",
+  "auth_primary",
+  "verdict"
+ ],
+ "searches": 4
+}

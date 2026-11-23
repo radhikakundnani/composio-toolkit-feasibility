@@ -1,0 +1,142 @@
+{
+ "id": 59,
+ "app": "Waterfall.io",
+ "hint": "waterfall.io (contact/company intel)",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "Waterfall.io API authentication OAuth API key access token developer docs waterfall.io contact/company intel",
+   "log_id": "log_RKQ4uDNiKm0j",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.waterfall.io/v1/introduction",
+     "title": "Waterfall API introduction",
+     "snippet": "The Waterfall API is available at `https://api.waterfall.io`. Send your API key in the `x-api-key` header. See [Authentication](/v1/authentication).\n## Endpoints\n| API | Type | Description |\n|---|---|---|\n| [Prospector](/v1/prospector-launcher) | Async | Find people at a company by domain and title filters, with available emails and optional phones. |\n| [Search Contact](/v1/search-contact-launcher) | Sync | Find profiles by LinkedIn, company, or supported company-set and role filters. Emails and phones are excluded. |\n| [Search Company](/v1/search-company-launcher) | Sync | Find companies by industry, headquarters country, or headcount range. Preview. |\n| [Contact Enrichment](/v1/contact-enrichment-launcher) | Async | Find profile data and available contact details from an email, LinkedIn identifier, or name and company domain. |\n| [Phone Enrichment](/v1/phone-enrichment-launcher) | Async | Find available phone numbers for a known person. |\n| [Company Enrichment](/v1/company-enrichment-launcher) | Async | Find company details from a domain, LinkedIn identifier, or company name. |\n| [Company Reveal](/v1/company-reveal-launcher) | Sync | Look up company context from an IPv4 address, "
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/authentication",
+     "title": "Authentication",
+     "snippet": "Authenticate data and account API requests with your Waterfall API key in the `x-api-key` header. [Contact the team](mailto:support@waterfall.io) for API access and pricing.\n```\nx-api-key: YOUR_API_KEY\n```\nThe API host is `https://api.waterfall.io`. Data endpoints use `/v1/`; Account Reporter V2 uses `/v2/account`. Use the path shown on each reference page.\n##\n\u200b\nBest practices\n- Store keys in server-side environment variables. Keep them out of browser code and public repositories.\n- Rotate keys periodically.\n- Use [dedicated sub-keys](/v1/api-keys-overview) to manage access and usage for separate teams or workflows. Creating and managing sub-keys requires a **master API key**.\nMissing keys return `401`. Invalid keys return `403`; this status can also indicate that a feature or permission is unavailable to the key. Inspect the error `code` using the [Errors guide](/v1/errors). Follow the [quickstart](/v1/quickstart) to make your first request, or use [Agent Skills](/v1/skills-overview) to build with an agent."
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/contact-enrichment-launcher.md",
+     "title": "docs.waterfall.io/v1/contact-enrichment-launcher.md",
+     "snippet": "# Contact Enrichment Launcher\n> Enrich a known contact from a work or personal email, LinkedIn profile, or name and company domain.\nUse Waterfall Contact Enrichment to add profile and contact data to a person you already know. Start with a work or personal email, a LinkedIn profile, or a name and company domain. Results can include their title, company, location, employment history, email, and optional phone numbers.\n\n> [!NOTE]\n>\n> A synchronous Contact Enrichment option is available by arrangement for enterprise customers. [Contact our team](mailto:support@waterfall.io) to discuss access.\n\n| Strategy | Fields | Guidance |\n| - | - | - |\n| Email | `email` | Accepts work or personal email. Professional emails generally provide better enrichment quality. |\n| LinkedIn | `linkedin` | Use the person's profile URL or slug. |\n| Full name and domain | `full_name` + `domain` | Use when you have the person's name and company domain. |\n| Split name and domain | `first_name` + `last_name` + `domain` | Prefer split names when both are available. |\n\n````yaml api_specs.yaml POST /v1/enrichment/contact\nopenapi: 3.1.0\ninfo:\ntitle: Waterfall\nversion: 1.7.0\ndescription: >-\nWaterfall API provides a bro"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/overview",
+     "title": "One GTM API for contacts and companies",
+     "snippet": "How the API works\nSend requests to `https://api.waterfall.io` with your API key in the `x-api-key` header. [Authentication](/v1/authentication) covers access and key management. Prospector and the contact, phone, and company enrichment APIs return a `job_id`. Use the matching Finder to retrieve the result, or provide a `webhook_url` to receive it. Search and verification APIs return results in the same request. The [API selection guide](/v1/introduction) lists the response pattern and availability for each capability. Every reference page shows the supported inputs and outputs. Use [Usage Tracking](/v1/inline-usage) to read returned costs, and [Account Reporting](/v1/account-reporter-v2) for usage across a date range. For API access, pricing, or help choosing the right workflow, [talk to the Waterfall team](mailto:support@waterfall.io). Common product and integration questions are covered in the [FAQ](/v1/faq)."
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/faq",
+     "title": "Waterfall API FAQ",
+     "snippet": "Waterfall.io is a B2B data API for go-to-market workflows. Use Waterfall to find people at target accounts, enrich contact and company records, match emails to business profiles, find phone numbers, verify email addresses, and check job changes.\n###\n\u200b\nWho is Waterfall for?\nWaterfall serves growth, revenue, and go-to-market teams. GTM engineers build prospecting workflows, revenue operations teams fill gaps in CRM records, and product-led growth teams add business context to signups. Developers can also add contact and company data to GTM tools, recruitment platforms, CRMs, marketing software, and other products.\n\nWaterfall has undergone a SOC 2 Type II audit covering Security, Confidentiality, and Privacy. Independent auditors also conduct our penetration tests. Those auditors also work with Snowflake and T-Mobile. Our infrastructure runs on AWS, with encryption in transit and at rest. The API supports signed webhooks so your receiving system can verify that a delivery came from Waterfall and that its payload was not changed. Webhook signing depends on the signing configuration. Your receiver should verify the signature and reject unsigned deliveries when your workflow requires ver"
+    }
+   ]
+  },
+  "access": {
+   "query": "Waterfall.io waterfall.io contact/company intel API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_jhRcxEJ02LcU",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.waterfall.io/v1/faq",
+     "title": "Waterfall API FAQ",
+     "snippet": "Waterfall.io is a B2B data API for go-to-market workflows. Use Waterfall to find people at target accounts, enrich contact and company records, match emails to business profiles, find phone numbers, verify email addresses, and check job changes.\n\nYour team maintains one integration and one set of agreed Waterfall rates, without managing separate vendor connections and contracts. Changes to the vendor mix do not change those rates. Your total cost depends on the services and options you use and your request volume.\n\n### How do I get an API key and pricing?\nAPI access is available by approval. Enter your work email on the [Waterfall website](https://www.waterfall.io/) to request a key, or [book a call](https://www.waterfall.io/book-a-call) to discuss your workflow and pricing. A member of our team reviews every access request; we aim to reply within a couple of hours. We work with a limited number of customers so we can provide direct support and plan capacity around each team\u2019s needs. Once you have a key, send it in the `x-api-key` header. Follow [Authentication](/v1/authentication) and the [Quickstart](/v1/quickstart)."
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/book-demo",
+     "title": "Get API access",
+     "snippet": "API access is available by approval. Request a key through the email field on the [Waterfall website](https://www.waterfall.io/), or book a call to discuss your workflow. A member of our team reviews every access request. We aim to reply within a couple of hours.\n## Request an API key\nEnter your work email on our homepage to request access.\n## Book a call\nTalk through your use case, pricing, and integration with our team.\nWe work with a limited number of customers so we can provide direct support and plan capacity around each team\u2019s needs. Before enabling access, we take time to understand what you are building, the data you need, and your expected volume. Customers get a dedicated channel with our founders for questions and integration help. You can also email [support@waterfall.io](mailto:support@waterfall.io). For a useful first conversation, share your use case, input types, expected request volume, and required outputs. For a technical issue, include the endpoint, error code, and any known job ID. Keep API keys out of your message. Before the call, explore [use cases](/v1/use-cases/overview), [compare APIs](/v1/introduction), or prepare a sample using the [evaluation guide](/v"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/introduction",
+     "title": "Waterfall API introduction",
+     "snippet": "The Waterfall API is available at `https://api.waterfall.io`. Send your API key in the `x-api-key` header. See [Authentication](/v1/authentication).\n## Endpoints\n| API | Type | Description |\n|---|---|---|\n| [Prospector](/v1/prospector-launcher) | Async | Find people at a company by domain and title filters, with available emails and optional phones. |\n| [Search Contact](/v1/search-contact-launcher) | Sync | Find profiles by LinkedIn, company, or supported company-set and role filters. Emails and phones are excluded. |\n| [Search Company](/v1/search-company-launcher) | Sync | Find companies by industry, headquarters country, or headcount range. Preview. |\n| [Contact Enrichment](/v1/contact-enrichment-launcher) | Async | Find profile data and available contact details from an email, LinkedIn identifier, or name and company domain. |\n| [Phone Enrichment](/v1/phone-enrichment-launcher) | Async | Find available phone numbers for a known person. |\n| [Company Enrichment](/v1/company-enrichment-launcher) | Async | Find company details from a domain, LinkedIn identifier, or company name. |\n| [Company Reveal](/v1/company-reveal-launcher) | Sync | Look up company context from an IPv4 address, "
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/quickstart",
+     "title": "Enrich your first contact",
+     "snippet": "1. Set up your API key\nYou need a Waterfall API key with Contact Enrichment enabled. [Contact the team](mailto:support@waterfall.io) for access and pricing. Requests use your account\u2019s configured rates. Store the key in an environment variable in your terminal:\n```\nexport WATERFALL_API_KEY=\"YOUR_API_KEY\"\n```\nKeep the key on your server or in your local environment. See [Authentication](/v1/authentication) for key management.\n##\n\u200b\n2. Submit an email address\nReplace `person@company.com` with the contact you want to look up. This request leaves phone enrichment off.\n```\ncurl --request POST 'https://api.waterfall.io/v1/enrichment/contact' \\\n--header \"x-api-key: $WATERFALL_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"email\": \"person@company.com\",\n\"include_phones\": false\n}'\n```\n\ncurl --get 'https://api.waterfall.io/v1/enrichment/contact' \\\n--header \"x-api-key: $WATERFALL_API_KEY\" \\\n--data-urlencode \"job_id=$WATERFALL_JOB_ID\"\n```\nRead `status` before using the output:\n| Status | What to do |\n|---|---|\n| `RUNNING` | Wait before checking the same job again. Respect the [rate limit](/v1/rate-limit). |\n| `SUCCEEDED` | Inspect `output.person` for available data and `output"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/about-waterfall",
+     "title": "About Waterfall",
+     "snippet": "Growth and revenue teams, developers, and AI agents use Waterfall to find people at target accounts, enrich contact and company records, find emails and phone numbers, verify email addresses, and check job changes. Build these capabilities into your prospecting, recruitment, CRM, or marketing workflows and products.\n\n|\n| Developers and product teams | Contact and company data for GTM tools, recruitment platforms, CRMs, marketing software, and [agent workflows](/v1/skills-overview). |\n\nSecurity and assurance\nWaterfall has undergone a SOC 2 Type II audit covering Security, Confidentiality, and Privacy. Our penetration tests are conducted by independent auditors who also work with Snowflake and T-Mobile. Our infrastructure runs on AWS, with encryption in transit and at rest. We use the data you submit to the API to fulfil your requests. We do not resell those inputs, repurpose them for other customers, or add them to a shared enrichment database. [Contact our team](mailto:support@waterfall.io) for audit scope and security documentation.\n\nHow our team can help\nAPI access is available by approval. We review each request individually and work with a limited number of customers so we can "
+    }
+   ]
+  },
+  "surface": {
+   "query": "Waterfall.io API reference REST GraphQL endpoints documentation waterfall.io contact/company intel",
+   "log_id": "log_SwSuZR-LarJi",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.waterfall.io/v1/introduction",
+     "title": "Waterfall API introduction",
+     "snippet": "The Waterfall API is available at `https://api.waterfall.io`. Send your API key in the `x-api-key` header. See [Authentication](/v1/authentication).\n## Endpoints\n| API | Type | Description |\n|---|---|---|\n| [Prospector](/v1/prospector-launcher) | Async | Find people at a company by domain and title filters, with available emails and optional phones. |\n| [Search Contact](/v1/search-contact-launcher) | Sync | Find profiles by LinkedIn, company, or supported company-set and role filters. Emails and phones are excluded. |\n| [Search Company](/v1/search-company-launcher) | Sync | Find companies by industry, headquarters country, or headcount range. Preview. |\n| [Contact Enrichment](/v1/contact-enrichment-launcher) | Async | Find profile data and available contact details from an email, LinkedIn identifier, or name and company domain. |\n| [Phone Enrichment](/v1/phone-enrichment-launcher) | Async | Find available phone numbers for a known person. |\n| [Company Enrichment](/v1/company-enrichment-launcher) | Async | Find company details from a domain, LinkedIn identifier, or company name. |\n| [Company Reveal](/v1/company-reveal-launcher) | Sync | Look up company context from an IPv4 address, "
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/contact-enrichment-launcher.md",
+     "title": "docs.waterfall.io/v1/contact-enrichment-launcher.md",
+     "snippet": "# Contact Enrichment Launcher\n> Enrich a known contact from a work or personal email, LinkedIn profile, or name and company domain.\nUse Waterfall Contact Enrichment to add profile and contact data to a person you already know. Start with a work or personal email, a LinkedIn profile, or a name and company domain. Results can include their title, company, location, employment history, email, and optional phone numbers.\nSee [signup enrichment](https://docs.waterfall.io/v1/use-cases/signup-enrichment.md) for identifying inbound signups, or [CRM enrichment](https://docs.waterfall.io/v1/use-cases/crm-enrichment.md) for filling missing contact fields.\n> [!NOTE]\n>\n> This is an asynchronous endpoint. Use the returned `job_id` with [Contact Enrichment Finder](https://docs.waterfall.io/v1/contact-enrichment-finder.md), or pass `webhook_url` to receive the result when enrichment completes.\n> [!NOTE]\n>\n> A synchronous Contact Enrichment option is available by arrangement for enterprise customers. [Contact our team](mailto:support@waterfall.io) to discuss access.\n## Input strategies\nWaterfall uses email first, LinkedIn second, then name and domain. Only the selected strategy runs; passing multip"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/search-contact-launcher",
+     "title": "Search Contact Launcher",
+     "snippet": "Use Waterfall Search Contact to discover people and review their professional profiles. Look up a LinkedIn profile, find people at a company, or discover contacts across a filtered set of companies. Results include names, titles, companies, locations, and employment history where available. Email and phone channels are redacted.\n\nSearch modes\n| Mode | Required inputs |\n|---|---|\n| Known LinkedIn profile | `contact_linkedin` |\n| Contacts at one company | `domain`, `company_linkedin`, or `company_name` |\n| Contacts across a company set | At least one of `company_location_countries`, `company_industries`, or `company_employee_ranges`, plus an experience date and `title_filters` or `title_lists` |\nCompany-set searches require `experience_start_date` or `experience_start_date_new_hire`. See [Search Contact filters](/v1/search-contact-filters) for these inputs, department and seniority values, and named title groups.\n##\n\u200b\nExample request\n```\n{\n\"domain\": \"waterfall.io\",\n\"title_filters\": [\n{ \"name\": \"founders\", \"filter\": \"founder OR co-founder OR ceo\" }\n],\n\"page_number\": 1,\n\"page_size\": 10\n}\n```\n\nRequest payload for Search Contact. Search mode must be one of: 1) `contact_linkedin` 2) compa"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/quickstart",
+     "title": "Enrich your first contact",
+     "snippet": "1. Set up your API key\nYou need a Waterfall API key with Contact Enrichment enabled. [Contact the team](mailto:support@waterfall.io) for access and pricing. Requests use your account\u2019s configured rates. Store the key in an environment variable in your terminal:\n```\nexport WATERFALL_API_KEY=\"YOUR_API_KEY\"\n```\nKeep the key on your server or in your local environment. See [Authentication](/v1/authentication) for key management.\n##\n\u200b\n2. Submit an email address\nReplace `person@company.com` with the contact you want to look up. This request leaves phone enrichment off.\n```\ncurl --request POST 'https://api.waterfall.io/v1/enrichment/contact' \\\n--header \"x-api-key: $WATERFALL_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"email\": \"person@company.com\",\n\"include_phones\": false\n}'\n```\nThe response gives you a `job_id` and `start_date`. An illustrative response:\n```\n{\n\"job_id\": \"1a836daa-ec37-4c75-8a10-080ee9b28a13\",\n\"start_date\": \"2026-10-12T09:00:00Z\"\n}\n```\nSave the returned `job_id`. It identifies this lookup; the contact data arrives when the job finishes.\n##\n\u200b\n3. Retrieve the result\nSet `WATERFALL_JOB_ID` to the ID from your response, then call the Finder:\n```\nexport WA"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/use-cases/crm-enrichment",
+     "title": "Enrich contact and company records",
+     "snippet": "Choose the record you want to enrich\n| Record | What you have | API |\n|---|---|---|\n| Contact | Email, LinkedIn, or name plus company domain | [Contact Enrichment](/v1/contact-enrichment-launcher) |\n| Company | Domain, company LinkedIn, or company name | [Company Enrichment](/v1/company-enrichment-launcher) |\n| Contact needing a phone number | A supported contact identifier | [Phone Enrichment](/v1/phone-enrichment-launcher) |\n| Contact whose employer may have changed | Previous company plus contact identifier, or a professional email | [Job Change](/v1/use-cases/job-changes) |\n\nThis illustrative request uses a LinkedIn profile and carries your CRM ID through the job:\n```\ncurl --request POST 'https://api.waterfall.io/v1/enrichment/contact' \\\n--header \"x-api-key: $WATERFALL_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"linkedin\": \"https://www.linkedin.com/in/example-contact/\",\n\"include_phones\": false,\n\"custom_fields\": {\n\"crm_contact_id\": \"contact_582\"\n}\n}'\n```\nReplace the example profile with your contact\u2019s LinkedIn URL. Save the returned `job_id`, then retrieve the result through [Contact Enrichment Finder](/v1/contact-enrichment-finder) or a webhook. The result"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Waterfall.io waterfall.io contact/company intel MCP server Model Context Protocol official",
+   "log_id": "log_Db6IKveTCsTR",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.waterfall.io/v1/book-demo",
+     "title": "Get API access",
+     "snippet": "API access is available by approval. Request a key through the email field on the [Waterfall website](https://www.waterfall.io/), or book a call to discuss your workflow. A member of our team reviews every access request. We aim to reply within a couple of hours.\n\nWe work with a limited number of customers so we can provide direct support and plan capacity around each team\u2019s needs. Before enabling access, we take time to understand what you are building, the data you need, and your expected volume. Customers get a dedicated channel with our founders for questions and integration help. You can also email [support@waterfall.io](mailto:support@waterfall.io). For a useful first conversation, share your use case, input types, expected request volume, and required outputs. For a technical issue, include the endpoint, error code, and any known job ID. Keep API keys out of your message. Before the call, explore [use cases](/v1/use-cases/overview), [compare APIs](/v1/introduction), or prepare a sample using the [evaluation guide](/v1/evaluate-waterfall)."
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/contact-enrichment-launcher.md",
+     "title": "docs.waterfall.io/v1/contact-enrichment-launcher.md",
+     "snippet": "# Contact Enrichment Launcher\n> Enrich a known contact from a work or personal email, LinkedIn profile, or name and company domain.\nUse Waterfall Contact Enrichment to add profile and contact data to a person you already know. Start with a work or personal email, a LinkedIn profile, or a name and company domain. Results can include their title, company, location, employment history, email, and optional phone numbers.\nSee [signup enrichment](https://docs.waterfall.io/v1/use-cases/signup-enrichment.md) for identifying inbound signups, or [CRM enrichment](https://docs.waterfall.io/v1/use-cases/crm-enrichment.md) for filling missing contact fields.\n> [!NOTE]\n>\n> This is an asynchronous endpoint. Use the returned `job_id` with [Contact Enrichment Finder](https://docs.waterfall.io/v1/contact-enrichment-finder.md), or pass `webhook_url` to receive the result when enrichment completes.\n> [!NOTE]\n>\n> A synchronous Contact Enrichment option is available by arrangement for enterprise customers. [Contact our team](mailto:support@waterfall.io) to discuss access.\n## Input strategies\nWaterfall uses email first, LinkedIn second, then name and domain. Only the selected strategy runs; passing multip"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/faq",
+     "title": "Waterfall API FAQ",
+     "snippet": "Waterfall.io is a B2B data API for go-to-market workflows. Use Waterfall to find people at target accounts, enrich contact and company records, match emails to business profiles, find phone numbers, verify email addresses, and check job changes.\n### Who is Waterfall for?\nWaterfall serves growth, revenue, and go-to-market teams. GTM engineers build prospecting workflows, revenue operations teams fill gaps in CRM records, and product-led growth teams add business context to signups. Developers can also add contact and company data to GTM tools, recruitment platforms, CRMs, marketing software, and other products.\n\nFor audit scope and security documentation, [contact our team](mailto:support@waterfall.io).\n\n### How can I identify companies visiting my website?\nUse Waterfall Company Reveal to add company context to website visits. Your integration sends the visitor\u2019s IPv4 address, and Waterfall returns available company details, a result type, and a confidence label. Use an acceptable match to connect the visit to an account and decide what to do next. Some visits will not resolve to a company. The [website company identification guide](/v1/use-cases/website-company-identification) incl"
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/quickstart",
+     "title": "Enrich your first contact",
+     "snippet": "1. Set up your API key\nYou need a Waterfall API key with Contact Enrichment enabled. [Contact the team](mailto:support@waterfall.io) for access and pricing. Requests use your account\u2019s configured rates. Store the key in an environment variable in your terminal:\n```\nexport WATERFALL_API_KEY=\"YOUR_API_KEY\"\n```\nKeep the key on your server or in your local environment. See [Authentication](/v1/authentication) for key management.\n##\n\u200b\n2. Submit an email address\nReplace `person@company.com` with the contact you want to look up. This request leaves phone enrichment off.\n```\ncurl --request POST 'https://api.waterfall.io/v1/enrichment/contact' \\\n--header \"x-api-key: $WATERFALL_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"email\": \"person@company.com\",\n\"include_phones\": false\n}'\n```\nThe response gives you a `job_id` and `start_date`. An illustrative response:\n```\n{\n\"job_id\": \"1a836daa-ec37-4c75-8a10-080ee9b28a13\",\n\"start_date\": \"2026-10-12T09:00:00Z\"\n}\n```\nSave the returned `job_id`. It identifies this lookup; the contact data arrives when the job finishes.\n##\n\u200b\n3. Retrieve the result\nSet `WATERFALL_JOB_ID` to the ID from your response, then call the Finder:\n```\nexport WA"
+    },
+    {
+     "url": "https://docs.waterfall.io/llms.txt",
+     "title": "docs.waterfall.io/llms.txt",
+     "snippet": "# Waterfall.io API Documentation\n> One GTM API to find prospects, enrich contacts and companies, verify emails, and check job changes. Explore use cases and API references.\n\n- [Prospector Launcher](https://docs.waterfall.io/v1/prospector-launcher.md): Find contacts at a target company by role, with verified emails and optional phone enrichment.\n\n- [Search Contact Launcher](https://docs.waterfall.io/v1/search-contact-launcher.md): Find professional profiles by LinkedIn, company, role, location, or hiring date, without email or phone enrichment.\n\n- [Identify companies visiting your website](https://docs.waterfall.io/v1/use-cases/website-company-identification.md): Use Waterfall Company Reveal to connect website activity with company profiles and add company context to your account workflows."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

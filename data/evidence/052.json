@@ -1,0 +1,142 @@
+{
+ "id": 52,
+ "app": "SE Ranking",
+ "hint": "seranking.com/api",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "SE Ranking API authentication OAuth API key access token developer docs seranking.com/api",
+   "log_id": "log_2RAZopIaAoBg",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://seranking.com/api/data/getting-started",
+     "title": "Getting started - SE Ranking Data API Documentation",
+     "snippet": "All requests to the Data API must be authenticated. The base URL for all endpoints is:\nCopy\n```\nhttps://api.seranking.com\n```\n### 1. Obtain your API key\nFirst, you\u2019ll need to generate a unique API key from your account dashboard.\n1. Navigate to the [API Dashboard](https://online.seranking.com/admin.api.dashboard.html). You can access this by clicking the **API** icon in the main left-hand navigation menu:\n![](https://seranking.com/wp-content/uploads/sites/9/2025/06/3615031711d5b96b087348032fb398c54bb82769-media-1024x516.png)\n2. On the API Dashboard, click the **+ CREATE API KEY** button located in the top-right corner:\n![](https://seranking.com/wp-content/uploads/sites/9/2025/06/image-media-1024x517.png)\n3. In the **Create API key** dialog box:\na. Enter a descriptive name in the **API key name** field (e.g., \u201cDemo\u201d).\nc. Click **CREATE KEY**.\n![](https://seranking.com/wp-content/uploads/sites/9/2025/05/e2931d2b6b31f05bea3f50ee423e395a41511f01-media-1024x448.png)\n4. Your new key will be generated and listed in the **API Keys** table. You can create multiple API keys for different applications or environments:\n### 2. Authenticate your requests\nYou have two methods to authenticate your"
+    },
+    {
+     "url": "https://github.com/seranking/seo-skills/blob/main/skills/seo-api/references/auth-and-keys.md",
+     "title": "seo-skills/skills/seo-api/references/auth-and-keys.md at main \u00b7 seranking/seo-skills",
+     "snippet": "## Key types \u2014 single source of truth\nAs of 2026, **one API key authenticates everything**. The legacy split into separate Data and Project keys is gone. The same UUID-format key works against:\n- All `DATA_*` MCP tools and the underlying `/v1/backlinks/*`, `/v1/domain/*`, `/v1/keywords/*`, `/v1/serp/*`, `/v1/audit/*`, `/v1/ai-search/*`, `/v1/account/*` REST endpoints.\n- All `PROJECT_*` MCP tools and the underlying `/v1/projects/*`, `/v1/projects/{id}/keywords/*`, `/v1/projects/{id}/audits/*`, `/v1/projects/{id}/backlinks/*`, `/v1/projects/{id}/airt/*`, `/v1/account/*` REST endpoints.\nGet keys at: [https://online.seranking.com/admin.api.dashboard.html](https://online.seranking.com/admin.api.dashboard.html).\nYou can mint multiple keys per account \u2014 useful for splitting rate-limit budgets across environments (dev, staging, prod) or workloads (research vs. recurring jobs).\n### Required plan\n- **Data API access** ships with: any plan that has API credits \u2014 Business / Enterprise plans (100K credits/month included), API add-on (1M+), or standalone API plan (1M+).\n- **Project API access** requires: Business or Enterprise plan. The Project API consumes plan limits (\"Sites\", \"Keywords\", \"Aud"
+    },
+    {
+     "url": "https://seranking.com/api/integrations/mcp",
+     "title": "MCP Server - SE Ranking API Documentation",
+     "snippet": "Through the MCP server, your AI assistant can work with data from these SE Ranking and SE Visible products*:\n- [Data API](https://seranking.com/api/data/): keyword research, backlinks, domain analysis, SERP, and more\n- [Project API](https://seranking.com/api/project/): your projects, rank tracking, audits, and competitors\n- [Local Marketing API](https://seranking.com/api/local-marketing-api/): your locations, local rankings, Google Business Profile, business listings, and reviews\n- [SE Visible API](https://seranking.com/api/se-visible/): your AI visibility projects, brands, topics, prompts, and sources\n*The data available to you depends on your subscription. Not every API endpoint is available through MCP. Setup is the same for every product. Use your SE Ranking account, or an API key generated in the API Dashboard of your SE Ranking or SE Visible account.\n## Setup Instructions\n### General\nOur MCP server supports Streamable HTTP transports. This transport uses OAuth 2.1 with dynamic client registration for authentication at the following address:\nCopy\n```\nhttps://api.seranking.com/mcp\n```\nJump to your client: Claude \u00b7 ChatGPT \u00b7 Codex \u00b7 Cursor \u00b7 VS Code \u00b7 v0 \u00b7 Windsurf \u00b7 Zed \u00b7 Gemin"
+    },
+    {
+     "url": "https://seranking.com/api/se-visible/getting-started",
+     "title": "Getting started - SE Ranking API Documentation",
+     "snippet": "## Authentication\nEvery request must be authenticated with your SE Ranking API key. Authentication is identical to the Data API and Project API: you can send the key in an `Authorization` header or as an `apikey` query parameter.\nGenerate a key from the [API Dashboard](https://online.seranking.com/admin.api.dashboard.html) in your SE Ranking or SE Visible account.\n**Method 1: Authorization header (recommended)**\nSend the key in an `Authorization` header with the value `Token YOUR_API_KEY`.\nCopy\n```\ncurl -X GET 'https://api.seranking.com/v1/se-visible/subscription' \\\n-H 'Authorization: Token YOUR_API_KEY'\n```\n**Method 2: Query parameter**\nPass the key as an `apikey` query parameter.\nCopy\n```\ncurl -X GET 'https://api.seranking.com/v1/se-visible/subscription?apikey=YOUR_API_KEY'\n```\n**Note:**\n- The `apikey` parameter must always be sent as a GET parameter, even when other data is sent in the request body.\n- Any data in the request body should be in JSON format, with the `Content-Type: application/json` header.\n\n**Example POST request**\nCopy\n```\ncurl -X POST 'https://api.seranking.com/v1/se-visible/projects' \\\n-H 'Authorization: Token YOUR_API_KEY' \\\n-H 'Content-Type: application/json'"
+    },
+    {
+     "url": "https://seranking.com/api/project/getting-started",
+     "title": "Getting started - SE Ranking Project API Documentation",
+     "snippet": "In order to use the API, it is necessary to have an API key from the SE Ranking user account. The API key must be transferred via the token parameter for each invoked method or via the Authorization HTTP header.\nIf an API method is invoked without an API key, or if an invalid API key is transferred in the request, the server returns a \u201cno token\u201d or \u201cincorrect token\u201d error.\n**One key for both APIs.** A single API key authorizes every endpoint across the Project API and the Data API. There is no separate \u201cProject key\u201d and \u201cData key\u201d: you generate one key and use it everywhere. What you can call depends on your plan, not on the key. Project API requests use your subscription limits, while Data API requests draw on your credit balance.\n**Finding your API key**\n***Eligible accounts receive a API key automatically.**** In most cases, your key already exists and is ready to use.* To find it:\n1. Log in to the user account.\n2. Go to **API** -> **[Dashboard](https://online.seranking.com/admin.api.dashboard.html)**.\n3. Your API key will be listed in the API Keys table. Copy it and use it in your requests.\n\nThe API is accessible via the HTTPS protocol. All API method invocations are HTTP GET/P"
+    }
+   ]
+  },
+  "access": {
+   "query": "SE Ranking seranking.com/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_iS4lSSLXIrCM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.seranking.com/hc/en-us/articles/21824256441756-How-to-connect-SE-Ranking-s-Data-API-to-Make",
+     "title": "How to connect SE Ranking\u2019s Data API to Make",
+     "snippet": "The API package is available as a standalone product \u2014 no active SE Ranking subscription is required. Start with a 14-day trial that includes **100,000 free API credits**.\nPaid plans include monthly Data API credits for testing: **Core** (25,000/month), **Growth & Enterprise** (100,000/month).\n**Legacy v7 plans:** Essential (10,000/month), Pro (25,000/month), Business & Enterprise (100,000/month).\n* Legacy v1-v6: Essential and Pro plans do not include API access. To use the API, please purchase the API add-on.*\n\nAccess to the Data API is available during the 14-day SE Ranking trial and is included in the **Growth** and **Enterprise** plans, each providing **100,000 Data API credits**. Legacy **Business** plans also include 100,000 credits.\nThe API can be enabled upon request by contacting support via in-app chat or by emailing [api@seranking.com](mailto:api@seranking.com). Once enabled, you can generate your API key from the API Dashboard."
+    },
+    {
+     "url": "https://seranking.com/api/how-to-get-api",
+     "title": "Getting API access - SE Ranking API Documentation",
+     "snippet": "SE Ranking offers two powerful APIs to integrate our data and platform management capabilities into your workflows and applications:\n- **Data API:** Designed for pulling large volumes of raw SEO and marketing data (e.g., AI Search, keywords, backlinks, domain data). It uses a flexible, pay-as-you-go credit system.\n- **Project API:** Designed for automating and managing your SEO projects (e.g., creating sites, managing keywords, running audits). Access is tied to your main subscription limits.\n\nThe Data API provides direct access to SE Ranking\u2019s extensive databases. Usage is billed in API credits, and every current subscription plan includes a monthly credit allowance.\n### Credits included with your plan\nAll Essential, Pro, Business, Core, Growth, and Enterprise plans include Data API access with a monthly credit allowance:\n| Plan | Included API credits (per month) |\n|---|---|\n| Essential | 10,000 |\n| Pro | 25,000 |\n| Core | 25,000 |\n| Business | 100,000 |\n| Growth | 100,000 |\n| Enterprise | 100,000 |\n### Need more credits?\nIf your monthly allowance runs out or you need more volume, you can add credits in any of these ways. Add-ons and the standalone plan are billed annually only; p"
+    },
+    {
+     "url": "https://seranking.com/api-pricing.html",
+     "title": "API Pricing: Credits, Wallet & Annual Plans | SE Ranking",
+     "snippet": "Free trial\nTest every API endpoint against your workflows and see how the data fits your internal processes.\nFree\n100K credits\n- MCP included\n- 14-day trial to test every API endpoint\n- Full API & MCP access from day one\n- Test the complete SEO & GEO data suite\nWallet\nPay only for what you use without recurring fees. Works best for one-off projects or unpredictable volume.\n$50\n/mo\n250K credits\n- MCP included\n- Top up API credits at any time, no commitment\n- Scale usage on your own timeline\n- Purchased credits never expire\nStandalone\nMost popular\nStandalone API access for teams with consistent volume and scaling needs. No web app subscription required.\n$179\n$200.00\n/mo\nAnnual billing only\n1M credits/yr\n- MCP included\n- Up to 57% off Wallet rates\n- Volume-based pricing discounts\n- Includes Data API only\nEnterprise\n\nAdd-on\nRequires subscription\nExtend your existing SE Ranking Core, Growth, or Enterprise plan with an API add-on.\n- MCP included\n- For SE Ranking customers who need automation\n- Access to Data API + Project API\n- Volume-based pricing discounts\n+$45\n$48.00\n/mo\nAnnual billing\n250K credits/yr\nFull API access in every plan\nPower your reporting stack, AI agents, and automations"
+    },
+    {
+     "url": "https://seranking.com/blog/mcp-vs-api-seo",
+     "title": "Which One SEO Teams Should Use and When",
+     "snippet": "- SE Ranking supports both workflows \u2014 API access and the MCP server are included with SE Ranking plans, and the API is also available as an add-on, standalone, or pay-as-you-go option for higher volume.\n\nAPI access is included with all SE Ranking plans (25K credits a month on Core, 100K on Growth). For higher volume, choose the option that fits how you use the data:\nFree trial\nPrice\nFree for 14 days, no credit card required\nCredits\n100K\nBest for\nTesting every endpoint and MCP before you commit\nPay-as-you-go\nPrice\nFrom $50 per top-up\nCredits\n250K per $50; purchased credits never expire\nBest for\nOne-off projects or unpredictable volume\nAPI add-on\nPrice\n+$45/mo, billed annually\nCredits\n3M a year\nBest for\nExisting Core, Growth or Enterprise subscribers; includes Data API and Project API\nStandalone API\nPrice\n$179/mo, billed annually\nCredits\n12M a year\nBest for\nTeams that need the data without a platform subscription; Data API only\nEnterprise\nPrice\nCustom\nCredits\n120M+ a year\nBest for\nHigh-volume access, custom integrations and custom rate limits\nFree trial\nFree for 14 days, no credit card required\n100K\nTesting every endpoint and MCP before you commit\nPay-as-you-go\nFrom $50 per top-up\n2"
+    },
+    {
+     "url": "https://seranking.com/api.html",
+     "title": "SEO API by SE Ranking: SEO & AEO Data at Scale",
+     "snippet": "API access is included in every SE Ranking plan\n# SEO API: Automate your SEO workflows\nConnect via API for custom integrations and bulk processes, or via MCP\n\n### Integration & Developer Access\nConnect SE Ranking\u2019s data to the tools where your team and clients already work:\nRoute structured data into BI systems, custom apps, and reporting.\nApply it to widgets and integrate it with other data sources.\nRetrieve instant, structured JSON responses with up to 10 requests per second.\n\n## Pricing that fits how you use the API\nBuy a stand-alone API, start with pay-as-you-go, or combine with any SE Ranking subscription.\nSE Ranking api\nFrom\n$50.00\n/250K credits\nPay-as-you-go plan\nFor SEOs who need API access to SEO data\u2014without the tools\n- Backlinks API\n- Domain Research API\n- Keyword Research API\n- Website Audit API\n- Project Management API\n[ See full API pricing ](https://seranking.com/api-pricing.html)\n\nA\nAPI access comes with any SE Ranking plan (Core at $129/mo and Growth at $279/mo). You can even test it in the free trial account. For higher volume, the API Add-On starts at $149/month and can be added to any existing subscription. Pay-as-you-go is also available with a $50 minimum depo"
+    }
+   ]
+  },
+  "surface": {
+   "query": "SE Ranking API reference REST GraphQL endpoints documentation seranking.com/api",
+   "log_id": "log_uwDDUTD0e2Wa",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://seranking.com/api/data/keyword-research",
+     "title": "Keyword Research - SE Ranking API Documentation",
+     "snippet": "# Keyword Research\n**[Keyword Research API](https://seranking.com/keyword-research-api.html)** provides programmatic access to keyword metrics and discovery. Data is refreshed on a monthly basis.\nUsing the API, you can:\n- retrieve keyword metrics such as search volume, CPC, competition, difficulty, and historical trends\n- discover similar keywords with the same user intent\n- find related keywords based on overlapping search results\n- get question keywords associated with a seed keyword\n- discover long-tail keywords that are lower-volume and more specific\n---\n## Get Keyword Metrics (Bulk)\n**POST** `https://api.seranking.com/v1/keywords/export`\n**Cost:** 100 credits per request\nRetrieves various data points for a list of specified keywords within a given regional database. It\u2019s designed for bulk analysis and returns metrics like search volume, CPC, competition, keyword difficulty, search intent, and historical search volume trends for each submitted keyword.\nBy default, the returned `history_trend` covers the **12 most recent months, ending at the current month**. Use the optional `history_to` parameter to end the window at an earlier month, and `history_from` to start it later \u2014 tog"
+    },
+    {
+     "url": "https://seranking.com/api/data/quickstarts/domain-keyword-opportunities",
+     "title": "Find keyword opportunities for a domain - SE Ranking API Documentation",
+     "snippet": "### Step 1. Analyze a domain\u2019s global performance\nStart by getting a high-level view of your target domain\u2019s performance. The [Get worldwide domain overview](https://seranking.com/api/data/domain-analysis/#worldwide-aggregate) endpoint aggregates organic and paid search statistics on a global scale.\nCopy\n```\ncurl --location 'https://api.seranking.com/v1/domain/overview/worldwide?domain=visa.com\u00a4cy=USD' \\\n--header 'Authorization: Token YOUR_API_KEY'\n```\n**What you\u2019ll get:**\n- Total number of keywords\n- Estimated organic and paid traffic\n- Traffic value across regions\n---\n### Step 2. Identify top competitors\nNext, find out who you\u2019re competing with using the [Get domain competitors](https://seranking.com/api/data/domain-analysis#competitors) endpoint that returns the top organic or paid competitors for a domain.\n\nUse the [Get domain keyword rankings](https://seranking.com/api/data/domain-analysis#domain-keywords) endpoint with the `pos_change=lost` parameter to find keywords your domain no longer ranks for. These are often quick wins for content updates or re-optimization."
+    },
+    {
+     "url": "https://seranking.com/api/data/website-audit",
+     "title": "Website Audit - SE Ranking API Documentation",
+     "snippet": "# Website Audit\n**[Website Audit API](https://seranking.com/website-audit-api.html)** provides programmatic access to technical SEO audits. Results are retrieved on demand.\nUsing the API, you can:\n- Create website audits using standard HTML crawling or JavaScript-rendered crawling\n- Track audit execution by checking audit status, progress, and crawl statistics in real time\n- Retrieve audit results, including health scores and categorized issues\n- Analyze pages and audit issues, including page-level technical metrics and URLs affected by specific issues\n- Analyze link data, including internal and external links discovered during the crawl\n- Manage audits by listing, filtering, renaming, deleting, and accessing historical audit snapshots\n---\n## Create audit\nThere are two endpoints for launching a new website audit. Use the **Standard** endpoint for most websites, and the **Advanced** endpoint for sites that rely heavily on JavaScript to render content, such as Single-Page Applications (SPAs).\n#### **Create standard audit**\n**POST** `https://api.seranking.com/v1/site-audit/audits/standard`\n**Cost:** 2 credits per crawled page\nLaunches a standard audit that crawls the HTML of a website"
+    },
+    {
+     "url": "https://seranking.com/api/data/domain-analysis",
+     "title": "Domain Analysis - SE Ranking API Documentation",
+     "snippet": "# Domain Analysis\n**Domain Analysis API** provides detailed insights into a domain\u2019s search performance. Data is refreshed on a monthly basis.\nUsing the API, you can:\n- query regional or worldwide data\n- retrieve keyword statistics, domain pages, and subdomains\n- analyze competitors to identify common keywords and keyword gaps\n- retrieve paid advertising data, including ad creatives, observed positions, and traffic\n- access historical data to track changes in rankings, traffic, and ad performance\n- filter and sort results by metrics such as search volume, CPC, competition, keyword difficulty, and ranking positions\n---\n## Get domain overview by region\n**GET** `https://api.seranking.com/v1/domain/overview/db`\n**Cost:** 100 credits per request\nReturns detailed keyword statistics for a specified domain within a single, selected regional database. It breaks down performance for both organic and paid traffic, offering insights into keyword rankings, traffic estimates, and position changes.\n\nCopy\n```\ncurl -X GET 'https://api.seranking.com/v1/domain/overview/db?source=xx&domain=yourdomain.com&with_subdomains=1' \\\n-H 'Authorization: Token YOUR_API_KEY'\n```\n\n## Get worldwide domain overview\n"
+    },
+    {
+     "url": "https://seranking.com/api/data/quickstarts/build-authority-with-link-building",
+     "title": "Build authority with link building - SE Ranking API Documentation",
+     "snippet": "# Build authority with link building\nThis guide shows how to evaluate websites for link building, find competitor backlinks you don\u2019t have, monitor backlink changes, and analyze anchor texts with the SE Ranking API. Each workflow is independent and moves from higher-level to more detailed screening. You can follow the order shown or run any workflow on its own."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "SE Ranking seranking.com/api MCP server Model Context Protocol official",
+   "log_id": "log_b5yCKl8dK_c5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://seranking.com/api/integrations/mcp",
+     "title": "MCP Server - SE Ranking API Documentation",
+     "snippet": "The Model Context Protocol (MCP) server provides a standardized interface that allows any compatible AI model to access your SE Ranking and SE Visible data simply and securely.\nOur MCP server follows the authenticated remote MCP spec, so it\u2019s centrally hosted and managed. Connect in one click in [Claude](https://claude.ai/customize/connectors/id/se-ranking) or [ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6a0b262d5c0c8191953dd94ba05412e2), natively in Cursor and other clients, or use the `mcp-remote` module for clients that don\u2019t support remote servers.\n## What you can access\nThrough the MCP server, your AI assistant can work with data from these SE Ranking and SE Visible products*:\n- [Data API](https://seranking.com/api/data/): keyword research, backlinks, domain analysis, SERP, and more\n- [Project API](https://seranking.com/api/project/): your projects, rank tracking, audits, and competitors\n- [Local Marketing API](https://seranking.com/api/local-marketing-api/): your locations, local rankings, Google Business Profile, business listings, and reviews\n- [SE Visible API](https://seranking.com/api/se-visible/): your AI visibility projects, brands, topics, prompts, and sources"
+    },
+    {
+     "url": "https://seranking.com/mcp.html",
+     "title": "SEO MCP Server: Live SE Ranking Data in Any AI Assistant",
+     "snippet": "# SEO MCP: Use SE Ranking\u2019s live data inside any AI assistant\nPut 180+ SEO tools behind every prompt: keyword data, backlinks, domain insights, audits, and more \u2014 all inside your favorite AI assistant.\n\n## Connect SE Ranking MCP in three steps\nNo developer, no local setup. You can be querying live data in a couple of minutes.\n1\n### Start your free trial\nCreate your account and get 100K free credits to run real queries from the start.\n2\n### Connect MCP to your client\nPaste the MCP Server URL into Claude Code, Cursor, or any other MCP client.\n3\n### Authorize & start prompting\nApprove the connection and ask your first SEO question in plain language.\n[ Read documentation ](https://seranking.com/api/integrations/mcp/)\n\n## Fast setup, live data access, multi-layer search analysis\nSet up SE Ranking MCP in minutes and let your AI assistant analyze live organic data\n### Remote. Nothing to install\nThe MCP server is centrally hosted and managed by SE Ranking. Connect with one URL, no manual configuration required.\n### Real-time data integration\nYour AI assistant connects to SE Ranking in real time, so every prompt pulls the latest available data directly into the analysis.\n### 180+ tools, one"
+    },
+    {
+     "url": "https://github.com/seranking/seo-data-api-mcp-server",
+     "title": "GitHub - seranking/seo-data-api-mcp-server: This repository contains implementation of an MCP server that allows to connect SE Ranking Data API with modern agentic flows",
+     "snippet": "SE Ranking MCP Server This Model Context Protocol (MCP) server connects AI assistants to SE Ranking's SEO data and project management APIs. It enables natural language queries for: Keyword research and competitive analysis Backlink analysis and monitoring Domain traffic and ranking insights Website audits and technical SEO AI search visibility tracking Project and rank tracking management Prerequisites Before you begin, please ensure you have the following software and accounts ready: SE Ranking Account: You will need an active SE Ranking account to generate an API token. If you don\u2019t have one, you can sign up here. Docker: A platform for developing, shipping, and running applications in containers. If you don\u2019t have it, you can download it from the official Docker website. Git: A free and open-source distributed version control system. You can download it from the official Git website. AI Assistant: You will need an MCP-compatible client, such as Claude Desktop or the Gemini CLI. API Tokens This MCP server supports two types of API access: | Token | Environment Variable | Format | Purpose | | Data API | DATA_API_TOKEN | UUID (e.g., 80cfee7d-xxxx-xxxx-xxxx-fc8500816bb3 ) | Access t"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/se-ranking/refs/heads/main/mcp/se-ranking-mcp.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/se-ranking/refs/heads/main/mcp/se-ranking-mcp.yml",
+     "snippet": "deployment:\nmode: remote\nendpoint: https://api.seranking.com/mcp\nauth: oauth\nverified: probed\nserver:\nname: se-ranking\ntransport: streamable-http\nurl: https://api.seranking.com/mcp\ndocs: https://seranking.com/api/mcp/\nprotocol_versions_supported:\n- '2025-11-25'\n- '2025-06-18'\n- '2025-03-26'\n- '2024-11-05'\n- '2024-10-07'\nauthentication:\nprimary: OAuth 2.1 with dynamic client registration (RFC 7591) + PKCE S256\nalternatives:\n- 'Authorization: Bearer <api-key>'\n- 'X-Api-Key: <api-key>'\nauthorization_server: https://seranking.com\nmetadata:\noauth_authorization_server: https://seranking.com/.well-known/oauth-authorization-server\noauth_protected_resource: https://seranking.com/.well-known/oauth-protected-resource\nscopes:\n- mcp\nnote: 'tools/list and prompts/list answer ANONYMOUSLY with the full manifest (HTTP 200); initialize and every tools/call require a\nBearer token. A second, OAuth-gated MCP route is advertised at https://seranking.com/wp-json/seranking-mcp-oauth/v1/mcp (401 + WWW-Authenticate:\nBearer resource_metadata=...); the documented client endpoint is https://api.seranking.com/mcp.'\ninstall:\nclaude_code: claude mcp add --transport http se-ranking https://api.seranking.com/mcp\ncl"
+    },
+    {
+     "url": "https://help.seranking.com/hc/en-us/articles/29433510970140-Setup",
+     "title": "Setup",
+     "snippet": "The MCP (Model Context Protocol) connects SE Ranking and Planable to AI assistants like Claude and ChatGPT, so you can pull real data and draft work with plain-language prompts \u2014 no coding required.\n\nThe **Model Context Protocol (MCP)** is an open standard that connects an app's data to AI assistants. With the SE Ranking and Planable MCP servers connected, you can talk to your SEO and social data in natural language \u2014 inside tools like Claude Desktop, the ChatGPT connector, Gemini CLI, and others.\nSE Ranking\n## Connect SE Ranking MCP\nThe SE Ranking MCP server is available directly in the connector directories of Claude and ChatGPT, and can be added to other assistants via a custom connection.\n- **Claude:** in **Settings \u2192 Connectors**, add the official SE Ranking connector from the directory and click **Connect** to authorize.\n- **ChatGPT:** go to **Apps \u2192 Search apps \u2192 SE Ranking \u2192 Connect**, or open the [SE Ranking plugin in ChatGPT](https://chatgpt.com/apps/se-ranking/asdk_app_6a0b262d5c0c8191953dd94ba05412e2).\n- **Custom connector (any MCP client):** add a custom connector with the URL https://api.seranking.com/mcp, name it **SE Ranking**, and authorize with OAuth or your API k"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

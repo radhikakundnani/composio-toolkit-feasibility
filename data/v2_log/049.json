@@ -1,0 +1,35 @@
+{
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://developer.amazonservices.com/start/getting-started-for-private-developers",
+      "to": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview",
+      "why": "Replace legacy developer.amazonservices.com (MWS) page with current SP-API registration overview",
+      "evidence": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview"
+    },
+    {
+      "field": "mcp_note",
+      "from": "amzn/selling-partner-agentic-toolkit connector and sp-api-dev-mcp",
+      "to": "Amazon Selling Partner Connector (MCP) at sellingpartner-ai.amazon.com/mcp via github.com/amzn/selling-partner-agentic-toolkit; also amzn/selling-partner-api-samples sp-api-dev-mcp",
+      "why": "Provenance confirmed: amzn GitHub org and amazon.com endpoint",
+      "evidence": "https://github.com/amzn/selling-partner-agentic-toolkit"
+    },
+    {
+      "field": "confidence.mcp",
+      "from": "medium",
+      "to": "high",
+      "why": "Vendor org and endpoint confirmed",
+      "evidence": "https://github.com/amzn/selling-partner-agentic-toolkit"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 3
+}

@@ -1,0 +1,142 @@
+{
+ "id": 56,
+ "app": "Firecrawl",
+ "hint": "firecrawl.dev",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "Firecrawl API authentication OAuth API key access token developer docs firecrawl.dev",
+   "log_id": "log_Y9lCSThRRfWc",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.firecrawl.dev/oauth",
+     "title": "OAuth for apps",
+     "snippet": "Firecrawl runs an OAuth 2.1 authorization server. Your app sends the user to Firecrawl, the user signs in and picks a team, and your app gets an access token it can use on the Firecrawl REST API in place of an API key. Usage is billed to the team the user picked. Each connection gets its own API key, created by Firecrawl and never shown to your app. The user can see and revoke the connection under Connected apps in Settings, and deleting another key in the dashboard doesn\u2019t affect it.\n\n## Overview\n| | |\n|---|---|\n| Discovery | `https://www.firecrawl.dev/.well-known/oauth-authorization-server` |\n| Authorization endpoint | `https://www.firecrawl.dev/api/oauth/authorize` |\n| Token endpoint | `https://www.firecrawl.dev/api/oauth/token` |\n| Revocation endpoint | `https://www.firecrawl.dev/api/oauth/revoke` |\n| Registration endpoint | `https://www.firecrawl.dev/api/oauth/register` |\n| Resource (audience) | `https://api.firecrawl.dev/` |\n| Grant types | `authorization_code`, `refresh_token` |\n| PKCE | Required, `S256` only |\n| Client authentication | `none` (public clients, no client secret) |\n| Access token lifetime | 1 hour, prefix `fco_` |\n| Refresh token lifetime | 90 days, prefix `fc"
+    },
+    {
+     "url": "https://docs.firecrawl.dev/authentication",
+     "title": "Authentication",
+     "snippet": "| You are building | Use | Endpoint | Credential | How it ends |\n|---|---|---|---|---|\n| Your own code calling the REST API for your team | API key | `https://api.firecrawl.dev/v2/...` | `Authorization: Bearer fc-...` | Delete the key in [API keys](https://www.firecrawl.dev/app/api-keys). |\n| An MCP client you configure yourself | Hosted MCP with an API key | `https://mcp.firecrawl.dev/v2/mcp` | `Authorization: Bearer fc-...` header in the client config | Delete the key. |\n| A connector such as ChatGPT or Claude, or an MCP client with browser sign-in | MCP OAuth | `https://mcp.firecrawl.dev/v2/mcp-oauth` | Handled by the client. Each connection gets its own key. | Revoke it under [Connected apps in Settings](https://www.firecrawl.dev/app/settings?tab=mcp). |\n| An app where each user connects their own Firecrawl account | OAuth for apps | `https://api.firecrawl.dev/v2/...` | `Authorization: Bearer fco_...` access token. Each connection gets its own key. | Your app revokes it, or the user revokes it under Connected apps. |\n\n## API key\nCreate a key in the [dashboard](https://www.firecrawl.dev/app/api-keys) and send it on every request as `Authorization: Bearer fc-YOUR-API-KEY`. The SD"
+    },
+    {
+     "url": "https://firecrawl.dev/auth.md",
+     "title": "firecrawl.dev/auth.md",
+     "snippet": "Firecrawl currently supports one registration method:\n- `identity_assertion` with `assertion_type: \"urn:ietf:params:oauth:token-type:id-jag\"`\n- `requested_credential_type: \"api_key\"`\n- Credentials are Firecrawl API keys used as bearer tokens.\nFirecrawl does not currently support anonymous registration, verified-email registration, claim flows, or `access_token` issuance through `/agent/auth`. Credential revocation is supported but provider-driven (initiated by WorkOS); agents never call it \u2014 see [Revocation](#revocation) below.\nThis is the direct WorkOS ID-JAG registration flow for identity-aware agents. If you need a human to sign in through the browser, install Firecrawl tooling, or save `FIRECRAWL_API_KEY` into a project, use `https://www.firecrawl.dev/agent-onboarding/SKILL.md` instead.\n## Step 1 - Discover\nDiscovery is two hops. On cloud Firecrawl, an unauthenticated call that `https://api.firecrawl.dev` refuses carries `WWW-Authenticate: Bearer resource_metadata=\"https://www.firecrawl.dev/.well-known/oauth-protected-resource\"`: a `401` on an endpoint that needs a key, or a `403` or `429` when the keyless free tier refuses the call. Search, scrape and parse can succeed without"
+    },
+    {
+     "url": "https://docs.firecrawl.dev/api-reference/v2-introduction",
+     "title": "Introduction",
+     "snippet": "## Authentication\nRequests need an `Authorization` header with your API key, except on the keyless endpoints described below:\n```\nAuthorization: Bearer fc-YOUR-API-KEY\n```\nYou can find your API key in the [Firecrawl dashboard](https://www.firecrawl.dev/app/api-keys). A few endpoints, including `/v2/scrape`, `/v2/search` and `/v2/parse`, also work without a key, with limits. To call them keyless, leave the `Authorization` header out entirely, because a header with an empty token returns `401`. See [No API key (keyless)](/authentication#no-api-key-keyless) for the full list. To let users connect their own Firecrawl account to your app instead, use [OAuth for apps](/oauth). [Authentication](/authentication) compares every option. If you are an agent without an API key, start with [Get credentials](/ai-onboarding#get-credentials). If your platform supports WorkOS ID-JAG, use [`auth.md`](https://www.firecrawl.dev/auth.md) for registration instructions."
+    },
+    {
+     "url": "https://docs.firecrawl.dev/mcp-server",
+     "title": "Get Started",
+     "snippet": "## Use an API key\nConfigure an API key in your client, no browser needed.\nUse ChatGPT, Codex, Claude, or Grok Bot? Install the native Firecrawl connector in one click:\n\n## Sign in\nPoint your client at the OAuth server URL. Your client opens a browser window where you sign in to Firecrawl and approve a team:\n```\n{\n\"mcpServers\": {\n\"firecrawl\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.firecrawl.dev/v2/mcp-oauth\"\n}\n}\n}\n```\nNo API key or headers are needed. Review and revoke connections from [MCP settings](https://www.firecrawl.dev/app/settings?tab=mcp).\nThis is a server URL for your MCP client, not a page to open directly in a browser. API-key connections use `https://mcp.firecrawl.dev/v2/mcp` with a bearer token instead; see [Add an API key](/mcp-server/keyless#add-an-api-key)."
+    }
+   ]
+  },
+  "access": {
+   "query": "Firecrawl firecrawl.dev API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_JEJfi8GCFgkD",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.firecrawl.dev/firecrawl-for-platforms",
+     "title": "Firecrawl for Platforms",
+     "snippet": "Set up Firecrawl for Platforms yourself in the [Firecrawl dashboard](https://www.firecrawl.dev/app/partner-api). Any admin or member of an organization can create an integration: name it, choose an integration type, accept the agreement for that type, and copy the platform key. The key is shown once. You can mint and revoke keys later under Settings. No application or approval is needed.\nThere are two integration types. Both provision accounts the same way through the endpoints below, with the same platform key; they differ in who pays for the user\u2019s usage:\n- **Standard**: your users pay Firecrawl. Each provisioned account keeps its own Firecrawl plan and billing and upgrades with Firecrawl directly. See Credits for provisioned accounts for what a new account starts with.\n- **Gateway**: your organization funds your users. Accounts your integration creates are enrolled in Gateway, so their eligible usage bills to your organization. See Gateway below.\n\nSome partner offers include promotional credits for provisioned users; when they do, [Partner Credits](/partner-credits) describes what the user receives.\n\nWhat changes for a Gateway integration:\n- Accounts are created for your integra"
+    },
+    {
+     "url": "https://docs.firecrawl.dev/rate-limits",
+     "title": "Rate Limits",
+     "snippet": "The hosted Firecrawl MCP keyless endpoint exposes exactly **Search, Scrape, and Parse** without an API key. Other hosted MCP tools require an account connection or an API key. For official Firecrawl clients, the CLI, SDKs, and REST API, keyless access also includes **Interact**. On Firecrawl Cloud, research, developer, and government search endpoints can also be used without an API key. No other endpoints (crawl, extract, map, batch scrape, etc.) are available without a key. Keyless usage is free and capped per IP address per day by **two limits**, and exceeding either returns a `429`:\n\n[Sign up for a free API key](https://firecrawl.dev) to get 1,000 credits and higher rate limits at no cost \u2014 official clients automatically use your key once it\u2019s configured.\n### Current Plans\n| Plan | /scrape | /map | /crawl | /search | /agent | /crawl/status | /agent/status |\n|---|---|---|---|---|---|---|---|\n| Free | 10 | 10 | 2 | 10 | 2 | 500 | 500 |\n| Hobby | 100 | 100 | 20 | 100 | 20 | 5000 | 5000 |\n| Standard | 500 | 500 | 100 | 500 | 100 | 25000 | 25000 |\n| Growth | 5000 | 5000 | 1000 | 5000 | 1000 | 250000 | 250000 |\n| Scale | 10000 | 10000 | 2000 | 10000 | 2000 | 500000 | 500000 |"
+    },
+    {
+     "url": "https://firecrawl.dev/pricing",
+     "title": "Pricing | Firecrawl",
+     "snippet": "### Free Plan\nA lightweight way to get started.\nNo cost, no card, no hassle.\n$0\n/month\n500 searches or 1,000 pages scraped\n2 concurrent requests\nLow rate limits\n\n## Pay-as-you-go\nKeep accessing web data with search and scrape when your credits run out. We add credits in 5 USD increments, up to a monthly limit you set. Paid plans only.\n[Enable pay-as-you-go ](https://firecrawl.dev/signin?view=signup)\n## Pricing at a glance\nCredit unit1 credit = 1 page on a basic scrape or crawl, and 1 credit per Map call. Search costs 2 credits per 10 results; Interact costs 2 credits per browser minute. On Scrape and Crawl, the JSON, Question, and Highlight formats add 4 credits per page; Monitor's deterministic-extraction engine bills a flat 7 credits per page per check instead. Credits are shared across all endpoints: search results and pages scraped draw on one balance.\nFree tier1,000 credits every month, refreshed monthly, no credit card required.\nEntry planHobby: $19/month billed monthly, or $16/month billed annually, for 5,000 credits per month (2,500 searches or 5,000 pages scraped).\nPaid plans\n- Hobby: $19/month billed monthly ($16/month billed annually), 5,000 credits/month\n- Standard: $99"
+    },
+    {
+     "url": "https://firecrawl.dev/blog/add-web-search-to-ai-app",
+     "title": "How to add web search to an AI app (Python, TypeScript, and Ollama)",
+     "snippet": "- **Cost and access:** Firecrawl Search costs 2 Firecrawl credits per 10 results, and the Python and Node SDKs run without an API key on the keyless free tier, capped per IP address per day.\n\nand full page Markdown, at 2 Firecrawl credits per 10 results |\n\n| Connection option | What you need | Who bills Firecrawl usage |\n|---|---|---|\n| Managed by Lovable | Nothing beyond a Lovable workspace | Lovable, at 4 Lovable credits per 1,000 Firecrawl credits (2 on Business plans) |\n| Use your own credentials | A Firecrawl API key (starts with `fc-`) | Firecrawl, from your own Firecrawl credits |\n\nThe keyless free tier needs no account and is capped per IP address per day. A free account comes with 1,000 Firecrawl credits a month. Hobby is $19 a month billed monthly ($16 a month billed annually) for 5,000 Firecrawl credits. Current rates are on the [pricing page](https://www.firecrawl.dev/pricing).\n\nKeyless access works the same way in the Python and Node SDKs (create the client without an API key), in the Firecrawl CLI (`firecrawl search \"latest Ollama release\"` without signing in), and in the hosted Firecrawl MCP server at `https://mcp.firecrawl.dev/v2/mcp`, which exposes Search, Scrape a"
+    },
+    {
+     "url": "https://docs.firecrawl.dev/billing",
+     "title": "Billing",
+     "snippet": "Firecrawl billing is **credit-based**. Every API call that you make consumes credits. The number of credits depends on the endpoint and the options that you use. Your plan gives you a monthly credit allotment. Pay-as-you-go adds more credits when the allotment runs out. For current plan pricing, visit the [Firecrawl pricing page](https://www.firecrawl.dev/pricing).\n\n### Free plan\nNew accounts start on the free plan. It costs nothing and does not need a card. Here is what it includes:\n- **1,000 credits per month.** The allotment resets at the start of each monthly cycle. Unused free credits do not roll over.\n- **2 concurrent browsers**, with the same 50,000 maximum queued jobs as the paid self-serve plans.\n- **Rate limits of 10 requests per minute** on `/scrape`, `/map` and `/search`, and **2 requests per minute** on `/crawl`, `/agent` and `/interact`. Batch scrape shares the scrape limit and extract shares the agent limit. See [Rate Limits](/rate-limits) for the full table.\n\nThe free plan does not include pay-as-you-go, so requests return an HTTP 402 once the monthly allotment runs out. See Running Out of Credits. It also does not include credit rollover, a Data Processing Agreemen"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Firecrawl API reference REST GraphQL endpoints documentation firecrawl.dev",
+   "log_id": "log_nzBotNQIhIuD",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.firecrawl.dev/api-reference/endpoint/scrape",
+     "title": "Scrape",
+     "snippet": "[Capabilities](/capabilities) is the single page listing what a scrape can do to a page, which of those capabilities run in a self-hosted deployment, and which endpoints accept a request with no API key.\n##\n\u200b\nInteractions\nFor browser interactions (clicking, typing, navigating, extracting dynamic content), use the [Interact endpoint](/features/interact). Scrape a page first, then call `POST /v2/scrape/{scrapeId}/interact` with a natural-language prompt or Playwright code to take actions on the page. See the [Interact documentation](/features/interact) for full details and examples. Optionally you can also use the `actions` parameter, although it\u2019s not recommended to use it for complex interactions.\n> Are you an AI agent that needs a Firecrawl API key? See [firecrawl.dev/agent-onboarding/SKILL.md](https://www.firecrawl.dev/agent-onboarding/SKILL.md) for automated onboarding instructions."
+    },
+    {
+     "url": "https://docs.firecrawl.dev/v1/api-reference/v1-openapi.json",
+     "title": "docs.firecrawl.dev/v1/api-reference/v1-openapi.json",
+     "snippet": "\"description\": \"API for interacting with Firecrawl services to perform web scraping and crawling tasks.\","
+    },
+    {
+     "url": "https://github.com/firecrawl/firecrawl-docs/blob/dc79b8de/advanced-scraping-guide.mdx?plain=1",
+     "title": "firecrawl-docs/advanced-scraping-guide.mdx at dc79b8de9b836352e238038da8b47c47878ec5f8 \u00b7 firecrawl/firecrawl-docs",
+     "snippet": "To scrape a single page and get clean markdown content, use the `/scrape` endpoint.\n<CodeGroup>\n```python Python\n# pip install firecrawl-py\nfrom firecrawl import Firecrawl\nfirecrawl = Firecrawl(api_key=\"fc-YOUR-API-KEY\")\ndoc = firecrawl.scrape(\"https://firecrawl.dev\")\nprint(doc.markdown)\n```\n```js Node\n// npm install @mendable/firecrawl-js\nimport { Firecrawl } from 'firecrawl-js';\nconst firecrawl = new Firecrawl({ apiKey: 'fc-YOUR-API-KEY' });\nconst doc = await firecrawl.scrape('https://firecrawl.dev');\nconsole.log(doc.markdown);\n```\n```bash cURL\ncurl -X POST https://api.firecrawl.dev/v2/scrape \\\n-H 'Content-Type: application/json' \\\n-H 'Authorization: Bearer fc-YOUR-API-KEY' \\\n-d '{\n\"url\": \"https://docs.firecrawl.dev\"\n}'\n```\n\n```bash cURL\ncurl -X POST https://api.firecrawl.dev/v2/crawl \\\n-H 'Content-Type: application/json' \\\n-H 'Authorization: Bearer fc-YOUR-API-KEY' \\\n-d '{\n\"url\": \"https://docs.firecrawl.dev\",\n\"limit\": 10\n}'\n```\n\n### Crawl example\n```bash cURL\ncurl -X POST https://api.firecrawl.dev/v2/crawl \\\n-H 'Content-Type: application/json' \\\n-H 'Authorization: Bearer fc-YOUR-API-KEY' \\\n-d '{\n\"url\": \"https://docs.firecrawl.dev\",\n\"includePaths\": [\"^/blog/.*$\", \"^/docs/.*$\"],\n\""
+    },
+    {
+     "url": "https://docs.firecrawl.dev/api-reference/endpoint/search",
+     "title": "Search",
+     "snippet": "## Time-Based Search\nUse the `tbs` parameter to filter results by time periods, including custom date ranges. See the [Search Feature documentation](https://docs.firecrawl.dev/features/search#time-based-search) for detailed examples and supported formats."
+    },
+    {
+     "url": "https://docs.firecrawl.dev/api-reference",
+     "title": "Introduction",
+     "snippet": "The Firecrawl API gives you programmatic access to web data. All endpoints share a common base URL, authentication scheme, and response format described on this page.\n##\n\u200b\nFeatures\n## Search\nSearch the web and get full page content in any format.\n## Scrape\nExtract content from any webpage in markdown or json format.\n## Interact\nCreate an Interact session to click, fill forms, and navigate pages.\n## Parse\nUpload files and parse them into markdown or other formats.\n\nBase URL\nAll requests use the following base URL:\n```\nhttps://api.firecrawl.dev\n```\n##\n\u200b\nAuthentication\nRequests need an `Authorization` header with your API key, except on the keyless endpoints described below:\n```\nAuthorization: Bearer fc-YOUR-API-KEY\n```\nYou can find your API key in the [Firecrawl dashboard](https://www.firecrawl.dev/app/api-keys). A few endpoints, including `/v2/scrape`, `/v2/search` and `/v2/parse`, also work without a key, with limits. To call them keyless, leave the `Authorization` header out entirely, because a header with an empty token returns `401`. See [No API key (keyless)](/authentication#no-api-key-keyless) for the full list. To let users connect their own Firecrawl account to your app inst"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Firecrawl firecrawl.dev MCP server Model Context Protocol official",
+   "log_id": "log_UJFI9IQQvtKy",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.firecrawl.dev/mcp-server",
+     "title": "Get Started",
+     "snippet": "## Sign in\nPoint your client at the OAuth server URL. Your client opens a browser window where you sign in to Firecrawl and approve a team:\n```\n{\n\"mcpServers\": {\n\"firecrawl\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.firecrawl.dev/v2/mcp-oauth\"\n}\n}\n}\n```\nNo API key or headers are needed. Review and revoke connections from [MCP settings](https://www.firecrawl.dev/app/settings?tab=mcp).\nThis is a server URL for your MCP client, not a page to open directly in a browser. API-key connections use `https://mcp.firecrawl.dev/v2/mcp` with a bearer token instead; see [Add an API key](/mcp-server/keyless#add-an-api-key)."
+    },
+    {
+     "url": "https://docs.firecrawl.dev/use-cases/developers-mcp",
+     "title": "Developers & MCP",
+     "snippet": "Firecrawl\u2019s MCP server connects to Claude Desktop, Cursor, and other Model Context Protocol clients so your assistant can pull live documentation, discover site structures, and extract structured data on demand.\n## Start with a Template\n## MCP Server Firecrawl\nOfficial MCP server - Search, scrape, and interact with the web from Claude Desktop, Cursor, and other MCP clients\n## Open Lovable\nBuild complete applications from any website instantly\n**Get started with MCP in minutes.** Follow our [setup guide](https://github.com/firecrawl/firecrawl-mcp-server#installation) to integrate Firecrawl into Claude Desktop or Cursor.\n## How It Works\nIntegrate Firecrawl directly into your AI coding workflow through Model Context Protocol. Once configured, your AI assistant gains access to a set of Firecrawl web tools it can call on your behalf:\n| Tool | What it does |\n|---|---|\n| **Scrape** | Extract content or structured data from a single URL |\n| **Batch Scrape** | Extract content from multiple known URLs in parallel |\n| **Map** | Discover all indexed URLs on a website |\n| **Crawl** | Walk a site section and extract content from every page |\n| **Search** | Search the web and optionally extract c"
+    },
+    {
+     "url": "https://github.com/firecrawl/firecrawl-mcp-server?tab=readme-ov-file",
+     "title": "GitHub - firecrawl/firecrawl-mcp-server: Official Firecrawl MCP server, the context API for AI agents: search, scrape, and interact with the web, plus parse, crawl, map, Agent and Monitor, from any MCP client.",
+     "snippet": "# Firecrawl MCP Server\nA Model Context Protocol (MCP) server that brings [Firecrawl](https://github.com/firecrawl/firecrawl), the context API for AI agents, to MCP-compatible clients: search, scrape, and interact with the live web and get back clean Markdown or structured data.\n> Big thanks to [@vrknetha](https://github.com/vrknetha), [@knacklabs](https://www.knacklabs.ai) for the initial implementation!\n## Features\n- Search the web, optionally with full page content for each result\n- Search indexes for developer sources (GitHub issues, merged pull requests, READMEs, and docs), US government sources, and scientific papers (PubMed, bioRxiv, medRxiv, arXiv)\n- Scrape any URL into clean Markdown or structured JSON\n- Parse PDFs and documents\n- Crawl a site for content from many pages, or map it to discover its URLs\n- Interact with pages in a real browser: click, type, fill forms, and navigate dynamic pages\n- Run Agent jobs for multi-source research that returns structured data\n- Monitor pages and get notified when their content changes\n- Check current and historical Firecrawl credit usage\n- Automatic retries and rate limiting\n- Cloud and self-hosted support\n- SSE support\n> Play around w"
+    },
+    {
+     "url": "https://docs.firecrawl.dev/developer-guides/llm-sdks-and-frameworks/google-adk",
+     "title": "Agent Development Kit (ADK)",
+     "snippet": "Connect Google\u2019s Agent Development Kit (ADK) to Firecrawl through the Model Context Protocol (MCP) so your agents can search, scrape, crawl, and map the web for clean context.\n## Overview\nFirecrawl provides an MCP server that seamlessly integrates with Google\u2019s ADK, enabling your agents to efficiently scrape, crawl, and extract structured data from any website. The integration supports both cloud-based and self-hosted Firecrawl instances with streamable HTTP for optimal performance.\n## Features\n- Efficient web scraping, crawling, and content discovery from any website\n- Advanced search capabilities and intelligent content extraction\n- Autonomous web research with the Firecrawl agent\n- Browser interaction, file parsing, and change monitoring\n- Flexible deployment (cloud-based or self-hosted)\n- Optimized for modern web environments with streamable HTTP support\n## Prerequisites\n- Obtain an API key for Firecrawl from [firecrawl.dev](https://firecrawl.dev)\n- Install Google ADK with MCP support: `pip install \"google-adk[mcp]\"`\n## Setup\n```\nimport os\nfrom google.adk.agents.llm_agent import Agent\nfrom google.adk.tools.mcp_tool.mcp_session_manager import StreamableHTTPConnectionParams\nfrom "
+    },
+    {
+     "url": "https://docs.firecrawl.dev/mcp-server/keyless",
+     "title": "For Agents",
+     "snippet": "Keyless MCP is rate limited and exposes Search, Scrape, and Parse. Add an API key to unlock the full tool surface or higher limits.\n## Add an API key\n[Create a Firecrawl API key](https://www.firecrawl.dev/app/api-keys), then add it as a bearer token on the same endpoint in your client config:\n```\n{\n\"mcpServers\": {\n\"firecrawl\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.firecrawl.dev/v2/mcp\",\n\"headers\": {\n\"Authorization\": \"Bearer <FIRECRAWL_API_KEY>\"\n}\n}\n}\n}\n```\nIn Droid, pass the key as a header and turn off OAuth:\n```\ndroid mcp add firecrawl https://mcp.firecrawl.dev/v2/mcp --type http \\\n--header \"Authorization: Bearer <FIRECRAWL_API_KEY>\" --no-oauth\n```\nTo sign in through the browser instead of pasting a key, see [For Humans](/mcp-server/oauth). [Authentication](/authentication) compares API keys, MCP sign-in and OAuth for your own app.\n## Verify your connection\nOpen your client\u2019s MCP status or tool list and confirm that `firecrawl` is connected. A keyless connection shows `firecrawl_search`, `firecrawl_scrape`, and `firecrawl_parse`; an API-key connection can expose the [full tool surface](/mcp-server/tools), subject to plan, deployment, and team policy."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": 80,
+ "app": "Harvest",
+ "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Harvest API authentication OAuth API key access token developer docs harvestapp.com help.getharvest.com/api-v2",
+   "log_id": "log_IpbuU8SjU8kM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+     "title": "Authentication \u2013 Harvest API V2 Documentation",
+     "snippet": "The V2 API requires an access token to authenticate requests. There are two options available to you:\n- A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API.\n- Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations.\n## Personal access tokens\nThe API can be accessed by creating a Personal Access Token from the [**Developers**](https://id.getharvest.com/developers) section of Harvest ID. After creating it you\u2019ll be provided with a random token and a list of your account IDs.\nPersonal Access Tokens are the preferred method when you want to write your own scripts that consume our API. Typical use cases for Personal Access Tokens are scripts that build custom reports, sync data between different accounts, or automate tasks that would otherwise take a long time when done manually.\nPersonal Access Tokens replace the Basic Authentication method that was used in our v1 API, as this is more secure. Within the [**Developers**](https://id.getharvest.com/developers) section you\u2019ll see a list of all your Personal Access Tokens, when they were last used, and you\u2019ll be able to easily re"
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+     "title": "Overview \u2013 Harvest API V2 Documentation",
+     "snippet": "Harvest requires applications to authenticate all requests with [OAuth2 or Personal Access Tokens](https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/). The following HTTP methods are supported:\n- GET\n- POST\n- PATCH\n- DELETE\nWhen issuing a GET request, parameters should be included in the URL query string:\n```\ncurl https://api.harvestapp.com/v2/tasks?page=2&per_page=10 \\\n-H \"Authorization: Bearer $ACCESS_TOKEN\" \\\n-H \"Harvest-Account-Id: $ACCOUNT_ID\" \\\n-H \"User-Agent: MyApp ([email\u00a0protected])\"\n```\n\nWe also make use of shell variables in our example requests (e.g. `$ACCESS_TOKEN`). If your operating system supports shell variables, you can set shell variables like this:\n```\nACCESS_TOKEN=\"my-access-token\"\nACCOUNT_ID=\"my-account-id\"\nUSER_AGENT=\"MyApp ([email\u00a0protected])\"\n```\nThen, you can reference them by prefixing them with a `$`:\n```\ncurl -X POST https://api.harvestapp.com/v2/company \\\n-H \"Authorization: Bearer $ACCESS_TOKEN\" \\\n-H \"Harvest-Account-Id: $ACCOUNT_ID\" \\\n-H \"User-Agent: $USER_AGENT\"\n```\nThis should allow you to copy/paste most of the example requests without needing to change anything aside from IDs."
+    },
+    {
+     "url": "https://help.getharvest.com/api-v1/introduction/overview/migration-guide",
+     "title": "API V1 to API V2 Migration Guide",
+     "snippet": "### Migrating integrations using Basic Authentication\nBasic Authentication is not supported by API V2, as there currently are more secure alternatives available. To migrate your integration to API V2, you can replace Basic Authentication with a Personal Access Token.\nYou can create a Personal Access Token in the [Developers](https://id.getharvest.com/developers) section of Harvest ID, and use it within an `Authorization: Bearer` header.\nThe API V2 documentation describes [how to use Personal Access Tokens](https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/#personal-access-tokens).\n### Migrating integrations using OAuth2 implicit grant flow\nAPI V2 supports the standard OAuth2 Implicit Grant Flow, too, as [described in the API V2 documentation](https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/#for-client-side-applications).\nCompared to the OAuth2 Implicit Grant Flow in API V1, there are some changes that you will need to introduce in your integration:\n- You will need to create an OAuth2 application for your integration in the [Developers](https://id.getharvest.com/developers) section of Harvest ID.\n- For API V2, the"
+    },
+    {
+     "url": "https://github.com/randomecho/harvest-api/blob/master/Authentication/OAuth%202.0.md",
+     "title": "harvest-api/Authentication/OAuth 2.0.md at master \u00b7 randomecho/harvest-api",
+     "snippet": "The [OAuth 2.0](http://tools.ietf.org/html/draft-ietf-oauth-v2) standard provides your users with a secure way to access Harvest data without providing sensitive information like usernames and passwords.\n### Registering Your Application\nYou'll need to [register your application](https://platform.harvestapp.com/oauth2_clients) with Harvest (must be logged in as an administrator on your account to access this page) before using OAuth 2.0 for authorization. After registering, we'll provide you with credentials that your application can use to communicate with Harvest.\n**Please note**: The [OAuth 2.0 Sample App](https://github.com/harvesthq/harvest_api_samples/blob/master/oauth/harvest_api_oauth_sample.rb) is a great starting point if you'd like to experiment with Harvest's OAuth 2.0 using your own registered client ID and secret.\n### Access Tokens\nAccess tokens allow your application to communicate with Harvest on behalf of your users. Each user in Harvest is granted a token that expires after 18 hours. Users also have refresh tokens that can be used to request new access tokens for up to 30 days.\n## For Server-Side Applications\nHarvest uses the [Authorization Code flow](http://tools."
+    },
+    {
+     "url": "https://support.greenhouse.io/hc/en-us/articles/360029266032-Harvest-API-overview",
+     "title": "Harvest API overview",
+     "snippet": "Harvest API v1/v2 access is being retired. Migrate existing custom integrations to Harvest v3 by your organization\u2019s applicable cutoff date. After the cutoff date, v1/v2 API keys won\u2019t be accessible and integrations using v1/v2 will stop working. Develop all new integrations with Harvest v3.\n\nHarvest API is available in two formats:\n- **Harvest v3:** Uses OAuth 2.0 client credentials (client ID and client secret)\n- **Harvest v1/v2:** Uses API keys for authentication\nTo connect to any version of the Harvest API, Site Admins must create API credentials, assign endpoint permissions, and optionally restrict access by IP address.\n### Create Harvest API credentials\nTo get started, click the **Configure** icon ![Configure icon](https://support.greenhouse.io/hc/article_attachments/5876531458971) on your navigation bar and select **Dev Center** on the left.\n![Screenshot of Configure > Dev Center](https://support.greenhouse.io/hc/article_attachments/10575989618971)\nClick **API Credential Management**.\n![Screenshot of Configure > Dev Center > API Credentials Management](https://support.greenhouse.io/hc/article_attachments/5876543381531)\nClick **Create new API credentials.**\n![](https://suppor"
+    }
+   ]
+  },
+  "access": {
+   "query": "Harvest harvestapp.com help.getharvest.com/api-v2 API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_nQi5LUSn2EFl",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+     "title": "Authentication \u2013 Harvest API V2 Documentation",
+     "snippet": "The V2 API requires an access token to authenticate requests. There are two options available to you:\n- A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API.\n- Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations.\n## Personal access tokens\nThe API can be accessed by creating a Personal Access Token from the [**Developers**](https://id.getharvest.com/developers) section of Harvest ID. After creating it you\u2019ll be provided with a random token and a list of your account IDs.\nPersonal Access Tokens are the preferred method when you want to write your own scripts that consume our API. Typical use cases for Personal Access Tokens are scripts that build custom reports, sync data between different accounts, or automate tasks that would otherwise take a long time when done manually.\nPersonal Access Tokens replace the Basic Authentication method that was used in our v1 API, as this is more secure. Within the [**Developers**](https://id.getharvest.com/developers) section you\u2019ll see a list of all your Personal Access Tokens, when they were last used, and you\u2019ll be able to easily re"
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/imports-api/imports/imports",
+     "title": "Imports \u2013 Harvest API V2 Documentation",
+     "snippet": "Data import is available only to paying accounts. Free-plan accounts receive a `403 Forbidden`.\nListing all imports and reverting an import require the permission to manage the account\u2019s settings. A caller with permission to manage all clients, but not the account\u2019s settings, can retrieve only their own client and contact runs. Downloading the CSV errors of a run is limited to the caller\u2019s own runs, and without permission to manage the account\u2019s settings, to client and contact runs.\nThe permission required to create an import depends on its `import_type`:\n- `person` requires permission to view all people.\n- `project` requires permission to manage all projects.\n- `client` and `contact` require permission to manage all clients or to manage account settings.\n- `timesheet` and `expense` require permission to manage account settings.\nA caller who can create a `person` or `project` import without permission to manage the account\u2019s settings cannot retrieve that run or download its CSV errors.\n\n| `403` | The account is on a free plan (`Data import is only available to paying accounts.`), or the caller is not authorized (`Not authorized!`)."
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+     "title": "Overview \u2013 Harvest API V2 Documentation",
+     "snippet": "The Harvest V2 API is a [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) that allows you to interact with your Harvest account programmatically. You can track time, log expenses, create projects, and more.\n## API requests\nHarvest requires applications to authenticate all requests with [OAuth2 or Personal Access Tokens](https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/). The following HTTP methods are supported:\n- GET\n- POST\n- PATCH\n- DELETE\nWhen issuing a GET request, parameters should be included in the URL query string:\n```\ncurl https://api.harvestapp.com/v2/tasks?page=2&per_page=10 \\\n-H \"Authorization: Bearer $ACCESS_TOKEN\" \\\n-H \"Harvest-Account-Id: $ACCOUNT_ID\" \\\n-H \"User-Agent: MyApp ([email\u00a0protected])\"\n```"
+    },
+    {
+     "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+     "title": "The Harvest API",
+     "snippet": "Your Harvest subscription includes API access for all accounts (including free and trial accounts) which can be used to manage your Harvest account. Our [API documentation](https://help.getharvest.com/api-v2) provides all of the details necessary to get started.\n## Common API questions\n### How do I get access to the API?\nAll Harvest accounts are able to access the Harvest API. API permissions will mirror [account permissions](https://support.getharvest.com/hc/en-us/articles/360048687451); Administrators can access all API calls, Managers can access the projects and people they manage, and Members can only access their own data. Harvest will check your permissions on each request and actions that are not available to you in the UI will return HTTP 401 on the API."
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/approvals-api/approvals/approvals",
+     "title": "Approvals \u2013 Harvest API V2 Documentation",
+     "snippet": "# Welcome to the Harvest API v2 Help Center\n# Approvals\n## The approval object\nAn approval rolls up one user\u2019s tracked time and expenses for a single period and approval bucket, so an integration can read the state of a team\u2019s timesheets without loading every time entry.\n| Attribute | Type | Description |\n|---|---|---|\n| `user_id` | integer | Unique ID of the user the roll-up covers. |\n| `user_name` | string | The user\u2019s display name, or their email when no name is set. |\n| `avatar_url` | string | URL of the user\u2019s avatar. `null` when the user has no settings. |\n| `total_hours` | decimal | Hours booked in the period and bucket. |\n| `billable_hours` | decimal | Billable subset of `total_hours`. |\n| `has_running_timer` | boolean | `true` when a timer is running against an entry with non-zero hours. A zero-hour running timer is not counted. |\n| `expenses_by_currency` | array | Expense totals for the period and bucket, one entry per billing currency. Empty when there are none. |\nEach entry of `expenses_by_currency` contains:\n| Attribute | Type | Description |\n|---|---|---|\n| `currency` | string | ISO 4217 currency code. |\n| `total_amount` | decimal | Total expense amount in this curren"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Harvest API reference REST GraphQL endpoints documentation harvestapp.com help.getharvest.com/api-v2",
+   "log_id": "log_463pOo-5pSfB",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.getharvest.com/api-v2/tasks-api/tasks/tasks",
+     "title": "Tasks \u2013 Harvest API V2 Documentation",
+     "snippet": "# Welcome to the Harvest API v2 Help Center\n# Tasks\n## The task object\n| Attribute | Type | Description |\n|---|---|---|\n| `id` | integer | Unique ID for the task. |\n| `name` | string | The name of the task. |\n| `billable_by_default` | boolean | Used in determining whether default tasks should be marked billable when creating a new project. |\n| `default_hourly_rate` | decimal | The hourly rate to use for this task when it is added to a project. |\n| `is_default` | boolean | Whether this task should be automatically added to future projects. |\n| `is_active` | boolean | Whether this task is active or archived. |\n| `created_at` | datetime | Date and time the task was created. |\n| `updated_at` | datetime | Date and time the task was last updated. |\nYou must be an Administrator or Manager with permission to create and edit tasks in order to interact with the `/v2/tasks` endpoint. Insufficient permissions will result in a `403 Forbidden` status code.\n## List all tasks\nReturns a list of your tasks. The tasks are returned sorted by creation date, with the most recently created tasks appearing first.\nThe response contains an object with a `tasks` property that contains an array of up to `per_"
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+     "title": "Overview \u2013 Harvest API V2 Documentation",
+     "snippet": "The Harvest V2 API is a [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) that allows you to interact with your Harvest account programmatically. You can track time, log expenses, create projects, and more.\n## API requests\nHarvest requires applications to authenticate all requests with [OAuth2 or Personal Access Tokens](https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/). The following HTTP methods are supported:\n- GET\n- POST\n- PATCH\n- DELETE\nWhen issuing a GET request, parameters should be included in the URL query string:\n```\ncurl https://api.harvestapp.com/v2/tasks?page=2&per_page=10 \\\n-H \"Authorization: Bearer $ACCESS_TOKEN\" \\\n-H \"Harvest-Account-Id: $ACCOUNT_ID\" \\\n-H \"User-Agent: MyApp ([email\u00a0protected])\"\n```\nWhen issuing a POST or PATCH request, parameters should be included in the request body. Request parameters can either be formatted in JSON or submitted as form data. When submitting request parameters as JSON, you must pass `application/json` in the `Content-Type` header.\nWe also require that each request include a `User-Agent` header with both:\n- The name of your application\n- A link to your application or email"
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/company-api/company/company",
+     "title": "Company \u2013 Harvest API V2 Documentation",
+     "snippet": "## Retrieve a company\nRetrieves the company for the currently authenticated user. Returns a company object and a `200 OK` response code.\n```\nGET /v2/company\n```\n#### Example requests:\n##### Postman Collection\nWe have a collection of API requests in [Postman](https://getpostman.com) that makes it easy to try this out. [Click here](https://help.getharvest.com/api-v2/introduction/overview/postman-collection/) to learn more!"
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/notifications-api/notifications/notification-preferences",
+     "title": "Notification Preferences \u2013 Harvest API V2 Documentation",
+     "snippet": "# Welcome to the Harvest API v2 Help Center\n\n| `channels` | array | Array of per-type, per-channel preferences. Contains one row for every supported notification type and channel pair, always in the same fixed order, with a type\u2019s `in_app` row before its `email` row. |\n| `channels[].notification_type` | string | Notification preference type. |\n| `channels[].channel` | string | Delivery channel: `in_app` (the in-product feed and bell) or `email`. |\n| `channels[].enabled` | boolean | Whether the channel is enabled for this notification type. |\n| `channels[].feed_type` | string | The `notification_type` of the corresponding notification in `GET /v2/notifications`, or `null` when there is no corresponding notification type. `null` for `occasional_updates` and `project_deleted`. Both submitted-timesheet preferences share the `timesheet_submitted` feed type. |\n| `channels[].category` | string | The `category` of the corresponding notification in `GET /v2/notifications`, or `null` when `feed_type` is `null`.\n\nAny authenticated user can read and update their own notification preferences, and no administrator role is required. There is no `:id` parameter: this endpoint always operates on th"
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/reports-api/reports/report-exports",
+     "title": "Report Exports \u2013 Harvest API V2 Documentation",
+     "snippet": "# Welcome to the Harvest API v2 Help Center\n# Report Exports\nReport exports generate a file, such as a CSV, spreadsheet, PDF or zip, from a report and make it available to download. An export is created and then polled until it is complete.\n\n## Create a report export\n> **Beta endpoint.** Fully available, but the response shape may still change. Until it is frozen, every response includes `Harvest-Api-Stability: beta`.\nCreates a report export. Returns an export object and a `201 Created` response code. The `Location` header is an absolute URL for the new export.\n```\nPOST /v2/reports/exports\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Harvest harvestapp.com help.getharvest.com/api-v2 MCP server Model Context Protocol official",
+   "log_id": "log_Iiniz4MHr8a7",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+     "title": "Harvest MCP",
+     "snippet": "The Harvest MCP (Model Context Protocol) connection lets you work with your Harvest data through an AI assistant, using plain language instead of clicking through the app. Once it's connected, you can start and stop timers, log hours, review your time, and check on project budgets just by asking \u2014 for example, \"Start a timer on the Acme website project\" or \"How many hours did I track for Acme last week?\"\n## What is the MCP?\nMCP is an open standard that lets AI assistants connect securely to the tools you already use. The Harvest MCP is the connection that gives an MCP-compatible assistant \u2014 such as Claude \u2014 controlled access to your Harvest account, so it can carry out time tracking tasks on your behalf.\nYou stay in charge throughout. The assistant acts as you, sees only what your Harvest role lets you see, and can only do the things your permissions allow.\n## Before you begin\nTo use the Harvest MCP, you'll need:\n- An active Harvest account.\n- An MCP-compatible AI assistant or client (for example, the Claude desktop or web app).\nYou connect the Harvest MCP from within your MCP client, then sign in to Harvest and authorise the connection when prompted. Once you've authorised it, the"
+    },
+    {
+     "url": "https://github.com/mnicole-dev/harvest-mcp-server",
+     "title": "GitHub - mnicole-dev/harvest-mcp-server: MCP server for the Harvest time tracking API v2 \u2014 37 tools covering time entries, projects, tasks, clients, users, and timers",
+     "snippet": "# @mnicole-dev/harvest-mcp-server\nA [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for the [Harvest](https://www.getharvest.com) time tracking API (v2). Manage time entries, projects, tasks, clients, users, and timers from any MCP-compatible client.\n## Features\n**37 tools** covering the full Harvest API v2:\n### Time Entries (8 tools)\n| Tool | Description |\n|---|---|\n| `list-time-entries` | List entries with filters (date range, project, user, task, billed, running) |\n| `get-time-entry` | Get a single time entry by ID |\n| `create-time-entry` | Log hours for a project/task on a date (duration or start/end time) |\n| `update-time-entry` | Update hours, notes, date, project, or task |\n| `delete-time-entry` | Delete a time entry |\n| `start-timer` | Start a running timer for a project/task |\n| `stop-timer` | Stop a running timer |\n| `restart-timer` | Restart a stopped timer |\n### Projects (4 tools)\n| Tool | Description |\n|---|---|\n| `list-projects` | List all projects (filter by client, active status) |\n| `get-project` | Get project details (budget, rates, dates, notes) |\n| `create-project` | Create a project with billing, budget, and fee settings |\n| `update-proje"
+    },
+    {
+     "url": "https://github.com/ianaleck/harvest-mcp-server",
+     "title": "GitHub - ianaleck/harvest-mcp-server: Model Context Protocol (MCP) server for Harvest time tracking API v2. Provides 60+ tools for managing clients, projects, time entries, invoices, and reports through MCP-compatible applications.",
+     "snippet": "> **Unofficial** Model Context Protocol (MCP) server for seamless integration with the Harvest time tracking API\n**\u26a0\ufe0f Disclaimer:** This is an unofficial, third-party integration with the Harvest API. This project is not affiliated with, endorsed by, or sponsored by Harvest or Forecast (the company behind Harvest).\n\n## \u2728 Features\n- \ud83d\udd17 **Complete Harvest API v2 Coverage** - 40+ tools covering all major endpoints\n- \ud83d\udee1\ufe0f **Type-Safe** - Full TypeScript support with Zod validation\n- \u26a1 **High Performance** - Built with async/await and proper rate limiting\n- \ud83e\uddea **Thoroughly Tested** - Comprehensive unit, integration, and contract tests\n- \ud83d\udcca **Rich Logging** - Structured logging for debugging and monitoring\n- \ud83d\udd04 **Auto-Retry** - Intelligent retry logic with exponential backoff\n- \ud83d\udcd6 **MCP Compliant** - Works with Claude Desktop and other MCP clients\n## \ud83d\ude80 Quick Start\n### Prerequisites\n- Node.js 18+\n- Harvest account with API access\n- MCP-compatible client (like Claude Desktop)\n### Installation\n```\n# Install globally\nnpm install -g @ianaleck/harvest-mcp-server\n# Or install locally\nnpm install @ianaleck/harvest-mcp-server\n```\n### Configuration\n1. **Get your Harvest API credentials:**\n- Go to Harvest"
+    },
+    {
+     "url": "https://github.com/taiste/harvest-mcp-server",
+     "title": "GitHub - taiste/harvest-mcp-server: MCP Server for Harvest",
+     "snippet": "# Harvest MCP Server\nThis MCP (Model Context Protocol) server provides integration with the Harvest time tracking and project management API. It allows Claude and other MCP-compatible AI assistants to interact with your Harvest account, helping you manage time entries, projects, clients, and more.\n## Features\nThe server provides the following functionality:\n### Users\n- List users\n- Get user details\n### Time Entries\n- List time entries with filtering options\n- Create new time entries\n- Start/stop timers\n- Query time entry details\n- Get unsubmitted timesheets (time entries not yet submitted for approval)\n### Projects\n- List projects with filtering options (by client, is_active, updated_since, page, per_page)\n- Retrieve detailed project information\n- Create new projects\n- Update existing projects (also used to archive: pass `is_active=False`)\n- Delete projects (destructive \u2014 also deletes the project's time entries and expenses, though invoices are retained; archiving is recommended instead)\n### Task Assignments\n- List task assignments (account-wide or scoped to a project)\n- Retrieve detailed task assignment information\n- Create new task assignments (link a task to a project)\n- Update "
+    },
+    {
+     "url": "https://taiste.fi/en/post/building-a-harvest-time-tracking-integration-with-model-context-protocol",
+     "title": "Building a Harvest Time Tracking Integration with Model Context Protocol | Taiste",
+     "snippet": "Let's explore how to build a Model Context Protocol (MCP) server that connects Claude (or any other MCP-compatible large language model) with the Harvest API. This integration allows users to query time entries, manage projects, and track time through simple conversational prompts.\n## What is Model Context Protocol?\nThe [Model Context Protocol](https://modelcontextprotocol.io/) is an open standard that enables seamless communication between large language models (LLMs) like Claude and external data sources or tools. MCP provides a standardized way for LLMs to access external context, execute functions, and return results to users.\nBy using MCP, we can give Claude the ability to interact with our Harvest time tracking data through natural language. Users can simply ask questions like \"How many hours did our team log last week?\" or \"Create a time entry for my current project,\" and Claude can handle these requests by calling the appropriate Harvest API endpoints.\n## Setting Up the Harvest MCP Server\nLet's build an MCP server that integrates with the Harvest API. We'll use Python with the official MCP SDK to create our server.\n\nHere's the core of our Harvest MCP server:\n###### import o"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

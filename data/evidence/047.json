@@ -1,0 +1,142 @@
+{
+ "id": 47,
+ "app": "Ecwid",
+ "hint": "api-docs.ecwid.com",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "Ecwid API authentication OAuth API key access token developer docs api-docs.ecwid.com",
+   "log_id": "log_R-qIyCWqVC0k",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+     "title": "ecwid-api-docs/includes/_authentication.md at master \u00b7 Ecwid/ecwid-api-docs",
+     "snippet": "The Ecwid platform provides two ways of installing and operating applications in an online store: native and external apps.\n**Native apps** work solely in the Ecwid Control Panel by adding a new tab into one of its sections. When a user visits that tab, Ecwid will load the app page in an IFRAME window. The app can interact with a store (get access token, get store information) and with the Ecwid Control Panel using Ecwid JS SDK.\n**External apps** work outside of the Ecwid Control Panel on an external website or in the background with no setup required. These applications need to [handle the oAuth process](https://developers.ecwid.com/api-documentation/external-applications#get-access-token) themselves in order to get an access token. Usually, they work on the server side with their own database to store the access tokens of their users\u2019 stores.\n## Native applications\n> Get access token in native apps\n```\nvar storeData = EcwidApp.getPayload();\nvar storeId = storeData.store_id;\nvar accessToken = storeData.access_token;\n// Use accessToken and storeId variables to make requests to Ecwid REST API\n// ...\n```\n> Check native apps guideline for general guides\nNative applications work in a s"
+    },
+    {
+     "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+     "title": "Make your first API request | Ecwid Documentation",
+     "snippet": "All requests to Ecwid REST API require an **access token**. Ecwid uses OAuth 2.0 to provide secure access to the store data for public apps. If you customize your own store, however, you can skip OAuth and easily get an access token for your store.\nThis guide provides a walkthrough of a basic Ecwid API interaction, specifically, retrieving store profile information. To gain a deeper understanding of Ecwid API objects and their connections, refer to the API reference.\n\nAPI access to the store data is locked behind app authentication and request authorization based on the OAuth 2.0 standard. However, access to your store data is much simpler.\nAfter signing up with Ecwid and getting a custom app, you already have two tokens:\n- **Public token** allows only public data to be received and is safe to use in public code.\n- **Secret token** grants full access to REST API (provided the app has all required permissions) and therefore must be kept safe.\nFrom the [app dashboard](https://my.ecwid.com/#develop-apps), open the **Details** page of the custom app, then copy one of the access tokens:\n![](https://docs.ecwid.com/~gitbook/image?url=https%3A%2F%2Flh7-rt.googleusercontent.com%2Fdocsz%2FAD"
+    },
+    {
+     "url": "https://api-docs.ecwid.com/reference/user-authentication-in-native-apps",
+     "title": "User authentication in native apps",
+     "snippet": "Your application needs an **access token** for the Ecwid REST API to read and modify Ecwid store orders, products, and other information.\nThe process of getting an access token is described below:\n> ##\n>\n> All Native applications are registered with the Enhanced User Auth, so you can start working on your application's tab right away using server side.\n>\n> If you need your app to be switched to Enhanced Security User Auth (server-side), please [contact us](https://developers.ecwid.com/contact) and we will update your app.\n\nfunction getEcwidPayload($app_secret_key, $data) {\n// Get the encryption key (16 first bytes of the app's client_secret key)\n$encryption_key = substr($app_secret_key, 0, 16);\n// Decrypt payload\n$json_data = aes_128_decrypt($encryption_key, $data);\n// Decode json\n$json_decoded = json_decode($json_data, true);\nreturn $json_decoded;\n}\n\nThe payload parameter is an encrypted JSON string, which has the following format in decrypted array state:\n| Name | Type | Description |\n|---|---|---|\n| store_id | number | Ecwid store ID |\n| lang | string | User language (which is currently set in their Control Panel). Use this parameter to translate your application UI to the user "
+    },
+    {
+     "url": "https://docs.ecwid.com/develop-apps/app-settings",
+     "title": "App settings | Ecwid Documentation",
+     "snippet": "Configuration for all Ecwid apps consists of the following settings:\n- **Access scopes** - a list of permissions defining API access for the app.\n- **Access tokens** - non-expiring authorization keys for REST API requests.\n- **Endpoints** - static URLs on the developer's server interacting with specific Ecwid APIs.\n- **App keys** - unique and constant values used in request decoding and public app authentication.\nWhen created, custom applications automatically get default access scopes and both access tokens unlocking some REST API requests. Both app keys are also automatically generated, though they have no use for a custom app with a default configuration.\n### Access tokens\nAccess tokens authorize REST API requests for the specific app in the specific store. Even for the same app, an access token from one store won't work for another one.\nAccess tokens also **do not expire**, so once you get them for your custom app, save and use these tokens on your side for as long as you need.\nDepending on the store data and type of API request, you need to use one of the two access tokens:\n- **Secret token** A secret token (`secret_token`) is only limited by the app permissions, so it must no"
+    },
+    {
+     "url": "https://docs.ecwid.com/launch-apps/native-and-external-apps",
+     "title": "Native and external apps | Ecwid Documentation",
+     "snippet": "Access to store data\nEcwid sendsan encrypted **payload** as a query param *every time* users open a settings page. **Payload** contains details for store identification and REST API access.\nEcwid sends **code** query param *only once* when a user installs the app. The **code** is exchanged for store identification and REST API access which must be safely stored on your side.\n\n**redirectUrl** - handles the authentication process, when users install the app and your app gets access to the store data. **openAppUrl** - an external settings page/dashboard for your app. It's a URL that allows users to click the \"Open app\" button in Ecwid admin. However, the URL doesn't carry any data for user identification or Ecwid API access.\n\nIf you already have a working UI on your website, Ecwid won't force you to develop an integrated user settings page. Instead, your app passes an authentication process to identify the store and receive REST API access to its data.\nThe app must authenticate users **only once** when they click the \"Install\" button. At the end of authentication, you receive a *store ID* and *access token* for REST API access.\n\n#### Exchange `code` and `store_id` pair for an access t"
+    }
+   ]
+  },
+  "access": {
+   "query": "Ecwid api-docs.ecwid.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_t6OIE7bAUZLv",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+     "title": "Set up your dev environment in Ecwid | Ecwid Documentation",
+     "snippet": "Gaining API access requires you to have a store and a platform where you can configure permissions and generate access tokens. In Ecwid, we refer to this platform as an **application**. A private application that gives you access to store data through API is called a **custom application**.\n\nThe first step is to get yourself a store. Only stores on paid plans can access API. If you don\u2019t yet have a store, [sign up with Ecwid](https://my.ecwid.com/cp/?partner=ecwid_3partydevs).\nEcwid provides a **free upgrade to a paid plan** if you:\n[Email us](/contact-ecwid-api-support-team#email-support) to get a free plan upgrade for your test store.\nYou can manage API access to your store data right in the Ecwid admin, through the [app dashboard](https://my.ecwid.com/#develop-apps). Here you can create and manage apps that grant API access only to your store."
+    },
+    {
+     "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_overview.md",
+     "title": "ecwid-api-docs/includes/_overview.md at master \u00b7 Ecwid/ecwid-api-docs",
+     "snippet": "[Ecwid pricing](http://www.ecwid.com/pricing) includes four tiers: Free, Venture, Business, Unlimited. The API is available on **paid** Ecwid plans, i.e. on Venture, Business and Unlimited.\nMerchants on Free plans cannot use Ecwid API. This means that, if the user is on Free plan, all API functions will fail including requests to read or update store data, embedding of the app interfaces into Ecwid Control Panel and customizing storefront.\n### Q: I need to start developing my app. How can I get a paid account?\nIf you\u2019re building an app for Ecwid App Market, we would be happy to provide you with a paid Ecwid account for free for development and testing purposes.\nFeel free to [contact us](http://developers.ecwid.com/contact), provide the details of your application and we will help you.\nPlease note that this account must not be used for selling the application or any other products to real customers."
+    },
+    {
+     "url": "https://docs.ecwid.com/api-reference/partner-api/partner-api-calls",
+     "title": "Partner API calls | REST API Reference | Ecwid Documentation",
+     "snippet": "**Partner API** (also called Reseller API) is only available to Ecwid reseller partners. It allows managing partner channel settings and stores on this channel.\nThis API is unavailable to the store owners.\n\nYou need a **master application** for your partner channel and its API keys to use this request. If you don't have one yet, please contact your [partner manager](mailto:partneraccount@ecwid.com).\n\nThe type of value should be **string (mandatory)**. Use this parameter to subscribe store to the trial version of paid plan. Number of days in trial period is set individually for every partner\u2019s plan. If parameter is not set then *false* value is used by default. Ecwid will not bill partner for the duration of free trial. After free trial expires partner will be billed according to selected plan rates. If customer did not subscribe for the services partner must suspend/delete account at the end of free trial period to avoid charges for this account.\n\nYou can get the list of active partner plans, available for subscription. To get them make a POST request to this URL:\n[https://my.ecwid.com/resellerapi/v1/plans ](https://my.ecwid.com/resellerapi/v1/plans?key=)with **X-API-Key** header ("
+    },
+    {
+     "url": "https://developers.ecwid.com/begin-development",
+     "title": "Begin Development",
+     "snippet": "1. [Register test Ecwid account](https://my.ecwid.com/cp/CP.html)\n*To access Ecwid API, you will need to have a paid Ecwid account. If you already have a free store for testing and development, tell us your Store ID so we can provide access to the Ecwid API.*"
+    },
+    {
+     "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_api_reference.md",
+     "title": "ecwid-api-docs/includes/_api_reference.md at master \u00b7 Ecwid/ecwid-api-docs",
+     "snippet": "To access the Ecwid API Platform features, make sure you have a registered application and a test Ecwid store on a paid plan. [Learn more](/Ecwid/ecwid-api-docs/blob/master/begin-development)\n\nTo make a basic API request you will need to know:\n- Ecwid Store ID\n- Access token (private or public)\nThese details are provided at the end of the app installation in an Ecwid store. Ways to get them depend on the app you are using, see the Authentication section for more details."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Ecwid API reference REST GraphQL endpoints documentation api-docs.ecwid.com",
+   "log_id": "log_mNvQJcK85eQS",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.ecwid.com/api-reference/rest-api/products/get-product",
+     "title": "Get product | REST API Reference | Ecwid Documentation",
+     "snippet": "# Get product\n`GET` `https://app.ecwid.com/api/v3/{storeId}/products/{productId}`\nRequest:\n```\nGET /api/v3/1003/products/692730761 HTTP/1.1\nAuthorization: Bearer secret_token\nHost: app.ecwid.com\n```\nResponse:"
+    },
+    {
+     "url": "https://docs.ecwid.com/api-reference/advanced/rest-api-calls",
+     "title": "REST API calls | REST API Reference | Ecwid Documentation",
+     "snippet": "# REST API calls\nBase URL: `https://app.ecwid.com/api/v3/{storeId}`\nFull list of endpoints and calls below.\n#### Store profile, checkout extra fields, shipping options, payment options\n`/profile`\n`GET` `PUT`\n`/profile/staffScopes`\n`GET`\n`/profile/order_statuses`\n`GET`\n`/profile/order_status/{statusId}`\n`GET` `PUT`\n`/profile/extrafields`\n`GET` `POST`\n`/profile/extrafields/{key}`\n`GET` `PUT` `DELETE`\n`/profile/logo`\n`POST` `DELETE`\n`/profile/invoicelogo`\n`POST` `DELETE`\n`/profile/emaillogo`\n`POST` `DELETE`\n`/profile/shippingOptions`\n`GET` `POST`\n`/profile/shippingOptions/{shippingOptionId}`\n`PUT` `DELETE`\n`/profile/paymentOptions`\n`GET` `POST`\n`/profile/paymentOptions/{paymentOptionId}`\n`GET` `PUT` `DELETE`\n#### Store stats, deleted items history, store reports\n`GET` `/reports/{reportType}`\n`GET` `/latest-stats`\n#### Orders\n`GET``POST``/orders`\n`GET``/orders/last`\n`GET` `/orders/deleted`\n`GET``PUT``DELETE``/orders/{orderId}`\n`GET``/orders/{orderId}/repeatURL`\n`GET` `/orders/{orderId}/invoice-pdf`\n`GET` `/orders/{orderId}/invoices`\n`GET` `POST` `/orders/{orderId}/extraFields`\n`PUT` `DELETE` `/orders/{orderId}/extraFields/{extraFieldId}`\n`POST``/order/calculate`\n`POST` `/orders/{orderI"
+    },
+    {
+     "url": "https://api-docs.ecwid.com/reference/get-order",
+     "title": "Get order | REST API Reference | Ecwid Documentation",
+     "snippet": "# Get order\n```\nGET /api/v3/1003/orders HTTP/1.1\nAuthorization: Bearer secret_token\nHost: app.ecwid.com\n```"
+    },
+    {
+     "url": "https://docs.ecwid.com/api-reference/rest-api/store-profile/get-store-profile",
+     "title": "Get store profile | REST API Reference | Ecwid Documentation",
+     "snippet": "# Get store profile\nGet basic information about an Ecwid store: settings, store location, email, etc.\n`GET` `https://app.ecwid.com/api/v3/{storeId}/profile`\nRequest:\n```\nGET /api/v3/1003/profile HTTP/1.1\nAuthorization: Bearer secret_token\nHost: app.ecwid.com\n```\nResponse:"
+    },
+    {
+     "url": "https://docs.ecwid.com/api-reference/rest-api/products/create-product",
+     "title": "Create product | REST API Reference | Ecwid Documentation",
+     "snippet": "# Create product\n`POST` `https://app.ecwid.com/api/v3/{storeId}/products`\nRequest:\n```\nPOST /api/v3/1003/products HTTP/1.1\nAuthorization: Bearer secret_token\nHost: app.ecwid.com\nContent-Type: application/json\nCache-Control: no-cache\n{\n\"sku\": \"000012199\",\n\"quantity\": 10,\n\"name\": \"New Product\",\n\"price\": 10,\n\"compareToPrice\": 15,\n\"costPrice\": 8,\n\"isShippingRequired\": false,\n\"categoryIds\": [\n9691094\n],\n\"weight\": 10,\n\"enabled\": true,\n\"description\": \"A <b>new</b> product description\",\n\"productClassId\": 0,\n\"volume\": 500,\n\"volumeUnit\": \"ml\",\n\"fixedShippingRateOnly\": false,\n\"fixedShippingRate\": 1.2,\n\"tax\": {\n\"enabledManualTaxes\": [\n1117939042\n],\n\"taxable\": true\n},\n\"options\": [\n{\n\"type\": \"RADIO\",\n\"name\": \"Size\",\n\"choices\": [\n{\n\"text\": \"Small\",\n\"priceModifier\": 0,\n\"priceModifierType\": \"ABSOLUTE\"\n},\n{\n\"text\": \"Large\",\n\"priceModifier\": 15,\n\"priceModifierType\": \"ABSOLUTE\"\n}\n],\n\"defaultChoice\": 0,\n\"required\": true\n}\n],\n\"shipping\": {\n\"type\": \"SELECTED_METHODS\",\n\"methodMarkup\": 0,\n\"flatRate\": 0,\n\"disabledMethods\": [\n\"1396442138-1534946367952\"\n],\n\"enabledMethods\": []\n}\n}\n```\n\nParam\nType\nDescription\nstoreId\nnumber\nEcwid store ID."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Ecwid api-docs.ecwid.com MCP server Model Context Protocol official",
+   "log_id": "log_-fM43YN-2fka",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+     "title": "Ecwid",
+     "snippet": "# Ecwid\nConnect Ecwid to manage products, variations, orders, customers, categories, discount coupons, and store settings. MCP setup guide for Claude and ChatGPT.\nAPI credentialsPaid plan requiredEcommerce & Marketplaces[Ecwid API docs](https://docs.ecwid.com/get-started/make-your-first-api-request)[Ecwid MCP server overview](https://www.popmcp.com/mcp-servers/ecwid/)\nYou end up pasting your numeric Ecwid store ID and the secret token from your custom app's Details page into PopMCP.\nPaid plan required before this connector works\nEcwid exposes its REST API only to stores on a paid plan - the docs state plainly that 'Only stores on paid plans can access API', so a free store cannot use the API no matter how the custom app is configured. There is no review or application for the API itself.\n\nWhere to apply: No form for the API itself - upgrade the store in the Ecwid admin (or email API Support for the free developer upgrade if you qualify). Then open the app dashboard at my.ecwid.com/#develop-apps and copy the secret token from the custom app's Details page. Scopes and endpoint URLs beyond the defaults are requested via 'request application update' from the Ecwid admin.\n\n## Connect in"
+    },
+    {
+     "url": "https://popmcp.com/mcp-servers/ecwid",
+     "title": "Ecwid MCP Server for Claude, ChatGPT and Codex | PopMCP",
+     "snippet": "# Ecwid MCP server for your AI\nAdjust stock, edit prices and variations, search orders by status, create coupons and pull an invoice \u2014 against the single store your secret token is scoped to.\nPopMCPEcwid\nShow me every unshipped order from last week and what's in each one\n## Supported Ecwid tools\nEvery catalog, order, customer, coupon and store-settings tool on this connection, plus the store events PopMCP can watch.\n`ecwid_adjust_product_inventory`\nIncrease or decrease a product's in-stock quantity by a relative delta rather than setting an absolute value, which avoids race conditions when stock changes frequently.\n`ecwid_create_product`\nCreate a new product in the store.\n`ecwid_delete_product`\nPermanently delete a product from the store by its numeric product id.\n`ecwid_get_product`\nGet all details of a single product by its numeric internal product id.\n`ecwid_get_products`\nSearch or filter products in the store catalog, returning full product details.\n`ecwid_update_product`\nUpdate an existing product identified by its numeric product id.\n`ecwid_upload_gallery_image`\nAdd an image to the product's gallery (does not touch the main image).\n`ecwid_upload_product_image`\nUpload (or repl"
+    },
+    {
+     "url": "https://vinkius.com/pdf/ecwid-mcp.pdf",
+     "title": "Ecwid MCP \u2014 Vinkius Cloud Documentation",
+     "snippet": "MCP SERVERNO CODECLOUD HOSTED\nEcwid MCP for store\nmanagement.\nRun your entire e-commerce catalog through your AI agent.\nEcwid lets you connect your Lightspeed store to any MCP-compatible client like Claude,\nCursor, or Windsurf. Instead of clicking through dashboards, you just tell your agent what\nto do. You can update stock levels, look up customer order history, or check product\ndetails using plain English.\n\nMAINTAINED BY VINKIUS CLOUD FOR AI AGENTS \u00b7 OCTOBER 2026\nvinkius.com/en/ai-agent-connect/ecwidSCAN TO VIEW\nThe connectivity layer\nbetween AI and the world's\nsoftware.\nVinkius sits between AI and every application. All\ncommunication passes through Vinkius Cloud via the\nModel Context Protocol (MCP) \u2014 with governance,\nobservability, and security at every layer.\nYour AI Connections\nRun Through\nVinkius Cloud\nThe world's largest\nmanaged MCP catalog\nVinkius is the connectivity layer where AI connects to the\nsoftware your business already runs. We handle the hosting,\nthe security, the credentials, the uptime \u2014 you get agents that\nactually do things.\nWe operate the world's largest managed MCP catalog. Major\nSaaS platforms, CRMs, databases, and cloud providers \u2014\nrunning, monitored, prod"
+    },
+    {
+     "url": "https://truto.one/blog/connect-ecwid-to-claude-manage-orders-customers-and-invoices",
+     "title": "truto.one/blog/connect-ecwid-to-claude-manage-orders-customers-and-invoices",
+     "snippet": "**Ecwid in Claude, in about a minute.** The best way to connect Ecwid to Claude is Elaichi: connect Ecwid to Elaichi once, then add Elaichi to Claude as a connector. Two steps, about a minute, with a 14-day free trial and no credit card required.\n1. **Start your free trial.** Create your Elaichi account. 14 days free, no credit card required.\n2. **Connect Ecwid.** Connect Ecwid once in Elaichi. Claude never gets more access than you have.\n3. **Add Elaichi to Claude.** In Claude, open Customize, then Connectors, press Add and paste https://api.elaichi.ai/mcp. Sign in and approve.\n\nIf you are scaling an e-commerce operation on Ecwid, managing orders, updating stock levels, and handling customer support inquiries manually quickly becomes a bottleneck. To automate these workflows, you need a Model Context Protocol (MCP) server that connects your Ecwid store data directly to a Large Language Model (LLM). You can either build and maintain this translation layer yourself, or use a managed integration platform like Truto to dynamically generate a secure, authenticated MCP server URL\u2014similar to the workflow for [connecting BigCommerce to Claude](https://truto.one/connect-bigcommerce-to-clau"
+    },
+    {
+     "url": "https://agentdrives.com/tools/ecwid",
+     "title": "agentdrives.com/tools/ecwid",
+     "snippet": "As of 12 Oct 2026, an AI agent can't use Ecwid on its own: Cloudflare Turnstile on the sign-up form.\n\nNeeds a person, L1, stops any agent before it reaches a key. Our agent read Ecwid's developer docs well: llms.txt, Markdown pages, a docs-search MCP. Sign-up itself ends it. The control panel form shows a visible Cloudflare Turnstile checkbox, and there is no API route to open a store. Past that wall, the docs say the REST API only works for paid-plan stores, and tokens come only from a custom app inside the control panel. A person has to carry the work the rest of the way. No plan or trial was started, so paying and cancelling were never tested; no account existed to delete.\n\nL1 \u00b7 Needs a person: There is an API, CLI or MCP server, but an agent can't get in on its own: a person has to sign up, verify or make the key.\n\nOur agent didn't get in, so none of the 9 core capabilities was tried, in the drive of 12 Oct 2026.\n| Capability | Result | API | MCP | CLI | UI |\n|---|---|---|---|---|---|\n| Add and manage products in the catalog | Not tried | Not tried | Not offered | Not offered | Not tried |\n| Organize products into categories | Not tried | Not tried | Not offered | Not offered |"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

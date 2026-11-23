@@ -1,0 +1,35 @@
+{
+ "id": 86,
+ "app": "QuickBooks",
+ "category": "Accounting",
+ "one_liner": "Intuit's small-business accounting software with REST and GraphQL APIs.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free Intuit Developer account, sandbox companies; production keys need app assessment; new App Partner Program tiers affect pricing.",
+ "api_types": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "github.com/intuit/quickbooks-online-mcp-server; hosted Intuit AI pilot is invite-only",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Production use subject to Intuit App Partner Program tiers and possible usage-based fees for reads.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://static.developer.intuit.com/output_html/qbo/docs/develop/authentication-and-authorization/oauth-2.0.html",
+  "access": "https://static.developer.intuit.com/output_html/qbo/docs/get-started/partner-faq.html",
+  "surface": "https://developers.intuit.com/app/developer/qbo/docs/develop/develop-with-graphql/graphql-api",
+  "mcp": "https://github.com/intuit/quickbooks-online-mcp-server"
+ }
+}

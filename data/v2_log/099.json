@@ -1,0 +1,12 @@
+{
+  "id": 99,
+  "app": "YouTube Transcript",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict"
+  ],
+  "searches": 3
+}

@@ -1,0 +1,35 @@
+{
+ "id": 81,
+ "app": "Stripe",
+ "category": "Payments",
+ "one_liner": "Online payments platform with APIs for charges, customers, billing and payouts.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free Stripe account gives test API keys in Dashboard; Connect OAuth lets platforms act on users' accounts.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://mcp.stripe.com (remote, OAuth) and stripe/ai repo",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+  "access": "https://docs.stripe.com/partners",
+  "surface": "https://stripe.com/docs/api",
+  "mcp": "https://stripe.com/docs/mcp"
+ }
+}

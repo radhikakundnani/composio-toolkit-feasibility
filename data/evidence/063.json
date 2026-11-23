@@ -1,0 +1,142 @@
+{
+ "id": 63,
+ "app": "Netlify",
+ "hint": "docs.netlify.com/api",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "Netlify API authentication OAuth API key access token developer docs docs.netlify.com/api",
+   "log_id": "log_AeJmOKIpyeoI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+     "title": "Get started with the Netlify API",
+     "snippet": "Section titled \u201cAuthentication\u201d\nNetlify uses OAuth2 for authentication. All requests must use HTTPS.\nTo generate a personal access token (PAT):\n1. Go to .\n2. Select **New access token**.\n3. Enter a descriptive name to help you remember what the token will be used for.\n4. Select **Allow access to my SAML-based Netlify team** to authorize access to your SAML-based team data through the API.\n5. Select an **Expiration** date for your token to help keep your information secure.\n6. Select **Generate token**.\n7. Copy the token to your clipboard and store it in a safe location. Once you navigate away from this page, you won\u2019t be able to access the value again.\n8. Select **Done**.\nUse your PAT for manual authentication in shell scripts or commands that use the Netlify API.\nTo authenticate API requests, include the token in the authorization header:\n`Authorization: Bearer <YOUR_PERSONAL_ACCESS_TOKEN>`\nTo authenticate in shell scripts, refer to the code sample above for an example of how to use this token in a curl request.\nIf you\u2019re making a public integration with Netlify for others to enjoy, you must use OAuth2. This allows users to authorize your application to use Netlify on their behalf"
+    },
+    {
+     "url": "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth",
+     "title": "Generate personal access tokens with Netlify OAuth | Netlify Developers",
+     "snippet": "We\u2019re going to walk through a process that generates the access token you\u2019ll need to act on behalf of your users to do things like:\n- Engage in CI/CD flows for your users\n- Manage account and user information\n- Take actions on behalf of your users\n\nThis is going to be a simple static site where:\n1. We create an OAuth app that determines the redirect URL.\n2. We craft and visit a URL with our client id, our redirect URL for the user to approve, and our generated state.\n3. After approving, Netlify redirects to the redirect URL with the token in the URL\n4. This token will be used when making calls to the API on behalf of the user.\n5. We then use this token to call a Netlify API and generate a Personal Access Token.\n## #Create an OAuth application\nBefore we dive into the code, we need to create a new OAuth application. From the Netlify Dashboard navigate to your \u201cUser Settings\u201d and from there to [Applications](https://app.netlify.com/user/applications#oauth-applications).\nSelect \u201cNew OAuth app\u201d and fill in any details for your project. For this guide we\u2019ve filled it in as follows:\n\n```\n// Input your CLIENT_ID here -- this ID fine to be public and is needed to craft our OAuth URLconst CL"
+    },
+    {
+     "url": "https://docs.netlify.com/manage/security/secure-access-to-sites/oauth-provider-tokens",
+     "title": "Use OAuth provider tokens on your site",
+     "snippet": "One challenge for frontend projects is handling authentication. OAuth2 is a widely accepted standard used by many services and APIs, but the OAuth authentication process requires a server to send a signed request to the OAuth server, signed with a secret that you can never expose to the client side of your application.\nNetlify solves this problem by providing an integrated service that will sign the OAuth requests for you and give back an access token ready to use.\nNetlify currently supports authentication with GitHub, GitLab, and Bitbucket.\n\nBefore you can use an authentication provider, you need to:\n1. [register an API application with the OAuth provider](https://docs.netlify.com/manage/security/secure-access-to-sites/oauth-provider-tokens#oauth-provider-setup)\n2. [configure credentials in the Netlify UI](https://docs.netlify.com/manage/security/secure-access-to-sites/oauth-provider-tokens#netlify-ui-settings)\n### OAuth provider setup\nSection titled \u201cOAuth provider setup\u201d\nYou need to create an API application and make note of the **Client ID** and a **Client Secret** so that you can use them in your Netlify configuration.\n1. In GitHub, go to your account **Settings** and select *"
+    },
+    {
+     "url": "https://medium.com/@tony.infisical/guide-to-using-oauth-2-0-to-access-netlify-api-473ee4675434",
+     "title": "Guide to using OAuth 2.0 to access Netlify API",
+     "snippet": "- **(A) Redirect the user from the browser to Netlify**: The user presses a button in the browser and gets redirected to Netlify where they can grant the application access to their Netlify account.\n- **(B) Return the user from Netlify back to the browser**: After the grant, the user is redirected back to the browser with a `code` .\n- **(C) Perform the code-token exchange**: Send the `code` from the browser to the server to be exchanged with Netlify. After the exchange, we should receive an `access_token` back from Netlify.\n- **(D) Use the access token to make requests against the Netlify API:** With the `access_token` , we can now make requests to the Netlify API on behalf of the user.\n\n## Configuring an OAuth application in Netlify\n1. Create an account with Netlify here: [https://www.netlify.com](https://www.netlify.com/)\n2. Start by navigating to your User settings > Applications > OAuth to create a new OAuth application.\n3. Create the OAuth application.\nAs part of the form, set the **Redirect URI** to `https://your-domain.com/integrations/netlify/oauth2/callback` ; you can of course pick your own redirect URL based on your desired routing structure. This is the URL that Netlify"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/netlify/refs/heads/main/authentication/netlify-authentication.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/netlify/refs/heads/main/authentication/netlify-authentication.yml",
+     "snippet": "profile:\nprimary: OAuth 2.0 Bearer token\nheader: 'Authorization: Bearer <token>'\ntransport: HTTPS only. All requests must use HTTPS.\ntoken_types:\n- name: personal access token (PAT)\nissued_at: https://app.netlify.com/user/applications#personal-access-tokens\nprefix: null\nnote: Generated by hand in user settings. No prefix distinguishes a PAT from an OAuth token.\n- name: OAuth 2.0 access token\nauthorization_endpoint: https://app.netlify.com/authorize\nregistration: https://app.netlify.com/applications\nnote: Required for public integrations, so an end user can authorize an app without pasting a token.\ndeclared_flow: implicit\ndeclared_flow_note: 'The OpenAPI declares flow: implicit. RFC 9700 (OAuth 2.0 Security BCP) recommends\nagainst the implicit flow; authorization code with PKCE is current guidance. Netlify''s MCP authorization\nserver, by contrast, advertises response_types_supported [\"code\"].'\nscopes: none \u2014 see scopes/netlify-scopes.yml\nmtls: false\napi_key_header: false\nbasic_auth: false"
+    }
+   ]
+  },
+  "access": {
+   "query": "Netlify docs.netlify.com/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_Rm2Ozwz3XA61",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+     "title": "Get started with the Netlify API",
+     "snippet": "Netlify uses OAuth2 for authentication. All requests must use HTTPS.\nTo generate a personal access token (PAT):\n1. Go to .\n2. Select **New access token**.\n3. Enter a descriptive name to help you remember what the token will be used for.\n4. Select **Allow access to my SAML-based Netlify team** to authorize access to your SAML-based team data through the API.\n5. Select an **Expiration** date for your token to help keep your information secure.\n6. Select **Generate token**.\n7. Copy the token to your clipboard and store it in a safe location. Once you navigate away from this page, you won\u2019t be able to access the value again.\n8. Select **Done**."
+    },
+    {
+     "url": "https://netlify.com/changelog/netlify-pricing-update-introducing-credit-based-plans",
+     "title": "netlify.com/changelog/netlify-pricing-update-introducing-credit-based-plans",
+     "snippet": "Our new credit-based plans are now available for new accounts.\n**Current customers:** You can stay on your legacy plan with no action required. The ability to optionally update to new plans will be available soon.\n\n**Three plans**\nPlan\nMonthly credits\nPrice\nTeam size\n**Free**\n300\n$0\n1 Team Owner\n**Personal**\n1,000\n$9/month\n1 Team Owner\n**Pro**\n5,000\n$20/member/month\nUnlimited members\n**New Personal plan benefits**\n-   Purchase additional credits as needed\n-   7-day project analytics and Real User Metrics\n-   Priority email support\n-   Smart secret detection to prevent credential leaks\n-   Option to add concurrent build capacity\n\n**Forms submissions**\n1 credit\nPer submission (spam auto-detected submissions are free)\n**Bandwidth**\n10 credits per GB\nData transferred to users\n**Web requests**\n3 credits per 10,000\nPage views, API calls, redirects, and asset requests"
+    },
+    {
+     "url": "https://netlify.com/changelog/tag/ai",
+     "title": "netlify.com/changelog/tag/ai",
+     "snippet": "The new experience is rolling out gradually, starting with most new users on November 18, 2026. Want access? Sign in and [join the waitlist](https://app.netlify.com/new-experience-waitlist). We\u2019re prioritizing waitlisted users as access expands and will let you know when you have access.\nConnectors launched on November 17 and are available on all credit-based plans, including Enterprise plans that use credits.\n\npricing plan](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/) on Netlify, including our free plan."
+    },
+    {
+     "url": "https://canmyagentuse.com/products/netlify",
+     "title": "Can my agent use Netlify? MCP, CLI, API and anonymous deploys",
+     "snippet": "Requirements & limitsNetlify CLI installed (Node.js 18.14.0 or later). Use only when the project has no secrets. After claim, visibility follows the team default. This is not a credential-free REST or MCP grant.\n\nnetlify login, a personal access token, or MCP connection is required for account-owned projects. Password reset invalidates existing PATs and OAuth tokens. An anonymous URL is not API access to the rest of a team.\n\nNew accounts use credit-based plans. Free is $0 with 300 credits a month and a hard limit. Personal is $9 a month; Pro starts at $20. Credit packs and auto recharge are Team Owner actions in Usage & billing. No reviewed page establishes that an external agent can complete a plan change or credit purchase.\n\n### API\nOfficial\nNetlify documents REST at https://api.netlify.com/api/v1. Authenticate with OAuth2 or a personal access token as Authorization: Bearer. A first read is GET /sites. Most requests are 500 per minute. API deploys are 3 per minute and 100 per day. Responses include X-RateLimit-* headers.\n\n## Credits and plans\nAccounts created on or after September 4, 2025 use credit-based plans. Free is $0 with **300 credits a month** and a hard limit. Personal i"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/netlify/open-api/v2.57.0/swagger.yml",
+     "title": "raw.githubusercontent.com/netlify/open-api/v2.57.0/swagger.yml",
+     "snippet": "Netlify is a hosting service for the programmable web. It understands your\ndocuments and provides an API to handle atomic deploys of websites, manage\nform submissions, inject JavaScript snippets, and much more. This is a\nREST-style API that uses JSON for serialization and OAuth 2 for\nauthentication."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Netlify API reference REST GraphQL endpoints documentation docs.netlify.com/api",
+   "log_id": "log_B9ELxU-lixPG",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+     "title": "Get started with the Netlify API",
+     "snippet": "You can browse the [OpenAPI reference for the Netlify API](https://open-api.netlify.com) to explore available endpoints. Check out our Support Guide on [understanding and using Netlify\u2019s API](https://answers.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\n## Make a request\nSection titled \u201cMake a request\u201d\nAll URLs start with `https://api.netlify.com/api/v1/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we\u2019ll bump the version marker and maintain stable support for the old URLs.\nTo make a request for all sites you have access to, for example, append the `sites` index path to the base URL to form something like `https://api.netlify.com/api/v1/sites`. Here\u2019s an example in curl:\n```\ncurl -H \"User-Agent: MyApp (YOUR_NAME@EXAMPLE.COM)\" \\     -H \"Authorization: Bearer YOUR_OAUTH2_ACCESS_TOKEN\" \\     https://api.netlify.com/api/v1/sites\n```\n## Authentication\nSection titled \u201cAuthentication\u201d\nNetlify uses OAuth2 for authentication. All requests must use HTTPS.\nTo generate a personal access token (PAT):\n1. Go to .\n2. Select **New access token**.\n3. Enter a descriptive name to help you remember what the token "
+    },
+    {
+     "url": "https://github.com/netlify/open-api/blob/HEAD/swagger.yml",
+     "title": "open-api/swagger.yml at e79124a60a1fb6bb4ae4c5b68fef4b11ff6fbc44 \u00b7 netlify/open-api",
+     "snippet": "Netlify is a hosting service for the programmable web. It understands your\ndocuments and provides an API to handle atomic deploys of websites, manage\nform submissions, inject JavaScript snippets, and much more. This is a\nREST-style API that uses JSON for serialization and OAuth 2 for\nauthentication.\nThis document is an OpenAPI reference for the Netlify API that you can\nexplore. For more detailed instructions for common uses, please visit the\n[online documentation](https://www.netlify.com/docs/api/). Visit our\nCommunity forum to join the conversation about\n[understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160)."
+    },
+    {
+     "url": "https://docs.netlify.com/build/data-and-storage/netlify-database/api",
+     "title": "API reference",
+     "snippet": "Section titled \u201c@netlify/database\u201d\nThe recommended way to get started with Netlify Database is to install the `@netlify/database` module in your project:\n```\nnpm install @netlify/database\n```\nThis module offers a set of methods that let you seamlessly interact with your database, providing a database driver that is automatically configured and optimized for where your code is running.\n### `getConnectionString`\nSection titled \u201cgetConnectionString\u201d\nReturns the database connection string for the current environment, automatically pointing to the correct [database branch](https://docs.netlify.com/build/data-and-storage/netlify-database/#database-branches) (e.g. the production database for production deploys, or an isolated branch for deploy previews).\nThis is useful if you want to use your own database driver or ORM.\n```\nimport { getConnectionString } from \"@netlify/database\";\nconst connectionString = getConnectionString();\n```\n\n## REST API\nSection titled \u201cREST API\u201d\nThe Netlify REST API exposes endpoints for managing databases, branches, and snapshots programmatically. All endpoints are scoped to a site, are rooted at `https://api.netlify.com/api/v1`, and authenticate via OAuth 2 \u2014 see"
+    },
+    {
+     "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api.md",
+     "title": "docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api.md",
+     "snippet": "You can browse the [OpenAPI reference for the Netlify API](https://open-api.netlify.com) to explore available endpoints.\n\n## Make a request\nAll URLs start with `https://api.netlify.com/api/v1/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.\nTo make a request for all sites you have access to, for example, append the `sites` index path to the base URL to form something like `https://api.netlify.com/api/v1/sites`. Here's an example in curl:\n```bash\ncurl -H \"User-Agent: MyApp (YOUR_NAME@EXAMPLE.COM)\" \\\n-H \"Authorization: Bearer YOUR_OAUTH2_ACCESS_TOKEN\" \\\nhttps://api.netlify.com/api/v1/sites\n```\n\nWe also have an [OpenAPI reference for the Netlify API](https://open-api.netlify.com) that you can explore.\nCheck out our Support Guide on [understanding and using Netlify's API](https://answers.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160)."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/netlify/refs/heads/main/apis.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/netlify/refs/heads/main/apis.yml",
+     "snippet": "Its public REST API at https://api.netlify.com/api/v1 is\ndescribed by an OpenAPI that Netlify maintains in the open at github.com/netlify/open-api and\nserves at open-api.netlify.com, covering deploys, sites, DNS, builds, forms, environment\nvariables and split tests."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Netlify docs.netlify.com/api MCP server Model Context Protocol official",
+   "log_id": "log_OBXZaLbBnVAH",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/netlify/netlify-mcp",
+     "title": "GitHub - netlify/netlify-mcp: Netlify's Official MCP server",
+     "snippet": "[Netlify MCP Server](https://docs.netlify.com/welcome/build-with-ai/netlify-mcp-server/) follows the [Model Context Protocol (MCP)](https://modelcontextprotocol.org) to enable code agents to use the Netlify API and CLI\u2014so they can create new projects, build, deploy, and manage your Netlify resources using natural language prompts.\n---\n## Overview\nThe Model Context Protocol is an emerging standard protocol for connecting code agents with MCP servers, allowing them to manage resources and perform tasks using natural language. The Netlify MCP Server acts as a bridge, providing API access, CLI tools, prompts, and more for your agents.\nYou can connect to the Netlify MCP Server using a variety of MCP clients, including:\n- Windsurf\n- Cursor\n- Claude\n- Copilot (VSCode)\n- Cline\n- Warp\n- LM Studio\n- [See the full list](https://modelcontextprotocol.org/clients)\n---\n## Use Cases\nWith Netlify MCP Server, your AI agents can:\n- Create, manage, and deploy Netlify projects\n- Modify access controls for enhanced project security\n- Install or uninstall Netlify extensions\n- Fetch user and team information\n- Enable and manage form submissions\n- Create and manage environment variables and secrets\n- and m"
+    },
+    {
+     "url": "https://netlify.com/blog/netlify-mcp-server-ai-agents-deploy-your-code",
+     "title": "netlify.com/blog/netlify-mcp-server-ai-agents-deploy-your-code",
+     "snippet": "Today we\u2019re releasing the [Netlify MCP Server](https://docs.netlify.com/welcome/build-with-ai/netlify-mcp-server/). Built on Anthropic\u2019s open source [Model Context Protocol](https://modelcontextprotocol.io/introduction), our MCP Server gives agents direct access to the Netlify API and CLI. Agents can now create projects, deploy applications, and manage your infrastructure using natural language prompts.\n### What agents can now do\nWith the Netlify MCP Server, you can ask your agent to:\n**Create and manage projects**\n-   Create new Netlify projects directly from your editor\n-   Deploy your code with a simple prompt\n-   Manage project settings and configurations\n**Secure and configure**\n-   Set up access controls to protect projects from unwanted access\n-   Create environment variables and secrets for projects\n-   Install or uninstall Netlify extensions\n**Handle team workflows**\n-   Fetch user and team information\n-   Enable and manage form submissions on projects\n-   Complete deployment workflows without leaving your development environment\n**Complete the development cycle**\n-   Generate code, deploy it, and iterate within the same conversation\n-   Move from \u201chere\u2019s your code\u201d to \u201che"
+    },
+    {
+     "url": "https://netlify.com/knowledge-base/how-to-build-and-deploy-an-mcp-server-on-netlify",
+     "title": "netlify.com/knowledge-base/how-to-build-and-deploy-an-mcp-server-on-netlify",
+     "snippet": "A remote MCP server on Netlify is **one Netlify Function** that speaks the MCP protocol over HTTP. Install `@modelcontextprotocol/sdk` and `zod`, use the SDK\u2019s Web-standard Streamable HTTP transport, hand it the `Request` and return its `Response`. Run it stateless with `sessionIdGenerator: undefined`, gate it behind a bearer token, and add declarative rate limiting to the function\u2019s `config`.\n-   **Use `WebStandardStreamableHTTPServerTransport`.** Older guides use the Node-flavored transport plus a `fetch-to-node` bridge. On Netlify you need neither.\n-   **Reject non-POST.** A GET makes the transport open an SSE stream that never closes, which a serverless function can\u2019t serve. You\u2019ll get a 502.\n-   **Never keep state in module scope.** Any request may land on a different or cold-started instance. Replay guards and idempotency keys belong in Blobs or your database.\n-   **Rate limiting goes in the function\u2019s `config` export only.** It cannot be defined in `netlify.toml`.\n-   **HTTP 406 is a client problem.** The client\u2019s `Accept` header must include both `application/json` and `text/event-stream`.\n\nNetlify publishes its **own hosted MCP server** that lets an AI client operate the N"
+    },
+    {
+     "url": "https://developers.netlify.com/guides/write-mcps-on-netlify",
+     "title": "Building MCPs with Netlify | Netlify Developers",
+     "snippet": "[Model Context Protocol (MCP)](https://modelcontextprotocol.io) provides a standardized way for AI agents to seamlessly interact with external tools, data sources, and APIs, greatly enhancing their context-awareness and capability. MCP is fundamental to a site\u2019s [agent experience (AX)](https://agentexperience.ax), which is the holistic experience AI agents have when interacting with a product, platform, or system. Without providing a good AX, agents can only understand and perform actions based on the context built into the system and what the underlying AI model was trained on. Improving the AX of a site through exposing an MCP is an excellent way to ensure agents have up-to-date information and access to the entirety of your product/platform. Using Netlify\u2019s serverless functions to deploy MCP servers streamlines development, reducing overhead and simplifying management.\n\nModel Context Protocol (MCP) is a lightweight, emerging standard to empower agents with resources, tools, and communication standards to bring the capabilities of your platform to your consumers who use agents to interact with your service. End users use applications that support MCP to connect with various exter"
+    },
+    {
+     "url": "https://netlify.com/blog/mcp-goes-stateless-and-extensible",
+     "title": "netlify.com/blog/mcp-goes-stateless-and-extensible",
+     "snippet": "The MCP 2026-07-28 specification makes the protocol stateless at its core, turning an MCP server into an ordinary HTTP workload. No sticky sessions. No session store. No shared state across instances. By removing session management from the equation, an entire layer of operational complexity disappears with it. Building an MCP server becomes something almost any developer can do, rather than just teams experienced with running stateful infrastructure.\n\nThe biggest consequence of a stateless protocol is who gets to build.\nWhen an MCP server needed to manage sessions and maintain state, standing one up carried real operational overhead. A stateless server, by contrast, is just an HTTP service. On Netlify, that means writing a function and deploying it the same way you deploy anything else: no session plumbing; no infrastructure designed around long-lived connections; nothing to keep warm.\n\nThe 2026-07-28 specification also formalizes the Extensions framework, with MCP Apps and Tasks becoming the first official extensions.\n\nThe Netlify MCP server already supports the 2026-07-28 specification. If you\u2019re using a compatible client (supported today in Claude.ai and Claude Managed Agents, "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

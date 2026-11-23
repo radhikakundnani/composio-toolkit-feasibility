@@ -1,0 +1,38 @@
+{
+ "id": 11,
+ "app": "Zendesk",
+ "category": "Support and Helpdesk",
+ "one_liner": "Customer service and ticketing platform with support, chat and sales CRM.",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "basic"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_trial",
+ "access_notes": "14-day free trial Suite account has API enabled; API tokens deprecated April 2027, so OAuth required.",
+ "api_types": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Vendor-hosted MCP server via Zendesk Bridge / External AI connections (early access program); URL generated per account in Admin Center. Separate MCP client feature also exists.",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "Trial account suffices; OAuth client setup needed.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://developer.zendesk.com/documentation/authentication/api-tokens-to-oauth",
+  "access": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+  "surface": "https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_fields",
+  "mcp": "https://support.zendesk.com/hc/en-us/articles/11400026079130"
+ },
+ "verified": true
+}

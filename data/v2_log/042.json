@@ -1,0 +1,40 @@
+{
+  "id": 42,
+  "app": "WooCommerce",
+  "changes": [
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "not_a_hosted_service",
+      "why": "'other' not allowed; self-hosted per-store plugin is closest to not_a_hosted_service",
+      "evidence": "https://developer.woocommerce.com/docs/apis/rest-api/authentication"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://docs.intelligent.page/connectors/woocommerce",
+      "to": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "why": "Replace third-party docs.intelligent.page with vendor doc showing keys generated in WP admin",
+      "evidence": "https://developer.woocommerce.com/docs/apis/rest-api/authentication"
+    },
+    {
+      "field": "evidence.mcp",
+      "from": "https://woocommerce.com/document/woocommerce-ai/mcp-server",
+      "to": "https://developer.woocommerce.com/docs/features/mcp",
+      "why": "Cite vendor developer docs for MCP (abilities + MCP Adapter)",
+      "evidence": "https://developer.woocommerce.com/docs/features/mcp"
+    },
+    {
+      "field": "mcp_note",
+      "from": "WooCommerce native MCP via WordPress MCP Adapter plugin (developer preview)",
+      "to": "WooCommerce core product/order abilities exposed via WordPress MCP Adapter plugin (default-enabled from WooCommerce 11.3); vendor-published, runs per store.",
+      "why": "Update to current docs",
+      "evidence": "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "auth_primary",
+    "access"
+  ],
+  "searches": 3
+}

@@ -1,0 +1,142 @@
+{
+ "id": 2,
+ "app": "HubSpot",
+ "hint": "hubspot.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "HubSpot API authentication OAuth API key access token developer docs hubspot.com",
+   "log_id": "log_LYDDshngxaQB",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "***REDACTED***",
+     "title": "Manage OAuth access tokens with the 2026-09 API",
+     "snippet": "The 2026-09 OAuth endpoints allow you to generate and manage access tokens for your app. To get started, you\u2019ll need to [create an app](/docs/apps/developer-platform/build-apps/create-an-app) configured for OAuth authentication. These endpoints improve on the [v1 endpoints](/docs/api-reference/legacy/authentication/oauth-tokens/v1/guide) by requiring all parameters to be in the request body rather than as query parameters, which prevents sensitive values like your `client_id` and `client_secret` from appearing in server logs or other persistent logging.\n\nThe OAuth authorization flow involves three distinct token types:\n- **Authorization code:** a temporary, single-use code that\u2019s provided in the redirect URL as a query parameter when the user approves the installation of your app. Your app then has a short window to exchange it for an access token and a refresh token, after which the authorization code cannot be reused.\n- **Access token:** your app\u2019s authentication credential used for every API request made on behalf of the user and the account where they installed your app. This token is provided as a *Bearer* token in the request, and expires after 30 minutes.\n- **Refresh token:*"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+     "title": "Authentication overview",
+     "snippet": "### OAuth\nIf you plan to distribute your app to multiple accounts (either through listing on the HubSpot Marketplace or by managing specific authorized accounts), your app must be built using OAuth authentication. You\u2019ll need to set up and host an OAuth backend service (e.g., hosted as a Docker instance using a cloud service provider) to initiate the OAuth process and manage token data for users installing your app in their account. HubSpot provides a Node.js quickstart guide [here](/docs/apps/developer-platform/build-apps/authentication/oauth/oauth-quickstart-guide), which includes code you can run in a Docker instance with full OAuth support. Authentication configuration details for your app are available on the app details page in the [developer overview](/docs/apps/developer-platform/build-apps/manage-apps-in-hubspot) of your HubSpot account. Once you\u2019ve set up an OAuth backend, you can make API requests using the OAuth access token that corresponds to a user who installed your app. This access token is provided using the `Bearer` HTTP authorization header. For example, if you wanted to retrieve contacts for the account with an access token of `00000000-aaaa-xxx-yyyy-zzzzzzzzzz"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api/working-with-oauth",
+     "title": "Working with OAuth",
+     "snippet": "OAuth is a secure means of authentication that uses authorization tokens rather than a password to connect your app to a user account. Initiating OAuth access is the first step towards allowing users to [install your app](/docs/apps/legacy-apps/public-apps/overview#install-an-app) in their HubSpot accounts.\n\n**Please note:**\n- Any app designed for installation by multiple HubSpot accounts or listing on the HubSpot Marketplace must use OAuth.\n- Users installing apps in their HubSpot account must either be a [Super Admin](https://knowledge.hubspot.com/user-management/hubspot-user-permissions-guide#super-admin) or have [HubSpot Marketplace Access](https://knowledge.hubspot.com/user-management/hubspot-user-permissions-guide#settings) permissions.\n\nTo set up OAuth authentication for your app:\n- First, [create an app](/docs/apps/legacy-apps/public-apps/overview).\n![MyHubSpotApp](https://cdn2.hubspot.net/hubfs/53/MyHubSpotApp.png)\n- Use the client ID and client secret, along with the query parameters and scopes outlined below, to build your authorization URL.\n- Send users installing your app to the authorization URL, where they\u2019ll be presented with a screen that allows them to select thei"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/oauth-quickstart-guide",
+     "title": "OAuth Quickstart Guide",
+     "snippet": "How it works\nHubSpot supports the [OAuth 2.0 Authorization Code grant type](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type), which can be broken down into four basic steps:\n1. Your app opens a browser window to send the user to the HubSpot OAuth 2.0 server\n2. The user reviews the requested permissions and grants the app access\n3. The user is redirected back to the app with an authorization code in the query string\n4. The app sends a request to the OAuth 2.0 server to exchange the authorization code for an access token\n\nGetting OAuth tokens\nWhen sending a user to HubSpot\u2019s OAuth 2.0 server, the first step is creating the authorization URL. This will identify your app and define the resources (scopes) it\u2019s requesting access to on behalf of the user. The query parameters you can pass as part of an authorization URL are shown in the table below. For more detailed information on this step, read the [reference doc](/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth).\nFields marked with * are required.\n| Parameter | Description | Example |\n|---|---|---|\n| `client_id`* | The client ID identifies your app. Find it on your app\u2019s s"
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "Production-Ready OAuth Token Management for HubSpot Integrations",
+     "snippet": "If you\u2019ve integrated with [HubSpot\u2019s APIs](https://developers.hubspot.com/docs/api-reference/overview), you know the [OAuth handshake](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview) is relatively straightforward (if you don\u2019t, no worries, we\u2019ll review it below). But here\u2019s the thing: getting that initial token is the easiest part. The real challenges start when you\u2019re managing tokens in production. This is because you\u2019re dealing with token validation across multiple services, updating scopes as your app grows, migrating old integrations in a multi-tenant setup, and keeping permissions consistent as things change. This is the stuff that keeps us up at night.\n\nThis guide will go beyond the basics. We\u2019ll walk through the full token lifecycle in production: how to securely store tokens, when and how to cache them, how to automatically refresh tokens before they expire, how to verify that requests originated from HubSpot, and how to handle the inevitable errors gracefully. By the end, I hope you\u2019ll have practical patterns you can use to build token management systems that actually scale.\n*Friendly Update: (January 2026) HubSpot has releas"
+    }
+   ]
+  },
+  "access": {
+   "query": "HubSpot hubspot.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_WxLSTi8i2IS1",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://laengledigital.com/guides/hubspot-api",
+     "title": "HubSpot API: what to build and the limits | L\u00e4ngle Digital",
+     "snippet": "The HubSpot API lets your other systems read and write HubSpot data, and lets HubSpot tell them when something changes. Every HubSpot plan has it, including the free CRM, and API calls cost no extra fee. What your plan decides is how many calls you get, which objects you can reach and whether workflows can run code.\n\nAccessA service key for simple data jobs, an app built as a HubSpot project for webhooks or cards. New legacy private apps can\u2019t be created after 26 October 2026\nLimits190 calls per 10 seconds on Professional and Enterprise. 625,000 calls a day on Professional, 1,000,000 on Enterprise, 250,000 on Free and Starter\nBatchUp to 100 records per call, so a daily limit covers millions of record changes\nEditionsCRM data on every plan. Custom objects Enterprise. Code and webhooks inside workflows need Data Hub Professional\nVersionsDated versions since March 2026, now 2026-09. v4 unsupported from 30 March 2027, v1 to v3 and legacy apps from September 2027\nOwnerEvery integration needs a named person who reads its error log and HubSpot\u2019s developer changelog\n\nThe API is a set of web addresses at api.hubapi.com, one family per object, with the data as JSON. A developer needs an acce"
+    },
+    {
+     "url": "https://developers.hubspot.com/developer-platform-basics",
+     "title": "Developer Platform Basics & Onboarding",
+     "snippet": "No. You can create a free HubSpot account and build apps without a paid subscription. You'll get access to a developer test account with sample data for testing. For production deployments, your app's users will need appropriate HubSpot accounts.\n###\nA free developer account includes:\n- **Test accounts** with sample CRM data (contacts, companies, deals) for development and testing\n- **API access** to HubSpot\u2019s public APIs for development and testing\n- **App management** to create, configure, and publish apps\n- **CLI access** to create and deploy Projects\n- **AI-native developer documentation**\nTest accounts reset periodically but are fully functional for building and testing your integrations."
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+     "title": "API usage guidelines and limits",
+     "snippet": "The following limits apply for creating legacy apps, webhook subscriptions, and CRM extension settings.\n- You can create up to 100 [legacy public apps](/docs/apps/legacy-apps/public-apps/overview) per developer account.\n- You can create up to 20 [legacy private apps](/docs/apps/legacy-apps/private-apps/overview) per HubSpot account.\n- You can create up to 1,000 [webhook subscriptions](/docs/api-reference/latest/webhooks) per app.\n- You can create up to 25 CRM extension settings per [legacy public app](/docs/apps/legacy-apps/public-apps/overview)."
+    },
+    {
+     "url": "https://hubspot.com/hubfs/technology-partner-enablement/how-to-become-a-hubspot-technology-partner.pdf?facet1=pdf",
+     "title": "How to Become a HubSpot Technology\u00a0Partner | 500Stories",
+     "snippet": "Create a HubSpot developer account and start a public app (aka integration).\nCreate a Developer Test Account to test your app.\nReview the marketplace listing requirements.\nCheck out the requirements and bene\ufb01ts of joining the HubSpot Technology Partner Program\nto gain exposure to more than 278,000 companies using HubSpot to scale.\n\nIs there a cost to the Technology Partner Program?\nNo. HubSpot does not charge developers a fee to build\non HubSpot. There is no fee for installs generated through\nthe\u00a0marketplace. Check out the Technology Partner Program\nAgreement here.\nDo I need to build an app with HubSpot before\nbecoming a technology partner?\nYes, becoming a technology partner starts with building an app\nwith\u00a0HubSpot, and applying to list it in the marketplace through\nyour developer account.\nWhat are the requirements to join the Technology\nPartner Program?\nPlease \ufb01nd all the requirements here.\nHow do I get the \ufb01rst 3 active installs of my app\nin\u00a0order to join the program?\nRecruiting beta users from your existing customer base who\nalready\u00a0use HubSpot as well as customers who have requested\nthe integration! Apps/integrations do not require marketplace\nlistings to be installed. OAuth au"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys",
+     "title": "Make API requests using a service key",
+     "snippet": "The following users in your account have access to create and manage service keys:\n- [Super admins](https://knowledge.hubspot.com/user-management/hubspot-user-permissions-guide#super-admin)\n- Users with the Developer tools access [permission](https://knowledge.hubspot.com/user-management/hubspot-user-permissions-guide#settings-access) in your account settings.\nYou cannot use service keys to authenticate webhooks, make calls within a UI extension, or leverage other developer platform functionality other than making REST API requests. If you want to leverage these features, you should [create an app](/docs/apps/developer-platform/build-apps/create-an-app) and use its static access token or OAuth access token to make API requests instead.\n## Limits\nService keys are subject to the [same limits](/docs/developer-tooling/platform/usage-guidelines#privately-distributed-app-limits) as [privately distributed apps](/docs/apps/developer-platform/build-apps/app-configuration#distribution) built on version `2025.2` and `2026.03` of the developer platform.\n**Please note:** there is a combined limit of 100 project-based apps, service keys, and MCP connectors per HubSpot account."
+    }
+   ]
+  },
+  "surface": {
+   "query": "HubSpot API reference REST GraphQL endpoints documentation hubspot.com",
+   "log_id": "log_xq1z4tuWt1C3",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis",
+     "title": "Using Object APIs",
+     "snippet": "Using the object APIs, you can create and manage records and activities within HubSpot. The object APIs have the same basic functionality for all supported objects, so you can substitute the `objectTypeId` in the endpoints to work with different objects. For example, to create contacts, you\u2019d make a `POST` request to `crm/objects/2026-09/0-1` and to create courses, the request would be to `crm/objects/2026-09/0-410`.\nSome objects have limited API functionality. For more details, click the link to an object\u2019s endpoints reference documentation in the table below. If an object listed doesn\u2019t have its own guide, you can refer to the [objects API](/docs/apps/developer-platform/add-features/app-objects/overview#overview-of-app-objects) guide and substitute the `{objectTypeId}` in each endpoint to your desired object."
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/search-the-crm",
+     "title": "CRM Search API",
+     "snippet": "Use the CRM search endpoints to filter, sort, and search objects, records, and engagements across your CRM. For example, use the endpoints to get a list of contacts in your account, or a list of all open deals.\n\nTo search your CRM, make a `POST` request to the object\u2019s search endpoint. CRM search endpoints are constructed using the following format: `/crm/objects/2026-09/{object}/search`. In the request body, you\u2019ll include filters to narrow your search by CRM property values. For example, the code snippet below would retrieve a list of all contacts that have a specific company email address.\n```\n{\n\"filterGroups\": [\n{\n\"filters\": [\n{\n\"propertyName\": \"email\",\n\"operator\": \"CONTAINS_TOKEN\",\n\"value\": \"*@hubspot.com\"\n}\n]\n}\n]\n}\n```"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/understanding-the-crm",
+     "title": "Understanding the CRM APIs",
+     "snippet": "The foundation of your HubSpot account is a database of your business relationships and processes, called the CRM (Customer Relationship Management). To manage this data, HubSpot accounts include objects, which represent types of relationships or processes. Individual instances of objects, called records, represent the individual entities under each object type (e.g., John Smith is a contact). To store data in each record, you\u2019ll use properties (e.g.,\n\n## Object APIs\nYou use the object APIs to create and manage an object\u2019s records. For supported objects, you can use object endpoints and replace the `{objectTypeId}` in the request URL with the desired object. For example, to create contacts, you\u2019d make a `POST` request to `crm/objects/2026-09/0-1` and to create courses, you\u2019d make a `POST` request to `crm/objects/2026-09/0-410`. Refer to [this article](/docs/api-reference/latest/crm/using-object-apis) for more information about using the object endpoints for various objects.\n### Object type IDs\nWhen using CRM and other APIs, you\u2019ll need to use the `objectTypeId` field, which is a unique numerical value assigned to each object. For example, to retrieve records, you\u2019d make a `GET` req"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api/scopes",
+     "title": "Scopes",
+     "snippet": "Scopes provide access to a specific set of HubSpot API endpoints and the associated data from a HubSpot account.\n\nAny scopes required to make a request to a specific endpoint will be listed under the *Required Scopes* section in a reference article or the expandable *Scope requirements* section of the corresponding API guide. These API resources can be accessed by navigating to the [APIs section](/docs/getting-started/introduction) of HubSpot\u2019s developer documentation, then drilling down into the specific API you need (e.g., the [contacts API guide](/docs/api-reference/latest/crm/objects/contacts/guide) or the [retrieve contacts reference page](/docs/api-reference/latest/crm/objects/contacts/get-contact)).\n\n| `collector.graphql_query.execute` | Query data from your HubSpot account using the GraphQL API endpoint | GraphQL API endpoint | ***CMS Hub*** *Professional* or *Enterprise* |\n| `collector.graphql_schema.read` | Perform introspection queries via GraphQL application clients such as GraphiQL | GraphiQL and other 3rd party GraphQL clients | ***CMS Hub** Professional* or *Enterprise* |"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/lists/get-list.md",
+     "title": "developers.hubspot.com/docs/api-reference/latest/crm/lists/get-list.md",
+     "snippet": "# Retrieve List\n> Retrieve a specific list by its name and object type ID in your HubSpot account. This endpoint allows you to access the details of a list, which can be useful for managing and analyzing your CRM data. You can also choose to include filters in the response.\n\n````yaml specs/2026-09/crm-lists-v2026-09.json GET /crm/lists/2026-09/object-type-id/{objectTypeId}/name/{listName}\nopenapi: 3.0.1\ninfo:\ntitle: CRM Lists\ndescription: Basepom for all HubSpot Projects\nversion: 2026-09\nx-hubspot-product-tier-requirements:\nmarketing: FREE\nsales: FREE\nservice: FREE\ncms: FREE\ncommerce: FREE\ncrmHub: FREE\ndataHub: FREE\nservers:\n- url: https://api.hubapi.com\nsecurity: []\ntags:\n- name: Basic\n- name: Batch\n- name: Search\npaths:\n/crm/lists/2026-09/object-type-id/{objectTypeId}/name/{listName}:\nget:\ntags:\n- Basic\nsummary: Retrieve List\ndescription: >-\nRetrieve a specific list by its name and object type ID in your HubSpot\naccount. This endpoint allows you to access the details of a list, which\ncan be useful for managing and analyzing your CRM data. You can also\nchoose to include filters in the response.\noperationId: get-/crm/lists/2026-09/object-type-id/{objectTypeId}/name/{listName}\nparam"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "HubSpot hubspot.com MCP server Model Context Protocol official",
+   "log_id": "log_pUe-xdh4r7Y4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+     "title": "Integrate AI tools with the HubSpot MCP server",
+     "snippet": "The HubSpot Model Context Protocol (MCP) server enables AI assistants and Large Language Models to securely interact with your HubSpot CRM data through natural conversation. By implementing the [Model Context Protocol](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) standard, this remote server acts as a bridge between AI systems and HubSpot\u2019s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to HubSpot CRM data through AI agents and third-party applications, and allows teams to build custom workflows, automate reporting, and integrate HubSpot context into third-party applications.\n\nThe HubSpot MCP server documented on this page is separate from the [developer MCP server](/docs/developer-tooling/local-development/developer-mcp/setup). The developer MCP server helps developers build apps and CMS content assets locally on HubSpot\u2019s developer platform. In contrast, the HubSpot MCP server is intended for making requests to an account\u2019s CRM data, similar to using HubSpot\u2019s APIs.\n## Implementation overview\nAt a high level"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/apps/developer-platform/add-features/mcp-server",
+     "title": "Connect external MCP servers to HubSpot agents (BETA)",
+     "snippet": "By adding a Model Context Protocol (MCP) server component to your app, you can connect external MCP servers to HubSpot agents. Once defined and installed in a customer account, these servers become available as agent tools within Agent Builder, allowing agents to interface with external data and functionality provided by your MCP server.\n**Please note:** this functionality is currently in public beta. By participating in this beta, you agree to HubSpot\u2019s [Developer Terms](https://legal.hubspot.com/hs-developer-terms) and [Developer Beta Terms](https://legal.hubspot.com/hubspot-beta-terms). The functionality is still under active development and is subject to change based on testing and feedback.\n##\n\u200b\nPrerequisites\nTo get started with MCP server components, you\u2019ll need:\n- A HubSpot account with access to the [MCP server public beta](https://app.hubspot.com/l/product-updates/all-updates?rollout=253895).\n- The HubSpot CLI installed and authenticated with your HubSpot account.\n- A HubSpot app that\u2019s configured for private or marketplace distribution.\n- The project\u2019s `hsproject.json` file must be configured to use the latest beta platform version (`2027.03-beta` or newer).\n- The app\u2019s s"
+    },
+    {
+     "url": "https://developers.hubspot.com/mcp",
+     "title": "HubSpot MCP Server",
+     "snippet": "MCP (Model Context Protocol), is a standardized way for agents built with Large Language Models (LLMs) \u2013 the technology behind many AI tools \u2013 to securely request and receive specific information from external systems like HubSpot. Think of it as a secure language or set of rules that allows an AI to ask for context (e.g., \"Give me the recent activity for Contact X\") from HubSpot or even to take action in the account.\n###\nHubSpot offers two distinct MCP servers that act as secure gateways for AI agents and tools.\nThe **HubSpot MCP Server (Remote)** This server acts as a bridge, allowing authorized LLMs (or applications using them) to connect to a specific HubSpot account. Through this server, MCP-compatible AI clients can fetch relevant, real-time CRM data (like contact, company, or deal information) in a controlled and secure manner.\n**Developer MCP Server (Local)** This server is CLI-based and enables your agentic development software to interact with the HubSpot Developer Platform, helping you to quickly scaffold and manage your projects.\n\nThe HubSpot MCP server is primarily aimed at developers, technical teams, or companies building custom applications or integrations that leve"
+    },
+    {
+     "url": "https://developers.hubspot.com/blog/connect-hubspots-mcp-server-with-any-ai-tool-securely",
+     "title": "Connect HubSpot's MCP Server With Any AI Tool Securely",
+     "snippet": "First, let\u2019s define what an MCP connector is. MCP stands for Model Context Protocol, and is a set of standards so LLMs and AI agents can connect to external tools, like HubSpot. For our sake, we are going over two types of connectors:\n- **AI connectors**: These connectors are built by HubSpot for you to use in AI agents like Claude and ChatGPT. They\u2019re plug-and-play and you only need an admin to set them up for users to start benefiting from them.\n- **Custom MCP connectors**: These connectors are built by you to use in AI agents that don\u2019t have built-in connectors. This opens up the number of AI systems you can securely connect your HubSpot data to any that will take your custom MCP connector credentials.\nIn this blog, we\u2019re going to focus on how you can set up your own custom MCP connector, no-code required. This will establish a secure link between your HubSpot data and the third-party AI tool. The custom MCP connector respects user permissions, too.\n\nNow, the most important piece of connecting HubSpot\u2019s custom MCP connector to third-party systems is authentication. Some MCP clients will handle that for you automatically through PKCE, or Proof Key for Code Exchange. That\u2019s the ty"
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/developer-tooling/local-development/developer-mcp/setup",
+     "title": "Set up the developer MCP server",
+     "snippet": "When developing HubSpot apps or CMS web content in your IDE, you can install the HubSpot Developer MCP server via the CLI. The HubSpot Developer MCP server runs locally and provides your AI assistant with [tools](/docs/developer-tooling/local-development/developer-mcp/tools) for streamlining app and CMS development tasks. For guidance on when to use the developer MCP server, check out [recommended use cases](/docs/build-with-ai/developer-mcp-server).\n## Prerequisites\nEnsure you\u2019re running version `8.2.0` or higher of the [HubSpot CLI](/docs/developer-tooling/local-development/hubspot-cli/install-the-cli) to access the latest set of supported MCP clients.\n```\n# Check your version\nhs --version\n# Install the latest version\nnpm install -g @hubspot/cli\n```\n\n1\nRun hs mcp setup\nRun the setup command in your terminal:\n```\nhs mcp setup\n```\n2\nSelect a client\nWhen prompted, select the clients you\u2019d like to add the MCP server to. Use the **arrow keys** and **spacebar** to select your clients, then press **Enter** to proceed.\n\nNext, choose whether you\u2019d like to operate in standalone mode, which allows you to run the HubSpot MCP server without installing the HubSpot CLI globally on your system:\n"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

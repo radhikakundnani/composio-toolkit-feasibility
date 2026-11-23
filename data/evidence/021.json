@@ -1,0 +1,142 @@
+{
+ "id": 21,
+ "app": "Slack",
+ "hint": "slack.com",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Slack API authentication OAuth API key access token developer docs slack.com",
+   "log_id": "log_Jx3rSOsGQJCC",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api.slack.com/authentication/oauth-v2",
+     "title": "Installing via OAuth authorization code flow | Slack Developer Docs",
+     "snippet": "Slack apps are installed with a v2 OAuth 2.0 flow. Your app can act with its own identity instead of acting on behalf of users, without requesting excessive permissions that could cause installations to be rejected.\nOAuth 2.0 refers to the [2.0 version of the OAuth spec](https://oauth.net/2/), and this is our second version of OAuth 2.0. For the rest of this guide, we'll just refer to it as \"OAuth\".\n---\n## How it works: a high-level overview\u200b\nOAuth allows a user in any Slack workspace to install your app. At the end of the OAuth flow, your app gains an access token. Your app's access token allows your app to open doors to the Slack platform. During the OAuth flow, you specify which [scopes](https://api.slack.com/reference/scopes) your app needs. Those scopes determine exactly which doors your app can open.\nImplementing an OAuth flow can feel hard because there are a lot of steps, but your app really only has to worry about three steps to make OAuth work: requesting scopes, waiting for a user to give their approval, and exchanging a temporary authorization code for an access token. Redirecting a user to Slack can be done with a single link. For example:\n```\n[Add to Slack](https://sl"
+    },
+    {
+     "url": "https://api.slack.com/docs/oauth",
+     "title": "Legacy authentication | Slack Developer Docs",
+     "snippet": "OAuth 2.0 is a protocol that lets your app request authorization to private details in a user's Slack account without getting their password. It's also the vehicle by which Slack apps are installed on a team.\nYour app asks for specific [permission scopes](https://api.slack.com/reference/scopes) and is rewarded with access tokens upon a user's approval.\nYou'll need to [register your app](https://api.slack.com/apps) before getting started. A registered app is assigned a unique Client ID and Client Secret which will be used in the OAuth flow. The Client Secret should not be shared.\n\nSlack uses OAuth 2.0's [authorization code grant flow](https://tools.ietf.org/html/rfc6749#section-4.1) to issue access tokens on behalf of users.\n\nThe OAuth flow is your key to unlocking access tokens. There's no path to programmatically create (or retrieve) app access tokens without a user's input.\n### Step 1 - Sending users to authorize and/or install\u200b\nYour web or mobile app should redirect users to the following URL:\n`https://slack.com/oauth/authorize`\nThe following values should be passed as GET parameters:\n- `client_id` - issued when you created your app (required)\n- `scope` - permissions to request "
+    },
+    {
+     "url": "https://api.slack.com/authentication/postman",
+     "title": "Authorizing with Postman | Slack Developer Docs",
+     "snippet": "This guide will walk you through setting up a Slack app. Then, we'll introduce you to the Slack [OAuth authorization flow](/authentication) using [Postman](https://www.postman.com/).\n\nIn the left navigation, click **OAuth & Permissions** and scroll down to **Redirect URLs**. Here, add the following URL to your list of Redirect URLs:\n`https://oauth.pstmn.io/v1/browser-callback`\nThis is the URL that Slack will redirect back to as part of the OAuth flow with a temporary value of `code`. Postman will do the heavy lifting by exchanging it for a token for us. If you want to learn more about this, take a look at our [OAuth docs](/authentication/installing-with-oauth#exchanging).\n\nNow that we have a Slack App to authorize against, we will setup an OAuth 2.0 client. In Postman's [Authorization menu](https://learning.postman.com/docs/sending-requests/authorization/), select **OAuth 2.0** for the type. It's best if you're using a Collection, as the token details will be reused for all methods found within that Collection, but you can also do this per method as well. Configure the OAuth client by filling out the form as below:\n| Item | Value | Comments |\n|---|---|---|\n| **Add auth data to** | "
+    },
+    {
+     "url": "https://docs.slack.dev/tools/python-slack-sdk/legacy/auth",
+     "title": "Tokens & installation | Slack Developer Docs",
+     "snippet": "## Access tokens\u200b\n**Always keep your access tokens safe.**\nThe OAuth token you use to call the Slack Web API has access to the data on the workspace where it is installed. Depending on the scopes granted to the token, it potentially has the ability to read and write data. Treat these tokens just as you would a password \u2014 don't publish them, don't check them into source code, and don't share them with others.\nNever do the following:\n```\ntoken = '[REDACTED_SLACK_TOKEN]'\n```\nWe recommend you pass tokens in as environment variables, or store them in a database that is accessed at runtime. You can add a token to the environment by starting your app as follows:\n```\nSLACK_BOT_TOKEN=\"[REDACTED_SLACK_TOKEN]\" python myapp.py\n```\nThen, retrieve the key as follows:\n```\nimport os\nSLACK_BOT_TOKEN = os.environ[\"SLACK_BOT_TOKEN\"]\n```\nRefer to our [best practices for security](https://docs.slack.dev/concepts/security) page for more information.\n\nThe OAuth exchange is facilitated via HTTP and requires a webserver; in this example, we'll use [Flask](https://flask.palletsprojects.com/).\nTo configure your app for OAuth, you'll need a client ID, a client secret, and a set of one or more scopes that will be appl"
+    },
+    {
+     "url": "https://api.slack.com/methods/oauth.v2.access",
+     "title": "oauth.v2.access method | Slack Developer Docs",
+     "snippet": "**Description**Exchanges a temporary OAuth verifier code for an access token.\n**Method Access**\n- HTTP\n- Slack CLI\n- JavaScript\n- Python\n- Java\n```\nPOST https://slack.com/api/oauth.v2.access\n```\n**Scopes***No scopes required*\n**Content types**\n`application/x-www-form-urlencoded`\n**Rate Limits**[Special rate limits apply.](https://api.slack.com/apis/web-api/rate-limits)\n## Arguments\u200b\n### Optional arguments\n**`client_id`**`string`Optional\nIssued when you created your application. If possible, avoid sending `client_id` and `client_secret` as parameters in your request and instead supply the Client ID and Client Secret using the HTTP Basic authentication scheme.\n*Example:* `2141029472.691202649728`\n**`client_secret`**`string`Optional\nIssued when you created your application. If possible, avoid sending `client_id` and `client_secret` as parameters in your request and instead supply the Client ID and Client Secret using the HTTP Basic authentication scheme.\n*Example:* `e1b9e11dfcd19c1982d5de12921e17e8c`\n**`code`**`string`Optional\nThe `code` param returned via the OAuth callback.\n*Example:* `4724469134.4644010092847.232b4e6d82c333b475fc30f5f5a341d294feb1a94392c2fd791f7ab7731a443d1a`\n**`co"
+    }
+   ]
+  },
+  "access": {
+   "query": "Slack slack.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_6tooEUCY70Bt",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.slack.dev/llms-full-deno.txt",
+     "title": "docs.slack.dev/llms-full-deno.txt",
+     "snippet": "Workflow apps require a paid plan\nJoin the [Developer Program](https://api.slack.com/developer-program) and provision a sandbox with access to all Slack features for free.\n\nWhile in development, you can keep your project mostly to yourself, or share it with a close collaborator. If your Slack admin requires approval of app installations, they\u2019ll need to approve what you\u2019re creating first.\nThe app management UI on `api.slack.com/apps` doesn\u2019t support configuring workflow apps.\n\nWorkflow apps require a paid plan\nJoin the [Developer Program](https://api.slack.com/developer-program) and provision a sandbox with access to all Slack features for free.\n\nWorkflow apps require a paid plan\nJoin the [Developer Program](https://api.slack.com/developer-program) and provision a sandbox with access to all Slack features for free.\n\nJoin the [Developer Program](https://api.slack.com/developer-program) and provision a sandbox with access to all Slack features for free.\n\nWorkflow apps require a paid plan\nJoin the [Developer Program](https://api.slack.com/developer-program) and provision a sandbox with access to all Slack features for free.\n\nWorkflow apps require a paid plan\nJoin the [Developer Progra"
+    },
+    {
+     "url": "https://api.slack.com/automation/admin",
+     "title": "Controlling permissions for Admins | Slack Developer Docs",
+     "snippet": "Join the [Developer Program](https://api.slack.com/developer-program) and provision a sandbox with access to all Slack features for free.\nAs part of the [broader access controls available to administrators](https://slack.com/help/categories/200122103-Workspace-administration#workspace-settings-permissions), administrators can ensure only approved apps are installed and available to users.\n\nWhen a developer deploys an app, administrators will receive a notification, either from Slackbot or using the [Admin-Approved Apps API workflow](https://docs.slack.dev/admins/managing-app-approvals) as determined by the organization. The approval notification will include which [OAuth scopes](https://docs.slack.dev/authentication/installing-with-oauth#asking) the app is requesting, as well as any outgoing domains the app may want to access."
+    },
+    {
+     "url": "https://api.slack.com/docs/developer-sandbox",
+     "title": "Developer sandboxes | Slack Developer Docs",
+     "snippet": "A developer sandbox is an Enterprise org environment (a network of two or more Slack workspace instances) that can be used to build against all Slack features safely and securely, without an additional cost. The ability to provision sandboxes is a benefit offered by the [Slack Developer Program](https://api.slack.com/developer-program).\nEvery developer enrolled in the Slack Developer Program is eligible to provision a basic sandbox. Developers who are on a paid plan or who provide a valid payment method are able to access additional features.\n\nIf you are a member of a paid plan (the paid plan workspace must have been created at least 30 days ago, unless you're in an Enterprise organization) your sandboxes will have access to additional features. If you are not a member of a paid plan, you can also provide a payment method to access the full set of features, but note that you will not be charged.\n\n- **Other limits**:\n- Discovery API enablement is not available on sandboxes unless you are part of our [partner program](https://slack.com/partners).\n\nAs part of the [Slack Developer Program](https://api.slack.com/developer-program), you'll get access to an Enterprise organization sandbox"
+    },
+    {
+     "url": "https://docs.slack.dev/admins/managing-app-approvals.md",
+     "title": "docs.slack.dev/admins/managing-app-approvals.md",
+     "snippet": "Don't have a paid plan? Join the [Developer Program](https://api.slack.com/developer-program) and provision a fully-featured sandbox for free.\n\nApprove an app request with the [`approve`](https://docs.slack.dev/reference/methods/admin.apps.approve.md) method:\n```\ncurl -F token=xoxp-... -F team_id=T9876 -F request_id=1234 https://slack.com/api/admin.apps.approve\n```\nThe token is required, and must be imbued with the [`admin.apps:write`](https://docs.slack.dev/reference/scopes/admin.apps.write.md) scope. Follow the instructions in the [scope documentation](https://docs.slack.dev/reference/scopes/admin.apps.write.md) to obtain an admin scope."
+    },
+    {
+     "url": "https://api.slack.com/docs/slack-apps-guidelines",
+     "title": "Submission guidelines and requirements | Slack Developer Docs",
+     "snippet": "Slack allows you to charge users for your app. If you do so, you should handle payments securely and provide transparent information on your billing policy. You can select one of the following pricing models to be displayed on your app's listing page.\n- **Paid:** users pay to use your app.\n- **Paid with free trial:** users pay to use your app, but there's a free trial available.\n- **Free and paid plans available:** users don't need to pay to use your app, but there are paid features available.\n- **Free:** your app is free!\n- **Included with service subscription:** the app is free so long as users have a paid plan with your service.\n\nWhen developing your app for Slack, one of the most important things to bear in mind is the level of access it needs to work: the less access your app requests, the more comfortable users will feel about installing your app. From the customers\u2019 perspective, they must give your app access for it to function and they may be reluctant to install apps that request a lot of access to their Slack data (particularly sensitive data like their message history).\n\n- We are unlikely to approve broad access to workspace message/file data (e.g. user token *:history s"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Slack API reference REST GraphQL endpoints documentation slack.com",
+   "log_id": "log_k_r9UZVRbvBt",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.slack.dev/reference/methods/users.list.md",
+     "title": "docs.slack.dev/reference/methods/users.list.md",
+     "snippet": "**Description**Lists all users in a Slack team.\n**Method Access**\n*   HTTP\n*   Slack CLI\n*   JavaScript\n*   Python\n*   Java\n```\nGET https://slack.com/api/users.list\n```\n\n**Scopes**\nBot token:\n[`users:read`](https://docs.slack.dev/reference/scopes/users.read.md)\nUser token:\n[`users:read`](https://docs.slack.dev/reference/scopes/users.read.md)\n**Content types**\n`application/x-www-form-urlencoded`\n`application/json`\n**Rate Limits**[Tier 2: 20+ per minute](https://docs.slack.dev/apis/web-api/rate-limits.md)\n## Arguments {#arguments}\n### Required arguments\n**`token`**`string`Required\nAuthentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter.\n_Example:_ `xxxx-xxxxxxxxx-xxxx`\n\nThis method returns a list of all users in the workspace. This includes both invited users and deleted/deactivated users."
+    },
+    {
+     "url": "https://docs.slack.dev/apis/web-api",
+     "title": "Slack Web API | Slack Developer Docs",
+     "snippet": "The Slack Web API is an interface for querying information *from* and enacting change *in* a Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\n---\n- The Web API is a collection of [HTTP RPC-style methods](/reference/methods), all with URLs in the form `https://slack.com/api/METHOD_FAMILY.method`.\n- While it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\n- Use HTTPS, SSL, and TLS v1.2 or above when calling all methods. Learn more about our SSL and TLS requirements.\n- Each method has a series of arguments informing the execution of your intentions.\n- Pass arguments as:\n- GET querystring parameters,\n- POST parameters presented as `application/x-www-form-urlencoded`, or\n- a mix of both GET and POST parameters\n- Most write methods allow arguments with `application/json` attributes.\n- Some methods, such as [`chat.postMessage`](/reference/methods/chat.postMessage) and [`dialog.open`](/reference/methods/dialog.open), feature arguments that accept an associative JSON array. However, these methods can be difficult to properly construct when using a `application/x-www-form-urle"
+    },
+    {
+     "url": "https://api.slack.com/messaging/retrieving",
+     "title": "Retrieving messages | Slack Developer Docs",
+     "snippet": "There are [lots of scopes available](https://api.slack.com/reference/scopes), and you can read our [OAuth guide](https://api.slack.com/authentication) for more information on why they're needed, and what they do. For this guide, we need to add two scopes:\n- [`channels:read`](https://api.slack.com/reference/scopes/channels.read). This scope lets your app retrieve a list of all the public channels in a workspace so that we can pick one to retrieve a message from.\n- [`channels:history`](https://api.slack.com/reference/scopes/channels.history). This scope lets your app view all the messages within any public channel in a workspace.\nYou can add these scopes to your app like so:\n1. Open the settings for your app from the [App Management](https://api.slack.com/apps) page.\n2. In the navigation menu, select **OAuth & Permissions**.\n3. Scroll down to the **Scopes** section, and pick `channels:read` and `channels:history` from the drop down menu.\n4. Click **Save changes**.\n5. Scroll back to the top of this page and look for the button that says **Install App to Workspace** (or **Reinstall App** if you've done this before). Click it. You'll now see a permission request screen to install your a"
+    },
+    {
+     "url": "https://docs.slack.dev/reference/methods/slackLists.items.list",
+     "title": "slackLists.items.list method | Slack Developer Docs",
+     "snippet": "**Description**Get records from a List.\n**Method Access**\n- HTTP\n- Slack CLI\n- JavaScript\n- Python\n- Java\n```\nPOST https://slack.com/api/slackLists.items.list\n```\n**Content types**\n`application/x-www-form-urlencoded`\n`application/json`\n**Rate Limits**[Tier 2: 20+ per minute](https://docs.slack.dev/apis/web-api/rate-limits)\n\nLists are only available to Slack workspaces on a paid plan."
+    },
+    {
+     "url": "https://docs.slack.dev/reference/methods/conversations.list.md",
+     "title": "docs.slack.dev/reference/methods/conversations.list.md",
+     "snippet": "title: \"conversations.list API method\"\nsummary: \"Lists all channels in a Slack team.\"\nurl: \"https://docs.slack.dev/reference/methods/conversations.list\"\ntype: \"reference\"\nsubtype: \"method\"\nmethod_name: \"conversations.list\"\nhttp_method: \"GET\"\nrate_limit: \"t2\"\nscopes:\nbot: [\"groups:read\", \"im:read\", \"mpim:read\", \"channels:read\"]\nuser: [\"groups:read\", \"im:read\", \"mpim:read\", \"channels:read\"]\n---\n\n**Description**Lists all channels in a Slack team.\n**Method Access**\n*   HTTP\n*   Slack CLI\n*   JavaScript\n*   Python\n*   Java\n```\nGET https://slack.com/api/conversations.list\n```\n\n**Scopes**\nBot token:\n[`channels:read`](https://docs.slack.dev/reference/scopes/channels.read.md)[`groups:read`](https://docs.slack.dev/reference/scopes/groups.read.md)[`im:read`](https://docs.slack.dev/reference/scopes/im.read.md)[`mpim:read`](https://docs.slack.dev/reference/scopes/mpim.read.md)\nUser token:\n[`channels:read`](https://docs.slack.dev/reference/scopes/channels.read.md)[`groups:read`](https://docs.slack.dev/reference/scopes/groups.read.md)[`im:read`](https://docs.slack.dev/reference/scopes/im.read.md)[`mpim:read`](https://docs.slack.dev/reference/scopes/mpim.read.md)\n**Content types**\n`application/x-w"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Slack slack.com MCP server Model Context Protocol official",
+   "log_id": "log_4QLuhZs7E6EW",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.slack.dev/ai/slack-mcp-server/connect-to-harnesses",
+     "title": "Connect the Slack MCP server to agent harnesses | Slack Developer Docs",
+     "snippet": "The Slack MCP server can be connected to various agent harnesses. Agent harnesses are essentially software infrastructure wrapped around a LLM. They handle orchestrating all the tools, memory, and planning required for more involved or long-running tasks and development.\nConnecting the Slack MCP server to an agent harness enables you to use Slack data and actions within your AI workflows. This guide covers how to connect to popular harnesses including Codex, Claude Code, and Pi.\n## Prerequisites\u200b\nBefore setting up connection to the Slack MCP server, ensure you have:\n- Access to the agent harness you want to connect to (Codex, Claude Code, Pi, etc.)\n- Access to a Slack workspace with the MCP integration approved by your workspace admin\n- Your Slack app's client ID (available in your [app settings](https://api.slack.com/apps))\n\n[Codex](https://developers.openai.com/learn/codex) uses a TOML-based configuration file for MCP servers. You can add the Slack MCP server using the [Codex CLI](https://learn.chatgpt.com/docs/codex/cli), or by editing your configuration file directly.\n### Using the Codex CLI\u200b\nRun the following command in your terminal:\n```\ncodex mcp add --transport http slack h"
+    },
+    {
+     "url": "https://docs.slack.dev/ai/slack-mcp-server",
+     "title": "Overview | Slack Developer Docs",
+     "snippet": "With the Slack MCP server, your integrated apps can search channels, send messages, and perform other Slack actions through MCP clients. Workspace admins can approve and manage all MCP client integrations, keeping your Slack data safe. This guide discusses the MCP server offerings from Slack and how to develop with the Slack MCP server.\n## Slack MCP server features\u200b\nThe Slack MCP server provides tools for searching through Slack, retrieving and sending messages, managing canvases, managing users, uploading files, and working with lists. Each of these tools provides useful functionality for interacting with Slack; combine them for comprehensive integrations that grasp your team's context and history.\n### Searching throughout Slack\u200b\nThe MCP server can search for a variety of information found throughout a Slack workspace:\n- Messages and files \u2014 filter by date, user, and content type. Retrieve metadata and content.\n- Users in a workspace \u2014 filter by name (with partial name matching), email, and user ID. Retrieve user details and statuses.\n- Private and public channels \u2014 filter by channel name and description. Retrieve channel metadata.\n- List user channels \u2014 list the channels you're a"
+    },
+    {
+     "url": "https://docs.slack.dev/ai/slack-mcp-server/developing",
+     "title": "Developing a sample app with the Slack MCP Server | Slack Developer Docs",
+     "snippet": "MCP clients integrate with Slack by sending standard JSON-RPC 2.0 requests as defined by the MCP specification. Since Slack hosts and manages the MCP Server, handling the tool logic on your behalf, implementing the connection is simple.\nThe following instructions use the Bolt for JavaScript [Slack MCP Server Template app](https://github.com/slack-samples/bolt-js-slack-mcp-server) to show how to connect a Slack app to the Slack MCP server.\n\nThe first step to using the Slack MCP server in your Slack app is to create a new app via [app settings](https://api.slack.com/apps?new_app=1), then select **Paste a manifest**. Click **Continue**. Replace the JSON manifest with that of the [`manifest.json`](https://github.com/slack-samples/bolt-js-slack-mcp-server/blob/main/manifest.json) file from the sample app, also shown below. Select a workspace where your app can live, then click **Next** and **Create**.\n\n},\n\"assistant_view\": {\n\"assistant_description\": \"Sample that demonstrates the use of Slack's MCP server\",\n\"suggested_prompts\": []\n}\n},\n\"oauth_config\": {\n\"redirect_urls\": [\n\"https://example.ngrok-free.app/slack/oauth_redirect\"\n],\n\"scopes\": {\n\"user\": [\n\"chat:write\",\n\"canvases:write\"\n],\n\"bot"
+    },
+    {
+     "url": "https://slack.green/en/blog/slack-mcp-server",
+     "title": "Slack MCP Server: The URL, the Setup, and the 19 Tools We Got",
+     "snippet": "The official Slack MCP server lives at https://mcp.slack.com/mcp and needs a user token from an app with MCP turned on. We built one, connected Claude Code and Codex CLI, sent a message and searched for it, and copied every response.\n\nThe official Slack MCP server is at `https://mcp.slack.com/mcp`. It speaks JSON-RPC over Streamable HTTP and takes a Slack user token (`xoxp-`) from an app that has the MCP switch turned on. On 30 September 2026 we built that app in a one-person test workspace, connected it to Claude Code and Codex CLI, sent a message and searched for it. The server offered 19 tools with the scopes Slack's docs list for search, reading and sending. It offered 27 after we granted seven more scopes. Every response below is copied from that run.\n## What you need before any client connects\nSlack's docs say only internal apps and apps published in the Slack Marketplace may use MCP. Unlisted distributed apps are blocked. We turned on public distribution for our test app and installed it again, and the server still answered in the app's own workspace. We did not test an install in a second workspace. The server also has no Dynamic Client Registration, so a client cannot regi"
+    },
+    {
+     "url": "https://docs.slack.dev/ai/slackbot-mcp-client",
+     "title": "Connecting an MCP server to the Slackbot MCP Client | Slack Developer Docs",
+     "snippet": "The Slackbot MCP Client allows developers to connect remote [MCP servers](https://modelcontextprotocol.io/) via HTTP to Slack. Once connected, Slackbot will automatically discover your MCP server's tools and invoke them based on user prompts in conversation.\n\nSlack supports four authentication methods for MCP server requests. Choose the one that fits your use case and the MCP server you plan to use.\n| Authentication method | Use | Per-user identity | Requires separate OAuth flow |\n|---|---|---|---|\n| **No auth** | Use when your MCP server serves the same responses regardless of who is asking. Users can start using tools immediately with no OAuth flow. | No | No |\n| **Slack identity auth** | Use when your MCP server maps Slack user IDs and team IDs to available features. No separate OAuth flow is required for end users; Slack identifies them via signed requests containing their user and team IDs. | Yes (Slack user/team ID) | No |\n| **Dynamic Client Registration** | Use when connecting to a third-party MCP server that supports [DCR](https://blog.modelcontextprotocol.io/posts/client_registration/). You provide the URL and the server handles [OAuth](https://docs.slack.dev/authenticatio"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": 30,
+ "app": "Vonage",
+ "hint": "developer.vonage.com",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Vonage API authentication OAuth API key access token developer docs developer.vonage.com",
+   "log_id": "log_yoKGGmKw_fsd",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.vonage.com/en/vonage-business-cloud/getting-started/create-an-access-token",
+     "title": "Create an Access Token",
+     "snippet": "Once you have [created your application](/vonage-business-cloud/getting-started/create-an-application), and [subscribed to the Provisioning API](/vonage-business-cloud/getting-started/subscribe-to-apis) you are ready to create an access token. Vonage Business Communications APIs use [OAuth](https://oauth.net/2/?adobe_mc=MCMID%3D28325219166635019320790575584794191302%7CMCORGID%3DA8833BC75245AF9E0A490D4D%2540AdobeOrg%7CTS%3D1786931841) for authentication.\n## Creating authentication keys\n1. Log in to the [Business Communications Developer Portal](https://apimanager.uc.vonage.com/?adobe_mc=MCMID%3D28325219166635019320790575584794191302%7CMCORGID%3DA8833BC75245AF9E0A490D4D%2540AdobeOrg%7CTS%3D1786931841) using your developer credentials.\n2. Select **Applications** in the top navigation menu.\n3. On the **Application** page, locate your application in the table and click the application **name** link.\n4. Select the **Production Keys** on the left navigation menu:\n![Screenshot showing the Production Keys tab of the My Applications page](/api/v1/developer/assets/images/vbc/getting-started/production-keys.png)\nNote: The default grant type is `Password`. The [grant type](https://oauth.net/2/g"
+    },
+    {
+     "url": "https://developer.vonage.com/en/getting-started-network/guides/server-authentication",
+     "title": "Server Authentication | Vonage API Documentation",
+     "snippet": "This guide assumes you have completed the following requirements:\n- Network Features capability is enabled in your Vonage application. Follow this [guide](/getting-started-network/concepts/network-registry#connect-your-vonage-application) to read detailed information on how to do it.\n- You have a valid `JWT`. You can use our [online generator](/jwt) to create a `JWT` using your private key and the ID of your Vonage application, both found in the [customer dashboard](https://dashboard.nexmo.com), or follow the instructions [here](/getting-started/concepts/authentication#generating-jwts) to use another method.\n## Auth API Reference\nThe OpenAPI specification for the Network Feature auth endpoints is available [here](/api/camara/auth).\n## Authentication Flow\nMaking an API call is a three-step process:\n1. The backend application requests an authorization id.\n2. The backend application uses that authorization id to request a CAMARA access token.\n3. Finally, the backend application uses the access token to make the API call.\n### Make an OIDC Request\nOpenID Connect (OIDC) is an identity layer built on top of the OAuth 2.0 protocol, which provides a way to verify a user's identity using the"
+    },
+    {
+     "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+     "title": "Authentication - API Concepts | Vonage API Documentation",
+     "snippet": "Vonage APIs support different authentication methods depending on which product you are using:\n1 Messages supports both JWT and Basic authentication, however basic authentication does not support webhooks or advanced features such as ACLs. For most use-cases we recommend JWT Authentication. See [Messages API Authentication](/messages/technical-details#authentication)\n2 Verify supports both JWT and Basic authentication, however basic authentication does not support webhooks or advanced features such as ACLs.\n3 SIP Trunking uses [Digest Authentication](/sip/overview#authentication) method with the API Key as user and API Secret as password.\n\nWhen you create a Vonage account, an API key and secret will be created for you. These are located in your [account settings](https://dashboard.nexmo.com/settings) in the Vonage Dashboard. You should always keep these secure and **never share these details**: be careful when adding it to your codebase to make sure they are not shared with anyone who may use it maliciously. If you use [message signatures](/getting-started/concepts/signing-messages), these are generated using the `SIGNATURE_SECRET` rather than the `API_SECRET`; both values can be f"
+    },
+    {
+     "url": "https://developer.vonage.com/en/vonage-business-cloud/getting-started/make-an-api-request",
+     "title": "Making an API Request",
+     "snippet": "Now that you've [created an access token](/vonage-business-cloud/getting-started/create-an-access-token) you are ready to make an API request.\n## Sample Request\nThe following sample uses [curl](https://curl.haxx.se/). You can run this sample on the Linux command line.\nReplace the following placeholder values in the sample code:\n| Key | Description |\n|---|---|\n| `bearer_token` | Your OAuth token. [Read more about OAuth tokens](/vonage-business-cloud/getting-started/create-a-developer-account) |\n| `account_id` | The Vonage Business Communications account ID. You can use 'self' to refer to the authenticated user's account. |\ncurl --location --request GET 'https://api.vonage.com/t/vbc.prod/provisioning/api/accounts/$account_id' \\ --header 'Content-Type: application/json' \\ --header 'Authorization: Bearer $bearer_token' \\"
+    },
+    {
+     "url": "https://developer.vonage.com/use-cases/delete_recordings_by_duration",
+     "title": "Vonage API Developer",
+     "snippet": "Before you can get started, you will need to have a Vonage Developer account. If you do not have a Vonage Developer account, please use this [guide](/vonage-business-cloud/getting-started/create-a-developer-account) to setup and create your account.\n\nAfter creating an application and subscribing to the Call Recording API, you will now need to log-in using your Vonage Business Communications credentials. This example application uses the Requests library to call the `/api/accounts/` API. Check out the [Making an API Request guide](/vonage-business-cloud/getting-started/make-an-api-request) for more details.\nNext, we'll create a function that requests the `/api/accounts` API to generate an access token.\n```\ndef get_token (): url = \"https://api.vonage.com/token\" payload = 'grant_type=password&username= {} &password= {} &client_id= {} &client_secret= {} ' .format( USERNAME , PASSWORD , CLIENT_ID , SECRET ) headers = { 'Content-Type' : 'application/x-www-form-urlencoded' } response = requests.request( \"POST\" , url, headers = headers, data = payload) return response.json()\n```\nTo run this function, you will need to pass in the following:\n- `USERNAME` - Vonage Business Communications user"
+    }
+   ]
+  },
+  "access": {
+   "query": "Vonage developer.vonage.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_HimjzkZ2IBH6",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://businesssupport.vonage.com/articles/answer/Vonage-Business-Communications-APIs",
+     "title": "Vonage Business Cloud | Answer",
+     "snippet": "Our available Vonage Business Communications (VBC) APIs allow you to manipulate data and features on your VBC account. To apply these solutions, you must qualify and request a VBC API Developer's account.\nWhile Vonage provides the infrastructure and documentation to power your builds, please note the following regarding implementation and support:\n- **Self-Managed Integration**: These APIs are designed for use by your internal development team. Your developers are responsible for the configuration, testing, and ongoing maintenance of all VBC API integrations.\n- **Support Scope**: Vonage support is limited to 1) facilitating access to the Developer Portal for qualifying accounts and 2) providing technical documentation. Vonage does not assist with coding, debugging, or the architectural design of your specific applications.\n\n##### Request a VBC API Developer Account\n1. Ensure your organization has 50 extensions or more.\n2. Contact your Customer Success Manager (CSM) to explore eligibility and next steps. If you do not have a CSM, [Contact Support](https://businesssupport.vonage.com/contactus).\n\n| **Welcome Email?** | **Then...** |\n|---|---|\n| **Yes** | 1. Sign in to the [VBC Develop"
+    },
+    {
+     "url": "https://developer.vonage.com/en/getting-started-network/registration?adobe_mc=MCMID%3D40974374467817681901598458781484099741%7CMCORGID%3DA8833BC75245AF9E0A490D4D%2540AdobeOrg%7CTS%3D1788788797",
+     "title": "Vonage Network Registry | Vonage API Documentation",
+     "snippet": "To use the [Vonage Network Features](/getting-started-network/concepts/network-features) in production, you will need to register for approval to access Operator networks from one or more applications.\nTo streamline this process for you, Vonage manages registration with numerous operator partners behind the scenes for all supported Network Features, in any [country made available by Vonage](/getting-started-network/concepts/coverage). This process is dependent on each Operator\u2019s approval, which may come through to the Vonage Network Registry at different times.\n\nTo start the Vonage Network Registry process, you must have a Vonage account; if you do not already have one, you can register for an account [here](https://ui.idp.vonage.com/ui/auth/registration?icid=tryitfree_adpdocs_nexmodashbdfreetrialsignup_inpagelink).\nOnce you're logged in, go to the **Build** section and click on **Network Registry**, then scroll down to find the **Full Access** section and click **Submit a registration** to get started:\n\nThere are three main steps to complete your registration for the Network Features:\n1. Add a business profile: Tell us a little about the organization that owns the application.\n2. "
+    },
+    {
+     "url": "https://developer.vonage.com/en/getting-started/overview",
+     "title": "Getting Started With Vonage APIs (New User Guide)",
+     "snippet": "To work with our APIs, you will need to [sign up for an account](https://developer.vonage.com/account/guides/dashboard-management#create-and-configure-a-vonage-account). This will give you an API key and secret that you can use to access our APIs.\n## Accessing the Developer Dashboard\nOnce you have an account, you can log into the [Developer Dashboard](https://developer.vonage.com/account/guides/dashboard-management#using-the-nexmo-dashboard-for-account-management). The Developer Dashboard is a GUI-based approach to managing your account, where you can:\n- **View your API key and secret**. You will need these to authenticate your requests to our APIs\n- **Manage your account balance**. Access to our APIs is charged on a per-request basis. We\u2019ll give you some free credit when you first open your account and you can [top up](https://developer.vonage.com/account/guides/payments) when you run low.\n- **Rent virtual numbers**. You can use [virtual numbers](https://developer.vonage.com/getting-started/concepts/glossary#virtual-number) provided by Vonage to send and receive calls and messages.\n\n[Application](https://developer.vonage.com/application/overview), which acts as a container for sec"
+    },
+    {
+     "url": "https://developer.vonage.com/en/messages/getting-started",
+     "title": "Getting Started with Messages API | Vonage API Documentation",
+     "snippet": "To create your free Vonage account:\n1. In your browser, navigate to [Dashboard](https://ui.idp.vonage.com/ui/auth/registration?icid=tryitfree_adpdocs_nexmodashbdfreetrialsignup_inpagelink).\n2. Add your company information and click **Sign up**. Vonage sends a PIN to your phone as a text message or automated phone call. The timeout for each verification attempt is 5 minutes.\n\nWhen you create your Vonage account you are given \u20ac2 free test credit and your account is set in DEMO mode. You can use our products to send messages to up to 10 destination numbers, a message stating that the account is in demo mode is added to all the SMS you send. To move out of the demo mode [add credit to your account](https://developer.vonage.com/account/guides/payments#add-a-payment-method).\n**NOTE:** For RCS workflows, a free trial or DEMO mode account is not sufficient on its own. RCS access is currently available to Vonage managed customers, and the required onboarding capability must be enabled on your API key before you can send RCS traffic.\nFor very few countries Vonage cannot create an account for you automatically. This is because of payment restrictions or legal trading restrictions for a US reg"
+    },
+    {
+     "url": "https://developer.vonage.com/en/blog/introduction-to-the-network-registry",
+     "title": "Introduction to the Network Registry",
+     "snippet": "Network APIs are intended for companies, not individuals, hobbyists, or independent developers. Therefore, before making Network API calls, you must submit your company profile for approval by the Communication Service Providers (CSPs) to gain access. To streamline this process, Vonage handles registration with various CSPs behind the scenes for all supported Network APIs in any country where Vonage services are available.\nThe approval process consists of two steps:\n1. Create a business profile.\n2. Create an application profile.\nBoth steps can be completed using the Vonage Network Registry, either from [the dashboard](https://dashboard.nexmo.com/network-registry/) or via [API](https://developer.vonage.com/en/api/camara/network-registry).\n## Prerequisites\nThis tutorial assumes that you already have a Vonage account. If you don\u2019t have one, you can create one [here](https://developer.vonage.com/sign-up?icid=tryitfree_api-developer-adp_nexmodashbdfreetrialsignup_nav).\n\nOnce your submission is approved by at least one of its CSPs, you can link it to one or more Vonage applications to start using the Network APIs. The Vonage application contains the credentials needed to make API calls."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Vonage API reference REST GraphQL endpoints documentation developer.vonage.com",
+   "log_id": "log_uq5qx-FdvHQn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.vonage.com/vcr/getting-started/working-locally",
+     "title": "Working Locally",
+     "snippet": "`vcr configure` writes your credentials and preferences to `~/.vcr-cli`. You can also edit this file directly. The file uses INI format:\n```\n[default]\ngraphql_endpoint = https://api-eu.vonage.com/v1/vcr/euw1/api/graphql/v1/graphql\ndefault_region = aws.euw1\n[credentials]\napikey = YOUR_API_KEY\napisecret = YOUR_API_SECRET\n```\nThe `graphql_endpoint` for each region is:\n| Region | Endpoint |\n|---|---|\n| EU West (`aws.euw1`) | `https://api-eu.vonage.com/v1/vcr/euw1/api/graphql/v1/graphql` |\n| US East (`aws.use1`) | `https://api-us.vonage.com/v1/vcr/use1/api/graphql/v1/graphql` |\n| AP Southeast (`aws.apse1`) | `https://api-ap.vonage.com/v1/vcr/apse1/api/graphql/v1/graphql` |\n| AP Southeast Sydney (`aws.apse2`) | `https://api-ap.vonage.com/v1/vcr/apse2/api/graphql/v1/graphql` |"
+    },
+    {
+     "url": "https://developer.uc.vonage.com/api/telephony",
+     "title": "Vonage Business Communications APIs",
+     "snippet": "### Get list of active calls for a given account (paginated). Please use Reports API to get list of completed calls.\n`GET` `https://api.vonage.com/t/vbc.prod/telephony/v3/cc/accounts/:account_id/calls`\n`Host` `https://api.vonage.com`\n`GET` `/t/vbc.prod/telephony/v3/cc/accounts/:account_id/calls`\n\n#### Example Responses\n200 401\n`PUT` `https://api.vonage.com/t/vbc.prod/telephony/v3/cc/accounts/:account_id/calls/:call_id/legs/:leg_id`\n`Host` `https://api.vonage.com`\n`PUT` `/t/vbc.prod/telephony/v3/cc/accounts/:account_id/calls/:call_id/legs/:leg_id`\n\n`Host` `https://api.vonage.com`\n`GET` `/t/vbc.prod/telephony/v3/registration/accounts/:account_id/devices/:device_id`"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/vonage/refs/heads/main/apis.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/vonage/refs/heads/main/apis.yml",
+     "snippet": "description: Vonage (part of Ericsson) provides cloud communications APIs for voice,\nSMS, messaging, video, and verification. The Vonage API platform enables businesses\nto embed communication capabilities into applications including voice calls, SMS,\nmulti-channel messaging (WhatsApp, Messenger, Viber, RCS), video conferencing, and\ntwo-factor authentication."
+    },
+    {
+     "url": "https://developer.vonage.com/en/api/vonage-business-cloud/vonage-integration-platform",
+     "title": "Vonage Integration Platform",
+     "snippet": "# Vonage Integration Platform\nThe Vonage Integration Platform API enables call control and webhooks for call events.\nYour application must subscribe to the VonageIntegrationSuite API suite to use this API.\n## Users\n### User info\ngethttps://api.vonage.com/t/vbc.prod/vis/v1/self\n#### Responses\nContent Type\napplication/json\nSuccess\naccountId\ninteger\n**example**`257073`\nUnique identifier of the user's account\nacountLabel\nstring\n**example**`Vonage`\nThe name of the user's account\nfirstName\nstring\n**example**`Robert`\nFirst name of the user\nlastName\nstring\n**example**`Smith`\nLast name of the user\nemailAddress\nstring\n**example**`john.smith@example.com`\nEmail address of the user\ncontactNumber\nstring\n**example**`14155550100`\nContact number of the user\nstatus\nstring\n**example**`ACTIVE`\nStatus of the user\nMust be one of:`PENDING``ACTIVE``DELETED``ARCHIVED`\nucis\narray\nid\ninteger(int64)\nucpLabel\nstring\nhealth\nobject\nstatus\nstring\nmessage\nstring\ntype\nstring\n**Default**`USER_UCI`\nroles\narray\ncode\nstring\n**example**`AU`\nCode for the role\nname\nstring\n**example**`Account User`\nName for the role\n#### Example Response\n```\n{\n\"id\": 522078,\n\"accountId\": 257073,\n\"acountLabel\": \"Vonage\",\n\"firstName\": \"Robert"
+    },
+    {
+     "url": "https://developer.vonage.com/en/api/developer/numbers",
+     "title": "Vonage Numbers API Reference | Vonage API Documentation",
+     "snippet": "### List the numbers you own\nRetrieve all the inbound numbers associated with your Vonage account.\ngethttps://rest.nexmo.com/account/numbers\n#### Authentication\nAuthentication\n| Key | Description | Where | Example |\n|---|---|---|---|\n| **Authorization** | Base64 encoded API key and secret joined by a colon. [Read more](/en/concepts/guides/authentication#header-based-api-key-and-secret-authentication) | Headers | `Basic <base64>` |\n#### Query Parameters\n\n{ \"count\" : 1 , \"numbers\" : [ { \"country\" : \"GB\" , \"msisdn\" : \"447700900000\" , \"moHttpUrl\" : \"https://example.com/webhooks/inbound-sms\" , \"type\" : \"mobile-lvn\" , \"features\" : [ \"VOICE\" , \"SMS\" , \"MMS\" ], \"limitations\" : [ { \"feature\" : \"SMS\" , \"type\" : \"OUTBOUND\" , \"reach\" : \"INTERNATIONAL\" }, { \"feature\" : \"VOICE\" , \"type\" : \"OUTBOUND\" , \"reach\" : \"DOMESTIC\" } ], \"messagesCallbackType\""
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Vonage developer.vonage.com MCP server Model Context Protocol official",
+   "log_id": "log_HCTFRDl7s4fR",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.vonage.com/en/blog/step-by-step-adding-vonage-apis-to-your-ai-agent-with-mcp",
+     "title": "Step-by-Step: Adding Vonage APIs to Your AI Agent with MCP",
+     "snippet": "That's exactly what we'll learn to build today using [Anthropic's Claude API](https://www.claude.com/platform/api) and the new Vonage Model Context Protocol (MCP) API Bindings Server (aka: Tooling Server).\nIn this tutorial, we'll create a chatbot that can have conversations with you while also being able to use external tools - specifically, we'll integrate with the Vonage [Tooling MCP Server](https://github.com/Vonage-Community/vonage-mcp-server-api-bindings) to check account balances as an example.\n\nWhile we have talked about [what an MCP server is in the past](https://developer.vonage.com/en/blog/introducing-mcp-ai-meets-programmable-communications-with-vonage), an MCP is a standardized way to connect AI assistants to external data sources and tools. Think of it as a universal adapter that lets your AI assistant \"talk to\" other services like databases, APIs, or applications.\nInstead of writing custom integrations for each service, MCP provides a standard interface that AI assistants can use to discover and interact with tools automatically.\n### How Our Chatbot, Claude, and MCP Work Together\nBefore we start coding, let\u2019s visualize how everything connects. In order to talk to Clau"
+    },
+    {
+     "url": "https://developer.vonage.com/en/blog/the-vonage-server-and-tooling-mcp-servers-are-live-on-postman",
+     "title": "The Vonage Server and Tooling MCP Servers Are Live on Postman",
+     "snippet": "We announced [the Vonage Documentation MCP (Model-Context Protocol) Server](https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server) and the [Tooling MCP Server](https://developer.vonage.com/en/blog/introducing-the-vonage-mcp-tooling-server) in 2025. In this blog post, you'll learn how to connect to the Vonage MCP servers on Postman to explore the tools and services it offers.\n## Where to Find the Vonage MCP Servers\nBy accessing the [MCP Server verified list](https://www.postman.com/explore/mcp-server), you can find the [Vonage MCP Server](https://www.postman.com/vonage/vonage-apis/collection/691339504e97be9827a7e8ce) that contains two of our MCP Server collections: The Vonage [Tooling MCP Server](https://www.postman.com/vonage/vonage-apis/collection/691339504e97be9827a7e8ce) and the Vonage [Documentation MCP Server](https://www.postman.com/vonage/vonage-apis/collection/691339504e97be9827a7e8ce). They can also be found in our Vonage APIs Collections on Postman.\n\nOnce you access the Vonage [Documentation MCP Server](https://www.postman.com/vonage/vonage-apis/collection/691339504e97be9827a7e8ce), you\u2019ll see a fresh interface similar to Postman for API req"
+    },
+    {
+     "url": "https://developer.vonage.com/vonage-cloud-runtime/getting-started/ai-mcp",
+     "title": "MCP Server",
+     "snippet": "`neru-mcp` is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that lets your AI assistant publish and deploy applications to [Code Hub](https://developer.vonage.com/en/cloud-runtime) without leaving your chat interface. You can create Code Hub products, upload source code, publish versions, and deploy running VCR instances entirely through natural language instructions.\n## Connect to the Hosted Server\n`neru-mcp` runs on VCR and is available as a remote endpoint \u2014 no local installation is required. Choose the endpoint closest to your region.\n| Region | MCP URL |\n|---|---|\n| EU West (Ireland) | `https://vcr-mcp.euw1.runtime.vonage.cloud/mcp` |\n| US East (Virginia) | `https://vcr-mcp.use1.runtime.vonage.cloud/mcp` |\n| AP Southeast (Singapore) | `https://vcr-mcp.apse1.runtime.vonage.cloud/mcp` |\n| AP Southeast (Sydney) | `https://vcr-mcp.apse2.runtime.vonage.cloud/mcp` |\n### Claude Desktop\nAdd to `claude_desktop_config.json`:\n```\n{ \"mcpServers\" : { \"neru-mcp\" : { \"type\" : \"http\" , \"url\" : \"https://vcr-mcp.euw1.runtime.vonage.cloud/mcp\" , \"headers\" : { \"X-Account-ID\" : \"<your-api-key>\" , \"X-Account-Secret\" : \"<your-api-secret>\" , \"X-Region\" : \"euw1\" } } } }\n```"
+    },
+    {
+     "url": "https://developer.vonage.com/en/mcp-server/technical-details",
+     "title": "Technical Details",
+     "snippet": "The Vonage MCP Server allows AI agents and developer tools to interact with Vonage APIs through the Model Context Protocol (MCP) \u2014 an open standard that defines how large language models (LLMs) discover, describe, and use external tools and APIs.\nBy implementing MCP, Vonage makes its communication capabilities (Voice, Messaging, Video, and more) discoverable and usable in agentic environments such as Claude Desktop, Cursor, VS Code, and other MCP-enabled clients.\n## Overview\nMCP defines a structured interface between an AI model (the *MCP client*) and a service exposing standardized tools (the *MCP server*), enabling natural-language-driven access to Vonage APIs.\nIn practice:\n- The agent (such as Claude) receives a prompt from the user, such as \u201cSend an SMS to John\u201d.\n- It queries the Vonage MCP Server to find the right tool (e.g. `send_sms`).\n- The server executes the corresponding Vonage API call and returns the result.\nThis architecture allows developers to integrate Vonage\u2019s communication APIs into AI-assisted workflows \u2014 without writing glue code or custom integrations.\n## Key Features\n- **Tool Discovery** \u2013 MCP clients can automatically detect and describe available Vonage too"
+    },
+    {
+     "url": "https://developer.vonage.com/en/mcp-server/how-to-guides/install-tooling-mcp-server",
+     "title": "How to Install the Vonage Server API Bindings MCP Server",
+     "snippet": "The [Vonage Server API Bindings MCP Server](/mcp-server/conceptual-guides/introduction-to-vonage-mcp), also known as the Tooling MCP Server, lets you invoke various API actions directly through your LLM Assistant or IDE of choice. Whether you\u2019re working in **VS Code**, **Cursor**, or **Claude Desktop**, you can now get information that you used to have to visit the [Vonage Customer Dashboard](https://dashboard.vonage.com) for.\n\n### Step 1: Open the MCP Configuration\n1. Press **Command+Shift+P** (macOS) or **Ctrl+Shift+P** (Windows/Linux).\n2. Search for **\u201cMCP: Open User Configuration.\u201d**\n3. In the `mcp.json` file that opens, add the following configuration:\n```\n{\n\"servers\": {\n\"vonage-mcp-server-api-bindings\": {\n\"type\": \"stdio\",\n\"command\": \"npx\",\n\"args\": [\n\"-y\",\n\"@vonage/vonage-mcp-server-api-bindings\"\n],\n\"env\": {\n\"VONAGE_APPLICATION_ID\": \"<YOUR_VONAGE_APPLICATION_ID>\",\n\"VONAGE_PRIVATE_KEY64\": \"<YOUR_VONAGE_PRIVATE_KEY64>\",\n\"VONAGE_API_KEY\": \"<YOUR_VONAGE_API_KEY>\",\n\"VONAGE_API_SECRET\": \"<YOUR_VONAGE_API_SECRET>\",\n\"VONAGE_VIRTUAL_NUMBER\": \"<YOUR_VONAGE_VIRTUAL_NUMBER>\",\n\"VONAGE_WHATSAPP_NUMBER\": \"<YOUR_VONAGE_WHATSAPP_NUMBER>\",\n\"RCS_SENDER_ID\": \"<YOUR_RCS_SENDER_ID>\"\n}\n}\n},\n\"inputs\""
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": 100,
+  "app": "Grain",
+  "category": "Meeting transcription",
+  "one_liner": "AI meeting recorder with transcripts, notes, and sales coaching data.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Personal access token on every plan incl. Free; workspace tokens for admins; OAuth2 app credentials obtained separately.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "Official Grain MCP server at https://api.grain.com/_/mcp (personal-scope PAT or OAuth); see https://developers.grain.com/mcp/tools-and-usage.html",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "OAuth client credentials are obtained separately from PATs; self-serve registration path not documented.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "high",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.grain.com/authentication.html",
+    "access": "https://support.grain.com/en/articles/15507288-grain-api",
+    "surface": "https://developers.grain.com/endpoints.html",
+    "mcp": "https://grain.com/release-note/06-18-2025"
+  },
+  "verified": true
+}

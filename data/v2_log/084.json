@@ -1,0 +1,85 @@
+{
+ "id": 84,
+ "app": "Paygent Connect",
+ "changes": [
+  {
+   "field": "blocker",
+   "from": "identity_unclear",
+   "to": "contact_sales",
+   "why": "identity now located (gopaygent.com Paygent Connect, Pathfinder API + Collect.js/Three-Step Redirect, NMI-style); docs are marketing-only with no public API reference or self-serve key; merchant signup/underwriting implied",
+   "evidence": "https://gopaygent.com/products/connect"
+  },
+  {
+   "field": "identity_issue",
+   "from": "Results are about different products (Paygentic, paygent.to, withpaygent.com, paygent.tech, gopaygent.com); none confirmed as NMI-powered Paygent Connect.",
+   "to": "Probable match: gopaygent.com 'Paygent Connect' embedded-finance API platform (Pathfinder API, Collect.js, Three-Step Redirect); public docs thin, NMI link inferred from feature names only.",
+   "why": "hint says NMI-powered; site matches but unconfirmed",
+   "evidence": "https://gopaygent.com/developers/docs"
+  },
+  {
+   "field": "blocker_note",
+   "from": "Cannot confirm which Paygent product is meant; results are Paygentic, paygent.to, withpaygent, paygent.tech.",
+   "to": "Paygent Connect (gopaygent.com) exposes only a marketing docs page; no public API reference or self-serve credentials found; onboarding via merchant signup/sales.",
+   "why": "",
+   "evidence": "https://gopaygent.com/signup"
+  },
+  {
+   "field": "access_notes",
+   "from": "Evidence does not identify the NMI-powered Paygent Connect; possible match gopaygent.com gateway is unconfirmed.",
+   "to": "gopaygent.com Paygent Connect: merchant signup page and 'wholesale rates' pitch; sandbox mentioned on homepage but no public key-issuance steps found.",
+   "why": "",
+   "evidence": "https://gopaygent.com/signup"
+  },
+  {
+   "field": "auth_primary",
+   "from": "unknown",
+   "to": "bearer_token",
+   "why": "homepage sample uses Authorization: Bearer pgt_live_xxx; low confidence",
+   "evidence": "https://gopaygent.com"
+  },
+  {
+   "field": "auth_methods",
+   "from": [
+    "unknown"
+   ],
+   "to": [
+    "bearer_token"
+   ],
+   "why": "same",
+   "evidence": "https://gopaygent.com"
+  },
+  {
+   "field": "evidence.access",
+   "from": "",
+   "to": "https://gopaygent.com/signup",
+   "why": "was empty",
+   "evidence": "https://gopaygent.com/signup"
+  },
+  {
+   "field": "evidence.surface",
+   "from": "",
+   "to": "https://gopaygent.com/developers/docs",
+   "why": "was empty",
+   "evidence": "https://gopaygent.com/developers/docs"
+  },
+  {
+   "field": "evidence.auth",
+   "from": "",
+   "to": "https://gopaygent.com",
+   "why": "was empty",
+   "evidence": "https://gopaygent.com"
+  },
+  {
+   "field": "evidence.mcp",
+   "from": "",
+   "to": "https://gopaygent.com",
+   "why": "searched site for MCP; none found",
+   "evidence": "https://gopaygent.com"
+  }
+ ],
+ "confirmed": [
+  "mcp none_found",
+  "verdict needs_outreach"
+ ],
+ "searches": 5
+}

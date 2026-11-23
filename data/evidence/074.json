@@ -1,0 +1,142 @@
+{
+ "id": 74,
+ "app": "Jira",
+ "hint": "developer.atlassian.com",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Jira API authentication OAuth API key access token developer docs developer.atlassian.com",
+   "log_id": "log_Q8PC9o0yOoxw",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.atlassian.com/server/jira/platform/jira-rest-api-example-oauth-authentication-6291692",
+     "title": "JIRA REST API Example OAuth Authentication 6291692",
+     "snippet": "This page shows you how to allow REST clients to authenticate themselves using [OAuth](https://en.wikipedia.org/wiki/OAuth). This is one of three methods that you can use for authentication against the JIRA REST API; the other two being **basic authentication** and **cookie-based authentication **(see related information).\n## Overview\nThe instructions below describe how to use a Java client to provide OAuth authentication when making requests to JIRA's REST endpoints. It assumes you are familiar with the OAuth terminology (e.g. Consumer, Service Provider, request token, access token, etc.). For more information about OAuth refer to the OAuth specification.\n\n## Step 1: Configuring JIRA\nThe first step is to register a new consumer in JIRA. This is done through the Application Links administration screens in JIRA. Create a new Application Link. When creating the Application Link use a placeholder URL or the correct URL to your client, if your client can be reached via HTTP and choose the Generic Application type. After this Application Link has been created, edit the configuration and go to the incoming authentication configuration screen and select OAuth. Enter in this the public key"
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+     "title": "OAuth 2.0 (3LO) apps",
+     "snippet": "This page shows you how to configure *OAuth 2.0 (3LO)* (also known as \"three-legged OAuth\" or \"authorization code grants\") apps. OAuth 2.0 (3LO) allows external applications and services to access Atlassian product APIs on a user's behalf. OAuth 2.0 (3LO) apps are created and managed in the [developer console](https://developer.atlassian.com/console/myapps/).\n## Overview\n**Important notice for apps using 3LO or API tokens**\nApps that collect API tokens or instruct customers to create individual 3LO apps don't comply with our [Security requirements for cloud apps](https://developer.atlassian.com/platform/marketplace/security-requirements/) and [Acceptable use policy](https://www.atlassian.com/legal/acceptable-use-policy#wrongful-activities).\n\nOAuth 2.0 (3LO) involves three parties:\n- An Atlassian site (*resource*)\n- A user (*resource owner*)\n- An external application/service (*client*).\nFor example, a Jira or Confluence site (*resource*), an Atlassian user (*resource owner*), and Gmail (*client*). Underlying the authorization interactions between these three parties is an authorization server.\n\n1. The app directs the user to an Atlassian screen that prompts them to grant access to t"
+    },
+    {
+     "url": "https://developer.atlassian.com/display/JIRADEV/JIRA+REST+API+Example+-+OAuth+authentication?sortBy=name&sortOrder=ascending",
+     "title": "OAuth",
+     "snippet": "This page shows you how to authenticate clients against the Jira REST API using [OAuth](https://en.wikipedia.org/wiki/OAuth) (version 1.0a). We\u2019ll explain how OAuth works with Jira and walk you through an example of how to use OAuth to authenticate a Java application against the Jira REST API for a user. While there are other methods of authenticating against Jira, we recommend that you use OAuth.\n**Code samples**\nIf you prefer to figure things out from the source code, feel free to check the output of this tutorial on [Bitbucket](https://bitbucket.org/atlassianlabs/atlassian-oauth-examples) (look for the `java` directory). Note, there are examples in that repository for other languages including Node.js, PHP, Python, Perl, and Ruby.\nOAuth is an authorization protocol that contains an authentication step. OAuth allows a user (*resource owner*) to grant a third-party application (*consumer/client*) access to their information on another site (*resource*). This process is commonly known as the *OAuth dance*. Jira uses 3-legged OAuth (3LO), which means that the user is involved by authorizing access to their data on the resource (as opposed to 2-legged OAuth, where the user is not inv"
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis",
+     "title": "Basic auth for REST APIs",
+     "snippet": "This page shows you how REST clients can authenticate themselves using **[basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication)** with an [Atlassian account](https://confluence.atlassian.com/cloud/atlassian-account-for-users-873871199.html) email address and [API token](https://confluence.atlassian.com/x/Vo71Nw). Authentication using passwords has been deprecated.\n\n- Forge apps and Connect apps use more secure methods for authentication: OAuth 2.0 and JWT respectively. In addition, authentication is built into the app frameworks, so you don't need to configure it. See [Security for Forge apps](https://developer.atlassian.com/cloud/jira/security-for-forge-apps/) and [Security for Connect apps](https://developer.atlassian.com/cloud/jira/security-for-connect-apps).\n- OAuth 2.0 apps (integrations) created in the [developer console](https://developer.atlassian.com/console/myapps) can use [OAuth 2.0 authorization code grants (3LO)](https://developer.atlassian.com/cloud/jira/oauth-2-authorization-code-grants-3lo-for-apps/), which is also more secure than basic auth.\n## Overview\n**Important notice for apps using 3LO or API tokens**\nApps that collect API tokens or "
+    },
+    {
+     "url": "https://support.atlassian.com/jira/kb/how-to-use-oauth20-in-postman-client-for-jira-cloud-apis",
+     "title": "Use OAuth 2.0 in Postman for Jira Cloud APIs | Jira and Jira Service Management | Atlassian Support",
+     "snippet": "### Step 1: Developer console settings.\n- Create a dummy app in [https://developer.atlassian.com/console](https://developer.atlassian.com/console), choose [OAuth 2.0 integration](https://developer.atlassian.com/cloud/jira/platform/security-overview/#oauth-2-0--3lo--apps)\n- This creates an **AppID**.\n- In the Sidebar, select **Permission** and add at least one **scope**.\n- Next, select Authorization in the Sidebar\n- Add the Authorization. For the **Callback URL,** give your site URL: https://<yoursite>.atlassian.net.\n- NOTE: The dialog will ask for granular scopes, but for our testing, any **read scope** is enough.\n- On the **Settings** page you can find the **Client ID** and **secret** in the Settings page. This information will be needed in the next steps.\n### Step 2: Generating an Access token from Postman\nOn the request page in the postman client\n- Select ***Authorisation type*** as **OAuth2.0** and\n- Select ***Add authorisation data to***as **Request header**\n- On the **Authorisation** tab scroll down to get to **Configure New Token**\n- Enter the following data\n- **Token Name** : give it a name\n- **Grant Type** : Authorization Code\n- **Callback URL**: https://<yoursite>.atlassi"
+    }
+   ]
+  },
+  "access": {
+   "query": "Jira developer.atlassian.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_uksrd_Cwusvt",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+     "title": "OAuth 2.0 (3LO) apps",
+     "snippet": "This page shows you how to configure *OAuth 2.0 (3LO)* (also known as \"three-legged OAuth\" or \"authorization code grants\") apps. OAuth 2.0 (3LO) allows external applications and services to access Atlassian product APIs on a user's behalf. OAuth 2.0 (3LO) apps are created and managed in the [developer console](https://developer.atlassian.com/console/myapps/).\n## Overview\n**Important notice for apps using 3LO or API tokens**\nApps that collect API tokens or instruct customers to create individual 3LO apps don't comply with our [Security requirements for cloud apps](https://developer.atlassian.com/platform/marketplace/security-requirements/) and [Acceptable use policy](https://www.atlassian.com/legal/acceptable-use-policy#wrongful-activities).\n\nMake a GET request to [https://api.atlassian.com/oauth/token/accessible-resources](https://api.atlassian.com/oauth/token/accessible-resources) passing the access token as a bearer token in the header of the request. For example:\n```\n1\n2\n3\n4\n5curl --request GET \\\n--url https://api.atlassian.com/oauth/token/accessible-resources \\\n--header 'Authorization: Bearer ACCESS_TOKEN' \\\n--header 'Accept: application/json'\n```\nThis will retrieve the sites t"
+    },
+    {
+     "url": "http://developer.atlassian.com/cloud/jira/platform/rate-limiting",
+     "title": "Rate limiting",
+     "snippet": "Enforcement of the new points-based API rate limits and tiered quota rate limits for Jira and Confluence Cloud apps will begin on March 2, 2026\nThis change is designed to ensure consistent performance and fair usage. The new rate limits will apply to all Forge, Connect, and OAuth 2.0 (3LO) apps. If your app integrates with Jira or Confluence Cloud, we recommend reviewing the updated documentation on rate limits and best practices for optimizing API usage. API token-based traffic is not affected by this change, and will continue to be governed by existing burst rate limits.\n\nJira and Confluence APIs. REST enforcement comes first, followed by GraphQL at a future date which will be announced. |\n| **Who can I contact for support?** | Use the **Partner Portal** for documentation and app quota increase requests, or please contact your **Atlassian representative**."
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/software/jira-rest-api-basic-authentication",
+     "title": "Basic auth for REST APIs",
+     "snippet": "This page shows you how REST clients can authenticate themselves using **[basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication)** with an [Atlassian account](https://confluence.atlassian.com/cloud/atlassian-account-for-users-873871199.html) email address and [API token](https://confluence.atlassian.com/x/Vo71Nw). Authentication using passwords has been deprecated.\n\nBasic auth requires API tokens. You generate an API token for your Atlassian account and use it to authenticate anywhere where you would have used a password. This enhances security because:\n- you're not saving your primary account password outside of where you authenticate\n- you can quickly revoke individual API tokens on a per-use basis\n- API tokens will allow you to authenticate even if your Atlassian Cloud organization has two-factor authentication or SAML enabled.\nSee the Atlassian Cloud Support [API tokens](https://confluence.atlassian.com/x/Vo71Nw) article to discover how to generate an API token."
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/scopes-for-oauth-2-3LO-and-forge-apps",
+     "title": "Jira scopes for OAuth 2.0 (3LO) and Forge apps",
+     "snippet": "- Jira permissions also control access to data and aren't overridden by scopes. For example, if a user does not have the Browse projects permission then the [Get project](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-projects/#api-rest-api-3-project-projectidorkey-get) operation won't be able to access project data even if the app has the `manage:jira-project` and other required scopes.\n- The scopes may provide the *potential* to access beta or non-public APIs that are later changed or removed from the Atlassian product. The inclusion of the API endpoint in a scope doesn't imply that the product makes this endpoint public. Read the [Jira REST API documentation](/cloud/jira/platform/rest/) for details.\n- Some scopes automatically imply that the app is granted other scopes."
+    },
+    {
+     "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+     "title": "Get started with Atlassian Marketplace",
+     "snippet": "If you're already a developer or are thinking about developing for Atlassian, we'll give you a free developer instance to make it easier than ever to develop and test on our Atlassian apps like Jira and Confluence.\n### What's included in a developer instance?\nA developer instance includes Atlassian Cloud licenses for:\n- Jira Software: 5 users\n- Confluence: 5 users\n- Jira Service Management: 1 agent\n### Details about this benefit\nDeveloper instances should only be used for development and testing. If you need this for production purposes, see our [Support Tools for Partners program](https://partner.atlassian.com/support-tools).\n### How to apply\nNo request forms needed here... [get started with your development instance today](http://go.atlassian.com/cloud-dev)!"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Jira API reference REST GraphQL endpoints documentation developer.atlassian.com",
+   "log_id": "log_TjuVxfPq2gf-",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.atlassian.com/software/jira/docs/api/REST/1000.830.0",
+     "title": "JIRA Cloud REST API Reference",
+     "snippet": "Welcome to the JIRA Cloud REST API reference. You can use the JIRA REST API to build add-ons for JIRA, develop integrations between JIRA and other applications, or script interactions with JIRA. This page documents the REST resources available in JIRA, along with expected HTTP response codes and sample requests.\n\n## Getting started\nIf you haven't integrated with JIRA Cloud before, read our [Getting started guide](https://developer.atlassian.com/display/jiracloud/Getting+started). In the guide, you'll set up a development environment. You'll also build a basic add-on using Atlassian Connect, the framework for extending JIRA Cloud. Once you have the basics in place, you can try one of our JIRA add-on tutorials that use the JIRA REST API, like this one: [Tutorial: Display your projects in JIRA](https://developer.atlassian.com/static/connect/docs/latest/guides/project-activity-tutorial.html).\n## Authentication\n### Authentication for Atlassian Connect add-ons\nIf you are integrating with the JIRA REST APIs via an Atlassian Connect add-on, API calls are authenticated via JWT (JSON Web Tokens). This is built into the supported Atlassian Connect libraries. At a high level, authentication wo"
+    },
+    {
+     "url": "https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples",
+     "title": "Jira REST API examples",
+     "snippet": "The reference documentation for the Jira Data Center REST API is here: [Jira Data Center REST API](https://docs.atlassian.com/software/jira/docs/api/REST/latest/). If you've never used the Jira REST APIs before, we recommend that you also read the overview [About the Jira REST APIs](https://developer.atlassian.com/server/jira/platform/rest-apis).\n\n##### Jira versions earlier than 8.4\nCreating an issue using the Jira REST API is as simple as making a POST with a JSON document. To create an issue, you will need to know certain key metadata, like the ID of the project that the issue will be created in, or the ID of the issue type. You can request the create metadata for all issue types across all projects by using the `createmeta` resource.\nFor example:\n```\n1\n2http://localhost:8080/rest/api/2/issue/createmeta\n```\nIf you only want a subset of this information, specify the desired projects and issue types as query parameters. For example, this request will return the create metadata for the Bug issue type in the Jira project:\n```\n1\n2http://localhost:8080/rest/api/2/issue/createmeta?projectKeys=JRA&issuetypeNames=Bug&expand=projects.issuetypes.fields\n```\n\nCreating an issue using the Jira"
+    },
+    {
+     "url": "https://docs.atlassian.com/software/jira/docs/api/9.12.42/com/atlassian/jira/rest/v2/issue/IssueResource.html",
+     "title": "IssueResource (Atlassian Jira - Server 9.12.42 API)",
+     "snippet": "- #### getIssue\n```\npublic\u00a0javax.ws.rs.core.Response\u00a0getIssue(String\u00a0issueIdOrKey,\nList<StringList>\u00a0fields,\nString\u00a0expand,\nList<StringList>\u00a0properties,\nboolean\u00a0updateHistory)\n```\nReturns a full representation of the issue for the given issue key.\n\n- #### getRemoteIssueLinks\n```\npublic\u00a0javax.ws.rs.core.Response\u00a0getRemoteIssueLinks(String\u00a0issueIdOrKey,\nString\u00a0globalId)\n```\nA REST sub-resource representing the remote issue links on the issue.\n- **Parameters:** `issueIdOrKey` - the issue to view the remote issue links for\n- **Parameters:** `globalId` - The id of the remote issue link to be returned. If null (not provided) all remote links for the issue are returned.\nFor a fullexplanation of Issue Link fields please refer to [https://developer.atlassian.com/display/JIRADEV/Fields+in+Remote+Issue+Links](https://developer.atlassian.com/display/JIRADEV/Fields+in+Remote+Issue+Links)\n- **Returns:** if no globalId is specified, a Response containing a List of RemoteIssueLinkBeans is returned. Otherwise, a Response containing a RemoteIssueLinkBean with the given globalId is returned."
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v2",
+     "title": "The Jira Cloud platform REST API",
+     "snippet": "[Developer](https://developer.atlassian.com/)"
+    },
+    {
+     "url": "https://docs.atlassian.com/software/jira/docs/api/REST/1000.115.0",
+     "title": "JIRA 1000.115.0",
+     "snippet": "Welcome to the JIRA REST API reference. This page documents the REST resources available in JIRA, along with expected HTTP response codes and sample requests. You can use the JIRA REST API to build add-ons for JIRA using [Atlassian Connect](http://connect.atlassian.com), develop integrations between JIRA and other applications, or script interactions with JIRA.\n## Getting started\nThe best way to learn the JIRA REST API is to try it out. If you're using JIRA in the cloud, Atlassian Connect is a simple framework for building add-ons for JIRA. Try one of our JIRA add-on tutorials in the [Atlassian Connect documentation](https://developer.atlassian.com/static/connect/docs/latest/guides/project-activity-tutorial.html). For a high level overview of the JIRA REST API in JIRA Server, start with the [JIRA REST API home](https://developer.atlassian.com/display/JIRADEV/JIRA+REST+APIs).\n## Authentication\nAny authentication that works with JIRA will work with the REST API. **The prefered authentication methods are OAuth ([examples](https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples)) and HTTP Basic (when using SSL)**, which are both documented in the [JIRA REST API Tutorials](htt"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Jira developer.atlassian.com MCP server Model Context Protocol official",
+   "log_id": "log_GjigP1n6ijYD",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://atlassian.github.io/atlassian-mcp-server",
+     "title": "atlassian-mcp-server",
+     "snippet": "# Atlassian MCP Server\n**The official Model Context Protocol (MCP) server for Atlassian: a cloud-hosted bridge that gives your AI tools secure, real-time access to Jira, Confluence, Jira Service Management, Bitbucket, Compass, Loom, and the wider Atlassian platform \u2014 powered by your Teamwork Graph.**\n\nThe **official Atlassian MCP Server** is a cloud-based bridge between your Atlassian Cloud site and compatible external tools. Once configured, it enables those tools to interact with **Jira, Confluence, Jira Service Management, Bitbucket, Compass, Loom, and Atlassian platform data (Projects, Goals, Teams, Focus, Talent, and the Teamwork Graph)** in real time. Authentication uses **OAuth 2.1** or **API tokens**, so every action respects the user\u2019s existing access controls.\nWith the Atlassian MCP Server, you can:\n- **Summarize and search** Jira, Jira Service Management, Confluence, Bitbucket, Projects, Goals, and more without switching tools.\n- **Retrieve and review** recordings of videos and meetings from Loom.\n- **Create and update** work items or pages based on natural language commands.\n- **Automate repetitive work**, like generating work items from meeting notes or specs.\nConnect "
+    },
+    {
+     "url": "https://github.com/atlassian/atlassian-mcp-server/tree/e664b8eb8c3cab223d074009fcbae314ff6dda55?tab=readme-ov-file",
+     "title": "GitHub - atlassian/atlassian-mcp-server at e664b8eb8c3cab223d074009fcbae314ff6dda55",
+     "snippet": "# Atlassian MCP Server\nThe Model Context Protocol (MCP) is a new, standardized protocol designed by Anthropic to manage context between large language models (LLMs) and external systems. This repository offers an MCP Server for Atlassian.\nThe Remote MCP Server is a cloud-based bridge between your Atlassian Cloud site and compatible external tools. Once configured, it enables those tools to interact with Jira and Confluence data in real-time. This functionality is powered by secure **OAuth 2.1 authorization**, which ensures all actions respect the user\u2019s existing access controls.\nThe Remote MCP Server helps bring Atlassian data into your existing workflows:\n- **Summarize and search** Jira and Confluence content without switching tools.\n- **Create and update** issues or pages based on natural language commands.\n- **Bulk process tasks** like generating tickets from meeting notes or specs. It\u2019s designed to support developers, content creators, and project managers working within IDEs or AI platforms.\n\n#### Cloud-based Setup\n- An Atlassian Cloud site with Jira and/or Confluence\n- Access to an AI Client (Claude for Teams for example)\n- A modern browser to complete the OAuth 2.0 authoriza"
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/rovo-mcp",
+     "title": "Atlassian Rovo MCP Overview",
+     "snippet": "The Atlassian Rovo MCP Server is a cloud-hosted [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) server that connects AI-powered clients to your Atlassian Cloud apps. It provides a standardized interface for AI assistants, IDEs, and automation tools to read, create, and update work across Jira, Confluence, Jira Service Management, Bitbucket, Loom, and the wider Atlassian platform - all secured by OAuth 2.1 authorization and your existing Atlassian permissions.\n## What you can do\nWith the Atlassian Rovo MCP Server, AI clients can:\n- **Search and summarize** Jira work items, Confluence pages, Bitbucket pull requests, and other Atlassian content without context switching.\n- **Retrieve Loom recordings**, including transcripts, comments, AI briefs, and extracted meeting action items.\n- **Create and update** work items, pages, and other content using natural language commands.\n- **Automate repetitive work**, such as generating Jira work items from meeting notes or creating Confluence documentation from specs.\n- **Query across apps** using Teamwork Graph, such as finding the pull requests, deployments, and documents connected to a work item.\n## How it works\nThe"
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/rovo-mcp/changelog",
+     "title": "Atlassian Rovo MCP",
+     "snippet": "#### Announcement Jira Align is now available on Atlassian MCP\nThe Atlassian Rovo MCP Server is adding six new Jira Align tools through MCP V2 across two new toolsets: `read_jira_align` and `write_jira_align`. These tools enable AI agents and workflows to interact directly with Jira Align data for portfolio reporting, planning rollups, terminology discovery, and backlog hygiene.\n\nJira Align tools in MCP V2 support OAuth 2.1:\n- Read tools belong to the `read_jira_align` toolset and require the `read:jira-align:agent-interface` scope.\n- Write tools belong to the `write_jira_align` toolset and require the `write:jira-align:agent-interface` scope.\n#### Prerequisites and Availability\n- **Admin enablement:** Organization Admins must enable the Jira Align toolsets in Admin Hub under **Security > Data protection > Atlassian Rovo MCP server** (or MCP tool settings) before users can access them.\n- **Re-authorization:** Users will need to re-authorize or reconnect their MCP client to grant the new Jira Align scopes.\n- **Requirements:** Requires Jira Align Cloud, Atlassian Guard enabled, an active Jira Align Bridge mapping connecting the sites, and the user to have logged in to the Jira Align "
+    },
+    {
+     "url": "https://support.atlassian.com/atlassian-ai-gateway/docs/use-atlassian-mcp-server",
+     "title": "Use Atlassian MCP Server | Atlassian AI Gateway | Atlassian Support",
+     "snippet": "Atlassian MCP Server is a cloud-hosted Model Context Protocol (MCP) server that gives your AI tools secure, real-time access to your data across Jira, Confluence, Bitbucket, and other Atlassian apps.\nConnect Atlassian MCP and your AI clients like Claude, Cursor, VS Code, ChatGPT, and others to securely access and interact with your Atlassian data. By connecting Atlassian\u2019s MCP server, you can bring the context of your Jira issues, Confluence pages, and Teamwork Graph directly into your preferred AI development tools and chat interfaces.\n## How Rovo credit usage works with Atlassian MCP\nWhen an AI client calls via Atlassian MCP to retrieve data or generate insights, it consumes Rovo credits. These credits come from the same shared pool used by Rovo Chat, Studio, Agents, and the Teamwork Graph, across your organization.\n\nEnriched Teamwork Graph (TWG) API and tool calls, including unified search and context tools called via [Atlassian MCP](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/use-atlassian-rovo-mcp-server/), consume Rovo credits. These include but are not limited to: `getTeamworkGraphContext`,`twg rovo search`, `searchAtlassian`, `search`."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 38,
+  "app": "Pinterest",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

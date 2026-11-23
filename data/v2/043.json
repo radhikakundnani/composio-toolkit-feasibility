@@ -1,0 +1,37 @@
+{
+  "id": 43,
+  "app": "BigCommerce",
+  "category": "Ecommerce",
+  "one_liner": "SaaS ecommerce platform with catalog, orders and storefront APIs.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_trial",
+  "access_notes": "Sign up for a free trial/sandbox store and create API account credentials; public marketplace apps need partner approval.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "Store Management MCP (early access for all stores, no access request needed) plus storefront MCP, published by BigCommerce.",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.bigcommerce.com/api-docs/getting-started/basics/api-environment",
+    "access": "https://docs.bigcommerce.com/developer/docs/overview/sandboxes",
+    "surface": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/catalog/products/get-products",
+    "mcp": "https://developer.bigcommerce.com/developer/docs/beta/store-management-mcp"
+  },
+  "verified": true
+}

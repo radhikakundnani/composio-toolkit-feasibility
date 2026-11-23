@@ -1,0 +1,33 @@
+{
+  "id": 100,
+  "app": "Grain",
+  "changes": [
+    {
+      "field": "mcp_note",
+      "from": "Official Grain MCP server; https://developers.grain.com/mcp/tools-and-usage.html",
+      "to": "Official Grain MCP server at https://api.grain.com/_/mcp (accepts personal-scope PAT or OAuth); announced at grain.com/release-note/06-18-2025",
+      "why": "Auth docs give the concrete endpoint and that PATs authenticate it.",
+      "evidence": "https://developers.grain.com/authentication.html"
+    },
+    {
+      "field": "confidence.auth",
+      "from": "high",
+      "to": "medium",
+      "why": "PAT is self-serve, but OAuth client_id/secret are 'obtained separately' with no documented self-serve registration.",
+      "evidence": "https://developers.grain.com/authentication.html"
+    },
+    {
+      "field": "blocker_note",
+      "from": "",
+      "to": "OAuth client credentials obtained separately from PAT; registration path not documented as self-serve.",
+      "why": "Caveat for multi-tenant OAuth.",
+      "evidence": "https://developers.grain.com/authentication.html"
+    }
+  ],
+  "confirmed": [
+    "access",
+    "mcp",
+    "verdict"
+  ],
+  "searches": 3
+}

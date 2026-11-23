@@ -1,0 +1,36 @@
+{
+ "id": 17,
+ "app": "Plain",
+ "category": "Support and Helpdesk",
+ "one_liner": "API-first customer support platform for B2B SaaS built on GraphQL.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "auth_primary": "api_key",
+ "access": "self_serve_trial",
+ "access_notes": "7-day free trial no credit card; machine users create API keys, OAuth apps available for user-level access.",
+ "api_types": [
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://plain.com/docs/integrations/mcp-server",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "GraphQL only; trial is short.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://plain.com/docs/api-reference/graphql/authentication",
+  "access": "https://plain.com/llms.txt",
+  "surface": "https://plain.com/docs/graphql/introduction",
+  "mcp": "https://plain.com/docs/integrations/mcp-server"
+ },
+ "verified": true
+}

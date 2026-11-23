@@ -1,0 +1,36 @@
+{
+  "id": 53,
+  "app": "Ahrefs",
+  "category": "SEO data API",
+  "one_liner": "SEO and AI-search data API: backlinks, keywords, site audits, rank tracking.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "access": "paid_plan_required",
+  "access_notes": "API keys need eligible paid plan (Lite upward); Starter has free test queries only. Ahrefs Connect OAuth production needs approval and Enterprise.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://api.ahrefs.com/mcp/mcp ; docs.ahrefs.com/docs/mcp/introduction (hosted MCP requires Lite plan or higher)",
+  "verdict": "ready_with_caveats",
+  "blocker": "paid_plan",
+  "blocker_note": "API requires paid subscription; OAuth Connect needs program approval.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.ahrefs.com/llms.txt",
+    "access": "https://docs.ahrefs.com/en/api",
+    "surface": "https://docs.ahrefs.com/openapi.json",
+    "mcp": "https://docs.ahrefs.com/docs/mcp/introduction"
+  },
+  "verified": true
+}

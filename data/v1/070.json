@@ -1,0 +1,35 @@
+{
+ "id": 70,
+ "app": "Sentry",
+ "category": "Error monitoring / observability",
+ "one_liner": "Application error tracking and performance monitoring platform.",
+ "auth_methods": [
+  "bearer_token",
+  "oauth2"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "self_serve_free",
+ "access_notes": "Create org or user auth tokens or an integration in the Sentry UI; accounts without a paid plan get a free plan.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://docs.sentry.io/ai/mcp (mcp.sentry.dev)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.sentry.io/api/auth",
+  "access": "https://docs.sentry.io/accounts/pricing",
+  "surface": "https://docs.sentry.io/api/requests",
+  "mcp": "https://docs.sentry.io/ai/mcp"
+ }
+}

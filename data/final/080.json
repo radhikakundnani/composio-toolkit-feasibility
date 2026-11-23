@@ -1,0 +1,36 @@
+{
+ "id": 80,
+ "app": "Harvest",
+ "category": "Time Tracking",
+ "one_liner": "Time tracking and invoicing tool with REST API v2.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "API included for all accounts including free and trial; use personal access token or register OAuth2 app.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "Some results (support.greenhouse.io Harvest API v3) concern Greenhouse's unrelated Harvest recruiting API; ignored.",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+  "access": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+  "surface": "https://help.getharvest.com/api-v2/introduction/overview/general",
+  "mcp": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+ },
+ "verified": true
+}

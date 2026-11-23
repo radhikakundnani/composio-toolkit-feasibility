@@ -1,0 +1,36 @@
+{
+ "id": 49,
+ "app": "Amazon Selling Partner",
+ "category": "Ecommerce",
+ "one_liner": "Amazon seller/vendor API for orders, listings, inventory and reports.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "approval_required",
+ "access_notes": "Needs professional seller account and Amazon-reviewed developer profile; public apps use Appstore authorization via Login with Amazon.",
+ "api_types": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Amazon Selling Partner Connector (MCP) at sellingpartner-ai.amazon.com/mcp via github.com/amzn/selling-partner-agentic-toolkit; also amzn/selling-partner-api-samples sp-api-dev-mcp",
+ "verdict": "needs_outreach",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Developer registration and role approval by Amazon; public multi-tenant apps need review/listing.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer-docs.amazon.com/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+  "access": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview",
+  "surface": "https://developer-docs.amazon.com/sp-api/reference",
+  "mcp": "https://github.com/amzn/selling-partner-agentic-toolkit"
+ },
+ "verified": true
+}

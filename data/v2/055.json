@@ -1,0 +1,37 @@
+{
+  "id": 55,
+  "app": "Apify",
+  "category": "Web scraping",
+  "one_liner": "Cloud platform for running web scraping Actors and managing datasets.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Free plan with $5 monthly usage, no card; personal API token from Console API & Integrations page.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.apify.com ; apify.com/docs/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Self-serve token; OAuth 2.0 also supported for integrations.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.apify.com/integrations/api",
+    "access": "https://apify.com/pricing.md",
+    "surface": "https://docs.apify.com/api/v2",
+    "mcp": "https://docs.apify.com/mcp"
+  },
+  "verified": true
+}

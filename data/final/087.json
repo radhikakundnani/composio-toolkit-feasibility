@@ -1,0 +1,35 @@
+{
+ "id": 87,
+ "app": "Xero",
+ "category": "Accounting",
+ "one_liner": "Cloud accounting platform with REST accounting, bank and payroll APIs.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free developer account and Starter plan (no payment, max 5 connections, 1000 calls/day/org); OAuth2 only for standard apps; Remote MCP limited to demo org on Starter.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Xero Remote MCP (developer.xero.com/documentation/guides/remote-mcp/overview) and XeroAPI/xero-mcp-server",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "Free Starter plan limited to 5 connections; Core and above require a payment method, Plus+ require app certification. Remote MCP is demo-org only on Starter.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer.xero.com/faq",
+  "access": "https://developer.xero.com/pricing",
+  "surface": "https://developer.xero.com/documentation/api/Accounts",
+  "mcp": "https://developer.xero.com/documentation/guides/remote-mcp/overview"
+ },
+ "verified": true
+}

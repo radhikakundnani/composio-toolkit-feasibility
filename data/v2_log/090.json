@@ -1,0 +1,27 @@
+{
+ "id": 90,
+ "app": "PitchBook",
+ "changes": [
+  {
+   "field": "evidence.mcp",
+   "from": "https://mcpservers.org/remote-mcp-servers/pitchbook",
+   "to": "https://pitchbook.com/media/press-releases/pitchbook-launches-an-agentic-platform-assistant-and-new-pitchbook-data-mcp-to-meet-investors-rapidly-evolving-workflow-needs",
+   "why": "third-party mcpservers.org replaced with PitchBook's own press release announcing PitchBook Data MCP (vendor-built, hosted per Merge docs)",
+   "evidence": "https://pitchbook.com/media/press-releases/pitchbook-launches-an-agentic-platform-assistant-and-new-pitchbook-data-mcp-to-meet-investors-rapidly-evolving-workflow-needs"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://developers.frontegg.com/agen-for-work/connectors/marketplace/pitchbook",
+   "to": "https://pitchbook.com/api-agreement",
+   "why": "frontegg marketplace page replaced with vendor API license agreement tied to a signed Order Form",
+   "evidence": "https://pitchbook.com/api-agreement"
+  }
+ ],
+ "confirmed": [
+  "mcp official",
+  "access partner_or_sales_gated",
+  "verdict needs_outreach",
+  "blocker contact_sales"
+ ],
+ "searches": 3
+}

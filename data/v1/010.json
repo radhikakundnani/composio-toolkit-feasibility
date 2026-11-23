@@ -1,0 +1,35 @@
+{
+  "id": 10,
+  "app": "DealCloud",
+  "category": "CRM (financial services)",
+  "one_liner": "Intapp DealCloud CRM for deal and relationship management with REST v4 API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "partner_or_sales_gated",
+  "access_notes": "Customers only; admin enables API capability for a user group and issues API key for client-credentials token.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://api.docs.dealcloud.com/mcp/getting-started",
+  "verdict": "needs_outreach",
+  "blocker": "contact_sales",
+  "blocker_note": "No public signup; requires DealCloud customer tenant, MCP needs Celeste license.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://api.docs.dealcloud.com/docs/token",
+    "access": "https://api.docs.dealcloud.com/docs/apikeys",
+    "surface": "https://api.docs.dealcloud.com/docs/data/rows/get",
+    "mcp": "https://api.docs.dealcloud.com/mcp/getting-started"
+  }
+}

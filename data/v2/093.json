@@ -1,0 +1,37 @@
+{
+  "id": 93,
+  "app": "Fathom",
+  "category": "Meeting transcription",
+  "one_liner": "AI meeting notetaker recording calls with summaries, transcripts and action items.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "API keys on all plans incl. Free via User Settings; OAuth apps must be registered with Fathom for client credentials.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "Official Fathom MCP (beta flag required); https://developers.fathom.ai/mcp-docs",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "OAuth app registration with Fathom needed for multi-user installs; marketplace listing is later.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.fathom.ai/faq",
+    "access": "https://developers.fathom.ai/faq",
+    "surface": "https://developers.fathom.ai/api-reference",
+    "mcp": "https://developers.fathom.ai/mcp-docs"
+  },
+  "verified": true
+}

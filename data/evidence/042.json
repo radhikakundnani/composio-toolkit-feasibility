@@ -1,0 +1,142 @@
+{
+ "id": 42,
+ "app": "WooCommerce",
+ "hint": "woocommerce.com/document/woocommerce-rest-api",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "WooCommerce API authentication OAuth API key access token developer docs woocommerce.com/document/woocommerce-rest-api",
+   "log_id": "log_NB4VaQvVqfLt",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+     "title": "developer.woocommerce.com/docs/apis/rest-api/authentication",
+     "snippet": "WooCommerce includes two ways to authenticate with the WP REST API. It is also possible to authenticate using any [WP REST API authentication](http://v3.wp-api.org/guide/authentication/) plugin or method.\n## REST API keys\nPre-generated keys can be used to authenticate use of the REST API endpoints. New keys can be generated either through the WordPress admin interface or they can be auto-generated through an endpoint.\n### Generating API keys in the WordPress admin interface\nTo create or manage keys for a specific WordPress user, go to WooCommerce > Settings > Advanced > REST API.\n*Note: Keys/Apps was found at WooCommerce > Settings > API > Key/Apps prior to WooCommerce 3.4.*\n![WooCommerce REST API keys settings](v3/images/woocommerce-api-keys-settings.png)\nClick the \"Add Key\" button. In the next screen, add a description and select the WordPress user you would like to generate the key for. Use of the REST API with the generated keys will conform to that user's WordPress roles and capabilities.\nChoose the level of access for this REST API key, which can be _Read_ access, _Write_ access or _Read/Write_ access. Then click the \"Generate API Key\" button and WooCommerce will generate RES"
+    },
+    {
+     "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/v1.html",
+     "title": "WooCommerce REST API Documentation v1",
+     "snippet": "There are two ways to authenticate with the API, depending on whether the site supports SSL or not. Remember that the Index endpoint will indicate if the site supports SSL or not.\n### Over HTTPS\nYou may use [HTTP Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) by providing the API Consumer Key as the username and the API Consumer Secret as the password:\n```\n$ curl https://www.example.com/wc-api/v1/orders \\\n-u consumer_key:consumer_secret\n```\nOccasionally some servers may not properly parse the Authorization header (if you see a \"Consumer key is missing\" error when authenticating over SSL, you have a server issue). In WooCommerce 2.1.7+, you may provide the consumer key/secret as query string parameters:\n```\n$ curl https://www.example.com/wc-api/v1/orders?consumer_key=123&consumer_secret=abc\n```\n### Over HTTP\nYou must use [OAuth 1.0a \"one-legged\" authentication](http://tools.ietf.org/html/rfc5849) to ensure API credentials cannot be intercepted.\n\n- The OAuth parameters must be added as query string parameters and *not* include in the Authorization header.\n- The require parameters are: `oauth_consumer_key`, `oauth_timestamp`, `oauth_nonce`, `oauth_signature`, an"
+    },
+    {
+     "url": "https://woocommerce.github.io/code-reference/files/woocommerce-includes-class-wc-rest-authentication.html",
+     "title": "WooCommerce Code Reference",
+     "snippet": "<?php /** * REST API Authentication * * @package WooCommerce\\RestApi * @since 2.6.0 */ defined( 'ABSPATH' ) || exit; /** * REST API authentication class. */ class WC_REST_Authentication { /** * Authentication error. * * @var WP_Error */ protected $error = null; /** * Logged in user data. * * @var stdClass */ protected $user = null; /** * Current auth method. * * @var string */ protected $auth_method = ''; /** * Provides access to the global WC_REST_Authentication instance. * * @internal * @return self */ public static function instance(): self { static $instance; if ( ! isset( $instance ) ) { $instance = new self(); } return $instance; } /** * Initialize authentication actions. */ public function __construct() { add_filter( 'determine_current_user', array( $this, 'authenticate' ), 15 ); add_filter( 'rest_authentication_errors', array( $this, 'authentication_fallback' ) ); add_filter( 'rest_authentication_errors', array( $this, 'check_authentication_error' ), 15 ); add_filter( 'rest_post_dispatch', array( $this, 'send_unauthorized_headers' ), 50 ); add_filter( 'rest_pre_dispatch', array( $this, 'check_user_permissions' ), 10, 3 ); } /** * Check if is request to our REST API. * * @re"
+    },
+    {
+     "url": "https://woocommerce.github.io/woocommerce-rest-api-docs",
+     "title": "WooCommerce REST API Documentation - WP REST API v3",
+     "snippet": "WooCommerce (WC) 2.6+ is fully integrated with the WordPress [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) API. This allows WC data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.\n\nTo use the latest version of the REST API you must be using:\n- WooCommerce 3.5+.\n- WordPress 4.4+.\n- Pretty permalinks in `Settings > Permalinks` so that the custom endpoints are supported. **Default permalinks will not work.**\n- You may access the API over either HTTP or HTTPS, but *HTTPS is recommended where possible*.\n\n```\n// Install:\n// npm install --save @woocommerce/woocommerce-rest-api\n// Setup:\nconst WooCommerceRestApi = require(\"@woocommerce/woocommerce-rest-api\").default;\n// import WooCommerceRestApi from \"@woocommerce/woocommerce-rest-api\"; // Supports ESM\nconst WooCommerce = new WooCommerceRestApi({\nurl: 'http://example.com', // Your store URL\nconsumerKey: 'consumer_key', // Your consumer key\nconsumerSecret: 'consumer_secret', // Your consumer secret\nversion: 'wc/v3' // WooCommerce WP REST API version\n});\n```\n```\n<?php\n// Install"
+    },
+    {
+     "url": "https://mintlify.com/woocommerce/woocommerce/api/rest-api/authentication",
+     "title": "REST API Authentication",
+     "snippet": "WooCommerce supports multiple authentication methods:\n1. **REST API Keys** (Recommended for most integrations)\n2. **OAuth 1.0a** (For third-party applications)\n3. **Basic Authentication** (HTTPS only, simple testing)\n4. **JWT** (JSON Web Tokens, with plugins)\n##\n\u200b\nREST API Keys\nThe recommended authentication method for most integrations. API keys are generated through the WooCommerce admin interface.\n1. Navigate to **WooCommerce > Settings > Advanced**\n2. Click the **REST API** tab\n3. Click **Add key**\n4. Configure the key:\n- **Description**: Name to identify the key (e.g., \u201cMobile App Integration\u201d)\n- **User**: WordPress user with appropriate permissions\n- **Permissions**: Read, Write, or Read/Write\n5. Click **Generate API Key**\n6. **Save your keys immediately** - the Consumer Secret is shown only once\nStore your Consumer Key and Consumer Secret securely. The Consumer Secret cannot be retrieved after closing the page.\n###\n\u200b\nKey Components\nAfter generation, you\u2019ll receive:\n- **Consumer Key**: Public identifier (e.g., `ck_1234567890abcdef`)\n- **Consumer Secret**: Private key (e.g., `cs_1234567890abcdef`)\n###\n\u200b\nUsing API Keys with HTTPS\nWhen your site uses HTTPS, use HTTP Basic Authen"
+    }
+   ]
+  },
+  "access": {
+   "query": "WooCommerce woocommerce.com/document/woocommerce-rest-api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_R9GQvSM2c2Ho",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://woocommerce.com/document/woocommerce-rest-api",
+     "title": "WooCommerce REST API",
+     "snippet": "The WooCommerce REST API connects your store to external systems and services. Most integrations require you to generate API keys in WooCommerce and enter them in the external service to establish the connection. This document covers how to generate and manage REST API keys from a merchant perspective, with links to developer documentation for more advanced topics.\n\n**Day and name** is a common default that works well.\n\nThe WooCommerce REST API uses a key system to control access. Each set of keys is linked to a WordPress user on your site. You can create keys with different permission levels depending on what the connected application needs.\nTo create or manage keys for a specific WordPress user:\n1. Go to **WooCommerce > Settings > Advanced > REST API**.\n2. Select **Create an API key** or **Add Key**. The **Key Details** screen opens.\n3. Enter a **Description** to identify what the key is used for.\n4. Select the **User** you want to generate a key for from the dropdown.\n5. Select a level of access for this API key from the **Permissions** dropdown:\n- **Read** \u2014 allows the application to retrieve data from your store\n- **Write** \u2014 allows the application to create and update data in"
+    },
+    {
+     "url": "https://developer.woocommerce.com/docs/apis/rest-api",
+     "title": "WooCommerce REST API | WooCommerce developer docs",
+     "snippet": "WooCommerce (WC) 2.6+ is fully integrated with the WordPress [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) API. This allows WC data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.\n\n## Requirements[\u200b](https://developer.woocommerce.com/docs/apis/rest-api#requirements)\nTo use the REST API you must be using:\n- WooCommerce 3.5+\n- WordPress 4.4+\n- Pretty permalinks in **Settings > Permalinks** (default permalinks will not work)\nYou may access the API over either HTTP or HTTPS, but *HTTPS is recommended where possible*.\nnote\nYou are **not** required to install the [WP REST API (WP API)](https://wordpress.org/plugins/rest-api/) plugin.\nIf you use ModSecurity and see `501 Method Not Implemented` errors, see [this issue](https://github.com/woocommerce/woocommerce/issues/9838) for details."
+    },
+    {
+     "url": "https://docs.intelligent.page/connectors/woocommerce",
+     "title": "WooCommerce",
+     "snippet": "## API access\nThere is no developer programme and nothing to apply for. Requirements published in the docs: WooCommerce 3.5 or later, WordPress 4.4 or later, pretty permalinks enabled, because the default plain permalink structure breaks the REST routes. HTTPS is recommended and is required if we want to use the simple basic auth path.\nThe merchant creates credentials at WooCommerce, Settings, Advanced, REST API, Add key. They choose a WordPress user, a description and a permission level of Read, Write, or Read/Write, and WooCommerce shows a consumer key (`ck_...`) and consumer secret (`cs_...`) exactly once. The key inherits the chosen user's capabilities, so a key issued against a Shop Manager account can see orders and customers while a key against a lesser role may silently return fewer fields.\n\nOfficial client libraries: `@woocommerce/woocommerce-rest-api` (JavaScript), `automattic/woocommerce` (PHP), `WooCommerce` (Python), `woocommerce_api` (Ruby). They exist mainly to handle the OAuth 1.0a signing for us.\n\n### Over plain HTTP: OAuth 1.0a one legged\nFor stores without TLS, WooCommerce implements OAuth 1.0a signing with HMAC-SHA1 and no token exchange step: there is no reques"
+    },
+    {
+     "url": "https://woocommerce.com/document/customer-orders-api",
+     "title": "WooCommerce.com Orders and Invoices API",
+     "snippet": "1. **API access must be enabled** on your WooCommerce.com account by an administrator. If you don\u2019t already have access, contact your account manager or [WooCommerce.com support](https://woocommerce.com/my-account/contact-support/) to request it.\n2. You need an **application password** (a special API token) \u2014 see Quick Start below."
+    },
+    {
+     "url": "https://woocommerce.com/document/subscriptions/develop/rest-api",
+     "title": "REST API",
+     "snippet": "# REST API\nConnect an ERP, POS, or warehouse system to read and update per-location stock and prices. Go to **WooCommerce > Settings > Multi Inventory > REST API** to see your store\u2019s Base URL and a quick reference of endpoints.\n## Setup\n\u2191 Back to top\n- **Create an API key**: Go to **WooCommerce > Settings > Advanced > REST API > Add key**. Select a user with the Manage WooCommerce capability (Administrator or Shop Manager), set Permissions to **Read/Write**, then copy the Consumer Key and Consumer Secret.\n- **Authenticate**: Use the same keys as the standard WooCommerce REST API. Over HTTPS, send the Consumer Key as the Basic Auth username and the Consumer Secret as the password, or pass consumer_key and consumer_secret as query parameters.\n- **Base URL**: https://yourstore.com/wp-json/ext-mim/v1 (the exact URL for your site is shown on the REST API tab).\n- **Requirement**: The product must have **Use Multi Inventory?** enabled. Updates to other products return an error, and they are not included in GET results.\n- **Key permissions**: A Read key can only use GET requests. Use a Read/Write key to make updates."
+    }
+   ]
+  },
+  "surface": {
+   "query": "WooCommerce API reference REST GraphQL endpoints documentation woocommerce.com/document/woocommerce-rest-api",
+   "log_id": "log_wCHZ6A_mqd28",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.woocommerce.com/docs/apis/rest-api",
+     "title": "WooCommerce REST API | WooCommerce developer docs",
+     "snippet": "WooCommerce (WC) 2.6+ is fully integrated with the WordPress [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) API. This allows WC data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.\nThe current WP REST API integration version is `v3` which takes a first-order position in endpoints.\nWhen WooPayments is active, it adds payment-specific endpoints under `/wp-json/wc/v3/payments/`. See the [WooPayments REST API reference](https://automattic.github.io/woocommerce-payments/) for transactions, authorizations, and payouts. Some monetary fields in these endpoints use integer minor units, unlike WooCommerce core's decimal-string values.\n\nTo use the REST API you must be using:\n- WooCommerce 3.5+\n- WordPress 4.4+\n- Pretty permalinks in **Settings > Permalinks** (default permalinks will not work)\nYou may access the API over either HTTP or HTTPS, but *HTTPS is recommended where possible*.\n\n// Setup:\nconst WooCommerceRestApi = require(\"@woocommerce/woocommerce-rest-api\").default;\n// import WooCommerceRestApi from \"@woocommerce/woocommer"
+    },
+    {
+     "url": "https://developer.woocommerce.com/docs/apis/rest-api/v3",
+     "title": "REST API v3 | WooCommerce developer docs",
+     "snippet": "# REST API v3\nThe current and recommended version of the WooCommerce REST API. Use `/wp-json/wc/v3/` endpoints for all new integrations.\nWhen WooPayments is active, it adds `/wp-json/wc/v3/payments/` endpoints for payment reports, authorizations, and payouts. See the [WooPayments REST API reference](https://automattic.github.io/woocommerce-payments/) for their response formats.\n[## API Reference\nBy default, the API provides information about all available endpoints on the site. Authentication is not required to access the API index.](/docs/apis/rest-api/v3/api-reference/)\n[## Coupons\nThe coupons API allows you to create, view, update, and delete individual, or a batch, of coupon codes.](/docs/apis/rest-api/v3/coupons/)"
+    },
+    {
+     "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/v3.html",
+     "title": "WooCommerce REST API Documentation v3",
+     "snippet": "Introduced in WooCommerce 2.1, the REST API allows WooCommerce data to be created, read, updated, and deleted using JSON format.\n## Requirements\nYou must be using WooCommerce 2.1 or newer and the REST API must be enabled under `WooCommerce > Settings`. You must enable pretty permalinks in `Settings > Permalinks` (default permalinks will not work).\n## Version\nThe current API version is `v3` which takes a first-order position in endpoints. The following table shows API versions present in each major version of WooCommerce:\n| API Version | WooCommerce |\n|---|---|\n| `v1` | 2.1.x, 2.2.x, 2.3.x and 2.4.x |\n| `v2` | 2.2.x, 2.3.x and 2.4.x |\n| `v3` | 2.4.x, 2.5.x |\n\n## Schema\nThe API is accessible via this endpoint:\n`https://www.your-store.com/wc-api/v3`\n*Pretty permalinks must be enabled*. You may access the API over either HTTP or HTTPS. *HTTPS is recommended where possible*, since authentication is simpler. The API index will declare if the site supports SSL or not.\n\nThe API index provides information about the endpoints available for the site, as well as store-specific information. No authentication is required to access the API index, however if the REST API is disabled, you will rece"
+    },
+    {
+     "url": "https://docs.woocommerce.com/document/woocommerce-rest-api",
+     "title": "WooCommerce REST API",
+     "snippet": "The WooCommerce REST API connects your store to external systems and services. Most integrations require you to generate API keys in WooCommerce and enter them in the external service to establish the connection. This document covers how to generate and manage REST API keys from a merchant perspective, with links to developer documentation for more advanced topics.\n\nThe WooCommerce REST API uses a key system to control access. Each set of keys is linked to a WordPress user on your site. You can create keys with different permission levels depending on what the connected application needs.\nTo create or manage keys for a specific WordPress user:\n1. Go to **WooCommerce > Settings > Advanced > REST API**.\n2. Select **Create an API key** or **Add Key**. The **Key Details** screen opens.\n3. Enter a **Description** to identify what the key is used for.\n4. Select the **User** you want to generate a key for from the dropdown.\n5. Select a level of access for this API key from the **Permissions** dropdown:\n- **Read** \u2014 allows the application to retrieve data from your store\n- **Write** \u2014 allows the application to create and update data in your store\n- **Read/Write** \u2014 allows the application b"
+    },
+    {
+     "url": "https://developer.woocommerce.com/docs/apis/rest-api/v3/products",
+     "title": "developer.woocommerce.com/docs/apis/rest-api/v3/products",
+     "snippet": "# Products\nThe products API allows you to create, view, update, and delete individual, or a batch, of products.\n\n| `permalink`             | string    | Product URL. `READ-ONLY`                                                                                                                                                                                 |"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "WooCommerce woocommerce.com/document/woocommerce-rest-api MCP server Model Context Protocol official",
+   "log_id": "log_r81x7erfx1s1",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://woocommerce.com/document/woocommerce-ai/mcp-server",
+     "title": "Connect an AI client to the WooCommerce AI MCP server",
+     "snippet": "# Connect an AI client to the WooCommerce AI MCP server\nConnect an external Model Context Protocol (MCP) client to your store\u2019s WooCommerce AI server. Use the endpoint generated for your store, then authorize the client and confirm a read-only request before allowing store changes.\n\nare connected to WordPress.com.\n\n\u2191 Back to top\n1. In WordPress admin, go to **WooCommerce > Settings > WooCommerce AI > Advanced > MCP server**.\n2. Enable **Progressive MCP server** if it is off.\n3. Open **Setup**, choose your client, and copy the generated server URL or configuration.\nThe WordPress.com URL includes your store identifier. Its structure is:\n```\nhttps://public-api.wordpress.com/wpcom/v2/sites/{site}/woocommerce-ai-mcp/v1\n```\nCopy the complete URL from your store\u2019s **Setup** screen, including its store identifier.\n## Example: Claude Code\n\u2191 Back to top\nFollow [Claude Code\u2019s MCP instructions](https://code.claude.com/docs/en/mcp) for your installed client version. Add the copied endpoint with:\n```\nclaude mcp add --transport http woocommerce-ai \"YOUR_COPIED_SERVER_URL\"\n```\nIn Claude Code, open **/mcp** and complete the authentication flow when prompted. The WordPress.com connection uses OAuth "
+    },
+    {
+     "url": "https://github.com/woocommerce/woocommerce/blob/4ea7052c540d9605bbd62940727cfeeedf435067/docs/features/mcp/README.md",
+     "title": "woocommerce/docs/features/mcp/README.md at 4ea7052c540d9605bbd62940727cfeeedf435067 \u00b7 woocommerce/woocommerce",
+     "snippet": "WooCommerce includes native support for the Model Context Protocol (MCP), enabling AI assistants and tools to interact directly with WooCommerce stores through a standardized protocol. This integration exposes WooCommerce functionality as discoverable tools that AI clients can use to perform store operations with proper authentication and permissions.\n\nThe Model Context Protocol (MCP) is an open standard that enables AI applications to securely connect to external data sources and tools. WooCommerce's MCP integration builds on two core technologies:\n- **[WordPress Abilities API](https://github.com/WordPress/abilities-api)** - A standardized system for registering capabilities in WordPress\n- **[WordPress MCP Adapter](https://github.com/WordPress/mcp-adapter)** - The core MCP protocol implementation\nThis architecture allows WooCommerce to expose operations as MCP tools through the flexible WordPress Abilities system while maintaining existing security and permission models.\n## What's Available\nWooCommerce's MCP integration provides AI assistants with structured access to core store operations:\n### Product Management\n- List products with filtering and pagination\n- Retrieve detailed pr"
+    },
+    {
+     "url": "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp",
+     "title": "WooCommerce 11.3 MCP Adaptor updates",
+     "snippet": "Starting with WooCommerce 11.3, WooCommerce core product and order abilities will be enabled by default, and will require the [WordPress MCP Adapter plugin](https://wordpress.org/plugins/mcp-adapter/) active on your store to establish an MCP connection.\nThis update will remove the `/wp-json/woocommerce/mcp` endpoint and legacy abilities that have been [deprecated since WooCommerce 10.9](https://developer.woocommerce.com/2026/05/12/mcp-abilities-api-10-9/).\n**If your MCP client connects to your store with the deprecated endpoint and a WooCommerce REST API key, you will need to update that connection to use the [WordPress MCP Adapter plugin](https://wordpress.org/plugins/mcp-adapter/) and a WordPress application password before testing or upgrading to 11.3.**\n## Enabling MCP in WooCommerce 11.3\nMCP Adapter 0.7.0 is the first release published as a WordPress.org plugin, and it [deprecates bundling the adapter as a Composer library](https://github.com/WordPress/mcp-adapter/releases/tag/v0.7.0). With one shared adapter per site, a separate WooCommerce endpoint with its own authentication and its own set of REST-shaped tools only added configuration and confusion.\nThe purpose-built WooCo"
+    },
+    {
+     "url": "https://github.com/woocommerce/woocommerce/blob/trunk/docs/features/mcp/README.md",
+     "title": "woocommerce/docs/features/mcp/README.md at trunk \u00b7 woocommerce/woocommerce",
+     "snippet": "WooCommerce registers product and order abilities in WordPress. With the MCP Adapter plugin, AI clients can discover and run these store operations through the Model Context Protocol (MCP), subject to WordPress and WooCommerce permissions.\n:::info\n**Developer Preview Notice** The MCP implementation in WooCommerce is currently in developer preview. Implementation details, APIs, and integration patterns may change in future releases as the feature matures.\n:::\n## Enabling MCP Integration\nWooCommerce always registers its abilities through the WordPress Abilities API; there is no WooCommerce setting to turn on. To make them available to MCP clients, install and activate the [MCP Adapter plugin](https://wordpress.org/plugins/mcp-adapter/):\n```\nwp plugin install mcp-adapter --activate\n```\nWooCommerce does not bundle the MCP adapter.\n## Authentication and Security\n### WordPress Application Password Requirements\nRemote HTTP connections authenticate using a WordPress username and an [Application Password](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#basic-authentication-with-application-passwords). Do not use your account password or a WooCommerce REST API key"
+    },
+    {
+     "url": "https://woocommerce.com/posts/woocommerce-mcp",
+     "title": "WooCommerce MCP: Talk to your store like it\u2019s your AI assistant",
+     "snippet": "I\u2019ve been deep diving into something really exciting in WooCommerce: the [Model Context Protocol integration](https://developer.woocommerce.com/docs/features/mcp/) (MCP). MCP first shipped as a beta in 10.3 and has been maturing across releases. Now, with WooCommerce 10.9 and WordPress 7.1+, the stack is solid enough to build some seriously useful things on top of it. So, I went ahead and did exactly that.\n\nThat\u2019s what MCP enables. Throughout this post, I\u2019ll be using [Claude Code](https://code.claude.com/docs/en/overview) as the AI assistant, but MCP works with any compatible client: Cursor, VS Code, or anything else that speaks the MCP protocol. Use whatever works best for you.\nLet\u2019s explore it together!\n## What is MCP?\n\u2191 Back to top\nThink of [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) as a universal translator between AI tools and our WooCommerce store. Normally, if we want AI to interact with our store, we\u2019d need to:\n- Build custom REST API integrations.\n- Handle authentication ourselves.\n- Write a bunch of code to parse responses.\nMCP changes all that. It\u2019s an open-source standard that lets AI assistants like Claude, Cursor, or VS Code talk directly to sys"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

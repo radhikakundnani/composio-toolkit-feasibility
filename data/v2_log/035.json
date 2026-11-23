@@ -1,0 +1,32 @@
+{
+  "id": 35,
+  "app": "Mailchimp",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://eseospace.com/blog/mailchimp-mcp-server",
+      "to": "https://mailchimp.com/help/use-mailchimp-connector-claude",
+      "why": "Previous source was third-party blog eseospace.com; vendor mailchimp.com documents official Mailchimp connector in Claude (Intuit). Transactional MCP also on mailchimp.com.",
+      "evidence": "https://mailchimp.com/help/use-mailchimp-connector-claude"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://mailchimp.com/developer/guides/an-introduction-to-rest",
+      "to": "https://mailchimp.com/developer/marketing/build/get-started/generate-your-api-key",
+      "why": "Previous URL 404; replaced with live vendor API key guide.",
+      "evidence": "https://mailchimp.com/developer/marketing/build/get-started/generate-your-api-key"
+    },
+    {
+      "field": "mcp_note",
+      "from": "Intuit Mailchimp connector; Transactional MCP at https://mandrillapp.com/mcp",
+      "to": "Official Intuit Mailchimp connector (mailchimp.com/help/use-mailchimp-connector-claude); Transactional MCP (mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp). Docs MCP at mailchimp.com/developer/_mcp/server is docs-search only.",
+      "why": "Clarify which servers are account-acting vs docs-only",
+      "evidence": "https://mailchimp.com/help/use-mailchimp-connector-claude"
+    }
+  ],
+  "confirmed": [
+    "auth_primary",
+    "verdict"
+  ],
+  "searches": 4
+}

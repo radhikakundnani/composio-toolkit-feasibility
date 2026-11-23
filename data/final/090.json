@@ -1,0 +1,36 @@
+{
+ "id": 90,
+ "app": "PitchBook",
+ "category": "Market intelligence / financial data",
+ "one_liner": "Private and public capital markets data on companies, deals, investors and funds.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "auth_primary": "api_key",
+ "access": "partner_or_sales_gated",
+ "access_notes": "API is a paid, contract-gated add-on via PitchBook Direct Data team; key issued to the organization; no free tier.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://premium.mcp.pitchbook.com/mcp (OAuth, licensed users)",
+ "verdict": "needs_outreach",
+ "blocker": "contact_sales",
+ "blocker_note": "API requires a paid contract and issued key; no self-serve credentials.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://pitchbook.com/help/pitchbook-api",
+  "access": "https://pitchbook.com/api-agreement",
+  "surface": "https://pitchbook.com/help/pitchbook-api",
+  "mcp": "https://pitchbook.com/media/press-releases/pitchbook-launches-an-agentic-platform-assistant-and-new-pitchbook-data-mcp-to-meet-investors-rapidly-evolving-workflow-needs"
+ },
+ "verified": true,
+ "adjudication": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. No OAuth found on vendor docs; API uses an API key."
+}

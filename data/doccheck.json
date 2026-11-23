@@ -1,0 +1,1243 @@
+{
+ "1": {
+  "app": "Salesforce",
+  "auth_methods_found": {
+   "oauth2": true,
+   "jwt_service_account": false
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "2": {
+  "app": "HubSpot",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "3": {
+  "app": "Pipedrive",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "4": {
+  "app": "Attio",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "5": {
+  "app": "Twenty",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "oauth2",
+    "api_key"
+   ],
+   "query_log_id": "log_353lFEQF7IYz",
+   "vendor_domain": "twenty.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://docs.twenty.com/developers/extend/oauth"
+  }
+ },
+ "6": {
+  "app": "Podio",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "7": {
+  "app": "Zoho CRM",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "8": {
+  "app": "Close",
+  "auth_methods_found": {
+   "api_key": true,
+   "basic": false,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "basic",
+    "oauth2"
+   ],
+   "query_log_id": "log_nWy5MGIYVRgt",
+   "vendor_domain": "close.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://developer.close.com/api/overview/oauth-authentication"
+  }
+ },
+ "9": {
+  "app": "Copper",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_bmgIGuskMfEI",
+   "vendor_domain": "copper.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://developer.copper.com/introduction/oauth/flow.html"
+  }
+ },
+ "10": {
+  "app": "DealCloud",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "11": {
+  "app": "Zendesk",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": false,
+   "basic": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "12": {
+  "app": "Intercom",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "13": {
+  "app": "Freshdesk",
+  "auth_methods_found": {
+   "api_key": true,
+   "basic": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "basic",
+    "oauth2"
+   ],
+   "query_log_id": "log_4IJ1RLCiXuGD",
+   "vendor_domain": "freshdesk.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://developer.freshdesk.com/docs/oauth"
+  }
+ },
+ "14": {
+  "app": "Front",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "15": {
+  "app": "Pylon",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "16": {
+  "app": "LiveAgent",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "17": {
+  "app": "Plain",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_NLmOy-PZI19X",
+   "vendor_domain": "plain.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://plain.com/docs/graphql/oauth"
+  }
+ },
+ "18": {
+  "app": "Help Scout",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "19": {
+  "app": "Gorgias",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true,
+   "basic": false
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "20": {
+  "app": "Gladly",
+  "auth_methods_found": {
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "not_stated"
+ },
+ "21": {
+  "app": "Slack",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "22": {
+  "app": "Twilio",
+  "auth_methods_found": {
+   "basic": false,
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "primary_not_on_page",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key",
+    "basic",
+    "other"
+   ],
+   "agent_auth": [
+    "basic",
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_v_Pz_NopoGKV",
+   "vendor_domain": "twilio.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://twilio.com/docs/iam/oauth-apps/org-oauth-apps"
+  }
+ },
+ "23": {
+  "app": "Zoho Cliq",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "24": {
+  "app": "Lark (Larksuite)",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "25": {
+  "app": "Pumble",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "oauth2",
+    "api_key"
+   ],
+   "query_log_id": "log_vEvU9Llo_sIm",
+   "vendor_domain": "github.io",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://cake-com.github.io/pumble-node-sdk/authorization.html"
+  }
+ },
+ "26": {
+  "app": "Discord",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "not_stated"
+ },
+ "27": {
+  "app": "Telegram",
+  "auth_methods_found": {
+   "api_key": false
+  },
+  "auth": "primary_not_on_page",
+  "access": "supported"
+ },
+ "28": {
+  "app": "WhatsApp Business",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "29": {
+  "app": "Aircall",
+  "auth_methods_found": {
+   "basic": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "30": {
+  "app": "Vonage",
+  "auth_methods_found": {
+   "basic": true,
+   "jwt_service_account": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "31": {
+  "app": "Google Ads",
+  "auth_methods_found": {
+   "oauth2": true,
+   "jwt_service_account": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "32": {
+  "app": "Meta Ads",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "33": {
+  "app": "LinkedIn Ads",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported"
+ },
+ "34": {
+  "app": "GoHighLevel",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "unreachable",
+  "mcp": "supported"
+ },
+ "35": {
+  "app": "Mailchimp",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "not_stated"
+ },
+ "36": {
+  "app": "Klaviyo",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "37": {
+  "app": "systeme.io",
+  "auth_methods_found": {
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "38": {
+  "app": "Pinterest",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "39": {
+  "app": "Threads (Meta)",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported"
+ },
+ "40": {
+  "app": "SendGrid",
+  "auth_methods_found": {
+   "api_key": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported"
+ },
+ "41": {
+  "app": "Shopify",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "42": {
+  "app": "WooCommerce",
+  "auth_methods_found": {
+   "api_key": true,
+   "basic": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "43": {
+  "app": "BigCommerce",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "44": {
+  "app": "Salesforce Commerce Cloud",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "45": {
+  "app": "Magento (Adobe Commerce)",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "not_stated"
+ },
+ "46": {
+  "app": "Squarespace",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "47": {
+  "app": "Ecwid",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported"
+ },
+ "48": {
+  "app": "Gumroad",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "49": {
+  "app": "Amazon Selling Partner",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "50": {
+  "app": "fanbasis",
+  "auth_methods_found": {
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "not_stated"
+ },
+ "51": {
+  "app": "DataForSEO",
+  "auth_methods_found": {
+   "basic": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "basic"
+   ],
+   "agent_auth": [
+    "basic",
+    "oauth2"
+   ],
+   "query_log_id": "log_4TqcvjLhnG8O",
+   "vendor_domain": "dataforseo.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth"
+  }
+ },
+ "52": {
+  "app": "SE Ranking",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "53": {
+  "app": "Ahrefs",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "54": {
+  "app": "MrScraper",
+  "auth_methods_found": {
+   "api_key": false,
+   "oauth2": false
+  },
+  "auth": "primary_not_on_page",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_vK716ybzO2xQ",
+   "vendor_domain": "mrscraper.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://mrscraper.com/blog/ai-agent-api-authentication"
+  }
+ },
+ "55": {
+  "app": "Apify",
+  "auth_methods_found": {
+   "api_key": false,
+   "oauth2": false
+  },
+  "auth": "primary_not_on_page",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_gNf-HfMCZ-Qx",
+   "vendor_domain": "apify.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://docs.apify.com/account/settings"
+  }
+ },
+ "56": {
+  "app": "Firecrawl",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_uATVfPOcwFpG",
+   "vendor_domain": "firecrawl.dev",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://docs.firecrawl.dev/oauth"
+  }
+ },
+ "57": {
+  "app": "Bright Data",
+  "auth_methods_found": {
+   "api_key": true,
+   "bearer_token": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+   ],
+   "query_log_id": "log_C1t-X4pPx5DK",
+   "vendor_domain": "brightdata.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://docs.brightdata.com/products/mcp-server/remote/oauth"
+  }
+ },
+ "58": {
+  "app": "Sherlock",
+  "auth_methods_found": {},
+  "auth": "primary_not_on_page",
+  "access": "supported"
+ },
+ "59": {
+  "app": "Waterfall.io",
+  "auth_methods_found": {
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "supported"
+ },
+ "60": {
+  "app": "Clay",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_WezjiAYrrWfY",
+   "vendor_domain": "clay.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://university.clay.com/docs/connect-to-clay-mcp"
+  }
+ },
+ "61": {
+  "app": "GitHub",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true,
+   "jwt_service_account": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "62": {
+  "app": "Vercel",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "63": {
+  "app": "Netlify",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "64": {
+  "app": "Cloudflare",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "oauth2",
+    "bearer_token",
+    "api_key"
+   ],
+   "query_log_id": "log_nADb5awjrsIj",
+   "vendor_domain": "cloudflare.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://developers.cloudflare.com/fundamentals/oauth/create-an-oauth-client"
+  }
+ },
+ "65": {
+  "app": "Supabase",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "66": {
+  "app": "Neo4j",
+  "auth_methods_found": {
+   "oauth2": true,
+   "basic": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "67": {
+  "app": "Snowflake",
+  "auth_methods_found": {
+   "oauth2": true,
+   "jwt_service_account": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "68": {
+  "app": "MongoDB Atlas",
+  "auth_methods_found": {
+   "oauth2": true,
+   "basic": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "other"
+   ],
+   "agent_auth": [
+    "oauth2",
+    "basic"
+   ],
+   "query_log_id": "log_uG7dYZGk9Mh2",
+   "vendor_domain": "mongodb.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://mongodb.com/docs/atlas/app-connections/partner-integration-guide"
+  }
+ },
+ "69": {
+  "app": "Datadog",
+  "auth_methods_found": {
+   "api_key": true,
+   "bearer_token": false,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "70": {
+  "app": "Sentry",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "71": {
+  "app": "Notion",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "72": {
+  "app": "Airtable",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "73": {
+  "app": "Linear",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "74": {
+  "app": "Jira",
+  "auth_methods_found": {
+   "oauth2": true,
+   "basic": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "75": {
+  "app": "Asana",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "76": {
+  "app": "Monday.com",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "77": {
+  "app": "ClickUp",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "78": {
+  "app": "Coda",
+  "auth_methods_found": {
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "79": {
+  "app": "Smartsheet",
+  "auth_methods_found": {
+   "oauth2": true,
+   "api_key": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "80": {
+  "app": "Harvest",
+  "auth_methods_found": {
+   "oauth2": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "81": {
+  "app": "Stripe",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "82": {
+  "app": "Plaid",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_njnw_ceptmFE",
+   "vendor_domain": "plaid.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://plaid.com/plaid-exchange/docs/authentication"
+  }
+ },
+ "83": {
+  "app": "Binance",
+  "auth_methods_found": {
+   "api_key": true,
+   "signature_hmac": false,
+   "oauth2": true
+  },
+  "auth": "primary_not_on_page",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "84": {
+  "app": "Paygent Connect",
+  "auth_methods_found": {
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "not_stated"
+ },
+ "85": {
+  "app": "iPayX",
+  "auth_methods_found": {
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "86": {
+  "app": "QuickBooks",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "87": {
+  "app": "Xero",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "88": {
+  "app": "Brex",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "89": {
+  "app": "Ramp",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "90": {
+  "app": "PitchBook",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_2iJwQYEtfxaX",
+   "vendor_domain": "pitchbook.com",
+   "oauth_on_vendor_docs": false,
+   "evidence": null
+  }
+ },
+ "91": {
+  "app": "NotebookLM",
+  "auth_methods_found": {
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "92": {
+  "app": "Otter AI",
+  "auth_methods_found": {
+   "api_key": true,
+   "bearer_token": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "93": {
+  "app": "Fathom",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "not_stated",
+  "mcp": "supported"
+ },
+ "94": {
+  "app": "Consensus",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_CL5GrmjuGIah",
+   "vendor_domain": "consensus.app",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://docs.consensus.app/enterprise/connection-reference"
+  }
+ },
+ "95": {
+  "app": "Reducto",
+  "auth_methods_found": {
+   "api_key": false,
+   "bearer_token": false
+  },
+  "auth": "primary_not_on_page",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "96": {
+  "app": "Devin",
+  "auth_methods_found": {
+   "api_key": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "97": {
+  "app": "higgsfield",
+  "auth_methods_found": {
+   "api_key": true,
+   "oauth2": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "api_key",
+    "oauth2"
+   ],
+   "query_log_id": "log_YWFilJaOgeh9",
+   "vendor_domain": "higgsfield.ai",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://higgsfield.ai/blog/higgsfield-mcp-moves-to-cimd"
+  }
+ },
+ "98": {
+  "app": "Mermaid CLI",
+  "auth_methods_found": {},
+  "auth": "primary_not_on_page",
+  "access": "supported"
+ },
+ "99": {
+  "app": "YouTube Transcript",
+  "auth_methods_found": {
+   "api_key": true,
+   "bearer_token": true
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported"
+ },
+ "100": {
+  "app": "Grain",
+  "auth_methods_found": {
+   "bearer_token": true,
+   "oauth2": true,
+   "api_key": false
+  },
+  "auth": "supported",
+  "access": "supported",
+  "mcp": "supported",
+  "oauth_dispute": {
+   "composio_auth": [
+    "api_key"
+   ],
+   "agent_auth": [
+    "bearer_token",
+    "oauth2",
+    "api_key"
+   ],
+   "query_log_id": "log_nlIE6oF6_1Er",
+   "vendor_domain": "grain.com",
+   "oauth_on_vendor_docs": true,
+   "evidence": "https://developers.grain.com/authentication.html"
+  }
+ }
+}

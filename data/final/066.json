@@ -1,0 +1,37 @@
+{
+ "id": 66,
+ "app": "Neo4j",
+ "category": "Graph database",
+ "one_liner": "Graph database; Aura cloud service offers a management API and Query API.",
+ "auth_methods": [
+  "oauth2",
+  "basic"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Aura Free tier can create Aura API client credentials (OAuth2 client-credentials); no card needed for API credentials.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://github.com/neo4j/mcp",
+ "verdict": "ready_with_caveats",
+ "blocker": "narrow_api",
+ "blocker_note": "Aura API manages instances only; graph data goes through each instance's Query API/drivers.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://neo4j.com/docs/aura/api/authentication",
+  "access": "https://neo4j.com/docs/aura/api/authentication/",
+  "surface": "https://neo4j.com/docs/query-api/current/query",
+  "mcp": "https://github.com/neo4j/mcp"
+ },
+ "verified": true,
+ "adjudication": "v1 right, verifier wrong: docs state 'All tiers can create Aura API credentials'; verifier changed it to paid_plan_required."
+}

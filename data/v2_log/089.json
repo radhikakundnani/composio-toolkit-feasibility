@@ -1,0 +1,21 @@
+{
+ "id": 89,
+ "app": "Ramp",
+ "changes": [
+  {
+   "field": "access_notes",
+   "from": "Admin on a Ramp account creates developer app under Company > Developer; API agreement says access is subject to Ramp review.",
+   "to": "Admin on a Ramp customer account creates developer app under Company > Developer; non-customers can submit a sandbox request form; API agreement says access is subject to Ramp review. Custom MCP clients may need Ramp approval.",
+   "why": "added sandbox form and MCP-client approval caveat",
+   "evidence": "https://docs.ramp.com/developer-api/v1/sandbox-access"
+  }
+ ],
+ "confirmed": [
+  "mcp official",
+  "access approval_required",
+  "auth_primary oauth2",
+  "verdict",
+  "blocker"
+ ],
+ "searches": 3
+}

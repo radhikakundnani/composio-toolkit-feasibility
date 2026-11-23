@@ -1,0 +1,37 @@
+{
+ "id": 67,
+ "app": "Snowflake",
+ "category": "Cloud data warehouse",
+ "one_liner": "Cloud data platform for warehousing, analytics, and AI workloads.",
+ "auth_methods": [
+  "oauth2",
+  "jwt_service_account"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_trial",
+ "access_notes": "Needs a Snowflake account; official self-service 30-day trial with $400 credits at signup.snowflake.com. OAuth security integration or key-pair JWT set up per account by an admin.",
+ "api_types": [
+  "rest",
+  "sdk_only"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Snowflake-managed MCP server (CREATE MCP SERVER)",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Per-account admin setup of OAuth security integration or key pair; no central app registration.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+  "access": "https://signup.snowflake.com",
+  "surface": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/reference",
+  "mcp": "https://docs.snowflake.com/en/sql-reference/sql/create-mcp-server"
+ },
+ "verified": true
+}

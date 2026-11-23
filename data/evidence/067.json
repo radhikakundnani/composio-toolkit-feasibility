@@ -1,0 +1,142 @@
+{
+ "id": 67,
+ "app": "Snowflake",
+ "hint": "docs.snowflake.com",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "Snowflake API authentication OAuth API key access token developer docs docs.snowflake.com",
+   "log_id": "log_3uBvi6O3FWGJ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+     "title": "Authenticating Snowflake REST APIs with Snowflake",
+     "snippet": "This topic describes how to authenticate to the server when using the Snowflake REST APIs.\nWhen you send a request, the request must include authentication information using either of the following:\n- Using key pair authentication\n- Using OAuth\n- Using a programmatic access token (PAT)\n- Using workload identity federation\n## Using key pair authentication\u00b6\nWhen using key pair authentication, you need to complete the following tasks:\n1. Set up key pair authentication\n2. Generate a JWT token\n### Set up key pair authentication\u00b6\nTo use key pair authentication, follow these steps:\n1. Set up key pair authentication.\nAs part of this process, you must:\nFor instructions on how to generate the key pair and assign a key to a user, see [Key-pair authentication and key-pair rotation](https://docs.snowflake.com/user-guide/key-pair-auth).\n1. Generate a public-private key pair. The generated private key should be in a file (e.g. named `rsa_key.p8`).\n2. Assign the public key to your Snowflake user. After you assign the key to the user, run the [DESCRIBE USER](https://docs.snowflake.com/sql-reference/sql/desc-user) command. In the output, the `RSA_PUBLIC_KEY_FP` property should be set to the fingerpr"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide/oauth-custom",
+     "title": "Configure Snowflake OAuth for custom clients",
+     "snippet": "The following high-level steps are required to configure OAuth for custom clients:\n1. Register your client with Snowflake. To register your client, create an integration. An integration is a Snowflake object that provides an interface between Snowflake and third-party services, such as a client that supports OAuth.\nThe registration process defines a client ID and client secrets.\n2. Configure calls to the Snowflake OAuth endpoints to request authorization codes from the Snowflake authorization server and to request and refresh access tokens.\nThe optional \u201cscope\u201d parameters in the initial authorization request limit the role permitted by the access token and can additionally be used to configure the refresh token behavior. Clients can request the `session:role-any` scope when they need in-session role switching. Activation of secondary roles ([USE SECONDARY ROLES](https://docs.snowflake.com/sql-reference/sql/use-secondary-roles)) is controlled separately by the OAUTH_USE_SECONDARY_ROLES parameter.\n## Create a Snowflake OAuth integration\u00b6\nCreate a Snowflake OAuth integration using the [CREATE SECURITY INTEGRATION](https://docs.snowflake.com/sql-reference/sql/create-security-integratio"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide/oauth-azure",
+     "title": "Configure Microsoft Entra ID for External OAuth",
+     "snippet": "This topic describes how to configure Snowflake as an OAuth Resource and Microsoft Entra ID as an External OAuth Authorization Server to facilitate secure, programmatic access to Snowflake data.\n\nSteps 1-3 are derived from the Microsoft Entra ID documentation on OAuth 2.0 and authentication. For more information on how Microsoft defines its terms, its user interface, and options relating to OAuth 2.0 and authentication consult the following Microsoft Entra ID guides:\n- [Microsoft identity platform (v2.0) overview](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-overview)\n- [Authentication protocol (and related topics)](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-app-types)\n- [Application configuration (and related topics)](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals)\n- [How-to guides for authentication & application configuration (and related topics)](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-enterprise-app-role-management)\n### Determine the OAuth flow in Microsoft Entra ID\u00b6\nMicrosoft Entra ID supports two different OAuth flows in which an OAuth Cl"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-connect",
+     "title": "Connecting to Snowflake with the Python Connector",
+     "snippet": "If you copy data from your own Amazon S3 bucket, then you need the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.\n```\nimport os\nAWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')\nAWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')\n```\nNote\nIf your data is stored in a Microsoft Azure container, provide the credentials directly in the COPY statement.\nAfter reading the connection information, connect using either the default authenticator or federated authentication (if enabled).\n\n## Connecting using the default authenticator\u00b6\nConnect to Snowflake using the login parameters:\n```\nconn = snowflake.connector.connect(\nuser=USER,\npassword=PASSWORD,\naccount=ACCOUNT,\nwarehouse=WAREHOUSE,\ndatabase=DATABASE,\nschema=SCHEMA\n)\n```\nYou might need to extend this with other information available in the [snowflake.connector.connect](https://docs.snowflake.com/developer-guide/python-connector/python-connector-api#label-snowflake-connector-methods-connect) method.\n\n## Connecting with OAuth\u00b6\nTo connect using OAuth, the connection string must include the `authenticator` parameter set to `oauth` and the `token` parameter set to the `oauth_access_token`. For more information, see [Clients, drivers, an"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/sql-reference/sql/create-api-integration",
+     "title": "CREATE API INTEGRATION | Snowflake Documentation",
+     "snippet": "Connectors](https://docs.snowflake.com/user-guide/snowflake-cortex/cortex-agents-mcp-connectors) to expose third-party tools to a Cortex Agent.\n> - The type of service (such as when a cloud platform provider offers more than one type of proxy service).\n> - The identifier and access credentials for the external service that has sufficient privileges to use the service. For example, on AWS, the role\u2019s ARN (Amazon resource name) serves as the identifier and access credentials.\n>\n> When this user is granted appropriate privileges, Snowflake can use this user to access resources. For example, this might be an instance of the cloud platform\u2019s native HTTPS proxy service, for example, an instance of an Amazon API Gateway.\n\n```\nCREATE [ OR REPLACE ] API INTEGRATION [ IF NOT EXISTS ] <integration_name>\nAPI_PROVIDER = { aws_api_gateway | aws_private_api_gateway | aws_gov_api_gateway | aws_gov_private_api_gateway }\nAPI_AWS_ROLE_ARN = '<iam_role>'\n[ API_KEY = '<api_key>' ]\nAPI_ALLOWED_PREFIXES = ('<...>')\nENABLED = { TRUE | FALSE }\n[ COMMENT = '<string_literal>' ]\n;\n```\n\n- **`API_KEY = api_key`** The [API key](https://docs.snowflake.com/sql-reference/external-functions-security#label-external-f"
+    }
+   ]
+  },
+  "access": {
+   "query": "Snowflake docs.snowflake.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_6GHLVGq1-YeY",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.snowflake.com/en/collaboration/guidelines-reqs-for-listing-apps",
+     "title": "Guidelines and requirements for listing Apps on Snowflake Marketplace",
+     "snippet": "**Connected Applications**\nConnected Applications are external SaaS applications that connect to a consumer\u2019s Snowflake account to read or ingest data. Partners must meet the requirements to publish in the Connected Applications section below. For background, see [How Connected Applications Work](https://www.snowflake.com/en/blog/powered-by-snowflake-how-connected-applications-work/) and [Connected Applications 101](https://www.snowflake.com/resource/connected-applications-101-what-they-are-and-how-to-build-them/).\n\nWhen your application package is ready to be published on the Snowflake Marketplace, you must submit it to Snowflake for review and approval. The approval process has five phases:\n| Phase | Description |\n|---|---|\n| 1. Design and develop | Build your app to meet the enforced requirements, keeping core setup, functionality, and authentication on Snowflake. See [About the Native App Framework](https://docs.snowflake.com/developer-guide/native-apps/native-apps-about). |\n| 2. Test your application | [Install and test the app](https://docs.snowflake.com/developer-guide/native-apps/installing-testing-application) from a separate consumer account, across regions and organizati"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide/ecosystem-partner-connect?utm_cta=website-resources-vhol",
+     "title": "Snowflake Partner Connect | Snowflake Documentation",
+     "snippet": "Partner Connect is being migrated to the Snowflake Marketplace. Partner trial accounts that were previously available through Partner Connect are now available to start from the provider\u2019s Marketplace listings. This allows you to start a free trial of a partner\u2019s application directly from a Marketplace listing. For details, see [Trial SaaS applications from listings](/collaboration/consumer-saas-trials).\n\nImportant\nSnowflake neither determines nor dictates the conditions or terms (length, supported features, etc.) for partner trial accounts; these policies are set by each Snowflake partner and vary according to the partner.\nFor details about a specific trial, please contact the partner directly.\n\nPartner Connect is limited to account administrators (i.e. users with the ACCOUNTADMIN role) who have a verified email address in Snowflake:\n- To use Partner Connect, you must switch to the ACCOUNTADMIN role or contact someone in your organization who has the role.\n- To verify your email address:\n- **Snowsight:** In some cases, you automatically receive an email prompting you to **Please Validate Your Email**.\n\nin the lower-left corner, select your name \u00bb **Settings**.\n3. In **My Profile**"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/collaboration/provider-becoming",
+     "title": "Use listings as a provider",
+     "snippet": "To offer listings to consumers privately or on the Snowflake Marketplace, you must meet the following requirements:\n- You must use a full Snowflake account, either Capacity or On Demand. Trial and Partner Access accounts are not eligible for Snowflake Marketplace listings. Trial accounts can share data with specified consumers, but not on the Snowflake Marketplace.\n- You must not be using a Reader Account.\n- You must have the ACCOUNTADMIN role or be assigned a role with provider privileges. See Privileges required for working with listings.\n- You must meet the [Legal requirements for providers and consumers of listings](https://docs.snowflake.com/collaboration/collaboration-listings-legal).\n\nYour provider profile must be approved before you can offer paid listings or marketplace listings. For your profile to be approved, Snowflake verifies the following:\n- You have reviewed and accepted the Snowflake Provider and Consumer Terms. Acceptance of the Snowflake Provider and Consumer Terms is not required when creating free private listings, but you must review and accept the [Snowflake Customer-Controlled Data Sharing Functionality Terms](https://www.snowflake.com/legal/data-sharing-ter"
+    },
+    {
+     "url": "https://snowflake.com/wp-content/uploads/2023/08/sm-provider-playbook-extended-ver.pdf",
+     "title": "Snowflake Marketplace Provider Playbook - Detailed/Extended Version",
+     "snippet": "\u201cSnowflake Marketplace\u201d\n\u25cf Paid Listing\n\u25cf Limited Trial Listing (Free Trial + Request)\n\u25cf Free Listing\n\nUpgrade to a Full Snowflake Account\nNote that instead of entering a credit card, you can set up a company level contract. Please ask your Snowflake Partner or Marketplace Business\nDevelopment Partner for more information.\nStep 1: Navigate to Data Sharing > Provider Studio to upgrade your\naccount. Upgrading your account from a trial account to a paid account\nis required in order to create a listing.\nStep 2: Once you click upgrade, you\u2019ll be prompted to add a credit card\nthat will be used for compute and storage costs. The Payment Method\nscreen can also be found under Admin > Billing > Snowflake Billing\n\nSnowflake on-demand accounts are billed monthly in arrears. We (the provider) pay for the\nstorage. You only pay for the compute. How much compute resources (ie. queries) you use is\nreally up to you. Compute usage is billed on a per-second basis, with a minimum of 60 seconds.\nThere is no additional cost. You can cancel at any time. See the Snowflake pricing page for more\ninformation."
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/native-apps/requesting-about",
+     "title": "Create and access objects in a consumer account",
+     "snippet": "- **App specifications:** Allow consumers to control the external endpoints that an app can connect to. To access services outside Snowflake, an app may need to create an external access integration or service integration depending on the type of service. Using automated granting of privileges, the app can create these objects in the consumer account. However, an account admin of the consumer account must approve the app specification that allows the app to perform the external connection.\n\n| App requirement | Automatically granting privileges | Manually granting of privileges |\n|---|---|---|\n| Privileges to create objects | Apps have privileges to create objects, with some exceptions. | Consumers must explicitly grant privileges to the app using Snowsight or SQL. |\n| Access external services | Apps can create network rules and external access integrations. Consumers must approve external access using app specifications. | Consumers must manually create the required network rules and external access integrations and bind the integration using references. |\n| Access external identity providers | Apps can create security integrations for external API Authentication. Consumers must ap"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Snowflake API reference REST GraphQL endpoints documentation docs.snowflake.com",
+   "log_id": "log_dageH3iAXFQQ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/reference/table",
+     "title": "Table | Snowflake Documentation",
+     "snippet": "## List tables\u00b6\nGET/api/v2/databases/{database}/schemas/{schema}/tables\nLists the tables under the database and schema.\n### For more information\nGo to the SQL command page to view more information about arguments, options, privileges requirements, and usage guidelines.\n[View](/sql-reference/sql/show-tables)\n#### Path Parameters\u00b6\n| Parameter | Description |\n|---|---|\n| database | Identifier (i.e. name) for the database to which the resource belongs. You can use the `/api/v2/databases` GET request to get a list of available databases. |\n| schema | Identifier (i.e. name) for the schema to which the resource belongs. You can use the `/api/v2/databases/{database}/schemas` GET request to get a list of available schemas for the specified database. |"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/reference",
+     "title": "Snowflake REST APIs reference | Snowflake Documentation",
+     "snippet": "# Snowflake REST APIs reference\u00b6\nSnowflake REST APIs provides the following APIs:\n- [Account API](/developer-guide/snowflake-rest-api/reference/account.html)\n- [Alert API](/developer-guide/snowflake-rest-api/reference/alert.html)\n- [API Integration API](/developer-guide/snowflake-rest-api/reference/api-integration)\n- [Artifact Repository API](/developer-guide/snowflake-rest-api/reference/artifact-repository.html)\n- [Catalog Integration API](/developer-guide/snowflake-rest-api/reference/catalog-integration.html)"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/getting-started",
+     "title": "Getting started with the Snowflake REST APIs",
+     "snippet": "To submit a request, you can send a `GET`, `POST`, or `PUT` request to the desired endpoint:\n```\nPOST /api/v2/databases/{database}/schemas/{schema}/tasks\n(request body)\n```\nFor example, to submit a request to create a task, you would create a POST request similar to the following:\n```\ndef create_task(task_name, create_mode):\n\"\"\"\nCreate a task given the task name and create mode\n\"\"\"\nheaders = {\n\"Content-Type\": \"application/json\",\n\"Authorization\": \"Bearer \" + generate_JWT_token(),\n\"Accept\": \"application/json\",\n\"User-Agent\": \"myApplicationName/1.0\"\n}\nrequest_body = {\n\"name\": task_name,\n\"warehouse\": \"myWarehouse\",\n\"definition\": \"select 1\"\n}\nrequest_url = \"{}/api/v2/databases/{}/schemas/{}/tasks?createMode={}\".format(SNOWFLAKE_URL, DATABASE_NAME, SCHEMA_NAME, create_mode)\nresponse = requests.post(request_url, json=request_body, headers=headers, timeout=60)\nprint_response(\"POST {}\".format(request_url), response)\n```\n\n## Handle a response\u00b6\nEach of the Snowflake REST APIs endpoints returns a response as JSON, similar to the following:\n```\n{\n[\n{\n\"name\": \"name_example\",\n\"warehouse\": \"test_wh\",\n\"schedule\": {\n\"schedule_type\": \"MINUTES_TYPE\",\n\"minutes\": 10\n},\n\"comment\": \"test_comment\",\n\"config\""
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/reference/database",
+     "title": "Database | Snowflake Documentation",
+     "snippet": "## List databases\u00b6\nGET/api/v2/databases\nLists the accessible databases.\n### For more information\n\n## Create a database\u00b6\nPOST/api/v2/databases\nCreates a database, with modifiers as query parameters. You must provide the full database definition when creating a database.\n### For more information\nGo to the SQL command page to view more information about arguments, options, privileges requirements, and usage guidelines.\n[View](/sql-reference/sql/create-database)\n#### Query Parameters\u00b6\n| Parameter | Description |\n|---|---|\n| createModestring | Parameter allowing support for different modes of resource creation. Possible values include: - errorIfExists: Throws an error if you try to create a resource that already exists. - orReplace: Automatically replaces the existing resource with the current one. - ifNotExists: Creates a new resource when an alter is requested for a non-existent resource. |\n| kindstring | Type of database to create. Currently, Snowflake supports only `transient` and `permanent` (also represented by the empty string). |"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+     "title": "Snowflake REST APIs | Snowflake Documentation",
+     "snippet": "Snowflake REST APIs for resource management provide a set of endpoints that lets users programmatically interact with and control various resources within the Snowflake Data Cloud.\nThe Snowflake REST APIs suite of APIs enables developers to build end-to-end automation and integration with Snowflake resources. These REST APIs are compliant with the [OpenAPI specification](https://spec.openapis.org/oas/v3.1.0). Snowflake REST APIs enable developers and partners to use the language of their choice to build integrations with Snowflake using the openAPI specifications.\nThe Snowflake REST APIs supports the following resources through the corresponding APIs. The APIs support CREATE OR ALTER operations for applicable resources.\n\nFor reference information about the APIs and their endpoints, see [Snowflake REST APIs reference](https://docs.snowflake.com/developer-guide/snowflake-rest-api/reference)."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Snowflake docs.snowflake.com MCP server Model Context Protocol official",
+   "log_id": "log_RRg5v39USuzy",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.snowflake.com/en/sql-reference/sql/create-mcp-server",
+     "title": "CREATE MCP SERVER | Snowflake Documentation",
+     "snippet": "# CREATE MCP SERVER\u00b6\nCreates a new MCP (Model Context Protocol) server or replaces an existing MCP server.\n- **See also:**\n## Syntax\u00b6\n```\nCREATE [ OR REPLACE ] MCP SERVER [ IF NOT EXISTS ] <name>\nFROM SPECIFICATION $$<specification_yaml>$$\n```\n## Parameters\u00b6\n- **`name`** String that specifies the identifier for the MCP server; must be unique for the schema in which the MCP server is created.\nIn addition, the identifier must start with an alphabetic character and cannot contain spaces or special characters unless the entire identifier string is enclosed in double quotes (for example, `\"My object\"`). Identifiers enclosed in double quotes are also case-sensitive.\nFor more information, see [Identifier requirements](https://docs.snowflake.com/sql-reference/identifiers-syntax).\n- **`FROM SPECIFICATION $$specification_yaml$$`** Specifies the YAML specification defining the tools and configuration for the MCP server.\nThe specification must include a `tools` array with one or more tool definitions, a `tool_config` entry, or both. Each tool in `tools` must specify:\nFor `GENERIC` and `CORTEX_AGENT_RUN` tools, you can also specify an optional `annotations` object with MCP tool behavior hints:\n"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp-connectors",
+     "title": "MCP Connectors | Snowflake Documentation",
+     "snippet": "An MCP connector in Snowflake connects Snowflake CoWork and Cortex Agents to a remote Model Context Protocol (MCP) server, letting the agent discover and invoke tools hosted by providers such as Atlassian Jira, Salesforce, or your own custom applications. With MCP connectors, your agents can go beyond answering questions to taking action across enterprise systems, such as creating Jira tickets, updating Salesforce records, or posting to Slack, all within Snowflake\u2019s governed environment.\n### How MCP connectors work\u00b6\nAdmins create an external MCP server object that references an [API integration](https://docs.snowflake.com/sql-reference/sql/create-api-integration), which contains OAuth credentials. Snowflake supports Standard OAuth with credentials (client ID, client secret), as well as Dynamic Client Registration (DCR). You can select from a set of available MCP connectors or build your own custom connector. After the MCP connector is added to the agent, users can authenticate with the third-party service and use the tools directly with Cortex Agents and in Snowflake CoWork.\n### Setup flow\u00b6\nTo create an MCP connector and use it in your Snowflake workflows, complete the following st"
+    },
+    {
+     "url": "https://snowflake.com/en/developers/guides/getting-started-with-snowflake-mcp-server",
+     "title": "Getting Started with Managed Snowflake MCP Server",
+     "snippet": "The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without deploying separate infrastructure. MCP clients discover and invoke tools, and retrieve the data their applications need, through a single standards-based interface built on the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). The server can expose Cortex Analyst, Cortex Search, Cortex Agents, SQL execution, and your own functions and procedures as tools.\n**Top 3 Benefits**\n- **Governed by design:** Enforce the same trusted governance policies, from role-based access to masking, for the MCP server as you do for your data.\n- **Reduced integration:** With the MCP server, integration happens once. Any compatible agent or client can then connect without new development, accelerating adoption and reducing maintenance costs.\n- **Extensible framework:** Give agents secure access to structured and unstructured data out of the box, and refine the tools to improve how agents interact with your data.\n\nA Snowflake-managed MCP server that answers financial services questions over structured and unstructured data, which you can use from the MCP client of your choice.\n### What Yo"
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/native-apps/agents-mcp-servers",
+     "title": "Use Cortex Agents and MCP servers in an app",
+     "snippet": "This topic describes how a Snowflake Native App can create [Cortex Agents](https://docs.snowflake.com/user-guide/snowflake-cortex/cortex-agents) and [Snowflake-managed MCP servers](https://docs.snowflake.com/user-guide/snowflake-cortex/cortex-agents-mcp), and how a provider can register an SPCS service endpoint as an SPCS-hosted MCP server.\n\nA Snowflake Native App can include three kinds of AI objects:\n- **Cortex Agents** Agents that the app creates in its setup script or at runtime. App-created agents appear in Snowflake CoWork and are callable from the REST, Python, and SQL APIs, just like standalone agents.\n- **Snowflake-managed MCP servers** MCP servers that wrap Snowflake-native objects (Cortex Search services, Cortex Analyst semantic views, Cortex Agents, UDFs, and stored procedures) as MCP tools. The app creates these by using [CREATE MCP SERVER](https://docs.snowflake.com/sql-reference/sql/create-mcp-server).\n- **SPCS-hosted MCP servers** MCP servers that register an SPCS service endpoint with the MCP client infrastructure used by Cortex Agents and Snowflake CoWork. They let the app expose arbitrary code (in any language or framework) running in Snowpark Container Services "
+    },
+    {
+     "url": "https://docs.snowflake.com/en/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+     "title": "Snowflake-managed MCP server | Snowflake Documentation",
+     "snippet": "Snowflake supports Model Context Protocol revision `2025-11-25`.\nModel Context Protocol (MCP), is an [open-source standard](https://modelcontextprotocol.io/docs/getting-started/intro) that lets AI agents securely interact with business applications and external data systems, such as databases and content repositories. MCP lets enterprise businesses reduce integration challenges and quickly deliver outcomes from models. Since its launch, MCP has become foundational for agentic applications, providing a consistent and secure mechanism for invoking tools and retrieving data.\nThe Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. You can configure the MCP server to serve Cortex Analyst, Cortex Search, and Cortex Agents as tools, along with custom tools and SQL executions on the standards-based interface. MCP clients discover and invoke these tools, and retrieve data required for the application. With managed MCP servers on Snowflake, you can build scalable enterprise-grade applications while maintaining access and privacy controls. The MCP server on Snowflake provides:\n- **Standardized integratio"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

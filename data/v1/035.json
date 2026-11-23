@@ -1,0 +1,35 @@
+{
+  "id": 35,
+  "app": "Mailchimp",
+  "category": "Email Marketing",
+  "one_liner": "Email marketing platform: audiences, campaigns, automations and reporting.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Free-tier account gives API key; OAuth 2 app registration for multi-tenant access; capabilities vary by plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "Intuit Mailchimp connector; Transactional MCP at https://mandrillapp.com/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+    "access": "https://mailchimp.com/developer/guides/an-introduction-to-rest",
+    "surface": "https://mailchimp.com/developer/marketing/api-concepts/methods-and-parameters",
+    "mcp": "https://eseospace.com/blog/mailchimp-mcp-server"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": 13,
+  "app": "Freshdesk",
+  "category": "Support and Helpdesk",
+  "one_liner": "Freshworks helpdesk for ticketing, contacts and knowledge base.",
+  "auth_methods": [
+    "api_key",
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "paid_plan_required",
+  "access_notes": "API key via Basic auth; API access starts on Growth plan, not on free Sprout plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://support.freshdesk.com/support/solutions/articles/50000014407",
+  "verdict": "ready_with_caveats",
+  "blocker": "paid_plan",
+  "blocker_note": "API access requires paid Growth plan or higher per third-party sources.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developers.freshdesk.com/api",
+    "access": "https://docs.nexla.com/user-guides/connectors/freshdesk_api",
+    "surface": "https://developers.freshdesk.com/api",
+    "mcp": "https://support.freshdesk.com/support/solutions/articles/50000014407"
+  }
+}

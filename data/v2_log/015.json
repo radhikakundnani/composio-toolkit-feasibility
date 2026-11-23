@@ -1,0 +1,46 @@
+{
+  "id": 15,
+  "app": "Pylon",
+  "changes": [
+    {
+      "field": "access",
+      "from": "unknown",
+      "to": "paid_plan_required",
+      "why": "Pylon lists API within paid Professional plan ($89/seat/mo annual contract); no free plan; no self-serve trial found, demo-driven",
+      "evidence": "https://usepylon.com/pylon-facts"
+    },
+    {
+      "field": "access_notes",
+      "from": "Admin users create API tokens in Settings; evidence does not state whether free trial or paid plan is needed.",
+      "to": "Admins create API tokens in Settings > Integrations & dev > API; API is included in paid Professional plan ($89/seat/mo, annual contract); no free plan or self-serve trial found (demo booking).",
+      "why": "",
+      "evidence": "https://usepylon.com/pylon-facts"
+    },
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "paid_plan",
+      "why": "'other' not allowed; closest enum",
+      "evidence": "https://usepylon.com/pylon-facts"
+    },
+    {
+      "field": "blocker_note",
+      "from": "Plan/trial requirement for API access not shown in evidence.",
+      "to": "API requires paid plan on annual contract; no self-serve trial found, likely requires demo/sales contact.",
+      "why": "",
+      "evidence": "https://usepylon.com/pylon-facts"
+    },
+    {
+      "field": "confidence.access",
+      "from": "low",
+      "to": "medium",
+      "why": "vendor facts page lists API under Professional",
+      "evidence": ""
+    }
+  ],
+  "confirmed": [
+    "mcp official mcp.usepylon.com",
+    "auth bearer_token"
+  ],
+  "searches": 5
+}

@@ -1,0 +1,142 @@
+{
+ "id": 10,
+ "app": "DealCloud",
+ "hint": "api.docs.dealcloud.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "DealCloud API authentication OAuth API key access token developer docs api.docs.dealcloud.com",
+   "log_id": "log_tFcXR6HpPibt",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api.docs.dealcloud.com/docs/token",
+     "title": "Requesting an OAuth2 Bearer Token - DealCloud API Docs",
+     "snippet": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests.\n**How the OAuth2 Client Credentials Flow Works:**\n1. The client application sends a POST request to the token endpoint, providing its `client_id`, `apiKey`, and the required `scope(s)`.\n2. The authorization server validates the credentials and scopes.\n3. If valid, the server responds with an `access_token` (bearer token), its type, and expiration time.\n4. The client includes this token in the `Authorization` header for subsequent API requests `Authorization: Bearer {{token}}`.\n5. Tokens expire after 900 seconds (15 minutes) and must be refreshed by repeating the flow.\n**Security Best Practices**\n- Avoid exposing your `apiKey` in client-side code or public repositories.\n- Only request the scopes necessary for your use case to minimize risk of interruptions.\n## Scopes\nWhen generating a token, use one or more scopes listed below, separated by a space. **It is recommended to include only the scopes needed.** If you receive a `403 Forbidden` response, the most likely cause is due to a missing scope or user group permissions.\n| Scope | Descr"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/sdk/intapp-rest-client/configuration/authentication",
+     "title": "Authentication - DealCloud API Docs",
+     "snippet": "| Method | Use Case | Configuration |\n|---|---|---|\n| **OAuth2** | Most REST APIs | `OAuth2Config` |\n| **API Key** | Simple APIs | `api_key` parameter |\n| **Basic Auth** | Legacy systems | `basic_auth` tuple |\n| **JWT** | Token-based | `JWTConfig` |\n| **Entra ID** | Microsoft APIs | `EntraConfig` |\n| **Okta** | Enterprise SSO | `OktaConfig` |\n| **External** | Azure AD, AWS, etc. | `httpx_auth` |\n## OAuth2 Client Credentials\nThe most common authentication method for API integrations.\n```\nfrom intapp_rest_client import RestClient, OAuth2Config\nclient = RestClient(\nbase_url=\"https://api.example.com\",\noauth2_config=OAuth2Config(\ntoken_url=\"https://api.example.com/oauth/token\",\nclient_id=\"your_client_id\",\nclient_secret=\"your_secret\",\nscope=\"data\"  # Optional\n)\n)\n# Tokens are automatically managed\ndata = client.get(\"/api/v4/resources\")\n```\n### OAuth2 Password Grant\nFor APIs that require user credentials:\n```\nfrom intapp_rest_client import OAuth2Config, OAuth2GrantType\nconfig = OAuth2Config(\ntoken_url=\"https://api.example.com/oauth/token\",\nclient_id=\"your_client_id\",\nclient_secret=\"your_secret\",\ngrant_type=OAuth2GrantType.PASSWORD,\nusername=\"user@example.com\",\npassword=\"user_password\"\n)\n`"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/sdk/python-1.X/getting-started/migration",
+     "title": "Migration Guide - DealCloud API Docs",
+     "snippet": "**Prefer [intapp-rest-client](/sdk/intapp-rest-client)** \u2014 the same dependency **dealcloud-sdk 1.x** uses (`RestClient`, OAuth2, retries, logging). That keeps custom REST calls aligned with the SDK. Raw **`httpx`** remains an option for minimal scripts; compare all three below.\n```\nimport requests\n# Custom requests-based code\nsession = requests.Session()\nresponse = session.get(url, headers=headers)\nresponse.raise_for_status()\n```\n```\n# intapp-rest-client: same client with a context manager\nfrom intapp_rest_client import RestClient, OAuth2Config\nsite = \"yoursite.dealcloud.com\"\nwith RestClient(\nbase_url=f\"https://{site}/\",\noauth2_config=OAuth2Config(\ntoken_url=f\"https://{site}/api/rest/v1/oauth/token\",\nclient_id=\"your_client_id\",\nclient_secret=\"your_client_secret\",\nscope=\"data\",\n),\n) as client:\nrows = client.post(\n\"/api/rest/v4/data/entrydata/rows/query\",\njson={\n\"objectApiName\": \"Company\",\n\"query\": \"Status = 'Active'\",\n},\n)\n```\n\n| **HTTP & auth** | REST calls go through **[intapp-rest-client](/sdk/intapp-rest-client)** on **`httpx`** (not `requests`). Authentication is **OAuth2 client credentials**, aligned with the .NET SDK and documented in **[Authentication](/sdk/python-1.X/config"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/docs/publications/getting_started",
+     "title": "Getting Started - DealCloud API Docs",
+     "snippet": "### [Retrieve Token](/docs/token)\nFirst, call the token endpoint to retrieve an OAuth token. Note, the Publication APIs uses the same token as all other APIs. You must provide the scope `publish` when calling the token endpoint to generate a token that is authorized to call the Publication APIs.\n**Request Sample**\n```\nPOST {baseUrl}/api/rest/v1/oauth/token\nContent-Type: application/x-www-form-urlencoded\nscope=publish\n&grant_type=client_credentials\n&client_id=106\n&client_secret=1356GYNU\n```"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/sdk/intapp-rest-client/reference/models",
+     "title": "Configuration Models - DealCloud API Docs",
+     "snippet": "## OAuth2Config\nConfiguration for OAuth2 authentication.\n```\nfrom intapp_rest_client import OAuth2Config, OAuth2GrantType\nconfig = OAuth2Config(\ntoken_url=\"https://api.example.com/oauth/token\",\nclient_id=\"your_client_id\",\nclient_secret=\"your_secret\",\ngrant_type=OAuth2GrantType.CLIENT_CREDENTIALS,  # Default\nscope=\"data\",\ntoken_refresh_margin=30  # Refresh 30s before expiry\n)\n```\n### Fields\n| Field | Type | Default | Description |\n|---|---|---|---|\n| `token_url` | str | (required) | OAuth2 token endpoint URL |\n| `client_id` | str | (required) | OAuth2 client ID |\n| `client_secret` | str | (required) | OAuth2 client secret |\n| `grant_type` | OAuth2GrantType | CLIENT_CREDENTIALS | Grant type |\n| `scope` | str | None | OAuth2 scope |\n| `username` | str | None | Username (for password grant) |\n| `password` | str | None | Password (for password grant) |\n| `auth_url` | str | None | Authorization URL (for auth code grant) |\n| `redirect_uri` | str | None | Redirect URI (for auth code grant) |\n| `token_refresh_margin` | int | 30 | Seconds before expiry to refresh |\n### Grant Types\n```\nfrom intapp_rest_client import OAuth2GrantType\nOAuth2GrantType.CLIENT_CREDENTIALS  # Default, for service-to"
+    }
+   ]
+  },
+  "access": {
+   "query": "DealCloud api.docs.dealcloud.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_mM0tRXJPN9pZ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api.docs.dealcloud.com/docs/apikeys",
+     "title": "Obtaining an API Key - DealCloud API Docs",
+     "snippet": "To enable API access, ensure the intended user is assigned to a user group with the appropriate permissions. Navigate to **Admin > User Management**, select the relevant user group, go to **Capabilities > Site Areas**, and enable \"API\". If you do not see the Admin section, contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance.\n\nOnce user permissions are set, click the **User** icon at the top-right of your DealCloud screen and select **Profile**. Scroll down to the API Key section and click **Enable**. Then click **Copy API Key to Clipboard** to copy your API key for use in integrations or API requests."
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/guides/making_requests_on_behalf_of_users",
+     "title": "Making Requests on Behalf of Users - DealCloud API Docs",
+     "snippet": "The DealCloud API requires user-specific credentials and authentication tokens for access. In most cases, integrations authenticate using a dedicated API service account, and all subsequent API requests are made using that account\u2019s credentials. However, some workflows need to make API calls on behalf of another \u201cprincipal\u201d user instead of the API service user. Common reasons include reflecting the principal user's data permissions, preserving correct audit trails, and performing user-scoped updates without the user's API credentials being actively used in the integration. This can be achieved through user proxying."
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/docs/relintel",
+     "title": "Relationship Intelligence APIs - DealCloud API Docs",
+     "snippet": "The Relationship Intelligence APIs are designed to integrate email and meeting metadata into the relationship scoring and automated contact creation capabilities. These APIs provide create access to the email and meeting datasets that are core to Relationship Intelligence. In addition, these APIs provide read access to the relationship scoring settings and user sync statuses. Clients that use non-supported email software vendors or wish to have full control over the specific data shared to DealCloud\u2019s Relationship Intelligence system can leverage these APIs in place of the standard email integration options.\n\nTo use the Relationship Intelligence APIs, the following conditions must be met:\n1. The \u201cAPI Endpoint\u201d Connection Type must be selected within the primary Exchange Connection settings\n2. Relationship Intelligence must be enabled within the Exchange Connection settings\n3. The User account leveraging the API endpoints must have the \u201cAccess Web Service\u201d and \u201cAccess 4. Relationship Intelligence\u201d capabilities in User Management\n4. User(s) have been enabled for Relationship Intelligence in the Relationship Intelligence settings"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/releases",
+     "title": "DealCloud API Release Notes - DealCloud API Docs",
+     "snippet": "This feature is available as part of the *DealCloud with Celeste* license.\nDealCloud now provides a Model Context Protocol (MCP) server which gives AI agents read access to your DealCloud data. With this access, agents have a secure, consistent platform to retrieve context from DealCloud and answer questions across various workflows. [Read MCP Docs](https://api.docs.dealcloud.com/mcp)"
+    },
+    {
+     "url": "https://trycaddi.com/integrations/dealcloud/api",
+     "title": "DealCloud API: Access, Auth & a No-Code Alternative | Caddi",
+     "snippet": "TypeREST (JSON)\nAuthenticationOAuth 2.0 client credentials (client ID + user API key exchanged for a 15-minute bearer token)\nWho can get accessCustomers only: a user in a group with the 'API' site-area capability (enabled by a DealCloud admin or CSM) turns on an API key in their profile.\n\nOfficial docs: [api.docs.dealcloud.com](https://api.docs.dealcloud.com/). Checked September 2026. Vendors change access terms, so confirm with DealCloud before you build.\n\nDoes DealCloud have an API?\nYes. DealCloud has a REST API, authenticated with OAuth 2.0 client credentials (client ID + user API key exchanged for a 15-minute bearer token). The official documentation is at https://api.docs.dealcloud.com/.\nHow do I get access to the DealCloud API?\nCustomers only: a user in a group with the 'API' site-area capability (enabled by a DealCloud admin or CSM) turns on an API key in their profile."
+    }
+   ]
+  },
+  "surface": {
+   "query": "DealCloud API reference REST GraphQL endpoints documentation api.docs.dealcloud.com",
+   "log_id": "log_6HO00bny8o9U",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api.docs.dealcloud.com/docs/data/rows/get",
+     "title": "Get Data - DealCloud API Docs",
+     "snippet": "# Get Data\n```\nGET {{host}}/api/rest/v4/data/entrydata/rows/{{entryTypeId}}\nAuthorization: Bearer {{token}}\n```\nThe main differences between using this endpoint versus the [Query](/docs/data/rows/query) endpoint is that parameters are included on the URL path with a GET method. When using the query endpoint, the parameters are sent in the body of a POST request. Refer to the Query endpoint for more complex filtering.\nThe URL path has a maximum character limit of 2040 characters.\n## Params\n| Name | Parameter Type | Data Type | Values | Description |\n|---|---|---|---|---|\n| entryTypeId | Path | string/int | `company` or `2011` | Unique identifier of the object or it's name. |\n| query | Query Parameter | string | [Filter Operations](/docs/schema/metadata/filter_operations) | Filter query syntax |\n| fields | Query Parameter | string | `firstName` | Specify a subset of fields. |\n| limit | Query Parameter | int | `1000` | See [Pagination](/docs/pagination) for details |\n| skip | Query Parameter | int | `0` | See [Pagination](/docs/pagination) for details |\n| resolveReferenceUrls | Query Parameter | boolean | `false` | If true, returns URL of entry for reference fields |\n| wrapIntoArrays "
+    },
+    {
+     "url": "https://api.docs.dealcloud.com",
+     "title": "Dealcloud Developer Documentation - DealCloud API Docs",
+     "snippet": "UsersSDKsPythonInstallationAuthenticationUsageSchemaDataLicenseC#InstallationAuthenticationLoggingUsageSchemaDataLicenseLightDealcloud Developer Documentation Quick Start API References\u2192Guides\u2192 SDK Documentation Python\u2192C#\u2192Light\u00a9 2026 Integration Appliance, Inc."
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/docs/data/files",
+     "title": "Files - DealCloud API Docs",
+     "snippet": "```\nGET {{host}}/api/rest/v4/data/entryfiles/{{entryId}}/fields/{{fieldId}}\n```\nReturns binary data, such as images or documents, stored in the system. To retrieve a file, provide the Entry ID and the Field ID in the path of the API request.\n\nWith the exception of the Documents object, binary files themselves are stored within a special system (object) called *Attachments*. Any object can have an *Attachment* field, which is a reference field to the Attachment object under the hood.\n\n**Request**\n```\nPOST {{host}}/api/rest/v4/data/entrydata/get?wrapIntoArrays=true\nContent-Type: application/json\nAuthorization: Bearer {{token}}\n[\n{\n\"entryId\": 2772624,\n\"fieldId\": 2211\n},\n{\n\"entryId\": 2772624,\n\"fieldId\": 2212\n}\n]\n```"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/docs/data/rows/get_view_data",
+     "title": "Get Data Using a View - DealCloud API Docs",
+     "snippet": "# Get Data Using a View\n```\nPOST {{host}}/api/rest/v4/data/rows/view/{{viewId}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\n```\nViews can have filters pre-applied to them when created in the UI. Only filters that are marked as \"supply value later\" allow passing in parameters via the API. These filters and their properties are returned as optionalParameters.\n## Params\n| Name | Parameter Type | Data Type | Values | Description |\n|---|---|---|---|---|\n| viewId | Path | integer | 1 | view Id |\n| limit | Query Parameter | integer | 20 | limits the number of rows returned |\n| skip | Query Parameter | integer | 20 | set the starting range for the returned values |\n| wrapIntoArrays | Query Parameter | boolean | `true` | Improves consistency for multi-value fields |\n| | Body | JSON Array of applied filters | Matches data type of column(s) in filter | Body is not required unless overriding filter values |\n\nBasic Get with no filters\n```\nPOST {{host}}/api/rest/v4/data/rows/view/MyView\nAuthorization: Bearer {{token}}\nContent-Type: application/json\n```"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/sdk/python-1.X/reference/api-reference",
+     "title": "API Reference - DealCloud API Docs",
+     "snippet": "# API Reference\nComplete method reference for the DealCloud Python SDK. The documentation targets **dealcloud-sdk 1.x**; the package is available on [PyPI (opens in a new tab)](https://pypi.org/project/dealcloud-sdk/).\n## Client Properties\n### Read-Only Configuration\n| Property | Type | Description |\n|---|---|---|\n| `site_url` | `str` | DealCloud site URL |\n| `api_url` | `str` | Full API base URL |\n| `auth_scope` | `str` | OAuth2 scope string |\n| `refresh_id_maps` | `bool` | Whether to refresh ID maps on operations |\n| `page_size` | `int` | Default page size |\n| `read_concurrency` | `int` | Read operation parallelism |\n| `delete_page_size` | `int` | Delete batch size |\n### API Endpoint URLs\n| Property | Type | Description |\n|---|---|---|\n| `api_url_v1` | `str` | Base v1 API URL |\n| `schema_url` | `str` | Schema endpoint URL |\n| `data_url` | `str` | Data endpoint URL |\n| `entrydata_url` | `str` | Entry data endpoint URL |\n| `rows_url` | `str` | Rows endpoint URL |\n| `query_url` | `str` | Query endpoint URL |\n| `views_url` | `str` | Views endpoint URL |\n| `cells_url` | `str` | Cells endpoint URL |\n| `history_url` | `str` | History endpoint URL |\n| `files_url` | `str` | Files endpoint"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "DealCloud api.docs.dealcloud.com MCP server Model Context Protocol official",
+   "log_id": "log_CdjiU8fF6_E3",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api.docs.dealcloud.com/mcp/connections",
+     "title": "Connecting AI Clients - DealCloud API Docs",
+     "snippet": "# Connecting AI Clients\nDealCloud MCP can connect with Claude, ChatGPT, Microsoft Copilot Studio, Cursor, and other compatible AI clients. Each connection authenticates via OAuth on behalf of the signed-in user.\n## Client Compatibility\nDealCloud MCP is compatible with most hosted AI clients that support the current MCP spec. Connections authenticate via OAuth 2.0 via pre-registered clients.\n| AI Client | Type | Status |\n|---|---|---|\n| Claude.ai / Claude Desktop | Hosted AI platform | Supported |\n| ChatGPT | Hosted AI platform | Supported |\n| Microsoft Copilot Studio | Hosted AI platform | Supported |\n| Cursor Agents | Hosted AI platform | Supported |\n| Claude Code | Local CLI agent | Not supported |\n| Codex CLI | Local CLI agent | Not supported |\n| Custom / third-party AI clients | \u2014 | Contact your Account Manager |\n## Claude\nBoth claude.ai and Claude Desktop connect through the same Connectors UI and share the same OAuth callback, making them compatible with DealCloud MCP's OAuth flow. On Team and Enterprise plans, only organization Owners can add connectors, and individual users can then connect after the owner has set it up.\n**For org owners / admins**\n### Open Organization Con"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/mcp/getting-started",
+     "title": "Getting Started with DealCloud MCP - DealCloud API Docs",
+     "snippet": "| Requirement | Details |\n|---|---|\n| **Licensing** | *DealCloud with Celeste* license. |\n| **User Permissions** | `Manage MCP Servers` for admins to configure. `MCP Access` for end users to connect. |\n## Default MCP Server\nDealCloud provides a default MCP Server out-of-the-box without any configuration required. It exposes your site's full schema and is the fastest way to get connected. Copy the MCP endpoint URL from **Tools > MCP Servers** and connect it to your AI client. The default endpoint follows this format:\n```\nhttps://[tenant].my.intapp.com/mcp/celeste/DealCloud\n```\n## Custom MCP Servers\nNeed to scope data access by team, workflow, or AI client? Custom MCP Servers let you control exactly what each client can see by pairing a server with a Schema Contract. See [Custom MCP Servers](/mcp/custom-servers) for setup details."
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/mcp/tools",
+     "title": "MCP Tools - DealCloud API Docs",
+     "snippet": "# MCP Tools\nThe DealCloud MCP Server exposes the following set of tools, allowing an AI assistant to explore and retrieve data from your site. These tools allow AI assistants to do things like identify the DealCloud schema, lookup or search for records, compose queries to grab relevant data, and more.\nAll DealCloud MCP tools are currently read-only and do not create, update, or delete data.\n## Tools List\n| Tool Name | Description |\n|---|---|\n| `name_lookup` | Look up a DealCloud record by name |\n| `search` | Search DealCloud records |\n| `entry_details` | Get DealCloud entry details |\n| `get_current_user` | Current user and tenant profile |\n| `search_schema` | Search the DealCloud GraphQL schema |\n| `introspect` | Inspect a DealCloud GraphQL type |\n| `execute_query` | Run a GraphQL query |\n| `read_more` | Retrieves the next page of a truncated tool response |\n| `get_query_instructions` | GraphQL query-composition rules |"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/mcp/custom-servers",
+     "title": "Custom MCP Servers - DealCloud API Docs",
+     "snippet": "# Custom MCP Servers\nThe default DealCloud MCP Server exposes your full site schema \u2014 every object and field \u2014 to any connected AI client. Custom MCP Servers let admins scope that exposure: defining exactly which objects and fields a given AI client can access. This is useful when different teams, workflows, or client applications need different data surfaces.\nEach Custom MCP Server is paired with a **Schema Contract**, which defines the curated subset of objects and fields that server exposes.\n\nA Schema Contract is a named, scoped selection of your DealCloud data model \u2014 the objects and fields you choose to expose, with the naming and structure you define. It's the handshake between DealCloud and the AI client: instead of exposing the full site schema, a contract gives the client a curated, stable view it can reason over accurately.\n### Setting Up a Schema Contract\nSchema Contracts are found under **Tools > Schema Contracts**\nRequires the `Schema Contracts` capability enabled in User Management.\n### Create a New Contract\nClick **New Contract**, give it a name and an optional description, then click **Continue**. Use a name that reflects the integration or AI client it's intended f"
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/mcp",
+     "title": "DealCloud MCP Server - DealCloud API Docs",
+     "snippet": "# DealCloud MCP Server\nThe DealCloud MCP Server helps teams turn their DealCloud data into faster, higher-quality outcomes, from sharper relationship and pipeline insights to stronger diligence and meeting preparation. It gives AI assistants a secure, consistent surface to retrieve context from DealCloud and answer questions across workflows.\n## How It Works\n1. A compatible AI assistant connects to the DealCloud MCP Server.\n2. The AI assistant discovers available tools and capabilities.\n3. The AI assistant calls DealCloud MCP tools to retrieve context and surface relevant data.\n4. Responses are returned in a predictable format, scoped to the requesting user's permission context.\n5. Teams accelerate research and decision-making, reducing manual work and improving business outcomes."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

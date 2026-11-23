@@ -1,0 +1,36 @@
+{
+ "id": 74,
+ "app": "Jira",
+ "category": "Project Management",
+ "one_liner": "Atlassian issue and project tracking with REST APIs and OAuth 2.0 (3LO).",
+ "auth_methods": [
+  "oauth2",
+  "basic"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Create OAuth 2.0 (3LO) app in the Atlassian developer console, or use email plus API token basic auth; Jira Cloud Free plan (up to 10 users, no time limit, no credit card) gives a site to build against.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://developer.atlassian.com/cloud/rovo-mcp (Atlassian Rovo MCP server)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+  "access": "https://atlassian.com/software/jira/guides/more/jira-editions",
+  "surface": "https://developer.atlassian.com/cloud/jira/platform/rest/v2",
+  "mcp": "https://developer.atlassian.com/cloud/rovo-mcp"
+ },
+ "verified": true
+}

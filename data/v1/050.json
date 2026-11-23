@@ -1,0 +1,34 @@
+{
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Ecommerce",
+  "one_liner": "Creator payments and checkout platform with checkout sessions, subscribers and webhooks.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "access": "unknown",
+  "access_notes": "API key from seller dashboard (x-api-key header); official plan/approval requirements not shown in evidence.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "none_found",
+  "mcp_note": "Only Zapier MCP wrapper found, not vendor-maintained",
+  "verdict": "ready_with_caveats",
+  "blocker": "other",
+  "blocker_note": "Evidence for public API mostly from third-party/mirrored docs; access terms unconfirmed.",
+  "identity_issue": "Evidence mixes Fanbasis with unrelated 'Fanbase API' (openstage.live) and mirrored docs titled 'Commas API'; official docs not directly in bundle.",
+  "confidence": {
+    "auth": "medium",
+    "access": "low",
+    "surface": "medium",
+    "mcp": "low"
+  },
+  "evidence": {
+    "auth": "https://demo.embedded.fanbasis.io/docs/checkout-session-secret",
+    "access": "https://demo.embedded.fanbasis.io/docs/getting-started",
+    "surface": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+    "mcp": "http://zapier.com/mcp/fanbasis"
+  }
+}

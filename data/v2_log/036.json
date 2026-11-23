@@ -1,0 +1,13 @@
+{
+  "id": 36,
+  "app": "Klaviyo",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

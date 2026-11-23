@@ -1,0 +1,102 @@
+{
+ "run_date": "23 Nov 2026",
+ "lede": "An agent pipeline built on Composio's SDK researched 100 apps, a second agent tried to disprove every answer, and each answer was then checked against Composio's own toolkit catalog, the vendor's docs and a hand-checked sample. 90 apps can be built as toolkits today. Composio already ships 80. The other 20 split into 10 easy wins and 10 that need outreach or aren't hosted services.",
+ "patterns": [
+  {
+   "title": "90 of 100 are buildable today. The gate is credentials, not the API.",
+   "body": "73 apps hand out credentials for free or on a trial. 48 are ready with no caveats and 42 have one caveat (app review, a paid tier or a narrow API). Only 8 need a partner or sales conversation, and 2 are local CLIs with no hosted API.",
+   "chart": "verdict"
+  },
+  {
+   "title": "Composio already covers 80. The 20 gaps split into build-now, pay-to-test and outreach.",
+   "body": "9 gaps are self-serve and can be built now: Vonage, systeme.io, Reducto, LiveAgent, Binance, SE Ranking, fanbasis, WooCommerce and Magento (Netlify also only has an MCP toolkit today). 3 need a funded test account (iPayX, Squarespace, Ecwid). 6 need partner or sales outreach (DealCloud, Gladly, Salesforce Commerce Cloud, Amazon SP-API, Waterfall.io, Paygent). 2 are local CLIs.",
+   "chart": "coverage"
+  },
+  {
+   "title": "11 existing Composio toolkits are key-only although the vendor offers OAuth.",
+   "body": "Close, Copper, Freshdesk, Plain, Twilio, Pumble, Twenty, Firecrawl, Cloudflare, MongoDB Atlas and Grain all document REST OAuth, yet Composio connects them with API keys. Adding OAuth is a cheap upgrade to multi-tenant UX on toolkits that already exist.",
+   "chart": "oauth"
+  },
+  {
+   "title": "Gating follows the money: ad platforms and fintech are where outreach goes.",
+   "body": "Productivity and Dev/Infra are 19 of 20 self-serve. Ad platforms need app review or developer tokens (Google, Meta, LinkedIn, Pinterest, Threads), and fintech needs KYB or sales (Brex, Ramp, Plaid, PitchBook). Across all 100, the top blockers are app review or partner programs (18) and paid plans (16).",
+   "chart": "access"
+  },
+  {
+   "title": "'Has an MCP' is now normal (86 of 100), and it confuses agents.",
+   "body": "Agents mistook MCP-layer features for API features: OAuth that exists only on a vendor's MCP server (5 apps), docs-search MCPs (Twilio docs, Discord), developer-tooling MCPs (Freshworks, Adobe) and an MCP beta behind an account manager (Aircall). A toolkit has to win on managed auth and coverage, not on the existence of an MCP.",
+   "chart": "mcp"
+  },
+  {
+   "title": "The agent knows when it is guessing. That is what makes this scale to hundreds of apps.",
+   "body": "Answers the first-pass agent marked low-confidence were changed by verification 60% of the time, medium 6% and high 2%. Only 15 of 300 field answers were low-confidence, so a human reviewer only needs to look at about 5% of fields.",
+   "chart": "calibration"
+  }
+ ],
+ "pipeline": [
+  {
+   "k": "1 \u00b7 Gather",
+   "title": "Composio web search",
+   "body": "4 queries per app (auth, access, API surface, MCP) through a Composio session: 400 tool calls, 2,000 results, each cached with its Composio log_id.",
+   "who": "code",
+   "whoLabel": "script + Composio SDK"
+  },
+  {
+   "k": "2 \u00b7 Extract",
+   "title": "Evidence-only agent (v1)",
+   "body": "10 parallel agents fill a fixed schema from the bundles only. Every field needs a cited URL and a confidence level.",
+   "who": "llm",
+   "whoLabel": "LLM agents"
+  },
+  {
+   "k": "3 \u00b7 Rules",
+   "title": "Deterministic checks",
+   "body": "380 cited URLs fetched live, each citation must appear in a Composio result, MCP provenance, unknowns, contradictions.",
+   "who": "code",
+   "whoLabel": "script"
+  },
+  {
+   "k": "4 \u00b7 Verify",
+   "title": "Adversarial agent (v2)",
+   "body": "10 agents re-check all 100 apps with fresh Composio searches, try to disprove each claim and log every change with a source.",
+   "who": "llm",
+   "whoLabel": "LLM agents + Composio"
+  },
+  {
+   "k": "5 \u00b7 Triangulate",
+   "title": "Catalog + docs",
+   "body": "The answer is compared with Composio's own toolkit catalog (1,842 toolkits, via the SDK) and with the cited vendor page, fetched through Composio.",
+   "who": "code",
+   "whoLabel": "script + Composio SDK"
+  },
+  {
+   "k": "6 \u00b7 Adjudicate",
+   "title": "Human in the loop",
+   "body": "Disputes between sources are settled on the vendor's page. A seeded 20-app sample is checked by hand to score each layer.",
+   "who": "human",
+   "whoLabel": "human-in-the-loop"
+  }
+ ],
+ "human": [
+  "Credentials: the first Composio key was read-only and failed with a 403 on session creation; a key with write scope fixed it.",
+  "Rubric judgement: whether a free trial counts as self-serve, and whether a docs-search or developer-tooling MCP counts as 'official'. Both had to be decided once and written into the verifier prompt.",
+  "Ground truth: 20 apps (2 per category, seed 20261123, drawn before any agent output) checked against vendor pages in a browser.",
+  "Dispute adjudication: the verifier made Twilio and Neo4j worse, and Aircall's own docs contradict each other. All three were settled by reading the vendor page.",
+  "OAuth classification: for the 20 apps where the agent and Composio's catalog disagreed about OAuth, each vendor hit was read to tell REST-API OAuth (11) from MCP-server-only OAuth (5), weak or wrong-product hits (3) and no OAuth (1).",
+  "Catalog matching: 15 app names did not match a Composio slug automatically. Each was searched by hand, which caught two traps: mermaid_chart_mcp is Mermaid Chart (not Mermaid CLI), and 'amazon' is a 0-tool stub (not SP-API).",
+  "Long-tail identity: 'Paygent' matches at least 4 products, and Sherlock, fanbasis, higgsfield and YouTube Transcript are name-collision traps. The hint text is the only disambiguator.",
+  "Publishing hygiene: GitHub push protection blocked the first push because scraped vendor docs contained sample Slack, Discord and Twilio tokens. A redaction pass (pipeline/redact.py) removed 35 credential-shaped strings, including some GitHub had not flagged, and the Composio wrapper now redacts before caching anything."
+ ],
+ "defeats": [
+  "Paygent Connect: no source links the 'NMI-powered' Paygent to a specific API, so access stays unknown and the identity is only probable.",
+  "Freshdesk MCP: both agent passes counted Freshworks' developer-tooling MCP as a Freshdesk data MCP. The sample caught it, and it is left visible as a known error.",
+  "Verifier regressions: the second pass broke 2 correct answers (Twilio MCP, Neo4j access), which is why adjudication is a separate layer.",
+  "Rate limits: Keenable's free page-fetch pool ran out during the run, so most evidence is search snippets (1-3k characters of page text) rather than full pages.",
+  "Rule false positive: Apify is flagged by my own third-party MCP host list, because Apify also hosts other people's MCP servers.",
+  "2 cited links still return 404 (Threads MCP README, QuickBooks API surface page).",
+  "Docs keyword check is coarse: 25 cited access pages don't literally state the access level (for example a pricing page rendered by JavaScript), so those claims rest on search snippets."
+ ],
+ "ver_intro": "Every answer passed through up to five independent checks: rule checks, an adversarial agent, Composio's own catalog, the vendor's docs page and, for a seeded sample of 20 apps, a hand check in a browser. Accuracy is scored per field (auth, access, MCP, verdict) on that sample, which was drawn before any agent output existed.",
+ "commands": "git clone https://github.com/radhikakundnani/composio-toolkit-feasibility && cd composio-takehome\npython3 -m venv .venv && .venv/bin/pip install composio python-dotenv\necho 'COMPOSIO_API_KEY=ak_...' > .env        # key needs write scope on sessions\n\n.venv/bin/python pipeline/gather.py           # stage 2: 400 Composio searches -> data/evidence/\n# stage 3: run pipeline/prompts/extract.md with any agent runner -> data/v1/\npython3 pipeline/checks.py v1                 # stage 4a: rules + live link checks\n# stage 4b: run pipeline/prompts/verify.md -> data/v2/ + data/v2_log/\npython3 pipeline/checks.py v2\n.venv/bin/python pipeline/report.py           # applies data/adjudications.json -> data/final\npython3 pipeline/catalog.py                   # cross-check 2: Composio's own catalog (data/composio_catalog.json via composio.toolkits.list)\n.venv/bin/python pipeline/doccheck.py         # cross-check 3: fetch cited vendor pages through Composio, check claims\npython3 pipeline/analyze.py                   # calibration, evidence quality, triangulation, priority\n\n.venv/bin/python pipeline/report.py           # builds site/index.html + site/results.json\npython3 pipeline/score.py v1 && python3 pipeline/score.py v2 && python3 pipeline/score.py final\n\n# one-off research for a new app through the same Composio tools:\n.venv/bin/python pipeline/composio_tools.py search \"<app> API authentication\"",
+ "footer": "Built for the Composio AI Product Ops take-home. Research ran on 23 Nov 2026 through Composio tool-router sessions (KEENABLE_SEARCH_WEB_PUBLIC / KEENABLE_FETCH_URL_PUBLIC), with Claude agents for extraction and verification. Vendor pricing and MCP availability change quickly; every row links to the page it was read from."
+}

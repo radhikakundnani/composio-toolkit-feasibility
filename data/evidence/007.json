@@ -1,0 +1,142 @@
+{
+ "id": 7,
+ "app": "Zoho CRM",
+ "hint": "zoho.com/crm",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "Zoho CRM API authentication OAuth API key access token developer docs zoho.com/crm",
+   "log_id": "log_-NiSI7qetddD",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/access-refresh.html",
+     "title": "Access & Refresh Tokens | Zoho CRM API | V8",
+     "snippet": "OAuth2.0 requests are usually authenticated with an access token, which is passed as bearer token. To use this access token, you need to construct a normal HTTP request and include it in an Authorization header along with the value of Bearer.\n**Note**\n- You must use your domain-specific Zoho accounts URL to generate access and refresh tokens. The following are the various domains and their corresponding accounts URLs.\n- For US: https://accounts.zoho.com\n- For AU: https://accounts.zoho.com.au\n- For EU: https://accounts.zoho.eu\n- For IN: https://accounts.zoho.in\n- For CN: https://accounts.zoho.com.cn\n- For JP: https://accounts.zoho.jp\n- For SA(Saudi Arabia): https://accounts.zoho.sa\n- For CA(Canada): https://accounts.zohocloud.ca\n- If you have more than one organization, then the grant token generated will be **specific to a particular organization**, and the same applies to the access and refresh tokens generated using the grant token.\n#### To generate access and refresh token:\n1. Make a POST request with the following URL. Replace {accounts_URL} with your domain-specific Zoho accounts URL when you make the request.\n```\n{accounts_URL}/oauth/v2/token\n```\n**Note:** For security reason"
+    },
+    {
+     "url": "https://zoho-crm-api.readthedocs.io/en/latest/authentication",
+     "title": "Authentication - Zoho CRM API",
+     "snippet": "Zoho uses an OAuth authentication mechanism with a 60 minute timeout. The first access token must be authorized using a Grant Token, generated manually on the Zoho website and subsequent access tokens expire after 60 minutes and must be refreshed.\n1. Log in to [api-console.zoho.com](https://api-console.zoho.com)\n2. Select \"Self-Client\"\n3. Select your new \"Self-Client\" and generate a new grant token with your [desired scopes](https://www.zoho.com/crm/developer/docs/api/oauth-overview.html#scopes)\n4. Copy that grant token\n```\nfrom zohocrm import ZohoCRMRestClient\nclient_id = '<paste your Zoho client id>'\nclient_secret = '<paste your Zoho client secret>'\nredirect_uri = '<paste your Redirect URL>'\ngrant_token = '<paste your newly created token>'\nzoho_client = ZohoCRMRestClient(client_id, client_secret, redirect_uri)\n#  generate your oauth token\noauth_access_token = zoho_client.generate_access_token(grant_token)\n# returns a ZohoCRMOAuthToken instance:\n'''\nZohoCRMOAuthToken({\n\"access_token\": \"<access_token>\",\n\"refresh_token\": \"<refresh_token>\",\n\"api_domain\": \"https://www.zohoapis.com\",\n\"token_type\": \"Bearer\",\n\"expiry_timestamp\": <expiration timestamp float>\n})\n'''\n# oauth_access_token.re"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+     "title": "OAuth 2.0 Authentication | Zoho CRM API | V8",
+     "snippet": "The Zoho CRM API uses the **OAuth 2.0** protocol for authentication. **OAuth 2.0** is an industry-standard protocol specification that enables third-party applications (clients) to gain delegated access to protected resources in Zoho via an API.\n## Why should we use OAuth 2.0?\n- Clients are not required to support password authentication or store user credentials.\n- Clients gain delegated access, i.e., access only to resources authenticated by the user.\n- Users can revoke the client's delegated access anytime.\n- **OAuth 2.0** access tokens expire after a set time. If the client faces a security breach, user data will be compromised only until the access token is valid.\n\nThe following are some terms you need to know before you start using the Zoho CRM APIs.\n#### Protected resources\nThe Zoho CRM resources, such as Leads, Contacts, Deals, etc.\n#### Resource server\nThe Zoho CRM server that hosts protected resources.\n#### Resource owner\nAny end-user of your account, who can grant access to the protected resources.\n#### Client\nAn application that sends requests to the resource server to access the protected resources on behalf of the end-user.\n#### Client ID\nThe consumer key generated fr"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/client-credentials.html",
+     "title": "Client Credentials | Zoho CRM API | V8",
+     "snippet": "### Generating Access Token\nTo generate an access token using the client credentials flow, make an API call to the following **endpoint** with the mandatory parameters as discussed in the following \"Parameters\" section. The accounts-url is specific to the location (i.e., datacenter) where the client is registered. See all the [server-specific URLs](https://accounts.zoho.com/oauth/serverinfo).\n```\n{accounts-url}/oauth/v2/token?client_id={client_id}&client_secret={client_secret}&grant_type=client_credentials&scope={scope}&soid={soid}\n```\n### Parameters\n- client_idstring, mandatory\nClient ID (consumer key) that you obtained during client registration.\n- client_secretstring, mandatory\nClient secret that you obtained during client registration.\n- grant_typestring, mandatory\nSpecify the value as \"client_credentials\".\n- scopestring, mandatory\nThe corresponding scope for the resource you want to access from the user's account. Multiple scopes can be given in comma separated format. Refer to the [Scopes](https://zoho.com/crm/developer/docs/api/v8/scopes.html) page for more details.\n- soidstring, mandatory\nThis parameter is derived from the unique ServiceOrg or organization or portal ID (zso"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/auth-request.html",
+     "title": "Authorization Request | Zoho CRM API | V8",
+     "snippet": "To use the Zoho CRM APIs, the users must authenticate the application to make API calls on their behalf with an **access token**.\nThe access token, in return, must be obtained from a **grant token** (authorization code). The Zoho CRM APIs use the authorization code grant type to provide access to protected resources.\n**Note**\n### Organization-Specific Grant Token (Authorization Code)\n- The user can choose to grant access to the application **only to a particular organization** (either in the Production, Sandbox, or Developer environment of CRM). Therefore, the access and refresh token generated for a user becomes **organization-specific** in an environment. For instance, the application owner cannot use tokens generated for an organization in the Production environment to make API calls to the organizations in the sandbox or developer accounts.\n- If your web-based application has **more than one organization** in multiple environments (for instance, one in production, and two each in sandbox and developer environments), the user will be allowed to **choose the organization** for which the grant token must be generated.\nOn the contrary, if your application has **only one organizatio"
+    }
+   ]
+  },
+  "access": {
+   "query": "Zoho CRM zoho.com/crm API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_oMb4R8OdPCVr",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+     "title": "Zoho CRM API: Features, Limits & ZoomInfo [July 2026]",
+     "snippet": "**Zoho CRM's** API is a mature REST surface, now on its [eighth major version](https://www.zoho.com/crm/developer/docs/api-directory.html), with [OAuth 2.0 authentication](https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html), a credit-based rate-limit system that scales from a free tier to unlimited daily credits, [five official server-side SDKs](https://www.zoho.com/crm/developer/api.html), a Bulk API for asynchronous high-volume operations, a COQL query language for SQL-style record retrieval, and a Notification API for event-driven integrations.\n\n| **Authentication** | [OAuth 2.0](https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html) (authorization code grant, 1-hour access tokens, unlimited-lifetime refresh tokens) |\n\n| **Rate limits** | [Credit-based daily pool](https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html): 5,000/day (Free) to unlimited (Ultimate); concurrency caps of 5 to 25 simultaneous calls by edition |\n| **Pricing / access** | Included on all plans, including Free (3 users, 5,000 credits/day); no separate API tier |\n\nAPI access starts with any **Zoho CRM** account, including the [permanent free plan](https://www.zoho.com/crm"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/auth-request.html",
+     "title": "Authorization Request | Zoho CRM API | V8",
+     "snippet": "To use the Zoho CRM APIs, the users must authenticate the application to make API calls on their behalf with an **access token**.\nThe access token, in return, must be obtained from a **grant token** (authorization code). The Zoho CRM APIs use the authorization code grant type to provide access to protected resources.\n**Note**\n### Organization-Specific Grant Token (Authorization Code)\n- The user can choose to grant access to the application **only to a particular organization** (either in the Production, Sandbox, or Developer environment of CRM). Therefore, the access and refresh token generated for a user becomes **organization-specific** in an environment. For instance, the application owner cannot use tokens generated for an organization in the Production environment to make API calls to the organizations in the sandbox or developer accounts.\n- If your web-based application has **more than one organization** in multiple environments (for instance, one in production, and two each in sandbox and developer environments), the user will be allowed to **choose the organization** for which the grant token must be generated.\nOn the contrary, if your application has **only one organizatio"
+    },
+    {
+     "url": "https://zoho.com/developer/help/api/api-limits.html",
+     "title": "Zoho Developer API | Developer Help - Zoho CRM",
+     "snippet": "To use the Vertical Solution API, you'll require the ** Authentication Token** from your CRM account. Please make sure that you have the permission to access the API service. If you do not have permission, please contact your CRM administrator.\n## API Limit\nThe API limits for vertical solutions are as given below:\n- Min - **4000** requests/day/organization\n- Max - **25000** requests/day/organization or 500 requests /user license whichever is lower\n#### Important Notes\n- The PST Time zone will be considered.\n- We notify CRM administrators (Users with \"Administrator\" profile) if your organization exceeds the API limit. We also provide API Statistics for better assessment of your integration requirements.\n- To optimize your API usage, get maximum **200 records** with each request and insert, update or delete maximum **100 records** with each request.\n*Example*: If you have purchased 10 user licenses, you are allowed 2500 requests per day. Using each of those 2500 requests, you can update maximum 100 records. **That would be 2500 x 100 i.e. 250,000 records can be updated/inserted/deleted per day**.\n- In case, your application requires more than the upper limit, your additional API requ"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/api-limits.html",
+     "title": "Limits - API | Zoho CRM API | V8",
+     "snippet": "#### Maximum credit limit in a 24-hour window for various editions of Zoho CRM\n| Edition | Allowed Credits | Maximum Credits |\n|---|---|---|\n| Free Edition | 5000 credits | 5000 credits |\n| Standard/Starter Edition | 50,000 credits + (Number of User licenses x 250) + Add-on credits | 100,000 credits |\n| Professional | 50,000 credits + (Number of User licenses x 500) + Add-on credits | 3,000,000 credits |\n| Enterprise/Zoho One | 50,000 credits + (Number of User licenses x 1000) + Add-on credits | 5,000,000 credits |\n| Ultimate/CRM Plus | 50,000 credits + (Number of User licenses x 2000) + Add-on credits | Unlimited |\n\n- The API credit limits for **trial editions** are the same as those of their corresponding **paid editions**. For example, the **Enterprise trial** edition follows the same API limits as the **Enterprise paid** edition. For more information, refer to the [feature-wise allowed limits](https://www.zoho.com/crm/complete-feature-list.html) of Zoho CRM editions.\n\n| Edition | Concurrency Limits for an Org/App |\n|---|---|\n| Free | 5 |\n| Standard/Starter | 10 |\n| Professional | 15 |\n| Enterprise/Zoho One | 20 |\n| Ultimate/CRM Plus | 25 |\n\ntasks](https://www.zoho.com/deluge/he"
+    },
+    {
+     "url": "https://onegtmlab.dev/tool-directory/crm/zoho-crm",
+     "title": "onegtmlab.dev/tool-directory/crm/zoho-crm",
+     "snippet": "Free edition: up to 3 users, 5,000 API credits/day, no webhooks\n\nFree tier Free edition: up to 3 users, 5,000 API credits/day, no webhooks. Signup opens a 15-day trial and requires a mobile number verified by SMS OTP (our trial from an Indian IP, 2026-10-25).\n### Standard\n$20/mo\nbilled monthly\n$14/mo\nbilled annually\nper user; India price \u20b91,300 monthly / \u20b9800 annual per user/month (same price file, INR column)\nAPI includedPlan details\npay-as-you-go extra API credits\n### Professional\n$35/mo\nbilled monthly\n$23/mo\nbilled annually\nper user; webhooks 50,000/day or 100/user licence/day; India price \u20b92,100 / \u20b91,400 per user/month (same price file, INR column)\nAPI included\n### Enterprise\n$50/mo\nbilled monthly\n$40/mo\nbilled annually\nper user; webhooks 500,000/day or 500/user licence/day; India price \u20b93,000 / \u20b92,400 per user/month (same price file, INR column)\nAPI included\n### Ultimate\n$65/mo\nbilled monthly\n$52/mo\nbilled annually\nper user; webhooks 1,000,000/day or 1,000/user/day; India price \u20b93,200 / \u20b92,600 per user/month (same price file, INR column)\nAPI included\n\nZoho CRM uses OAuth. The steps below follow Zoho CRM's own docs.\n1.  Create a Zoho CRM account. API access starts on the Standa"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Zoho CRM API reference REST GraphQL endpoints documentation zoho.com/crm",
+   "log_id": "log_Va5nEL3zA_5p",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/search-records.html",
+     "title": "Search Records | Zoho CRM API | V8",
+     "snippet": "#### Request URL\n{api-domain}/crm/{version}/{module_api_name}/search\n\n#### Endpoints\n- GET /{module_api_name}/search?criteria={{criteria_here}}\n- GET /{module_api_name}/search?email={{email_here}}\n- GET /{module_api_name}/search?phone={{phone_number_here}}\n- GET /{module_api_name}/search?word={{search_word_here}}"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/graphql/graphql-overview.html",
+     "title": "GraphQL - An overview",
+     "snippet": "[GraphQL](https://graphql.org/) is a query language that provides a more flexible and efficient way to access **data** and **metadata** within your Zoho CRM. Unlike REST APIs that return fixed datasets, GraphQL allows you to request specific resources, fields of the resources and relationships of the resources, reducing redundant data and streamlining your development process. A key component of GraphQL is its **schema**, which serves as a contract between the server and client for data exchange. This document serves as your guide to understanding and utilizing GraphQL within our platform, offering clear instructions and code examples to help you get started, including insights into working with the GraphQL schema for optimal data retrieval.\n\nUsing Zoho CRM GraphQL APIs, you can retrieve the metadata and data defined as types Meta and Records respectively, in the root Query type.\n- [**Meta**](/crm/developer/docs/api/graphql/query-metadata.html) : Retrieve metadata from [Modules](/crm/developer/docs/api/graphql/query-metadata.html#modules), [Users](/crm/developer/docs/api/graphql/query-metadata.html#users), [KanbanView](/crm/developer/docs/api/graphql/query-metadata.html#kanbanview)"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/get-records.html?source_from=developer-docs",
+     "title": "Get Records | Zoho CRM API | V8",
+     "snippet": "#### Endpoints\n- GET /{module_api_name}\n- GET /{module_api_name}/{record_id}\n- **{module_api_name}** : API name of the module whose records you want to retrieve\n- **{record_id}** : The unique ID of the record you want to fetch.\n### Request Details\n#### Request URL\n{api-domain}/crm/{version}/{module_api_name}\n**To get specific record:**\n{api-domain}/crm/{version}/{module_api_name}/{record_id}\n##### Supported modules\nLeads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Meetings, Calls, Solutions, Products, Vendors, Price Books, Quotes, Sales Orders, Purchase Orders, Invoices, Appointments, Appointments Rescheduled History, Services and Custom"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html",
+     "title": "List Available APIs | Zoho CRM API | V8",
+     "snippet": "# List of Available APIs\n#### Purpose\nTo retrieve the list of supported APIs in a specific API version, with the option to filter the APIs based on their request methods or OAuth scopes.\n#### Endpoints\n- GET /__apis\n### Request Details\n#### Request URL\n{api-domain}/crm/{version}/__apis\n#### Header\nAuthorization: Zoho-oauthtoken d92d4xxxxxxxxxxxxx15f52\n#### Scope\nZohoCRM.apis.READ\n#### Parameter\n- filtersstring, optional\nThis parameter allows you to filter the supported APIs for the version specified in the URL. You can filter based on three criteria: **Module**, **OAuth scope**, and **Method**. When you do not include this parameter, all supported APIs are displayed for the specified API version, by default.\n\n```\nCopiedcurl \"https://www.zohoapis.com/crm/v8/__apis\"\n-X GET\n-H \"Authorization: Zoho-oauthtoken 1000.8cb99dxxxxxxxxxxxxx9be93.9b8xxxxxxxxxxxxxxxf\"\n```"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/api/graphql/getting-started.html",
+     "title": "Getting Started| Online Help-Zoho CRM",
+     "snippet": "You can send your Zoho CRM GraphQL API query using the below end point.\n### GraphQL URL\n{api-domain}/crm/graphql\nUse the domain specific API url for {api-domain}.\n### Method\nPOST\n### Required Scopes\nZohoCRM.graphql.READ (and) Scope of the corresponding resource\n### Prerequisites\n- Your Zoho CRM's edition must be one of these:\n- **Enterprise**\n- **Zoho One Enterprise**\n- **CRM Plus**\n- **Ultimate**.\n- GraphQL APIs must be enabled for the your profile through the [**Enable GraphQL API**](/crm/developer/docs/api/graphql/enable-graphql-api.html).\n- Familiarize yourself with the GraphQL schema using the **introspection** query.\n\nTo send GraphQL queries using the Postman GraphQL Client, follow these steps:\n- Select **New** > **GraphQL**. Enter the** CRM GraphQL endpoint URL** in the URL field.\n- In the **Authorization** tab, provide necessary authorization.\n- In the Query tab, click on the **use GraphQL Introspection**. You can now use it to view the resources available to you and construct the query. Alternatively, you can also type your query directly in the Query editor.\n- Execute the request by clicking the **Query** button."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Zoho CRM zoho.com/crm MCP server Model Context Protocol official",
+   "log_id": "log_0-m2UXVM6s5S",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+     "title": "Zoho CRM MCP - An Overview | Developer Tools",
+     "snippet": "# Zoho CRM MCP Servers\nConnect your AI tools to Zoho CRM using the Model Context Protocol (MCP) to perform CRM operations using natural language.\n## Overview\nZoho CRM MCP servers connect your AI tools to Zoho CRM using the Model Context Protocol (MCP). They expose CRM capabilities as tools that your AI agent can invoke during a conversation.\nThis allows you to perform CRM operations directly from your AI tool using natural language, without navigating the CRM interface or working with APIs.\nZoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure.\n## How it works\n1. Install an MCP server in your AI tool.\n2. The server registers its capabilities as tools with the AI agent.\n3. Provide instructions in natural language.\n4. The agent maps your request to the appropriate tool and executes the action in Zoho CRM.\nYou do not need to learn API endpoints or write code. The MCP server translates your prompts into CRM operations.\n#### Note\nZoho CRM MCP servers work with any AI tool that supports MCP, including **Cursor**, **Claude Desktop**, **VS Code**, and **Windsurf**.\n## Pre-built MCP Servers\nZoho CRM groups its MCP capabilities int"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/mcp/setup/vscode.html",
+     "title": "Zoho CRM MCP - VS Code Setup Guide | Developer Tools",
+     "snippet": "1. Login to your Zoho CRM and go to **Setup > Developer Hub > MCP for AI Agents**.\n2. Select the required MCP server from the list and click **VS Code** as the AI tool.\n3. Click the **Install MCP Server in VS Code** button.\n\n2. Copy and paste the following into the `.vscode/mcp.json` file:\n{\n\"servers\": {\n\"zoho-crm-data-insights\": {\n\"url\": \"https://zoho-crm-data-insights-60065097786.zohomcp.in/mcp/d17dfe13292e0414a929516bb8f8e797/message\",\n\"type\": \"http\"\n}\n}\n}\n{\n\"servers\": {\n\"zoho-crm-data-operations\": {\n\"url\": \"https://zoho-crm-data-operations-60065097786.zohomcp.in/mcp/fe46ddbc48fec3713c8754cea8ec9ac5/message\",\n\"type\": \"http\"\n}\n}\n}\n{\n\"servers\": {\n\"zoho-crm-module-customisation\": {\n\"url\": \"https://zoho-crm-module-customization-60065097786.zohomcp.in/mcp/8057776f5d548a33b892c533d4278d17/message\",\n\"type\": \"http\"\n}\n}\n}\n{\n\"servers\": {\n\"zoho-crm-automation\": {\n\"url\": \"https://zoho-crm-automation-60065097786.zohomcp.in/mcp/c139be028c224f75a9077e6473a62f3b/message\",\n\"type\": \"http\"\n}\n}\n}\nIf the file already has other servers, merge this into the existing `servers` object.\nThe `type` must be set to `http` for streamable HTTP transport.\n\n4. Click **Start Server** to authenticate your CRM org"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/mcp.html",
+     "title": "MCP for Zoho CRM: AI Agent Servers for Secure CRM Access",
+     "snippet": "# Connect AI agents to your CRM\nDeploy four composable MCP servers that give your AI agent secure, scoped access to your Zoho CRM. Works with any LLM. You stay in complete control.\n\n- Your AI agent finally works directly with Zoho CRM\u2014not just beside it.\n- Pick only the servers your agent needs and nothing more.\n- Your data stays yours; get scoped access with a full audit trail.\n- Use your preferred agent platform (Cursor, Claude Desktop, VS Code, or Windsurf).\n## The bridge your AI was missing\nUntil now, your AI could read a CRM screenshot at best. MCP gives it a live, authenticated connection so it can actually act on your data.\n\n## Four servers. One CRM.\nInfinite possibilities.\nEach server is scoped to a specific job. Connect one or connect all four, your agent handles the orchestration.\n## Read everything.\nRisk nothing.\nA read-only server that lets your agent dig through your CRM data without touching a single record. Ask questions in plain language, get back real pipeline insights, trend analysis, and forecasts.\nPrompt:\nShow me the current status of my pipeline and highlight at-risk deals and leads.\n\n## Create, update, delete.\nAll by prompt.\nFull CRUD access to your CRM record"
+    },
+    {
+     "url": "https://help.zoho.com/portal/en/community/topic/kaizen-265-working-with-zoho-crm-using-zoho-mcp-part-i",
+     "title": "Kaizen 265 - Working with Zoho CRM Using Zoho MCP - Part I",
+     "snippet": "with CRM, there is another way to work with your CRM account : [Zoho MCP](https://www.zoho.com/mcp/).\nThe Skill and MCP play different roles when you work with an AI client. The Skill provides the context and guidance that helps the AI understand a CRM requirement and determine how it should approach the task. MCP provides a standardized way for the AI client to access and invoke the tools that can interact with your Zoho CRM account. In other words, the Skill can help with understanding and planning the task, while MCP makes the relevant capabilities available for the client to act on that task. They can also be used together, depending on what you are trying to accomplish.\n\n**Model Context Protocol (MCP)** is an open protocol that provides a standardized way for applications to interact with Large Language Models (LLMs). In simple terms, MCP allows an AI agent to interact with external applications and services through a defined set of tools.\nInstead of manually performing every operation in an application, you can give an AI agent an instruction in natural language. The agent can understand the context of the request, identify the tools it needs, and use those tools to perform t"
+    },
+    {
+     "url": "https://zoho.com/crm/developer/docs/mcp/setup/claude.html",
+     "title": "Zoho CRM MCP - Claude Setup Guide | Developer Tools",
+     "snippet": "Configure Zoho CRM MCP servers in Claude Desktop using the Connectors interface.\nFollow these steps to set up Zoho CRM MCP servers in Claude Desktop.\n1. Open Claude Desktop and go to **Customize > Connector**.\n2. Click the **Add** icon and select the **Add Custom Connector** button. ![Claude Add MCP Server](https://www.zohowebstatic.com/sites/zweb/images/crm/crm-mcp/claude-add.gif)\n3. Enter a **name** for the MCP server. Then copy and paste the required server URL in the **Remote MCP Server URL** field:\nhttps://zoho-crm-data-insights-60065097786.zohomcp.in/mcp/d17dfe13292e0414a929516bb8f8e797/message\nhttps://zoho-crm-data-operations-60065097786.zohomcp.in/mcp/fe46ddbc48fec3713c8754cea8ec9ac5/message\nhttps://zoho-crm-module-customization-60065097786.zohomcp.in/mcp/8057776f5d548a33b892c533d4278d17/message\nhttps://zoho-crm-automation-60065097786.zohomcp.in/mcp/c139be028c224f75a9077e6473a62f3b/message\n4. Click **Add** and the MCP server will be added to the connectors list. ![Claude Connector List](https://www.zohowebstatic.com/sites/zweb/images/crm/crm-mcp/claude-connector.png)\n5. Select the recently added Zoho CRM MCP server and click **Connect** to authenticate your Zoho CRM organiz"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

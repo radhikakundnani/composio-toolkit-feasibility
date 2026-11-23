@@ -1,0 +1,142 @@
+{
+ "id": 46,
+ "app": "Squarespace",
+ "hint": "developers.squarespace.com",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "Squarespace API authentication OAuth API key access token developer docs developers.squarespace.com",
+   "log_id": "log_elDEY2w_BE-K",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.squarespace.com/oauth",
+     "title": "Squarespace Developer Platform: APIs, Apps, and Docs",
+     "snippet": "Squarespace uses [OAuth 2.0](https://tools.ietf.org/html/rfc6749) to authorize third-party applications to integrate with Squarespace and consume Squarespace APIs.\n## Terms\n| **Client** | Third-party application that needs to make Squarespace API calls. |\n|---|---|\n| **User** | Squarespace customer who wants to integrate their site with a client. |\n| **Confirmation page** | Page created by Squarespace for the user to authorize (**Allow** or **Deny**) client access to their Squarespace account. |\n| **Access token** | Short-term token to make authenticated API requests. |\n| **Refresh token** | Long-term token to obtain new access tokens. |\n## Instructions\n### 1. Register the client and obtain OAuth 2.0 credentials\nBefore a client can make Squarespace API calls, the client must be registered with Squarespace as an OAuth client. Start the Oauth client process [here](https://account.squarespace.com/developer-apps).\n- Client name\n- Icon image (.png or .svg format, max size 200kb, 1:1 ratio)\n- Redirect URI(s) - For example, `https://thirdpartyapp.com/oauth/connect`\n- Initiate URL* - For example, `https://thirdpartyapp.com/oauth/initiate`.\n- Link to Client's Terms and Conditions\n- Link to "
+    },
+    {
+     "url": "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+     "title": "Authentication and permissions \u2014 Squarespace Developers",
+     "snippet": "To keep Squarespace merchant site data private and secure, every request to Commerce APIs must be authenticated and have *minimum* permissions. However, authenticated requests automatically have access to public site data, such as site name, identifier, language, currency, time zone, and location.\nRead the permission levels for each Commerce API below. Then, depending on your development needs, authenticate requests by using an API key or OAuth access token.\n> *Remember: Requests only have access to data for the website that owns the API key or OAuth access token.*\n\n## Authenticating requests\nDepending on your development needs, you can use a generated API key or start the OAuth process with Squarespace to become a registered OAuth client. A Squarespace merchant site can use both API keys and OAuth for data access, but Squarespace Extensions are required to use OAuth.\n### Custom applications\nWith [Squarespace's Commerce Advanced](https://www.squarespace.com/pricing) plan, you can develop a custom application for a Squarespace merchant site.\nFollow the steps below to generate an API key for a custom application.\n1. Log in to a Squarespace site.\n2. In the left nav, click **Settings**"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/squarespace/refs/heads/main/authentication/squarespace-authentication.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/squarespace/refs/heads/main/authentication/squarespace-authentication.yml",
+     "snippet": "Squarespace Commerce APIs accept two credential types over one wire format. Every request carries\n`Authorization: Bearer <token>`, where the token is either a merchant-generated API key or an\n\n- kind: api-key\nname: Developer API Key\nissuance: >-\nSelf-service in the Squarespace admin: Settings > Advanced > Developer API Keys > GENERATE KEY.\nRequires the Squarespace Advanced (Commerce Advanced) plan.\ntransport: Authorization Bearer header\npermission_model: >-\nPermission level (Read Only / Read and Write) selected per Commerce API at generation time.\nPermissions on an issued key CANNOT be modified \u2014 a new key must be generated.\nexpiry: >-\nKeys never expire as long as the merchant site remains active. There is no documented rotation\nmechanism and no expiry-based forcing function.\nvisibility: Shown once at generation; not retrievable afterwards.\nrestrictions:\n- Not available for the Webhook Subscriptions API (OAuth only).\n- Subject to the stricter 100/hour Create Order limit that OAuth callers are exempt from.\nsource: https://developers.squarespace.com/commerce-apis/authentication-and-permissions\n- kind: oauth-token\nname: OAuth 2.0 access token\nissuance: >-\nAuthorization code grant afte"
+    },
+    {
+     "url": "https://commerce-apis.squarespace.com/commerce-apis/making-requests",
+     "title": "Making requests \u2014 Squarespace Developers",
+     "snippet": "## 1. Generate an API key or start the OAuth process\nIf you don't have an API key or are a registered OAuth client already, read the [Authentication and permissions](/commerce-apis/authentication-and-permissions) guide.\n\n```bash\ncurl \"https://api.squarespace.com/{api-version}/{resource-path}\" \\\n-H \"Authorization: Bearer YOUR_API_KEY_OR_OAUTH_TOKEN\" \\\n-H \"User-Agent: YOUR_CUSTOM_APP_DESCRIPTION\" \\\n// Add a Content-Type header when making requests with a body.\n-H \"Content-Type: application/json\"\n```"
+    },
+    {
+     "url": "https://netalith.com/blogs/store-platforms/squarespace-api-integration",
+     "title": "Squarespace API Integration: API Keys vs OAuth, Webhooks and Rate Limits",
+     "snippet": "A Squarespace API integration connects your own software to a merchant site through the Squarespace Commerce APIs: REST endpoints served over HTTPS from `api.squarespace.com`, JSON only, authenticated with either an API key or an OAuth 2.0 access token. They cover the commerce side of a site (products, orders, inventory, contacts, discounts, transactions) and can push order and contact events to your server by webhook.\n\n| Discounts | Manage discount codes, eligibility and amounts | Read and write are separate scopes |\n| Transactions | Financial transactions for orders and donations | Read only |\n| Webhook Subscriptions | Subscribe your endpoint to site events | OAuth only; API keys are rejected |\n\nThis is the one decision that shapes everything downstream, because it determines whether you can use webhooks, what rate limits apply, and how you store credentials.\n| | API key | OAuth 2.0 |\n|---|---|---|\n| Intended for | A custom application on one merchant site | Commercial apps and Extensions used by many sites |\n| Requirement | The site owner needs the Commerce Advanced plan | Your app registered with Squarespace as an OAuth client |\n| How you get access | Generate a key in the site"
+    }
+   ]
+  },
+  "access": {
+   "query": "Squarespace developers.squarespace.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_r1jut8D9aYxr",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+     "title": "Squarespace Developer Platform: APIs, Apps, and Docs",
+     "snippet": "To keep Squarespace merchant site data private and secure, every request to Commerce APIs must be authenticated and have *minimum* permissions. However, authenticated requests automatically have access to public site data, such as site name, identifier, language, currency, time zone, and location.\n\nDepending on your development needs, you can use a generated API key or start the OAuth process with Squarespace to become a registered OAuth client. A Squarespace merchant site can use both API keys and OAuth for data access, but Squarespace Extensions are required to use OAuth.\n### Custom applications\nWith [Squarespace's Commerce Advanced](https://www.squarespace.com/pricing) plan, you can develop a custom application for a Squarespace merchant site.\n\nSquarespace Extensions allow customers on any plan to optimize and expand their site in a few clicks. If you'd like to develop a new Extension, start the OAuth client process [here](https://account.squarespace.com/developer-apps). Once you've obtained OAuth credentials, you can use our [OAuth 2.0 Guide](https://developers.squarespace.com/oauth) to learn how to authorize your application to integrate with Squarespace and use Squarespace AP"
+    },
+    {
+     "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+     "title": "Squarespace API keys",
+     "snippet": "> The Squarespace API has the following availability. To learn more, visit [Choosing the right Squarespace plan](https://support.squarespace.com/hc/articles/206536797):\n>\n> - **Forms API (for Zapier integration)** is available on Core, Plus, Advanced, Business, Commerce Basic, and Commerce Advanced plans.\n> - **Orders API** is available in the Core, Plus, Advanced, and Commerce Advanced plan.\n> - **Inventory API** is available in the Core, Plus, Advanced, and Commerce Advanced plan.\n> - **Transactions API** is available in the Core, Plus, Advanced, and Commerce Advanced plan.\n\nYour unique API key is a randomized string of characters which permits authenticated access to your Squarespace account.\nTo create a new key:\n1. Open the [Developer tools panel](https://account.squarespace.com/project-picker?client_id=helpcenter&redirect_url=%2Fsettings%2Fdeveloper-tools).\n2. Click **Developer API Keys**.\n3. Click **Generate Key**.\n4. Enter a **Key Name**.\n5. Under **Permissions**, check **Orders**, **Forms**, **Inventory**, or **Transactions**. **Forms** are available in the Business plan or higher. **Orders**, **Inventory**, and **Transactions** are only available in the Commerce Advanced p"
+    },
+    {
+     "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+     "title": "Developer Tools APIs at Squarespace",
+     "snippet": "The following is a list of Squarespace Developer Tools APIs. Squarespace will aim to keep this list up to date. Some of these Developer Tools are available for use by all developers, and some are invite-only. Use of our Developer Tools and participation in any Squarespace developer programs are subject to the [Squarespace Developer Terms](http://squarespace.com/developer-terms).\nEach API contains multiple endpoints. Please see the applicable API documentation (e.g., [Reseller](http://reseller.squarespace.com), [Websites](http://developers.squarespace.com), [Acuity](http://developers.acuityscheduling.com)) for more details. If you have any questions, please [contact us](https://www.squarespace.com/contact).\n- Acuity API (see [here](https://developers.acuityscheduling.com/reference/quick-start) for more information)\n- Contacts API\n- Discounts API\n- Domains Search API\n- Domains Management API\n- Incoming Webhooks API\n- Inventory API\n- Orders API\n- Products API\n- Profiles API\n- Reseller API\n- Scripts API\n- Transactions API\n- UI Component Registrations API\n- Webhook Subscriptions API\n\nThe terms that apply depend on how you use our developer tools:\n- If you\u2019re a developer building with ou"
+    },
+    {
+     "url": "https://squarespace.com/developer-terms",
+     "title": "Developer Terms \u2014 Squarespace",
+     "snippet": "Squarespace offers various tools for Developers, such as Squarespace application programming interfaces (\u201cAPIs\u201d), API credentials, software development kits, source code, scripts, access tokens, programs and other software (collectively, \u201cDeveloper Tools\u201d), together with related developer pages and other documentation covering such Developer Tools (collectively, \u201cDocumentation\u201d). A list of all official Developer Tools APIs is set forth [here](https://support.squarespace.com/hc/articles/41325887099533/).\n\nOverview.** We make our Developer Tools available to Developers in connection with various Squarespace developer programs intended to enable: (a) our Customers who are Developers to use our Services in custom, technical ways; and (b) Developers to integrate our Services with their Third Party Services to facilitate use of those Third Party Services and related functionality by our Customers on or in connection with those Customers\u2019 use of our Services (each, a \u201cDeveloper Program\u201d). Examples of Developer Programs include: (i) [developer mode](https://support.squarespace.com/hc/articles/206545717-Squarespace-Developer-Platform-FAQ) or similar features on our Services where Customers "
+    },
+    {
+     "url": "https://support.squarespace.com/hc/en-us/articles/206545717-Squarespace-Developer-Platform-FAQ",
+     "title": "Squarespace Developer Platform FAQ",
+     "snippet": "> The Developer Platform is available only in [version 7.0](https://support.squarespace.com/hc/articles/115005308187) on the following plans. To learn more, visit [Choosing the right Squarespace plan](https://support.squarespace.com/hc/articles/206536797) or [Legacy website billing plans](https://support.squarespace.com/hc/articles/212743478):\n>\n> - Core\n> - Plus\n> - Advanced\n> - Business (no longer available)\n> - Commerce Basic (no longer available)\n> - Commerce Advanced (no longer available)\n> - Legacy Personal (no longer available)\n> - Website Commerce (no longer available)\n> - Website Professional (no longer available)\n\nAfter enabling developer mode, you can:\n- Create a custom 7.0 site template from scratch\n- Modify an existing 7.0 template\n- Access your template's markup, style sheets, scripts, and template design assets\nYou can\u2019t:\n- Create or modify a custom 7.1 site\n- Access content added via the CMS\n- Add server-side custom code\n- Modify default scripts and styles\n- Modify existing editing tools\n- Customize blocks\n- Customize cover pages\nTo learn more, visit [developers.squarespace.com](http://developers.squarespace.com/).\n\nThe Developer Platform is a [premium feature](http"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Squarespace API reference REST GraphQL endpoints documentation developers.squarespace.com",
+   "log_id": "log_ARRFV_ilWHkC",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.squarespace.com/commerce-apis/products",
+     "title": "Squarespace Developer Platform: APIs, Apps, and Docs",
+     "snippet": "## List products\nGET\nhttps://api.squarespace.com\n/v2/commerce/products\nRetrieves information for products; products can be filtered within a date range and by product type. The response contains product information in a Product, up to 50 Products ordered by their modification date (modifiedOn), and supports dynamic cursors for pagination.\n\n## Get image processing status\nGET\nhttps://api.squarespace.com\n/v2/commerce/products/{productId}/images/{imageId}/status\nRetrieves the processing status for an uploaded product image. A successful request indicates that a ProductImage is processing, ready, or in an error state."
+    },
+    {
+     "url": "https://commerce-apis.squarespace.com/commerce-apis/retrieve-all-profiles",
+     "title": "Retrieve all profiles \u2014 Squarespace Developers",
+     "snippet": "# Retrieve all profiles\n```\nGET https://api.squarespace.com/{api-version}/profiles/?cursor={c}&filter={f}&sortDirection={sd}&sortField={sf}\n```\nRetrieves all profiles; profiles can be filtered and sorted.\nThe response contains up to 50 `Profiles` and supports [dynamic cursors](/commerce-apis/faq) for pagination. Read the [Overview](/commerce-apis/profiles-overview) to learn more about `Profiles`.\n## Parameters\n`{api-version}` string\n**required**\nSee the [Profiles API Overview](/commerce-apis/profiles-overview) page for the current API version.\n\n```bash\ncurl \"https://api.squarespace.com/1.0/profiles?sortField=email&sortDirection=asc&filter=isCustomer,true;hasAccount,true\" \\\n-H \"Authorization: Bearer YOUR_API_KEY_OR_OAUTH_TOKEN\" \\\n-H \"User-Agent: YOUR_CUSTOM_APP_DESCRIPTION\"\n```"
+    },
+    {
+     "url": "https://commerce-apis.squarespace.com/commerce-apis/create-product",
+     "title": "Create a product \u2014 Squarespace Developers",
+     "snippet": "# Create a product\n```\nPOST https://api.squarespace.com/{api-version}/commerce/products\n```\nCreates a product with appropriate subresources based on product type.\n**v2 Support:** The v2 API supports creation of physical, service, and gift card products. Download products cannot be created via v2 API. The v1.0 and v1.1 APIs only support creation of physical products.\n> *Note: Certain aspects of a product, such as images and SEO options, cannot be specified during product creation. See the \"Related endpoints\" section to learn how to add additional information.*\nA successful request creates a `Product` with appropriate subresources based on product type. Read the [Overview](https://commerce-apis.squarespace.com/commerce-apis/products-overview) to learn more about these resources.\n## Parameters\n`{api-version}` string\n**required**\nSee the [Products API Overview](https://commerce-apis.squarespace.com/commerce-apis/products-overview) page for the current API version."
+    },
+    {
+     "url": "https://commerce-apis.squarespace.com/commerce-apis/retrieve-all-products",
+     "title": "Retrieve all products \u2014 Squarespace Developers",
+     "snippet": "# Retrieve all products\n```\nGET https://api.squarespace.com/{api-version}/commerce/products?modifiedAfter={a-datetime}&modifiedBefore={b-datetime}&type={c}&cursor={d}\n```\nRetrieves information for products; products can be filtered within a date range and by product type.\n**v2 Support:** The v2 API supports retrieval of physical, service, gift card, and download products. The v1.1 API only supports retrieval of physical and download products. The v1.0 API only supports retrieval of physical products.\n> *Caution: A request cannot use both a cursor and a date range; only a cursor OR a date range may be used.*\nThe response contains product information in a `Product`, up to 50 `Products` ordered by their modification date (`modifiedOn`), and supports [dynamic cursors](/commerce-apis/faq) for pagination. Read the [Overview](/commerce-apis/products-overview) to learn more about `Products`.\n## Parameters\n`{api-version}` string\n**required**\nSee the [Products API Overview](/commerce-apis/products-overview) page for the current API version.\n---\n`modifiedAfter={a-datetime}` string\n*conditional: required when `modifiedBefore` is passed, cannot be used with `cursor`*\nTime-boxes the request to `"
+    },
+    {
+     "url": "https://commerce-apis.squarespace.com/commerce-apis/retrieve-all-orders",
+     "title": "Retrieve all orders \u2014 Squarespace Developers",
+     "snippet": "# Retrieve all orders\n```\nGET https://api.squarespace.com/{api-version}/commerce/orders?modifiedAfter={a-datetime}&modifiedBefore={b-datetime}&cursor={c}&fulfillmentStatus={status}\n```\nRetrieves information about all orders. Orders can be filtered by Customer ID and date ranges.\nThe response contains order information in an `Order`, up to 50 `Orders` ordered by their modification date (`modifiedOn`), and supports [dynamic cursors](/commerce-apis/faq) for pagination.\n\n```bash\ncurl \"https://api.squarespace.com/1.0/commerce/orders?modifiedAfter=2016-04-10T12:00:00Z&modifiedBefore=2016-04-15T12:30:00Z\" \\\n-H \"Authorization: Bearer YOUR_API_KEY_OR_OAUTH_TOKEN\" \\\n-H \"User-Agent: YOUR_CUSTOM_APP_DESCRIPTION\"\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Squarespace developers.squarespace.com MCP server Model Context Protocol official",
+   "log_id": "log_G6DOQ0_2oubZ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.squarespace.com/mcp/connect-a-client",
+     "title": "Squarespace Developer Platform: APIs, Apps, and Docs",
+     "snippet": "The Squarespace MCP server is a remote server: your client connects to it over HTTPS, and there's nothing to install. In Gemini, Squarespace is already built in. For Claude, ChatGPT, and other clients, you add it with the server URL.\n## Gemini\nSquarespace is built into Gemini as one of its [connected apps](https://support.google.com/gemini/answer/13695044), so there's no server URL to enter.\n1. On [gemini.google.com](https://gemini.google.com), open **Customize** in the sidebar, then **Connectors**.\n2. Find **Squarespace** and click **Add**.\n3. In a chat, type `@Squarespace` or just ask for a domain.\n\n## Server URL\n```\nCodehttps://mcp.squarespace.com/mcp\n```\nUse this URL in Claude, ChatGPT, and any other MCP client. Menu names in each client change between releases, so the steps below may not match your version exactly.\n## Claude\n1. Open **Settings \u2192 Connectors** and choose to add a custom connector.\n2. Enter `https://mcp.squarespace.com/mcp` as the server URL.\n3. To use the Commerce tools, connect and [sign in to Squarespace](https://developers.squarespace.com/mcp/connect-a-client#sign-in-to-squarespace) when prompted.\n4. Start a new chat with the connector turned on.\n## Claude Co"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/squarespace/refs/heads/main/mcp/squarespace-mcp.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/squarespace/refs/heads/main/mcp/squarespace-mcp.yml",
+     "snippet": "description: >-\nSquarespace operates a first-party REMOTE MCP server at https://mcp.squarespace.com/mcp. It\nanswers an unauthenticated JSON-RPC tools/list with HTTP 200 and returns two real tools with full\nJSON Schema inputSchemas. The tool list was captured verbatim to mcp/squarespace-mcp-tools.json on\n2026-08-13. Note what it is and is not: this server exposes the DOMAIN acquisition funnel \u2014 domain\nsearch and brand-name generation \u2014 not the Commerce APIs. None of the 55 published Commerce\noperations (orders, products, inventory, contacts, discounts, transactions, webhooks) are reachable\nthrough it. It is a customer-acquisition surface an agent can call on an end user's behalf, not an\nagent interface to a merchant's store.\ndeployment:\nmode: remote\nendpoint: https://mcp.squarespace.com/mcp\ntransport: streamable-http\nauth: none\nverified: probed\nprobed: '2026-08-13'\nhttp_status: 200\ninstall: null\npackage: null\nnote: >-\nNo first-party stdio package is published \u2014 there is no @squarespace/mcp on npm and no install\ncommand in Squarespace's docs. The only shipped surface is the hosted URL, which an MCP client\ncan POST to right now with no credential.\nserver:\nurl: https://mcp.squarespace."
+    },
+    {
+     "url": "https://github.com/bj-beer/squarespace-mcp-2026-complete/blob/main/README.md",
+     "title": "squarespace-mcp-2026-complete/README.md at main \u00b7 bj-beer/squarespace-mcp-2026-complete",
+     "snippet": "# Squarespace MCP Server\nA comprehensive Model Context Protocol (MCP) server for Squarespace, providing complete integration with the Squarespace platform for website management, e-commerce operations, content creation, and analytics.\n## Overview\nThis MCP server enables AI assistants to interact with Squarespace sites through a rich set of **67 tools** covering all major platform features. Built with TypeScript and the official MCP SDK, it provides type-safe, reliable access to Squarespace's v1.0 API with OAuth2 authentication, automatic token refresh, pagination, error handling, and retry logic.\n\n## Installation\n```\nnpm install @mcpengine/squarespace-server\n```\nOr install from source:\n```\ncd servers/squarespace\nnpm install\nnpm run build\n```\n## Configuration\n### Environment Variables\nThe server requires at minimum a Squarespace access token:\n```\nexport SQUARESPACE_ACCESS_TOKEN=\"your_access_token_here\"\n```\nFor long-term access with automatic token refresh:\n```\nexport SQUARESPACE_ACCESS_TOKEN=\"your_access_token\"\nexport SQUARESPACE_REFRESH_TOKEN=\"your_refresh_token\"\nexport SQUARESPACE_CLIENT_ID=\"your_client_id\"\nexport SQUARESPACE_CLIENT_SECRET=\"your_client_secret\"\n```\n### MCP Configur"
+    },
+    {
+     "url": "https://squarelocator.com/blogs/insights/squarespace-circle-day-2026",
+     "title": "Squarespace Circle Day 2026: Every Announcement, Schedule and Speakers",
+     "snippet": "locking, a React-based custom code module with its own vibe coding agent, autosaving drafts, SMS campaigns, a Squarespace MCP server for AI assistants, new commerce APIs and\n\n| Squarespace MCP server | Domain tools live; commerce tools next | Agencies, power users |\n\nSquarespace announced an MCP server, which lets AI assistants call Squarespace tools mid-conversation. MCP (Model Context Protocol) is the open standard most AI assistants now use to connect to outside services. According to Squarespace's developer documentation, today it offers two domain tools and three ready-made prompts:\n- **domains_generate_names** suggests brandable business names and domains from a plain description, such as \"a ceramics studio in Portland focused on classes\".\n- **domains_search** checks real-time availability and pricing across supported domain endings, with a checkout link for each available result.\n- The prompts **find_domain**, **check_domain** and **purchase_domain** package those tools into common tasks.\nIt is a remote server at mcp.squarespace.com/mcp, so there is nothing to install. It needs no API key, no OAuth flow and no Squarespace account, and it is read-only: nothing is bought until"
+    },
+    {
+     "url": "https://support.squarespace.com/hc/en-us/articles/49678454269197-Connect-Squarespace-to-an-AI-assistant",
+     "title": "Connect Squarespace to an AI assistant",
+     "snippet": "To connect Squarespace:\n1. In your AI assistant, open the settings for connectors, apps, plugins, or integrations.\n2. Search for *Squarespace*. If Squarespace isn\u2019t listed, add a custom connector and enter this URL: https://mcp.squarespace.com/mcp\n3. Click **Connect**, then follow the prompts."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

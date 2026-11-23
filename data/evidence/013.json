@@ -1,0 +1,142 @@
+{
+ "id": 13,
+ "app": "Freshdesk",
+ "hint": "freshdesk.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Freshdesk API authentication OAuth API key access token developer docs freshdesk.com",
+   "log_id": "log_yjST4G5diHx0",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.freshdesk.com/docs/oauth",
+     "title": "OAuth",
+     "snippet": "OAuth\nYou can use the [OAuth 2](http://oauth.net/2/) protocol to authorize the app to access resources from third-party applications. This is done by using the access token which is obtained from the third party when the app is installed.\nTake a look at the [simple oauth app](https://github.com/freshdesk/marketplace-sample-apps/tree/master/Freshdesk/v1/simple_oauth_app)\n\n##### Prerequisites\nPlease ensure that:\n1. You have SDK v2.2.1 or higher installed. You can find instructions on how to get the latest version [here](/docs/freshdesk-sdk).\n2. You have registered your app in the Third-Party developer portal. Once registered, you will be issued a client_id and client_secret to perform OAuth handshake with the provider.\n3. You have provided the redirect URI for your app in the Third-Party developer portal:\n- **Local Testing**: \"http://localhost:10001/auth/callback\"\n- **Production**: \"https://oauth.freshdev.io/auth/callback\"\n\nIn the config/oauth_config.yml file, update the following fields listed in the table below:\n| FIELD | DESCRIPTION |\n|---|---|\n| **client_id** Mandatory | Once you register your app in the Third-Party developer portal, you will be issued a unique client ID for your"
+    },
+    {
+     "url": "https://rollout.com/integration-guides/freshdesk/how-to-build-a-public-freshdesk-integration-building-the-auth-flow",
+     "title": "How to build a Freshdesk API integration",
+     "snippet": "## OAuth 2.0 Flow Overview\nWe're using the Authorization Code Grant type of OAuth 2.0. It's like the VIP pass of auth flows - secure and widely respected. You'll need three key things:\n1. Client ID\n2. Client Secret\n3. Redirect URI\nKeep these close; they're your golden tickets.\nFirst things first, let's construct that authorization URL:\n```\nconst authUrl = ` https:// ${ domain } .freshdesk.com/oauth/authorize?client_id= ${ clientId } &response_type=code&redirect_uri= ${ redirectUri } ` ;\n```\nWhen a user hits this URL, they'll be redirected to Freshdesk to grant permissions. Easy peasy!\n## Implementing the Callback Route\nNow, set up a route to handle the callback:\n```\napp . get ( '/callback' , async ( req , res ) => { const { code } = req . query ; if ( ! code ) { return res . status ( 400 ) . send ( 'Authorization failed' ) ; } // We'll use this code in the next step } ) ;\n```\n## Exchanging the Code for Access Token\nTime to trade in that code for an access token:\n```\nconst tokenResponse = await axios . post ( ` https:// ${ domain } .freshdesk.com/oauth/token ` , { grant_type : 'authorization_code' , client_id : clientId , client_secret : clientSecret , code , redirect_uri : redirect"
+    },
+    {
+     "url": "https://developers.freshdesk.com/api",
+     "title": "Freshdesk",
+     "snippet": "Freshdesk's APIs belong to the **Representational State Transfer (REST)** category. They allow you to perform 'RESTful' operations such as reading, modifying, adding or deleting data from your helpdesk. The APIs also support [Cross-Origin Resource Sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS).\n#### What API commands are used by Freshdesk?\nFreshdesk APIs are plain JSON over HTTP and use the following HTTP verbs:\n| Command | Purpose |\n|---|---|\n| POST | Create an object |\n| GET | Fetch one or more objects |\n| PUT | Update an object |\n| DELETE | Remove an object |\n**Note:**\nAll API requests should hit the secured endpoint, that is, only HTTPS\n\n1. Higher rate limits as a result of significant performance enhancements\n2. Improved error handling - errors will return appropriate HTTP status codes and an error body\n3. Four new API categories - Business Hours, Products, Email Configs, and SLAs\n4. New APIs that enable you to Reply to a ticket and enhancements to existing APIs that enable you to Update a ticket's description, Update a ticket's notes, and Retrieve a list of tickets that have been recently modified\n5. XML Support has been deprecated, only JSON is s"
+    },
+    {
+     "url": "https://community.freshworks.dev/t/authenticate-user-from-severless-app/13663",
+     "title": "Authenticate user from severless app",
+     "snippet": "User Authorization Redirect Users for Authorization: Construct the URL to redirect users to Freshdesk\u2019s authorization endpoint: python Copy code from urllib.parse import urlencode def get_authorization_url(client_id, redirect_uri): base_url = 'https://yourdomain.freshdesk.com/oauth/authorize' params = { 'response_type': 'code', 'client_id': client_id, 'redirect_uri': redirect_uri, 'scope': 'read' } return f\"{base_url}?{urlencode(params)}\" Example URL: bash Copy code https://yourdomain.freshdesk.com/oauth/authorize? response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=read 2. Exchange Authorization Code for Access Token Handle Callback and Exchange Code: When Freshdesk redirects back to your application with an authorization code, exchange it for an access token: python Copy code import requests def get_access_token(auth_code, client_id, client_secret, redirect_uri): token_url = 'https://yourdomain.freshdesk.com/oauth/token' data = { 'grant_type': 'authorization_code', 'code': auth_code, 'redirect_uri': redirect_uri, 'client_id': client_id, 'client_secret': client_secret } response = requests.post(token_url, data=data) return response.json().get('access_t"
+    },
+    {
+     "url": "https://developers-staging.freshworks.com/docs/app-sdk/v2.3/freshdesk/oauth",
+     "title": "Freshworks Developer Docs | OAuth",
+     "snippet": "The [OAuth 2](http://oauth.net/2/) protocol enables authorizing an app to access resources from third-party applications. This is done by using an access token obtained from the third-party when the app is installed.\nTo see a demonstration of this feature, see the [OneDrive](https://github.com/freshworks/marketplace-sample-apps/tree/master/Freshworks-Samples/App-Development-Features/Advanced-Features/oauth2/onedrive_oauth_app) and [Asana](https://github.com/freshworks/marketplace-sample-apps/tree/master/Freshworks-Samples/App-Development-Features/Advanced-Features/oauth2/asana_serverless_oauth_app) Freshdesk sample apps.\n## Prerequisites\nEnsure that you:\n- Register your app in the third-party developer portal. Once registered, you will be issued a client_id and client_secret to perform OAuth handshake with the provider.\n- Provide the redirect URL for your app in the third-party developer portal.\n- **Testing**: http://localhost:10001/auth/callback\n- **Production**: https://oauth.freshdev.io/auth/callback\n## Set up OAuth configuration file\nUpdate the following fields in the **config**/**oauth_config.json** file.\n| Field | Description |\n|---|---|\n| client_id Mandatory | Once you regis"
+    }
+   ]
+  },
+  "access": {
+   "query": "Freshdesk freshdesk.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_90DaXOecchW8",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/225439-what-are-the-rate-limits-for-the-api-calls-to-freshdesk-",
+     "title": "What are the rate limits for the API calls to Freshdesk?",
+     "snippet": "The number of API calls you can make is based on your plan. This limit is applied to your account irrespective of the number of agents you have or IP addresses used to make the calls.\n\n**Call limits per minute**\n| ** Plan** | ** Calls per minute** | **Maximum limit per endpoint** |\n|---|---|---|\n| Free | 0 | 0 |\n| Growth | 100 | Ticket Create - 50 Ticket Update - 50 Tickets List - 40 Contacts List - 40 |\n| Pro | 400 | Ticket Create - 160 Ticket Update - 160 Tickets List - 100 Contacts List - 100 |\n| Enterprise | 700 | Ticket Create - 280 Ticket Update - 280 Tickets List - 200 Contacts List - 200 |\nFor more details, visit our [developer portal](https://developers.freshdesk.com/api/)."
+    },
+    {
+     "url": "https://getmacha.com/blog/how-to-use-the-freshdesk-api",
+     "title": "How Do You Use the Freshdesk API in 2026? Auth, Pagination, Rate Limits and Error Fixes",
+     "snippet": "- Freshdesk rate limits are 100 calls a minute account-wide on Growth, 400 on Pro and 700 on Enterprise, with a tighter Tickets List ceiling of 40, 100 and 200.\n\nTo use the Freshdesk API, send HTTPS requests to `https://YOURDOMAIN.freshdesk.com/api/v2/` with Basic Auth, putting your API key in the username field and `X` as the password; list calls return only the last 30 days of tickets unless you pass `updated_since`, and Growth accounts get 100 calls a minute.\n| What | Value (developers.freshdesk.com, checked 24 Sept 2026) |\n|---|---|\n| Base URL | `https://YOURDOMAIN.freshdesk.com/api/v2/` |\n| Auth | Basic Auth: API key as username, `X` as password |\n| Default ticket list window | Tickets created in the past 30 days |\n| List cap | 300 pages (30,000 tickets) |\n| Calls per minute | Growth 100, Pro 400, Enterprise 700, trial 50 |\n| Tickets List ceiling | Growth 40, Pro 100, Enterprise 200 |\n| Attachments | `multipart/form-data`, 20 MB total per request |\n\n- **Plan.** The same article's matrix shows the API key on **Growth, Pro and Enterprise**, and **not on Free** (nor on the legacy Sprout plan). Freshdesk no longer lists a free plan on its [pricing page](https://www.freshworks.com/"
+    },
+    {
+     "url": "https://rollout.com/integration-guides/freshdesk/api-essentials",
+     "title": "Freshdesk API Essentials",
+     "snippet": "Freshdesk primarily offers a REST API for integrating with its platform. The current version of the Freshdesk API is v2, which offers improved functionality and performance compared to the previous version. The API uses API key-based authentication, and each request must include the API key in the request header. The API primarily uses JSON for data exchange, with responses returned in JSON format and request bodies also in JSON when sending data to the API. Freshdesk implements rate limiting on API requests to ensure fair usage and prevent abuse. The API provides endpoints for various Freshdesk entities such as tickets, contacts, companies, agents, and more,\n\n### Rate Limits\n- The rate limits vary based on the Freshdesk plan:\n- Free plan: 0 calls per minute\n- Growth plan: 200 calls per minute\n- Pro plan: 400 calls per minute\n- Enterprise plan: 700 calls per minute\n- There are also sub-limits for specific endpoints:\n- Ticket Create\n- Ticket Update\n- Tickets List\n- Contacts List\n- For trial accounts, the limit is 50 calls per minute\n### Key Points\n- The limits are applied account-wide, regardless of number of agents or IP addresses used\n- Freshdesk is moving from per-hour limits to "
+    },
+    {
+     "url": "https://professionalstoolkit.com/articles/freshdesk-api",
+     "title": "Freshdesk API Guide: Auth, Rate Limits, Webhooks and MCP (2026)",
+     "snippet": "The Freshdesk API is a REST API, version 2, that takes and returns plain JSON over HTTPS and authenticates with each agent's personal API key. Access starts on the Growth plan. The budget is counted per minute for the whole account: 100 calls on Growth, 400 on Pro and 700 on Enterprise, with 50 on every trial and none on the legacy Free program.[1] Webhooks fired by your own automations spend that same budget.\n\nThe Toolkit take\n100 / 400 / 700\nAPI calls a minute, account-wide, on Freshdesk Growth / Pro / Enterprise (trials 50).\n50\nAPI calls a minute on every Freshdesk trial\n1,000 an hour\nFreshdesk webhook callbacks before buffering\n100 / 500 / 1,000\nMCP actions a month on Growth / Pro / Enterprise\n## Where the docs live and what version 2 covers\nThe documentation sits on Freshdesk's developer site, next to the App SDK and the web chat and widget APIs. Version 2 is the only production version: v1 is fully deprecated and closed to new users, and v2 dropped XML. Every request must use HTTPS through your *.freshdesk.com address; a custom CNAME will not work. The verbs are POST, GET, PUT and DELETE, and CORS is supported.[2] Help-center articles badge API access for Growth, Pro and Ente"
+    },
+    {
+     "url": "https://docs.nexla.com/user-guides/connectors/freshdesk_api",
+     "title": "Freshdesk | Nexla Docs",
+     "snippet": "Freshdesk authenticates API requests using HTTP Basic Auth, where your personal API key serves as the username. Before creating a Freshdesk credential in Nexla, gather the following:\n- A Freshdesk account on the Growth plan or higher (API access is not available on the free Sprout plan).\n- Your Freshdesk subdomain. This is the prefix in your Freshdesk account URL \u2014 for example, if you access Freshdesk at `https://acme.freshdesk.com`, your subdomain is `acme`.\n\nFreshdesk enforces rate limits that vary by plan: Growth \u2014 200 req/min, Pro \u2014 400 req/min, Enterprise \u2014 700 req/min.\n\nFreshdesk enforces API rate limits that vary by plan: Growth \u2014 200 req/min, Pro \u2014 400 req/min, Enterprise \u2014 700 req/min, Trial \u2014 50 req/min."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Freshdesk API reference REST GraphQL endpoints documentation freshdesk.com",
+   "log_id": "log_dMRiJjXC80mJ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.freshdesk.com/api",
+     "title": "Freshdesk",
+     "snippet": "Freshdesk's APIs belong to the **Representational State Transfer (REST)** category. They allow you to perform 'RESTful' operations such as reading, modifying, adding or deleting data from your helpdesk. The APIs also support [Cross-Origin Resource Sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS).\n#### What API commands are used by Freshdesk?\nFreshdesk APIs are plain JSON over HTTP and use the following HTTP verbs:\n| Command | Purpose |\n|---|---|\n| POST | Create an object |\n| GET | Fetch one or more objects |\n| PUT | Update an object |\n| DELETE | Remove an object |\n**Note:**\nAll API requests should hit the secured endpoint, that is, only HTTPS\n\n### What are the resources available via the API?\nEvery single piece of information - be it a customer's ID or the priority of a specific ticket - can be identified by its own unique identifier or \"URI\". If you want your data from the helpdesk, whether via your smartphone app or via a third party service, you need this identifier. All URIs follow a specific format and that format is:\nhttps://your_helpdesk_domain_name/api/v2/resource_name\nFor example, if you are Davy Jones and you are managing problems of drowned sou"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/freshdesk/refs/heads/main/apis.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/freshdesk/refs/heads/main/apis.yml",
+     "snippet": "The Freshdesk Webhook API enables real-time communication between Freshdesk and external systems by\nsending HTTP POST requests when specific events occur within the helpdesk. Webhooks can be triggered\nby ticket creation, updates, status changes, and other support events, allowing developers to build\nevent-driven integrations without polling the REST API."
+    },
+    {
+     "url": "https://developer.freshdesk.com/api/v1",
+     "title": "Help Desk API for Developers",
+     "snippet": "If you wish to post your opinions about a topic in the forums, use this API.\n*post*\n###### /discussions/topics/[id]/posts.json\n###### Request\n```\n12345{\n\"post\": {\n\"body_html\":\"What type of ticket field you are creating\"\n}\n}\n```\n###### Response\n###### Sample code | Curl\n```\n1curl -v -u user@yourcompany.com:test -H \"Content-Type: application/json\" -X POST -d '{ \"post\": { \"body_html\":\"What type of ticket field you are creating\" }}' https://domain.freshdesk.com/discussions/topics/[topic_id]/posts.json\n```\n\n## Create Solution Article\nTo write a new solution in a category, use this API.\n**Note:**\nIt is also possible to send tags via URL:\n/solution/categories/[id]/folders/[id]/articles.json?tags%5Bname%5D=csv\n*post*\n###### /solution/categories/[id]/folders/[id]/articles.json\n###### Request\n```\n123456789101112{\n\"solution_article\": {\n\"title\": \"Create a ticket\",\n\"status\": 1,\n\"art_type\": 2,\n\"description\": \"Steps: Fill in the mandatory fields ...\",\n\"folder_id\": 1\n},\n\"tags\": {\n\"name\": \"tag1, tag2\"\n}\n}\n```\n###### Response\n###### Sample code | Curl\n```\n1curl -v -u user@yourcompany.com:test -H \"Content-Type: application/json\" -X POST -d '{ \"solution_article\": { \"title\":\"Create a ticket\", \"status\":"
+    },
+    {
+     "url": "https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html",
+     "title": "TicketsApi | Freshdesk SDK",
+     "snippet": "# TicketsApi\nAll URIs are relative to *https://freshdesk.com/api/v2*\n| Method | HTTP request | Description |\n|---|---|---|\n| [**addNote**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#addNote) | **POST** /tickets/{id}/notes | Add a note in a Ticket |\n| [**createTicket**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#createTicket) | **POST** /tickets | create a ticket |\n| [**createTicketUsingOutboundEmail**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#createTicketUsingOutboundEmail) | **POST** /tickets/outbound_email | Create a ticket using outbound email |\n| [**deleteAttachment**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#deleteAttachment) | **DELETE** /attachments/{id} | Delete an Attachment |\n| [**deleteTicket**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#deleteTicket) | **DELETE** /tickets/{id} | Delete a ticket |\n| [**getTicket**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#getTicket) | **GET** /tickets/{id} | Get a ticket |\n| [**listTicketSatisfactionRatings**](https://developers.freshworks.com/freshdesk-sdk/docs/TicketsApi.html#"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/freshdesk/refs/heads/main/openapi/freshdesk-search-api-openapi.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/freshdesk/refs/heads/main/openapi/freshdesk-search-api-openapi.yml",
+     "snippet": "title: Freshdesk REST Agents Search API\ndescription: The Freshdesk REST API (v2) provides programmatic access to helpdesk data and operations within Freshdesk, a customer support platform by Freshworks. It exposes endpoints for managing tickets, contacts, companies, agents, groups, conversations, products, email configurations, SLA policies, business hours, time entries, satisfaction ratings, solution categories, solution folders, solution articles, and more. The API uses JSON for request and response payloads, supports API key-based authentication, and follows RESTful conventions for CRUD operations.\n\n/search/tickets:\nget:\noperationId: searchTickets\nsummary: Search tickets\ndescription: Searches for tickets using Freshdesk query language. Supports filtering by any ticket field using a SQL-like query syntax.\ntags:\n- Search\nparameters:\n- name: query\nin: query\nrequired: true\ndescription: Search query using Freshdesk query language, e.g. \"priority:1 AND status:2\".\nschema:\ntype: string\nresponses:\n'200':\ndescription: Successfully retrieved search results.\ncontent:\napplication/json:\nschema:\ntype: object\nproperties:\ntotal:\ntype: integer\ndescription: Total number of matching tickets.\nresult"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Freshdesk freshdesk.com MCP server Model Context Protocol official",
+   "log_id": "log_uz-L0UdPi8UZ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+     "title": "Model Context Protocol (MCP) integration in Freshdesk",
+     "snippet": "Model Context Protocol (MCP) integration in Freshdesk\n*Applies to**: Freshdesk, Freshdesk Omni 2026.*\nThe Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk. The MCP server acts as middleware to expose specific capabilities, such as creating tickets, by using public APIs and supported authentication methods.\n\nNote:\u00a0Currently, Freshdesk allows you to authenticate requests involved in MCP integration by using an\u00a0API key\u00a0only.\n\n```\nThis feature applies to the following products:\n\u2022 Freshdesk Standalone 2021 (Latest version)\n\u2022 Freshdesk Unified Omni 2026\n```\nStarting September 10, 2026, the Freshworks MCP integration is generally available. The rate limits and monthly action allowances for each plan are outlined below.\n```\nWhat counts as an MCP action?\nAn action is defined as a successful tool invocation via MCP. Examples of tool invocations. Examples:\n\u2022 Fetch conversation related to the ticket with ID 1001 (1 action)\n\u2022 Update the company name for the record with ID 11 to Apple (1 action)\n```\n| Supported plans | Rate limits (actions per minute) | Included MCP actions (per account, annually) |\n|---|---|--"
+    },
+    {
+     "url": "https://support.freshdesk.com/support/solutions/articles/50000014407",
+     "title": "MCP Integration: Frequently asked questions (FAQ)",
+     "snippet": "The Model Context Protocol (MCP) is an open standard that enables AI assistants, such as Claude and Microsoft Copilot, to connect directly to Freshdesk. Through MCP, these assistants can perform actions on your behalf, such as creating tickets, updating contacts, or retrieving conversation history, without leaving the AI client.\nWhich Freshdesk products support MCP?\nMCP is supported only in Freshdesk 2021 and Freshdesk Unified Omni 2026. Following is the compatibility matrix:\n| **Product / Plan Variant** | **GA Support (Post-Sep 10, 2026)** | **Notes** |\n|---|---|---|\n| Freshdesk Standalone 2021 (Latest version) | Supported | Full support for GA release. |\n| Freshdesk Unified Omni 2026 | Supported | Full support for GA release. |\n| Legacy Freshdesk Variants (Pre-2021) / Other SKUs | Not Supported | EAP access ends September 10, 2026. |\nWhich AI clients are supported?\nYou can use any AI client that supports the MCP standard. Connect your preferred MCP-compatible client to Freshdesk using the MCP server URL and the API key provided in your Freshdesk administrator settings.\n### Setup and configuration\nHow do I find my MCP settings in Freshdesk?\nGo to Admin Settings > Apps & Integratio"
+    },
+    {
+     "url": "https://freshdesk-mcp.com/docs/intro",
+     "title": "Introduction",
+     "snippet": "**Freshdesk MCP** is a [Model Context Protocol](https://modelcontextprotocol.io/) server that connects a [Freshdesk](https://www.freshdesk.com/) account to any MCP-compatible AI model or client. It exposes the Freshdesk API as a set of **tools** and **prompts** that can be invoked in natural language: the assistant can thus read and manage tickets, conversations, contacts, companies, knowledge base and custom fields.\nThe server is written in Python (FastMCP) with modular architecture (`core` / `services` / `schemas` / `tools`) and a shared HTTP client with rate limit management.\n## What is it for\u00b6\nOnce the server is connected, you can ask the assistant things like:\n- \"Show me ticket #12345 and its entire conversation\"\n- \"Search for open and urgent tickets and assign them to the Support group\"\n- \"Find the Acme company and create a contact for [mario.rossi@acme.it](mailto:mario.rossi@acme.it)\"\n- \"Add a private note to ticket #12345 with analysis results\"\n- \"Create a knowledge base article about resetting your password\"\nThe model automatically chooses the correct tool and composes its parameters.\n## Feature overview\u00b6\n- **124 tools exposed by MCP server**: 64 canonical `freshdesk_*` na"
+    },
+    {
+     "url": "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000012678-model-context-protocol-mcp-integration-in-freshservice",
+     "title": "Model Context Protocol (MCP) integration in Freshservice",
+     "snippet": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshservice. The MCP server acts as middleware to expose specific capabilities, such as creating tickets, by using public APIs and supported authentication methods. Freshservice supports [API key](https://support.freshservice.com/support/solutions/articles/50000000306-where-do-i-find-my-api-key-) and OAuth authentication for MCP integration requests.\n\nStarting September 10, 2026, the Freshworks MCP integration is generally available. The rate limits and monthly action allowances for each plan are outlined in the table below.\n```\nWhat counts as an MCP action?\nAn action is defined as a successful tool invocation via MCP. Examples of tool invocations. Examples:\n\u2022 Update status of the ticket ID 1001 to Resolved (1 action)\n\u2022 Fetch details of an asset whose ID is 112 (1 action)\n```\n| Supported plans | Rate limits (actions per minute) | Included MCP actions (per account, annually) |\n|---|---|---|\n| Growth | 25 | 1,200 |\n| Pro | 50 | 6,000 |\n| Enterprise | 100 | 12,000 |\n```\nNote on pricing & EAP transition:\n\u2022 To view current pricing and purchase add-on action p"
+    },
+    {
+     "url": "https://support.freshdesk.com/support/solutions/articles/50000014411",
+     "title": "Freshworks MCP security",
+     "snippet": "The Freshworks Model Context Protocol (MCP) server enables secure integration between AI tools and Freshdesk. It acts as a middleware layer that exposes selected Freshdesk capabilities, such as ticket management, contacts, and knowledge base operations, through authenticated API interactions.\nThe MCP server relies entirely on Freshdesk\u2019s existing authentication and authorization systems. It does not introduce a separate identity model and does not grant access beyond what the authenticated user or API key is permitted to perform.\n\n### Deployment and isolation\nThe Freshworks MCP server is exposed as a tenant-specific endpoint:\nhttps://<your-freshdesk-domain>/mcp\nEach Freshdesk account operates within its own isolated environment.\n- All requests are scoped to the tenant\u2019s Freshdesk instance.\n- Data and tool execution are isolated per tenant.\n- The MCP server functions as a proxy layer over Freshdesk APIs and does not maintain independent state.\n### Authentication\nAuthentication is required for every MCP request.\nFreshworks MCP for Freshdesk currently supports API key authentication only.\nEach request must include a valid API key in the authorization header. Requests without valid cre"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

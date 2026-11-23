@@ -1,0 +1,36 @@
+{
+ "id": 35,
+ "app": "Mailchimp",
+ "category": "Email Marketing",
+ "one_liner": "Email marketing platform: audiences, campaigns, automations and reporting.",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free-tier account gives API key; OAuth 2 app registration for multi-tenant access; capabilities vary by plan.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Official Intuit Mailchimp connector (mailchimp.com/help/use-mailchimp-connector-claude); Transactional MCP (mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp). Docs MCP at mailchimp.com/developer/_mcp/server is docs-search only.",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+  "access": "https://mailchimp.com/developer/marketing/build/get-started/generate-your-api-key",
+  "surface": "https://mailchimp.com/developer/marketing/api-concepts/methods-and-parameters",
+  "mcp": "https://mailchimp.com/help/use-mailchimp-connector-claude"
+ },
+ "verified": true
+}

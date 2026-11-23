@@ -1,0 +1,2696 @@
+{
+ "calibration": {
+  "access": {
+   "medium": {
+    "changed": 5,
+    "n": 54,
+    "rate": 0.093
+   },
+   "high": {
+    "changed": 0,
+    "n": 37,
+    "rate": 0.0
+   },
+   "low": {
+    "changed": 6,
+    "n": 9,
+    "rate": 0.667
+   }
+  },
+  "mcp": {
+   "high": {
+    "changed": 1,
+    "n": 69,
+    "rate": 0.014
+   },
+   "medium": {
+    "changed": 1,
+    "n": 26,
+    "rate": 0.038
+   },
+   "low": {
+    "changed": 2,
+    "n": 5,
+    "rate": 0.4
+   }
+  },
+  "auth_primary": {
+   "high": {
+    "changed": 3,
+    "n": 80,
+    "rate": 0.037
+   },
+   "medium": {
+    "changed": 0,
+    "n": 19,
+    "rate": 0.0
+   },
+   "low": {
+    "changed": 1,
+    "n": 1,
+    "rate": 1.0
+   }
+  },
+  "all": {
+   "medium": {
+    "changed": 6,
+    "n": 99,
+    "rate": 0.061
+   },
+   "high": {
+    "changed": 4,
+    "n": 186,
+    "rate": 0.022
+   },
+   "low": {
+    "changed": 9,
+    "n": 15,
+    "rate": 0.6
+   }
+  }
+ },
+ "evidence": {
+  "v1": {
+   "total": 395,
+   "vendor": 367,
+   "share": 0.929,
+   "top_third_party": [
+    [
+     "githubusercontent.com",
+     4
+    ],
+    [
+     "onegtmlab.dev",
+     3
+    ],
+    [
+     "anchorterminal.com",
+     2
+    ],
+    [
+     "frontal.so",
+     1
+    ],
+    [
+     "progress.com",
+     1
+    ],
+    [
+     "nexla.com",
+     1
+    ],
+    [
+     "mintlify.app",
+     1
+    ],
+    [
+     "stackone.com",
+     1
+    ]
+   ]
+  },
+  "final": {
+   "total": 399,
+   "vendor": 391,
+   "share": 0.98,
+   "top_third_party": [
+    [
+     "githubusercontent.com",
+     2
+    ],
+    [
+     "onegtmlab.dev",
+     1
+    ],
+    [
+     "stackone.com",
+     1
+    ],
+    [
+     "github.io",
+     1
+    ],
+    [
+     "popmcp.com",
+     1
+    ],
+    [
+     "activepieces.com",
+     1
+    ],
+    [
+     "integrations.sh",
+     1
+    ]
+   ]
+  }
+ },
+ "triangulation": {
+  "rows": {
+   "1": {
+    "app": "Salesforce",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "2": {
+    "app": "HubSpot",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "3": {
+    "app": "Pipedrive",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "4": {
+    "app": "Attio",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "5": {
+    "app": "Twenty",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://docs.twenty.com/developers/extend/oauth",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "6": {
+    "app": "Podio",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "7": {
+    "app": "Zoho CRM",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "8": {
+    "app": "Close",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://developer.close.com/api/overview/oauth-authentication",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 5,
+    "sources_agree": 4
+   },
+   "9": {
+    "app": "Copper",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://developer.copper.com/introduction/oauth/flow.html",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "10": {
+    "app": "DealCloud",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "11": {
+    "app": "Zendesk",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "12": {
+    "app": "Intercom",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "13": {
+    "app": "Freshdesk",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "disagree",
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://developer.freshdesk.com/docs/oauth",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 5,
+    "sources_agree": 4
+   },
+   "14": {
+    "app": "Front",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "15": {
+    "app": "Pylon",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 2
+   },
+   "16": {
+    "app": "LiveAgent",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "17": {
+    "app": "Plain",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://plain.com/docs/graphql/oauth",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "18": {
+    "app": "Help Scout",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "19": {
+    "app": "Gorgias",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "20": {
+    "app": "Gladly",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": null,
+    "hand": "agree",
+    "sources_checked": 3,
+    "sources_agree": 2
+   },
+   "21": {
+    "app": "Slack",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "22": {
+    "app": "Twilio",
+    "composio_auth": "agree",
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://twilio.com/docs/iam/oauth-apps/org-oauth-apps",
+     "composio_auth": [
+      "api_key",
+      "basic",
+      "other"
+     ]
+    },
+    "sources_checked": 5,
+    "sources_agree": 4
+   },
+   "23": {
+    "app": "Zoho Cliq",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "24": {
+    "app": "Lark (Larksuite)",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "25": {
+    "app": "Pumble",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://cake-com.github.io/pumble-node-sdk/authorization.html",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 2
+   },
+   "26": {
+    "app": "Discord",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 2
+   },
+   "27": {
+    "app": "Telegram",
+    "composio_auth": "agree",
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 2
+   },
+   "28": {
+    "app": "WhatsApp Business",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "29": {
+    "app": "Aircall",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "30": {
+    "app": "Vonage",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "31": {
+    "app": "Google Ads",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "32": {
+    "app": "Meta Ads",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "33": {
+    "app": "LinkedIn Ads",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "34": {
+    "app": "GoHighLevel",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": null,
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "35": {
+    "app": "Mailchimp",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "disagree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 2
+   },
+   "36": {
+    "app": "Klaviyo",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "37": {
+    "app": "systeme.io",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "38": {
+    "app": "Pinterest",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "39": {
+    "app": "Threads (Meta)",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": "agree",
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "40": {
+    "app": "SendGrid",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "41": {
+    "app": "Shopify",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "42": {
+    "app": "WooCommerce",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 2
+   },
+   "43": {
+    "app": "BigCommerce",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "44": {
+    "app": "Salesforce Commerce Cloud",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "45": {
+    "app": "Magento (Adobe Commerce)",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 2,
+    "sources_agree": 1
+   },
+   "46": {
+    "app": "Squarespace",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "47": {
+    "app": "Ecwid",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": "agree",
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "48": {
+    "app": "Gumroad",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "49": {
+    "app": "Amazon Selling Partner",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "50": {
+    "app": "fanbasis",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "disagree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 1
+   },
+   "51": {
+    "app": "DataForSEO",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://dataforseo.com/help-center/connecting-the-remote-dataforseo-mcp-server-using-oauth",
+     "composio_auth": [
+      "basic"
+     ]
+    },
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "52": {
+    "app": "SE Ranking",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "53": {
+    "app": "Ahrefs",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "54": {
+    "app": "MrScraper",
+    "composio_auth": "agree",
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://mrscraper.com/blog/ai-agent-api-authentication",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "55": {
+    "app": "Apify",
+    "composio_auth": "agree",
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://docs.apify.com/account/settings",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "56": {
+    "app": "Firecrawl",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://docs.firecrawl.dev/oauth",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "57": {
+    "app": "Bright Data",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://docs.brightdata.com/products/mcp-server/remote/oauth",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "58": {
+    "app": "Sherlock",
+    "composio_auth": null,
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 2,
+    "sources_agree": 1
+   },
+   "59": {
+    "app": "Waterfall.io",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 2,
+    "sources_agree": 2
+   },
+   "60": {
+    "app": "Clay",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://university.clay.com/docs/connect-to-clay-mcp",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "61": {
+    "app": "GitHub",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "62": {
+    "app": "Vercel",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 4
+   },
+   "63": {
+    "app": "Netlify",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "64": {
+    "app": "Cloudflare",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://developers.cloudflare.com/fundamentals/oauth/create-an-oauth-client",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "65": {
+    "app": "Supabase",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "66": {
+    "app": "Neo4j",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "67": {
+    "app": "Snowflake",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "68": {
+    "app": "MongoDB Atlas",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://mongodb.com/docs/atlas/app-connections/partner-integration-guide",
+     "composio_auth": [
+      "other"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "69": {
+    "app": "Datadog",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "70": {
+    "app": "Sentry",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "71": {
+    "app": "Notion",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "72": {
+    "app": "Airtable",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "73": {
+    "app": "Linear",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "74": {
+    "app": "Jira",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "75": {
+    "app": "Asana",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "76": {
+    "app": "Monday.com",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "77": {
+    "app": "ClickUp",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "78": {
+    "app": "Coda",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "79": {
+    "app": "Smartsheet",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "80": {
+    "app": "Harvest",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "81": {
+    "app": "Stripe",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 4
+   },
+   "82": {
+    "app": "Plaid",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://plaid.com/plaid-exchange/docs/authentication",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 3,
+    "sources_agree": 3
+   },
+   "83": {
+    "app": "Binance",
+    "composio_auth": null,
+    "docs_auth": "disagree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 1
+   },
+   "84": {
+    "app": "Paygent Connect",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": null,
+    "hand": null,
+    "sources_checked": 2,
+    "sources_agree": 1
+   },
+   "85": {
+    "app": "iPayX",
+    "composio_auth": null,
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "86": {
+    "app": "QuickBooks",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "87": {
+    "app": "Xero",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "88": {
+    "app": "Brex",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "89": {
+    "app": "Ramp",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "90": {
+    "app": "PitchBook",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": false,
+     "evidence": null,
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "91": {
+    "app": "NotebookLM",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "92": {
+    "app": "Otter AI",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "93": {
+    "app": "Fathom",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "disagree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 3
+   },
+   "94": {
+    "app": "Consensus",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://docs.consensus.app/enterprise/connection-reference",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "95": {
+    "app": "Reducto",
+    "composio_auth": null,
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 3,
+    "sources_agree": 2
+   },
+   "96": {
+    "app": "Devin",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": "agree",
+    "sources_checked": 5,
+    "sources_agree": 5
+   },
+   "97": {
+    "app": "higgsfield",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://higgsfield.ai/blog/higgsfield-mcp-moves-to-cimd",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "98": {
+    "app": "Mermaid CLI",
+    "composio_auth": null,
+    "docs_auth": "disagree",
+    "docs_access": "agree",
+    "docs_mcp": null,
+    "hand": "agree",
+    "sources_checked": 3,
+    "sources_agree": 2
+   },
+   "99": {
+    "app": "YouTube Transcript",
+    "composio_auth": "agree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "sources_checked": 4,
+    "sources_agree": 4
+   },
+   "100": {
+    "app": "Grain",
+    "composio_auth": "disagree",
+    "docs_auth": "agree",
+    "docs_access": "agree",
+    "docs_mcp": "agree",
+    "hand": null,
+    "oauth_dispute": {
+     "docs_say_oauth": true,
+     "evidence": "https://developers.grain.com/authentication.html",
+     "composio_auth": [
+      "api_key"
+     ]
+    },
+    "sources_checked": 4,
+    "sources_agree": 3
+   }
+  },
+  "summary": {
+   "composio_auth": {
+    "agree": 71,
+    "disagree": 9,
+    "not_checked": 20
+   },
+   "docs_auth": {
+    "agree": 92,
+    "disagree": 8,
+    "not_checked": 0
+   },
+   "docs_access": {
+    "agree": 74,
+    "disagree": 25,
+    "not_checked": 1
+   },
+   "docs_mcp": {
+    "agree": 84,
+    "disagree": 2,
+    "not_checked": 14
+   },
+   "hand": {
+    "agree": 19,
+    "disagree": 1,
+    "not_checked": 80
+   }
+  },
+  "sources_checked_dist": {
+   "4": 65,
+   "5": 12,
+   "3": 19,
+   "2": 4
+  },
+  "oauth_disputes": {
+   "n": 20,
+   "agent_right": 19,
+   "composio_right": 1,
+   "apps_agent_right": [
+    "Twenty",
+    "Close",
+    "Copper",
+    "Freshdesk",
+    "Plain",
+    "Twilio",
+    "Pumble",
+    "DataForSEO",
+    "MrScraper",
+    "Apify",
+    "Firecrawl",
+    "Bright Data",
+    "Clay",
+    "Cloudflare",
+    "MongoDB Atlas",
+    "Plaid",
+    "Consensus",
+    "higgsfield",
+    "Grain"
+   ],
+   "apps_composio_right": [
+    "PitchBook"
+   ],
+   "human_classification": {
+    "rest_api_oauth": [
+     "Twenty",
+     "Close",
+     "Copper",
+     "Freshdesk",
+     "Plain",
+     "Twilio",
+     "Pumble",
+     "Firecrawl",
+     "Cloudflare",
+     "MongoDB Atlas",
+     "Grain"
+    ],
+    "mcp_server_oauth_only": [
+     "DataForSEO",
+     "Bright Data",
+     "Clay",
+     "higgsfield",
+     "Consensus"
+    ],
+    "weak_or_wrong_product": [
+     "MrScraper",
+     "Apify",
+     "Plaid"
+    ],
+    "no_oauth": [
+     "PitchBook"
+    ]
+   }
+  }
+ },
+ "priority": {
+  "points": [
+   {
+    "id": 1,
+    "app": "Salesforce",
+    "group": "CRM and Sales",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 556.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 2,
+    "app": "HubSpot",
+    "group": "CRM and Sales",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 354.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 3,
+    "app": "Pipedrive",
+    "group": "CRM and Sales",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 404.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 4,
+    "app": "Attio",
+    "group": "CRM and Sales",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 105.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 5,
+    "app": "Twenty",
+    "group": "CRM and Sales",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 23.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 6,
+    "app": "Podio",
+    "group": "CRM and Sales",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 143.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 7,
+    "app": "Zoho CRM",
+    "group": "CRM and Sales",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 115.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 8,
+    "app": "Close",
+    "group": "CRM and Sales",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 75.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 9,
+    "app": "Copper",
+    "group": "CRM and Sales",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 65.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 10,
+    "app": "DealCloud",
+    "group": "CRM and Sales",
+    "ease": 0.15,
+    "depth": 1.0,
+    "verdict": "needs_outreach",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "partner_or_sales_gated"
+   },
+   {
+    "id": 11,
+    "app": "Zendesk",
+    "group": "Support and Helpdesk",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 483.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 12,
+    "app": "Intercom",
+    "group": "Support and Helpdesk",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 138.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 13,
+    "app": "Freshdesk",
+    "group": "Support and Helpdesk",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 184.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 14,
+    "app": "Front",
+    "group": "Support and Helpdesk",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 180.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 15,
+    "app": "Pylon",
+    "group": "Support and Helpdesk",
+    "ease": 0.6,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": true,
+    "tools": 12.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 16,
+    "app": "LiveAgent",
+    "group": "Support and Helpdesk",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 17,
+    "app": "Plain",
+    "group": "Support and Helpdesk",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 119.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 18,
+    "app": "Help Scout",
+    "group": "Support and Helpdesk",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 129.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 19,
+    "app": "Gorgias",
+    "group": "Support and Helpdesk",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 51.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "group": "Support and Helpdesk",
+    "ease": 0.15,
+    "depth": 0.6,
+    "verdict": "needs_outreach",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "partner_or_sales_gated"
+   },
+   {
+    "id": 21,
+    "app": "Slack",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 165.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "group": "Communications and Messaging",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 452.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 23,
+    "app": "Zoho Cliq",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 162.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 451.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 25,
+    "app": "Pumble",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 9.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 26,
+    "app": "Discord",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 23.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 27,
+    "app": "Telegram",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 18.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 28,
+    "app": "WhatsApp Business",
+    "group": "Communications and Messaging",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 127.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 29,
+    "app": "Aircall",
+    "group": "Communications and Messaging",
+    "ease": 0.6,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 48.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 30,
+    "app": "Vonage",
+    "group": "Communications and Messaging",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 31,
+    "app": "Google Ads",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 78.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 32,
+    "app": "Meta Ads",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 99.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 33,
+    "app": "LinkedIn Ads",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 28.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 34,
+    "app": "GoHighLevel",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.6,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 554.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 35,
+    "app": "Mailchimp",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 275.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 36,
+    "app": "Klaviyo",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 233.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 37,
+    "app": "systeme.io",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 38,
+    "app": "Pinterest",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 27.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 39,
+    "app": "Threads (Meta)",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.4,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 24.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 40,
+    "app": "SendGrid",
+    "group": "Marketing, Ads, Email and Social",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 359.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 41,
+    "app": "Shopify",
+    "group": "Ecommerce",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 386.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 42,
+    "app": "WooCommerce",
+    "group": "Ecommerce",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 43,
+    "app": "BigCommerce",
+    "group": "Ecommerce",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 532.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "group": "Ecommerce",
+    "ease": 0.15,
+    "depth": 1.0,
+    "verdict": "needs_outreach",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "partner_or_sales_gated"
+   },
+   {
+    "id": 45,
+    "app": "Magento (Adobe Commerce)",
+    "group": "Ecommerce",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 46,
+    "app": "Squarespace",
+    "group": "Ecommerce",
+    "ease": 0.6,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 47,
+    "app": "Ecwid",
+    "group": "Ecommerce",
+    "ease": 0.6,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 48,
+    "app": "Gumroad",
+    "group": "Ecommerce",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 13.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "group": "Ecommerce",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "needs_outreach",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "approval_required"
+   },
+   {
+    "id": 50,
+    "app": "fanbasis",
+    "group": "Ecommerce",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 51,
+    "app": "DataForSEO",
+    "group": "Data, SEO and Scraping",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 354.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 52,
+    "app": "SE Ranking",
+    "group": "Data, SEO and Scraping",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 53,
+    "app": "Ahrefs",
+    "group": "Data, SEO and Scraping",
+    "ease": 0.6,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 46.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 54,
+    "app": "MrScraper",
+    "group": "Data, SEO and Scraping",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 11.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 55,
+    "app": "Apify",
+    "group": "Data, SEO and Scraping",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 184.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 56,
+    "app": "Firecrawl",
+    "group": "Data, SEO and Scraping",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 245.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 57,
+    "app": "Bright Data",
+    "group": "Data, SEO and Scraping",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 167.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 58,
+    "app": "Sherlock",
+    "group": "Data, SEO and Scraping",
+    "ease": 0.0,
+    "depth": 0.0,
+    "verdict": "not_buildable",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "no_public_api"
+   },
+   {
+    "id": 59,
+    "app": "Waterfall.io",
+    "group": "Data, SEO and Scraping",
+    "ease": 0.4,
+    "depth": 0.6,
+    "verdict": "needs_outreach",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "approval_required"
+   },
+   {
+    "id": 60,
+    "app": "Clay",
+    "group": "Data, SEO and Scraping",
+    "ease": 1.0,
+    "depth": 0.3,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 15.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 61,
+    "app": "GitHub",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 883.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 62,
+    "app": "Vercel",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 399.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 63,
+    "app": "Netlify",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": true,
+    "tools": 9.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 64,
+    "app": "Cloudflare",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 171.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 65,
+    "app": "Supabase",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 230.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 66,
+    "app": "Neo4j",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 21.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 67,
+    "app": "Snowflake",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 16.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 68,
+    "app": "MongoDB Atlas",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 496.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 69,
+    "app": "Datadog",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 255.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 70,
+    "app": "Sentry",
+    "group": "Developer, Infra and Data platforms",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 210.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 71,
+    "app": "Notion",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 57.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 72,
+    "app": "Airtable",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 26.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 73,
+    "app": "Linear",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 47.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 74,
+    "app": "Jira",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 166.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 75,
+    "app": "Asana",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 247.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 76,
+    "app": "Monday.com",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 122.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 77,
+    "app": "ClickUp",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 163.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 78,
+    "app": "Coda",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 109.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 79,
+    "app": "Smartsheet",
+    "group": "Productivity and Project Management",
+    "ease": 0.6,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 180.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 80,
+    "app": "Harvest",
+    "group": "Productivity and Project Management",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 57.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 81,
+    "app": "Stripe",
+    "group": "Finance and Fintech",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 428.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 82,
+    "app": "Plaid",
+    "group": "Finance and Fintech",
+    "ease": 0.85,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 70.0,
+    "access": "self_serve_trial"
+   },
+   {
+    "id": 83,
+    "app": "Binance",
+    "group": "Finance and Fintech",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 84,
+    "app": "Paygent Connect",
+    "group": "Finance and Fintech",
+    "ease": 0.3,
+    "depth": 0.4,
+    "verdict": "needs_outreach",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "unknown"
+   },
+   {
+    "id": 85,
+    "app": "iPayX",
+    "group": "Finance and Fintech",
+    "ease": 0.6,
+    "depth": 0.3,
+    "verdict": "ready_with_caveats",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 86,
+    "app": "QuickBooks",
+    "group": "Finance and Fintech",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 119.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 87,
+    "app": "Xero",
+    "group": "Finance and Fintech",
+    "ease": 1.0,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 109.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 88,
+    "app": "Brex",
+    "group": "Finance and Fintech",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 84.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 89,
+    "app": "Ramp",
+    "group": "Finance and Fintech",
+    "ease": 0.4,
+    "depth": 1.0,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 186.0,
+    "access": "approval_required"
+   },
+   {
+    "id": 90,
+    "app": "PitchBook",
+    "group": "Finance and Fintech",
+    "ease": 0.15,
+    "depth": 0.6,
+    "verdict": "needs_outreach",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 130.0,
+    "access": "partner_or_sales_gated"
+   },
+   {
+    "id": 91,
+    "app": "NotebookLM",
+    "group": "AI, Research and Media-native",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 11.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 92,
+    "app": "Otter AI",
+    "group": "AI, Research and Media-native",
+    "ease": 0.6,
+    "depth": 0.6,
+    "verdict": "needs_outreach",
+    "in_composio": true,
+    "mcp_only": true,
+    "tools": 3.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 93,
+    "app": "Fathom",
+    "group": "AI, Research and Media-native",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 10.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 94,
+    "app": "Consensus",
+    "group": "AI, Research and Media-native",
+    "ease": 1.0,
+    "depth": 0.3,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 1.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 95,
+    "app": "Reducto",
+    "group": "AI, Research and Media-native",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 96,
+    "app": "Devin",
+    "group": "AI, Research and Media-native",
+    "ease": 0.6,
+    "depth": 0.6,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": true,
+    "tools": 23.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 97,
+    "app": "higgsfield",
+    "group": "AI, Research and Media-native",
+    "ease": 0.6,
+    "depth": 0.3,
+    "verdict": "ready_with_caveats",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 13.0,
+    "access": "paid_plan_required"
+   },
+   {
+    "id": 98,
+    "app": "Mermaid CLI",
+    "group": "AI, Research and Media-native",
+    "ease": 0.0,
+    "depth": 0.0,
+    "verdict": "not_buildable",
+    "in_composio": false,
+    "mcp_only": false,
+    "tools": null,
+    "access": "no_public_api"
+   },
+   {
+    "id": 99,
+    "app": "YouTube Transcript",
+    "group": "AI, Research and Media-native",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 9.0,
+    "access": "self_serve_free"
+   },
+   {
+    "id": 100,
+    "app": "Grain",
+    "group": "AI, Research and Media-native",
+    "ease": 1.0,
+    "depth": 0.6,
+    "verdict": "ready",
+    "in_composio": true,
+    "mcp_only": false,
+    "tools": 17.0,
+    "access": "self_serve_free"
+   }
+  ],
+  "build_next": [
+   "WooCommerce",
+   "Magento (Adobe Commerce)",
+   "Netlify",
+   "Binance",
+   "systeme.io",
+   "fanbasis",
+   "Reducto",
+   "LiveAgent",
+   "Vonage",
+   "SE Ranking"
+  ],
+  "outreach_gaps": [
+   "Amazon Selling Partner",
+   "Waterfall.io",
+   "Paygent Connect",
+   "DealCloud",
+   "Salesforce Commerce Cloud",
+   "Gladly",
+   "Sherlock",
+   "Mermaid CLI"
+  ]
+ },
+ "error_map": {
+  "CRM and Sales": {
+   "blocker": 3,
+   "access": 1,
+   "auth_primary": 2,
+   "mcp": 1
+  },
+  "Support and Helpdesk": {
+   "mcp": 1,
+   "access": 3,
+   "blocker": 1
+  },
+  "Communications and Messaging": {
+   "blocker": 1
+  },
+  "Marketing, Ads, Email and Social": {},
+  "Ecommerce": {
+   "blocker": 3,
+   "access": 1,
+   "mcp": 1
+  },
+  "Data, SEO and Scraping": {},
+  "Developer, Infra and Data platforms": {
+   "auth_primary": 1,
+   "blocker": 4,
+   "access": 2
+  },
+  "Productivity and Project Management": {
+   "blocker": 1
+  },
+  "Finance and Fintech": {
+   "mcp": 1,
+   "blocker": 5,
+   "access": 2,
+   "auth_primary": 1,
+   "verdict": 1
+  },
+  "AI, Research and Media-native": {
+   "access": 2,
+   "blocker": 3,
+   "verdict": 1
+  }
+ },
+ "coverage": {
+  "in_composio": 80,
+  "native": 76,
+  "mcp_only": 4,
+  "with_provider_mcp_toolkit": 26,
+  "by_group": {
+   "CRM and Sales": 9,
+   "Support and Helpdesk": 8,
+   "Communications and Messaging": 9,
+   "Marketing, Ads, Email and Social": 9,
+   "Ecommerce": 3,
+   "Data, SEO and Scraping": 7,
+   "Developer, Infra and Data platforms": 10,
+   "Productivity and Project Management": 10,
+   "Finance and Fintech": 7,
+   "AI, Research and Media-native": 8
+  },
+  "tools_median": 119.0,
+  "missing": [
+   "DealCloud",
+   "LiveAgent",
+   "Gladly",
+   "Vonage",
+   "systeme.io",
+   "WooCommerce",
+   "Salesforce Commerce Cloud",
+   "Magento (Adobe Commerce)",
+   "Squarespace",
+   "Ecwid",
+   "Amazon Selling Partner",
+   "fanbasis",
+   "SE Ranking",
+   "Sherlock",
+   "Waterfall.io",
+   "Binance",
+   "Paygent Connect",
+   "iPayX",
+   "Reducto",
+   "Mermaid CLI"
+  ]
+ }
+}

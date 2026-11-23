@@ -1,0 +1,142 @@
+{
+ "id": 54,
+ "app": "MrScraper",
+ "hint": "docs.mrscraper.com",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "MrScraper API authentication OAuth API key access token developer docs docs.mrscraper.com",
+   "log_id": "log_15XjXfreplcy",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/mrscraper/refs/heads/main/authentication/mrscraper-authentication.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/mrscraper/refs/heads/main/authentication/mrscraper-authentication.yml",
+     "snippet": "- name: ApiKeyAuth\ntype: apiKey\nin: header\nparameter: x-api-token\ndescription: MrScraper API token created at https://app.mrscraper.com/api-tokens (name + expiration date). Required on every Platform API and Scraper API request. Analytics endpoints accept an `apiTokenName` query filter.\ndocs: https://docs.mrscraper.com/docs/getting-started/api-token\nsources:\n- https://docs.mrscraper.com/docs/api/authentication\n- openapi/mrscraper-scraper-service-gateway-openapi.yml\n- name: BearerAuth\ntype: http\nscheme: bearer\ndescription: '\"Authorization: Bearer <token>\" - the same MrScraper API token for Marketplace endpoints (RFC 6750), or an OAuth 2.1 access token issued by the platform for the MCP connector.'"
+    },
+    {
+     "url": "https://docs.mrscraper.com/docs/api/authentication",
+     "title": "Authentication",
+     "snippet": "Learn how to authenticate requests to the MrScraper API using API tokens and request headers.\nThe MrScraper API uses API token authentication to secure all endpoints. Every request must include a valid API token in the HTTP request headers.\n## Getting Your API Token\nAPI tokens are managed directly from your MrScraper dashboard.\nClick **New Token**.\nEnter a descriptive **token name** and choose an **expiration date**.\nClick **Create**, then copy and securely store the generated token.\nKeep Your Token Secure\n## Authenticating Requests\nInclude your API token in the `x-api-token` HTTP header on every request:\n```\nx-api-token: <MRSCRAPER_API_TOKEN>\n```\n### Marketplace Endpoints\nFor [Marketplace endpoints](https://app.mrscraper.com/marketplace), authenticate using the standard RFC 6750 `Authorization` header with a Bearer token:\n```\nAuthorization: Bearer <MRSCRAPER_API_TOKEN>\n```\n## Verify Token\nTo test your authentication and confirm that your token is valid, make a request to the [`/subscription-accounts`](***REDACTED*** endpoint:\n```\ncurl -X GET \"https://api.app.mrscraper.com/api/v1/subscription-accounts\" \\\n-H \"accept: application/json\" \\\n-H \"x-api-token: <MRSCRAPER_API_TOKEN>\"\n```"
+    },
+    {
+     "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+     "title": "GitHub - mrscraper-com/mrscraper-mcp: Official MrScraper MCP server: Scraper API for HTML, Markdown, and screenshots, web search, and account usage for AI agents.",
+     "snippet": "## Authentication\nObtain an API key from [the MrScraper app](https://app.mrscraper.com/api-tokens). API key used to authenticate the request.\nThe hosted server supports browser sign-in through OAuth 2.1. Approve `account:read` for status and `scrape:read` for all six scraping/search tools. Connections that already hold `scrape:read` keep working; others must reconnect and approve it for scraping/search.\nClients without OAuth can send an API key as `Authorization: Bearer YOUR_TOKEN`. Local stdio reads `MRSCRAPER_API_KEY`, then `MRSCRAPER_API_TOKEN`. Tools do not accept tokens as arguments.\n```\n{\n\"mcpServers\": {\n\"mrscraper\": {\n\"url\": \"https://mcp.mrscraper.com/mcp\",\n\"headers\": { \"Authorization\": \"Bearer YOUR_TOKEN\" }\n}\n}\n}\n```\n\nFor local stdio:\n```\n{\n\"mcpServers\": {\n\"mrscraper\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"@mrscraper/mcp@latest\"],\n\"env\": { \"MRSCRAPER_API_KEY\": \"YOUR_TOKEN\" }\n}\n}\n}\n```\n\nOAuth access tokens are verified against the configured issuer's JWKS and must include this resource in their audience. API keys are validated before tool execution. HTTP requests use their caller's credential; stdio reads server environment credentials. Metadata discovery is available at `/.we"
+    },
+    {
+     "url": "https://mrscraper.com/blog/ai-agent-api-authentication",
+     "title": "Authenticate Web Data Tools for AI Agents Without Exposing Secrets",
+     "snippet": "Most teams use one of two patterns:\n1. **Your backend owns the key.** Your server holds a MrScraper API token. The agent calls your tools, and your server calls MrScraper.\n2. **Each user connects their own account.** A person signs in to MrScraper through their MCP client, such as Claude Code or Codex. The client handles the sign-in, and the agent uses that person's access. The next section covers when to use each one.\n## **When should you use API keys or OAuth?**\n| Use an API key when | Use OAuth when |\n|---|---|\n| Your app calls MrScraper on its own behalf | A person connects their own MrScraper account |\n| The call runs on your server, a job runner or CI | The call runs from that person's MCP client |\n| One account pays for and owns the usage | Each person's usage should stay on their account |\n| You control where the key is stored | You do not want anyone to copy or paste a key |\n### **API keys for your backend**\nMrScraper API tokens are created in the dashboard under **API Tokens**. Each token has a name and an expiration date. You can create more than one, so you can give each environment or app its own token. See the [API token docs](https://docs.mrscraper.com/docs/getting-s"
+    },
+    {
+     "url": "https://npmjs.com/package/@mrscraper/mcp",
+     "title": "@mrscraper/mcp",
+     "snippet": "The hosted server signs you in through your browser with OAuth 2.1, so there is no key to copy. Self-hosted and stdio setups use a MrScraper API key from [app.mrscraper.com/api-tokens](https://app.mrscraper.com/api-tokens), which the hosted server also still accepts.\n## Connect to the hosted server\nPoint your MCP client at `https://mcp.mrscraper.com/mcp` with no credential. The server answers with an OAuth challenge, your client opens a browser, and you approve the connection on `app.mrscraper.com`.\n```\nclaude mcp add --transport http --scope user \\\nmrscraper https://mcp.mrscraper.com/mcp\n```\nFor clients configured by file, omit the `headers` block entirely:\n```\n{\n\"mcpServers\": {\n\"mrscraper\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.mrscraper.com/mcp\"\n}\n}\n}\n```\nUse exactly this URL, including the `/mcp` path. It is the resource identifier access tokens are issued for, and a token minted for a different spelling of the address will be refused.\n\n### Connect with an API key instead\nAn API key still works as a bearer token, which is what self-hosted deployments and non-OAuth clients use:\n```\n{\n\"mcpServers\": {\n\"mrscraper\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.mrscraper.com/mcp\",\n\"headers\""
+    }
+   ]
+  },
+  "access": {
+   "query": "MrScraper docs.mrscraper.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_mW4ikpx2IZiV",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://mrscraper.com/blog/scraping-api-rate-limits-retry-logic",
+     "title": "Scraping API: Endpoints, Rate Limits and Retry Logic",
+     "snippet": "MrScraper manages API execution and concurrency bounds using a resource-based token allocation model:\n- **Scraper Free**: $0/mo (1,000 Plan Tokens/month at up to 10 concurrent requests, no credit card required).\n- **Scraper Pro**: $199/mo (200,000 Plan Tokens/month at up to 100 concurrent requests with priority residential proxies and support).\n- **Scraper Enterprise**: Custom plan token allocations and dedicated infrastructure.\n\nReady to optimize your data collection pipelines with resilient rate limiting and automated unblocking? [Try MrScraper free today](https://app.mrscraper.com/). Claim 1,000 free Plan Tokens with no credit card required. You can also [schedule a demo](/) to see how MrScraper scales your web scraping."
+    },
+    {
+     "url": "https://mrscraper.com/pricing",
+     "title": "MrScraper Pricing: Start Free, Pro From $99/Month",
+     "snippet": "Scraper Free includes 1,000 MrScraper tokens every month at no cost - no credit card required. It's the fastest way to try scraping, proxies and AI extraction before upgrading.\nYes. Upgrade from Scraper Free to Scraper Essential anytime from your account's billing settings for $99/month and 200,000 tokens, or move to a Custom plan by booking a call.\nSign in to the dashboard, open your account settings, and copy the token from the API Token page. Every API request authenticates with it, and the getting-started guide in the docs walks through your first call."
+    },
+    {
+     "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+     "title": "Billing",
+     "snippet": "MrScraper offers flexible subscription plans designed for different usage levels, from individual developers testing the platform to enterprise teams running large-scale scraping operations. All plans include access to our AI-powered scraping agents, stealth browser technology, and residential proxies (on applicable plans).\n## Available Plans\n### Free\nPerfect for testing and small projects.\n| Feature | Allocation |\n|---|---|\n| **API Tokens** | 100 tokens |\n| **Concurrent Requests** | 10 |\n| **Residential Proxies** | \u274c |\n| **Priority Email Support** | \u274c |\n| **Dedicated Account Manager** | \u274c |\nFree Plan Limitations\n### Standard\nIdeal for developers and small teams.\n| Feature | Allocation |\n|---|---|\n| **API Tokens** | 150,000 tokens |\n| **Concurrent Requests** | 50 |\n| **Residential Proxies** | \u2705 |\n| **Priority Email Support** | \u2705 |\n| **Dedicated Account Manager** | \u274c |\n### Pro\nFor growing businesses and production workloads.\n| Feature | Allocation |\n|---|---|\n| **API Tokens** | 1,000,000 tokens |\n| **Concurrent Requests** | 100 |\n| **Residential Proxies** | \u2705 |\n| **Priority Email Support** | \u2705 |\n| **Dedicated Account Manager** | \u2705 |\n### Enterprise\nFor organizations with custom requi"
+    },
+    {
+     "url": "https://mrscraper.com/web-renderer",
+     "title": "Web Scraper API: Turn Any Website Into JSON | MrScraper",
+     "snippet": "- 200,000 tokens included\n- Reliable access to public websites\n- Include 10GB free residential proxy\n- Manual and API-based scraping\n- Marketplace scraping APIs\n- AI-powered structured extraction\n- Usage analytics and monitoring\n- Scheduled and repeatable workflows\n- Webhooks and workflow integrations\n- CSV / structured-data friendly exports\n\nAfter your trial ends, your subscription starts on the billing plan you selected. The standard monthly plan is $19/month and includes 20,000 MrScraper tokens. You can cancel before the trial ends to avoid the first charge."
+    },
+    {
+     "url": "https://mrscraper.com/usecase/etsy-scraper-guide",
+     "title": "Etsy Data Extraction: Collect Public Listing Data Responsibly",
+     "snippet": "Get started with **1,000 free Plan Tokens**. No credit card required.\n\n| **Setup** | Visual scraper or REST API | Development and infrastructure time | Developer registration, OAuth, and app review |\n| **Starting cost** | Free tier (1,000 Plan Tokens); Pro from $199/month | Hosting and bandwidth costs | Varies by program and usage |\n\n1. **Create your account**: [Sign up for MrScraper](https://app.mrscraper.com/auth/signup) to receive 1,000 free Plan Tokens. No credit card required."
+    }
+   ]
+  },
+  "surface": {
+   "query": "MrScraper API reference REST GraphQL endpoints documentation docs.mrscraper.com",
+   "log_id": "log_1Ku6_KGpI_YA",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.mrscraper.com/docs/guides/programmatically",
+     "title": "Create and Run a Scraper Programmatically",
+     "snippet": "This guide shows you how to create an AI scraper in the dashboard and then use it programmatically through the API. This is perfect if you want to set up a scraper once and automate data extraction with simple API calls\u2014no need to configure it every time.\n## Prerequisites\nBefore you start, make sure you have:\n- A **MrScraper API key** for authentication. If you don\u2019t have one yet, follow this [guide to create an API key](/docs/getting-started/api-token#generating-an-api-token).\n## Step 1: Verify Your API Token\nYou can verify your API token and check your account status using the [`/subscription-accounts`](/docs/api/v3/authentication/verify-token):\n**Response (200 OK):**\n**Key Response Fields:**\n\n## Step 2: Collect URLs from Website\nCollect all relevant URLs from your target website using the AI scraper endpoint. You can select the Agent type you want to use from the example below:"
+    },
+    {
+     "url": "https://docs.mrscraper.com/docs/integrations/x402",
+     "title": "x402 (Circle Gateway)",
+     "snippet": "Use MrScraper's HTTP APIs from an AI agent or application and pay per request in USDC through [Circle Gateway](https://developers.circle.com/gateway-nanopayments). Buyers do not need a MrScraper API key or session cookie.\nThe integration exposes two services:\n- **scraperAPI** retrieves a public page as rendered HTML, Markdown, a screenshot, or a combination of these outputs.\n- **webSearch** searches Google with region, language, and pagination controls for web discovery, research, and SEO analysis.\n## Endpoints and pricing\nBase URL: `https://api.mrscraper.com/circle`\n| Service | Method and path | Price per request |\n|---|---|---|\n| scraperAPI | `POST /api/mrscraper/scraperAPI` | **0.01 USDC** |\n| webSearch | `POST /api/mrscraper/webSearch` | **0.01 USDC** |\nBoth endpoints accept and return `application/json`. Each search-results page is a separate request. Upstream fields such as `token_usage` and `tokenUsage` describe MrScraper plan usage; they are separate from the x402 USDC price.\n\n## OpenAPI specification\nThe document covers **only these two paid endpoints**, including required and optional request fields, response schemas, output examples, error responses, and the x402 payment"
+    },
+    {
+     "url": "https://docs.mrscraper.com/docs/integrations/clawhub",
+     "title": "ClawHub",
+     "snippet": "x-api-token: <MRSCRAPER_API_TOKEN>\naccept: application/json\ncontent-type: application/json\n```\nMrScraper exposes two base URLs:\n| API | Base URL | Purpose |\n|---|---|---|\n| Web Fetching | `https://api.mrscraper.com` | Fetch HTML from public pages |\n| Platform | `https://api.app.mrscraper.com` | Create, rerun, and read scrapers and results |\n## Available Endpoints\n### Web Fetching\nFetches a public page with browser rendering and geo-targeted proxies, and returns the page content.\n```\ncurl 'https://api.mrscraper.com?url=https%3A%2F%2Fexample.com&timeout=120&geoCode=SG' \\\n-H \"x-api-token: <MRSCRAPER_API_TOKEN>\"\n```\n| Parameter | Required | Default | Description |\n|---|---|---|---|\n| `url` | Yes | \u2014 | The target URL, URL-encoded. |\n| `timeout` | No | `60` | Maximum seconds to wait for the page to load. |\n| `geoCode` | No | \u2014 | ISO country code for proxy routing. |\n| `blockResources` | No | \u2014 | Block images, CSS, and fonts for faster loading. |"
+    },
+    {
+     "url": "https://docs.mrscraper.com/api-reference/endpoint/ai/run-ai-scraper",
+     "title": "Run a AI scraper - Starter Kit",
+     "snippet": "You can retrieve your token by visiting the API Tokens section inside your profile page or see [https://docs.mrscraper.com/documentation/api-token](https://docs.mrscraper.com/documentation/api-token) for the details."
+    },
+    {
+     "url": "https://docs.mrscraper.com/api-reference/endpoint/scraping-runs/get-a-scrapers-latest-scraping-run",
+     "title": "Get a scraper's latest scraping run - Starter Kit",
+     "snippet": "Scraping Runs\n# Get a scraper's latest scraping run\nThis endpoint returns the information about the latest scraping run for a scraper.\nYou can use the optional `status` body parameter to filter the result for a particular scraping run status.\nGET\n#### Path Parameters\nscraper_id\ninteger\nrequired\nThe scraper's ID.\n#### Body\napplication/json\nMust be one of (running, failed, succeeded).\n#### Response\n200 - application/json"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "MrScraper docs.mrscraper.com MCP server Model Context Protocol official",
+   "log_id": "log_3EdY0CVm_jML",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+     "title": "MCP Server",
+     "snippet": "# MCP Server\nAccess MrScraper\u2019s web scraping API via a Model Context Protocol (MCP) server to enable AI agents to fetch and extract web data securely.\nUse MrScraper\u2019s web scraping API through the Model Context Protocol (MCP) to let AI agents discover, fetch, and extract web data in real time. This cloud-hosted MCP server integrates directly with MrScraper, enabling secure, scalable scraping workflows without local setup or infrastructure management.\n\n### Prerequisites\nTo use the MrScraper MCP server, you'll need:\n1. [A MrScraper account](https://v3.app.mrscraper.com/auth/login)\n2. [MrScraper Account API Key](/docs/getting-started/api-token#generating-an-api-token)\n### Remote Hosted URL via HTTP Transport Protocol\nThe simplest way to use MrScraper MCP is through our remotely hosted server. No local installation required!\n\nGoogle Antigravity allows you to configure MCP servers directly through its Agent interface.\n1. Open the **MCP store** via the **...** dropdown at the top of the editor's agent panel\n2. Click on **Manage MCP Servers**\n3. Click on **View raw config**\n4. Modify the `mcp_config.json` with your custom MCP server configuration\n5. Add the following configuration:\n1. Save"
+    },
+    {
+     "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+     "title": "GitHub - mrscraper-com/mrscraper-mcp: Official MrScraper MCP server: Scraper API for HTML, Markdown, and screenshots, web search, and account usage for AI agents.",
+     "snippet": "An MCP server exposing the seven MrScraper services through hosted HTTP or local stdio.\n## Overview\nSeven services share the same descriptions, parameter meanings, and defaults across the CLI, SDKs, and integrations. Names, types, authentication, and code examples follow each surface's conventions. See the [API Reference](https://docs.mrscraper.com/docs/api/overview).\n| Service | Public name | Description |\n|---|---|---|\n| Status | `status` | Return the raw account status API response without summarizing, redacting body fields, or adding calculated fields. |\n| Scrape HTML | `scrapeHtml` | Retrieve the raw HTML of a page. Browser rendering is optional. |\n| Scrape Markdown | `scrapeMarkdown` | Retrieve a page as Markdown. Including HTML also enables browser rendering and returns both outputs as JSON. |\n| Get screenshot | `getScreenshot` | Capture a base64 screenshot of the full page or top viewport. Browser rendering is always enabled. |\n| Scrape brand | `scrapeBrand` | Extract a website's colors, typography, logos, and social links as JSON. |\n| Scrape JSON | `scrapeJson` | Extract structured JSON from a page using a natural-language prompt. Append Json Schema: and a JSON schema to s"
+    },
+    {
+     "url": "https://npmjs.com/package/@mrscraper/mcp?activeTab=versions",
+     "title": "@mrscraper/mcp",
+     "snippet": "MrScraper MCP is the official [MrScraper](https://mrscraper.com) server for the [Model Context Protocol](https://modelcontextprotocol.io). It connects AI assistants to page content and Google search through two SDK-compatible tools, plus an account check. Retrieve HTML, Markdown, or screenshots with `scraperAPI`, discover pages with `webSearch`, and check your plan and token usage with `status`.\nUse the hosted server with OAuth sign-in, or run the open-source server locally with the [`@mrscraper/mcp` npm package](https://www.npmjs.com/package/@mrscraper/mcp). See the [MrScraper MCP documentation](https://docs.mrscraper.com/docs/getting-started/mcp-server) for setup instructions and client configurations.\nThe server exposes three tools:\n```\nscraperAPI  webSearch  status\n```\n## Deployment options\n| Option | Endpoint or command | Best for |\n|---|---|---|\n| Hosted | `https://mcp.mrscraper.com/mcp` | A managed Streamable HTTP connection |\n| Local HTTP | `TRANSPORT=http npx -y @mrscraper/mcp@latest` | A self-managed HTTP service |\n| Local stdio | `npx -y @mrscraper/mcp@latest` | MCP clients that launch a local process |\nThe hosted server signs you in through your browser with OAuth 2.1, "
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/mrscraper/refs/heads/main/mcp/mrscraper-mcp.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/mrscraper/refs/heads/main/mcp/mrscraper-mcp.yml",
+     "snippet": "server:\nname: MrScraper MCP\nregistry_name: io.github.mrscraper-com/mrscraper-mcp\nversion: 0.1.3\nurl: https://mcp.mrscraper.com/mcp\ntransport: streamable-http\ndocs: https://docs.mrscraper.com/docs/getting-started/mcp-server\nrepository: https://github.com/mrscraper-com/mrscraper-mcp\npackage: https://www.npmjs.com/package/@mrscraper/mcp\nserver_json: https://raw.githubusercontent.com/mrscraper-com/mrscraper-mcp/main/server.json\nlicense: MIT\ndeployment:\nmode: both\nendpoint: https://mcp.mrscraper.com/mcp"
+    },
+    {
+     "url": "https://mrscraper.com/blog/mcp-saas-pricing-plan-comparison",
+     "title": "Use MrScraper MCP to Compare Public SaaS Pricing and Plan Limits",
+     "snippet": "An MCP SaaS pricing comparison uses an AI client, such as Claude Code, to collect official pricing and help pages through MrScraper's MCP tools. The client then turns each page into structured, cited rows. You compare plans only where units match, and you mark every unpublished price or limit as unknown.\n\nConnect MrScraper's hosted MCP server to your AI client, then ask the client to call `scraperAPI` on each approved URL and extract facts into your schema. Each call returns the page content in the same response. Check the response before you trust any fact taken from it.\n### **scraperAPI output and response validation**\nMrScraper documents a hosted MCP endpoint at `https://mcp.mrscraper.com/mcp` with OAuth 2.1 sign-in. In Claude Code, add it like this:\nbash\n```bash\nclaude mcp add \\\n--transport http \\\n--scope user \\\nmrscraper https://mcp.mrscraper.com/mcp\n```\nOpen `/mcp` in Claude Code to sign in. Other clients, including Claude Desktop, Cursor and VS Code, use the same URL. The [MrScraper MCP documentation](https://docs.mrscraper.com/docs/getting-started/mcp-server) lists the setup for each one."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

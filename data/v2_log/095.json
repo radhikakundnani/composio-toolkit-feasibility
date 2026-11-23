@@ -1,0 +1,12 @@
+{
+  "id": 95,
+  "app": "Reducto",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

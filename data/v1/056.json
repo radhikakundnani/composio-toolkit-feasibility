@@ -1,0 +1,36 @@
+{
+  "id": 56,
+  "app": "Firecrawl",
+  "category": "Web scraping",
+  "one_liner": "API to search, scrape, crawl and extract web content as markdown.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Free plan (1,000 pages, no card); API key from dashboard as Bearer; OAuth 2.1 for apps also available.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://mcp.firecrawl.dev/v2 ; github.com/firecrawl/firecrawl-mcp-server",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Self-serve credentials; endpoints focused on scrape/search/crawl.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.firecrawl.dev/authentication",
+    "access": "https://firecrawl.dev/pricing",
+    "surface": "https://docs.firecrawl.dev/api-reference",
+    "mcp": "https://docs.firecrawl.dev/mcp-server"
+  }
+}

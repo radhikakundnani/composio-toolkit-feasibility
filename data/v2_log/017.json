@@ -1,0 +1,11 @@
+{
+  "id": 17,
+  "app": "Plain",
+  "changes": [],
+  "confirmed": [
+    "mcp official mcp.plain.com/mcp (OAuth only)",
+    "access 7-day trial no card",
+    "auth api_key machine user + OAuth apps"
+  ],
+  "searches": 3
+}

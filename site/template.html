@@ -1,0 +1,373 @@
+<title>Toolkit Feasibility Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Single light theme (white page, by request). Layout: one 1180px column; headline → 6 charted patterns → deep-dive chart sections → table → agent → proof. */
+:root{
+  --bg:#ffffff; --panel:#fbfbfa; --sunk:#f1f3f0; --fg:#141a18; --muted:#5a6460; --faint:#8b938f; --line:#e1e5e0;
+  --accent:#0e5e63; --accent-soft:#e2f1ef;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#6250d6;
+  --ok:#1f8a55; --warn:#d39a1c; --bad:#d2552a; --none:#8a909a;
+  --ok-ink:#17693f; --warn-ink:#8a5d0a; --bad-ink:#a63c17; --none-ink:#555b63;
+  --ok-soft:#e1f2e8; --warn-soft:#fbf0d9; --bad-soft:#fbe5dc; --none-soft:#eceef0;
+  --f-display:"Instrument Sans","Inter",system-ui,sans-serif; --f-body:"Inter",system-ui,-apple-system,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--f-body);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px;display:grid;gap:64px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.06;max-width:22ch}
+h2{font-size:25px} h3{font-size:16px;line-height:1.3}
+p{margin:0;max-width:72ch}
+a{color:var(--accent)}
+.eyebrow{font:600 11px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-size:12.5px}
+.muted{color:var(--muted)} .small{font-size:13px}
+section{display:grid;gap:20px;min-width:0}
+.sec-head{display:grid;gap:6px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:14px;align-content:start;min-width:0}
+.card .cap{font-size:12.5px;color:var(--muted)}
+header{display:grid;gap:20px}
+.lede{font-size:17px;color:var(--muted);max-width:78ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:4px;background:var(--bg)}
+.kpi b{font:600 32px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump a{font:500 12px var(--f-mono);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--fg)}
+.jump a:hover,.jump a:focus-visible{border-color:var(--accent);outline:none;background:var(--accent-soft)}
+.patterns{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+.pattern{border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start;background:var(--bg)}
+.pattern .n{font:600 11px var(--f-mono);color:var(--accent);letter-spacing:.1em}
+.pattern p{font-size:13.5px;color:var(--muted)}
+.mini{display:grid;gap:6px}
+.stack{display:flex;gap:2px;height:26px;border-radius:5px;overflow:hidden}
+.stack.thin{height:14px}
+.stack i{display:flex;align-items:center;justify-content:center;font:600 11px var(--f-mono);color:#fff;min-width:2px;cursor:default;white-space:nowrap;overflow:hidden}
+.stack i:first-child{border-radius:5px 0 0 5px} .stack i:last-child{border-radius:0 5px 5px 0}
+.keys{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted)}
+.keys span{display:inline-flex;align-items:center;gap:6px}
+.keys i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.c-ready{background:var(--ok)} .c-ready_with_caveats{background:var(--warn)} .c-needs_outreach{background:var(--bad)} .c-not_buildable{background:var(--none)}
+.c-s1{background:var(--s1)} .c-s2{background:var(--s2)} .c-s3{background:var(--s3)} .c-s4{background:var(--s4)} .c-mute{background:#c9cfcb}
+.srows{display:grid;gap:7px}
+.srow{display:grid;grid-template-columns:minmax(110px,210px) 1fr 40px;gap:12px;align-items:center;font-size:13px}
+.srow .r{font:500 12px var(--f-mono);text-align:right;color:var(--muted)}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:minmax(110px,170px) 1fr 44px;gap:10px;align-items:center;font-size:13px}
+.bar .t{height:14px;background:var(--sunk);border-radius:0 4px 4px 0;overflow:hidden}
+.bar .t i{display:block;height:100%;border-radius:0 4px 4px 0}
+.bar b{font:500 12px var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.heat{display:grid;gap:2px;font-size:12px;overflow-x:auto}
+.heat .h{font:600 10.5px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:4px;display:flex;align-items:flex-end;line-height:1.2}
+.heat .rl{padding:6px 8px 6px 0;font-size:12.5px;display:flex;align-items:center}
+.heat .c{display:flex;align-items:center;justify-content:center;font:500 12px var(--f-mono);border-radius:3px;min-height:30px;cursor:default}
+.chart-svg{width:100%;height:auto;display:block;overflow:visible}
+.chart-svg text{font-family:var(--f-body);fill:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:8px}
+.controls input,.controls select{font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--fg)}
+.controls input{flex:1 1 200px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:980px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 10.5px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--panel);cursor:pointer;user-select:none;white-space:nowrap}
+tbody tr.row{cursor:pointer} tbody tr.row:hover{background:var(--panel)}
+tr.detail td{background:var(--panel)}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 20px}
+.detail-grid div{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.pill{display:inline-block;font:500 11.5px/1 var(--f-mono);padding:4px 7px;border-radius:5px;white-space:nowrap}
+.v-ready{background:var(--ok-soft);color:var(--ok-ink)} .v-ready_with_caveats{background:var(--warn-soft);color:var(--warn-ink)}
+.v-needs_outreach{background:var(--bad-soft);color:var(--bad-ink)} .v-not_buildable{background:var(--none-soft);color:var(--none-ink)}
+.tag{display:inline-block;font:500 11px/1 var(--f-mono);padding:3px 6px;border-radius:4px;background:var(--sunk);margin:1px 2px 1px 0}
+.dotsrc{display:inline-flex;gap:3px} .dotsrc i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.d-agree{background:var(--ok)} .d-disagree{background:var(--bad)} .d-na{background:var(--line)}
+.chg{color:var(--warn-ink);font-family:var(--f-mono);font-size:11px}
+.count{font-size:12.5px;color:var(--muted)}
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}
+.stage{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:6px;align-content:start}
+.stage .k{font:600 11px var(--f-mono);color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.stage p{font-size:12.5px;color:var(--muted)}
+.who{font:500 11px var(--f-mono);padding:3px 6px;border-radius:4px;justify-self:start}
+.who.code{background:var(--accent-soft);color:var(--accent)} .who.llm{background:var(--warn-soft);color:var(--warn-ink)} .who.human{background:var(--bad-soft);color:var(--bad-ink)}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:7px;font-size:13.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12.5px;padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:default}
+.chip.go{border-color:var(--ok);color:var(--ok-ink);background:var(--ok-soft)} .chip.pay{border-color:var(--warn);color:var(--warn-ink);background:var(--warn-soft)} .chip.out{border-color:var(--bad);color:var(--bad-ink);background:var(--bad-soft)} .chip.na{color:var(--none-ink);background:var(--none-soft)}
+.bignum{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.bignum b{font:600 42px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.bignum .arrow{font:600 20px var(--f-display);color:var(--faint)}
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:12px 14px;border-radius:0 8px 8px 0;display:grid;gap:6px;font-size:13.5px;align-content:start}
+.callout.teal{border-color:var(--accent);background:var(--accent-soft)}
+pre{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font:12.5px/1.65 var(--f-mono)}
+.sample td.c{text-align:center;font-family:var(--f-mono);white-space:nowrap}
+.ok{color:var(--ok-ink)} .bad{color:var(--bad-ink)}
+#tip{position:fixed;z-index:20;pointer-events:none;background:#141a18;color:#fff;font-size:12.5px;line-height:1.4;padding:7px 9px;border-radius:6px;max-width:300px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+footer{font-size:12.5px;color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:560px){.srow,.bar{grid-template-columns:1fr 40px}.srow>span:first-child,.bar>span:first-child{grid-column:1/-1}}
+</style>
+
+<div id="tip" hidden></div>
+<div class="wrap">
+<header>
+  <span class="eyebrow">Composio · AI Product Ops take-home · research run <span id="runDate"></span></span>
+  <h1>Which of these 100 apps can become an agent toolkit today?</h1>
+  <p class="lede" id="lede"></p>
+  <div class="kpis" id="kpis"></div>
+  <nav class="jump" aria-label="Sections"><a href="#patterns">Patterns</a><a href="#landscape">Landscape</a><a href="#priority">Build priority</a><a href="#triangulation">Cross-checks</a><a href="#verification">Accuracy</a><a href="#findings">All 100 apps</a><a href="#agent">The agent</a><a href="#reproduce">Run it</a></nav>
+</header>
+
+<section id="patterns">
+  <div class="sec-head"><span class="eyebrow">The headline</span><h2>Six patterns in the data</h2><p class="muted">Hover any chart segment to see the apps behind it.</p></div>
+  <div class="patterns" id="patternList"></div>
+</section>
+
+<section id="landscape">
+  <div class="sec-head"><span class="eyebrow">Landscape</span><h2>Where each category stands</h2></div>
+  <div class="grid2">
+    <div class="card"><h3>Verdict by category</h3><div class="srows" id="verdictRows"></div><div class="keys" id="verdictKeys"></div></div>
+    <div class="card"><h3>How developers get credentials</h3><div class="heat" id="accessHeat"></div><p class="cap">Darker cells hold more apps. Columns run from easiest (free) to hardest.</p></div>
+    <div class="card"><h3>Auth mix by category</h3><div class="srows" id="authRows"></div><div class="keys" id="authKeys"></div></div>
+    <div class="card"><h3>Main blocker, for apps that have one</h3><div class="bars" id="blockerBars"></div><p class="cap" id="blockerCap"></p></div>
+  </div>
+</section>
+
+<section id="priority">
+  <div class="sec-head"><span class="eyebrow">Build priority</span><h2>What to build next, and who to call</h2>
+    <p class="muted">Each dot is an app: how easy it is to get credentials (left to right) against how deep the API is (bottom to top). Colour shows whether Composio already ships a toolkit, and gaps are labelled.</p></div>
+  <div class="grid2">
+    <div class="card"><svg class="chart-svg" id="quad" viewBox="0 0 560 460" role="img" aria-label="Build priority scatter of 100 apps"></svg><div class="keys"><span><i class="c-s1"></i>In Composio (native toolkit)</span><span><i class="c-s4"></i>MCP-only toolkit</span><span><i class="c-s2"></i>Not in Composio</span></div><p class="cap">The dense top-right cluster is the easy-win zone, where most apps are already in Composio. Hover the orange dots there, or see the gap list.</p></div>
+    <div class="card"><h3>Composio coverage by category</h3><div class="srows" id="covRows"></div><div class="keys"><span><i class="c-s1"></i>Native toolkit</span><span><i class="c-s4"></i>MCP-only</span><span><i class="c-s2"></i>Gap</span></div>
+      <h3>The 20 gaps, by next step</h3><div class="chips" id="gapChips"></div>
+      <div class="keys"><span><i class="c-ready"></i>Build now (self-serve)</span><span><i class="c-ready_with_caveats"></i>Needs a paid test account</span><span><i class="c-needs_outreach"></i>Outreach</span><span><i class="c-not_buildable"></i>Not hosted</span></div></div>
+  </div>
+</section>
+
+<section id="triangulation">
+  <div class="sec-head"><span class="eyebrow">Cross-checks</span><h2>Agent vs Composio's catalog vs the docs vs a hand check</h2><p class="muted" id="triIntro"></p></div>
+  <div class="grid2">
+    <div class="card"><h3>Agreement with the final answer, by source</h3><div class="srows" id="triRows"></div><div class="keys"><span><i class="c-ready"></i>Agrees</span><span><i class="c-needs_outreach"></i>Disagrees</span><span><i class="c-mute"></i>Not applicable</span></div><p class="cap">Right column: agreement rate where the source applies.</p></div>
+    <div class="card"><h3>The 20 OAuth disputes: the agent said OAuth, Composio's toolkit is key-only</h3><div class="mini" id="oauthStack"></div><div id="oauthLists"></div></div>
+  </div>
+  <div class="grid3">
+    <div class="card"><h3>Independent sources per app</h3><div class="bars" id="srcDist"></div></div>
+    <div class="card"><h3>Citations on the vendor's own site</h3><div class="bignum" id="evidenceNum"></div><p class="cap" id="evidenceCap"></p></div>
+    <div class="card"><h3>Where the docs disagreed</h3><ul class="plain" id="docMiss"></ul></div>
+  </div>
+</section>
+
+<section id="verification">
+  <div class="sec-head"><span class="eyebrow">Accuracy</span><h2>How accuracy moved through the loops</h2><p class="muted" id="verIntro"></p></div>
+  <div class="grid2">
+    <div class="card"><h3>Field accuracy on the 20-app hand-checked sample</h3><svg class="chart-svg" id="accLine" viewBox="0 0 520 300" role="img" aria-label="Accuracy by layer"></svg><div class="keys" id="accKeys"></div></div>
+    <div class="card"><h3>Did the agent know when it was guessing?</h3><svg class="chart-svg" id="calib" viewBox="0 0 520 260" role="img" aria-label="Change rate by agent confidence"></svg><p class="cap">Share of first-pass answers (access, MCP, auth) that a later check changed, grouped by the confidence the agent reported.</p></div>
+    <div class="card"><h3>What each loop did across all 100 apps</h3><div class="bars" id="loopBars"></div><ul class="plain" id="ledger"></ul></div>
+    <div class="card"><h3>Where answers changed (category × field)</h3><div class="heat" id="errHeat"></div><p class="cap" id="errCap"></p></div>
+  </div>
+  <div class="grid2">
+    <div class="callout" id="gtCallout"></div>
+    <div class="callout teal"><b>Disputes settled on the vendor's page</b><ul class="plain" id="adjList"></ul></div>
+  </div>
+  <div class="card"><h3>Sample, app by app (first pass · agent verifier · final)</h3>
+    <div class="tbl-wrap"><table class="sample"><thead><tr><th>App</th><th>Checked</th><th>Auth</th><th>Access</th><th>MCP</th><th>Verdict</th><th>Final access (accepted)</th></tr></thead><tbody id="sampleRows"></tbody></table></div></div>
+</section>
+
+<section id="findings">
+  <div class="sec-head"><span class="eyebrow">Findings</span><h2>All 100 apps</h2><p class="muted">Click a row for notes, evidence links and every change the loops made. The five dots are the cross-checks, in order: Composio catalog, docs auth, docs access, docs MCP, hand check. Green agrees, red disagrees, grey means not applicable.</p></div>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search app, auth, note…" aria-label="Search apps">
+    <select id="fGroup" aria-label="Filter by category"><option value="">All categories</option></select>
+    <select id="fVerdict" aria-label="Filter by verdict"><option value="">All verdicts</option></select>
+    <select id="fCov" aria-label="Filter by Composio coverage"><option value="">Any Composio coverage</option><option value="native">In Composio</option><option value="mcp">MCP-only</option><option value="gap">Not in Composio</option></select>
+  </div>
+  <div class="count" id="count"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th data-k="id">#</th><th data-k="app">App</th><th data-k="group">Category</th><th data-k="auth_primary">Auth</th><th data-k="access">Access</th><th data-k="mcp">MCP</th><th data-k="cov">Composio</th><th data-k="verdict">Verdict</th><th data-k="blocker">Blocker</th><th>Checks</th></tr></thead>
+    <tbody id="rows"></tbody></table></div>
+</section>
+
+<section id="agent">
+  <div class="sec-head"><span class="eyebrow">The agent</span><h2>How the research was done</h2><p class="muted">Six stages. Composio's SDK runs every web search, page fetch and catalog lookup, and every stage writes files you can inspect.</p></div>
+  <div class="pipe" id="pipe"></div>
+  <div class="grid2">
+    <div class="card"><h3>Where a human was needed</h3><ul class="plain" id="humanList"></ul></div>
+    <div class="card"><h3>What defeated the agent</h3><ul class="plain" id="defeatList"></ul></div>
+  </div>
+</section>
+
+<section id="reproduce">
+  <div class="sec-head"><span class="eyebrow">Proof</span><h2>Run it yourself</h2><p><b>Code and data:</b> <a href="https://github.com/radhikakundnani/composio-toolkit-feasibility" target="_blank" rel="noopener">github.com/radhikakundnani/composio-toolkit-feasibility</a></p><p class="muted">Needs Python 3.10+ and a Composio API key with write scope on sessions. Extraction and verification are prompt files that any agent runner can execute; this run used Claude subagents.</p></div>
+  <pre id="cmds"></pre>
+  <p class="muted small">Machine-readable output: <a href="results.json">results.json</a> has every record, evidence URL, cross-check, change log and score, so an agent can use it directly.</p>
+</section>
+<footer id="foot"></footer>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LBL = {ready:"Ready",ready_with_caveats:"Ready w/ caveats",needs_outreach:"Needs outreach",not_buildable:"Not buildable",
+ self_serve_free:"Free",self_serve_trial:"Trial",paid_plan_required:"Paid plan",approval_required:"Approval / review",partner_or_sales_gated:"Partner / sales",no_public_api:"No public API",unknown:"Unknown",
+ oauth2:"OAuth2",api_key:"API key",bearer_token:"Bearer / PAT",basic:"Basic",jwt_service_account:"JWT / key pair",signature_hmac:"HMAC",none:"None",
+ official:"Official",community:"Community",none_found:"None found",paid_plan:"Paid plan",partner_or_app_review:"App review / partner",contact_sales:"Contact sales",narrow_api:"Narrow API",not_a_hosted_service:"Not hosted",identity_unclear:"Identity unclear",other:"Other"};
+const L = k => LBL[k] || k;
+const VORDER = ["ready","ready_with_caveats","needs_outreach","not_buildable"];
+const AORDER = ["self_serve_free","self_serve_trial","paid_plan_required","approval_required","partner_or_sales_gated","no_public_api","unknown"];
+const rows = D.rows, S = D.summary, V = D.verification, I = D.insights||{}, A = D.analysis, CAT = D.catalog_match;
+const groups = [...new Set(rows.map(r=>r.group))];
+const short = g => g.replace(" and Sales","").replace(" and Helpdesk","").replace(" and Messaging","").replace(", Ads, Email and Social"," & ads").replace(", SEO and Scraping"," & scraping").replace(", Infra and Data platforms"," & infra").replace(" and Project Management","").replace(" and Fintech","").replace(", Research and Media-native"," & media");
+const byGroup = g => rows.filter(r=>r.group===g);
+const names = list => list.map(r=>r.app).join(", ");
+const KEY = new Set(["api_key","bearer_token","basic"]);
+const authMix = r => { const m=new Set(r.auth_methods||[]); const k=[...m].some(x=>KEY.has(x)); return m.has("oauth2")&&k?"both":m.has("oauth2")?"oauth_only":k?"key_only":"other"; };
+const cov = r => { const c=CAT[r.id]; return !c.in_composio?"gap":c.mcp_only?"mcp":"native"; };
+const tip = $("#tip");
+document.addEventListener("mousemove", e => { const t=e.target.closest("[data-tip]"); if(!t){tip.hidden=true;return;} tip.hidden=false; tip.innerHTML=t.dataset.tip;
+  tip.style.left=Math.min(e.clientX+14, innerWidth-tip.offsetWidth-8)+"px"; tip.style.top=Math.min(e.clientY+14, innerHeight-tip.offsetHeight-8)+"px"; });
+const stack = (segs, thin) => `<div class="stack${thin?" thin":""}">${segs.filter(s=>s.v).map(s=>`<i class="${s.cls}" style="flex:${s.v}" data-tip="<b>${esc(s.label)}</b>: ${s.v}${s.apps?`<br>${esc(s.apps)}`:""}">${!thin && s.v>=(s.min??3)?s.v:""}</i>`).join("")}</div>`;
+const keys = list => list.map(([cls,l])=>`<span><i class="${cls}"></i>${esc(l)}</span>`).join("");
+
+$("#runDate").textContent = I.run_date||"";
+$("#lede").textContent = I.lede||"";
+const vc = k => S.verdict[k]||0, F = V.final;
+$("#kpis").innerHTML = [[vc("ready")+vc("ready_with_caveats"),"buildable as a toolkit today"],[vc("ready"),"ready with no caveats"],[A.coverage.in_composio,"already in Composio's catalog"],[100-A.coverage.in_composio,"gaps Composio could add"],[`${V.v1.overall}→${F.overall}%`,"sample accuracy, first pass → final"]]
+  .map(([b,s])=>`<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join("");
+
+const gapKind = r => r.verdict==="not_buildable"?"na":(r.access.startsWith("self_serve"))?"go":r.access==="paid_plan_required"?"pay":"out";
+const gaps = rows.filter(r=>!CAT[r.id].in_composio);
+const OC = A.triangulation.oauth_disputes.human_classification;
+const minis = {
+  verdict: () => stack(VORDER.map(v=>({v:vc(v),cls:"c-"+v,label:L(v),apps:v==="ready"?"":names(rows.filter(r=>r.verdict===v)),min:2})))+`<div class="keys">${keys(VORDER.map(v=>["c-"+v,`${L(v)} ${vc(v)}`]))}</div>`,
+  coverage: () => { const g=k=>gaps.filter(r=>gapKind(r)===k); return stack([{v:A.coverage.native,cls:"c-s1",label:"Native Composio toolkit"},{v:A.coverage.mcp_only,cls:"c-s4",label:"MCP-only toolkit",apps:names(rows.filter(r=>cov(r)==="mcp")),min:2},{v:g("go").length,cls:"c-ready",label:"Gap: build now",apps:names(g("go")),min:2},{v:g("pay").length,cls:"c-ready_with_caveats",label:"Gap: paid test account",apps:names(g("pay")),min:2},{v:g("out").length,cls:"c-needs_outreach",label:"Gap: outreach",apps:names(g("out")),min:2},{v:g("na").length,cls:"c-not_buildable",label:"Gap: not hosted",apps:names(g("na")),min:2}])+`<div class="keys">${keys([["c-s1","In Composio"],["c-s4","MCP-only"],["c-ready","Build now"],["c-ready_with_caveats","Paid"],["c-needs_outreach","Outreach"],["c-not_buildable","Not hosted"]])}</div>`; },
+  oauth: () => stack([{v:OC.rest_api_oauth.length,cls:"c-s1",label:"REST OAuth exists: Composio could add it",apps:OC.rest_api_oauth.join(", "),min:1},{v:OC.mcp_server_oauth_only.length,cls:"c-s4",label:"OAuth only on the MCP server",apps:OC.mcp_server_oauth_only.join(", "),min:1},{v:OC.weak_or_wrong_product.length,cls:"c-s2",label:"Weak or wrong-product hit",apps:OC.weak_or_wrong_product.join(", "),min:1},{v:OC.no_oauth.length,cls:"c-mute",label:"No OAuth",apps:OC.no_oauth.join(", "),min:1}])+`<div class="keys">${keys([["c-s1","REST OAuth: upgrade"],["c-s4","MCP-only OAuth"],["c-s2","Weak hit"],["c-mute","None"]])}</div>`,
+  access: () => `<div class="srows">${groups.map(g=>{const rs=byGroup(g),ss=rs.filter(r=>r.access.startsWith("self_serve"));return `<div class="srow"><span>${esc(short(g))}</span>${stack([{v:ss.length,cls:"c-ready",label:"Self-serve",apps:names(ss)},{v:10-ss.length,cls:"c-needs_outreach",label:"Paid, review or sales",apps:names(rs.filter(r=>!r.access.startsWith("self_serve")))}],true)}<span class="r">${ss.length}/10</span></div>`}).join("")}</div>`,
+  mcp: () => stack([{v:S.mcp.official,cls:"c-s1",label:"Official vendor MCP"},{v:S.mcp.community||0,cls:"c-s2",label:"Community only",apps:names(rows.filter(r=>r.mcp==="community")),min:2},{v:S.mcp.none_found||0,cls:"c-mute",label:"None found",apps:names(rows.filter(r=>r.mcp==="none_found")),min:2}])+`<div class="keys">${keys([["c-s1",`Official ${S.mcp.official}`],["c-s2",`Community ${S.mcp.community||0}`],["c-mute",`None ${S.mcp.none_found||0}`]])}</div>`,
+  calibration: () => { const c=A.calibration.all; return `<div class="bars">${["low","medium","high"].map(k=>`<div class="bar"><span>${k} confidence</span><span class="t"><i class="c-${k==="low"?"needs_outreach":k==="medium"?"ready_with_caveats":"ready"}" style="width:${100*c[k].rate}%" data-tip="${c[k].changed} of ${c[k].n} answers changed"></i></span><b>${Math.round(100*c[k].rate)}%</b></div>`).join("")}</div>`; }
+};
+$("#patternList").innerHTML = (I.patterns||[]).map((p,i)=>`<article class="pattern"><span class="n">PATTERN ${i+1}</span><h3>${esc(p.title)}</h3><div class="mini">${minis[p.chart]?minis[p.chart]():""}</div><p>${esc(p.body)}</p></article>`).join("");
+
+$("#verdictRows").innerHTML = groups.map(g=>{const rs=byGroup(g);return `<div class="srow"><span>${esc(short(g))}</span>${stack(VORDER.map(v=>({v:rs.filter(r=>r.verdict===v).length,cls:"c-"+v,label:L(v),apps:names(rs.filter(r=>r.verdict===v)),min:1})))}<span class="r">${rs.filter(r=>r.verdict==="ready").length}/10</span></div>`}).join("");
+$("#verdictKeys").innerHTML = keys(VORDER.map(v=>["c-"+v,L(v)]))+`<span class="muted">· right: ready</span>`;
+const heat = (el, rowsL, cols, cellFn, max, colLbl, rowLbl=x=>x) => { $(el).style.gridTemplateColumns = `minmax(110px,170px) repeat(${cols.length},minmax(42px,1fr))`;
+  $(el).innerHTML = `<span></span>${cols.map(c=>`<span class="h">${esc(colLbl(c))}</span>`).join("")}` + rowsL.map(rl=>`<span class="rl">${esc(rowLbl(rl))}</span>`+cols.map(c=>{const {n,apps}=cellFn(rl,c);const a=n?0.14+0.86*Math.min(1,n/max):0;
+    return `<span class="c" style="background:${n?`rgba(14,94,99,${a.toFixed(2)})`:"var(--sunk)"};color:${a>0.5?"#fff":"var(--fg)"}" data-tip="<b>${esc(rowLbl(rl))} · ${esc(colLbl(c))}</b>: ${n}${apps?`<br>${esc(apps)}`:""}">${n||""}</span>`;}).join("")).join(""); };
+const accCols = AORDER.filter(a=>rows.some(r=>r.access===a));
+heat("#accessHeat", groups, accCols, (g,a)=>{const rs=byGroup(g).filter(r=>r.access===a);return {n:rs.length,apps:names(rs)};}, 8, L, short);
+const AUTHK=[["both","c-s1","OAuth + key"],["oauth_only","c-s4","OAuth only"],["key_only","c-s2","Key only"],["other","c-mute","None / other"]];
+$("#authRows").innerHTML = groups.map(g=>{const rs=byGroup(g);return `<div class="srow"><span>${esc(short(g))}</span>${stack(AUTHK.map(([k,cls,l])=>({v:rs.filter(r=>authMix(r)===k).length,cls,label:l,apps:names(rs.filter(r=>authMix(r)===k)),min:1})))}<span class="r">${rs.filter(r=>["both","oauth_only"].includes(authMix(r))).length}/10</span></div>`}).join("");
+$("#authKeys").innerHTML = keys(AUTHK.map(([,c,l])=>[c,l]))+`<span class="muted">· right: offer OAuth</span>`;
+const blk = Object.entries(S.blocker).sort((a,b)=>b[1]-a[1]), bmax = blk[0][1];
+$("#blockerBars").innerHTML = blk.map(([k,v])=>`<div class="bar"><span>${L(k)}</span><span class="t"><i class="c-s1" style="width:${100*v/bmax}%" data-tip="${esc(names(rows.filter(r=>r.blocker===k)))}"></i></span><b>${v}</b></div>`).join("");
+$("#blockerCap").textContent = `${rows.filter(r=>r.blocker==="none").length} apps have no blocker. Hover a bar for the apps.`;
+
+(() => { const W=560,H=460,m={l:48,r:16,t:30,b:62}, pw=W-m.l-m.r, ph=H-m.t-m.b; const pts=A.priority.points;
+  const xs=v=>m.l+(0.04+0.92*v)*pw, ys=v=>m.t+(1-(0.06+0.88*v))*ph; const seen={};
+  let s=`<rect x="${m.l}" y="${m.t}" width="${pw}" height="${ph}" fill="#fbfbfa" stroke="var(--line)"/>
+   <line x1="${xs(.5)}" x2="${xs(.5)}" y1="${m.t}" y2="${m.t+ph}" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="${m.l}" x2="${m.l+pw}" y1="${ys(.5)}" y2="${ys(.5)}" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="4 4"/>
+   <text x="${m.l+pw}" y="${m.t-10}" text-anchor="end" font-size="11" font-weight="600" fill="var(--ok-ink)">BUILD NOW ↗</text><text x="${m.l}" y="${m.t-10}" font-size="11" font-weight="600" fill="var(--bad-ink)">↖ WORTH THE OUTREACH</text>
+   <text x="${m.l+pw}" y="${m.t+ph+16}" text-anchor="end" font-size="11" font-weight="600">QUICK BUT SMALL ↘</text><text x="${m.l}" y="${m.t+ph+16}" font-size="11" font-weight="600">↙ DEPRIORITISE</text>
+   <text x="${m.l+pw/2}" y="${H-10}" text-anchor="middle" font-size="12">Ease of getting credentials: sales gate → approval → paid → trial → free</text>
+   <text transform="translate(16 ${m.t+ph/2}) rotate(-90)" text-anchor="middle" font-size="12">API depth: narrow → broad</text>`;
+  const dens={}; pts.forEach(p=>{const k=p.ease+"|"+p.depth; dens[k]=(dens[k]||0)+1;});
+  const ordered=[...pts].sort((a,b)=>(a.in_composio&&!a.mcp_only?0:1)-(b.in_composio&&!b.mcp_only?0:1)); const labels=[];
+  for (const p of ordered){ const key=p.ease+"|"+p.depth; const k=seen[key]=(seen[key]||0)+1; const ang=k*2.4, rad=k===1?0:6+3.4*Math.sqrt(k);
+    const cx=xs(p.ease)+Math.cos(ang)*rad, cy=ys(p.depth)+Math.sin(ang)*rad*0.9; const col=!p.in_composio?"var(--s2)":p.mcp_only?"var(--s4)":"var(--s1)";
+    s+=`<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="5" fill="${col}" stroke="#fff" stroke-width="2" data-tip="<b>${esc(p.app)}</b><br>${esc(L(p.access))} · ${esc(L(p.verdict))}<br>${p.in_composio?(p.mcp_only?"MCP-only toolkit in Composio":`In Composio · ${p.tools??"?"} tools`):"Not in Composio"}"/>`;
+    if(!p.in_composio && p.verdict!=="not_buildable" && dens[key]<=6) labels.push([cx,cy,({"Salesforce Commerce Cloud":"SF Commerce Cloud","Amazon Selling Partner":"Amazon SP-API"})[p.app]||p.app.replace(/ \(.*\)/,"")]); }
+  labels.sort((a,b)=>a[1]-b[1]); const used=[];
+  for(const [cx,cy,t] of labels){ let yy=cy+4; while(used.some(([ux,uy])=>Math.abs(uy-yy)<12 && Math.abs(ux-cx)<90)) yy+=12; used.push([cx,yy]);
+    const left=cx>m.l+pw-90; s+=`<text x="${(left?cx-8:cx+8).toFixed(1)}" y="${yy.toFixed(1)}" font-size="10.5" fill="var(--fg)" text-anchor="${left?"end":"start"}">${esc(t)}</text>`; }
+  $("#quad").innerHTML = s; })();
+$("#covRows").innerHTML = groups.map(g=>{const rs=byGroup(g);return `<div class="srow"><span>${esc(short(g))}</span>${stack([{v:rs.filter(r=>cov(r)==="native").length,cls:"c-s1",label:"Native toolkit",min:1},{v:rs.filter(r=>cov(r)==="mcp").length,cls:"c-s4",label:"MCP-only",apps:names(rs.filter(r=>cov(r)==="mcp")),min:1},{v:rs.filter(r=>cov(r)==="gap").length,cls:"c-s2",label:"Not in Composio",apps:names(rs.filter(r=>cov(r)==="gap")),min:1}])}<span class="r">${rs.filter(r=>cov(r)!=="gap").length}/10</span></div>`}).join("");
+$("#gapChips").innerHTML = [...gaps].sort((a,b)=>["go","pay","out","na"].indexOf(gapKind(a))-["go","pay","out","na"].indexOf(gapKind(b))).map(r=>`<span class="chip ${gapKind(r)}" data-tip="<b>${esc(L(r.access))}</b> · ${esc(r.access_notes)}">${esc(r.app)}</span>`).join("");
+
+const T = A.triangulation, TS = T.summary;
+$("#triIntro").textContent = "Each final answer was compared with four independent sources: Composio's own toolkit catalog (the auth schemes of the 80 apps it covers, pulled via the SDK), the cited vendor page fetched through Composio (auth, access, MCP), and a hand check of the 20-app sample in a browser.";
+const SRC=[["composio_auth","Composio catalog: auth"],["docs_auth","Vendor docs: auth"],["docs_access","Vendor docs: access"],["docs_mcp","Vendor docs: MCP"],["hand","Hand check (sample)"]];
+const triApps=(k,v)=>names(Object.values(T.rows).filter(r=>r[k]===v));
+$("#triRows").innerHTML = SRC.map(([k,l])=>`<div class="srow"><span>${l}</span>${stack([{v:TS[k].agree,cls:"c-ready",label:"Agrees",min:4},{v:TS[k].disagree,cls:"c-needs_outreach",label:"Disagrees",apps:triApps(k,"disagree"),min:2},{v:TS[k].not_checked,cls:"c-mute",label:"Not applicable",min:4}])}<span class="r">${Math.round(100*TS[k].agree/(TS[k].agree+TS[k].disagree))}%</span></div>`).join("");
+$("#oauthStack").innerHTML = minis.oauth();
+$("#oauthLists").innerHTML = `<ul class="plain"><li><b>Composio upgrade opportunity (${OC.rest_api_oauth.length}):</b> ${esc(OC.rest_api_oauth.join(", "))}. The vendor documents REST OAuth, but the Composio toolkit connects with a key.</li><li><b>Agent over-claimed (${OC.mcp_server_oauth_only.length+OC.weak_or_wrong_product.length+OC.no_oauth.length}):</b> the OAuth was only for the vendor's MCP server (${esc(OC.mcp_server_oauth_only.join(", "))}), the hit was weak or about another product (${esc(OC.weak_or_wrong_product.join(", "))}), or there was no OAuth at all (${esc(OC.no_oauth.join(", "))}). Corrected in the final data.</li></ul>`;
+const dist=T.sources_checked_dist, dmax=Math.max(...Object.values(dist));
+$("#srcDist").innerHTML = Object.keys(dist).sort().map(k=>`<div class="bar"><span>${k} sources</span><span class="t"><i class="c-s1" style="width:${100*dist[k]/dmax}%"></i></span><b>${dist[k]}</b></div>`).join("");
+$("#evidenceNum").innerHTML = `<b style="color:var(--faint)">${Math.round(100*A.evidence.v1.share)}%</b><span class="arrow">→</span><b class="ok">${Math.round(100*A.evidence.final.share)}%</b>`;
+$("#evidenceCap").textContent = `First pass → final, across ${A.evidence.final.total} cited URLs. The verifier replaced third-party blogs and directories with vendor docs and pricing pages.`;
+const docMissApps = k => Object.values(T.rows).filter(r=>r[k]==="disagree").map(r=>r.app);
+$("#docMiss").innerHTML = `<li><b>Auth (${TS.docs_auth.disagree}):</b> the primary method isn't named on the cited page: ${esc(docMissApps("docs_auth").join(", "))}.</li><li><b>Access (${TS.docs_access.disagree}):</b> the cited page doesn't state the plan in plain words (pricing is often rendered by JavaScript). These rest on search snippets.</li><li><b>MCP (${TS.docs_mcp.disagree}):</b> ${esc(docMissApps("docs_mcp").join(", "))}.</li>`;
+
+(() => { const W=520,H=300,m={l:44,r:96,t:22,b:36},pw=W-m.l-m.r,ph=H-m.t-m.b; const st=[["v1","First pass"],["v2","Agent verifier"],["final","Final"]]; const lo=80,hi=100;
+  const x=i=>m.l+i*pw/2, y=v=>m.t+(1-(v-lo)/(hi-lo))*ph; let s="";
+  for(const t of [80,85,90,95,100]) s+=`<line x1="${m.l}" x2="${m.l+pw}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${m.l-8}" y="${y(t)+4}" text-anchor="end" font-size="11">${t}%</text>`;
+  st.forEach(([,l],i)=> s+=`<text x="${x(i)}" y="${H-10}" text-anchor="middle" font-size="11.5">${l}</text>`);
+  const fields=[["auth","var(--s1)"],["access","var(--s2)"],["mcp","var(--s3)"],["verdict","var(--s4)"]];
+  const pct=(sc,f)=>{const [a,b]=sc.by_field[f].split("/").map(Number);return 100*a/b;}; const lab=[];
+  for(const [f,c] of fields){ const vals=st.map(([k])=>pct(V[k],f)); s+=`<polyline fill="none" stroke="${c}" stroke-width="2" points="${vals.map((v,i)=>`${x(i)},${y(v)}`).join(" ")}"/>`;
+    vals.forEach((v,i)=> s+=`<circle cx="${x(i)}" cy="${y(v)}" r="4.5" fill="${c}" stroke="#fff" stroke-width="2" data-tip="<b>${f}</b> · ${st[i][1]}: ${V[st[i][0]].by_field[f]}"/>`); lab.push([f,vals[2]]); }
+  const ov=st.map(([k])=>V[k].overall); s+=`<polyline fill="none" stroke="var(--fg)" stroke-width="3" points="${ov.map((v,i)=>`${x(i)},${y(v)}`).join(" ")}"/>`;
+  ov.forEach((v,i)=> s+=`<circle cx="${x(i)}" cy="${y(v)}" r="5.5" fill="var(--fg)" stroke="#fff" stroke-width="2" data-tip="<b>Overall</b> · ${st[i][1]}: ${v}% (${V[st[i][0]].hits}/${V[st[i][0]].total})"/><text x="${x(i)}" y="${y(v)+18}" text-anchor="middle" font-size="12" font-weight="600" fill="var(--fg)">${v}%</text>`);
+  lab.push(["overall",ov[2]]); lab.sort((a,b)=>b[1]-a[1]); let lastY=-99;
+  lab.forEach(([f,v])=>{ const yy=Math.max(y(v)+4,lastY+14); lastY=yy; s+=`<text x="${x(2)+12}" y="${yy}" font-size="11.5" fill="var(--fg)">${f}</text>`; });
+  $("#accLine").innerHTML=s; $("#accKeys").innerHTML = keys([["c-s1","auth"],["c-s2","access"],["c-s3","MCP"],["c-s4","verdict"]])+`<span><i style="background:var(--fg)"></i>overall</span>`; })();
+(() => { const c=A.calibration.all, W=520,H=260,m={l:44,r:16,t:20,b:40},pw=W-m.l-m.r,ph=H-m.t-m.b; const ks=["low","medium","high"], bw=pw/3*0.46; let s="";
+  for(const t of [0,20,40,60]) { const yy=m.t+(1-t/70)*ph; s+=`<line x1="${m.l}" x2="${m.l+pw}" y1="${yy}" y2="${yy}" stroke="var(--line)"/><text x="${m.l-8}" y="${yy+4}" text-anchor="end" font-size="11">${t}%</text>`; }
+  ks.forEach((k,i)=>{ const v=100*c[k].rate, h=Math.max(v/70*ph,4), xx=m.l+(i+.5)*pw/3-bw/2, col=k==="low"?"var(--bad)":k==="medium"?"var(--warn)":"var(--ok)";
+    s+=`<path d="M${xx},${m.t+ph} v${-(h-4)} q0,-4 4,-4 h${bw-8} q4,0 4,4 v${h-4} z" fill="${col}" data-tip="<b>${k} confidence</b><br>${c[k].changed} of ${c[k].n} answers changed"/>
+     <text x="${xx+bw/2}" y="${m.t+ph-h-8}" text-anchor="middle" font-size="13" font-weight="600" fill="var(--fg)">${Math.round(v)}%</text>
+     <text x="${xx+bw/2}" y="${H-20}" text-anchor="middle" font-size="12" fill="var(--fg)">${k}</text><text x="${xx+bw/2}" y="${H-5}" text-anchor="middle" font-size="10.5">${c[k].changed} of ${c[k].n}</text>`; });
+  $("#calib").innerHTML=s; })();
+const valF=["access","mcp","verdict","blocker","auth_primary","auth_methods","identity_issue"];
+const vch=V.changes.filter(c=>valF.includes(c.field)), ech=V.changes.filter(c=>c.field.startsWith("evidence."));
+const adj=V.adjudications, triAdj=Object.values(adj).filter(a=>a.layer==="triangulation").length;
+const loops=[["Rule flags, first pass",V.flags_v1,"apps flagged"],["Rule flags, after verifying",V.flags_v2,"apps flagged"],["Verifier: answers changed",vch.length,"field changes"],["Verifier: citations upgraded",ech.length,"URLs replaced"],["Triangulation fixes",triAdj,"apps corrected"],["Browser adjudications",Object.keys(adj).length-triAdj,"disputes settled"]];
+const lmax=Math.max(...loops.map(l=>l[1]));
+$("#loopBars").innerHTML = loops.map(([l,v,u])=>`<div class="bar"><span>${l}</span><span class="t"><i class="c-s1" style="width:${100*v/lmax}%" data-tip="${v} ${u}"></i></span><b>${v}</b></div>`).join("");
+$("#ledger").innerHTML = `<li>The rules found ${V.flag_kinds_v1.consistency||0} verdict-vs-access contradictions and ${V.flag_kinds_v1.dead_link||0} dead links on the first pass; no contradictions remain.</li><li>The verifier was wrong twice (Twilio, Neo4j). That's why browser adjudication is its own layer.</li>`;
+const EF=["access","mcp","auth_primary","verdict","blocker"];
+heat("#errHeat", groups, EF, (g,f)=>({n:A.error_map[g][f]||0,apps:""}), 5, f=>f==="auth_primary"?"auth":f, short);
+const emTot = g => Object.values(A.error_map[g]).reduce((a,b)=>a+b,0); const emSorted=[...groups].sort((a,b)=>emTot(b)-emTot(a));
+$("#errCap").textContent = `Most corrections: ${short(emSorted[0])} (${emTot(emSorted[0])}) and ${short(emSorted[1])} (${emTot(emSorted[1])}). Fewest: ${groups.filter(g=>emTot(g)===0).map(short).join(", ")||short(emSorted.at(-1))}. Blocker labels moved most, because the first pass often filed blockers as "other".`;
+$("#verIntro").textContent = I.ver_intro||"";
+$("#gtCallout").innerHTML = `<b>The hand check was checked too.</b> ${Object.keys(V.gt_corrections).length} disagreements turned out to be errors in the hand check, not the agent:<ul class="plain">${Object.entries(V.gt_corrections).map(([id,t])=>`<li><b>${esc(rows.find(r=>r.id==id)?.app)}</b>: ${esc(t)}</li>`).join("")}</ul>`;
+$("#adjList").innerHTML = Object.values(adj).filter(a=>a.layer!=="triangulation").map(a=>`<li><b>${esc(a.app)}</b>: ${esc(a.verdict_on_dispute)}</li>`).join("")+`<li><b>${triAdj} OAuth over-claims</b> found by triangulation and corrected (see Cross-checks).</li><li><b>Known miss, left visible:</b> Freshdesk's MCP. Both agent passes counted Freshworks' developer-tooling MCP as a Freshdesk data MCP.</li>`;
+const mark=o=>o===null?"–":o?'<span class="ok">✓</span>':'<span class="bad">✗</span>';
+$("#sampleRows").innerHTML = V.v1.rows.map((r1,i)=>{const r2=V.v2.rows[i],r3=F.rows[i];
+  const cell=f=>`<td class="c" data-tip="first pass: ${esc(L(r1.got[f]))}<br>verifier: ${esc(L(r2.got[f]))}<br>final: ${esc(L(r3.got[f]))}<br>accepted: ${esc((r1.truth[f]||[]).map(L).join(", ")||"not scored")}">${mark(r1.ok[f])} ${mark(r2.ok[f])} ${mark(r3.ok[f])}</td>`;
+  return `<tr><td><b>${esc(r1.app)}</b></td><td class="mono">${r1.how==="browser"?"browser":"reviewer"}</td>${["auth","access","mcp","verdict"].map(cell).join("")}<td class="muted small">${esc(L(r3.got.access))} (${esc((r3.truth.access||[]).map(L).join(" / "))})</td></tr>`;}).join("");
+
+const fill=(id,vals)=>$(id).insertAdjacentHTML("beforeend",vals.map(v=>`<option value="${esc(v)}">${esc(L(v))}</option>`).join(""));
+fill("#fGroup",groups); fill("#fVerdict",VORDER);
+let sortK="id",sortDir=1,open=new Set();
+const COVL={native:"In Composio",mcp:"MCP-only",gap:"Not in Composio"};
+const dots=r=>{const t=T.rows[r.id]||{};return `<span class="dotsrc">${SRC.map(([k,l])=>`<i class="${t[k]==="agree"?"d-agree":t[k]==="disagree"?"d-disagree":"d-na"}" data-tip="${esc(l)}: ${esc(t[k]||"not applicable")}"></i>`).join("")}</span>`;};
+function render(){ const q=$("#q").value.toLowerCase(),g=$("#fGroup").value,v=$("#fVerdict").value,cv=$("#fCov").value;
+  let list=rows.filter(r=>(!g||r.group===g)&&(!v||r.verdict===v)&&(!cv||cov(r)===cv)&&(!q||JSON.stringify([r.app,r.one_liner,r.auth_methods,r.access_notes,r.blocker_note,r.mcp_note]).toLowerCase().includes(q)));
+  const key=r=>sortK==="verdict"?VORDER.indexOf(r.verdict):sortK==="cov"?cov(r):r[sortK]; list.sort((x,y)=>(key(x)>key(y)?1:key(x)<key(y)?-1:0)*sortDir);
+  $("#count").textContent=`${list.length} of ${rows.length} apps`;
+  $("#rows").innerHTML=list.map(r=>{ const ch=r.changes.length+(r.adjudication?1:0); const c=CAT[r.id];
+    const main=`<tr class="row" data-id="${r.id}" tabindex="0" aria-expanded="${open.has(r.id)}"><td class="mono">${r.id}</td><td><b>${esc(r.app)}</b>${ch?` <span class="chg" data-tip="changes made by the verification loops">±${ch}</span>`:""}<div class="muted" style="font-size:12px">${esc(r.one_liner)}</div></td><td>${esc(short(r.group))}</td>
+      <td>${(r.auth_methods||[]).filter(m=>m!=="unknown").map(m=>`<span class="tag"${m===r.auth_primary?' style="outline:1px solid var(--accent)"':""}>${L(m)}</span>`).join("")}</td><td>${L(r.access)}</td><td>${L(r.mcp)}</td>
+      <td class="small">${COVL[cov(r)]}${c.tools?` <span class="muted mono">${c.tools} tools</span>`:""}</td><td><span class="pill v-${r.verdict}">${L(r.verdict)}</span></td><td>${r.blocker==="none"?'<span class="muted">—</span>':L(r.blocker)}</td><td>${dots(r)}</td></tr>`;
+    if(!open.has(r.id)) return main;
+    const ev=Object.entries(r.evidence||{}).filter(([,u])=>u).map(([k,u])=>`<div><span class="eyebrow">${k} source</span><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></div>`).join("");
+    const chg=r.changes.map(c=>`<li><b>${esc(c.field)}</b>: ${esc(JSON.stringify(c.from))} → ${esc(JSON.stringify(c.to))}. ${esc(c.why)}</li>`).join("");
+    return main+`<tr class="detail"><td></td><td colspan="9"><div class="detail-grid"><div><span class="eyebrow">Access</span>${esc(r.access_notes)}</div><div><span class="eyebrow">Blocker</span>${esc(r.blocker_note||"None")}</div><div><span class="eyebrow">MCP</span>${esc(r.mcp_note||"—")}</div>
+      <div><span class="eyebrow">Composio catalog</span>${c.in_composio?`${esc(c.slug)} · auth ${esc((c.auth_schemes||[]).join(", "))} · ${c.tools??"?"} tools`:"No toolkit yet"}</div>
+      ${r.identity_issue?`<div><span class="eyebrow">Identity note</span>${esc(r.identity_issue)}</div>`:""}${r.adjudication?`<div><span class="eyebrow">Adjudication</span>${esc(r.adjudication)}</div>`:""}${ev}</div>
+      ${chg?`<div style="margin-top:10px"><span class="eyebrow">Changed by the verifier</span><ul class="plain">${chg}</ul></div>`:""}</td></tr>`; }).join(""); }
+["#q","#fGroup","#fVerdict","#fCov"].forEach(s=>$(s).addEventListener("input",render));
+document.querySelectorAll("th[data-k]").forEach(th=>th.addEventListener("click",()=>{const k=th.dataset.k;sortDir=sortK===k?-sortDir:1;sortK=k;render();}));
+const toggle=tr=>{const id=+tr.dataset.id;open.has(id)?open.delete(id):open.add(id);render();};
+$("#rows").addEventListener("click",e=>{const tr=e.target.closest("tr.row");if(tr&&!e.target.closest("a"))toggle(tr);});
+$("#rows").addEventListener("keydown",e=>{const tr=e.target.closest("tr.row");if(tr&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggle(tr);}});
+render();
+
+$("#pipe").innerHTML=(I.pipeline||[]).map(s=>`<div class="stage"><span class="k">${esc(s.k)}</span><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p><span class="who ${s.who}">${esc(s.whoLabel)}</span></div>`).join("");
+$("#humanList").innerHTML=(I.human||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+$("#defeatList").innerHTML=(I.defeats||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+$("#cmds").textContent=I.commands||""; $("#foot").textContent=I.footer||"";
+</script>

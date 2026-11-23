@@ -1,0 +1,142 @@
+{
+ "id": 72,
+ "app": "Airtable",
+ "hint": "airtable.com/developers",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Airtable API authentication OAuth API key access token developer docs airtable.com/developers",
+   "log_id": "log_UA6S2YanPJFB",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://airtable.com/developers/web/api/authentication.md",
+     "title": "airtable.com/developers/web/api/authentication.md",
+     "snippet": "Airtable's API uses token-based authentication, allowing users to authenticate API requests by inputting their tokens\ninto the HTTP authorization bearer token header.\nExample:\n```\ncurl https://api.airtable.com/v0/YOUR_BASE_ID/YOUR_TABLE_ID_OR_NAME -H \\\n\"Authorization: Bearer YOUR_TOKEN\"\n```\nAll API requests must be authenticated and made through HTTPS.\nPassing personal access tokens and OAuth access tokens via the legacy `api_key` URL parameter is not supported.\n## Types of token\n> As of February 1st 2024, the deprecation period for Airtable API keys has ended. Users of Airtable API keys must\n> migrate to the new authentication methods to continue using Airtable's API. See [this article](https://support.airtable.com/docs/airtable-api-key-deprecation-notice)\n> for more details.\nWe currently support using personal access tokens and OAuth access tokens during the authentication process.\n[Personal access tokens](/guides/personal-access-tokens) are for personal development, like building an integration for\nyourself, your client, or your company. They can be created and managed at [/create/tokens](/../../create/tokens) or\nfrom the enterprise admin panel for [service accounts](https://sup"
+    },
+    {
+     "url": "https://airtable.com/developers/web/api/oauth-reference.md",
+     "title": "airtable.com/developers/web/api/oauth-reference.md",
+     "snippet": "# OAuth reference\nReference for how to request OAuth access tokens for your integration.\nRefer to [this guide](/guides/oauth-integrations) for how to register an OAuth integration with Airtable.\nAn example setup repo is available [here](https://github.com/Airtable/oauth-example).\n\n### Authorization request\nGET `https://airtable.com/oauth2/v1/authorize`\n#### Authorization request query\nYou can find your `client_id` and manage the registered `redirect_uri` and `scopes` for your integration by clicking\nyour integration's name in the integration management page at [/create/oauth](/../../create/oauth).\n**Important:** In order to use an integration outside of development your integration you will need to set a valid Terms of Service URL,\nSupport Email, and Privacy Policy URL in the integration management page at [/create/oauth](/../../create/oauth).\n\n### Token creation request\nAfter a successful authorization request, POST to `https://airtable.com/oauth2/v1/token` using the grant code from the\nauthorization request. This request must be made **within 10 minutes** of the authorization request.\n#### Token creation request headers\n| Header                     | Value                        "
+    },
+    {
+     "url": "https://support.airtable.com/docs/en/creating-and-using-api-keys-and-access-tokens",
+     "title": "Creating personal access tokens",
+     "snippet": "Personal Access Tokens (PATs) allow users to create multiple access tokens that allow for a wide range of access to the information held in Airtable bases. For example, on the narrow end, you can create a PAT that only has a single scope to a single base in Airtable. On the deep end, however, you could have a \"main/overarching\" token that has access to all workspaces and bases with all available scopes included. Further, admins can adopt user role access on workspaces and bases in their enterprise for which they are not direct collaborators.\nPATs allow admins access to workspaces and bases added to their organization. The admin who owns the PAT does not need to be a direct collaborator on every workspace and base within the organization. Instead, the PAT adopts the user role permissions for those bases and workspaces.\n# Accessing personal access tokens\n1. Click **Personal access tokens** under the \u201cDevelopers\u201d section.\n# Creating personal access tokens\n1. Click **Create token**.\n2. Name your token.\n3. Click **+ Add a scope**.\n1. Check out [developer documentation](https://airtable.com/developers/web/api/scopes) to learn more about scopes.\n4. Click **+ Add all resources**/**+ Add a "
+    },
+    {
+     "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+     "title": "airtable.com/developers/web/guides/oauth-integrations.md",
+     "snippet": "OAuth integrations allow you to register with Airtable so that users may grant\nyou the ability to access Airtable's API on their behalf via the [OAuth](https://oauth.net/2/) grant flow.\nIf you are building an Airtable integration for your product or for many different users that needs to use the Airtable\nAPI on behalf of those users, you will need to create an OAuth integration.\nThis guide will walk you through how to create your OAuth integration. For full reference on how to authorize via OAuth,\nplease see our [OAuth reference](https://airtable.com/developers/web/api/oauth-reference).\n## Registering a new integration\nYou can access the OAuth integrations panel at [/create/oauth](https://airtable.com/create/oauth). From here you can\nregister new integrations, and see a summary of previously created integrations and their possible scopes.\nClick the \u2018Register new OAuth integration\u2019 button to create a new OAuth integration.\nGive your integration a unique name and register a valid redirect URL and click \u2018Register integration\u2019. You will be able\nto change these later. For more details on how we validate the redirect URL, see its section in the [OAuth reference](https://airtable.com/deve"
+    },
+    {
+     "url": "https://airtables.net/airtable-api-key-personal-access-token",
+     "title": "Airtable API Key Replaced: Use a Personal Access Token",
+     "snippet": "# Airtable API key is gone: create a personal access token instead\nAirtable API keys stopped working on 1 February 2024. Create a personal access token with only the scopes and bases a script needs, send it as a Bearer header, confirm it with whoami, see when OAuth or a service account fits better, and plan token rotation or revoke a leaked token.\n\nFor your own script, replace the retired Airtable API key with a [personal access token](https://support.airtable.com/articles/9934989703-creating-personal-access-tokens?ref=airtables.net), give it only the scopes and bases the script needs, and send it in an `Authorization: Bearer` header. For a third-party app, choose its Airtable OAuth connection. User API keys stopped working on 1 February 2024, so there is no active key left to retrieve from the account page.\nI'd give each integration its own token and keep the value in one secure place, because regenerating a token breaks every script that still reads the old value. Decide what the integration may do and which bases it may reach before creating the secret. Then confirm the credential with a request that needs no scopes.\n\n[Airtable's developer changelog](https://airtable.com/develop"
+    }
+   ]
+  },
+  "access": {
+   "query": "Airtable airtable.com/developers API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_6tuRpvK1ODQK",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+     "title": "Getting started with Airtable's Web API",
+     "snippet": "| **Plan availability** | All plan types with varying call limitations |\n|---|---|\n| **Permissions** | - Generally, workspace **Owner** or base **Creator** permissions are useful for working with Airtable's Web API. - **Enterprise Scale** and **Business** customers will also find that having admin permissions is necessary to access certain information via API calls. |\n| **Platform(s)** | Web/Browser, Mac app, and Windows app |\n\nAre there API call limits?\nYes. These vary by plan type:\n- **Free** plan - 1000 calls per workspace per month\n- **Team** plan - 100,000 calls per workspace per month\n- **Business** and **Enterprise** plans - Unlimited API calls (Still subject to other limits such as the rate limits discussed above)"
+    },
+    {
+     "url": "https://airtable.com/developers/web/api/billing-plans.md",
+     "title": "airtable.com/developers/web/api/billing-plans.md",
+     "snippet": "The Public API limit is currently only enforced on the Free plan. For more details on managing your usage and understanding limits, see our [support doc](https://support.airtable.com/docs/managing-api-call-limits-in-airtable#monthly-call-limits-for-free-and-team-plans).\n\n## Current plans\n-   Free\n-   Access to all \"Base Data\" endpoints except \"Views\"\n-   Public API limit is enforced. For more information see our [support doc](https://support.airtable.com/docs/managing-api-call-limits-in-airtable#monthly-call-limits-for-free-and-team-plans).\n-   Teams\n-   Same access as the Free plan\n-   Business\n-   Same access as the Free plan, in addition to SCIM user management\n-   Enterprise Scale\n-   Access to all endpoints, including the Enterprise API"
+    },
+    {
+     "url": "https://airtables.net/airtable-api-key-personal-access-token",
+     "title": "Airtable API Key Replaced: Use a Personal Access Token",
+     "snippet": "The workspace that holds the base has a monthly API allowance: 1,000 calls on Free, 100,000 on Team, and no monthly cap on Business or Enterprise Scale, according to [Airtable's plan limits](https://support.airtable.com/articles/2277136852-airtable-plans-overview?ref=airtables.net). Separately, [the API rate limit](https://airtable.com/developers/web/api/rate-limits?ref=airtables.net) is 5 requests per second per base. Personal access tokens are available on all plans, in the browser and the Mac and Windows apps. API calls to that base count toward its workspace's allowance, including its metadata requests and calls made by connected tools.\n\nBefore opening the token page, settle who connects. [Airtable's authentication reference](https://airtable.com/developers/web/api/authentication?ref=airtables.net) reserves personal access tokens for \"personal development, like building an integration for yourself, your client, or your company\", and says that \"Any integrations that allow other users to grant access to Airtable should use OAuth.\"\n| Who connects | Credential | What changes for you |\n|---|---|---|\n| A script you run, or build for a client or your company | Personal access token | "
+    },
+    {
+     "url": "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens",
+     "title": "Creating personal access tokens",
+     "snippet": "| **Plan availability** | All plan types. Certain features are only available to Enterprise Scale or Business plan customers. |"
+    },
+    {
+     "url": "https://airtable.com/developer-policy",
+     "title": "Airtable - Airtable",
+     "snippet": "These Developer Terms are a binding agreement between you and Airtable (and, where applicable, between your Organization and Airtable). They include certain terms and conditions governing your use of our Platform and APIs. They also set out requirements for Integrations, including Integrations that may be published and used through the [Airtable Marketplace](https://airtable.com/marketplace). To create and provide an Integration on the Platform, use our APIs, or otherwise develop software to be provided or accessed through the Platform, you agree to comply with these Developer Terms and your Service Terms.\n\nWe may review any Integration to determine whether it complies with these Developer Terms, whether it can be made available for Users to install, and, where applicable, is appropriate for the [Airtable Marketplace](https://airtable.com/marketplace), and we may deny you or any User access to the Platform, or to any or all of our APIs, in our sole discretion.\n\nWe reserve the right to take any action we deem necessary if we believe an Integration violates these Developer Terms or compromises the intent of these Developer Terms, including removing an Integration from the Platform. A"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Airtable API reference REST GraphQL endpoints documentation airtable.com/developers",
+   "log_id": "log_nZyjBEqsinFN",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://airtable.com/developers/web/api/list-records.md",
+     "title": "airtable.com/developers/web/api/list-records.md",
+     "snippet": "# List records\n`GET https://api.airtable.com/v0/{baseId}/{tableIdOrName}`\nList records in a table. Note that table names and table ids can be used interchangeably.\nWe recommend using table IDs so you don't need to modify your API request when your table name changes.\nThe server returns one page of records at a time. Each page will contain **pageSize** records, which is 100 by default.\nIf there are more records, the response will contain an **offset**. To fetch the next page of records, include **offset** in the next request's parameters.\n\n**Note** Airtable's API only accepts request with a URL shorter than 16,000 characters. Encoded formulas may cause your requests to exceed this limit.\nTo fix this issue you can instead make a POST request to `/v0/{baseId}/{tableIdOrName}/listRecords` while passing the parameters within the body of\nthe request instead of the query parameters.\n## Requirements\n- **Authentication:** [Personal access token](https://airtable.com/developers/web/api/authentication.md#types-of-token), [OAuth integration](https://airtable.com/developers/web/api/authentication.md#types-of-token)\n- **Scope:** [`data.records:read`](https://airtable.com/developers/web/api/scope"
+    },
+    {
+     "url": "https://airtable.rest",
+     "title": "Airtable REST API Reference",
+     "snippet": "Airtable combines the simplicity of a spreadsheet with the power of a database, offering a flexible REST API for programmatic access to bases, tables, records, and attachments. Developers use it to build custom workflows, integrate data across applications, and automate business processes. The API supports full CRUD operations, real-time collaboration features, and sophisticated querying with filtering and sorting capabilities.\nBase URL `https://api.airtable.com/v0`\n## API Endpoints\n| Method | Endpoint | Description |\n|---|---|---|\n| GET | `/meta/bases` | List all bases accessible with the current API key |\n| GET | `/meta/bases/{baseId}/tables` | Get schema information for all tables in a base including field types and configurations |\n| GET | `/{baseId}/{tableIdOrName}` | List records in a table with support for filtering, sorting, and pagination |\n| GET | `/{baseId}/{tableIdOrName}/{recordId}` | Retrieve a single record by its ID with all field values |\n| POST | `/{baseId}/{tableIdOrName}` | Create one or more new records in a table with field values |\n| PATCH | `/{baseId}/{tableIdOrName}` | Update multiple existing records by providing record IDs and new field values |\n| PATCH |"
+    },
+    {
+     "url": "https://airtable.com/developers/web/api/create-records.md",
+     "title": "airtable.com/developers/web/api/create-records.md",
+     "snippet": "# Create records\n`POST https://api.airtable.com/v0/{baseId}/{tableIdOrName}`\nCreates multiple records. Note that table names and table ids can be used interchangeably.\nWe recommend using table IDs so you don't need to modify your API request when your table name changes.\nYour request body should include an array of record objects. Each of these objects should have one key\nwhose value is an inner object containing your record's cell values, keyed by either field name or field id.\nReturns a unique array of the newly created record ids if the call succeeds.\nYou can also include a single record object at the top level.\n## Requirements\n- **Authentication:** [Personal access token](https://airtable.com/developers/web/api/authentication.md#types-of-token), [OAuth integration](https://airtable.com/developers/web/api/authentication.md#types-of-token)\n- **Scope:** [`data.records:write`](https://airtable.com/developers/web/api/scopes.md#data-records-write)\n- **User role:** Base editor\n- **Billing plans:** All plans\n## Path parameters\n- `baseId: string`\n- `tableIdOrName: string`\n## Request body\n- `fields: object` \u2014 optional\nCreate **a single** record\n- `[key: string]` \u2014 [Cell value](https://ai"
+    },
+    {
+     "url": "https://apis.io/graphqls/airtable/airtable-graphql",
+     "title": "Airtable Graphql | APIs.io GraphQL",
+     "snippet": "Airtable does not expose a native public GraphQL endpoint. Its developer platform is built exclusively on REST semantics: the core Records API, Metadata API, Webhooks API, Enterprise API, SCIM API, Audit Logs API, and Shares API all use JSON over HTTPS with standard HTTP verbs and cursor-based pagination.\n### Overview\nAirtable GraphQL is a GraphQL API specification published by [Airtable](https://apis.io/providers/airtable/) on the [APIs.io](https://apis.io/) network.\nAirtable does not expose a native public GraphQL endpoint. Its developer platform is built exclusively on REST semantics: the core Records API, Metadata API, Webhooks API, Enterprise API, SCIM API, Audit Logs API, and Shares API all use JSON over HTTPS with standard HTTP verbs and cursor-based pagination.\nThe specification includes 4 reference links.\n\n- API Introduction [https://airtable.com/developers/web/api/introduction](https://airtable.com/developers/web/api/introduction)\n- Field Model [https://airtable.com/developers/web/api/field-model](https://airtable.com/developers/web/api/field-model)\n- Webhooks Overview [https://airtable.com/developers/web/api/webhooks-overview](https://airtable.com/developers/web/api/webh"
+    },
+    {
+     "url": "https://airtable.com/developers/web/api/update-field",
+     "title": "Airtable | Everyone's app platform",
+     "snippet": "# Update field\npatch`https://api.airtable.com/v0/meta/bases/{baseId}/tables/{tableId}/fields/{columnId}`\nUpdates the name, description, and/or options of a field. At least one must be specified.\n### Requirements\n| Authentication | [Personal access token](https://airtable.com/developers/web/api/authentication#types-of-token), [OAuth integration](https://airtable.com/developers/web/api/authentication#types-of-token) |\n|---|---|\n| Scope | [`schema.bases:write`](https://airtable.com/developers/web/api/scopes#schema-bases-write) |\n| User role | Base creator |\n| Billing plans | All plans |\n\n$curl -X PATCH \"https://api.airtable.com/v0/meta/bases/{baseId}/tables/{tableId}/fields/{columnId}\" \\-H \"Authorization: Bearer YOUR_TOKEN\" \\-H \"Content-Type: application/json\" \\--data '{    \"options\": {      \"formula\": \"{Quantity} * {Price}\"    }  }'\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Airtable airtable.com/developers MCP server Model Context Protocol official",
+   "log_id": "log_L8foacGYbDuC",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://airtable.com/developers/agents/mcp/getting-started",
+     "title": "MCP server overview",
+     "snippet": "Airtable's MCP server lets you connect AI tools directly to your Airtable bases. This integration allows you to ask questions about your data, create and update records, build and manage automations, and analyze information\u2014all through natural conversation with AI tools like Claude, ChatGPT, Cursor, and more. The server is available to all users on all plans.\n## Airtable's MCP server\nModel Context Protocol (MCP) is an open standard that allows AI tools to securely connect to external data sources. Using Airtable's MCP server, AI tools can query your Airtable data, perform actions on your behalf, and present structured information\u2014all while respecting your existing permissions and security settings.\n1. Base Owner and Creator\nCan manipulate base schema and change records\n2. Base Editor\nWill only be able to change and update records\n3. Interface only users\nWill only be able to interact with pages and data exposed in those Interfaces.\n## Common clients\nThe following tools have a pre-built connector to Airtable and can be connected in a single step.\n| Client | Quickstart guide | Plugin support | Client docs |\n|---|---|---|---|\n| ![](https://airtable.com/images/developers/agent_docs/logo"
+    },
+    {
+     "url": "https://airtable.com/articles/mcp-server-interfaces-automations",
+     "title": "Airtable MCP Server: Build Interfaces & Automations \u2013 Airtable",
+     "snippet": "[Airtable's MCP (Model Context Protocol) server](https://airtable.com/developers/agents) is Airtable's implementation of the open MCP standard, which lets AI models securely connect to external tools and data. Instead of copying data in and out of Airtable by hand, a connected model can list your bases, read and filter records, and \u2014 with this update \u2014 create new tables, interfaces, and automations directly. It respects your existing Airtable permissions, so a model can only see or change what you already have access to.\n## **From records tool to builder: What changed**\nUntil recently, MCP's job stopped at records: list bases, read rows, filter, update, insert. The tool list has since grown to include schema and surface-level actions \u2014 creating tables and fields, building interface pages, and setting up automations \u2014 so a model can go from \"here's what I want\" to a [working system without a person clicking](https://support.airtable.com/docs/using-the-airtable-mcp-server) through the UI at every step.\nTwo things distinguish this from a model just writing to your base blind. First, field creation is schema-aware: point it at linked tables and it can add count, lookup, and rollup fiel"
+    },
+    {
+     "url": "http://support.airtable.com/docs/using-the-airtable-mcp-server",
+     "title": "Using the Airtable MCP server",
+     "snippet": "| **Permissions** | Your MCP permissions mirror the same [permission level(s)](/v1/docs/airtable-permissions-overview) that you have have been granted in Airtable. - **Owner**, **Creator**, or **Editor** - Can set up OAuth integrations and manage MCP access. Can read and update records they have permission to access. - Additionally, workspace owners or creators can create new bases via MCP. Note that base-level creator permissions will not be able to create a new base. - **Commenter** or **Read-only** - Can read data via MCP for bases they have access |\n| **Platform(s)** | Works with AI assistants that support Model Context Protocol (Claude, ChatGPT, and other MCP-compatible tools) |\nAirtable\u2019s MCP server lets you connect AI tools directly to your Airtable bases. This integration allows you to ask questions about your data, create and update records, and analyze information\u2014all through natural conversation with AI tools like Claude, ChatGPT, Cursor, and more.\n## What is Model Context Protocol (MCP)?\nModel Context Protocol (MCP) is an open standard that allows AI tools to securely connect to external data sources. With MCP, AI tools can query your Airtable data, perform actions on y"
+    },
+    {
+     "url": "https://airtable.com/developers/agents/mcp/tools",
+     "title": "Airtable | Everyone's app platform",
+     "snippet": "Tools exposed by Airtable's remote MCP server at `https://mcp.airtable.com/mcp`."
+    },
+    {
+     "url": "https://airtable.com/developers/agents",
+     "title": "Overview - Airtable Developers",
+     "snippet": "Airtable's structured field types, relational links, and built-in automations make it a rich data layer for AI agents. Any MCP-compatible tool can read, write, and query your bases through natural language, scoped to your existing permissions.\nAsk questions, summarize records, create and edit fields without leaving your chat. Works with Claude, ChatGPT, or any connected MCP client.\n\n### Claude Code\n**Best for:** Building interfaces, authoring skills, and schema-aware workflows. Install the plugin to get Airtable MCP & full skills library.\n### CLI\n**Best for:** Scripting, scheduled operations, and running workflows against your Airtable data. Install via npm.\n`npm install -g @airtable/mcp-cli`\n## Built to work with any agent\nAirtable is model agnostic and works with the AI tools your team already use. You're not locked into a single provider.\n[View the quickstart](/developers/agents/intro/quickstart)\n## What our\nMCP server allows agents to do\nThe Airtable MCP server gives agents your base's full structure \u2014 field types, relationships, and views \u2014 so they can make context-aware decisions.\n### Query your data\nAsk questions across your bases, surface records, and analyze information.\n#"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

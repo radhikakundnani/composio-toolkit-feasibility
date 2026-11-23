@@ -1,0 +1,13 @@
+{
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

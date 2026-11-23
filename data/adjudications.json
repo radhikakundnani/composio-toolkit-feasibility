@@ -1,0 +1,133 @@
+{
+ "_about": "Human-in-the-loop layer: disputes the verifier raised (or created) that were settled by reading the vendor's own page in a browser. Applied on top of v2 to produce data/final. Each entry records who was right.",
+ "22": {
+  "app": "Twilio",
+  "set": {
+   "mcp": "official",
+   "mcp_note": "twilio-labs/mcp (@twilio-alpha/mcp) exposes all of Twilio's public APIs as MCP tools; Twilio calls it one of 'our official' servers. The separate twilio.com/docs/ai/mcp server is docs-search only."
+  },
+  "evidence": {
+   "mcp": "https://github.com/twilio-labs/mcp"
+  },
+  "verdict_on_dispute": "v1 right, verifier wrong: verifier saw only the docs-search MCP and downgraded to community."
+ },
+ "66": {
+  "app": "Neo4j",
+  "set": {
+   "access": "self_serve_free",
+   "blocker": "narrow_api",
+   "verdict": "ready_with_caveats",
+   "access_notes": "Aura Free tier can create Aura API client credentials (OAuth2 client-credentials); no card needed for API credentials.",
+   "blocker_note": "Aura API manages instances only; graph data goes through each instance's Query API/drivers."
+  },
+  "evidence": {
+   "access": "https://neo4j.com/docs/aura/api/authentication/"
+  },
+  "verdict_on_dispute": "v1 right, verifier wrong: docs state 'All tiers can create Aura API credentials'; verifier changed it to paid_plan_required."
+ },
+ "29": {
+  "app": "Aircall",
+  "set": {},
+  "verdict_on_dispute": "Vendor sources conflict: support.aircall.io documents an official MCP (read-only beta via Account Manager) while developer.aircall.io/docs/mcp-faqs says Aircall offers no MCP server. Kept 'official' (the beta article is newer and specific); flagged as a real conflict."
+ },
+ "51": {
+  "app": "DataForSEO",
+  "set": {
+   "auth_methods": [
+    "basic"
+   ],
+   "auth_primary": "basic"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth exists only for the remote MCP server; REST API uses Basic auth.",
+  "layer": "triangulation"
+ },
+ "57": {
+  "app": "Bright Data",
+  "set": {
+   "auth_methods": [
+    "api_key",
+    "bearer_token"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth exists only for the remote MCP server; REST API uses API keys.",
+  "layer": "triangulation"
+ },
+ "60": {
+  "app": "Clay",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth is for connecting the Clay MCP; API uses keys.",
+  "layer": "triangulation"
+ },
+ "97": {
+  "app": "higgsfield",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth/CIMD is for the MCP server; generation API uses keys.",
+  "layer": "triangulation"
+ },
+ "94": {
+  "app": "Consensus",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth appears only for enterprise connector / MCP; search API uses keys.",
+  "layer": "triangulation"
+ },
+ "54": {
+  "app": "MrScraper",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. Only a third-party blog mentions OAuth; vendor API uses API keys.",
+  "layer": "triangulation"
+ },
+ "55": {
+  "app": "Apify",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth hit is an account-settings page for connected apps, not REST API auth; API uses tokens.",
+  "layer": "triangulation"
+ },
+ "82": {
+  "app": "Plaid",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. OAuth hit is Plaid Exchange (a different product for banks); Plaid API uses client_id/secret keys.",
+  "layer": "triangulation"
+ },
+ "90": {
+  "app": "PitchBook",
+  "set": {
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_primary": "api_key"
+  },
+  "verdict_on_dispute": "Triangulation (agent vs Composio catalog vs vendor docs): agent over-claimed OAuth. No OAuth found on vendor docs; API uses an API key.",
+  "layer": "triangulation"
+ }
+}

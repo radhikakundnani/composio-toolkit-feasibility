@@ -1,0 +1,36 @@
+{
+  "id": 31,
+  "app": "Google Ads",
+  "category": "Advertising",
+  "one_liner": "Manage Google Ads campaigns, assets and reporting via API.",
+  "auth_methods": [
+    "oauth2",
+    "jwt_service_account"
+  ],
+  "auth_primary": "oauth2",
+  "access": "approval_required",
+  "access_notes": "Free API; enable in Google Cloud project, access levels per project; Basic access needs brand verification/review. Needs Ads manager account.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://github.com/googleads/google-ads-mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "partner_or_app_review",
+  "blocker_note": "Higher access levels need API review/brand verification; Test access only initially.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.google.com/google-ads/api/rest/auth",
+    "access": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels.md.txt",
+    "surface": "https://developers.google.com/google-ads/api/reference/rpc/v25/overview",
+    "mcp": "https://github.com/googleads/google-ads-mcp/blob/main/README.md"
+  }
+}

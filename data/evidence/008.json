@@ -1,0 +1,142 @@
+{
+ "id": 8,
+ "app": "Close",
+ "hint": "close.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "Close API authentication OAuth API key access token developer docs close.com",
+   "log_id": "log_xDTrE8huClan",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.close.com/api/overview/oauth-authentication",
+     "title": "Authentication with OAuth",
+     "snippet": "How to register an OAuth 2.0 application and authenticate users with the Close API.\nTo implement authentication with OAuth 2.0, you need to [create an OAuth app](https://developer.close.com/integrations/create-an-oauth-app) to get your **Client ID** and **Client Secret**.\nYou\u2019ll also need to implement a redirect URI in your application. In the examples below we use `https://example.com/callback/close` as that redirect URI.\n## Authorization\nFirst you need to have your application redirect the user to Close\u2019s authorization page with the `client_id` and `redirect_uri`.\n```\n```\nThe user will be presented with a Consent Screen and be able to select an organization and grant or decline access. If the user chooses to grant access, their browser is redirected to that OAuth App\u2019s `redirect_uri`, the Authorization Code is passed inside the `code` query parameter.\n```\n```\nIf the users chooses to decline access instead, their browser is redirected to the same `redirect_uri` with error information in query parameters.\n```\n```\n## Obtain Access Token\nThe Authorization Code can be exchanged for an Access Token by performing a POST request with form-encoded parameters to `https://api.close.com/oaut"
+    },
+    {
+     "url": "https://help.close.com/integrations/api-keys-oauth",
+     "title": "API Keys & OAuth",
+     "snippet": "Create an OAuth app for Close so your integration can securely connect to Close accounts. Full instructions are in the [Close developer docs.](https://developer.close.com/integrations/create-an-oauth-app)\nThere are two main ways to authorize (connect) your Close organization to third-party applications or your own internal system:\n- using API keys\n- using OAuth access\n\nAn API key is a **secret token** (like a password) which you can use to connect Close data to third-party applications or your own internal system.\nAPI keys are created and managed on a per-user basis in Close, and each key is tied to the specific Close user who created it. If that Close user is removed/deactivated, any API keys issued for them will be disabled.\n### Creating an API key\nTo create a new API key, go to **Settings > Developer > API Keys** and click **+ New API Key**. Select the Permissions and click Create.\nIf you\u2019re seeing authentication failures in an integration, double-check in **Settings > Developer > API Keys** that the API key you\u2019re using is active. If a key was deleted, copied incorrectly, or otherwise compromised, create a new key and update the integration (this is also a common reason to rota"
+    },
+    {
+     "url": "https://developer.close.com/integrations",
+     "title": "Build an Integration",
+     "snippet": "## Choose an authentication method\nThere are two ways to authenticate with the Close REST API or MCP server.\n- **API keys** \u2014 A key is tied to a specific user and organization. Great for scripts, internal tools, import jobs, and automations. Generate one in **Settings \u2192 Developer \u2192 API Keys** and then follow [API keys](/api/overview/api-key-authentication) to authenticate your requests.\n- **OAuth 2.0** \u2014 Lets each user authorize your app to act on their behalf. Strongly recommended for user-facing integrations that multiple users will authenticate to. See [Creating an OAuth App](/integrations/create-an-oauth-app) to get started and then follow [Authentication with OAuth](/api/overview/oauth-authentication) to implement the request flow.\nAccess permissions inherit from the specific user/membership associated with the API key or OAuth token.\n\n## Multi-customer integration\nBuilding a product that connects to your customers\u2019 Close accounts? OAuth 2.0 is strongly recommended so each customer can authorize access to their own org.\n1. **[Create an OAuth App](/integrations/create-an-oauth-app)** \u2014 Register your application in Close to get client credentials.\n2. **[Implement the OAuth 2.0 f"
+    },
+    {
+     "url": "https://developer.close.com/integrations/create-an-oauth-app",
+     "title": "Creating an OAuth App",
+     "snippet": "Register your application in Close to get OAuth client credentials.\nOAuth 2.0 allows third-party applications to access Close data on behalf of users without exposing passwords or sharing API keys. You can create custom OAuth apps for Close to add bespoke features, automate tasks, and enhance data analytics, tailored to your business needs.\n## Create a new OAuth app\n### Fill in your app details\n- **App Name** \u2014 Your application name that users will see on the consent screen.\n- **App Description** \u2014 1\u20132 sentence description of what your app does.\n- **Redirect URL** \u2014 The http**s** URL where users are redirected after authorizing your app (e.g. `https://yourapp.com/callback/close`). Must use TLS/SSL \u2014 plain `http://` URLs are not accepted.\n- **Terms of Service URL** \u2014 Optional for internal-only apps\n- **Privacy Policy URL** \u2014 Optional for internal-only apps\n### Get your credentials\nClick **Create**, then copy your **Client ID** and **Client Secret** \u2014 you\u2019ll need these to implement the [OAuth 2.0 flow](https://developer.close.com/api/overview/oauth-authentication).\n### Scopes\nAll OAuth applications are granted the `all.full_access offline_access` scopes, providing the same level of a"
+    },
+    {
+     "url": "https://developer.close.com/api/overview/api-key-authentication",
+     "title": "Authentication with API keys",
+     "snippet": "How to authenticate Close API requests using API keys with HTTP Basic Auth.\nAPI keys are best used for scripts and simple integrations that are internal to your organization. Alternatively, see [Authentication with OAuth](https://developer.close.com/api/overview/oauth-authentication) instead.\n## Getting an API key\nAPI keys can be created and managed in your Close account under **Settings** \u2192 **Developer** \u2192 **API Keys**.\nAPI keys are scoped to a particular user/organization combination and can be generated and deleted in the Settings page. See [API Keys & OAuth](https://help.close.com/docs/api-keys-oauth) for more information.\n## Perform API calls with API key\nAPI keys use [HTTP Basic client side authentication](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side). Basic authentication is a simple authentication scheme built into the HTTP protocol. To use it, send your HTTP requests with an Authorization header that contains the word Basic followed by a space and a base64-encoded string composed of an api key followed by a colon. The API key acts as the username and the password is always empty.\n### cURL example\nExample cURL request with an api key.\n```\n```\nNotice"
+    }
+   ]
+  },
+  "access": {
+   "query": "Close close.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_2mK7n6Mlpoxj",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.close.com/integrations",
+     "title": "Build an Integration",
+     "snippet": "## Dev/test organization\nIf you need a separate Close organization for development and testing:\n- **Already a Close user** \u2014 You can create a free secondary organization. See [Secondary organization](https://help.close.com/docs/secondary-organization) for instructions.\n- **Not a Close user** \u2014 Integration partners who don\u2019t use Close in their own sales process can request a free Dev organization by emailing [support@close.com](mailto:support@close.com) with a description of your OAuth app, the overall workflow, and your expected release timeline. Dev organizations work identically to standard Close organizations but have no subscription fees.\nYour OAuth app continues to work regardless of whether your Close account\u2019s subscription is active, expired, or canceled."
+    },
+    {
+     "url": "https://help.close.com/integrations/api-keys-oauth",
+     "title": "API Keys & OAuth",
+     "snippet": "An access level limits what an API key can do.\n| Access Level | What the key can do |\n|---|---|\n| **Read only** | View Close data, but not change it. |\n| **Read, write, and delete** | View, create, update, and delete Close data. |"
+    },
+    {
+     "url": "https://onegtmlab.dev/tool-directory/crm/close",
+     "title": "onegtmlab.dev/tool-directory/crm/close",
+     "snippet": "Free tier No free plan. 14-day free trial, no credit card; includes $5 of calling and enrichment credits plus AI credits. Signup requires a phone number and consent to calls/texts (hands-on). Account pauses when the trial ends. 30-day money-back guarantee on paid plans.\n### Solo\n$19/mo\nbilled monthly\n$9/mo\nbilled annually\nlimited to 1 user; 500 AI credits/month (refreshes monthly, no rollover; more can be bought)\nAPI includedPlan details\nadditional AI credits available for purchase (price not published on the pricing page)\n### Essentials\n$49/mo\nbilled monthly\n$35/mo\nbilled annually\n1,000 AI credits per user/month, shared pool up to 10,000/month, no rollover; call recording retention 30 days\nAPI includedPlan details\nadditional AI credits available for purchase (price not published on the pricing page)\n### Growth\n$109/mo\nbilled monthly\n$99/mo\nbilled annually\n1,500 AI credits per user/month, shared pool up to 15,000/month, no rollover; 1 free secondary org\nAPI includedPlan details\nadditional AI credits available for purchase (price not published on the pricing page)\n### Scale\n$149/mo\nbilled monthly\n$139/mo\nbilled annually\n2,000 AI credits per user/month, shared pool up to 20,000/month"
+    },
+    {
+     "url": "https://close.com/pricing",
+     "title": "close.com/pricing",
+     "snippet": "| High-volume API access Build custom integrations, AI agents, and automations with generous rate limits, no daily API request quota, and no per-request fees. Includes event log. | Not included | Included | Included | Included |\n\nIs Close free?\nClose doesn\u2019t have a free plan, but you can try it free for 14 days with no credit card. The trial includes calling and AI credits, so you can call real leads and try Chloe and AI Agents before you pay. After the trial, plans start at $9/month for Solo, billed annually.\n\nDoes Close include API access?\nYes. Close provides a REST API for building custom integrations, connecting your applications, and automating sales processes. API requests are subject to rate limits, but Close does not have a published daily API request quota or separate per-request API fees.\n[Explore the Close API](https://developer.close.com/)\nDoes Close have API rate limits?\nYes. Close uses endpoint-specific rate limits to maintain reliability. Many commonly used endpoints support high request volumes, allowing businesses to build integrations, AI agents, and automations without a daily API request quota. Limits vary by endpoint."
+    },
+    {
+     "url": "https://developer.close.com/integrations/publish.md",
+     "title": "developer.close.com/integrations/publish.md",
+     "snippet": "OAuth apps are **Private** by default, meaning only members of your own Close organization can authorize them. This is fine if you and your teammates are the only users.\nIf you want _any_ Close user to be able to authorize your app, you need to make it **Public**.\n## Making your app public\n1. Go to [**Settings** \u2192 **Developer** \u2192 **OAuth Apps**](https://app.close.com/settings/developer/oauth-apps) and select your app.\n2. Click **Make Public** and submit for review.\n3. We'll review your app and reply by email.\nOnce approved, your app will be marked as Public and any Close user will be able to authorize it.\n\n### Requirements\n- Your integration must be publicly available (not internal-only).\n- It must use [OAuth 2.0](/integrations/create-an-oauth-app) for authentication (not API keys).\n- It should provide clear value to Close users."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Close API reference REST GraphQL endpoints documentation close.com",
+   "log_id": "log_dCaJRV98iUd3",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.close.com/openapi.json",
+     "title": "developer.close.com/openapi.json",
+     "snippet": "endpoint.\\n\\n**custom.FIELD_ID** (optional): See `custom.FIELD_ID` guidance on the create endpoint.\n\ntype\"}}}},\"401\":{\"description\":\"Unauthorized\",\"content\":{\"application/json\":{\"schema\":{\"description\":\"Any\n\nlisting [Custom Activities](https://developer.close.com/api/resources/activities/custom-activities),\n\n`date_created` denotes when an activity was created or synced into Close and `activity_at` denotes when that activity actually occurred.\n\nactivity\",\"description\":\"Use this endpoint to log calls made outside of the Close built-in VoIP system.\\n\\n*status*:"
+    },
+    {
+     "url": "https://developer.close.com/api/resources/advanced-filtering/search.md",
+     "title": "developer.close.com/api/resources/advanced-filtering/search.md",
+     "snippet": "# Search objects with filters\nPOST https://api.close.com/api/v1/data/search/\nContent-Type: application/json\nFind Leads, Contacts, Opportunities, Activities, Tasks and other objects matching any combination of filters. This is the API behind the filters on the Leads, Contacts and Opportunities pages in Close, and the query language used by Smart Views (`s_query`) and bulk actions.\nSearching doesn't change any data.\n### Building a query\nA query is a tree of objects, each with a `type`:\n1. Start with an `and` query.\n2. Add an `object_type` query for the type of objects you want, e.g. `{\"type\": \"object_type\", \"object_type\": \"lead\"}`.\n3. Add a `field_condition` query for each filter. It combines a `field` with a `condition`:\n* Built-in fields are `regular_field`s. Their `object_type` must be the type you're searching for, e.g. `title` on `contact`. See the [fields of each object type](https://developer.close.com/api/resources/advanced-filtering-fields).\n* Custom fields are referenced by ID as `custom_field`s. List them with the custom field endpoints, e.g. `GET /custom_field/lead/`.\n* The condition depends on the field's type: `text` for text, `term` for choices and fixed values, `refer"
+    },
+    {
+     "url": "https://developer.close.com/api/llms.txt",
+     "title": "developer.close.com/api/llms.txt",
+     "snippet": "- [API Overview](https://developer.close.com/api/overview.md): Key concepts for working with the Close REST API.\n- [Authentication with API keys](https://developer.close.com/api/overview/api-key-authentication.md): How to authenticate Close API requests using API keys with HTTP Basic Auth.\n- [Authentication with OAuth](https://developer.close.com/api/overview/oauth-authentication.md): How to register an OAuth 2.0 application and authenticate users with the Close API.\n- [API Clients](https://developer.close.com/api/overview/api-clients.md): Community-built API client libraries for Python, PHP, Node.js, Ruby, Go, and C#.\n- [Pagination](https://developer.close.com/api/overview/pagination.md): How to paginate through Close API results using offset-based and cursor-based pagination.\n\n- [Filter Parameters](https://developer.close.com/api/overview/filter-parameters.md): How to pass filter parameters via query strings or JSON request body to avoid URL length limits.\n- [HTTP Response Codes](https://developer.close.com/api/overview/http-response-codes.md): HTTP status codes returned by the Close API and what they mean.\n\nThe raw OpenAPI 3.1 specification for this API is available at:\n- [OpenA"
+    },
+    {
+     "url": "https://developer.close.com/api/overview",
+     "title": "API Overview",
+     "snippet": "Key concepts for working with the Close REST API.\n**Base URL:** `https://api.close.com/api/v1`\nClose uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies.\n## Authentication\nAll API requests require authentication. Two methods are supported:\n- **[API Keys](https://developer.close.com/api/overview/api-key-authentication)** \u2014 Best for scripts, internal tools, and server-side integrations. Use HTTP Basic Auth with your API key as the username and an empty password.\n- **[OAuth 2.0](https://developer.close.com/api/overview/oauth-authentication)** \u2014 Best for user-facing integrations.\n## Core concepts\n## Making requests\n- All requests use JSON (`Content-Type: application/json`).\n- `PUT` requests behave as patches \u2014 send only the fields you want to update. See [Fields](https://developer.close.com/api/overview/fields).\n- List endpoints support [pagination](https://developer.close.com/api/overview/pagination) via `_skip`/`_limit` or cursor-based pagination.\n- Use the [`_fields` parameter](https://developer.close.com/api/overview/fields) to control which fields are returned and improve performance.\n- [Rate limits](http"
+    },
+    {
+     "url": "https://developer.close.com/api/resources/phone-numbers/get.md",
+     "title": "developer.close.com/api/resources/phone-numbers/get.md",
+     "snippet": "# Retrieve a single phone number\nGET https://api.close.com/api/v1/phone_number/{id}/\nReference: https://developer.close.com/api/resources/phone-numbers/get\n## Authentication\n- `Authorization` header (basic auth, required) \u2014 Use your API key as the username and leave the password empty.\n- `Authorization` header (bearer token, required) \u2014 Bearer authentication of the form `Bearer <token>`, where token is your auth token.\n## Request\n### Path parameters\n- `id` (string, required)\n### Query parameters\n- `_fields` (string, optional) \u2014 Comma-separated list of fields to include in the response.\n## Response\n### 200\nSuccessful response"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Close close.com MCP server Model Context Protocol official",
+   "log_id": "log_tfLNo2l2m3Q7",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.close.com/mcp",
+     "title": "Close MCP Server",
+     "snippet": "[Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers provide a standardized interface that allows any compatible AI model or agent to access your Close data in a simple and secure way. Below are instructions for adding Close\u2019s MCP server to commonly used clients.\n## Accessing Close\u2019s Remote MCP Server\nThe MCP server URL is `https://mcp.close.com/mcp` and has \u201cHTTP Streamable\u201d and \u201cOAuth 2.0 Dynamic Client Registration (DCR)\u201d support.\nWe recommend accessing the MCP server via OAuth 2.0 using a supported MCP client (e.g. Claude, ChatGPT, Cursor, etc). If you prefer to interact with the MCP server using a custom setup, create an [OAuth application](https://developer.close.com/integrations/create-an-oauth-app) to authenticate using OAuth 2.0 or authenticate using an API key and include the following headers in your request:\n```\n```\nThe `Close-Scope` header determines the scope and available tools:\n- **`mcp.read`** \u2014 read-only access\n- **`mcp.write_safe`** \u2014 can read and write data\n- **`mcp.write_destructive`** \u2014 can read, write, and delete data\nFor more information on which tools are available for each scope, see [Close MCP Tools](https://developer.close.com/mcp/too"
+    },
+    {
+     "url": "https://help.close.com/integrations/close-mcp-server",
+     "title": "help.close.com/integrations/close-mcp-server",
+     "snippet": "> Connect ChatGPT, Claude, or another MCP client to Close's remote MCP server at mcp.close.com/mcp to work with your Close data using OAuth.\nModel Context Protocol (MCP) servers provide a standardized interface that allows any compatible AI model or agent to access your Close data in a simple and secure way. Below are instructions for adding Close's MCP server to commonly used clients.\n### Accessing Close's Remote MCP Server\nThe MCP server URL is `https://mcp.close.com/mcp` and has \"HTTP Streamable\" and \"OAuth 2.0 Dynamic Client Registration (DCR)\" support. We recommend accessing the MCP server via OAuth 2.0 using a supported MCP client (ex: Claude, ChatGPT, Cursor, etc).\nIf you prefer to interact with the MCP server using a custom setup, [create an OAuth application](/v1/docs/create-oauth-apps) to authenticate using OAuth 2.0 or authenticate using an API key and include the following Headers in your request:\n* `Close-API-Key`: `{{ Your Close API Key }}`\n* `Close-Scope`: `{{ mcp.read, mcp.write_safe, or mcp.write_destructive }}`\nThe `Close-Scope` header determines the scope and available tools. `mcp.read` is read-only, `mcp.write_safe` can read and write data, and `mcp.write_destru"
+    },
+    {
+     "url": "https://close.com/integrations/close-mcp",
+     "title": "close.com/integrations/close-mcp",
+     "snippet": "description: \"Model Context Protocol (MCP) servers provide a standardized interface that allows any compatible AI model or agent to access your Close data simply and securely. Use the documentation link for instructions to add Close\u2019s MCP server to commonly used clients.\"\n\nModel Context Protocol (MCP) servers provide a standardized interface that allows any compatible AI model or agent to access your Close data simply and securely. Use the documentation link for instructions to add Close\u2019s MCP server to commonly used clients."
+    },
+    {
+     "url": "https://developer.close.com/mcp.md",
+     "title": "developer.close.com/mcp.md",
+     "snippet": "[Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers provide a standardized interface that allows any compatible AI model or agent to access your Close data in a simple and secure way. Below are instructions for adding Close's MCP server to commonly used clients.\n## Accessing Close's Remote MCP Server\nThe MCP server URL is `https://mcp.close.com/mcp` and has \"HTTP Streamable\" and \"OAuth 2.0 Dynamic Client Registration (DCR)\" support.\nWe recommend accessing the MCP server via OAuth 2.0 using a supported MCP client (e.g. Claude, ChatGPT, Cursor, etc). If you prefer to interact with the MCP server using a custom setup, create an [OAuth application](/integrations/create-an-oauth-app) to authenticate using OAuth 2.0 or authenticate using an API key and include the following headers in your request:\n```\nClose-API-Key: {{ Your Close API Key }}\nClose-Scope: {{ mcp.read, mcp.write_safe, or mcp.write_destructive }}\n```\nThe `Close-Scope` header determines the scope and available tools:\n* **`mcp.read`** \u2014 read-only access\n* **`mcp.write_safe`** \u2014 can read and write data\n* **`mcp.write_destructive`** \u2014 can read, write, and delete data\nFor more information on which tools are "
+    },
+    {
+     "url": "https://registry.modelcontextprotocol.io/v0/servers?cursor=com.clootrack/mcp:1.0.0&limit=100&version=latest",
+     "title": "registry.modelcontextprotocol.io/v0/servers",
+     "snippet": "Learn more at https://close.com or https://mcp.close.com\",\"repository\":{},\"version\":\"1.0.1\",\"remotes\":[{\"type\":\"streamable-http\",\"url\":\"https://mcp.close.com/mcp\"}]},\"_meta\":{\"io.modelcontextprotocol.registry/official\":{\"status\":\"active\",\"statusChangedAt\":\"2025-09-22T21:07:57.60259Z\",\"publishedAt\":\"2025-09-22T21:07:57.60259Z\",\"updatedAt\":\"2025-09-22T21:07:57.60259Z\",\"isLatest\":true}}},{\"server\":{\"$schema\":\"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json\",\"name\":\"com.closedmcp/closedmcp\",\"description\":\"One MCP endpoint for your company's tools, with per-person sign-in, policy and audit.\",\"title\":\"ClosedMCP\",\"version\":\"0.1.0\",\"websiteUrl\":\"https://closedmcp.com\",\"icons\":[{\"src\":\"https://closedmcp.com/icon.svg\",\"mimeType\":\"image/svg+xml\",\"sizes\":[\"any\"]},{\"src\":\"https://closedmcp.com/icon-transparent-512.png\",\"mimeType\":\"image/png\",\"sizes\":[\"512x512\"]}],\"remotes\":[{\"type\":\"streamable-http\",\"url\":\"https://closedmcp.com/mcp\"}]},\"_meta\":{\"io.modelcontextprotocol.registry/official\":{\"status\":\"active\",\"statusChangedAt\":\"2026-10-14T13:20:41.213177Z\",\"publishedAt\":\"2026-10-14T13:20:41.213177Z\",\"updatedAt\":\"2026-10-14T13:20:41.213177Z\",\"isLatest\":true}}},{\"server\""
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

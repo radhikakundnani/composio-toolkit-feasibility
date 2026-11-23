@@ -1,0 +1,47 @@
+{
+ "id": 87,
+ "app": "Xero",
+ "changes": [
+  {
+   "field": "verdict",
+   "from": "ready",
+   "to": "ready_with_caveats",
+   "why": "Starter plan (free) capped at 5 connections, 1000 calls/day/org; scaling needs paid Core+ (payment method) and certification for Plus+",
+   "evidence": "https://developer.xero.com/pricing"
+  },
+  {
+   "field": "blocker",
+   "from": "none",
+   "to": "paid_plan",
+   "why": "same",
+   "evidence": "https://developer.xero.com/pricing"
+  },
+  {
+   "field": "blocker_note",
+   "from": "",
+   "to": "Free Starter plan limited to 5 connections; Core and above require a payment method, Plus+ require app certification. Remote MCP is demo-org only on Starter.",
+   "why": "",
+   "evidence": "https://developer.xero.com/pricing"
+  },
+  {
+   "field": "access_notes",
+   "from": "Free developer account; register app for client id/secret; no API-key auth. Partner plans tier connection limits as apps scale.",
+   "to": "Free developer account and Starter plan (no payment, max 5 connections, 1000 calls/day/org); OAuth2 only for standard apps; Remote MCP limited to demo org on Starter.",
+   "why": "",
+   "evidence": "https://developer.xero.com/pricing"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://apideck.com/blog/how-to-get-xero-api-key",
+   "to": "https://developer.xero.com/pricing",
+   "why": "official pricing page replaces third-party blog",
+   "evidence": "https://developer.xero.com/pricing"
+  }
+ ],
+ "confirmed": [
+  "mcp official (developer.xero.com hosted by Xero + XeroAPI org)",
+  "auth_primary oauth2",
+  "access self_serve_free"
+ ],
+ "searches": 4
+}

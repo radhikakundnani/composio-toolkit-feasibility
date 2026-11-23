@@ -1,0 +1,142 @@
+{
+ "id": 88,
+ "app": "Brex",
+ "hint": "developer.brex.com",
+ "given_category": "Finance and Fintech",
+ "queries": {
+  "auth": {
+   "query": "Brex API authentication OAuth API key access token developer docs developer.brex.com",
+   "log_id": "log_b75U5zi_fL2e",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.brex.com/guides/partner_authentication",
+     "title": "Partner authentication",
+     "snippet": "Partner authentication\n> **Note**: This section is only for Brex developer partners. If you are a Brex client\u2013i.e., you have your own Brex account\u2013looking to authenticate to our APIs, refer to the [authentication](https://developer.brex.com/guides/authentication) page to get started.\n\n##\nScopes\n`openid`: Required to make an OpenID Connect request.\n`offline_access`: Required to obtain an OAuth 2.0 Refresh Token.\nThe [scopes](https://developer.brex.com/guides/roles_permissions_scopes/#scopes) page describes how scopes work in the Brex API and the scopes required for each API.\n##\nAuth server\nThe base URL for the requests is:\n**Production:** `https://accounts-api.brex.com/oauth2/default`\n**Staging:** `https://accounts-api.staging.brexapps.com/oauth2/default`\n###\nOpenID Connect\nThe Brex API is fully compliant with OpenID Connect, an extension on top of OAuth 2.0. For more details on the OpenID Connect protocol, please see [the spec](https://openid.net/specs/openid-connect-core-1_0.html). The well-known configuration can be found at the following URLs:\n**Production:** `https://accounts-api.brex.com/oauth2/default/.well-known/openid-configuration`\n**Staging:** `https://accounts-api.stagin"
+    },
+    {
+     "url": "https://developer.brex.com/docs/mcp.md",
+     "title": "developer.brex.com/docs/mcp.md",
+     "snippet": "1. **Accept the Developer API agreement.** An account admin or card admin must accept the Developer API agreement in **Settings \u2192 Developer**.\n\nOnce enabled, all users in your Brex account can connect to the MCP server with their own credentials. This is different from the Brex Developer API, which requires admin-provisioned API tokens. Any employee can authorize via OAuth and access tools based on their Brex capabilities. The Access column in the tools table below shows which capability each tool requires.\n\nThe Brex MCP server supports two authentication methods.\n### OAuth (recommended)\nMCP clients that support OAuth will automatically initiate a browser-based authorization flow when you first connect. No manual token setup required.\n- **Authorization server**: `https://accounts-api.brex.com/oauth2/default`\n- **Discovery endpoint**: `https://api.brex.com/.well-known/oauth-protected-resource/mcp`\nThe server supports [Dynamic Client Registration (RFC 7591)](https://www.rfc-editor.org/rfc/rfc7591), so MCP clients don't need to be pre-registered. Sessions remain active, so you won't need to re-authorize on every use.\n\n### API key\nFor clients that don't support OAuth, or for programmat"
+    },
+    {
+     "url": "https://developer.brex.com/guides/authentication",
+     "title": "Authentication",
+     "snippet": "To start making calls to Brex APIs, generate a user token from your Brex dashboard and pass it along in your API call headers.\n####\n1. Generate a user token\n1. Sign in to [dashboard.brex.com](https://dashboard.brex.com/) as an [account admin or card admin](/guides/roles_permissions_scopes).\n2. Go to *[Developer > Settings](https://dashboard.brex.com/settings/developer)*.\n- If your company has not accepted the developer API agreement, please review the terms and conditions. These must be accepted to use the developer API.\n3. Click *Create Token*.\n4. Create a name for your token that will help you identify it. Choose what level of data access you need for your application; these are the [scopes](/guides/roles_permissions_scopes) your token will have.\n![Create your token and choose your scopes](/assets/auth-create-token.e7bc91ff162d118303d9032b8956d5c9aaa238b578c2b4af90abab72f0d72370.9c1bb791.png)\n5. The next screen will confirm your previous selections. Make sure it looks good, then select *Allow Access*.\n![Confirm your scopes](/assets/auth-allow-access.ad0564cd0aa8c1799ae2780a96b26a77f71d80bd537ab29d4374faa55e264e3e.9c1bb791.png)\n6. Your token is now created. Copy and store the toke"
+    },
+    {
+     "url": "https://developer.brex.com/onboarding/referrals",
+     "title": "Referrals",
+     "snippet": "1. Get an access token\nUse the OAuth2 client credentials flow to request a bearer token:\n```\ncurl https://accounts-api.brex.com/oauth2/default/v1/token \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'client_id=<CLIENT_ID>' \\\n--data-urlencode 'client_secret=<CLIENT_SECRET>' \\\n--data-urlencode 'scope=https://onboarding.brexapis.com/referrals'\n```\nUse the access token in the `Authorization` header for every onboarding API request:\n```\nAuthorization: Bearer <ACCESS_TOKEN>\n```\nWhen testing in staging, use the staging auth and API base URLs from the [Partner authentication](https://developer.brex.com/guides/partner_authentication) guide."
+    },
+    {
+     "url": "https://developer.brex.com/guides/roles_permissions_scopes",
+     "title": "User roles and permissions",
+     "snippet": "Most Brex APIs require a Brex admin to grant access. In these cases, only users with the account admin role can be authenticated.\nAdditionally:\n- **Bookkeepers** may access the **accounting API**.\n- Partners using the **onboarding API** authenticate with a [Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/)\u2013there is no user associated with this API access.\n##\nWhich account a token represents\nEvery token a user authorizes represents exactly one Brex account, and the scopes in it are evaluated against that account. This does not apply to the onboarding API, which uses a Client Credentials Grant with no user and no consent screen.\nSome users can reach more than one account. An accounting firm, for example, may have its own Brex account and also service a number of client accounts (Pro Access). A user like this is prompted on the consent screen to choose which account they are connecting, and the token is issued for the account they pick.\n**That prompt only appears if your authorization request includes [`prompt=consent`](https://developer.brex.com/guides/partner_authentication/#the-prompt-parameter).** Without it, an authorization that would otherwise compl"
+    }
+   ]
+  },
+  "access": {
+   "query": "Brex developer.brex.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_50kO7l4bxhkz",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.brex.com/guides/api-launch-stages",
+     "title": "API Launch Stages",
+     "snippet": "| **Target Audience** | Select early design partners & customers. | All interested Brex customers (opt-in required). | All Brex customers. |\n| **Access** | Invitation-based, see \"Requesting Access\" below. | Self-serve opt-in required, see \"Requesting Access\" below. | Available by default to all Brex customers. |\n\n**\"-alpha\"** suffix (e.g., `1.0.0-alpha`)."
+    },
+    {
+     "url": "https://developer.brex.com/guides/checklist",
+     "title": "Launch Checklist",
+     "snippet": "Pre-development\n- Sign your [Access Agreement](https://www.brex.com/legal/developer-portal/). Customers accept our access agreement directly in the dashboard before accessing the developer tab for the first time.\n- Review the [Prohibited and Restricted Activities](https://www.brex.com/legal/prohibited-restricted-activities/).\n- Review the [rate limits](/guides/rate_limits) and make sure they work for your intended integration.\n\n##\nPre-development\n- Sign your access agreement. You will receive it in your email.\n- Review the [Prohibited and Restricted Activities](https://www.brex.com/legal/prohibited-restricted-activities/).\n- Review the [rate limits](/guides/rate_limits) and make sure they work for your intended integration.\n- Join our Slack community: [Brex Developer Community](/docs/support/#slack-community).\n- Review the [Frequently Asked Questions](/docs/faq)."
+    },
+    {
+     "url": "https://developer.brex.com/docs/mcp",
+     "title": "Brex MCP",
+     "snippet": "Prerequisites\n1. **Accept the Developer API agreement.** An account admin or card admin must accept the Developer API agreement in **Settings \u2192 Developer**.\n2. **Enable the beta.** Go to **Settings \u2192 Beta features** in the Brex Dashboard and select **Brex in AI assistants**.\nOnce enabled, all users in your Brex account can connect to the MCP server with their own credentials. This is different from the Brex Developer API, which requires admin-provisioned API tokens. Any employee can authorize via OAuth and access tools based on their Brex capabilities. The Access column in the tools table below shows which capability each tool requires.\n\nEach tool requires a specific Brex capability. The Access column indicates which capability a user needs to call the tool. Your Brex permissions carry over; you only see and modify what you're authorized to. Actions like approvals and card management are not yet available via MCP."
+    },
+    {
+     "url": "https://developer.brex.com/guides/authentication",
+     "title": "Authentication",
+     "snippet": "1. Generate a user token\n1. Sign in to [dashboard.brex.com](https://dashboard.brex.com/) as an [account admin or card admin](https://developer.brex.com/guides/roles_permissions_scopes).\n2. Go to *[Developer > Settings](https://dashboard.brex.com/settings/developer)*.\n- If your company has not accepted the developer API agreement, please review the terms and conditions. These must be accepted to use the developer API.\n3. Click *Create Token*.\n4. Create a name for your token that will help you identify it. Choose what level of data access you need for your application; these are the [scopes](https://developer.brex.com/guides/roles_permissions_scopes) your token will have."
+    },
+    {
+     "url": "https://developer.brex.com/docs/partner_onboarding",
+     "title": "Steps",
+     "snippet": "- Once your application is approved, you'll receive credentials for the staging environment using SendSafely. Please store these securely since they expire in 7 days.\n- You'll need to provide us with your company name, counterparty address, and the name, email and title of the person signing the agreement. After you share this with us, you'll receive a Unilateral API Access Agreement from Brex.\n- If you need access to an account on staging, provide us with an email address and we'll provision a staging account for you and invite you to it.\n- Once you've built your demo, share it with us in a video and we'll generate production credentials for you. You'll receive the production credentials via SendSafely too."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Brex API reference REST GraphQL endpoints documentation developer.brex.com",
+   "log_id": "log_R6y_4BqFKanX",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.brex.com/openapi/team_api.md",
+     "title": "developer.brex.com/openapi/team_api.md",
+     "snippet": "The team API lets you manage users, departments, locations, and cards.\nVersion: 1.0\n## Servers\nProduction\n```\nhttps://api.brex.com\n```\nStaging (Note: This is not a sandbox. It will not work with customer tokens.)\n```\nhttps://api-staging.brex.com\n```\n\n[Team API](https://developer.brex.com/_bundle/openapi/team_api.yaml)\n## Users\nEndpoints for user management.\n### List users\n- [GET /v2/users](https://developer.brex.com/openapi/team_api/users/listusers.md): This endpoint lists all users.\nResults can be narrowed with the filter query parameters below. Values within a single\nfilter are OR-ed, and separate filters are AND-ed together.\nFilters that accept multiple values take them either as a comma-separated list or as a repeated\nparameter: ?status[]=ACTIVE,INVITED and ?status[]=ACTIVE&amp;status[]=INVITED are equivalent.\nThe legacy singular email and remote_display_id parameters perform an exact lookup that returns\nat most one user, and cannot be combined with the filters above.\n### Invite user\n- [POST /v2/users](https://developer.brex.com/openapi/team_api/users/createuser.md): This endpoint invites a new user as an employee.\nTo update user's role, check out this article.\n### Create user\n"
+    },
+    {
+     "url": "https://developer.brex.com/openapi/payments_api/vendors/createvendor",
+     "title": "Payments API (1.0) Copy Copy for LLM Copy page as Markdown for LLMs View as Markdown Open this page as Markdown Open in ChatGPT Get insights from ChatGPT Open in Claude Get insights from Claude",
+     "snippet": "# Payments API (1.0)\nThe payments API allows you to initiate and manage payments and vendors from your Brex business accounts.\n## Vendors\nEndpoints to manage vendors\nOperations\n## Lists vendors\n#### Request\nThis endpoint lists all existing vendors for an account. Takes an optional parameter to match by vendor name.\nSecurity\nOAuth2(Required scopes:\nvendors.readonly\n)\nQuery\ncursor*string or null*\nlimit*integer or null**(int32)*\nname*string or null*\n```\ncurl -i -X GET \\\nhttps://api.brex.com/v1/vendors \\\n-H 'Authorization: Bearer <YOUR_TOKEN_HERE>'\n```\n#### Responses\nReturns a list of vendor objects.\nBodyapplication/json\nnext_cursor*string or null*\nitems*Array of objects**(VendorResponse)*required\nitems[].\u200bid*string*required\nVendor ID: Can be passed to /transfers endpoint to specify counterparty.\nitems[].\u200bcompany_name*string or null*\nitems[].\u200bemail*string or null*\nitems[].\u200bphone*string or null*\nitems[].\u200bpayment_accounts*Array of objects or null**(PaymentAccountResponse)*\nResponse\napplication/json\n```\n{\n\"next_cursor\": \"string\",\n\"items\": [\n{ \u2026 }\n]\n}\n```\n## Create vendor\n#### Request\nThis endpoint creates a new vendor.\nSecurity\nOAuth2(Required scopes:\nvendors\n)\nHeaders\nIdempotency-Key*str"
+    },
+    {
+     "url": "https://developer.brex.com/openapi/travel_api/trips/gettrip",
+     "title": "Get trip",
+     "snippet": "# Travel API (1.0)\nBrex Travel External API.\n## Trips\nEndpoints for getting trip data.\nOperations\n## List trips\n#### Request\nLists trips according to the filters passed in the query string.\nSecurity\nOAuth2(Required scopes:\ntravel.trips\ntravel.trips.readonly\n)\nQuery\ncursor*string or null*\nlimit*integer or null**(int64)*\nlast_updated_after*string or null**(date-time)*\nload_custom_fields*boolean or null*\nWhether to load custom field values on the returned resources.\n- Production\nhttps://api.brex.com/v1/trips\n- Staging (Note: This is not a sandbox. It will not work with customer tokens.)\nhttps://api-staging.brex.com/v1/trips\n```\ncurl -i -X GET \\\nhttps://api.brex.com/v1/trips \\\n-H 'Authorization: Bearer <YOUR_TOKEN_HERE>'\n```\n#### Responses\nA page with a list of trips.\nBodyapplication/json\nnext_cursor*string or null*\n\nitems[].\u200btrip_reference*string or null*\nThe trip reference number shown in the dashboard and used when contacting Brex Support. This is the reference from the travel provider, not the Brex internal trip ID. May be null if the trip has no associated reference.\nExample: \"7117228246\"\n\n```\ncurl -i -X GET \\\n'https://api.brex.com/v1/trips/{trip_id}/bookings/{booking_id}' \\"
+    },
+    {
+     "url": "https://developer.brex.com/openapi/team_api/companies",
+     "title": "Companies",
+     "snippet": "# Team API (1.0)\nThe team API lets you manage users, departments, locations, and cards.\n## Users\nEndpoints for user management.\nOperations\n## Locations\nEndpoints for location management.\nOperations\n## Departments\nEndpoints for department management.\nOperations\n## Titles\nEndpoints for title management.\nOperations\n## Cards\nEndpoints for card management.\nOperations\n## Legal Entities\nEndpoints for legal entities.\nOperations\n## Get company\n#### Request\nThis endpoint returns the company associated with the OAuth2 access token.\nSecurity\nOAuth2(Required scopes:\ncompanies.readonly\n)\n```\ncurl -i -X GET \\\nhttps://api.brex.com/v2/company \\\n-H 'Authorization: Bearer <YOUR_TOKEN_HERE>'\n```"
+    },
+    {
+     "url": "https://developer.brex.com/openapi/team_api/users/listusers",
+     "title": "Team API (1.0) Copy Copy for LLM Copy page as Markdown for LLMs View as Markdown Open this page as Markdown Open in ChatGPT Get insights from ChatGPT Open in Claude Get insights from Claude",
+     "snippet": "The team API lets you manage users, departments, locations, and cards.\n## Users\nEndpoints for user management.\nOperations\n## List users\n#### Request\nThis endpoint lists all users.\nResults can be narrowed with the filter query parameters below. Values within a single filter are OR-ed, and separate filters are AND-ed together.\nFilters that accept multiple values take them either as a comma-separated list or as a repeated parameter: `?status[]=ACTIVE,INVITED` and `?status[]=ACTIVE&status[]=INVITED` are equivalent.\nThe legacy singular `email` and `remote_display_id` parameters perform an exact lookup that returns at most one user, and cannot be combined with the filters above.\n\n- Production\nhttps://api.brex.com/v2/users\n- Staging (Note: This is not a sandbox. It will not work with customer tokens.)\nhttps://api-staging.brex.com/v2/users\n```\ncurl -i -X GET \\\nhttps://api.brex.com/v2/users \\\n-H 'Authorization: Bearer <YOUR_TOKEN_HERE>'\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Brex developer.brex.com MCP server Model Context Protocol official",
+   "log_id": "log_dCgAEnVg7iEW",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.brex.com/docs/mcp",
+     "title": "Brex MCP",
+     "snippet": "The Brex MCP server lets AI assistants interact directly with your Brex account: manage expenses, look up users, check cards, review banking transactions, track bills, and more through natural language.\n\nPrerequisites\n1. **Accept the Developer API agreement.** An account admin or card admin must accept the Developer API agreement in **Settings \u2192 Developer**.\n2. **Enable the beta.** Go to **Settings \u2192 Beta features** in the Brex Dashboard and select **Brex in AI assistants**.\nOnce enabled, all users in your Brex account can connect to the MCP server with their own credentials. This is different from the Brex Developer API, which requires admin-provisioned API tokens. Any employee can authorize via OAuth and access tools based on their Brex capabilities. The Access column in the tools table below shows which capability each tool requires.\n##\nConnect to the Brex MCP server\nThe server is hosted at `https://api.brex.com/mcp` and supports any MCP-compatible client. Most clients handle authentication automatically with discovery. Just add the server URL and you'll be prompted to log in with your Brex account.\n###\nClaude Code\n```\nclaude mcp add --transport http brex https://api.brex.com/mc"
+    },
+    {
+     "url": "https://api.brex.com/mcp",
+     "title": "Brex MCP: Connect Brex to any AI tool that supports MCP",
+     "snippet": "[Brex MCP](https://developer.brex.com/docs/mcp) brings conversational access to your financial data directly into any tool that supports the Model Context Protocol, including Claude Code, Cursor, Windsurf, and other MCP-compatible clients. Same Brex data, same permissions, no context switch.\n\nInside Brex, AI already handles receipt matching, memo generation, policy enforcement, and review triage. It's how Brex customers maintain ~98% policy compliance on average without constant manual effort.\n[Brex MCP](https://developer.brex.com/docs/mcp) extends that same data layer to wherever you work. Your Brex permissions carry over, so you only see what you're authorized to, nothing more.\n## Get started\nAdd the Brex MCP server URL to your client's configuration, authenticate with your Brex account, and start asking questions.\nFor setup instructions, available tools, and the full developer reference, see the [Brex MCP Developer Documentation](https://developer.brex.com/docs/mcp)."
+    },
+    {
+     "url": "https://brex.com/support/using-brex-in-ai-apps",
+     "title": "brex.com/support/using-brex-in-ai-apps",
+     "snippet": "Brex in AI assistants (ChatGPT and Claude) lets you quickly access your Brex information without leaving your AI workspace.\n\n### Admins (One time)\n**Step 1:** Open the Brex dashboard.\n**Step 2:** Go to _Settings_ > _Early access_ and select _Brex MCP access_.\n**Step 3:** In ChatGPT, go to _Workspace Settings_ > _Apps_ > _Directory_ and search for \u201cBrex\u201d\n**Step 4:** Select _Enable_, configure actions that should be available to your organization (optional) and select _Publish_.\n**Step 5**: Let your team know they can connect to Brex within ChatGPT.\n**Note:** If you do not see the integration, navigate to _ChatGPT > Apps > Search for \u201cBrex\u201d > Connect._\n\nBrex MCP lets you connect AI assistants like Claude Code, Codex, Slack, or Cursor directly to your Brex account. Once connected, you can ask your AI questions about your company's spending, cards, and expenses in plain language, without leaving your AI tool.\nFor example, you could ask:\n\"What did the engineering team spend on SaaS last month?\"\n\"Show me my bank account transactions from the last week?\"\n\"Show me all unapproved reimbursements over $500.\"\nMCP (Model Context Protocol) is an open standard that lets AI assistants securely acc"
+    },
+    {
+     "url": "https://github.com/cursor/plugins/blob/5bf2b154/third_party/brex/README.md?plain=1",
+     "title": "plugins/third_party/brex/README.md at 5bf2b1544db739998121a306340631963c2ff3de \u00b7 cursor/plugins",
+     "snippet": "# Brex\nCursor plugin that connects agents to [Brex](https://www.brex.com) through Brex's official remote [Model Context Protocol](https://modelcontextprotocol.io/) server.\nQuery company spend \u2014 expenses, receipts, bills, vendors, cards, balances, and travel \u2014 and annotate expenses, all within your own Brex permissions.\n\n## MCP\n```json\n{\n\"mcpServers\": {\n\"brex\": {\n\"type\": \"http\",\n\"url\": \"https://api.brex.com/mcp\"\n}\n}\n}\n```\nAuth is OAuth with Dynamic Client Registration. Cursor registers itself and prompts for Brex sign-in when the plugin connects \u2014 there is no API key or client ID to configure.\n## Before you connect\nTwo one-time admin steps gate the whole account. An account or card admin has to accept the Developer API agreement under **Settings \u2192 Developer**, then enable **Brex in AI assistants** under **Settings \u2192 Beta features**. After that, any employee can connect with their own credentials.\n## What agents can do\n| Category | Capabilities |\n| --- | --- |\n| Expenses | List and inspect expenses, run expense analytics, and browse expense and merchant categories |\n| Bills & vendors | List and inspect bills, vendors, and payables |\n| Cards & limits | Card details and spend limits |\n"
+    },
+    {
+     "url": "https://eseospace.com/blog/brex-mcp-server",
+     "title": "Brex MCP Server: Tools, Setup and Security",
+     "snippet": "The Brex MCP server lets an AI app answer questions about your company's cards, expenses, bills, banking and travel in Brex. Brex hosts it at `https://api.brex.com/mcp`, and it respects the same role-based permissions as your Brex login.\n\n- The server runs at `https://api.brex.com/mcp` over HTTP, with OAuth (recommended) or a scoped Brex API token.\n- An account admin or card admin must switch on the feature and accept the Developer API agreement before anyone can connect.\n\n| Item | Detail |\n|---|---|\n| Publisher | Brex |\n| Official? | Yes |\n| Hosting | Remote URL (hosted by Brex) |\n| Transport | HTTP |\n| Sign-in | OAuth with dynamic client registration, or Bearer API token |\n| Read or write | Mostly read; self-service expense edits |\n| Price | No separate MCP price listed; Brex plans start at $0 per user per month |\n| Source code | Not published |\n| Status | Beta per developer docs; \"Early access\" per help center |\n## What it can do\nThe [developer docs](https://developer.brex.com/docs/mcp) list about 45 tools, each tied to a Brex permission. They fall into these groups:\n- **People and org data:** `get_user_myself`, `list_users`, `list_departments`, `list_cost_centers`, `list_locati"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

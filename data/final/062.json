@@ -1,0 +1,37 @@
+{
+ "id": 62,
+ "app": "Vercel",
+ "category": "Cloud hosting / deployment",
+ "one_liner": "Frontend cloud platform for deploying web apps, domains and serverless functions.",
+ "auth_methods": [
+  "bearer_token",
+  "oauth2"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "self_serve_free",
+ "access_notes": "Create an access token on the Account Tokens page of a Vercel account; integrations use OAuth-style client secrets.",
+ "api_types": [
+  "rest",
+  "sdk_only"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://vercel.com/docs/agent-resources/vercel-mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://vercel.com/docs/rest-api",
+  "access": "https://vercel.com/docs/rest-api/getting-started",
+  "surface": "https://vercel.com/docs/rest-api",
+  "mcp": "https://vercel.com/docs/agent-resources/vercel-mcp"
+ },
+ "verified": true
+}

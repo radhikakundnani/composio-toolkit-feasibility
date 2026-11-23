@@ -1,0 +1,12 @@
+{
+  "id": 19,
+  "app": "Gorgias",
+  "changes": [],
+  "confirmed": [
+    "mcp official mcp.gorgias.com (open beta, paid plans)",
+    "access 7-day trial",
+    "auth oauth2 for public apps",
+    "blocker partner_or_app_review"
+  ],
+  "searches": 4
+}

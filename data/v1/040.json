@@ -1,0 +1,36 @@
+{
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Email API",
+  "one_liner": "Transactional and marketing email delivery API from Twilio.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_trial",
+  "access_notes": "Sign up for 60-day free trial (100 emails/day, no credit card); create API key; paid plans afterward.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "broad",
+  "mcp": "community",
+  "mcp_note": "Community servers e.g. https://github.com/Garoth/sendgrid-mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Free trial expires after 60 days; paid plan needed to continue.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "access": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Overview-of-60-Day-Free-Trial-Plans-for-New-SendGrid-Accounts",
+    "surface": "https://docs.sendgrid.com/api-reference/mail-send/mail-send",
+    "mcp": "https://github.com/Garoth/sendgrid-mcp/blob/main/README.md"
+  }
+}

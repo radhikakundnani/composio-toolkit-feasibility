@@ -1,0 +1,49 @@
+{
+ "id": 64,
+ "app": "Cloudflare",
+ "changes": [
+  {
+   "field": "auth_primary",
+   "from": "bearer_token",
+   "to": "oauth2",
+   "why": "Cloudflare launched self-managed OAuth letting developers build third-party apps acting on a user's behalf; multi-tenant integration should use OAuth2",
+   "evidence": "https://developers.cloudflare.com/changelog/post/2026-06-03-public-oauth-clients"
+  },
+  {
+   "field": "auth_methods",
+   "from": [
+    "bearer_token",
+    "api_key",
+    "oauth2"
+   ],
+   "to": [
+    "oauth2",
+    "bearer_token",
+    "api_key"
+   ],
+   "why": "reordered to match primary",
+   "evidence": "https://developers.cloudflare.com/changelog/post/2026-06-03-public-oauth-clients"
+  },
+  {
+   "field": "access_notes",
+   "from": "Create a scoped API token in a Cloudflare account; free plan exists for many endpoints. OAuth clients also creatable.",
+   "to": "Create a scoped API token in a free Cloudflare account; self-managed public OAuth clients (launched 2026-06) also available for third-party apps.",
+   "why": "mention public OAuth clients",
+   "evidence": "https://developers.cloudflare.com/changelog/post/2026-06-03-public-oauth-clients"
+  },
+  {
+   "field": "evidence.auth",
+   "from": "https://developers.cloudflare.com/api/resources/user/subresources/tokens/methods/create",
+   "to": "https://developers.cloudflare.com/changelog/post/2026-06-03-public-oauth-clients",
+   "why": "Changelog announcing public OAuth clients",
+   "evidence": "https://developers.cloudflare.com/changelog/post/2026-06-03-public-oauth-clients"
+  }
+ ],
+ "confirmed": [
+  "mcp",
+  "access",
+  "verdict",
+  "blocker"
+ ],
+ "searches": 3
+}

@@ -1,0 +1,142 @@
+{
+ "id": 65,
+ "app": "Supabase",
+ "hint": "supabase.com/docs",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "Supabase API authentication OAuth API key access token developer docs supabase.com/docs",
+   "log_id": "log_G3jWpJYiRptK",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://supabase.com/docs/guides/integrations/build-a-supabase-oauth-integration",
+     "title": "Build a Supabase Integration",
+     "snippet": "Using OAuth2.0 you can retrieve an access and refresh token that grant your application full access to the [Management API](https://supabase.com/docs/reference/api/introduction) on behalf of the user.\n\nOnce you've published your OAuth App on Supabase, you can use the OAuth 2.0 protocol get authorization from Supabase users to manage their organizations and projects.\nYou can use your preferred OAuth2 client or follow the steps below. You can see an example implementation in TypeScript using Supabase Edge Functions [on our GitHub](https://github.com/supabase/supabase/tree/master/examples/edge-functions/supabase/functions/connect-supabase).\n### Redirecting to the authorize URL\nWithin your app's UI, redirect the user to [`https://api.supabase.com/v1/oauth/authorize`](https://api.supabase.com/api/v1#tag/oauth/GET/v1/oauth/authorize). Make sure to include all required query parameters such as:\n- `client_id`: Your client id from the app creation above.\n- `redirect_uri`: The URL where Supabase will redirect the user to after providing consent.\n- `response_type`: Set this to `code`.\n- `state`: Information about the state of your app. Note that `redirect_uri` and `state` together cannot exce"
+    },
+    {
+     "url": "https://supabase.com/docs/reference/api/introduction",
+     "title": "Introduction | Management API Reference | Supabase Docs",
+     "snippet": "All API requests require an access token to be included in the Authorization header: `Authorization Bearer <access_token>`.\nThere are two ways to generate an access token:\n1. **Personal access token (PAT):** PATs are tokens with a custom expiry that you manually generate to access the Management API. They are useful for automating workflows or developing against the Management API. A scoped PAT can only reach the organizations, projects, and permissions you choose when creating it. A classic PAT, shown as Legacy in the dashboard, carries the same privileges as your user account. Prefer scoped PATs, and keep every token secret.\nTo generate or manage your personal access tokens, visit your [account](https://supabase.com/dashboard/account/tokens) page. See [Personal access tokens](https://supabase.com/docs/guides/platform/personal-access-tokens) for the permission each endpoint requires.\n2. **OAuth2:** OAuth2 allows your application to generate tokens on behalf of a Supabase user, providing secure and limited access to their account without requiring their credentials. Use this if you're building a third-party app that needs to create or manage Supabase projects on behalf of your user"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/getting-started/api-keys",
+     "title": "API keys",
+     "snippet": "Every request to your Supabase project carries an API key. The key identifies what is calling your project: a web page, a mobile app, a server, or an Edge Function. [Supabase Auth](https://supabase.com/docs/guides/auth) identifies who is calling, when someone is signed in.\n\nPick the key by asking where the code runs.\n| Where the code runs | Use this key | Because |\n|---|---|---|\n| Anything you ship: browser, mobile app, CLI, script | Publishable key | Anyone can read it, so it only reaches what Row Level Security allows |\n| Anything you control: server, Edge Function, cron job | Secret key | It bypasses Row Level Security, so it must never leave your control |\n\nChanges to API keys\nSupabase is deprecating the `anon` and `service_role` keys by the end of 2026. Use the publishable (`sb_publishable_xxx`) and secret (`sb_secret_xxx`) keys instead. For the reasoning behind the change, see [the announcement on GitHub](https://github.com/orgs/supabase/discussions/29260).\nIn most cases you can get keys from your project's [**Connect** dialog](https://supabase.com/dashboard/project/_?showConnect=true&connectTab=&framework=). For every way to retrieve a key, including the CLI and the Manageme"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/auth/oauth-server/oauth-flows",
+     "title": "OAuth 2.1 Flows",
+     "snippet": "Supabase Auth implements OAuth 2.1 with OpenID Connect (OIDC), supporting the authorization code flow with PKCE and refresh token flow. This guide explains how these flows work in detail.\nThis guide explains the OAuth 2.1 flows for **third-party client applications** that authenticate with your Supabase project. These flows require custom implementation and are not available in the `@supabase/supabase-js` library. The `supabase-js` library is for authenticating **with** Supabase Auth as an identity provider, not for building your own OAuth server.\n## Supported grant types\nSupabase Auth supports two OAuth 2.1 grant types:\n1. **Authorization Code with PKCE** (`authorization_code`) - For obtaining initial access tokens\n2. **Refresh Token** (`refresh_token`) - For obtaining new access tokens without re-authentication\nOther grant types like `client_credentials` or `password` are not supported.\n## Authorization code flow with PKCE\nThe authorization code flow with PKCE (Proof Key for Code Exchange) is the recommended flow for all OAuth clients, including single-page applications, mobile apps, and server-side applications.\n### How it works\nThe flow consists of several steps:\n1. **Client in"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/auth/oauth-server/getting-started",
+     "title": "Getting Started with OAuth 2.1 Server",
+     "snippet": "OAuth 2.1 server is in beta and available on all Supabase plans. It has no separate charge. Users who sign in through your OAuth server count toward your project's [Monthly Active Users (MAUs)](https://supabase.com/docs/guides/platform/manage-your-usage/monthly-active-users).\nEdit your config file (`supabase/config.toml` or `supabase/config.jsonc`) and add the OAuth server configuration:\nStart or restart your local Supabase instance:\nOnce enabled, your project will expose the necessary OAuth endpoints:\n| Endpoint | URL |\n|---|---|\n| **Authorization endpoint** | `https://<project-ref>.supabase.co/auth/v1/oauth/authorize` |\n| **Token endpoint** | `https://<project-ref>.supabase.co/auth/v1/oauth/token` |\n| **JWKS endpoint** | `https://<project-ref>.supabase.co/auth/v1/.well-known/jwks.json` |\n| **Discovery endpoint** | `https://<project-ref>.supabase.co/.well-known/oauth-authorization-server/auth/v1` |\n| **OIDC discovery** | `https://<project-ref>.supabase.co/auth/v1/.well-known/openid-configuration` |\n| Endpoint | URL |\n|---|---|\n| **Authorization endpoint** | `http://localhost:54321/auth/v1/oauth/authorize` |\n| **Token endpoint** | `http://localhost:54321/auth/v1/oauth/token` |\n| **"
+    }
+   ]
+  },
+  "access": {
+   "query": "Supabase supabase.com/docs API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_kkB9eDIbKA5C",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://supabase.com/pricing",
+     "title": "Pricing & Fees | Supabase",
+     "snippet": "### Free\nPerfect for passion projects & simple websites.\n$0\n/ month\nFree projects are paused after 1 week of inactivity. Limit of 2 active projects.\nGet started with:\n- Unlimited API requests\n- 50,000 monthly active users\n- 500 MB database size\nShared CPU \u2022 500 MB RAM\n- 5 GB egress\n- 5 GB cached egress\n- 1 GB file storage\n- Community support\nEverything in the Free Plan, plus:\n- 100,000 monthly active users\nthen $0.00325 per MAU\n- 8 GB disk size per project\nthen $0.125 per GB\n- 250 GB egress\nthen $0.09 per GB\n- 250 GB cached egress\nthen $0.03 per GB\n- 100 GB file storage\nthen $0.0213 per GB\n- Email support\n- Daily backups stored for 7 days\n- 7-day log retention\n- Add Log Drains\nadditional $60 per drain, per project\n### Team\nAdd features such as SSO, control over backups, and industry certifications.\nFrom\n$599\n/ month\nFirst project included.\nAdditional from $10/mo.See how pricing scales\nEverything in the Pro Plan, plus:\n- SOC2 & ISO 27001\n- Project-scoped and read-only access\n- HIPAA available as paid add-on\n- SSO for Supabase Dashboard\n- Supports AWS PrivateLink\n- Priority email support & SLAs\n- Supports AWS PrivateLink\n- Daily backups stored for 14 days\n- 28-day log retention\n\n### "
+    },
+    {
+     "url": "https://supabase.com/pricing.md",
+     "title": "supabase.com/pricing.md",
+     "snippet": "Supabase offers four plans: Free, Pro, Team, and Enterprise. All plans include unlimited API requests. Projects on paid plans aren't paused for inactivity.\n\n## Plan Tiers\n### Free - from $0/month\n- Unlimited API requests\n- 50,000 monthly active users\n- 500 MB database size (Shared CPU \u2022 500 MB RAM)\n- 5 GB egress\n- 5 GB cached egress\n- 1 GB file storage\n- Community support\n- Note: Free projects are paused after 1 week of inactivity.\nLimit of 2 active projects.\n### Pro - from $25/month\n- 100,000 monthly active users (then $0.00325 per MAU)\n- 8 GB disk size per project (then $0.125 per GB)\n- 250 GB egress (then $0.09 per GB)\n- 250 GB cached egress (then $0.03 per GB)\n- 100 GB file storage (then $0.0213 per GB)\n- Email support\n- Daily backups stored for 7 days\n- 7-day log retention\n- Add Log Drains (additional $60 per drain, per project)\n### Team - from $599/month\n- SOC2 & ISO 27001\n- Project-scoped and read-only access\n- HIPAA available as paid add-on\n- SSO for Supabase Dashboard\n- Supports AWS PrivateLink\n- Priority email support & SLAs\n- Supports AWS PrivateLink\n- Daily backups stored for 14 days\n- 28-day log retention\n### Enterprise - custom pricing\n- Technical Account Management\n-"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/getting-started/api-keys",
+     "title": "API keys",
+     "snippet": "| Responsibility | Question | Answer |\n|---|---|---|\n| API keys | What is accessing the project? | A web page, a mobile app, a server, or an Edge Function |\n| [Supabase Auth](https://supabase.com/docs/guides/auth) | Who is accessing the project? | An individual signed-in user |\n\nAuthenticate with a [personal access token](https://supabase.com/dashboard/account/tokens). An OAuth application needs the `secrets:read` scope. A personal access token [you've scoped](https://supabase.com/docs/guides/platform/personal-access-tokens) needs the **API Keys** permission with **Read** access. To reveal key values with `reveal=true`, as the example below does, the token also needs **API Key Secrets** with **Read** access. Without the required scope or permissions, the request returns 403 Forbidden."
+    },
+    {
+     "url": "https://supabase.com/docs/guides/integrations/partner-integration-guide",
+     "title": "Supabase Partner Integration Guide",
+     "snippet": "Integrate Supabase with your platform or product.\n\nThe user clicks **Install Integration** in the Supabase Dashboard, which routes them through the partner's click-handler page and on to the Supabase authorization page. Supabase shows a consent screen. Once the user consents, Supabase redirects back to the partner with an authorization code. The partner exchanges that code for a token, uses the token to request Management API resources, and finally shows the user an \"Integration Installed\" message."
+    },
+    {
+     "url": "https://supabase.com/docs/reference/api/introduction",
+     "title": "Introduction | Management API Reference | Supabase Docs",
+     "snippet": "## Authentication\nAll API requests require an access token to be included in the Authorization header: `Authorization Bearer <access_token>`.\nThere are two ways to generate an access token:\n1. **Personal access token (PAT):** PATs are tokens with a custom expiry that you manually generate to access the Management API. They are useful for automating workflows or developing against the Management API. A scoped PAT can only reach the organizations, projects, and permissions you choose when creating it. A classic PAT, shown as Legacy in the dashboard, carries the same privileges as your user account. Prefer scoped PATs, and keep every token secret.\nTo generate or manage your personal access tokens, visit your [account](https://supabase.com/dashboard/account/tokens) page. See [Personal access tokens](https://supabase.com/docs/guides/platform/personal-access-tokens) for the permission each endpoint requires.\n2. **OAuth2:** OAuth2 allows your application to generate tokens on behalf of a Supabase user, providing secure and limited access to their account without requiring their credentials. Use this if you're building a third-party app that needs to create or manage Supabase projects on b"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Supabase API reference REST GraphQL endpoints documentation supabase.com/docs",
+   "log_id": "log_HtOnkI_31f7X",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/supabase/pg_graphql/blob/master/docs/supabase.md",
+     "title": "pg_graphql/docs/supabase.md at master \u00b7 supabase/pg_graphql",
+     "snippet": "The Supabase GraphQL API is automatically reflected from your database's schema using [pg_graphql](https://github.com/supabase/pg_graphql). It supports:\n- Basic CRUD operations (Create/Read/Update/Delete)\n- Support for Tables, Views, Materialized Views, and Foreign Tables\n- Arbitrarily deep relationships among tables/views\n- User defined computed fields\n- Postgres' security model - including Row Level Security, Roles, and Grants\nAll requests resolve in a single round-trip leading to fast response times and high throughput.\n\n`https://<PROJECT_REF>.supabase.co/graphql/v1` is your project's GraphQL API endpoint. See PROJECT_REF for instructions on finding your project's reference. Note that the url does not allow a trailing `/`.\nTo access the API you MUST provide your project's API key as a header in every request. For example see line 2 of the cURL request below.\n```\ncurl -X POST https://<PROJECT_REF>.supabase.co/graphql/v1 \\\n-H 'apiKey: <API_KEY>' \\\n-H 'Content-Type: application/json' \\\n--data-raw '{\"query\": \"{ accountCollection(first: 1) { edges { node { id } } } }\", \"variables\": {}}'\n```\nFor user authentication, pass an `Authorization` header e.g.\n```\n-H 'Authorization: Bearer <JW"
+    },
+    {
+     "url": "https://supabase.com/docs/reference/api/v1-get-database-openapi",
+     "title": "Get database openapi | Management API Reference | Supabase Docs",
+     "snippet": "Returns the PostgREST OpenAPI specification for the project. This is the replacement for querying `/rest/v1/` directly with the anon key.\n### OAuth scopes\n- database:read\n### The fine-grained token must include the following permissions to access this endpoint:\n- database_read\n### Path parameters\n- ref\nRequired\nstring\nProject ref\n### Query parameters\n- schema\nOptional\nstring\nThe database schema to generate the OpenAPI spec for"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/database/connecting-to-postgres",
+     "title": "Connect to your database",
+     "snippet": "| Where your code runs | Use | Why |\n|---|---|---|\n| A frontend application | Data API | Works over REST or GraphQL, so you don't need a Postgres client. Requires Row Level Security. |\n| A serverless or edge function | Shared pooler, transaction mode | These environments open many short-lived connections. |\n| A persistent backend on IPv6, or with the IPv4 add-on | Direct connection | No pooler in the path. |\n| A persistent backend on an IPv4-only network | Shared pooler, session mode | The shared pooler is IPv4-only on every plan. |\n| A third-party tool, such as a BI client or database GUI | Shared pooler, session mode | Reachable over IPv4 from networks you don't control, and it supports prepared statements. |\n| A high-load application on the Pro Plan and above | Dedicated pooler | Runs on the same machine as your database, so lower latency than the shared pooler. |\n| Migrations, `pg_dump`, backup and restore, or replication | Direct connection | These are single sessions and Postgres native commands. |\nThe IPv4 add-on is not dual-stack: enabling it swaps the project's IPv6 (AAAA) DNS record for an IPv4 (A) record, so the project endpoint becomes reachable only over IPv4.\nFor the "
+    },
+    {
+     "url": "https://supabase.com/openapi.json",
+     "title": "supabase.com/openapi.json",
+     "snippet": "environment:write\",\"position\":\"after\"},{\"name\":\"Beta\",\"position\":\"before\"}],\"x-endpoint-owners\":[\"dev-workflows\"],\"x-fga-permissions\":[[\"branching_development_write\"],[\"branching_production_write\"]],\"x-oauth-scope\":\"environment:write\",\"x-scalar-stability\":\"experimental\"}},\"/v1/projects\":{\"get\":{\"description\":\"Returns a list of all projects you've previously created.\",\"operationId\":\"v1-list-all-projects\",\"parameters\":[],\"responses\":{\"200\":{\"description\":\"\",\"content\":{\"application/json\":{\"schema\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/components/schemas/V1ProjectWithDatabaseResponse_Output\"}}}}},\"401\":{\"description\":\"Unauthorized\"},\"403\":{\"description\":\"Forbidden\n\nIt is subject to change or removal in future versions. Use it with caution, as it may not remain supported or\n\nIt is subject to change or removal in future versions."
+    },
+    {
+     "url": "https://supabase.com/docs/guides/graphql",
+     "title": "GraphQL",
+     "snippet": "The Supabase GraphQL API is automatically reflected from your database's schema using [pg_graphql](https://github.com/supabase/pg_graphql). It supports:\n- Basic CRUD operations (Create/Read/Update/Delete)\n- Support for Tables, Views, Materialized Views, and Foreign Tables\n- Arbitrarily deep relationships among tables/views\n- User defined computed fields\n- Postgres' security model - including Row Level Security, Roles, and Grants\n\n`https://<PROJECT_REF>.supabase.co/graphql/v1` is your project's GraphQL API endpoint. See PROJECT_REF for instructions on finding your project's reference. Note that the url does not allow a trailing `/`.\nTo access the API you MUST provide your project's API key as a header in every request. For example see line 2 of the cURL request below.\nFor user authentication, pass an `Authorization` header e.g.\nSee the [auth docs](https://supabase.com/docs/guides/auth/auth-email) to understand how to sign-up/sign-in users to your application and retrieve a JWT. The [apollo](https://supabase.com/docs/guides/graphql/with-apollo) and [relay](https://supabase.com/docs/guides/graphql/with-relay) guides also include complete examples of using Supabase Auth with GraphQL.\n\n"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Supabase supabase.com/docs MCP server Model Context Protocol official",
+   "log_id": "log_uM5z29m982MN",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+     "title": "Supabase MCP Server",
+     "snippet": "Supabase MCP Server\nConnect your AI tools to Supabase using MCP\nThe [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is a standard for connecting Large Language Models (LLMs) to platforms like Supabase. Once connected, your AI assistants can interact with and query your Supabase projects on your behalf.\nConnecting an LLM to your Supabase projects carries security risks. Read our security best practices before running the MCP server.\n## Remote MCP installation\nChoose your Supabase platform, project, and MCP client and follow the installation instructions:\nPlatform\nProject\nScope the MCP server to a project. If no project is selected, all projects will be accessible.\n### Options\nServer URL\nClient\nConfigure your MCP client to connect with your Supabase project\n### Installation\nAdd the MCP server to your project config using the command line:\nAlternatively, add this configuration to `.mcp.json`:\nAfter configuring the MCP server, you need to authenticate. In a regular terminal (not the IDE extension) run:\nSelect the \"supabase\" server, then \"Authenticate\" to begin the authentication flow.\nNeed help?[View Claude Code docs](https://code.claude.com/docs/en/mcp)\nAu"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/ai-tools/byo-mcp",
+     "title": "Deploy MCP servers",
+     "snippet": "Deploy MCP servers\nBuild and deploy [Model Context Protocol](https://modelcontextprotocol.io/specification/2026-07-28) (MCP) servers on Supabase using [Edge Functions](https://supabase.com/docs/guides/functions). MCP clients such as Claude, ChatGPT, Cursor, or VS Code call the tools you define.\nThis guide has two parts. Deploy a public MCP server gets a server with no authentication running in a few minutes. Add authentication puts Supabase Auth in front of it, so users sign in with their existing accounts and every tool call runs as that user under your Row Level Security (RLS) policies.\nThis is the MCP server your app exposes to its users. The [Supabase MCP server](https://supabase.com/docs/guides/ai-tools/mcp) is different: it connects your own coding agent to your project so you can build the app.\n## Prerequisites\n- [Docker](https://docs.docker.com/get-started/get-docker/) or a compatible runtime, running (for local development)\n- [Deno](https://deno.com/)\n- [Supabase CLI](https://supabase.com/docs/guides/local-development) 2.117.0 or later, installed and authenticated\n- [Node.js 20 or later](https://nodejs.org/) (required by the Supabase CLI)\nThe tutorial uses the official [MC"
+    },
+    {
+     "url": "https://github.com/supabase/mcp/tree/main",
+     "title": "GitHub - supabase/mcp: Connect Supabase to your AI assistants",
+     "snippet": "# Supabase MCP Server\n[![MCP Registry Version](https://camo.githubusercontent.com/33752998a93428faea53180ac4ecb80fc25dfb0f1963c2da23ba678f4abdf519/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f64796e616d69632f6a736f6e3f75726c3d687474707325334125324625324672656769737472792e6d6f64656c636f6e7465787470726f746f636f6c2e696f25324676302e3125324673657276657273253246636f6d2e737570616261736525323532466d637025324676657273696f6e732532466c61746573742671756572793d2532342e7365727665722e76657273696f6e266c6162656c3d4d43502532305265676973747279266c6f676f3d6d6f64656c636f6e7465787470726f746f636f6c)](https://registry.modelcontextprotocol.io/?q=com.supabase%2Fmcp)\n> Connect your Supabase projects to Cursor, Claude, Windsurf, and other AI assistants.\n\nThe [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) standardizes how Large Language Models (LLMs) talk to external services like Supabase. It connects AI assistants directly with your Supabase project and allows them to perform tasks like managing tables, fetching config, and querying data. See the [full list of tools](https://supabase.com/mcp#available-tools).\n\n### 2. Configure your MCP client\nTo configure the Supaba"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/functions/examples/mcp-server-mcp-lite",
+     "title": "Building an MCP Server with mcp-lite",
+     "snippet": "The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) enables Large Language Models (LLMs) to interact with external tools and data sources. With `mcp-lite`, you can build lightweight MCP servers that run on Supabase Edge Functions, giving your AI assistants the ability to execute custom tools at the edge.\n\n[mcp-lite](https://github.com/fiberplane/mcp-lite) is a lightweight, zero-dependency TypeScript framework for building MCP servers. It works everywhere the Fetch API is available, including Node, Bun, Cloudflare Workers, Deno, and Supabase Edge Functions.\n## Why Supabase Edge Functions + mcp-lite?\nThis combination offers several advantages:\n- **Fast cold starts**: Edge Functions boot in milliseconds, and warm isolates serve subsequent requests without restarting\n- **Global distribution**: Deploy once and run everywhere\n- **Direct database access**: Connect directly to your Supabase Postgres\n- **Minimal footprint**: mcp-lite has zero runtime dependencies\n- **Full type safety**: TypeScript support in Deno\n- **Basic deployment**: One command to production\n## Prerequisites\nYou need:\n- [Docker](https://docs.docker.com/get-started/get-docker/) (to run Supaba"
+    },
+    {
+     "url": "https://supabase.com/docs/guides/self-hosting/enable-mcp",
+     "title": "Enabling MCP Server Access",
+     "snippet": "The MCP (Model Context Protocol) server in [self-hosted Supabase](https://supabase.com/docs/guides/self-hosting/docker) runs behind the internal API. Currently, it does not offer OAuth 2.1 authentication, and is not intended to be exposed to the Internet. The corresponding API route has to be protected by restricting network connections from the outside. By default, all connections to the MCP server are denied.\n\nDo not allow connections to the self-hosted MCP server from the Internet. Only access it via:\n- A VPN connection to the server running the Studio container\n- An SSH tunnel from your local machine\n## Accessing via SSH tunnel\n### Step 1: Determine the local IP address that will be used to access the MCP server\nWhen connecting via an SSH tunnel to the Studio Docker container, the source IP will be that of the Docker bridge gateway. You need to allow connections from this IP address.\nThis command will output an IP address, e.g., `172.18.0.1`.\n### Step 2: Allow connections from the gateway IP\nAdd the IP address you discovered to the Envoy configuration by editing the `/mcp` route in `./volumes/api/envoy/lds.template.yaml`:\n1. Find the route with `prefix: /mcp`\n2. Comment out the"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,34 @@
+{
+ "id": 84,
+ "app": "Paygent Connect",
+ "category": "Payments",
+ "one_liner": "Unknown; evidence covers several unrelated products named Paygent.",
+ "auth_methods": [
+  "unknown"
+ ],
+ "auth_primary": "unknown",
+ "access": "unknown",
+ "access_notes": "Evidence does not identify the NMI-powered Paygent Connect; possible match gopaygent.com gateway is unconfirmed.",
+ "api_types": [
+  "unknown"
+ ],
+ "api_breadth": "unknown",
+ "mcp": "none_found",
+ "mcp_note": "",
+ "verdict": "needs_outreach",
+ "blocker": "identity_unclear",
+ "blocker_note": "Cannot confirm which Paygent product is meant; results are Paygentic, paygent.to, withpaygent, paygent.tech.",
+ "identity_issue": "Results are about different products (Paygentic, paygent.to, withpaygent.com, paygent.tech, gopaygent.com); none confirmed as NMI-powered Paygent Connect.",
+ "confidence": {
+  "auth": "low",
+  "access": "low",
+  "surface": "low",
+  "mcp": "low"
+ },
+ "evidence": {
+  "auth": "",
+  "access": "",
+  "surface": "",
+  "mcp": ""
+ }
+}

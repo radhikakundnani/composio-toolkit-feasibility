@@ -1,0 +1,388 @@
+{
+ "_about": "Hand-verified ground truth for the 20-app seeded sample (data/sample.json), built BEFORE reading agent output. 'how' = browser: read in the browser against primary docs this session; reviewer: reviewer knowledge of well-known public docs, not re-opened (flagged for human spot-check). Lists = all accepted answers where the docs allow more than one fair reading. mcp=null means not confidently verifiable -> not scored.",
+ "8": {
+  "app": "Close",
+  "how": "browser",
+  "auth": [
+   "api_key",
+   "basic",
+   "oauth2"
+  ],
+  "access": [
+   "self_serve_trial"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://developer.close.com/api/overview/api-key-authentication ; https://developer.close.com/mcp"
+ },
+ "10": {
+  "app": "DealCloud",
+  "how": "browser",
+  "auth": [
+   "oauth2",
+   "jwt_service_account"
+  ],
+  "access": [
+   "partner_or_sales_gated",
+   "approval_required"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "needs_outreach"
+  ],
+  "src": "https://api.docs.dealcloud.com/sdk/python-1.X/configuration/authentication (client credentials created by a tenant admin; customers only)",
+  "mcp_src": "https://api.docs.dealcloud.com/mcp [browser-checked]"
+ },
+ "13": {
+  "app": "Freshdesk",
+  "how": "browser",
+  "auth": [
+   "api_key",
+   "basic"
+  ],
+  "access": [
+   "self_serve_trial"
+  ],
+  "mcp": [
+   "community",
+   "none_found"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://developers.freshdesk.com/api/#authentication (API key on all plans incl. free) ; https://www.freshworks.com/freshdesk/pricing/ (Growth/Pro/Enterprise + 14-day trial, no free plan)",
+  "gt_correction": "Initial ground truth (reviewer knowledge) accepted 'self_serve_free'; browser check showed the free plan is gone. Corrected to self_serve_trial.",
+  "mcp_src": "Only official hit is Freshworks *Developer* MCP (app-building tools), not helpdesk data: https://developers.freshworks.com/docs/agentic-dev-tools/get-started/configure-mcp-server/ [browser-checked]"
+ },
+ "20": {
+  "app": "Gladly",
+  "how": "browser",
+  "auth": [
+   "api_key",
+   "basic",
+   "bearer_token"
+  ],
+  "access": [
+   "partner_or_sales_gated"
+  ],
+  "mcp": [
+   "community",
+   "none_found"
+  ],
+  "verdict": [
+   "needs_outreach"
+  ],
+  "src": "https://help.gladly.com/implementation/docs/get-your-api-tokens (tokens created by admins in a customer org; no trial)"
+ },
+ "22": {
+  "app": "Twilio",
+  "how": "reviewer",
+  "auth": [
+   "basic",
+   "api_key"
+  ],
+  "access": [
+   "self_serve_trial",
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://www.twilio.com/docs/usage/api ; https://github.com/twilio-labs/mcp"
+ },
+ "29": {
+  "app": "Aircall",
+  "how": "reviewer",
+  "auth": [
+   "basic",
+   "api_key",
+   "oauth2"
+  ],
+  "access": [
+   "paid_plan_required",
+   "self_serve_trial"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready_with_caveats"
+  ],
+  "src": "https://developer.aircall.io/api-references/#authentication (Basic api_id:token for customers; OAuth for Technology Partners)",
+  "mcp_src": "https://support.aircall.io/en-gb/articles/39677926959517 (official MCP, read-only beta via Account Manager) [browser-checked]",
+  "gt_correction": "Initial browser search (DuckDuckGo) surfaced only community forks, so ground truth said 'community'. A Composio search during verification surfaced Aircall's own help-centre article; confirmed in browser. Agent v1 was right; ground truth corrected to 'official'."
+ },
+ "37": {
+  "app": "systeme.io",
+  "how": "reviewer",
+  "auth": [
+   "api_key"
+  ],
+  "access": [
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://developer.systeme.io/ (API key from settings; free plan exists)",
+  "mcp_src": "https://systeme.io/mcp ; https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp [browser-checked]"
+ },
+ "39": {
+  "app": "Threads (Meta)",
+  "how": "reviewer",
+  "auth": [
+   "oauth2"
+  ],
+  "access": [
+   "approval_required"
+  ],
+  "mcp": [
+   "none_found",
+   "community"
+  ],
+  "verdict": [
+   "ready_with_caveats"
+  ],
+  "src": "https://developers.facebook.com/docs/threads (Meta app; App Review for other users' accounts)"
+ },
+ "43": {
+  "app": "BigCommerce",
+  "how": "reviewer",
+  "auth": [
+   "api_key",
+   "bearer_token",
+   "oauth2"
+  ],
+  "access": [
+   "self_serve_trial"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://developer.bigcommerce.com/docs/start/authentication",
+  "mcp_src": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview [browser-checked]"
+ },
+ "47": {
+  "app": "Ecwid",
+  "how": "browser",
+  "auth": [
+   "oauth2",
+   "bearer_token",
+   "api_key"
+  ],
+  "access": [
+   "paid_plan_required"
+  ],
+  "mcp": [
+   "community"
+  ],
+  "verdict": [
+   "ready_with_caveats"
+  ],
+  "src": "https://docs.ecwid.com/ ; https://www.ecwid.com/pricing (custom apps on paid plans)",
+  "mcp_src": "Only aggregator/community servers (Pipedream, viaSocket, mymcptools) [browser-checked]"
+ },
+ "51": {
+  "app": "DataForSEO",
+  "how": "reviewer",
+  "auth": [
+   "basic"
+  ],
+  "access": [
+   "self_serve_trial",
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://docs.dataforseo.com/v3/auth/ ; https://github.com/dataforseo/mcp-server-typescript"
+ },
+ "52": {
+  "app": "SE Ranking",
+  "how": "browser",
+  "auth": [
+   "api_key",
+   "bearer_token"
+  ],
+  "access": [
+   "self_serve_trial"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://seranking.com/api.html ('API access is included in every SE Ranking plan'; free trial, no card; MCP server)"
+ },
+ "62": {
+  "app": "Vercel",
+  "how": "reviewer",
+  "auth": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "access": [
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://vercel.com/docs/rest-api ; https://vercel.com/docs/mcp"
+ },
+ "67": {
+  "app": "Snowflake",
+  "how": "reviewer",
+  "auth": [
+   "jwt_service_account",
+   "oauth2",
+   "bearer_token"
+  ],
+  "access": [
+   "self_serve_trial"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready",
+   "ready_with_caveats"
+  ],
+  "src": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating ; https://github.com/Snowflake-Labs/mcp"
+ },
+ "72": {
+  "app": "Airtable",
+  "how": "reviewer",
+  "auth": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "access": [
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://airtable.com/developers/web/api/authentication",
+  "mcp_src": "https://airtable.com/developers/agents/mcp/getting-started [browser-checked]"
+ },
+ "75": {
+  "app": "Asana",
+  "how": "reviewer",
+  "auth": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "access": [
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://developers.asana.com/docs/authentication ; https://developers.asana.com/docs/using-asanas-mcp-server"
+ },
+ "81": {
+  "app": "Stripe",
+  "how": "reviewer",
+  "auth": [
+   "api_key",
+   "bearer_token",
+   "oauth2"
+  ],
+  "access": [
+   "self_serve_free"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready"
+  ],
+  "src": "https://docs.stripe.com/api/authentication ; https://docs.stripe.com/mcp"
+ },
+ "85": {
+  "app": "iPayX",
+  "how": "browser",
+  "auth": [
+   "api_key",
+   "bearer_token",
+   "unknown"
+  ],
+  "access": [
+   "self_serve_trial",
+   "paid_plan_required"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready_with_caveats"
+  ],
+  "src": "https://www.ipayx.ai/ (free signup; 'MCP-native', connect via MCP SSE). NOTE: hinted docs URL ipayx.ai/docs returns 404 ; https://www.ipayx.ai/pricing [browser-checked]",
+  "gt_correction": "Initial ground truth said self_serve_free (free signup). The verifier found the free tier is only 3 lifetime audits with API use on $99 packs / $299 mo; confirmed on ipayx.ai/pricing. Accepted answers widened to trial or paid."
+ },
+ "96": {
+  "app": "Devin",
+  "how": "browser",
+  "auth": [
+   "bearer_token",
+   "api_key"
+  ],
+  "access": [
+   "paid_plan_required"
+  ],
+  "mcp": [
+   "official"
+  ],
+  "verdict": [
+   "ready_with_caveats"
+  ],
+  "src": "https://docs.devin.ai/api-reference/overview (service-user cog_ tokens; Teams/Enterprise orgs)"
+ },
+ "98": {
+  "app": "Mermaid CLI",
+  "how": "reviewer",
+  "auth": [
+   "none"
+  ],
+  "access": [
+   "no_public_api"
+  ],
+  "mcp": [
+   "community",
+   "none_found"
+  ],
+  "verdict": [
+   "not_buildable",
+   "ready_with_caveats"
+  ],
+  "src": "https://github.com/mermaid-js/mermaid-cli (local CLI/library, no hosted service)"
+ }
+}

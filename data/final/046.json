@@ -1,0 +1,36 @@
+{
+ "id": 46,
+ "app": "Squarespace",
+ "category": "Ecommerce",
+ "one_liner": "Website builder with commerce APIs for products, orders, inventory and profiles.",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "auth_primary": "oauth2",
+ "access": "paid_plan_required",
+ "access_notes": "Merchants generate API keys in site settings; availability is plan-dependent and some developer APIs are invite-only; OAuth client registration needed.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://mcp.squarespace.com/mcp (first-party remote MCP)",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "API access tied to specific Squarespace plans; some developer APIs invite-only.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developers.squarespace.com/oauth",
+  "access": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+  "surface": "https://developers.squarespace.com/commerce-apis/products",
+  "mcp": "https://developers.squarespace.com/mcp/connect-a-client"
+ },
+ "verified": true
+}

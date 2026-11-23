@@ -1,0 +1,36 @@
+{
+  "id": 22,
+  "app": "Twilio",
+  "category": "Communications and Messaging",
+  "one_liner": "Cloud communications APIs for SMS, voice, WhatsApp, email and verification.",
+  "auth_methods": [
+    "basic",
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "basic",
+  "access": "self_serve_trial",
+  "access_notes": "Sign up for a free trial without a credit card; get Account SID and Auth Token; upgrade for full usage.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "Twilio MCP server (public beta), https://twilio.com/docs/ai/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Trial limits (free units, verified numbers) until upgrade; some products need carrier approval.",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://twilio.com/docs/usage/api-security-reference-guide/secure-auth",
+    "access": "https://twilio.com/docs/usage/trials",
+    "surface": "https://twilio.com/docs/voice/api",
+    "mcp": "https://twilio.com/docs/ai/mcp"
+  },
+  "identity_issue": ""
+}

@@ -1,0 +1,21 @@
+{
+  "id": 54,
+  "app": "MrScraper",
+  "changes": [
+    {
+      "field": "access_notes",
+      "from": "Free plan with 1,000 tokens/month, no card; create API token in dashboard, sent in x-api-token header.",
+      "to": "Free plan with 1,000 tokens/month, no card; create API token in dashboard, sent in x-api-token header. Note: pricing page says 1,000 free tokens/month while billing docs list 100; docs inconsistent.",
+      "why": "Conflicting free-tier size across vendor pages",
+      "evidence": "https://docs.mrscraper.com/docs/getting-started/billing"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

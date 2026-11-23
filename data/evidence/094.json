@@ -1,0 +1,142 @@
+{
+ "id": 94,
+ "app": "Consensus",
+ "hint": "consensus.app (OAuth requested)",
+ "given_category": "AI, Research and Media-native",
+ "queries": {
+  "auth": {
+   "query": "Consensus API authentication OAuth API key access token developer docs consensus.app OAuth requested",
+   "log_id": "log_j4FUX27ks3bn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.consensus.app/enterprise/connection-reference",
+     "title": "Connection reference",
+     "snippet": "## Authentication\nTwo options. For a shared, server-side gateway credential, use an API key.\n- API key (recommended for gateways)\n- OAuth 2.0 (per-user)\nA single opaque credential sent as a bearer token:\n```\nAuthorization: Bearer ak_live_...\n```\nIt lives entirely server-side, involves no user redirect and no token refresh, and maps to your Enterprise tier. Generate one from your Consensus account: profile icon \u2192 **API & MCP Dashboard** \u2192 **Keys and clients** \u2192 **New key**. The full key is shown once.Treat it like a password: keep it out of client-side code, public repositories, and screenshots.\nAuthorization-code flow only. There is no client-credentials grant, so OAuth always involves a per-user consent step; each user signs in to their own Consensus account.\n| | |\n|---|---|\n| **Authorization URL** | `https://consensus.app/oauth/authorize/` |\n| **Token URL** | `https://consensus.app/oauth/token/` |\n| **Dynamic Client Registration** | `https://consensus.app/oauth/register/` (RFC 7591) |\n| **Scope** | `search`. Request `scope=search` or omit it; it\u2019s the default. This is not an OIDC provider, so there are no `openid` or `email` scopes. |\n| **PKCE** | Required. `S256` only; requests "
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/security",
+     "title": "Security and data handling",
+     "snippet": "A search request carries the user\u2019s query and any filters (year range, study type, journal quartile, and so on), plus a credential. Requests travel over HTTPS:\n- **MCP server** (`https://mcp.consensus.app/mcp`): an API key or a per-user OAuth token, sent as `Authorization: Bearer`.\n- **REST API** (`https://api.consensus.app/v1/search`): an API key, sent in the `x-api-key` header.\n\n- Production access is limited to authorized engineering and operations staff, requires SSO with MFA, follows least privilege, and is logged. Access grants, changes, and offboarding follow documented approval and review processes evidenced under SOC 2.\n\n- **SAML 2.0 single sign-on** with AD FS, Microsoft Entra ID, Okta, and other identity providers. Group-based access can be driven by SAML attribute mapping from your directory. See [Single sign-on](/enterprise/sso).\n- **Federated authentication** for academic institutions.\n- Institutional admins manage their own users and roles.\n- For MCP access, users authenticate with OAuth 2.0 (authorization code with PKCE), or your gateway holds an API key server-side and sends it as a Bearer token. See the [connection reference](/enterprise/connection-reference).\n- F"
+    },
+    {
+     "url": "https://support.goconsensus.com/hubfs/consensus-oauth-guide%20for%20V2%20API%20(1).pdf",
+     "title": "consensus-oauth-guide for V2 API",
+     "snippet": "Overview\nThe Consensus Platform API uses OAuth 2.0 Authorization Code flow with PKCE for\napplication authentication. The interactive API docs let you generate a short-lived bearer token\nto test endpoints in the browser, but any application that needs to access the API on behalf of a\nuser must implement OAuth.\nThis guide walks you through:\n\u2022 Creating OAuth client credentials in the Consensus web app\n\u2022 Implementing the full Authorization Code + PKCE flow\n\u2022 Refreshing tokens so your app can run continuously\n\u2022 Revoking and introspecting tokens\nBase URLs. All examples in this guide use the production base URL\nhttps://app.goconsensus.com. The OAuth endpoints live under /api/auth/v1.0/oauth2.\nWhat you'll need\n\u2022 A Consensus account with access to the Integrations settings\n\u2022 A registered Callback URL for your application\n\u2022 Your application's client_id and client_secret (generated in Step 1)\nStep 1: Create access credentials\nBefore you can authenticate, you need to register your application and obtain a client_id and\nclient_secret from the Consensus web app.\n1.1 Open the Access Credentials app\nFrom the Consensus web app, navigate to Integrations and select the Access Credentials\ntile.\nIntegr"
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/gateways/litellm",
+     "title": "LiteLLM MCP Gateway",
+     "snippet": "## Shared API key\n```\nmcp_servers:\nconsensus:\nurl: \"https://mcp.consensus.app/mcp\"\ntransport: \"http\"\nauth_type: \"bearer_token\"\nauth_value: os.environ/CONSENSUS_API_KEY\ndescription: \"Search 400M+ scholarly articles, including 350M peer-reviewed papers\"\n```\n`bearer_token` sends the value as `Authorization: Bearer <auth_value>`. If you\u2019d rather set the header explicitly:\n```\nmcp_servers:\nconsensus:\nurl: \"https://mcp.consensus.app/mcp\"\ntransport: \"http\"\nstatic_headers:\nAuthorization: \"Bearer ak_live_...\"\n```\n## Per-user OAuth\nConsensus supports Dynamic Client Registration, so point LiteLLM at the registration endpoint and it registers itself:\n```\nmcp_servers:\nconsensus:\nurl: \"https://mcp.consensus.app/mcp\"\ntransport: \"http\"\nauth_type: oauth2\noauth2_flow: authorization_code\nauthorization_url: \"https://consensus.app/oauth/authorize/\"\ntoken_url: \"https://consensus.app/oauth/token/\"\nregistration_url: \"https://consensus.app/oauth/register/\"\nscopes: [\"search\"]\n```\nLiteLLM\u2019s callback is `https://<PROXY_BASE_URL>/ui/mcp/oauth/callback`; set `PROXY_BASE_URL` when running behind an ingress. `oauth2_flow` is required on every `oauth2` entry. If your clients already hold a Consensus-issued token, "
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/gateways/overview",
+     "title": "AI gateways and MCP registries",
+     "snippet": "What every gateway needs\n| Field | Value |\n|---|---|\n| Server URL | `https://mcp.consensus.app/mcp` |\n| Transport | Streamable HTTP (choose it explicitly; there is no SSE endpoint) |\n| Sessions | None required. The server is stateless. |\n| Auth, shared credential | Header `Authorization`, value `Bearer ak_live_...` |\n| Auth, per user | OAuth 2.0 authorization code + PKCE (S256), scope `search`, Dynamic Client Registration supported |\n| Discovery | `https://consensus.app/.well-known/oauth-authorization-server` |\n\nWhich auth mode to pick\n- **Shared API key** is the lowest-friction path and works with every product below. Everyone behind the gateway shares one Consensus account and its Enterprise limits.\n- **Per-user OAuth** gives each person their own Consensus account and usage. Products marked \u201cDCR\u201d below can register themselves automatically; products marked \u201cclient ID/secret\u201d need a confidential client, which Consensus provisions on request."
+    }
+   ]
+  },
+  "access": {
+   "query": "Consensus consensus.app OAuth requested API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_hpN9OAbn9Zvf",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.consensus.app/enterprise/connection-reference",
+     "title": "Connection reference",
+     "snippet": "## Authentication\nTwo options. For a shared, server-side gateway credential, use an API key.\n- API key (recommended for gateways)\n- OAuth 2.0 (per-user)\nA single opaque credential sent as a bearer token:\n```\nAuthorization: Bearer ak_live_...\n```\nIt lives entirely server-side, involves no user redirect and no token refresh, and maps to your Enterprise tier. Generate one from your Consensus account: profile icon \u2192 **API & MCP Dashboard** \u2192 **Keys and clients** \u2192 **New key**. The full key is shown once.Treat it like a password: keep it out of client-side code, public repositories, and screenshots.\nAuthorization-code flow only. There is no client-credentials grant, so OAuth always involves a per-user consent step; each user signs in to their own Consensus account.\n| | |\n|---|---|\n| **Authorization URL** | `https://consensus.app/oauth/authorize/` |\n| **Token URL** | `https://consensus.app/oauth/token/` |\n| **Dynamic Client Registration** | `https://consensus.app/oauth/register/` (RFC 7591) |\n| **Scope** | `search`. Request `scope=search` or omit it; it\u2019s the default. This is not an OIDC provider, so there are no `openid` or `email` scopes. |\n| **PKCE** | Required. `S256` only; requests "
+    },
+    {
+     "url": "https://docs.consensus.app/api-plans-and-access",
+     "title": "API plans and access",
+     "snippet": "Get a key\n1\nOpen the dashboard\nSign in to Consensus and go to [consensus.app/api-mcp](https://consensus.app/api-mcp/), or click your profile icon and choose **API & MCP Dashboard**.\n2\nCreate a key\nClick **Create API key**, name it, and copy it. If you already have a key, open **Keys and clients** and click **New key**. The full key is shown once.\n3\nSend it on every request\nPass the key in the `x-api-key` header. Requests without a valid key return `401`.\n##\n\u200b\nWhat each plan includes\n| | Free | Pro | Teams | Deep | Enterprise |\n|---|---|---|---|---|---|\n| Included calls per month | 30 | 500 | 500 | 2,000 | Custom |\n| Max calls with additional usage | 30 | 1,000 | 1,000 | 10,000 | Custom |\n| Max papers per request (`page_size`) | 20 | 300 | 300 | 750 | 1,000 |\n| Pagination past the first page | No | Yes | Yes | Yes | Yes |\n| [Full-text excerpts](/api-full-text) | No | Yes | Yes | Yes | Yes |\n| [Complete text](/api-full-text#complete-text) of open-access papers** | No | Yes | Yes | Yes | Yes |\n| Institutional full-text links (`institutional_access_url`)* | No | Yes | Yes | Yes | Yes |\n| Citations and references (beta)*** | No | Yes | Yes | Yes | Yes |\n| Rate limit | 1 request/second |"
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/gateways/overview",
+     "title": "AI gateways and MCP registries",
+     "snippet": "What every gateway needs\n| Field | Value |\n|---|---|\n| Server URL | `https://mcp.consensus.app/mcp` |\n| Transport | Streamable HTTP (choose it explicitly; there is no SSE endpoint) |\n| Sessions | None required. The server is stateless. |\n| Auth, shared credential | Header `Authorization`, value `Bearer ak_live_...` |\n| Auth, per user | OAuth 2.0 authorization code + PKCE (S256), scope `search`, Dynamic Client Registration supported |\n| Discovery | `https://consensus.app/.well-known/oauth-authorization-server` |\n\nWhich auth mode to pick\n- **Shared API key** is the lowest-friction path and works with every product below. Everyone behind the gateway shares one Consensus account and its Enterprise limits.\n- **Per-user OAuth** gives each person their own Consensus account and usage. Products marked \u201cDCR\u201d below can register themselves automatically; products marked \u201cclient ID/secret\u201d need a confidential client, which Consensus provisions on request."
+    },
+    {
+     "url": "https://docs.consensus.app/api-get-started",
+     "title": "Get started with Consensus API",
+     "snippet": "Make your first API call in a few minutes. Every plan includes API access, and the Free plan includes 30 calls a month.\n1\nSign in to Consensus\nCreate a free account or sign in at [consensus.app](https://consensus.app). The dashboard in the next step only opens when you\u2019re signed in.\n\n[consensus.app/api-mcp](https://consensus.app/api-mcp/).\n\n## Base URL and authentication\nAll requests go to:\n```\nhttps://api.consensus.app\n```\nEvery request must include your API key in the `x-api-key` header:\n```\nx-api-key: YOUR_API_KEY\n```\nSee [plans and access](/api-plans-and-access) for each plan\u2019s monthly calls, page sizes, features, and rate limits."
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/security",
+     "title": "Security and data handling",
+     "snippet": "A search request carries the user\u2019s query and any filters (year range, study type, journal quartile, and so on), plus a credential. Requests travel over HTTPS:\n- **MCP server** (`https://mcp.consensus.app/mcp`): an API key or a per-user OAuth token, sent as `Authorization: Bearer`.\n- **REST API** (`https://api.consensus.app/v1/search`): an API key, sent in the `x-api-key` header.\n\nAccess control\n- Customers are logically segregated within the multi-tenant environment.\n- Production access is limited to authorized engineering and operations staff, requires SSO with MFA, follows least privilege, and is logged. Access grants, changes, and offboarding follow documented approval and review processes evidenced under SOC 2.\n\n- For MCP access, users authenticate with OAuth 2.0 (authorization code with PKCE), or your gateway holds an API key server-side and sends it as a Bearer token. See the [connection reference](/enterprise/connection-reference).\n\nCredentials\n- **API keys** are shown once at creation, can be named, revoked, and rotated from the **API & MCP Dashboard**, and are scoped to search. Store them in your gateway\u2019s secret store, never in client-side code.\n- **OAuth tokens** are is"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Consensus API reference REST GraphQL endpoints documentation consensus.app OAuth requested",
+   "log_id": "log_n0r9IYVQ-cov",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.consensus.app/enterprise/connection-reference",
+     "title": "Connection reference",
+     "snippet": "## Endpoint and transport\n| | |\n|---|---|\n| **MCP endpoint** | `https://mcp.consensus.app/mcp` |\n| **Transport** | Streamable HTTP |\n| **Responses** | Buffered JSON. There is no SSE endpoint and the server never returns SSE event streams. |\n| **Sessions** | Stateless. No `Mcp-Session-Id`, no session affinity, so your gateway needs no sticky-session configuration. |\n| **Tools** | `search`, plus the thread tools `create_thread`, `get_thread`, `add_to_thread`, and `find_threads` for signed-in accounts and API keys, and `get_full_text` for paid plans. See the [tool reference](/mcp-tools/quickstart). |\nAll MCP and JSON-RPC calls must target the `/mcp` path. The bare host `https://mcp.consensus.app/` only answers health checks and OAuth discovery.\n\n## Authentication\nTwo options. For a shared, server-side gateway credential, use an API key.\n- API key (recommended for gateways)\n- OAuth 2.0 (per-user)\nA single opaque credential sent as a bearer token:\n```\nAuthorization: Bearer ak_live_...\n```\nIt lives entirely server-side, involves no user redirect and no token refresh, and maps to your Enterprise tier. Generate one from your Consensus account: profile icon \u2192 **API & MCP Dashboard** \u2192 **Key"
+    },
+    {
+     "url": "https://docs.consensus.app/api-get-started",
+     "title": "Get started with Consensus API",
+     "snippet": "The Consensus API lets you search 400+ million scholarly articles, including 350 million peer-reviewed research papers, over a single REST endpoint. Send a query and get back ranked papers with titles, authors, journals, publication years, citation counts, and direct links.\n## Quickstart\nMake your first API call in a few minutes. Every plan includes API access, and the Free plan includes 30 calls a month.\n1\nSign in to Consensus\nCreate a free account or sign in at [consensus.app](https://consensus.app). The dashboard in the next step only opens when you\u2019re signed in.\n2\nOpen the API & MCP Dashboard\nGo to [consensus.app/api-mcp](https://consensus.app/api-mcp/). You can also get there from your profile icon: choose **API & MCP Dashboard**.\n3\nCreate and copy an API key\nClick **Create API key**, name the key, and click **Copy API key**. The full key is shown only once, so store it somewhere safe.Already have a key? Open **Keys and clients** and click **New key**.\n4\nMake your first request\nSave the key in an environment variable named `CONSENSUS_API_KEY`:\n```\nexport CONSENSUS_API_KEY=\"paste-your-key-here\"\n```\nThen search. `query` is the only required parameter, and the key goes in the `x-"
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/security",
+     "title": "Security and data handling",
+     "snippet": "A search request carries the user\u2019s query and any filters (year range, study type, journal quartile, and so on), plus a credential. Requests travel over HTTPS:\n- **MCP server** (`https://mcp.consensus.app/mcp`): an API key or a per-user OAuth token, sent as `Authorization: Bearer`.\n- **REST API** (`https://api.consensus.app/v1/search`): an API key, sent in the `x-api-key` header.\n\n- For MCP access, users authenticate with OAuth 2.0 (authorization code with PKCE), or your gateway holds an API key server-side and sends it as a Bearer token. See the [connection reference](/enterprise/connection-reference).\n- For REST API access, your service sends an API key in the `x-api-key` header. The REST API doesn\u2019t accept OAuth tokens or Bearer credentials. See [API authentication](/api-get-started#authentication).\n\n## Credentials\n- **API keys** are shown once at creation, can be named, revoked, and rotated from the **API & MCP Dashboard**, and are scoped to search. Store them in your gateway\u2019s secret store, never in client-side code.\n- **OAuth tokens** are issued per user after an authorization-code flow with PKCE (S256). There is no client-credentials grant and no way to obtain a token withou"
+    },
+    {
+     "url": "https://docs.consensus.app/llms-full.txt",
+     "title": "docs.consensus.app/llms-full.txt",
+     "snippet": "## Base URL and authentication\nAll requests go to:\n```\nhttps://api.consensus.app\n```\nEvery request must include your API key in the `x-api-key` header:\n```http theme={null}\nx-api-key: YOUR_API_KEY\n```\nSee [plans and access](/api-plans-and-access) for each plan's monthly calls, page sizes, features, and rate limits.\n\n## Make a request\nStore your key in an environment variable named `CONSENSUS_API_KEY`, then send a `query`:\n```bash theme={null}\ncurl -G \"https://api.consensus.app/v1/search\" -H \"x-api-key: $CONSENSUS_API_KEY\" \\\n--data-urlencode \"query=does creatine improve working memory\" \\\n--data-urlencode \"study_types=rct,meta-analysis\" \\\n--data-urlencode \"year_min=2015\"\n```\nEach result in `results` carries the paper's `title`, `authors`, `journal_name`, `publish_year`, `citation_count`,\n\n# Quick start: Threads\nSource: https://docs.consensus.app/api-quickstart-threads\nDelegate a research question to the Consensus research agent and get back a cited answer, using the Threads endpoints of the Consensus API.\nThe Threads endpoints hand a research question to the Consensus research agent. The agent searches the literature, reads the papers, and writes a markdown answer with citations.\n\n``"
+    },
+    {
+     "url": "https://docs.consensus.app/api-quickstart-threads",
+     "title": "Quick start: Threads",
+     "snippet": "| | Search | Threads |\n|---|---|---|\n| **You get back** | A list of papers with abstracts and metadata | A list of papers, a written analysis, a reasoning trace (with `include_trace=true`), and citations with grounding quotes |\n| **Functionality** | Semantic paper search with filters | Search, citation crawls, author search, finding specific papers, reading full papers, searching attached collections, and reading and writing your Library collections |\n| **Steps per request** | One | Many |\n| **Timing** | Synchronous | Asynchronous |\n| **Follow-ups** | Each request stands alone | Ask follow-up questions that build on earlier answers |\n\n```\ncurl -X POST \"https://api.consensus.app/v1/threads\" \\\n-H \"x-api-key: $CONSENSUS_API_KEY\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n\"input_message\": \"What dose of creatine improves working memory in healthy adults, and how strong is the evidence?\",\n\"mode\": \"pro\",\n\"filters\": { \"year_min\": 2010, \"human\": true }\n}'\n```\n\n## Ask a follow-up\n```\ncurl -X POST \"https://api.consensus.app/v1/threads/<thread_id>/interactions\" \\\n-H \"x-api-key: $CONSENSUS_API_KEY\" \\\n-H \"Content-Type: application/json\" \\\n-d '{ \"input_message\": \"Do the results differ for adul"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Consensus consensus.app OAuth requested MCP server Model Context Protocol official",
+   "log_id": "log_QuXToZlrqo0t",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.consensus.app/consensus-mcp",
+     "title": "Get started with Consensus MCP",
+     "snippet": "MCP is the fastest way to give an assistant or agent paper search. Owkin plugged Consensus MCP into its agentic AI scientist and went from curated PubMed abstracts to 25x the paper coverage in days. Browse the use cases.\n**Server URL**\n```\nhttps://mcp.consensus.app/mcp\n```\n\n**One-click:** open [Consensus in the Claude directory](https://claude.ai/directory/65247229-f0c7-49df-9044-fcbb8b3894c6) and click **Connect**. Or connect manually:\n1\nOpen Settings\nOpen [claude.ai](https://claude.ai) or the Claude desktop app and go to **Settings**.\n2\nBrowse connectors\nSelect **Connectors**, then **Browse connectors**.\n3\nFind Consensus\nSearch for **Consensus** and click **Connect**.\n4\nSign in\nApprove the sign-in with your Consensus account, or continue without one at reduced limits.\n5\nStart searching\nAsk a research question in any chat. Consensus appears in the tools menu.\n```\nclaude mcp add --transport http consensus https://mcp.consensus.app/mcp\n```\nOAuth will open in your browser automatically on first use. You can also trigger it manually with the `/mcp` command inside Claude Code.\n\nOr add to `~/.codex/config.toml`:\n```\n[mcp_servers.consensus]\nurl = \"https://mcp.consensus.app/mcp\"\n```\n**One"
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/connection-reference",
+     "title": "Connection reference",
+     "snippet": "## Endpoint and transport\n| | |\n|---|---|\n| **MCP endpoint** | `https://mcp.consensus.app/mcp` |\n| **Transport** | Streamable HTTP |\n| **Responses** | Buffered JSON. There is no SSE endpoint and the server never returns SSE event streams. |\n| **Sessions** | Stateless. No `Mcp-Session-Id`, no session affinity, so your gateway needs no sticky-session configuration. |\n| **Tools** | `search`, plus the thread tools `create_thread`, `get_thread`, `add_to_thread`, and `find_threads` for signed-in accounts and API keys, and `get_full_text` for paid plans. See the [tool reference](/mcp-tools/quickstart). |\nAll MCP and JSON-RPC calls must target the `/mcp` path. The bare host `https://mcp.consensus.app/` only answers health checks and OAuth discovery.\n\n## Authentication\nTwo options. For a shared, server-side gateway credential, use an API key.\n- API key (recommended for gateways)\n- OAuth 2.0 (per-user)\nA single opaque credential sent as a bearer token:\n```\nAuthorization: Bearer ak_live_...\n```\nIt lives entirely server-side, involves no user redirect and no token refresh, and maps to your Enterprise tier. Generate one from your Consensus account: profile icon \u2192 **API & MCP Dashboard** \u2192 **Key"
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/security",
+     "title": "Security and data handling",
+     "snippet": "Consensus is a multi-tenant SaaS application: a web app, an MCP server, and a REST API, all hosted on Google Cloud Platform and reached over HTTPS. Nothing is installed on your premises and no VPN is required.\n\nA search request carries the user\u2019s query and any filters (year range, study type, journal quartile, and so on), plus a credential. Requests travel over HTTPS:\n- **MCP server** (`https://mcp.consensus.app/mcp`): an API key or a per-user OAuth token, sent as `Authorization: Bearer`.\n- **REST API** (`https://api.consensus.app/v1/search`): an API key, sent in the `x-api-key` header.\n\n- For MCP access, users authenticate with OAuth 2.0 (authorization code with PKCE), or your gateway holds an API key server-side and sends it as a Bearer token. See the [connection reference](/enterprise/connection-reference).\n- For REST API access, your service sends an API key in the `x-api-key` header. The REST API doesn\u2019t accept OAuth tokens or Bearer credentials. See [API authentication](/api-get-started#authentication).\n\nCredentials\n- **API keys** are shown once at creation, can be named, revoked, and rotated from the **API & MCP Dashboard**, and are scoped to search. Store them in your gatew"
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/gateways/litellm",
+     "title": "LiteLLM MCP Gateway",
+     "snippet": "## Shared API key\n```\nmcp_servers:\nconsensus:\nurl: \"https://mcp.consensus.app/mcp\"\ntransport: \"http\"\nauth_type: \"bearer_token\"\nauth_value: os.environ/CONSENSUS_API_KEY\ndescription: \"Search 400M+ scholarly articles, including 350M peer-reviewed papers\"\n```\n`bearer_token` sends the value as `Authorization: Bearer <auth_value>`. If you\u2019d rather set the header explicitly:\n```\nmcp_servers:\nconsensus:\nurl: \"https://mcp.consensus.app/mcp\"\ntransport: \"http\"\nstatic_headers:\nAuthorization: \"Bearer ak_live_...\"\n```\n## Per-user OAuth\nConsensus supports Dynamic Client Registration, so point LiteLLM at the registration endpoint and it registers itself:\n```\nmcp_servers:\nconsensus:\nurl: \"https://mcp.consensus.app/mcp\"\ntransport: \"http\"\nauth_type: oauth2\noauth2_flow: authorization_code\nauthorization_url: \"https://consensus.app/oauth/authorize/\"\ntoken_url: \"https://consensus.app/oauth/token/\"\nregistration_url: \"https://consensus.app/oauth/register/\"\nscopes: [\"search\"]\n```\nLiteLLM\u2019s callback is `https://<PROXY_BASE_URL>/ui/mcp/oauth/callback`; set `PROXY_BASE_URL` when running behind an ingress. `oauth2_flow` is required on every `oauth2` entry. If your clients already hold a Consensus-issued token, "
+    },
+    {
+     "url": "https://docs.consensus.app/enterprise/gateways/truefoundry",
+     "title": "TrueFoundry AI Gateway",
+     "snippet": "2\nFill in the server\n| Field | Value |\n|---|---|\n| **Name** | `consensus` (lowercase letters, numbers, and hyphens) |\n| **Display Name** | Consensus |\n| **Description** | Search 400M+ scholarly articles, including 350M peer-reviewed papers |\n| **URL** | `https://mcp.consensus.app/mcp` |\n| **Transport** | `streamable-http` |\n3\nChoose authentication\nSee the two options below, then save. The gateway exposes the server at `/api/llm/[tenant]/mcp/consensus/server`.\n## Authentication\n- API key (shared)\n- OAuth2 Authorization Code (per user)\n| Field | Value |\n|---|---|\n| **Authentication** | API Key |\n| **Credentials** | Shared |\n| **Header name** | `Authorization` |\n| **Header value** | `Bearer ak_live_...` |\nChoose **Individual** instead of Shared if each user should supply their own Consensus key under the **Auth Overrides** tab.\nSet **Authentication Type** to **OAuth2 Authorization Code**. TrueFoundry discovers the authorization and token URLs from `https://consensus.app/.well-known/oauth-authorization-server` automatically, but it requires an **OAuth2 Client ID** and **OAuth2 Client Secret**; it doesn\u2019t perform Dynamic Client Registration. [Contact sales](https://consensus.app/home/co"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

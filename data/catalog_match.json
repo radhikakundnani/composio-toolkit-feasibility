@@ -1,0 +1,2226 @@
+{
+ "1": {
+  "app": "Salesforce",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "salesforce",
+  "auth_schemes": [
+   "OAUTH2",
+   "S2S_OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 556.0,
+  "triggers": 7.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2",
+   "other"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "jwt_service_account"
+  ],
+  "composio_only": [
+   "other"
+  ]
+ },
+ "2": {
+  "app": "HubSpot",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "hubspot",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 354.0,
+  "triggers": 2.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "3": {
+  "app": "Pipedrive",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "pipedrive",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 404.0,
+  "triggers": 3.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "4": {
+  "app": "Attio",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "attio",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 105.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "5": {
+  "app": "Twenty",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "twenty",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 23.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": false,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "6": {
+  "app": "Podio",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "podio",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 143.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "7": {
+  "app": "Zoho CRM",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "zoho",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 115.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "8": {
+  "app": "Close",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "close",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 75.0,
+  "triggers": 45.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "close_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": false,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "9": {
+  "app": "Copper",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "copper",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 65.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "10": {
+  "app": "DealCloud",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "11": {
+  "app": "Zendesk",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "zendesk",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 483.0,
+  "triggers": 2.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "12": {
+  "app": "Intercom",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "intercom",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 138.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "intercom_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "13": {
+  "app": "Freshdesk",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "freshdesk",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 184.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "14": {
+  "app": "Front",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "front",
+  "auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 180.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "15": {
+  "app": "Pylon",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "pylon_mcp",
+  "auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "managed_auth": [],
+  "tools": 12.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": true,
+  "provider_mcp_slug": "pylon_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": false,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "16": {
+  "app": "LiveAgent",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "17": {
+  "app": "Plain",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "plain",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 119.0,
+  "triggers": 11.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "plain_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "18": {
+  "app": "Help Scout",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "help_scout",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 129.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "19": {
+  "app": "Gorgias",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "gorgias",
+  "auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 51.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "20": {
+  "app": "Gladly",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "21": {
+  "app": "Slack",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "slack",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 165.0,
+  "triggers": 9.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "22": {
+  "app": "Twilio",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "twilio",
+  "auth_schemes": [
+   "API_KEY",
+   "BASIC",
+   "S2S_OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 452.0,
+  "triggers": 45.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "basic",
+   "other"
+  ],
+  "primary_supported": true,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": [
+   "other"
+  ]
+ },
+ "23": {
+  "app": "Zoho Cliq",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "zoho_cliq",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 162.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "24": {
+  "app": "Lark (Larksuite)",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "lark",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 451.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "25": {
+  "app": "Pumble",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "pumble",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 9.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": false,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "26": {
+  "app": "Discord",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "discord",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 23.0,
+  "triggers": 1.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "27": {
+  "app": "Telegram",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "telegram",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 18.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "session_login"
+  ],
+  "composio_only": []
+ },
+ "28": {
+  "app": "WhatsApp Business",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "whatsapp",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 127.0,
+  "triggers": 1.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "29": {
+  "app": "Aircall",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "aircall",
+  "auth_schemes": [
+   "OAUTH2",
+   "BASIC"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 48.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "basic",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "30": {
+  "app": "Vonage",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "31": {
+  "app": "Google Ads",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "googleads",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 78.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "jwt_service_account"
+  ],
+  "composio_only": []
+ },
+ "32": {
+  "app": "Meta Ads",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "metaads",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 99.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "33": {
+  "app": "LinkedIn Ads",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "linkedin_ads",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 28.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "34": {
+  "app": "GoHighLevel",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "highlevel_location",
+  "auth_schemes": [
+   "OAUTH2",
+   "BEARER_TOKEN"
+  ],
+  "managed_auth": [],
+  "tools": 554.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "35": {
+  "app": "Mailchimp",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "mailchimp",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 275.0,
+  "triggers": 4.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "36": {
+  "app": "Klaviyo",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "klaviyo",
+  "auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 233.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "37": {
+  "app": "systeme.io",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "38": {
+  "app": "Pinterest",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "pinterest",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 27.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "39": {
+  "app": "Threads (Meta)",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "threads",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 24.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "40": {
+  "app": "SendGrid",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "sendgrid",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 359.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "41": {
+  "app": "Shopify",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "shopify",
+  "auth_schemes": [
+   "OAUTH2",
+   "S2S_OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 386.0,
+  "triggers": 45.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2",
+   "other"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": [
+   "other"
+  ]
+ },
+ "42": {
+  "app": "WooCommerce",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "43": {
+  "app": "BigCommerce",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "bigcommerce",
+  "auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 532.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "44": {
+  "app": "Salesforce Commerce Cloud",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "45": {
+  "app": "Magento (Adobe Commerce)",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "46": {
+  "app": "Squarespace",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "47": {
+  "app": "Ecwid",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "48": {
+  "app": "Gumroad",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "gumroad",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 13.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "49": {
+  "app": "Amazon Selling Partner",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "50": {
+  "app": "fanbasis",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "51": {
+  "app": "DataForSEO",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "dataforseo",
+  "auth_schemes": [
+   "BASIC"
+  ],
+  "managed_auth": [],
+  "tools": 354.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "basic"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "52": {
+  "app": "SE Ranking",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "53": {
+  "app": "Ahrefs",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "ahrefs",
+  "auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 46.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "ahrefs_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "54": {
+  "app": "MrScraper",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "mrscraper",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 11.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "55": {
+  "app": "Apify",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "apify",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 184.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "apify_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "56": {
+  "app": "Firecrawl",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "firecrawl",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 245.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "57": {
+  "app": "Bright Data",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "brightdata",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 167.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "58": {
+  "app": "Sherlock",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "59": {
+  "app": "Waterfall.io",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "60": {
+  "app": "Clay",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "clay",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 15.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "clay_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "61": {
+  "app": "GitHub",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "github",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 883.0,
+  "triggers": 46.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "github_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "jwt_service_account",
+   "key"
+  ],
+  "composio_only": []
+ },
+ "62": {
+  "app": "Vercel",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "vercel",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 399.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "vercel_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "63": {
+  "app": "Netlify",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "netlify_mcp",
+  "auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "managed_auth": [],
+  "tools": 9.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": true,
+  "provider_mcp_slug": "netlify_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "64": {
+  "app": "Cloudflare",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "cloudflare",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 171.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "cloudflare_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": false,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ },
+ "65": {
+  "app": "Supabase",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "supabase",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 230.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "supabase_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "66": {
+  "app": "Neo4j",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "neo4j",
+  "auth_schemes": [
+   "OAUTH2",
+   "BASIC",
+   "API_KEY",
+   "S2S_OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 21.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "basic",
+   "oauth2",
+   "other"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": [
+   "other"
+  ]
+ },
+ "67": {
+  "app": "Snowflake",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "snowflake",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 16.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "jwt_service_account"
+  ],
+  "composio_only": []
+ },
+ "68": {
+  "app": "MongoDB Atlas",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "mongodb",
+  "auth_schemes": [
+   "S2S_OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 496.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "mongodb_mcp",
+  "composio_auth": [
+   "other"
+  ],
+  "primary_supported": false,
+  "oauth_agree": false,
+  "agent_only": [
+   "key",
+   "oauth"
+  ],
+  "composio_only": [
+   "other"
+  ]
+ },
+ "69": {
+  "app": "Datadog",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "datadog",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY",
+   "BEARER_TOKEN"
+  ],
+  "managed_auth": [],
+  "tools": 255.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "datadog_mcp",
+  "composio_auth": [
+   "api_key",
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "70": {
+  "app": "Sentry",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "sentry",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 210.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "sentry_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": false,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "71": {
+  "app": "Notion",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "notion",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 57.0,
+  "triggers": 8.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "notion_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "72": {
+  "app": "Airtable",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "airtable",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 26.0,
+  "triggers": 6.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "73": {
+  "app": "Linear",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "linear",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 47.0,
+  "triggers": 12.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "linear_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "74": {
+  "app": "Jira",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "jira",
+  "auth_schemes": [
+   "OAUTH2",
+   "S2S_OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 166.0,
+  "triggers": 17.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2",
+   "other"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": [
+   "other"
+  ]
+ },
+ "75": {
+  "app": "Asana",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "asana",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 247.0,
+  "triggers": 6.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "76": {
+  "app": "Monday.com",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "monday",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 122.0,
+  "triggers": 17.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "monday_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "77": {
+  "app": "ClickUp",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "clickup",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 163.0,
+  "triggers": 21.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "clickup_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "78": {
+  "app": "Coda",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "coda",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 109.0,
+  "triggers": 4.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "79": {
+  "app": "Smartsheet",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "smartsheet",
+  "auth_schemes": [
+   "OAUTH2",
+   "BEARER_TOKEN"
+  ],
+  "managed_auth": [],
+  "tools": 180.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "80": {
+  "app": "Harvest",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "harvest",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 57.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "81": {
+  "app": "Stripe",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "stripe",
+  "auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 428.0,
+  "triggers": 40.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "stripe_mcp",
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "82": {
+  "app": "Plaid",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "plaid",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 70.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "plaid_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "83": {
+  "app": "Binance",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "84": {
+  "app": "Paygent Connect",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "85": {
+  "app": "iPayX",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "86": {
+  "app": "QuickBooks",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "quickbooks",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 119.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "87": {
+  "app": "Xero",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "xero",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 109.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "88": {
+  "app": "Brex",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "brex",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 84.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "89": {
+  "app": "Ramp",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "ramp",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [],
+  "tools": 186.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "ramp_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "90": {
+  "app": "PitchBook",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "pitchbook",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 130.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "91": {
+  "app": "NotebookLM",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "notebook_lm",
+  "auth_schemes": [
+   "OAUTH2"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 11.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "92": {
+  "app": "Otter AI",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "otter_ai_mcp",
+  "auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "managed_auth": [],
+  "tools": 3.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": true,
+  "provider_mcp_slug": "otter_ai_mcp",
+  "composio_auth": [
+   "oauth2"
+  ],
+  "primary_supported": false,
+  "oauth_agree": true,
+  "agent_only": [
+   "key"
+  ],
+  "composio_only": []
+ },
+ "93": {
+  "app": "Fathom",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "fathom",
+  "auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_auth": [
+   "OAUTH2"
+  ],
+  "tools": 10.0,
+  "triggers": 1.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "94": {
+  "app": "Consensus",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "consensus",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 1.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "consensus_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "95": {
+  "app": "Reducto",
+  "match": "auto",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "96": {
+  "app": "Devin",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "devin_mcp",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 23.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": true,
+  "provider_mcp_slug": "devin_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "97": {
+  "app": "higgsfield",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "higgsfield",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 13.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": true,
+  "mcp_only": false,
+  "provider_mcp_slug": "higgsfield_mcp",
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "98": {
+  "app": "Mermaid CLI",
+  "match": "manual",
+  "in_composio": false,
+  "slug": null,
+  "auth_schemes": null,
+  "managed_auth": null,
+  "tools": null,
+  "triggers": null,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null
+ },
+ "99": {
+  "app": "YouTube Transcript",
+  "match": "manual",
+  "in_composio": true,
+  "slug": "youtube_transcript",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 9.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": true,
+  "oauth_agree": true,
+  "agent_only": [],
+  "composio_only": []
+ },
+ "100": {
+  "app": "Grain",
+  "match": "auto",
+  "in_composio": true,
+  "slug": "grain",
+  "auth_schemes": [
+   "API_KEY"
+  ],
+  "managed_auth": [],
+  "tools": 17.0,
+  "triggers": 0.0,
+  "provider_mcp_toolkit": false,
+  "mcp_only": false,
+  "provider_mcp_slug": null,
+  "composio_auth": [
+   "api_key"
+  ],
+  "primary_supported": false,
+  "oauth_agree": false,
+  "agent_only": [
+   "oauth"
+  ],
+  "composio_only": []
+ }
+}

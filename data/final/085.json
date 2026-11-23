@@ -1,0 +1,35 @@
+{
+ "id": 85,
+ "app": "iPayX",
+ "category": "FX audit / fintech",
+ "one_liner": "FX audit API detecting hidden bank spreads versus mid-market rates.",
+ "auth_methods": [
+  "bearer_token"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "paid_plan_required",
+ "access_notes": "Developer API plan $99/mo (100 audits/mo, sandbox) up to Enterprise; pricing page free tier is 3 lifetime audits; MCP docs mention a limited free tier (10/day) but docs conflict.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_note": "https://mcp.ipayx.ai/mcp (vendor-hosted, Bearer key)",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "API keys on paid plans from $99/mo; only ~3 endpoints; conflicting free-tier info across docs.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://ipayx.ai/docs/mcp-server",
+  "access": "https://ipayx.ai/pricing",
+  "surface": "https://ipayx.ai/docs/api",
+  "mcp": "https://ipayx.ai/mcp"
+ },
+ "verified": true
+}

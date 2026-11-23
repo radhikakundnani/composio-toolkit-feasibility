@@ -1,0 +1,35 @@
+{
+  "id": 37,
+  "app": "systeme.io",
+  "category": "Marketing Automation / Funnels",
+  "one_liner": "All-in-one funnel builder, email marketing, courses and contacts platform.",
+  "auth_methods": [
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Generate public API key in Settings > MCP & API keys (max 3 keys); free plan exists (2,000 contacts, no credit card) and vendor states API access is available on Free plan.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "Built-in systeme.io MCP server (https://developer.systeme.io/docs/mcp-server), MCP keys",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "No gating found; vendor docs state API key (X-API-Key) is the only auth option, no OAuth.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+    "access": "https://systeme.io/pricing",
+    "surface": "https://developer.systeme.io/llms.txt",
+    "mcp": "https://developer.systeme.io/docs/mcp-server"
+  },
+  "verified": true
+}

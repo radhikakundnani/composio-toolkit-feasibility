@@ -1,0 +1,27 @@
+{
+ "id": 81,
+ "app": "Stripe",
+ "changes": [
+  {
+   "field": "evidence.access",
+   "from": "https://docs.stripe.com/partners",
+   "to": "https://docs.stripe.com/test-mode",
+   "why": "partners page is off-topic for access; test-mode page shows keys on account creation",
+   "evidence": "https://docs.stripe.com/test-mode"
+  },
+  {
+   "field": "evidence.mcp",
+   "from": "https://stripe.com/docs/mcp",
+   "to": "https://docs.stripe.com/mcp",
+   "why": "canonical URL",
+   "evidence": "https://docs.stripe.com/mcp"
+  }
+ ],
+ "confirmed": [
+  "mcp",
+  "access",
+  "auth_primary",
+  "verdict"
+ ],
+ "searches": 2
+}

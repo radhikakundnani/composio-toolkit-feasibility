@@ -1,0 +1,142 @@
+{
+ "id": 61,
+ "app": "GitHub",
+ "hint": "docs.github.com/rest",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "GitHub API authentication OAuth API key access token developer docs docs.github.com/rest",
+   "log_id": "log_pmBfqDNGrLWG",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+     "title": "Authenticating to the REST API - GitHub Docs",
+     "snippet": "Many REST API endpoints require authentication or return additional information if you are authenticated. Additionally, you can make more requests per hour when you are authenticated.\nTo authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in `GITHUB_TOKEN` in a GitHub Actions workflow.\nAfter creating a token, you can authenticate your request by sending the token in the `Authorization` header of your request. For example, in the following request, replace `YOUR-TOKEN` with a reference to your token:\n```shell\ncurl --request GET \\\n--url \"https://api.github.com/octocat\" \\\n--header \"Authorization: Bearer YOUR-TOKEN\" \\\n--header \"X-GitHub-Api-Version: 2026-03-10\"\n```\nNote\nIn most cases, you can use `Authorization: Bearer` or `Authorization: token` to pass a token. However, if you are passing a JSON web token (JWT), you must use `Authorization: Bearer`.\n\nIf you want to use the GitHub REST API for personal use, you can create a personal access token. If possible, GitHub recommends that yo"
+    },
+    {
+     "url": "https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api",
+     "title": "Getting started with the REST API - GitHub Docs",
+     "snippet": "To authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in `GITHUB_TOKEN` in a GitHub Actions workflow. For more information, see [Authenticating to the REST API](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api).\nFor an example of a request that uses an authentication token, see Making a request.\nNote\nIf you don't want to create a token, you can use GitHub CLI. GitHub CLI will take care of authentication for you, and help keep your account secure. For more information, see the [GitHub CLI version of this page](https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?tool=cli).\n\nAlthough some REST API endpoints are accessible without authentication, GitHub CLI requires you to authenticate before you can use the `api` subcommand to make an API request. Use the `auth login` subcommand to authenticate to GitHub. For more information, see Making a request.\nTo authenticate your request, you will need to provide an authentication t"
+    },
+    {
+     "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authenticating-to-the-rest-api-with-an-oauth-app",
+     "title": "Authenticating to the REST API with an OAuth app - GitHub Docs",
+     "snippet": "First, you'll need to [register your application](https://github.com/settings/applications/new). Every registered OAuth app is assigned a unique Client ID and Client Secret. The client secret is used to get an access token for the signed-in user. You must include the client secret in your native application, however web applications should not leak this value.\nYou can fill out every other piece of information however you like, except the **Authorization callback URL**. This is the most important piece to securely setting up your application. It's the callback URL that GitHub returns the user to after successful authentication. Ownership of that URL is what ensures that users sign into your app, instead of leaking tokens to an attacker.\n\nWarning\n**Retired Notice:** Authenticating to the GitHub API is no longer accessible using query parameters. Authenticating to the API should be done with [HTTP basic authentication](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication). For more information, including scheduled brownouts, see the [blog post](https://developer.github.com/changes/2020-02-10-deprecating-auth-through-query-param/).\n\nI"
+    },
+    {
+     "url": "https://docs.github.com/rest/quickstart",
+     "title": "Quickstart for GitHub REST API - GitHub Docs",
+     "snippet": "### Authenticating with an access token\nInstead of using the `gh auth login` command, pass an access token as an environment variable called `GH_TOKEN`. GitHub recommends that you use the built-in `GITHUB_TOKEN` instead of creating a token. If this is not possible, store your token as a secret and replace `GITHUB_TOKEN` in the example below with the name of your secret. For more information about `GITHUB_TOKEN`, see [Use GITHUB_TOKEN for authentication in workflows](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token). For more information about secrets, see [Using secrets in GitHub Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).\n\nIf you are authenticating with a GitHub App, you can create an installation access token within your workflow:\n1. Store your GitHub App's client ID as a configuration variable. In the following example, replace `APP_CLIENT_ID` with the name of the configuration variable. You can find your client ID on the settings page for your app or through the API. For more information, see [REST API endpoints for GitHub Apps](https://docs.github.com/en/rest/apps/apps#get-an-app). For mo"
+    },
+    {
+     "url": "https://docs.github.com/en/rest/apps/oauth-applications",
+     "title": "REST API endpoints for OAuth authorizations - GitHub Docs",
+     "snippet": "You can use these endpoints to manage the OAuth tokens that OAuth apps or GitHub Apps use to access people's accounts on GitHub.\nTokens for OAuth apps have the prefix `gho_`, while OAuth tokens for GitHub Apps, used for authenticating on behalf of the user, have the prefix `ghu_`. You can use the following endpoints for both types of OAuth tokens.\n## Delete an app authorization\nOAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted. Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).\nYou must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) to use this endpoint. Use the application's `client_id` as the username and the `client_secret` as the password.\n\nBody parameter"
+    }
+   ]
+  },
+  "access": {
+   "query": "GitHub docs.github.com/rest API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_mjBvFdPZvQAo",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.github.com/en/rest/deployments/environments",
+     "title": "REST API endpoints for deployment environments - GitHub Docs",
+     "snippet": "Environments, environment secrets, and deployment protection rules are available in public repositories for all current GitHub plans. They are not available on legacy plans, such as Bronze, Silver, or Gold. For access to environments, environment secrets, and deployment branches in private or internal repositories, you must use GitHub Pro, GitHub Team, or GitHub Enterprise. If you are on a GitHub Free, GitHub Pro, or GitHub Team plan, other deployment protection rules, such as a wait timer or required reviewers, are only available for public repositories."
+    },
+    {
+     "url": "https://docs.github.com/rest/overview/authenticating-to-the-rest-api",
+     "title": "Authenticating to the REST API - GitHub Docs",
+     "snippet": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.\n## About authentication\nMany REST API endpoints require authentication or return additional information if you are authenticated. Additionally, you can make more requests per hour when you are authenticated.\nTo authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in `GITHUB_TOKEN` in a GitHub Actions workflow."
+    },
+    {
+     "url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+     "title": "Rate limits for the REST API - GitHub Docs",
+     "snippet": "### Primary rate limit for authenticated users\nYou can use a personal access token to make API requests. Additionally, you can authorize a GitHub App or OAuth app, which can then make API requests on your behalf.\nAll of these requests count towards your personal rate limit of 5,000 requests per hour. Requests made on your behalf by a GitHub App that is owned by a GitHub Enterprise Cloud organization have a higher rate limit of 15,000 requests per hour. Similarly, requests made on your behalf by a OAuth app that is owned or approved by a GitHub Enterprise Cloud organization have a higher rate limit of 15,000 requests per hour if you are a member of the GitHub Enterprise Cloud organization."
+    },
+    {
+     "url": "https://docs.github.com/en/rest/pulls/pulls",
+     "title": "REST API endpoints for pull requests - GitHub Docs",
+     "snippet": "Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nDraft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud.\n\nDraft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud."
+    },
+    {
+     "url": "https://apiterms.com/api/github.com",
+     "title": "GitHub v3 REST API: pricing, auth, rate limits",
+     "snippet": "The GitHub v3 REST API API uses Bearer token authentication; has free pricing; offers a free tier (Unauthenticated requests allowed at 60 requests/hour; authenticated requests up to 5,000 requests/hour); rate limits: 60 req/hour unauthenticated; 5,000 req/hour authenticated (15,000 for GitHub Enterprise Cloud orgs); 1,000 req/hour per repo for GITHUB_TOKEN in Actions; secondary limits e.g. 100 concurrent requests. Verified 2026-07-12 with per-field source links.\n\nFree tier\nUnauthenticated requests allowed at 60 requests/hour; authenticated requests up to 5,000 requests/hour\n\nPricing\nThe REST API is included with GitHub accounts; GitHub plans start at Free ($0/month), Team ($4/user/month), and Enterprise (from $21/user/month), but the API is not billed separately."
+    }
+   ]
+  },
+  "surface": {
+   "query": "GitHub API reference REST GraphQL endpoints documentation docs.github.com/rest",
+   "log_id": "log_Ilv3__7R8Pp6",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api",
+     "title": "Getting started with the REST API - GitHub Docs",
+     "snippet": "Every request to the REST API includes an HTTP method and a path. Depending on the REST API endpoint, you might also need to specify request headers, authentication information, query parameters, or body parameters.\nThe REST API reference documentation describes the HTTP method, path, and parameters for every endpoint. It also displays example requests and responses for each endpoint. For more information, see the [REST reference documentation](https://docs.github.com/en/rest).\n### HTTP method\nThe HTTP method of an endpoint defines the type of action it performs on a given resource. Some common HTTP methods are `GET`, `POST`, `DELETE`, and `PATCH`. The REST API reference documentation provides the HTTP method for every endpoint.\nFor example, the HTTP method for the [\"List repository issues\" endpoint](https://docs.github.com/en/rest/issues/issues#list-repository-issues) is `GET`.\"\nWhere possible, the GitHub REST API strives to use an appropriate HTTP method for each action.\n- `GET`: Used for retrieving resources.\n- `POST`: Used for creating resources.\n- `PATCH`: Used for updating properties of resources.\n- `PUT`: Used for replacing resources or collections of resources.\n- `DELETE`: "
+    },
+    {
+     "url": "https://docs.github.com/api/article/body?pathname=/en/rest",
+     "title": "docs.github.com/api/article/body",
+     "snippet": "Create integrations, retrieve data, and automate your workflows with the GitHub REST API."
+    },
+    {
+     "url": "https://docs.github.com/rest/repos",
+     "title": "REST API endpoints for repositories - GitHub Docs",
+     "snippet": "# REST API endpoints for repositories\nUse the REST API to create, manage and control the workflow of public and private GitHub repositories."
+    },
+    {
+     "url": "https://docs.github.com/rest/reference/rate-limit",
+     "title": "REST API endpoints for rate limits - GitHub Docs",
+     "snippet": "The REST API for searching items has a custom rate limit that is separate from the rate limit governing the other REST API endpoints. For more information, see [REST API endpoints for search](https://docs.github.com/en/rest/search/search). The GraphQL API also has a custom rate limit that is separate from and calculated differently than rate limits in the REST API. For more information, see [Rate limits and query limits for the GraphQL API](https://docs.github.com/en/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api#primary-rate-limit).\n\n- The `search` object provides your rate limit status for the REST API for searching (excluding code searches). For more information, see [REST API endpoints for search](https://docs.github.com/en/rest/search/search).\n- The `code_search` object provides your rate limit status for the REST API for searching code. For more information, see [REST API endpoints for search](https://docs.github.com/en/rest/search/search#search-code).\n- The `graphql` object provides your rate limit status for the GraphQL API.\n\n- The `graphql` object provides your rate limit status for the GraphQL API. For more information, see \"[Resource limitations](https"
+    },
+    {
+     "url": "https://docs.github.com/rest/search/search",
+     "title": "REST API endpoints for search - GitHub Docs",
+     "snippet": "# REST API endpoints for search\nUse the REST API to search for specific items on GitHub.\n## About search\nYou can use the REST API to search for the specific item you want to find. For example, you can find a user or a specific file in a repository. Think of it the way you think of performing a search on Google. It's designed to help you find the one result you're looking for (or maybe the few results you're looking for). Just like searching on Google, you sometimes want to see a few pages of search results so that you can find the item that best meets your needs. To satisfy that need, the GitHub REST API provides **up to 1,000 results for each search**.\n\nThe REST API has a custom rate limit for searching. For authenticated requests, you can make up to 30 requests per minute for all search endpoints except for the [Search code](/en/rest/search/search#search-code) endpoint. The [Search code](/en/rest/search/search#search-code) endpoint requires you to authenticate and limits you to 10 requests per minute. For unauthenticated requests, the rate limit allows you to make up to 10 requests per minute.\nFor information about how to determine your current rate limit status, see [Rate Limit]"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "GitHub docs.github.com/rest MCP server Model Context Protocol official",
+   "log_id": "log_AH1zRl_5_vKP",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.github.com/api/article/body?pathname=/en/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server",
+     "title": "docs.github.com/api/article/body",
+     "snippet": "Learn how to configure the GitHub Model Context Protocol (MCP) server.\nThe GitHub MCP server is available to all GitHub users regardless of plan type. However, specific tools within the MCP server inherit the same access requirements as their corresponding GitHub features. If a feature requires a paid GitHub or Copilot license, the equivalent MCP tool will require the same subscription. For example, tools that interact with Copilot Cloud Agent require a paid Copilot license.\nFor the latest information and updates, see the [GitHub MCP server repository](https://github.com/github/github-mcp-server).\n<div class=\"ghd-tool vscode\">\n## About the GitHub MCP server\nThe GitHub MCP server is a Model Context Protocol (MCP) server provided and maintained by GitHub. MCP allows you to integrate AI capabilities with other tools and services, enhancing your development experience by providing context-aware AI assistance.\nFor a full introduction to the GitHub MCP server and an overview of MCP, see [Model Context Protocol (MCP)](/en/copilot/concepts/customizations/mcp).\n\nThe GitHub MCP server in Visual Studio Code can be configured remotely or locally. The remote GitHub MCP server is hosted by GitHu"
+    },
+    {
+     "url": "https://docs.github.com/api/article/body?pathname=/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers",
+     "title": "docs.github.com/api/article/body",
+     "snippet": "Configure Model Context Protocol (MCP) servers for your repository to give Copilot cloud agent, Automations, and Copilot code review access to external tools and data sources.\n\nAs a repository administrator, you can configure MCP servers for use within your repository. You do this using a JSON-formatted configuration that specifies the details of the MCP servers you want to use. You enter the JSON configuration directly into the settings for the repository on GitHub.com.\nThis repository-level MCP configuration is shared by Copilot cloud agent (including automations) and Copilot code review. For information on disabling use of MCP servers by Copilot code review, see [Disabling MCP tools for Copilot code review](#disabling-mcp-tools-for-code-review).\n\nThe GitHub MCP server and Playwright MCP server are enabled by default. You can add your own MCP servers alongside these defaults.\nOrganization and enterprise administrators can also configure MCP servers as part of custom agents using the YAML frontmatter. For more information, see [Custom agents configuration](/en/copilot/reference/custom-agents-configuration#mcp-server-configuration-details).\n\nWhen configuring MCP servers for use by "
+    },
+    {
+     "url": "https://github.com/resources/articles/what-is-mcp-model-context-protocol",
+     "title": "What is Model Context Protocol (MCP)? \u00b7 GitHub",
+     "snippet": "Model Context Protocol (MCP) connects AI models to tools, data, and services in a standardized way, enabling AI systems to take controlled actions.\n## MCP Defined\nThe Model Context Protocol (MCP) is an open-source client\u2013server protocol that defines how AI systems discover capabilities, exchange structured context, and execute actions through external tools and services. Instead of building custom integrations for every application, MCP establishes a standardized interface between an MCP client\u2014such as an integrated development environment (IDE) or AI assistant\u2014and an MCP server that exposes tools, APIs, data sources, and workflows. Through this architecture, AI systems can dynamically discover available capabilities, send structured requests, and receive validated responses in a consistent and secure way. MCP provides a structured method for helping AI systems to interact with real-world applications without requiring custom integrations for every tool.\nThe protocol was originally introduced by Anthropic and later adopted and expanded by GitHub in collaboration with other industry leaders. GitHub took ownership of the specification, rewrote it for broader applicability, and releas"
+    },
+    {
+     "url": "https://github.com/modelcontextprotocol/python-sdk",
+     "title": "GitHub - modelcontextprotocol/python-sdk: The official Python SDK for Model Context Protocol servers and clients",
+     "snippet": "# MCP Python SDK\n**Python implementation of the Model Context Protocol (MCP)**\n\n## Documentation\n**The documentation lives at [https://py.sdk.modelcontextprotocol.io/](https://py.sdk.modelcontextprotocol.io/).**\nIt has a [Get started guide](https://py.sdk.modelcontextprotocol.io/get-started/), [What's new in v2](https://py.sdk.modelcontextprotocol.io/whats-new/), the [API reference](https://py.sdk.modelcontextprotocol.io/api/mcp/), and the [migration guide](https://py.sdk.modelcontextprotocol.io/migration/).\n## What is MCP?\nThe [Model Context Protocol](https://modelcontextprotocol.io) lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can:\n- **Build MCP servers** that expose tools, resources, and prompts to any MCP host\n- **Build MCP clients** that connect to any MCP server\n- Speak every standard transport: stdio, Streamable HTTP, and SSE\n## Requirements\nPython 3.11+.\n## Installation\n```\nuv add \"mcp[cli]\"      # or: pip install \"mcp[cli]\"\n```\nThe `cli` extra adds the `mcp` command-line tool (`mcp dev`, `mcp run`, `mcp install`) on top of the SDK"
+    },
+    {
+     "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+     "title": "Model Context Protocol (MCP) - GitHub Docs",
+     "snippet": "# Model Context Protocol (MCP)\nConnect Copilot to external tools and data through Model Context Protocol (MCP) servers.\n## Overview of Model Context Protocol (MCP)\nThe Model Context Protocol (MCP) is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.\nYou can use MCP to extend the capabilities of GitHub Copilot by integrating it with a wide range of existing tools and services. MCP works across all major Copilot surfaces\u2014whether you're working in an IDE, using GitHub Copilot CLI, working in the GitHub Copilot app, or delegating tasks to an agent on GitHub.com. You can also use MCP to create new tools and services that work with Copilot, allowing you to customize and enhance your experience.\nFor example, you can connect an issue tracker so Copilot can look up a bug while working on a fix, without asking you to copy the issue into chat.\nFor more information on MCP, see [the official MCP documentation](https://modelcontextprotocol.io/introduction). For a curated list of MCP servers from partners and the c"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

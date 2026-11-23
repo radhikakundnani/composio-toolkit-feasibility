@@ -1,0 +1,40 @@
+{
+  "id": 11,
+  "app": "Zendesk",
+  "changes": [
+    {
+      "field": "mcp",
+      "from": "none_found",
+      "to": "official",
+      "why": "Zendesk publishes a vendor-hosted MCP server (Zendesk Bridge, EAP) exposing ticket/user/org/help-center actions at <domain>.zendesk.com/mcp",
+      "evidence": "https://support.zendesk.com/hc/en-us/articles/11400026079130"
+    },
+    {
+      "field": "mcp_note",
+      "from": "Only Zendesk MCP client (outbound) and third-party Swifteq MCP server app seen; no vendor-hosted server in evidence.",
+      "to": "Vendor-hosted MCP server via Zendesk Bridge / External AI connections (early access program); URL generated per account in Admin Center. Separate MCP client feature also exists.",
+      "why": "",
+      "evidence": "https://support.zendesk.com/hc/en-us/articles/11400026079130"
+    },
+    {
+      "field": "evidence.mcp",
+      "from": "https://zendesk.com/marketplace/apps/support/1191848/mcp-server",
+      "to": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+      "why": "v1 cited third-party marketplace app",
+      "evidence": "https://support.zendesk.com/hc/en-us/articles/11400026079130"
+    },
+    {
+      "field": "confidence.mcp",
+      "from": "low",
+      "to": "medium",
+      "why": "EAP status; docs from vendor",
+      "evidence": ""
+    }
+  ],
+  "confirmed": [
+    "auth",
+    "access",
+    "api_types"
+  ],
+  "searches": 4
+}

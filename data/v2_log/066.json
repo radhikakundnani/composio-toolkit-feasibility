@@ -1,0 +1,54 @@
+{
+ "id": 66,
+ "app": "Neo4j",
+ "changes": [
+  {
+   "field": "access",
+   "from": "self_serve_free",
+   "to": "paid_plan_required",
+   "why": "Docs say Free and Professional users must enter billing information (or be in a marketplace project) before creating API credentials; v1 claimed any tier incl. free",
+   "evidence": "https://neo4j.com/docs/aura/classic/platform/api/authentication"
+  },
+  {
+   "field": "blocker",
+   "from": "other",
+   "to": "paid_plan",
+   "why": "was \"other\"; billing requirement is closest to paid_plan",
+   "evidence": "https://neo4j.com/docs/aura/classic/platform/api/authentication"
+  },
+  {
+   "field": "access_notes",
+   "from": "Aura API credentials (client id/secret) can be created in any tier incl. free; free rate limit 25 req/min.",
+   "to": "Aura API credentials require billing info on file even for Free/Professional instances (unrestricted only on VDC/AuraDS Enterprise); 25 req/min free limit.",
+   "why": "corrected per auth docs",
+   "evidence": "https://neo4j.com/docs/aura/classic/platform/api/authentication"
+  },
+  {
+   "field": "blocker_note",
+   "from": "Aura API manages instances; data access via per-instance Query API with DB credentials.",
+   "to": "Billing info needed for Aura API credentials; data access via per-instance Query API with DB credentials.",
+   "why": "updated",
+   "evidence": "https://neo4j.com/docs/aura/classic/platform/api/authentication"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://neo4j.com/docs/aura/api/overview",
+   "to": "https://neo4j.com/docs/aura/classic/platform/api/authentication",
+   "why": "Auth docs state billing-info requirement",
+   "evidence": "https://neo4j.com/docs/aura/classic/platform/api/authentication"
+  },
+  {
+   "field": "confidence.access",
+   "from": "high",
+   "to": "high",
+   "why": "",
+   "evidence": "https://neo4j.com/docs/aura/classic/platform/api/authentication"
+  }
+ ],
+ "confirmed": [
+  "mcp (github.com/neo4j/mcp, vendor org)",
+  "auth_primary",
+  "verdict"
+ ],
+ "searches": 3
+}

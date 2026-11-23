@@ -1,0 +1,142 @@
+{
+ "id": 51,
+ "app": "DataForSEO",
+ "hint": "docs.dataforseo.com",
+ "given_category": "Data, SEO and Scraping",
+ "queries": {
+  "auth": {
+   "query": "DataForSEO API authentication OAuth API key access token developer docs docs.dataforseo.com",
+   "log_id": "log_J8DOfhzybsrv",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+     "title": "How to Authenticate with DataForSEO Google Search SERP API: API Key Setup and Code Examples \u2013 DataForSEO",
+     "snippet": "Your DataForSEO API key is your API login and API password, joined as `login:password` and encoded in Base64. You\u2019ll find both in the **API Access** tab of your dashboard, and the steps below show how to use them in Make, n8n, Custom GPTs, and cURL.\n\n- **API login.** A unique string our system generates to identify your account in API requests. On older accounts, the sign-up email may still function as the API login, however the owner can change it and switch to a generated one.\n- **API password.** A separate password is automatically generated when you register an account with DataForSEO. It\u2019s not the same as the password you use to log into the dashboard. This one authenticates your API requests.\n- **Basic Auth.** Short for Basic Authentication. Instead of a single API key string, you send your API login and password with every request. It\u2019s the simplest authentication pattern on the web, which is why we picked it.\n- **Base64.** A format for safely passing characters like `:` and `@` through HTTP headers. Base64 is encoding, not encryption \u2014 anyone with the encoded string can decode it, so treat it like a password.\n- **Header.** The part of an HTTP request that carries metadata, "
+    },
+    {
+     "url": "https://github.com/dataforseo/mcp-server-typescript/tree/master",
+     "title": "GitHub - dataforseo/mcp-server-typescript: DataForSEO API modelcontextprotocol server",
+     "snippet": "## Authentication\n**OAuth 2.0 (default for HTTP MCP):** works out of the box. MCP clients discover the DataForSEO authorization server via Protected Resource metadata and send `Authorization: Bearer` tokens.\n**Fallback:** API login/password via environment variables (HTTP Basic). Required for CLI and stdio MCP; on HTTP it is used when no `Authorization` header is present.\n```\n# bash / macOS / Linux\nexport DATAFORSEO_LOGIN=\"your_api_login\"\nexport DATAFORSEO_PASSWORD=\"your_api_password\"\n```\n```\n# PowerShell\n$env:DATAFORSEO_LOGIN=\"your_api_login\"\n$env:DATAFORSEO_PASSWORD=\"your_api_password\"\n```\n```\nREM CMD\nset DATAFORSEO_LOGIN=your_api_login\nset DATAFORSEO_PASSWORD=your_api_password\n```\n`DATAFORSEO_USERNAME` is accepted as an alias for `DATAFORSEO_LOGIN`. Get API keys at [https://app.dataforseo.com/api-access](https://app.dataforseo.com/api-access).\n\nStreamable HTTP endpoints:\n- `POST /mcp`\n- `POST /http`\nOAuth 2.0 Protected Resource metadata (RFC 9728) is **always** exposed so MCP clients can discover the authorization server and authenticate with Bearer tokens:\n- `GET /.well-known/oauth-protected-resource`\n- `GET /.well-known/oauth-protected-resource/mcp`\n- `GET /.well-known/oauth-p"
+    },
+    {
+     "url": "https://docs.dataforseo.com/v3/auth",
+     "title": "Authentication \u2013 DataForSEO API v.3",
+     "snippet": "[Create a free account](https://app.dataforseo.com/register) with DataForSEO, then go to the [API Access tab](https://app.dataforseo.com/api-access) in the account dashboard to find your API login and password, which you\u2019ll need to authenticate and use the DataForSEO APIs. Note that the API password is generated automatically by DataForSEO and is different from your account password.\nDataForSEO is using the [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), which makes it possible to call our APIs with almost any programming language, Postman app, REST API platforms, and all major frameworks.\nRegardless of the programming language, your unique API token should be passed **in the \u2018Authorization\u2019 header** within the request in the following format:\n`Authorization: Basic login:password`\nInstead of \u201clogin\u201d and \u201cpassword\u201d, use your API credentials encoded in Base64.\nFor instance, the Base64-encoded \u2018login:password\u2019 value will have the following format:\n`bG9naW46cGFzc3dvcmQ=`\nSo the whole string will look as follows:\n`Authorization: Basic bG9naW46cGFzc3dvcmQ=`\nCheck the examples for PHP, Python, and C# on the right to see how it works with a particular pro"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/dataforseo/refs/heads/main/authentication/dataforseo-authentication.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/dataforseo/refs/heads/main/authentication/dataforseo-authentication.yml",
+     "snippet": "- name: oauth2\ntype: oauth2\nsurface: MCP server (https://mcp.dataforseo.com)\nissuer: https://data.dataforseo.com\nflows:\n- flow: authorizationCode\nauthorizationUrl: https://data.dataforseo.com/oauth/authorize\ntokenUrl: https://data.dataforseo.com/oauth/token\nrefreshable: true\nscopes: {api: Access to the DataForSEO API, profile: Access to the account profile}\npkce: [S256]\ntoken_endpoint_auth_methods: [none]\ndynamic_client_registration: https://data.dataforseo.com/oauth/clients/register\nrevocation: https://data.dataforseo.com/oauth/tokens/revoke\nbearer_methods_supported: [header]\ndiscovery:\nauthorization_server_metadata: https://data.dataforseo.com/.well-known/oauth-authorization-server\nprotected_resource_metadata: https://mcp.dataforseo.com/.well-known/oauth-protected-resource\nsources:\n- well-known/dataforseo-oauth-authorization-server.json\n- well-known/dataforseo-oauth-protected-resource.json\nnote: >-\nNot declared in any OpenAPI document \u2014 discovered by probing the MCP host's\nRFC 9728 metadata and the authorization server's RFC 8414 metadata.\n- name: env-credentials\ntype: http\nscheme: basic\nsurface: MCP stdio transport and CLI\nenv: [DATAFORSEO_LOGIN, DATAFORSEO_PASSWORD]\nnote: >-\nOA"
+    },
+    {
+     "url": "https://github.com/dataforseo/mcp-server-typescript/blob/master/SKILL.md",
+     "title": "mcp-server-typescript/SKILL.md at master \u00b7 dataforseo/mcp-server-typescript",
+     "snippet": "## Authentication\n| Mode | Preferred auth | Fallback |\n|---|---|---|\n| MCP stdio (default when no CLI command; or `npx dataforseo-mcp-server` with no args) | Env credentials (HTTP Basic) | \u2014 |\n| HTTP MCP (`--mode http`) | OAuth 2.0 Bearer via authorization server `https://data.dataforseo.com` (discovery at `/.well-known/oauth-protected-resource`) | `DATAFORSEO_LOGIN` + `DATAFORSEO_PASSWORD` in env |\n| CLI (`docs` / `request` / `--cli`) | Env credentials (HTTP Basic) | \u2014 |\nOverride the authorization server with `AUTH_SERVER_URL` if needed.\n\n**CLI credentials (fallback / shell):** set `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD` as environment variables. Get keys at [https://app.dataforseo.com/api-access](https://app.dataforseo.com/api-access)\n```\nexport DATAFORSEO_LOGIN=your_api_login\nexport DATAFORSEO_PASSWORD=your_api_password\n```\nWindows PowerShell: `$env:DATAFORSEO_LOGIN=\"...\"` / `$env:DATAFORSEO_PASSWORD=\"...\"`. CMD: `set DATAFORSEO_LOGIN=...`\n`DATAFORSEO_USERNAME` is also accepted as an alias for `DATAFORSEO_LOGIN`. For HTTP MCP, prefer OAuth; env credentials are only a fallback when no `Authorization` header is present.\n\n## Installation (once per environment)\n```\ncd /path/to/"
+    }
+   ]
+  },
+  "access": {
+   "query": "DataForSEO docs.dataforseo.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_4yb7zsgk28-R",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+     "title": "How to Authenticate with DataForSEO Google Search SERP API: API Key Setup and Code Examples \u2013 DataForSEO",
+     "snippet": "Your DataForSEO API key is your API login and API password, joined as `login:password` and encoded in Base64. You\u2019ll find both in the **API Access** tab of your dashboard, and the steps below show how to use them in Make, n8n, Custom GPTs, and cURL.\n\nCreate a free account, log in, and open the **API Access** tab in the dashboard sidebar.\n\nCreate a free account on our website. New accounts get a $1 trial credit, and the SERP Google Organic Live Advanced endpoint costs $0.002 per call, so the trial covers around 500 live Google SERPs before you spend a cent. Enough room to set things up and run a few tests."
+    },
+    {
+     "url": "https://dataforseo.com/help-center/how-to-test-google-web-scraping-for-free-with-dataforseo-sandbox",
+     "title": "How to Test Google Web Scraping for Free with DataForSEO Sandbox \u2013 DataForSEO",
+     "snippet": "The first is the [DataForSEO Sandbox](https://docs.dataforseo.com/v3/appendix/sandbox/), a technical environment where you send requests to any endpoint and get back responses with structure identical to production, yet without your account being charged. The second is the [free unlimited trial](https://dataforseo.com/help-center/how-does-your-free-unlimited-trial-work). When you sign up, you get a $1 credit on your balance to spend on a limited number of real API calls, but over an unlimited period.\n\nPast the trial, real data runs on pay-as-you-go pricing with no monthly subscriptions, so you can test the SERP API for free now and scale only when the feature earns it.\n\nThe Sandbox is a free API testing environment for developers wiring their software up to our data. Any registered user gets access, and your account is never charged for Sandbox endpoints. It works across all of our APIs, including the SERP API, DataForSEO Labs API, and Backlinks API, so the same approach applies no matter which dataset your product needs.\n\n**Using the account password instead of the API password.** The API password is generated automatically by DataForSEO and isn\u2019t your dashboard login password, so"
+    },
+    {
+     "url": "https://dataforseo.com/help-center/how-does-your-free-unlimited-trial-work",
+     "title": "How does your free unlimited trial work? \u2013 DataForSEO",
+     "snippet": "First of all, we offer a free unlimited trial to let you try out our APIs and evaluate the efficiency of our service. To get a free trial, you should simply [create an account with DataForSEO.](https://app.dataforseo.com/register)\nOnce you are logged into the DataForSEO Dashboard you\u2019ll see your API credentials for making calls from your API testing platform or through your preferred [no-code tools and AI agents.](https://dataforseo.com/integrations) Alternatively, you can use our built-in [API Playground](https://app.dataforseo.com/api-explorer/serp) which allows you to make actual API calls and obtain real JSON data through a graphic user interface.\n\nNote that **upon registration free $1 credit for API testing will be added to your account balance**. You can use this balance to make API calls for an unlimited period of time. However, this amount will be sufficient to make a limited number of API requests.\n**$1 will be enough to get, for example:**\n- 800+ SERPs with high-priority tasks\n- 14,000+ backlinks with Rank values and other data\n- 16,000 keywords with Google Ads metrics\nNote that there is no need to create another trial account to make more test APIs calls. This will be co"
+    },
+    {
+     "url": "https://dataforseo.com/pricing",
+     "title": "DataForSEO API v3 Pricing \u2013 Transparent Pay-As-You-Go Pricing Model",
+     "snippet": "Transparent pay-as-you-go pricing for DataForSEO APIs. Find the API you need, understand how it is billed, and view the detailed pricing page for exact rates and parameters.\n- Pay as you go\n- No subscriptions\n- **$50** minimum top-up\n- Balance never expires\n\nCan I try DataForSEO APIs for free?\nYes. You can sign up for free and use your $1 trial credit available to new accounts for trying our APIs in the Playground section of your DataForSEO Dashboard, via MCP in your preferred AI tool, or through our ready-made templates and integrations with platforms like n8n, Postman, Google Sheets. You can also test API integration for free using the DataForSEO Sandbox. The Sandbox provides sample responses for testing, while trial credit lets you test paid API functionality."
+    },
+    {
+     "url": "https://frontal.so/gtm-apis/signal-apis/dataforseo-api-review",
+     "title": "DataForSEO API review: SERP pricing by queue",
+     "snippet": "DataForSEO API pricing is pay as you go from a prepaid balance, with a $50 minimum payment and no subscription.\n### Trial\n$0\n$1 of free credit on signup\n- Credited on signup\n- Plus a free Sandbox for testing\n- Enough for about 1,660 standard-queue SERPs\n### Standard queue\n$0.60\nper 1,000 SERPs, pay as you go, nothing upfront\n- About 5 minutes on average\n- POST a task, GET the result\n- Cheapest here short of a $1,250 Serper pack\n### Priority queue\n$1.20\nper 1,000 SERPs, pay as you go, nothing upfront\n- Up to 1 minute on average\n- 60% of the live price\n### Live mode\n$2.00\nper 1,000 SERPs, pay as you go, nothing upfront\n- About 6 seconds on average\n- One POST, one task per call\n- For interactive use\nThe minimum payment is $50, and DataForSEO says larger payments add funds to the account. Payment is by card, PayPal or Amazon Pay below $5,000, and wire transfer or ACH above it. The DataForSEO SERP API pricing above is for Google organic results; Maps, News, Images, Jobs and the other engines each have their own page and their own rates.\n\nDataForSEO does not issue an API key. It uses Basic Authentication with an API login and an API password, both shown in the API Access tab of the dashb"
+    }
+   ]
+  },
+  "surface": {
+   "query": "DataForSEO API reference REST GraphQL endpoints documentation docs.dataforseo.com",
+   "log_id": "log_QV9bg8G_up90",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.dataforseo.com/v3.md",
+     "title": "docs.dataforseo.com/v3.md",
+     "snippet": "DataForSEO API is using the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) technology for interchanging data between your application and our service. The data exchange is made through the widely used HTTP protocol, which allows applying our API to almost all programming languages."
+    },
+    {
+     "url": "https://docs.dataforseo.com/v3/backlinks/backlinks/live.md",
+     "title": "docs.dataforseo.com/v3/backlinks/backlinks/live.md",
+     "snippet": "## Backlinks\nThis endpoint will provide you with a list of backlinks and relevant data for the specified domain, subdomain, or webpage.\n**Note:** API will return the list of unique backlinks from the referring pages;\nif a page contains more than 1 backlink pointing to your `target`, the link with the highest `rank` will be returned; the number of duplicate backlinks from the referring page will be indicated in the `links_count` field.\n\n![checked](https://docs.dataforseo.com/v3/wp-content/themes/dataforseo/assets/img/icons/checked-circle.svg) POST  https://api.dataforseo.com/v3/backlinks/backlinks/live\nPricing\nYour account will be charged for each request.\nThe cost can be calculated on the [Pricing](https://dataforseo.com/pricing/backlinks/backlinks \"Pricing\") page.\nAll POST data should be sent in the [JSON](https://en.wikipedia.org/wiki/JSON) format (UTF-8 encoding). The task setting is done using the POST method. When setting a task, you should send all task parameters in the task array of the generic POST array. You can send up to 10000 API calls per minute, each Live API call can contain only one task. The maximum number of calls that can be sent simultaneously is limited to 30."
+    },
+    {
+     "url": "https://dataforseo.com/help-center/using-filters",
+     "title": "Using filters in DataForSEO APIs \u2013 DataForSEO",
+     "snippet": "You can use filters when making a request to the following APIs:\n** DataForSEO Labs API**\n** OnPage API**\n** Backlinks API**\n** Content Analysis API**\n***You can set a maximum of eight filters in a single API request.***\nFilters are associated with certain parameters from the API response. Each endpoint provides different data, and thus the filter structure and values differ depending on the endpoint.\nGenerally the structure of the filter includes three parts that are separated with a `,` symbol:\n- filtered parameter \u2013 target parameter of the endpoint you want to filter;\n- filter operator \u2013 operator of the filter;\n- filter value \u2013 filtering value.\nYou can find the exact filter structure in the description of each DataForSEO API below.\n\nYou can get the full list of filters available for all DataForSEO Labs endpoints by calling the following endpoint:\n`GET https://api.dataforseo.com/v3/dataforseo_labs/available_filters`\nDataForSEO Labs API filters have the following structure:\n`[$item_array.$results_array.$parameter_field, $filter_operator, $filter_value]`"
+    },
+    {
+     "url": "https://dataforseo.com/help-center/how-to-run-bulk-keyword-research-with-dataforseo-apis",
+     "title": "How to Run Bulk Keyword Research with DataForSEO APIs \u2013 DataForSEO",
+     "snippet": "Our [Keyword Data API](https://dataforseo.com/apis/keyword-data-api) and [DataForSEO Labs API](https://dataforseo.com/apis/dataforseo-labs-api) both offer endpoints that accept up to 1,000 keywords per request. For instance, with Google Ads Live endpoints capped at 12 API requests per minute per account, that puts the ceiling at roughly 720,000 keywords per hour from a single endpoint.\n\nKeyword Data API and the DataForSEO Labs API are both designed for advanced keyword research workflows, but they work best for different parts of it. Keyword Data API focuses on metrics pulled straight from the source: [Google Ads](https://dataforseo.com/apis/google-ads-api), Bing Ads, and [clickstream-derived data](https://dataforseo.com/help-center/what-is-clickstream-search-volume-and-how-to-get-it-with-dataforseo). DataForSEO Labs API delivers additional metrics like keyword difficulty and search intent that we calculate based on our keyword and SERP databases. Here\u2019s the endpoint cheat sheet for bulk workflows:\n| Endpoint | Bulk capacity | Best for |\n|---|---|---|\n| [Google Ads Search Volume](https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/) | 1,000 keywords / request"
+    },
+    {
+     "url": "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis?noamp=mobile",
+     "title": "A Kickstart Guide to Using DataForSEO APIs \u2013 DataForSEO",
+     "snippet": "DataForSEO specializes in [REST APIs](https://blog.postman.com/rest-api-examples/). REST, or Representational State Transfer, is the most popular approach to building web APIs based on six principles:\n- Uniform interface (UI) \u2013 unique resources identifiable through a single URL.\n- Client-server model \u2013 API clients handle UI and request gathering, while API servers manage data access, workload, and security.\n- Stateless operations \u2013 each request contains complete client information, while the server doesn\u2019t retain any information about the client state.\n- RESTful resource caching \u2013 response data is labeled as cacheable or non-cacheable.\n- Layered system \u2013 hierarchical architecture restricting each component to interact only with its immediate layer.\n- Code on demand \u2013 the server can return static resources (in XML or JSON) or executable codes as needed.\n\n### What is an endpoint?\nAn API endpoint is a specific URL that represents a path for accessing a certain function or resource (e.g. a data set). You may think of an endpoint as a destination explaining to the API server how to proceed with your call.\nFor example, the following endpoint will tell the API server that you want to do s"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "DataForSEO docs.dataforseo.com MCP server Model Context Protocol official",
+   "log_id": "log_iIKTImYQK9Ao",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://dataforseo.com/model-context-protocol",
+     "title": "DataForSEO Model Context Protocol \u2013 DataForSEO",
+     "snippet": "## Get Started With DataForSEO MCP\nChoose your AI client and follow the instructions to connect with DataForSEO APIs.\n1. 1\nOpen Claude Desktop and go to **Customize \u2192 Connectors**.\n2. 2\nClick **Add custom connector** and paste the DataForSEO MCP HTTP URL:\nhttps://mcp.dataforseo.com/v3/mcp\n3. 3\nWhen prompted, approve the **Authorization** request to access the DataForSEO API.\n4. 4\nStart a new chat. Claude will request your approval the first time it calls a DataForSEO tool.\n1. 1\nOpen the configuration file:\n~/Library/Application Support/Claude/claude_desktop_config.json\nOn Windows: `%APPDATA%\\Claude\\claude_desktop_config.json`\n2. 2\nAdd the following configuration to the file:\nJSON\n```\n{\n\"mcpServers\": {\n\"dataforseo\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"dataforseo-mcp-server\"],\n\"env\": {\n\"DATAFORSEO_USERNAME\": \"your_api_login\",\n\"DATAFORSEO_PASSWORD\": \"your_api_password\"\n}\n}\n}\n}\n```\n3. 3\nReplace `your_api_login` and `your_api_password` with credentials from the [API Access dashboard](https://app.dataforseo.com/api-access).\n4. 4\nRestart Claude Desktop. The DataForSEO tools will appear in your tool list.\n1. 1\nGenerate a Base64 token from your API login and password (or copy a pre-encoded "
+    },
+    {
+     "url": "https://dataforseo.com/help-center/how-to-connect-and-use-the-dataforseo-mcp-server-with-chatgpt-work-and-codex-cli",
+     "title": "How to connect and use the DataForSEO MCP server with ChatGPT Work and Codex CLI \u2013 DataForSEO",
+     "snippet": "In this guide, we\u2019ll explain how to connect the official [DataForSEO MCP server](https://dataforseo.com/model-context-protocol) to the desktop and web versions of ChatGPT for use with the new [ChatGPT Work](https://openai.com/chatgpt-work/) mode. Additionally, we\u2019ll showcase the MCP integration with OpenAI\u2019s [Codex](https://openai.com/codex/) CLI.\n\nThe DataForSEO MCP connection enables you to run more advanced SEO, GEO, and marketing processes in both extensions. For instance, you can run data-driven scheduled SEO and GEO audits in Work and make the AI generate structured visual reports instead of plain text. In Codex, you can use DataForSEO MCP to pull SEO insights straight into the coding environment and build and test your projects against real data.\n\n#### ChatGPT Work Desktop\n**1.** Open the ChatGPT Desktop app and navigate to **Settings**.\n**2.** In **Settings**, go to **Plugins** \u2192 **Add** \u2192 **Add MCP Server.**\n[![LPlugins Section](https://dataforseo.com/wp-content/uploads/2026/09/Plugins-Section-scaled.webp)](https://dataforseo.com/wp-content/uploads/2026/09/Plugins-Section-scaled.webp)\n**3.** In the window that opens, you\u2019ll have two connection options: using [Standard Inpu"
+    },
+    {
+     "url": "https://github.com/dataforseo/mcp-server-typescript/tree/master",
+     "title": "GitHub - dataforseo/mcp-server-typescript: DataForSEO API modelcontextprotocol server",
+     "snippet": "# DataForSEO MCP Server\n> **This is the new v3 MCP server.** The previous v2+ MCP server is **deprecated** and lives at [dataforseo/mcp-server-typescript-deprecated](https://github.com/dataforseo/mcp-server-typescript-deprecated).\nMCP server and CLI for LLM agents to browse DataForSEO API documentation and make authenticated API requests. By default the binary starts an MCP server on stdio; CLI commands are an optional second mode.\n## Quick Start\nStart the MCP server on stdio (default mode; set `DATAFORSEO_LOGIN` / `DATAFORSEO_PASSWORD`):\n```\nnpx dataforseo-mcp-server@latest\n```\nHTTP transport (port 3000; override with `PORT`):\n```\nnpx dataforseo-mcp-server@latest --mode http\n```\n## Authentication\n**OAuth 2.0 (default for HTTP MCP):** works out of the box. MCP clients discover the DataForSEO authorization server via Protected Resource metadata and send `Authorization: Bearer` tokens.\n**Fallback:** API login/password via environment variables (HTTP Basic). Required for CLI and stdio MCP; on HTTP it is used when no `Authorization` header is present.\n\nThe same tool implementations power both the MCP server and the CLI. One binary serves both modes; MCP is the default.\n**How the binary"
+    },
+    {
+     "url": "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide",
+     "title": "How to Connect the Official DataForSEO MCP Server to ChatGPT: Simple Guide \u2013 DataForSEO",
+     "snippet": "Now, with our [official MCP Server](https://dataforseo.com/model-context-protocol) available, you can connect ChatGPT to the best SEO data in an even more advanced and powerful way.\nDataForSEO MCP Server is an implementation of the [Model Context Protocol](https://modelcontextprotocol.io/introduction), allowing LLMs to obtain and process data from DataForSEO. It serves as a bridge between LLMs and our APIs by standardizing communication and data transfer methods. Thus, it provides AI models with unobstructed and steady access to the latest SEO data.\n\n**1.** [Log in to your OpenAI API account](https://platform.openai.com/login) and navigate to the **Dashboard**.\n**2.** In the **Dashboard**, create a new **Chat** with your preferred ChatGPT model. Then, click on **Tools**, select **MCP Server**, and click **Add new**.\n\n**3.** In the window that opens, paste the DataForSEO MCP server\u2019s URL (`https://mcp.dataforseo.com/mcp`) in the **URL** field and add a custom **Label**. For authentication, choose **Custom headers**.\nThen, in the **Header** field, write **Authorization** and in the **Value** field, write **Basic** and paste your DataForSEO API credentials, encoded in the [Base64 form"
+    },
+    {
+     "url": "https://dataforseo.com/help-center/3-ways-to-install-dataforseo-mcp-with-claude-code",
+     "title": "3 Ways to Install DataForSEO MCP With Claude Code \u2013 DataForSEO",
+     "snippet": "[DataForSEO Model Context Protocol (MCP)](https://dataforseo.com/model-context-protocol) integration with [Claude Code](https://www.anthropic.com/claude-code) allows for seamless access to DataForSEO\u2019s comprehensive SEO data suite directly from your command line.\n\n#### Method 1: Add Remote MCP Server\nThe easiest way is to install MCP as a remote server:\n```\nclaude mcp add --header \"Authorization: Basic <basic_auth_token>\" --transport http dfs-mcp https://mcp.dataforseo.com/http\n```\nAs the `<basic_auth_token>`, specify your DataForSEO API credentials, encoded in the [Base64 format](https://en.wikipedia.org/wiki/Base64). You can find your API credentials in the [API Access](https://app.dataforseo.com/api-access) tab of your DataForSEO account.\n\n#### Method 2: Add Local MCP Server From the NPM Repository\nIf you prefer to keep MCP servers locally, you can add DataForSEO MCP to your system from the NPM repository:\n```\nclaude mcp add dfs-mcp --env DATAFORSEO_USERNAME=<api_username> --env DATAFORSEO_PASSWORD=<api_password> -- npx -y dataforseo-mcp-server\n```\nInstead of `<api_username>` and `<api_password>` input your API login and API password from the [API Access](https://app.dataforseo."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

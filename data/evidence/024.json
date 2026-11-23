@@ -1,0 +1,142 @@
+{
+ "id": 24,
+ "app": "Lark (Larksuite)",
+ "hint": "open.larksuite.com",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Lark (Larksuite) API authentication OAuth API key access token developer docs open.larksuite.com",
+   "log_id": "log_gXaGFHjzZlNC",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token",
+     "title": "Get user_access_token - Server API - Documentation - Lark Developer",
+     "snippet": "OAuth token API for acquiring the `user_access_token` and `refresh_token`. The `user_access_token` serves as the user's access credential, which allows API calls to be made on behalf of the user. The `refresh_token` is used to obtain a new `user_access_token`.\n- You need to obtain an authorization code before getting the `user_access_token`. For more details, see [Get Authorization Code](https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code). Please note that the authorization code is valid for 5 minutes and can only be used once.\n- During user authorization, the user must have [access to the application](https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/availability). Otherwise, calling this API will return error code 20010.\n- The obtained user_access_token has an expiration period. For instructions on how to refresh the `user_access_token`, see [Refresh user_access_token](https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token).\n- If you need to obtain user information, see [Get User Information](https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/re"
+    },
+    {
+     "url": "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
+     "title": "Obtain access tokens - Server API - Documentation - Lark Developer",
+     "snippet": "To improve API security, Lark uses an access token mechanism. When calling APIs, the access token authenticates the caller's identity and permissions. This informs Lark who is accessing app data and resources.\nThe access token is the key to accessing the Lark Open Platform, binding the caller identity, as well as all data access and API call permissions obtained by the app together, allowing the app to perform read and write operations on resources. It is recommended that developers have a thorough understanding of Lark's access token mechanism before starting formal development.\n## Introduction to access tokens\nThe Lark Open Platform provides different types of access tokens for authenticating the calling party's identity. In the actual development process, you can choose the appropriate access token based on your business needs.\n| Access Token Type | Requires User Authorization | Description |\n|---|---|---|\n| tenant_access_token | No | The credentials required to call the API as an app. The range of readable and writable data is determined by the app's own [data permission range](/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions). The value of "
+    },
+    {
+     "url": "https://open.larksuite.com/document/common-capabilities/sso/api/get-access_token",
+     "title": "Get access_token - Developer Guides - Documentation - Lark Developer",
+     "snippet": "# Get access_token\nLast updated on 2025-06-09\nThis version has been deprecated and is not recommended. Please refer to the new version [Get user_access_token](/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token)\nAfter the developer\u2019s web page or client [obtains the code](/document/common-capabilities/sso/web-application-sso/web-app-overview#3bc4d3a8), it should pass the code to the developer's server. Then call the Lark server through the developer server to obtain the access_token that can be used to access user information. The access_token is the only certificate for the developer to obtain user information, and the developer server needs to strictly ensure the security of the access_token, and MUST NOT passing access_token to the client.**Request Method**: `POST`\n**Request URL**: `https://passport.larksuite.com/suite/passport/oauth/token`\n**Request Header**:\n| Field | Value |\n|---|---|\n| `Content-Type` | `application/x-www-form-urlencoded` |\n**Request Parameters**:\n| Parameter | Description | DataType | Required |\n|---|---|---|---|\n| `grant_type` | Value MUST be set to `authorization_code` | `string` | `true` |\n| `client_id` | The ID of "
+    },
+    {
+     "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+     "title": "Access Tokens: Who am I? - Documentation - Lark Developer",
+     "snippet": "**The authentication method** is to tell Lark server \"who is currently accessing this API\" when the API is called. In other words, it allows Lark to know \"who is accessing what tenant data now and in what capacity.\"\n## Token categories\nAccess tokens available for the Lark API include the following three types:\n- `tenant_access_token` **:** Tenant authorization token. With this token, the app uses its own account to perform corresponding actions, such as obtaining the information of a user from the contacts. The value of this token is prefixed with `t-`, for example: `t-24b5bf4e054bcef00b2af38a0b04f0af6d315b18`\n- `app_access_token` **:** App authorization token. The open platform identifies the caller\u2019s app, and the app can access information related to itself and not attributed to a specific company or user, such as obtaining the identity of the user currently logged into the app. The value of this token is prefixed with `a-` or `t-` , for example: `a-24b5bf4e054bcef00b2af38a0b04f0af6d315b18`\nNote: In practical use, the `app_access_token` and `tenant_access_token` of the API response may be the same. This is due to the fact that `app_access_token` is used in fewer scenarios, and th"
+    },
+    {
+     "url": "https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/development-guide/webapp-incremental-authorization-access-guide",
+     "title": "Lark client web app end user consent guide - Developer Guides - Documentation - Lark Developer",
+     "snippet": "### Step 1: Configure the Redirect URL\nCreate an application in Developer Console or select an existing application, go to the Application Details page > Development Configuration > Security Settings module, and configure the redirect URL. Please ensure the page url where you call the authorization API is set up here.\n### Step 2: Apply for Required Permissions\nAccording to the permission required by the developer to call the API, apply for opening in the permission management module, and publish the application to make the configuration take effect.\nInstructions on applying for permission can be found at: [Apply for API permission](/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)\uff0cApplication of release process can reference document [Custom app development process](/document/home/introduction-to-custom-app-development/self-built-application-development-process) and [Release a store app](/document/uMzNwEjLzcDMx4yM3ATM/uYjMyUjL2IjM14iNyITN).\n### Step 3: Call tt.requestAccess to Initialize Authorization\nTo get the authorization code, you can call [requestAccess](/document/uYjL24iN/uUzMuUzMuUzM/requestaccess) or [requestAuthCode](/document/uYjL24iN/uUzMuUzMuUzM/20220308) API with Lark V6.9"
+    }
+   ]
+  },
+  "access": {
+   "query": "Lark (Larksuite) open.larksuite.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_GvDy7dvKIEWI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://open.larksuite.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN",
+     "title": "Apply for API permission - Server API - Documentation - Lark Developer",
+     "snippet": "During app development, you may need to call server APIs of the open platform services, or listen to subscribed events, etc. These operations may require access to tenant and user privacy information or involve manipulation of tenant and user app data. For security reasons, you need to apply for the corresponding permissions for your app. The permissions will take effect only after the app review is approved, and subsequently the app can invoke [server APIs](https://open.larksuite.com/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list) or listen to subscribed [event list](https://open.larksuite.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0EjN/event-list). In simple terms, the API permissions (Scope) of an app determine which server-side capabilities the app can use.\n\n| Permission level | Description | Review rules |\n|---|---|---|\n| Automatic approval permissions | Tenant administrators can configure automatic approval permissions based on the actual data governance requirements of the tenant to reduce the review burden. For specific configuration methods, see [How do administrators set up custom app review rules](https://www.larksuite.com/hc/zh-CN/articles/360048488346). | No"
+    },
+    {
+     "url": "https://open.larksuite.com/document/server-docs/getting-started/server-api-list?from=home",
+     "title": "Server API list - Server API - Documentation - Lark Developer",
+     "snippet": "- Unlimited: Core features including Authentication and Authorization, Event Subscription, and Contacts are free to use, regardless of your Lark plan.\n- Basic: This covers most Lark features. Usage is tallied, and heavy users may need to consider a higher-tier Lark plan to avoid restrictions.\n- Advanced: Pricing for these APIs is usage-based. To access them, you'll need to buy a dedicated quota package.\n- For all the details, read [Policy Update: Adjusting API Call Limits for Custom Apps](https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-guide/api-billing?lang=en-US)."
+    },
+    {
+     "url": "https://open.larksuite.com/llms.txt",
+     "title": "open.larksuite.com/llms.txt",
+     "snippet": "**App authentication**\n- **API permissions (scopes)**: In the process of developing an application, you may need to call server-side APIs or listen to subscribed events. Such operations may involve accessing the privacy information of the enterprise or users, or may need to operate on the application data of the enterprise or users. For security reasons, you need to apply for corresponding permissions for the application, and only after the enterprise administrator approves can the application proceed with subsequent API calls or event listening. [Apply for API permissions](https://open.larksuite.com/document/server-docs/getting-started/overview-of-app-scopes)\n- **Access tokens (access_token)**\n- tenant_access_token: The credentials required to call the API as an app. The range of readable and writable data is determined by the app's own data permission range. This access credential is suitable for automated operations that do not require user login, such as when the application bot calls the Send Message API to push message notifications to a specified conversation. [Get tenant_access_token for custom app](https://open.larksuite.com/document/server-docs/getting-started/api-access-"
+    },
+    {
+     "url": "https://support.toriihq.com/hc/en-us/articles/57346725329691-Lark-Integration",
+     "title": "Lark Integration",
+     "snippet": "To connect this integration, we require the following:\n- A Lark organization account.\n- Access to the Lark Developer Console, to create a custom (self-built) app.\n- A Lark administrator of your organization, to approve the app.\n- Any Lark plan, including Starter. Custom apps can call the Lark API on every plan.\n### **Scopes**\n- **contact:department.organize:readonly** - for retrieving your organization's departments.\n- **contact:user.base:readonly** - for retrieving the members of each department and their names.\n- **contact:user.employee:readonly** - for retrieving each user's status and role.\n- **contact:user.email:readonly** - for retrieving user email addresses.\n- **tenant:tenant:readonly** - for retrieving your Lark organization's name and ID.\n- **contact:contact** - required only for performing actions within Torii (Create User, Update User and Delete User).\n- **contact:user.id:readonly** - required only for the Update User and Delete User actions, to find the user by email.\n\n**Step 1: Create a custom app**\n1. Sign in to the [Lark Developer Console](https://open.larksuite.com/app) as a member of your Lark organization.\n2. Create a custom (self-built) app for your organization"
+    },
+    {
+     "url": "https://open.larksuite.com/document/common-capabilities/sso/web-application-end-user-consent/guide",
+     "title": "Browser web access guide - Developer Guides - Documentation - Lark Developer",
+     "snippet": "Create an application in Developer Console or select an existing application, go to the Application Details page > Development Configuration > Security Settings module, and configure the redirect URL.\n### Step 2: Apply for Required Permissions\nAccording to the permission required by the developer to call the API, apply for opening in the permission management module, and publish the application to make the configuration take effect.\nInstructions on applying for permission can be found at: [Apply for API permission](https://open.larksuite.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)\uff0cApplication"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Lark (Larksuite) API reference REST GraphQL endpoints documentation open.larksuite.com",
+   "log_id": "log_LBviDs-dOoD4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://open.larksuite.com/document/server-docs/contact-v3/user/get",
+     "title": "Obtain single user's information - Server API - Documentation - Lark Developer",
+     "snippet": "This API is used to obtain the information of a single user in Contacts.\n\n## Request\n| Facts | |\n|---|---|\n| HTTP URL | https://open.larksuite.com/open-apis/contact/v3/users/:user_id |\n| HTTP Method | GET |\n| Rate Limit | |\n| Supported app types | Custom apps Store apps |\n| Billing type | Unlimited |\n| Required scopes Enable any scope from the list | Get basic information in contacts Access Contacts as an app Scope of older version Read contacts Scope of older version Read Contacts as an app Scope of older version |\n| Required field scopes | The response body of the API contains the following sensitive fields, and they will be returned only after corresponding scopes are added. If you do not need the fields, it is not recommended that you request the scopes. Get user's seat information Obtain user's basic information Obtain user's organization information Obtain member's department path View member's dotted-line leader ID Obtain user's employment information Obtain user ID View member's Employee Number Obtain user's gender View member's data residency Only custom apps View user's job level Only custom apps Obtain user's mobile number Only custom apps Obtain user's email information"
+    },
+    {
+     "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/group/overview",
+     "title": "Overview - Server API - Documentation - Lark Developer",
+     "snippet": "### Methods\n| | | Required scopes (Satisfy any) | | **[Access token](https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) (Select any)** | Store | Custom |\n|---|---|---|---|---|---|---|\n| `POST` /open-apis/im/v1/chats > Create a group and set the profile photo, name, and description for the group. | | tenant_access_token | **\u2713** | **\u2713** | | |\n| `GET` /open-apis/im/v1/chats/:chat_id > Obtain basic information such as group name, description, profile photo, and owner ID. | | tenant_access_token user_access_token | **\u2713** | **\u2713** | | |\n| `PUT` /open-apis/im/v1/chats/:chat_id > Update the group profile photo, name, description, and configuration, or assign new group owner. | | tenant_access_token | **\u2713** | **\u2713** | | |\n| `DELETE` /open-apis/im/v1/chats/:chat_id > The bot recalls messages it sent or the group owner recalls messages within a group. | | tenant_access_token user_access_token | **\u2713** | **\u2713** | | |\n| `GET` /open-apis/im/v1/chats > Updates the content of message cards sent by an app. | | tenant_access_token user_access_token | **\u2713** | **\u2713** | | |\n| `GET` /open-apis/im/v1/chats/search > Delays the update of message cards after interaction with users. | | tenant_acc"
+    },
+    {
+     "url": "https://open.larksuite.com/document/server-docs/meeting_room-v1/api-reference/obtain-building-list",
+     "title": "Obtain Building List - Server API - Documentation - Lark Developer",
+     "snippet": "This API is used to obtain buildings (office buildings) of the company.\n## Request\n| Facts | |\n|---|---|\n| HTTP URL | https://open.larksuite.com/open-apis/meeting_room/building/list?page_size=1&page_token=0&order_by=name-asc&fields=* |\n| HTTP Method | GET |\n| Supported app types | Custom apps Store apps |\n| Required scopes | Obtain room information |\n### Request header\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| Authorization | string | Yes | tenant_access_token **Value format**: \"Bearer `access_token`\" **Example value**: \"Bearer t-7f1bcd13fc57d46bac21793a18e560\" |\n| Content-Type | string | Yes | **Fixed value**: \"application/json; charset=utf-8\" |\n### Query parameters\n| Parameter | Parameter type | Required | Description |\n|---|---|---|---|\n| page_size | int | No | Number of buildings expected to be returned by the request. If the quantity is insufficient, all buildings will be returned. The default is 10, and the maximum is 100. |\n| page_token | string | No | Paging token used to mark the current request. It will return page_size elements from the current paging token. |\n| order_by | string | No | Queries names in ascending/descending order. The optional fie"
+    },
+    {
+     "url": "https://open.larksuite.com/document/ukTMukTMukTM/uETMzUjLxEzM14SMxMTN",
+     "title": "Obtain Spreadsheet Metadata - Server API - Documentation - Lark Developer",
+     "snippet": "Use this API to get spreadsheet metadata based on a spreadsheetToken.\n## Request\n| Facts | |\n|---|---|\n| HTTP URL | https://open.larksuite.com/open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo |\n| HTTP Method | GET |\n| Supported app types | Custom apps Store apps |\n| Required scopes Enable any scope from the list | View, comment, edit, and manage all files in My Space View, comment, and download all files in My Space View, comment, edit, and manage Sheets View, comment, and export Sheets |\n### Request header\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| Authorization | string | Yes | user_access_token or tenant_access_token **Value format**: \"Bearer `access_token`\" **Example value**: \"Bearer u-7f1bcd13fc57d46bac21793a18e560\" [Learn more about how to access and use access_token](https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) |\n| Content-Type | string | Yes | **Fixed value**: \"application/json; charset=utf-8\" |\n### Path parameters\n| Parameter | Type | Description |\n|---|---|---|\n| spreadsheetToken | string | Spreadsheet token. For more information about how to obtain the token, see [Sheets Developer's Guide](https://open.larksuite.com"
+    },
+    {
+     "url": "https://open.larksuite.com/document/server-docs/calendar-v4/calendar-event-attendee-chat_member/list",
+     "title": "Obtain the list of members of group invitees of an event - Server API - Documentation - Lark Developer",
+     "snippet": "Call this interface with the current identity (app or user) to get the group member list of the group type invitees in the event.\n\n| Facts | |\n|---|---|\n| HTTP URL | https://open.larksuite.com/open-apis/calendar/v4/calendars/:calendar_id/events/:event_id/attendees/:attendee_id/chat_members |\n| HTTP Method | GET |\n| Rate Limit | |\n| Supported app types | Custom apps Store apps |\n| Billing type | Basic API |\n| Required scopes Enable any scope from the list | Update calendar and event information Read event Obtain calendar, event, and availability information |\n| Required field scopes | The response body of the API contains the following sensitive fields, and they will be returned only after corresponding scopes are added. If you do not need the fields, it is not recommended that you request the scopes. Obtain user ID |"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Lark (Larksuite) open.larksuite.com MCP server Model Context Protocol official",
+   "log_id": "log_d0OD5ZvmqBrv",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/advanced-configuration",
+     "title": "Advanced configuration - Lark CLI - Documentation - Lark Developer",
+     "snippet": "The MCP tool supports a wide range of command parameters, allowing flexible configuration for suitable MCP startup commands. Detailed usage instructions for each parameter are provided below in **Parameter usage examples**.\n## Prerequisites\nThe lark-mcp tool must be installed. Installation steps are as follows:\n1. Run the following command in your local terminal to install lark-mcp.\n```\nnpm install @larksuiteoapi/lark-mcp -g\n```\nIf the terminal returns the message `It is likely you do not have the permissions to access this file as the current user`, you need to run the command as an administrator:`sudo npm install @larksuiteoapi/lark-mcp@beta -g`.\n2. Run `lark-mcp -V` to check the MCP version.\nIf the version is lower than 0.4.0, it is recommended to uninstall and reinstall lark-mcp:\n1. Uninstall lark-mcp: `npm uninstall @larksuiteoapi/lark-mcp -g`\n2. Reinstall lark-mcp: `npm install @larksuiteoapi/lark-mcp -g`\n3. Run `lark-mcp -V` again to verify the version information.\n3. (Optional) Globally install OpenAPI MCP.\nThere are two installation methods for the MCP tool: global installation and NPX installation. You can use either method to use the tool. Choose the installation method "
+    },
+    {
+     "url": "https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+     "title": "raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+     "snippet": "This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform and enable efficient collaboration between AI Agents and Feishu/Lark. The tool encapsulates Feishu/Lark Open Platform API interfaces as MCP tools, allowing AI assistants to directly call these interfaces and implement various automation scenarios such as document processing, conversation management, calendar scheduling, and more.\n## Preparation\n### Creating a Feishu/Lark Application\nBefore using the lark-mcp tool, you need to create a Feishu/Lark application:\n1. Visit the [Feishu Open Platform](https://open.feishu.cn/) or [Lark Open Platform](https://open.larksuite.com/) and log in\n2. Click \"Console\" and create a new application\n3. Obtain the App ID and App Secret, which will be used for API authentication\n4. Add the necessary permissions for your application based on your usage scenario\n5. If you need to call APIs as a user, set the OAuth 2.0 redirect URL to http://localhost:3000/callback\nFor detailed application creation and configuration guidelines, please refer to the [Feishu Open Platform Documentation - Creating an Application](https://"
+    },
+    {
+     "url": "https://open.larksuite.com/document/mcp_open_tools/call-feishu-mcp-server-in-remote-mode",
+     "title": "Call Lark MCP server in remote mode (Deprecated) - Lark CLI - Documentation - Lark Developer",
+     "snippet": "Lark Open Platform provides a remote MCP Server configuration feature that supports the Streamable HTTP transmission protocol, allowing users to securely and efficiently integrate and use rich Lark open capabilities in cloud scenarios with AI agents such as Cursor, Trae, Claude, and n8n via one-click integration.\n## Configuring the MCP Server\nCreate a remote MCP service on the Lark MCP Configuration Platform and customize tools (i.e., Lark Open Platform server-side APIs) to flexibly build the MCP tools your business needs.\nAll tools are called via API under the identity of the currently logged-in user (user_access_token). Details:\n- During the configuration process, the system guides you to complete the authorization operation for the logged-in user with one click. The MCP Server can only call tools on behalf of the user after authorization.\n- The user_access_token itself has an expiry time. The remote MCP Server configuration feature supports automatic refreshing of the token before expiration.\n- For more on user_access_token, see [Obtaining user_access_token](https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token) an"
+    },
+    {
+     "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/install-and-use-document-search-mcp",
+     "title": "Install and use document search MCP - Lark CLI - Documentation - Lark Developer",
+     "snippet": "### Install lark-mcp tool\nlark-mcp is an MCP toolkit provided by the Lark Open Platform. You need to install lark-mcp (version 0.3.0 or higher) before using the document search MCP tool.\n1. Open the command line in the Trae environment and execute the following command to globally install the lark-mcp tool.\n- You can open the Terminal in Trae to execute the command, or you can open the command line of the operating system where Trae is located to execute the command. There is no difference between the two.\n- The following command installs the latest version of lark-mcp by default. If your previously installed lark-mcp version is lower than 0.3.0, you need to re-execute the command to install the latest version of lark-mcp.\n```\nnpm install -g @larksuiteoapi/lark-mcp\n```\n2. After installation, execute the following command to check the installation status.\n```\nlark-mcp -V\n```\nIf successful, the version number of the tool will be returned.\n\nServer](https://cursor.com/deeplink/mcp-install-dark.svg?height=28&lazyload=true&width=126)](cursor://anysphere.cursor-deeplink/mcp/install?name=lark_open_doc_search&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkBsYXJrc3VpdGVvYXBpL2xhcmstbWNwIiw"
+    },
+    {
+     "url": "https://github.com/haudnn/lark-mcp/blob/main/README.md",
+     "title": "lark-mcp/README.md at main \u00b7 haudnn/lark-mcp",
+     "snippet": "# Lark MCP Server\nMCP server for Lark Open Platform. Supports Claude Desktop (stdio) and HTTP multi-session transports. ~42 tools across messages, docs (Base/Bitable, Sheets, Documents), and tasks.\n## Setup\n### 1. Create a Lark Internal App\n- Go to [https://open.larksuite.com/app](https://open.larksuite.com/app) \u2192 Create app \u2192 Internal app\n- Note down App ID and App Secret\n- Under \"Permissions & Scopes\", enable required permissions (see table below)\n- Under \"Version Management & Release\", publish the app\n### 2. Required Permissions\n| Feature | Required Permissions |\n|---|---|\n| Messages | `im:message`, `im:message:send_as_bot`, `im:chat:readonly` |\n| Base/Bitable | `bitable:app`, `bitable:app:readonly` |\n| Sheets | `sheets:spreadsheet`, `sheets:spreadsheet:readonly` |\n| Documents | `docx:document`, `docx:document:readonly` |\n| Tasks | `task:task`, `task:task:write` |\n### 3. Install\n```\nnpm install\nnpm run build\n```\n## Environment Variables\n| Variable | Required | Default | Description |\n|---|---|---|---|\n| `LARK_APP_ID` | Yes | \u2014 | Lark internal app ID |\n| `LARK_APP_SECRET` | Yes | \u2014 | Lark internal app secret |\n| `LARK_BASE_URL` | No | `https://open.larksuite.com/open-apis` | Use "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

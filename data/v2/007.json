@@ -1,0 +1,36 @@
+{
+  "id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM",
+  "one_liner": "Full-featured CRM with REST (v8) and GraphQL APIs.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Free edition with 5,000 API credits/day; register OAuth client in Zoho API console.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "access": "https://zoho.com/crm/developer/docs/api/v8/api-limits.html",
+    "surface": "https://zoho.com/crm/developer/docs/api/v8/get-records.html?source_from=developer-docs",
+    "mcp": "https://zoho.com/crm/developer/docs/mcp/overview.html"
+  },
+  "verified": true
+}

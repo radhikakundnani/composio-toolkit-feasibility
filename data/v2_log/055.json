@@ -1,0 +1,21 @@
+{
+  "id": 55,
+  "app": "Apify",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://apify.com/docs/mcp",
+      "to": "https://docs.apify.com/mcp",
+      "why": "Cite vendor docs domain (docs.apify.com/mcp, mcp.apify.com is vendor-hosted); flag was citation-host only; official confirmed",
+      "evidence": "https://docs.apify.com/mcp"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

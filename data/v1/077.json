@@ -1,0 +1,35 @@
+{
+  "id": 77,
+  "app": "ClickUp",
+  "category": "Project Management",
+  "one_liner": "All-in-one work management platform with a REST API.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "API available on all plans; create OAuth app in workspace settings (owner/admin) or use personal token; some endpoints Enterprise-only.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.clickup.com/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developer.clickup.com/docs/authentication",
+    "access": "https://developer.clickup.com/docs/apis-available-by-plan",
+    "surface": "https://developer.clickup.com/openapi/clickup-api-v2-reference.json",
+    "mcp": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+  }
+}

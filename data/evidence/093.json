@@ -1,0 +1,142 @@
+{
+ "id": 93,
+ "app": "Fathom",
+ "hint": "fathom.video",
+ "given_category": "AI, Research and Media-native",
+ "queries": {
+  "auth": {
+   "query": "Fathom API authentication OAuth API key access token developer docs fathom.video",
+   "log_id": "log_DzGI1ndqfgxi",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.fathom.ai/sdks/oauth",
+     "title": "OAuth",
+     "snippet": "OAuth Authentication\nOAuth users need to register an app with us before using this feature. Visit our [OAuth Setup Guide](/oauth) to get your client credentials and configure your redirect URL.\nBoth TypeScript and Python SDKs support OAuth 2.0 authentication for building integrations that can be installed by multiple Fathom accounts.\n---\nUsing the `Client ID` and `Client Secret` you received when registering your app, generate an authorization URL that users will visit to grant your app access:\n###\n\u200b\nStep 2: Handle OAuth Callback\nAfter the user authorizes your app, they\u2019ll be redirected back to your redirect URI with an authorization code. Use this code to exchange it for access tokens:\n```\nimport { Fathom } from 'fathom-typescript';\n// User gets redirected here with code\nconst tokenStore = Fathom.newTokenStore();  // demo only \u2014 use persistent store in production\nconst fathom = new Fathom({\nsecurity: Fathom.withAuthorization({\nclientId: \"YOUR_CLIENT_ID\",\nclientSecret: \"YOUR_CLIENT_SECRET\",\ncode: \"AUTHORIZATION_CODE_FROM_CALLBACK\",\nredirectUri: \"https://your_redirect_url\",\ntokenStore\n}),\n});\n// Now you can make requests and the SDK will refresh tokens as needed\nconst result = await"
+    },
+    {
+     "url": "https://developers.fathom.ai/sdks/authentication",
+     "title": "Authentication",
+     "snippet": "##\n\u200b\nBearer Token Authentication\n##\n\u200b\nSecurity Schemes\n| Name | Type | Environment Variable |\n|---|---|---|\n| `apiKeyAuth` | apiKey | `FATHOM_API_KEY_AUTH` |\n| `bearerAuth` | http | `FATHOM_BEARER_AUTH` |\n##\n\u200b\nSecurity Best Practices\n- Use environment variables for credentials\n- Use OAuth for multi-user integrations\n- Rotate API keys regularly\n- Monitor API usage"
+    },
+    {
+     "url": "https://developers.fathom.ai/faq",
+     "title": "FAQ",
+     "snippet": "### Should I use an API key or build an OAuth app?\nUse an **API key** if you only need access to your own (or your team\u2019s) meetings\u2014for internal tools or personal automation. Use **OAuth** if you\u2019re building an app that other Fathom users will install so they can connect their own accounts. Note: OAuth apps can\u2019t use `include_summary`/`include_transcript` on `/meetings`\u2014fetch those via the `/recordings` endpoints instead.\n---\n### Does my plan include API access?\nYes. API access\u2014keys and webhooks\u2014 are included on all plans. Generate a key in User Settings \u2192 API Access.\n### What meetings can my API key access?\nMeetings you recorded and meetings shared with you or your team. Not other users\u2019 private, unshared meetings. Whatever a user can view in Fathom, their API key can access.\n\n### Why am I getting a 401 Unauthorized error?\nYour auth is missing or invalid: wrong or revoked API key, expired OAuth token, or malformed header. Check that the key is valid in User Settings, the user is still active, and you\u2019re sending `X-Api-Key` (or Bearer for OAuth) correctly.\n\n### Can I download video or audio recordings via the API?\nYes. Call `POST /recordings/{recording_id}/download` to start genera"
+    },
+    {
+     "url": "https://developers.fathom.ai/api-overview",
+     "title": "Api overview",
+     "snippet": "## Authentication\nAll REST API resources are authenticated with API keys generated via the Fathom website\u2019s settings area.\n\n### OAuth Rate Limits\n60 requests per 60 seconds per OAuth app for the `https://api.fathom.ai/external/v1/oauth2/token` endpoint"
+    },
+    {
+     "url": "https://developers.fathom.ai/sdks/breaking-changes/python-changes",
+     "title": "Python SDK Changes",
+     "snippet": "API Key Authentication Syntax\nThe API key authentication syntax has changed to support the new security model.\n####\n\u200b\nOld Syntax\n```\nfrom fathom_python import Fathom\nfathom = Fathom(\"your_api_key\")\n```\n####\n\u200b\nNew Syntax\n```\nfrom fathom_python import models, Fathom\nfathom = Fathom(security=models.Security(api_key_auth=\"your_api_key\"))\n```\n###\n\u200b\nOAuth Support\nVersion 0.0.30 adds OAuth support, which requires the new client structure:\n```\nfrom fathom_python import Fathom\n# OAuth authorization URL generation\nurl = Fathom.get_authorization_url(\n\"YOUR_CLIENT_ID\",  # client ID\n\"your_redirect_url\",\n\"public_api\",  # required scope\n\"randomState123\"\n)\n# OAuth client initialization\ntoken_store = Fathom.new_token_store()\nfathom = Fathom(security=Fathom.with_authorization(\n\"YOUR_CLIENT_ID\",  # client_id\n\"YOUR_CLIENT_SECRET\",  # client_secret\n\"AUTHORIZATION_CODE_FROM_CALLBACK\",  # code\n'your_redirect_uri',\ntoken_store\n))\n```\n###\n\u200b\nMigration Guide\nTo migrate from an older version to 0.0.30:\n1. **Update imports**:\n```\n# Old\nfrom fathom_python import Fathom\n# New\nfrom fathom_python import models, Fathom\n```\n2. **Update client initialization**:\n```\n# Old\nfathom = Fathom(\"your_api_key\")\n# New\nfathom ="
+    }
+   ]
+  },
+  "access": {
+   "query": "Fathom fathom.video API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_dqIMiS7I8D_9",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.fathom.video/en/articles/8368641",
+     "title": "Public API",
+     "snippet": "Fathom now has a public API that gives you developer\u2011friendly access to meeting insights so you can build workflows and integrations that connect Fathom with the rest of your tools.\n\n- Partners can register an OAuth app to be eligible for a future marketplace listing as a Fathom\u2011approved integration.\n\n### Keep in mind\n- **API keys and access**: API keys are created at the user level. Your key can access meetings recorded by you or shared to your Team. Admin API keys do not grant access to other users\u2019 unshared meetings.\n- **Rate Limiting**: users can make 60 calls per minute across all of their API keys; this ensures system stability and reliability. With that in mind, we do not offer higher rate limits at this time."
+    },
+    {
+     "url": "https://developers.fathom.ai/faq",
+     "title": "FAQ",
+     "snippet": "### Does my plan include API access?\nYes. API access\u2014keys and webhooks\u2014 are included on all plans. Generate a key in User Settings \u2192 API Access."
+    },
+    {
+     "url": "https://fathom.video/pricing",
+     "title": "Free Plan or Plans from $15/mo",
+     "snippet": "FOR INDIVIDUALS\nFree\n- Unlimited recordings + transcriptions\n- Choice of bot-free (in beta) or bot capture\n- Instant AI call summaries\n- Clips, playlists + search across calls\nFOR INDIVIDUALS\nPremium\n- Everything from Free\n- Advanced call summaries\n- AI-generated action items\n- Conversational meeting assistant\n- Custom meeting bot\n\nQualified Portfolio Program\nAffilliated startups of select VCs & accelerators get up to 2 years free of Fathom Team.\n[CHECK ELIGIBILITY \u2192](https://www.fathom.ai/qualified-portfolio-partners)\n\nPaid plans have unlimited lookback for \"my calls\"; team calls lookback window depends on plan tier.\n\nPublic API & MCP\nBuild custom integrations and workflows. See more at developers.fathom.ai"
+    },
+    {
+     "url": "https://pipeline.zoominfo.com/sales/fathom-api-review",
+     "title": "Fathom API Review: Endpoints, SDKs & Rate Limits [Aug 2026]",
+     "snippet": "The [Fathom Developer Hub](https://developers.fathom.ai/) documents a REST surface at https://api.fathom.ai/external/v1/, with TypeScript and Python SDKs, OAuth 2.0 for public integrations, webhook support, and an [MCP server](https://developers.fathom.ai/mcp-docs) for AI assistants. API access is available on [all plan tiers](https://fathom.ai/pricing) including the free plan, which is uncommon for a meeting intelligence platform. The developer docs are public, the OpenAPI spec is downloadable, and you can generate an API key and start making calls without upgrading.\n\n| **Pricing / access** | Included on [all plans including free](https://fathom.ai/pricing); no per-call or per-credit charges |\n\nAPI access starts immediately on any **Fathom** plan, including the free tier. There is no developer approval process, no separate API subscription, and no enterprise gate. You generate an API key from the API Access section of your Settings page and start making calls.\n[API keys are user-scoped](https://developers.fathom.ai/quickstart#generate-an-api-key): a key can only access meetings recorded by the key-holder or shared with their team. Admins can broaden access to all team members' sha"
+    },
+    {
+     "url": "https://anchorterminal.com/tools/fathom",
+     "title": "anchorterminal.com/tools/fathom",
+     "snippet": "| Auth | OAuth or key \u00b7 Self-serve. The REST API takes a per-user API key in the `X-Api-Key` header, generated in User Settings, API Access. A key reads whatever its user can view (own meetings and meetings shared with the user or team), and stops working when the user is deactivated. An admin cannot revoke another user's key. Public integrations register an OAuth app at fathom.video/marketplace_applications/new and request the single scope `public_api`. Refresh tokens are single-use and rotate.\n\n| Pricing | Freemium ($20 / seat-mo) \u00b7 Free plan at $0 with API keys and webhooks included, so an agent's owner can start without a contract. The developer FAQ says API access is on all plans. Premium $20 a user a month ($16 billed annually), Team $19 ($15 annually, two users minimum), Business $34 ($25 annually), Enterprise through sales. API calls are not charged per request (https://www.fathom.ai/pricing, checked 2026-10-08). |\n\n- Payments & pricing 30: No x402, MPP or L402 (0). Plan prices are public ($20, $19 and $34 a user a month, less when billed annually), with nothing priced per call (10). The Free plan includes API keys and webhooks (20). A person signs up in a browser and gener"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Fathom API reference REST GraphQL endpoints documentation fathom.video",
+   "log_id": "log_HfuHD_iMNUq5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.fathom.ai/api-reference",
+     "title": "List meetings",
+     "snippet": "Include your API key in the `X-Api-Key` header of every request."
+    },
+    {
+     "url": "https://developers.fathom.ai/quickstart.md",
+     "title": "developers.fathom.ai/quickstart.md",
+     "snippet": "## Generate an API Key\n> **[Get your Fathom API Key](https://fathom.video/customize#api-access-header)**\n>\n> Head to the API Access section of your User Settings and generate an API key.\n> [!TIP]\n>\n> API keys are scoped to the user who creates them. Your key can only access meetings you've recorded or that have been shared with you or your Team. \\\n> \\\n> Admins can access all users' shared meetings by [configuring View permissions](https://help.fathom.video/en/articles/10783489#understanding_permissions). API keys *never* grant access to other users' private meetings.\n## List recent meetings\nList the 10 most recent meetings recorded by you or shared to your team.\n```cURL cURL theme={null}\ncurl https://api.fathom.ai/external/v1/meetings \\\n-H \"X-Api-Key: YOUR_API_KEY\"\n```\n```Python Python theme={null}\nimport requests\n# List meetings (GET /meetings)\nresponse = requests.get(\n\"https://api.fathom.ai/external/v1/meetings\",\nheaders={\n\"X-Api-Key\": \"YOUR_API_KEY\"\n},\n)\nprint(response.json())\n```\n```Typescript TypeScript theme={null}\n// List meetings (GET /meetings)\nconst response = await fetch(\"https://api.fathom.ai/external/v1/meetings\", {\nmethod: \"GET\",\nheaders: {\n\"X-Api-Key\": \"YOUR_API_KEY\""
+    },
+    {
+     "url": "https://developers.fathom.ai/faq",
+     "title": "FAQ",
+     "snippet": "## Recordings & Downloads\n### Can I download video or audio recordings via the API?\nYes. Call `POST /recordings/{recording_id}/download` to start generating a downloadable file, then poll [Get download status](/api-reference/recordings/get-download-status) (or pass a `destination_url` to have Fathom POST the result to you). The response returns a short-lived signed URL that expires ~24 hours after generation\u2014request a new download when it expires. Downloading needs more than view access: limited-access shares receive **403 Forbidden**."
+    },
+    {
+     "url": "https://developers.fathom.ai/api-overview",
+     "title": "Api overview",
+     "snippet": "This documentation describes Fathom\u2019s REST API.\n## Authentication\nAll REST API resources are authenticated with API keys generated via the Fathom website\u2019s settings area.\n## Rate limiting\nWe use several rate limiting strategies to ensure the availability of our APIs. Rate-limited calls to our APIs return a 429 status code. Calls to our APIs include headers indicating the current rate limit status.\n### Global rate limits\nAuthenticated requests are subject to a global limit. This is the maximum number of calls that your account can make to the API per minute. Endpoints subject to rate limits may return the headers below.\n| Header | Description |\n|---|---|\n| `RateLimit-Limit` | The maximum number of requests allowed in a time window |\n| `RateLimit-Remaining` | The number of requests remaining in the current time window |\n| `RateLimit-Reset` | The time remaining in the current time window |\n| `Retry-After` | The number of seconds to wait before retrying. Only sent on 429 responses |\nCurrently, you are able to make a maximum of 60 calls to the API in a 60 second window. The official SDKs automatically retry rate-limited requests, waiting for the duration indicated by the `Retry-After` h"
+    },
+    {
+     "url": "https://developers.fathom.ai/llms.txt",
+     "title": "developers.fathom.ai/llms.txt",
+     "snippet": "- [Get summary](https://developers.fathom.ai/api-reference/recordings/get-summary.md): This endpoint has two behaviors depending on your request payload: - If you send `destination_url`, the endpoint will behave in an asynchronous manner. - If you do not send `destination_url`, the endpoint will return the data directly.\n- [Get transcript](https://developers.fathom.ai/api-reference/recordings/get-transcript.md): This endpoint has two behaviors depending on your request payload: - If you send `destination_url`, the endpoint will behave in an asynchronous manner. - If you do not send `destination_url`, the endpoint will return the data directly.\n- [Request a download](https://developers.fathom.ai/api-reference/recordings/request-a-download.md): Starts async generation of a downloadable file and returns a `download_id` to poll. Video is generated in the background; audio-only recordings complete immediately, so the response may already return `status: completed` with the file payload.\n- [Get download status](https://developers.fathom.ai/api-reference/recordings/get-download-status.md): Returns the status of a download created with the request-a-download endpoint. When the download is "
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Fathom fathom.video MCP server Model Context Protocol official",
+   "log_id": "log_UntqJwsmRem5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.fathom.ai/mcp-docs",
+     "title": "Overview",
+     "snippet": "Fathom now offers an official MCP (Model Context Protocol) server, allowing you to connect your Fathom meeting data to AI assistants like ChatGPT, Claude, and more. This guide walks you through setup on each supported platform.\n##\n\u200b\nChoose your assistant\n\nClaude\nConnect to the Fathom connector in Claude, or add the MCP in Claude Code](/mcp-docs/claude)\n##\n\u200b\nUse with other tools\nConnect Fathom to any MCP-compatible tool using the server URL below, then authenticate to access your meeting data. **MCP server URL:** `https://api.fathom.ai/mcp`"
+    },
+    {
+     "url": "https://support.fathomhq.com/en/articles/17312058-connect-to-fathom-s-mcp-server",
+     "title": "Connect to Fathom's MCP server",
+     "snippet": "\ud83c\udf89 **Beta feature:** Fathom's MCP is currently in beta, so you must **[turn on the beta flag](https://support.fathomhq.com/en/articles/9321926-beta-features)** to access it. If you run into any issues or have feedback, please reach out to our team at [support@fathomhq.com](mailto:support@fathomhq.com).\n# What is an MCP server?\nA Model Context Protocol (MCP) server provides your AI tool with access to your Fathom data and the **context the tool needs to understand the data**.\nBy connecting Fathom\u2019s MCP server, your AI tool has the logic behind how the data relates to one another, not just the hard-coded numbers. MCP servers help AI tools, like large-language models (LLMs), understand your data when you ask a natural language question, so the tool can retrieve and reference the correct data.\n## What can you do with Fathom's MCP server?\nWith Fathom\u2019s MCP server, you can use natural language to interrogate and analyse your Fathom data in your chosen AI tool (Claude, Cursor, Windsurf, VS Code, etc.).\n\ud83d\udcdd **Note:** We've heard from users that the \"free version\" of Claude does not allow you to use PAT tokens to connect to MCPs, including Fathom's MCP server.\n\u200bYou can bring your Fathom data i"
+    },
+    {
+     "url": "https://developers.fathom.ai/mcp-docs/claude",
+     "title": "Claude",
+     "snippet": "Fathom is available as an **official connector** in Claude:\n### Steps:\n1. Go to the **[Fathom connector for Claude](https://claude.ai/directory/connectors/fathom)**.\nIf you\u2019re using Claude in a team or organization, an owner must first enable the connector before it will appear for members.\n1. Click **Connect** and complete the authorization prompts.\nThat\u2019s it! You can now ask Claude about your meetings.\n## Claude Code\nClaude Code supports adding MCP servers directly from the command line. Run the following command in your terminal:\n```\nclaude mcp add fathom -- npx mcp-remote@latest https://api.fathom.ai/mcp\n```\nThe Fathom MCP server will now be available in your Claude Code sessions."
+    },
+    {
+     "url": "https://fathom.ai/features/mcp-server",
+     "title": "AI Meeting Notetaker MCP Server for Claude & ChatGPT",
+     "snippet": "# It\u2019s your meeting. Bring context into Claude, ChatGPT, and the AI tools you use.\nFathom\u2019s AI meeting notetaker MCP server connects your meeting data to Claude, ChatGPT, and other MCP-compatible tools, so your AI assistant can answer questions and draft work from what was actually said.\n\nStop pasting summaries and transcripts into chat to get context.\nAsk your AI assistant about any meeting you can access in Fathom.\nCombine meeting context with your docs, plans, and other connected tools.\n\n### Ask your assistant about your meetings.\nAsk Claude what a customer pushed back on last week, or have ChatGPT pull the decisions from Monday\u2019s planning call. Your assistant retrieves the context from Fathom directly, so you\u2019re not hunting for the right summary to paste in.\n\n### Turn meeting context into finished work.\nAsk Fathom answers questions inside Fathom. MCP brings the same meeting context into the assistant where you\u2019re already drafting, so a recap email, QBR narrative, or launch brief starts from what was said, right alongside your docs and other connected tools.\n\n### Connect in a few steps, on the permissions you already have.\nAdd the Fathom app in ChatGPT or the Fathom connector in"
+    },
+    {
+     "url": "https://help.fathom.video/en/articles/11497793",
+     "title": "Fathom MCP: Connect Claude & ChatGPT",
+     "snippet": "**MCP (Model Context Protocol)** lets you connect Fathom to AI assistants like **Claude** and **ChatGPT**, so you can ask questions about your meetings and create work products (emails, plans, briefs, etc.) without having to copy/paste meeting content.\n## What you can do with the MCP integration\n- Ask Claude/ChatGPT questions about your meetings.\n- Draft follow-ups, QBR narratives, action plans, and other deliverables using meeting context.\n- Combine Fathom meeting context with other context you already use in Claude/ChatGPT (docs, notes, plans, etc.)\n## What data can Claude/ChatGPT access?\n- The integration can only access meetings **you already have permission to view** in Fathom.\n- MCP doesn't provide access to new categories of data - it mainly makes it easier for Claude/ChatGPT to retrieve the meeting context you need.\n## Setting Up the Integration\n**ChatGPT**\n1. Go to the [Fathom app for ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_69d88b99c5c481918e8da9225737e1e9)\n2. Click **Connect** and complete the authorization prompts\n3. That's it! Just type @Fathom to query your meetings\n**Claude**\n1. Go to the [Fathom connector for Claude](https://claude.ai/directory/connector"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

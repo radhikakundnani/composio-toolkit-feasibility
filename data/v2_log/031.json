@@ -1,0 +1,13 @@
+{
+  "id": 31,
+  "app": "Google Ads",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

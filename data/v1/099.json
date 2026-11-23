@@ -1,0 +1,35 @@
+{
+  "id": 99,
+  "app": "YouTube Transcript",
+  "category": "Media data API",
+  "one_liner": "Third-party API returning YouTube transcripts, search, channel and playlist data.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Sign up at transcriptapi.com for key with 100 free credits, no card; paid plans from $5/month.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://transcriptapi.com/mcp (vendor-hosted, OAuth or API key)",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "Hint is TranscriptAPI, a third-party service, not an official YouTube/Google API.",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://transcriptapi.com/openapi.json",
+    "access": "https://transcriptapi.com/blog/build-youtube-monitoring-agent",
+    "surface": "https://transcriptapi.com/docs/api",
+    "mcp": "https://transcriptapi.com/docs/mcp"
+  }
+}

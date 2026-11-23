@@ -1,0 +1,142 @@
+{
+ "id": 70,
+ "app": "Sentry",
+ "hint": "docs.sentry.io/api",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "Sentry API authentication OAuth API key access token developer docs docs.sentry.io/api",
+   "log_id": "log_qC00OQJ9_mp1",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.sentry.io/api/auth",
+     "title": "API Authentication | Sentry Docs",
+     "snippet": "Authentication tokens are passed using an auth header, and are used to authenticate as a user or organization account with the API. In our documentation, we have several placeholders that appear between curly braces or chevrons, such as `{API_KEY}` or `<auth_token>`, which you will need to replace with one of your authentication tokens in order to use the API call effectively.\nFor the string format of auth tokens, organization tokens, DSNs, and legacy API keys, see [Token and Credential Formats](https://docs.sentry.io/security-legal-pii/security/token-formats/).\nFor example, when the documentation says:\n```bash\ncurl -H 'Authorization: Bearer {TOKEN}' https://sentry.io/api/0/organizations/{organization_slug}/projects/\n```\nIf your authentication token is `1a2b3c`, and your organization slug is `acme` then the command should be:\n```bash\ncurl -H 'Authorization: Bearer 1a2b3c' https://sentry.io/api/0/organizations/acme/projects/\n```\nYou can create authentication tokens within Sentry by [creating an internal integration](https://docs.sentry.io/integrations/integration-platform/#internal-integrations). This is also available for self-hosted Sentry.\n###\nSome API endpoints require an authen"
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "List an Organization's Org Auth Tokens | Sentry Docs",
+     "snippet": "##\nGET /api/0/organizations/{organization_id_or_slug}/org-auth-tokens/\nReturn an organization's active org auth tokens, most recently used first, with tokens that were never used last. The list is not paginated.\nThe response never includes a token's value, only its last four characters. The full token is returned once, by the request that creates it.\nOrg auth tokens can be managed from a signed-in session, or with an OAuth application token that has the `org:tokens` scope in addition to one of the scopes listed here. Personal auth tokens, org auth tokens and integration tokens can't call this endpoint and get a 403.\n### Path Parameters\n- **`organization_id_or_slug` *(string)* REQUIRED** The ID or slug of the organization the resource belongs to.\n```\ncurl https://sentry.io/api/0/organizations/{organization_id_or_slug}/org-auth-tokens/ \\\n-H 'Authorization: Bearer <auth_token>'\n```"
+    },
+    {
+     "url": "https://docs.sentry.io/integrations/integration-platform/public-integration",
+     "title": "docs.sentry.io/integrations/integration-platform/public-integration",
+     "snippet": "After installation, if your user has approved all permissions, Sentry will generate a grant code and an installation ID. This information is sent by way of the `installation.created` webhook to the webhook URL specified in your configuration.\nHowever, if your integration has a redirect URL configured, the integration redirects the user\u2019s browser to the configured URL with these query params:\n* `code` - The grant code to exchange for a token\n* `installationId` - The ID of the installation\n* `orgSlug` - The slug of the Sentry organization that installed your integration\n* `state` - Only present if the user started from your [external install URL](https://docs.sentry.io/integrations/integration-platform/public-integration.md#external-install-url) with a `state` query param. Sentry passes the value back unchanged.\n\n@app.route('/setup', methods=['GET'])\ndef setup():\ncode = request.args.get('code')\ninstall_id = request.args.get('installationId')\norg_slug = request.args.get('orgSlug')\nurl = u'https://sentry.io/api/0/sentry-app-installations/{}/authorizations/'\nurl = url.format(install_id)\npayload = {\n'grant_type': 'authorization_code',\n'code': code,\n'client_id': 'your-client-id',\n'client_"
+    },
+    {
+     "url": "https://sentry.io",
+     "title": "sentry.io",
+     "snippet": "## REST API\nFull programmatic access when you need it.\n```\ncurl https://sentry.io/api/0/projects/ \\\n-H \"Authorization: Bearer <token>\"\n```\nYour human can create a token at ***REDACTED***\nAPI reference: https://docs.sentry.io/api/"
+    },
+    {
+     "url": "https://docs.sentry.io/api/auth.md",
+     "title": "docs.sentry.io/api/auth.md",
+     "snippet": "## [Auth Tokens](***REDACTED***\nAuthentication tokens are passed using an auth header, and are used to authenticate as a user or organization account with the API. In our documentation, we have several placeholders that appear between curly braces or chevrons, such as `{API_KEY}` or `<auth_token>`, which you will need to replace with one of your authentication tokens in order to use the API call effectively.\nFor the string format of auth tokens, organization tokens, DSNs, and legacy API keys, see [Token and Credential Formats](https://docs.sentry.io/security-legal-pii/security/token-formats.md).\nFor example, when the documentation says:\n```bash\ncurl -H 'Authorization: Bearer {TOKEN}' https://sentry.io/api/0/organizations/{organization_slug}/projects/\n```\nIf your authentication token is `1a2b3c`, and your organization slug is `acme` then the command should be:\n```bash\ncurl -H 'Authorization: Bearer 1a2b3c' https://sentry.io/api/0/organizations/acme/projects/\n```\nYou can create authentication tokens within Sentry by [creating an internal integration](https://docs.sentry.io/integrations/integration-platform.md#internal-integrations). This is also available for self-hosted Sentry.\n### "
+    }
+   ]
+  },
+  "access": {
+   "query": "Sentry docs.sentry.io/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_ajhMVlLyc6TI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.sentry.io/api/permissions",
+     "title": "Permissions & Scopes | Sentry Docs",
+     "snippet": "If you're building on top of Sentry's API (i.e using [Auth Tokens](https://docs.sentry.io/api/auth/)), you'll need certain scopes to access different API endpoints.\nTo set the scopes for an [integration token](https://docs.sentry.io/integrations/integration-platform/#permissions), select the scopes from the dropdown. These can be edited later."
+    },
+    {
+     "url": "https://docs.sentry.io/accounts/pricing",
+     "title": "docs.sentry.io/accounts/pricing",
+     "snippet": "Sentry offers a 14 day free trial with unlimited event data on the Business plan. You can upgrade or return to the features and quotas included with your existing plan. Without a paid plan, you will be automatically assigned a free Developer plan at the end of your trial.\nEvery paid plan includes a [preset volume](https://docs.sentry.io/pricing.md#pricing-how-it-works) of event data, with a PAYG bugdet that you control. The free Developer plan has similar presets. See Sentry's [plan page](https://sentry.io/pricing/) for more details.\n\n## [Plans and Free Trials](https://docs.sentry.io/pricing.md#plans-and-free-trials)\nSentry has one free Developer plan and three paid plans: Team, Business, and Enterprise. You can find more information about each by going to our [pricing page](https://sentry.io/pricing/).\nPlan upgrades take effect immediately. Plan downgrades and cancellations are processed at the end of the current contract cycle and cannot be refunded. If you no longer want to be on a paid plan, you'll revert to the base Developer plan at the end of your current contract.\nAll new Sentry accounts come with a 14-day free trial period. You'll have the option to upgrade and continue to"
+    },
+    {
+     "url": "https://docs.sentry.io/product/partnership-platform/account-provisioning-api",
+     "title": "docs.sentry.io/product/partnership-platform/account-provisioning-api",
+     "snippet": "When you call the Sentry provisioning API on behalf of your customer for the first time, the customer receives:\n* **A Sentry Organization** with the same name as their organization on your platform\n* **A Default Team** for collaboration within the organization\n* **Organization Ownership** assigned to the provided email address\n* **Subscription Plan** based on your partnership agreement\n* **Pre-configured Projects** (optional) that you specify\n* **Integration Token** (optional) for managing the organization programmatically\n\nBased on your partnership agreement, you can enable:\n* **Partner Presence**: Show your platform as an organization member\n* **Persistent Plan**: Allow customers to upgrade plans independently\n* **Quota Visibility**: Control visibility of usage quotas"
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "Tutorial: Create a Sentry Authentication Token | Sentry Docs",
+     "snippet": "To use Sentry's APIs, you must have an authentication token. This tutorial walks you through creating an organizational auth token through an internal integration. Sentry recommends using organizational auth tokens whenever possible, as they aren't linked to specific user accounts.\n\n1. Under \"Permissions\" select the permissions required for the APIs you wish to call.\nEach API endpoint docs page lists the required permissions, in the \"Scopes\" section. For example, the [Create a New Project](https://docs.sentry.io/api/projects/create-a-new-project/) endpoint requires project:write permissions or higher.\n2. Click \"Save Changes\".\n3."
+    },
+    {
+     "url": "https://nango.mintlify.dev/docs/integrations/all/sentry",
+     "title": "Sentry",
+     "snippet": "Access requirements\n| Pre-Requisites | Status | Comment |\n|---|---|---|\n| Paid dev account | \u2705 | Free tier available but paid account recommended for production |\n| Paid test account | \u2705 | Free tier available for testing |\n| Partnership | \u274c | Not required |\n| App review | \u274c | Not required |\n| Security audit | \u274c | Not required |"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Sentry API reference REST GraphQL endpoints documentation docs.sentry.io/api",
+   "log_id": "log_eqN5KYLuFhEn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.sentry.io/api/explore/query-explore-events-in-table-format",
+     "title": "Query Explore Events in Table Format | Sentry Docs",
+     "snippet": "# Query Explore Events in Table Format\n##\nGET /api/0/organizations/{organization_id_or_slug}/events/\nRetrieves explore data for a given organization.\n**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent to Sentry.\nThe `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.\n- The `data` key contains a list of results row by row that match the `query` made\n- The `meta` key contains information about the response, including the unit or type of the fields requested\n- EAP table results may include `meta.routingHint`. Pass this opaque value unchanged as `routing_hint` when fetching item details for a row in this response. It identifies how the table query was routed and is omitted when no hint is available.\n### Path Parameters\n- **`organization_id_or_slug` *(string)*\nREQUIRED** The ID or slug of the organization the resource belongs to."
+    },
+    {
+     "url": "https://docs.sentry.io/api/requests",
+     "title": "Requests | Sentry Docs",
+     "snippet": "##\nAll API requests should be made to the `/api/0/` prefix, and will return JSON as the response:\nCopied\n```bash\ncurl -i https://sentry.io/api/0/\n```\n##\nSentry makes an attempt to stick to appropriate HTTP verbs, but we always prioritize usability over correctness.\n| Method | Description |\n|---|---|\n| `DELETE` | Used for deleting resources. |\n| `GET` | Used for retrieving resources. |\n| `OPTIONS` | Describes the given endpoint. |\n| `POST` | Used for creating resources. |\n| `PUT` | Used for updating resources. Partial data is accepted where possible. |\n##\nAny parameters not included in the URL should be encoded as JSON with a Content-Type of `'application/json'`:\nCopied\n```bash\ncurl -i https://sentry.io/api/0/organizations/acme/projects/1/groups/ \\\n-d '{\"status\": \"resolved\"}' \\\n-H 'Content-Type: application/json'\n```\nAdditional parameters are sometimes specified via the querystring, even for `POST`, `PUT`, and `DELETE` requests:\nCopied\n```bash\ncurl -i https://sentry.io/api/0/organizations/acme/projects/1/groups/?status=unresolved \\\n-d '{\"status\": \"resolved\"}' \\\n-H 'Content-Type: application/json'\n```"
+    },
+    {
+     "url": "https://docs.sentry.io/api/projects/update-a-project",
+     "title": "Update a Project | Sentry Docs",
+     "snippet": "# Update a Project\n##\nPUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/\nUpdate various attributes and configurable settings for the given project.\nNote that solely having the **`project:read`** scope restricts updatable settings to `isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`, `preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`, `preprodSizePrCommentsEnabled`, `preprodSizePrCommentsRules`, `preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`, `preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`, and `preprodDistributionPrCommentsEnabledByCustomer`.\n### Path Parameters\n- **`organization_id_or_slug` *(string)* REQUIRED** The ID or slug of the organization the resource belongs to.\n- **`project_id_or_slug` *(string)* REQUIRED** The ID or slug of the project the resource belongs to. Project slugs are unique within each organization."
+    },
+    {
+     "url": "https://docs.sentry.io/api/organizations/update-an-organization",
+     "title": "Update an Organization | Sentry Docs",
+     "snippet": "# Update an Organization\n##\nPUT /api/0/organizations/{organization_id_or_slug}/\nUpdate various attributes and configurable settings for the given organization.\n### Path Parameters\n- **`organization_id_or_slug` *(string)* REQUIRED** The ID or slug of the organization the resource belongs to.\n### Body Parameters\n- **`slug` *(string)*** The new slug for the organization, which needs to be unique.\n- **`name` *(string)*** The new name for the organization."
+    },
+    {
+     "url": "https://docs.sentry.io/api/events/retrieve-an-issue",
+     "title": "Retrieve an Issue | Sentry Docs",
+     "snippet": "##\nGET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/\nReturn details on an individual issue, including its basic stats, comment and user-report counts, and a summary of the latest event.\n### Path Parameters\n- **`organization_id_or_slug` *(string)*\nREQUIRED** The ID or slug of the organization the resource belongs to.\n- **`issue_id` *(string)*\nREQUIRED** The ID of the issue you'd like to query.\n### Query Parameters:\n- **`environment` *(array(string))*** The name of environments to filter by.\n- **`expand` *(array(string))*** **choices**:\nAdditional data to include in the response.\n`forecastinboxintegrationIssueslatestEventHasAttachmentsownerssentryAppIssues`- **`collapse` *(array(string))*** **choices**:\nFields to remove from the response to improve query performance.\n`releasestatstags`\nCopied\n```\ncurl https://sentry.io/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/ \\\n-H 'Authorization: Bearer <auth_token>'\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Sentry docs.sentry.io/api MCP server Model Context Protocol official",
+   "log_id": "log_3qdWWiXwesme",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.sentry.io/ai/mcp",
+     "title": "Sentry MCP",
+     "snippet": "# Sentry MCP Server\nConnects AI assistants to Sentry for searching errors, analyzing performance, triaging issues, reading documentation, and managing projects \u2014 all via the Model Context Protocol.\nAll connections use OAuth. The first connection will trigger an authentication flow to connect to your Sentry account.\n## Connecting\nThe base MCP server address is: `https://mcp.sentry.dev/mcp`\nYou can optionally scope the connection to an organization or project:\n- `https://mcp.sentry.dev/mcp/{organizationSlug}` \u2014 scoped to one organization\n- `https://mcp.sentry.dev/mcp/{organizationSlug}/{projectSlug}` \u2014 scoped to one project\nWhen scoped, tools automatically default to the constrained org/project and unnecessary discovery tools are hidden. Scoping to a project is recommended when possible.\n### Query Parameters\n- `?experimental=1` \u2014 Enable forward-looking tool variants and experimental features\nParameters can be combined: `https://mcp.sentry.dev/mcp/my-org/my-project?experimental=1`\n## Setup Instructions\n### Claude Code\n```bash\nclaude mcp add --transport http sentry https://mcp.sentry.dev/mcp/{organizationSlug}/{projectSlug}\n```\n### Cursor\nUse the \"Install MCP Server\" button, or manuall"
+    },
+    {
+     "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+     "title": "Yes, Sentry has an MCP Server (...and it\u2019s pretty good)",
+     "snippet": "MCP, or [Model Context Protocol](https://modelcontextprotocol.io/introduction), is an open protocol designed to standardize the way context is brought into LLM interactions. We\u2019ll unpack this more later in the post, but jumping ahead - **yes, as the title of this post suggests - Sentry has an MCP server.** You can learn more about it by visiting the [MCP server address directly](https://mcp.sentry.dev), or in our [product docs](https://mcp.sentry.dev/).\nThe Sentry MCP has support for all the newest fun bells and whistles, including:\n- **Remote hosted (preferred) or local STDIO mode** (we strongly recommend the hosted version. It\u2019s lower friction and you\u2019ll always have the latest functionality/stability)\n- **OAuth support**to enable logging in via your existing Sentry organization, so you\u2019ll have clear access to your organization and projects\n- **[Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http) with graceful [fallback to SSE](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#backwards-compatibility)** if your client doesn\u2019t support it\n- **16 different tool calls**, including prompts, to support bring"
+    },
+    {
+     "url": "https://docs.sentry.io/product/mcp-servers/getting-started",
+     "title": "docs.sentry.io/product/mcp-servers/getting-started",
+     "snippet": "Sentry MCP Monitoring helps you track and debug Model Context Protocol (MCP) implementations using our supported SDKs and integrations. Monitor your complete MCP workflows from client connections to server responses, including tool executions, resource access, and protocol communications.\n\n### [JavaScript - MCP Server](https://docs.sentry.io/product/mcp-servers/getting-started.md#javascript---mcp-server)\n##### Version requirement\nMCP Monitoring requires Node SDK version `9.46.0` or newer.\nStarting with Sentry JavaScript SDK version `11.1.0`, the SDK automatically instruments every `McpServer` from [`@modelcontextprotocol/server`](https://www.npmjs.com/package/@modelcontextprotocol/server) 2.x and [`@modelcontextprotocol/sdk`](https://www.npmjs.com/package/@modelcontextprotocol/sdk) 1.x when tracing is enabled. It captures spans for MCP server workflows, including tool executions, resource access, and client connections.\n#### [Quick Start with MCP Server](https://docs.sentry.io/product/mcp-servers/getting-started.md#quick-start-with-mcp-server)\n```javascript\nimport * as Sentry from \"@sentry/node\";\nimport { McpServer } from \"@modelcontextprotocol/server\";\n// Sentry init needs to be a"
+    },
+    {
+     "url": "https://docs.sentry.io/product/snapshots/agentic-workflow",
+     "title": "docs.sentry.io/product/snapshots/agentic-workflow",
+     "snippet": "Sentry's [MCP server](https://mcp.sentry.dev) connects your AI assistant to Sentry over the Model Context Protocol. Follow the setup and authentication instructions there for your client (Claude Code, Cursor, VS Code, and others).\nThe Sentry MCP has been optimized to retrieve Snapshot results for agentic workflows. If you'd like, you can also fetch the data via the [REST API](https://docs.sentry.io/api/snapshots.md) and expose scripts to agents.\nConnect using one of these endpoints:\n* `https://mcp.sentry.dev/mcp`: base endpoint\n* `https://mcp.sentry.dev/mcp/{organizationSlug}`: scoped to one organization\n* `https://mcp.sentry.dev/mcp/{organizationSlug}/{projectSlug}`: scoped to one project (recommended)\nThe first connection starts an OAuth flow to link your Sentry account.\n\nTo go further, grant the agent the advanced snapshot tools by enabling the **Preprod Snapshots** capability on the MCP authorization screen (it's off by default; check it when you first connect, or re-authorize to add it later). These tools let the agent fetch full-resolution images, list unchanged images, and look up an app's latest baseline. They give the agent more options but take up more of its context wind"
+    },
+    {
+     "url": "https://docs.sentry.io/platforms/python/integrations/mcp",
+     "title": "docs.sentry.io/platforms/python/integrations/mcp",
+     "snippet": "# MCP (Model Context Protocol) for Python\n##### Beta\nThe support for **MCP (Model Context Protocol) Python SDK** is in its beta phase. Please test locally before using in production.\nThis integration connects Sentry with the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk), enabling monitoring and error tracking for MCP servers built with Python.\nThe integration supports both the high-level FastMCP API and the low-level `mcp.server.lowlevel.Server` API, automatically instrumenting tools, prompts, and resources.\nOnce you've installed this SDK, you can use Sentry to monitor your MCP server's operations, track tool executions, and capture errors that occur during request handling.\nSentry MCP monitoring will automatically collect information about:\n* Tool invocations and their arguments\n* Prompt template requests\n* Resource access operations\n* Request and session identifiers\n* Transport types (stdio/HTTP)\n* Execution errors\n\nInstall `sentry-sdk` from PyPI:\n```bash\npip install sentry-sdk\n```\n*Other available variations of the above snippet: uv*\n## [Configure](https://docs.sentry.io/platforms/python/integrations/mcp.md#configure)\nSimply update your `sentry_sdk.init()`"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

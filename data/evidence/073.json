@@ -1,0 +1,142 @@
+{
+ "id": 73,
+ "app": "Linear",
+ "hint": "developers.linear.app",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Linear API authentication OAuth API key access token developer docs developers.linear.app",
+   "log_id": "log_q73F3DTlhV6K",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://linear.app/developers/oauth-2-0-authentication?format=md",
+     "title": "linear.app/developers/oauth-2-0-authentication",
+     "snippet": "# OAuth 2.0 authentication\nLinear supports OAuth2 authentication, which is recommended if you\u2019re building applications to integrate with Linear.\n> [!NOTE]\n> It is **highly recommended** you create a workspace for the purpose of managing the OAuth2 Application, as each admin user will have access.\n> [!NOTE]\n> All OAuth2 applications were migrated to the new refresh token system on April 1, 2026.\n>\n> Specifically for CI and scheduled automation, refer to [Client credentials token](https://linear.app/developers/oauth-2-0-authentication#client-credentials-tokens).\n## Create an OAuth2 application\nCreate a new [OAuth2 Application](https://linear.app/settings/api/applications/new) and configure the redirect callback URLs to your application.\n## Redirect user access requests to Linear\nWhen authorizing a user to the Linear API, redirect to an authorization URL with correct parameters and scopes:\n```http\nGET https://linear.app/oauth/authorize HTTP/1.1\n```\nName | Description\n--- | ---\n`client_id` | (required) Client ID provided when you create the OAuth2 Application\n`redirect_uri` | (required) Redirect URI\n`response_type=code` | (required) Expected response type\n`scope` | (required) Comma sep"
+    },
+    {
+     "url": "https://linear.app/developers/graphql",
+     "title": "Getting started \u2013 Linear Developers",
+     "snippet": "The Linear API supports personal API keys and OAuth2 authentication.\n### OAuth\u2060\nIf you\u2019re building an application for others to use, we recommend you use [OAuth2 authentication](https://linear.app/developers/oauth-2-0-authentication). Once you complete the authentication flow and acquire an access token, pass it with the header `Authorization: Bearer <ACCESS_TOKEN>`\n```\ncurl \\\n-X POST \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer <ACCESS_TOKEN>\" \\\n--data '{ \"query\": \"{ issues { nodes { id title } } }\" }' \\\nhttps://api.linear.app/graphql\n```\n### Personal API Keys\u2060\nFor personal scripts API keys are the easiest way to access the API. Visit [Security & access](https://linear.app/settings/account/security) settings to create and manage them.\nTo authenticate your requests, you need to pass the API key with header: `Authorization: <API_KEY>`\n```\ncurl \\\n-X POST \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: <Replace this with your API Key>\" \\\n--data '{ \"query\": \"{ issues { nodes { id title } } }\" }' \\\nhttps://api.linear.app/graphql\n```\n\nOnly authenticated users can view their assets. This also applies to the API and all images will require authentication to "
+    },
+    {
+     "url": "https://linear.app/developers/sdk",
+     "title": "linear.app/developers/sdk",
+     "snippet": "Create a Linear client\nSDK supports both authentication methods, personal API keys and OAuth 2. See [authentication](https://linear.app/developers/graphql#authentication) for more details.\nYou can create a client after creating authentication keys:\n```ts\nimport { LinearClient } from '@linear/sdk'\n// Api key authentication\nconst client1 = new LinearClient({\napiKey: YOUR_PERSONAL_API_KEY\n})\n// OAuth2 authentication\nconst client2 = new LinearClient({\naccessToken: YOUR_OAUTH_ACCESS_TOKEN\n})\n```"
+    },
+    {
+     "url": "https://linear.app/developers/oauth-actor-authorization",
+     "title": "OAuth actor authorization \u2013 Linear Developers",
+     "snippet": "# OAuth actor authorization\nBy default all Linear\u2019s API authentication methods treat the authenticating user as the API actor. This means that actions performed with the OAuth token will appear to come from that user, this is usually what you want!\nLinear also supports an alternative authentication method with **OAuth Actor Authorization** \u2013 when authenticating this way the user will instead authorize installing the app within the workspace, actions performed with the received OAuth token will come from the app itself. This is particularly useful for agents and service accounts.\nTo enable the actor authorization, add `actor=app` parameter to your [OAuth authorization URL](https://linear.app/developers/oauth-2-0-authentication#redirect-user-access-requests-to-linear). The setting is tied to the authorization and its access token. In this mode, all mutations such as creating issues, comments, and status changes will be performed by the app.\n## Token renewal\u2060\nUsing `actor=app` changes the identity that performs actions, not how tokens are renewed.\n- **Authorization-code grants:** Use the refresh token to obtain a new access and refresh token pair.\n- **Client-credentials grants:** No r"
+    },
+    {
+     "url": "https://github.com/zapier/connectors/blob/HEAD/apps/linear/references/use-without-zapier.md",
+     "title": "connectors/apps/linear/references/use-without-zapier.md at e48d26f8aa5ce2908d74707c3de2962184bdde97 \u00b7 zapier/connectors",
+     "snippet": "Linear supports two credential types ([Getting started](https://linear.app/developers/graphql#authentication)):\n**Personal API key** (simplest, for your own scripts). Mint one in Linear under **Security & access** settings: \"For personal scripts API keys are the easiest way to access the API. Visit [Security & access](https://linear.app/settings/account/security) settings to create and manage them.\" ([Personal API Keys](https://linear.app/developers/graphql#personal-api-keys)) The key is user-scoped and carries a `lin_api_` prefix ([GitHub Secret Scanning changelog](https://linear.app/changelog/2021-08-19-github-secret-scanning#github-secret-scanning)).\n**OAuth2 access token** (for apps others install). Create an [OAuth2 Application](https://linear.app/settings/api/applications/new), send the user through `https://linear.app/oauth/authorize`, then exchange the returned `code` at `https://api.linear.app/oauth/token` for an access token. Request only the scopes you need \u2014 `read` (default, always present), `write`, or the narrower `issues:create` / `comments:create`; \"You should never ask for [`admin`] permission unless it's absolutely needed.\" The `actor` parameter chooses whether re"
+    }
+   ]
+  },
+  "access": {
+   "query": "Linear developers.linear.app API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_mLYKWAMt4Zhu",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://linear.app/pricing.md",
+     "title": "linear.app/pricing.md",
+     "snippet": "# Pricing\n### Free\n$0\nFree for everyone\n-   Unlimited members\n-   2 teams\n-   250 issues\n-   Agent platform\n-   Linear Agent\n-   Loops\n[Get started](/signup)\n### Basic\n$10 per user/month\nBilled yearly\n-   All Free features +\n-   5 teams\n-   Unlimited issues\n-   Unlimited file uploads\n-   Admin roles\n[Get started](/signup)\n### Business\n$16 per user/month\nBilled yearly\n-   All Basic features +\n-   Unlimited teams\n-   Private teams and guests\n-   Triage Intelligence\n-   Code Intelligence\n-   Linear Insights\n-   Linear Asks\n-   Zendesk and Intercom integrations\n[Get started](/signup)[Contact sales](/contact/sales)\n### Enterprise\nCustom\nAnnual billing only\n-   All Business features +\n-   Invoice/PO billing\n-   SAML and SCIM\n-   Granular admin controls\n-   Enterprise-grade security\n-   Advanced org modeling\n-   Migration &amp; onboarding support\n-   Priority support\n-   Account management\n\n| API and webhook access | Included | Included | Included | Included |"
+    },
+    {
+     "url": "https://linear.app/developers/rate-limiting",
+     "title": "Rate limiting \u2013 Linear Developers",
+     "snippet": "Calls to our GraphQL API are rate limited to provide equitable access to the API for everyone and to prevent abuse. We are going to be evolving these limits as we gather more information, and encourage your feedback. Any changes to limits will be announced in our Slack community [API announcements channel](https://linearcustomers.slack.com/archives/CN61HRZ9T).\n\n### Dynamic rate limits\u2060\nWe dynamically increase rate limits for workspace level OAuth apps using [Actor Authorization](https://linear.app/developers/oauth-actor-authorization) based on number of paid users in that workspace."
+    },
+    {
+     "url": "https://linear.app/docs/api-and-webhooks",
+     "title": "linear.app/docs/api-and-webhooks",
+     "snippet": "Go to the API section under Account > Security & Access[ settings](https://linear.app/settings/account/security) and read the linked\u00a0[API documentation](https://developers.linear.app/docs/graphql/working-with-the-graphql-api) for more information.\n\nAdmins can choose whether or not Members can create their own API keys from _Settings > Administration > API > Member API keys._ This setting will not apply to Admins who can always create API keys.\n\nAdmins and permitted Members can create personal API keys from _Settings > Account > Security & Access._ For each key you create, you can choose to give it full access to the data your user can access, or restrict it to certain permissions (_Read, Write, Admin, Create issues, Create comments)._ You can also limit an API key's access to specific teams in your workspace."
+    },
+    {
+     "url": "https://linear.app/developers/oauth-2-0-authentication?format=md",
+     "title": "linear.app/developers/oauth-2-0-authentication",
+     "snippet": "Once you have obtained a valid access token, you can make a request to Linear's GraphQL API. You can initialize the [Linear Client](https://linear.app/developers/sdk) with the access token:\n```typescript\nconst client = new LinearClient({ accessToken: response.access_token })\nconst me = await client.viewer\n```\n\nThe token generated using this grant type will be an `app` actor token that has access to all public teams in the workspace and is valid for 30 days. You can learn more about `app` actor tokens [here](https://linear.app/developers/oauth-actor-authorization).\nThe app user's team access can be modified through the [app details page](https://linear.app/settings/applications/) for your app at any point after the token is generated."
+    },
+    {
+     "url": "https://linear.app/changelog?before=2026-09-14",
+     "title": "Changelog \u2013 Linear",
+     "snippet": "[## Bring your own key (BYOK)](https://linear.app/changelog/2026-11-12-bring-your-own-key)\nYou can now bring your own key to Linear\u2019s cloud coding agent and use your existing provider credits and negotiated rates.\nConnect through OpenAI, Anthropic, AWS Bedrock, Azure OpenAI, Claude in Microsoft Foundry, OpenRouter, Vercel, or any gateway that supports the OpenAI Responses or Anthropic Messages API.\nYour provider bills model usage directly, while sandbox runtime uses Linear AI credits. You\u2019ll need an API key, not a ChatGPT or Claude subscription.\nWorkspace admins can enable BYOK in [Settings](https://linear.app/settings/ai/coding-sessions). Available on all current plans. Learn more in our [documentation](https://linear.app/docs/coding-sessions).\n\n## Third-party app approvals\u2060\nAs more apps and agents connect to your workspace, admins need control over which ones can access company data. Third-party app approvals are now available on paid Linear plans, allowing admins to review and approve apps before they\u2019re installed.\nLearn more in the [docs.](https://linear.app/docs/third-party-application-approvals)\n\nStarting today, coding sessions use a lower-cost pricing model with two componen"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Linear API reference REST GraphQL endpoints documentation developers.linear.app",
+   "log_id": "log_Na1GFIDbBNfD",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://linear.app/developers/graphql",
+     "title": "Getting started \u2013 Linear Developers",
+     "snippet": "Linear\u2019s public API is built using GraphQL. It\u2019s the same API we use internally for developing our applications. If you are new to GraphQL, Apollo has [resources for beginners](https://blog.apollographql.com/the-basics-of-graphql-in-5-links-9e1dc4cac055). The official [GraphQL documentation](https://graphql.org/) is another good starting point.\n## Endpoint\u2060\nLinear\u2019s GraphQL endpoint is:\n```\nhttps://api.linear.app/graphql\n```\nIt supports introspection so you can query the whole schema.\n\n### OAuth\u2060\nIf you\u2019re building an application for others to use, we recommend you use [OAuth2 authentication](https://linear.app/developers/oauth-2-0-authentication). Once you complete the authentication flow and acquire an access token, pass it with the header `Authorization: Bearer <ACCESS_TOKEN>`\n```\ncurl \\\n-X POST \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer <ACCESS_TOKEN>\" \\\n--data '{ \"query\": \"{ issues { nodes { id title } } }\" }' \\\nhttps://api.linear.app/graphql\n```\n\n```\ncurl \\\n-X POST \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: <Replace this with your API Key>\" \\\n--data '{ \"query\": \"{ issues { nodes { id title } } }\" }' \\\nhttps://api.linear.app/graphql\n```\n\n"
+    },
+    {
+     "url": "https://linear.rest",
+     "title": "Linear REST API Reference",
+     "snippet": "Base URL `https://api.linear.app/graphql`\n## API Endpoints\n| Method | Endpoint | Description |\n|---|---|---|\n| POST | `/graphql` | Query issues with filters and pagination |\n| POST | `/graphql` | Create a new issue in a team |\n| POST | `/graphql` | Update an existing issue's status, assignee, or properties |\n| POST | `/graphql` | Get all teams in the workspace |\n| POST | `/graphql` | Get project details and associated issues |\n| POST | `/graphql` | Create a new project with milestones |\n| POST | `/graphql` | Get workflow states for a team |\n| POST | `/graphql` | Get cycle information and cycle issues |\n| POST | `/graphql` | Add a comment to an issue |\n| POST | `/graphql` | Get user details and assigned issues |\n| POST | `/graphql` | Create and manage issue labels |\n| POST | `/graphql` | Get roadmap and milestone data |\n| POST | `/graphql` | Archive or delete issues |\n| POST | `/graphql` | Search issues across the workspace |\n| POST | `/graphql` | Get and update issue relationships and dependencies |\n\n## Code Examples\n```\ncurl -X POST https://api.linear.app/graphql \\\n-H 'Authorization: Bearer lin_api_xxxxxxxxxxxxxxxxxxxxx' \\\n-H 'Content-Type: application/json' \\\n-d '{\n\"query\": \"quer"
+    },
+    {
+     "url": "https://linear.app/developers/pagination",
+     "title": "Pagination \u2013 Linear Developers",
+     "snippet": "1. GraphQL API\n2. Pagination\n[Sign up](https://linear.app/signup)[Open app](https://linear.app/signup)\n# Pagination\nAll list responses from queries return paginated results. We implement Relay style cursor-based pagination model with `first`/`after` and `last`/`before` pagination arguments. For example, this is how to query the first 10 issues in your workspace:\n```\nquery Issues {\nissues(first: 10) {\nedges {\nnode {\nid\ntitle\n}\ncursor\n}\npageInfo {\nhasNextPage\nendCursor\n}\n}\n}\n```\n\nThe first 50 results are returned by default without query arguments. Pagination also supports simpler syntax where instead of edges you can directly get all the nodes similar to GitHub\u2019s GraphQL API:\n```\nquery Teams {\nteams {\nnodes {\nid\nname\n}\n}\n}\n```"
+    },
+    {
+     "url": "https://github.com/anthropics/claude-tag-plugins/blob/main/linear/skills/linear-api/SKILL.md",
+     "title": "claude-tag-plugins/linear/skills/linear-api/SKILL.md at main \u00b7 anthropics/claude-tag-plugins",
+     "snippet": "Linear has a **single GraphQL endpoint** \u2014 there is no REST API. Every read is a `query`, every write is a `mutation`, and everything goes to one URL. Don't look for `/api/v1/issues`-style paths; they don't exist.\n```\nPOST https://api.linear.app/graphql\n```\nTwo ID systems coexist:\n- **UUID** (`id`) \u2014 what the API uses everywhere for lookups and mutations.\n- **Identifier** (`identifier`, e.g. `ENG-123`) \u2014 the human-readable key shown in the UI. You can fetch an issue by identifier with `issue(id: \"ENG-123\")` (Linear accepts both).\n\n**Sanity check** \u2014 confirm the workspace is wired up and see who the configured identity is:\n```\ncurl -sS \"https://api.linear.app/graphql\" \\\n-H \"Authorization: ${LINEAR_API_KEY}\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\"query\": \"{ viewer { id name email } }\"}' | jq .\n```\nDefine a helper once per session so you don't repeat the boilerplate. It takes a query string and an optional variables JSON object:\n```\nlinear_gql() {\nlocal query=\"$1\" vars=\"${2:-null}\"\njq -n --arg q \"$query\" --argjson v \"$vars\" '{query:$q, variables:$v}' | \\\ncurl -sS \"https://api.linear.app/graphql\" \\\n-H \"Authorization: ${LINEAR_API_KEY}\" \\\n-H \"Content-Type: application/json\" \\\n-d "
+    },
+    {
+     "url": "https://github.com/dorkitude/linctl/blob/master/master_api_ref.md",
+     "title": "linctl/master_api_ref.md at master \u00b7 dorkitude/linctl",
+     "snippet": "## Canonical Sources\n- Developers hub: [https://linear.app/developers](https://linear.app/developers)\n- GraphQL endpoint: `https://api.linear.app/graphql`\n- Schema explorer: [https://studio.apollographql.com/public/Linear-API/variant/current/explorer](https://studio.apollographql.com/public/Linear-API/variant/current/explorer)\n- Changelog/deprecations: [https://linear.app/changelog](https://linear.app/changelog) and [https://linear.app/developers/deprecations](https://linear.app/developers/deprecations)\n\n### Endpoint\n```\nhttps://api.linear.app/graphql\n```\n### Introspection\n```\nquery IntrospectionQuery {\n__schema {\nqueryType { name }\nmutationType { name }\ntypes { name }\n}\n}\n```\n### IDs, keys, identifiers\n- Most node lookups accept a Linear ID (`id`).\n- Some API paths use domain keys/identifiers (for example team key like `ENG`, issue identifier like `ENG-123`) after resolving via query logic.\n- In `linctl`, user-facing commands often accept keys/identifiers and resolve IDs internally."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Linear developers.linear.app MCP server Model Context Protocol official",
+   "log_id": "log__n1Z1LaY8H1J",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://linear.app/docs/mcp",
+     "title": "MCP server \u2013 Linear Docs",
+     "snippet": "The Model Context Protocol (MCP) server provides a standardized interface that allows any compatible AI model or agent to access your Linear data in a simple and secure way.\nConnect to our MCP server natively in Claude, Cursor, and other clients or use the [`mcp-remote`](https://github.com/geelen/mcp-remote) module for backwards compatibility with clients that do not support remote MCP.\nLinear\u2019s MCP server follows the authenticated remote [MCP spec](https://modelcontextprotocol.io/specification/2025-03-26), so the server is centrally hosted and managed. The Linear MCP server has tools available for finding, creating, and updating objects in Linear like issues, projects, and comments \u2014 with more functionality on the way, and [feedback](https://linear.app/contact/support) on its functionality is welcomed.\n\n### General\u2060\nOur MCP server uses Streamable HTTP as the primary transport, accessible at the following address. The interactive setup flow uses OAuth 2.1 with dynamic client registration. You can also authenticate directly with a bearer token or Linear API key \u2014 see the FAQ for details.\nRead-write access is provided through `https://mcp.linear.app/mcp` by default.\nFor read-only acc"
+    },
+    {
+     "url": "https://linear.app/docs/connect-mcp-servers",
+     "title": "linear.app/docs/connect-mcp-servers",
+     "snippet": "Linear Agent can connect to MCP servers to access tools and data outside of Linear.\nThis lets the agent bring external context into your workflows to investigate issues, plan projects, write specs, and draft updates grounded in your full context.\nMCP works across Linear Agent chat, comments, and automations, and is enabled at the workspace level by Admins.\n### Available MCP servers\n* Amplitude\n* Attio\n* Better Stack\n* Datadog\n* GitHub\n* Glean\n* Granola\n* HubSpot\n* incident.io\n* Intercom\n* Jam\n* Notion\n* PostHog\n* Sentry\n* Slack\n* Stripe\n## Setup\nA workspace owner or admin can enable or disable MCP support for the workspace, restrict usage to approved MCP servers, and manage workspace-connected MCP servers.\nInherited from workspace-level settings, users can then configure their preferred MCP servers to leverage when collaborating with Linear Agent.\n### Workspace configuration\n1. Open [Workspace settings > Security](https://linear.app/settings/security)\n2. Beside **Enable MCP servers** toggle it to **\u201cOn\u201d**\n3. Under **Allowed MCP servers**, choose **All servers** or **Only specific servers**\n4. Scroll down to MCP servers and select any that users and automations can connect to via Li"
+    },
+    {
+     "url": "https://linear.app/integrations/cursor-mcp",
+     "title": "Cursor MCP Integration \u2013 Linear",
+     "snippet": "# Connect Cursor to the Linear MCP server\n### Overview\u2060\nCursor is a code editor designed for AI-assisted development. Connecting Linear\u2019s MCP server lets Cursor\u2019s inline agent open context from your issues or create new issues without leaving the IDE.\n### Setup instructions\u2060\n1. CTRL/CMD Shift J to open Cursor Settings.\n2. Select **MCP**.\n3. Select **Add new global MCP server**.\n4. Add the following:\n```\n{\n\"mcpServers\": {\n\"linear\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"mcp-remote\", \"https://mcp.linear.app/mcp\"]\n}\n}\n}\n```\n*Remote MCP connections are still early and we\u2019ve found that the connection may fail or require multiple attempts. If you experience issues, try restarting your client or disabling and re-enabling the Linear MCP server.*"
+    },
+    {
+     "url": "https://docs.litellm.ai/docs/mcp_servers/linear",
+     "title": "Linear MCP server | liteLLM",
+     "snippet": "# Linear MCP server\n> Connect Linear's hosted remote MCP server through the LiteLLM MCP Gateway for issues, projects, cycles, and comments.\nLinear hosts and manages the server centrally, so there is nothing to deploy or run yourself. LiteLLM adds centralized auth, access control by key and team, cost tracking per tool call, and one audit trail across every MCP server you expose.\n\n## Key features\u200b\n- A dedicated read-only endpoint, so you can hand out Linear context without granting the ability to file or edit anything\n- Hosted by Linear over Streamable HTTP; the older SSE endpoint remains only as a deprecated fallback\n- Dynamic client registration for OAuth, plus an API key path for backend agents where no human is present to sign in\n## Authentication\u200b\n- **Method:** OAuth 2.1 with user tokens, respecting each caller's existing Linear permissions. Linear supports [dynamic client registration](https://datatracker.ietf.org/doc/html/rfc7591), so there is no client ID or secret to manage.\n- **Alternative:** A Linear API key sent as a bearer token. This is a single shared identity rather than per-user, so reserve it for read-only context sources and unattended backend agents.\n## Endpoint\u200b"
+    },
+    {
+     "url": "https://linear.app/docs/mcp.md",
+     "title": "linear.app/docs/mcp.md",
+     "snippet": "The Model Context Protocol (MCP) server provides a standardized interface that allows any compatible AI model or agent to access your Linear data in a simple and secure way.\nConnect to our MCP server natively in Claude, Cursor, and other clients or use the   [`mcp-remote`](https://github.com/geelen/mcp-remote) module for backwards compatibility with clients that do not support remote MCP.\nLinear's MCP server follows the authenticated remote [MCP spec](https://modelcontextprotocol.io/specification/2025-03-26), so the server is centrally hosted and managed. The Linear MCP server has tools available for finding, creating, and updating objects in Linear like issues, projects, and comments \u2014 with more functionality on the way, and [feedback](https://linear.app/contact/support) on its functionality is welcomed.\n\n### General\nOur MCP server uses Streamable HTTP as the primary transport, accessible at the following address. The interactive setup flow uses OAuth 2.1 with dynamic client registration. You can also authenticate directly with a bearer token or Linear API key \u2014 see the FAQ for details.\nRead-write access is provided through `https://mcp.linear.app/mcp` by default.\nFor read-only ac"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": 19,
+  "app": "Gorgias",
+  "category": "Support and Helpdesk",
+  "one_liner": "Ecommerce-focused helpdesk for tickets, customers and social channels.",
+  "auth_methods": [
+    "oauth2",
+    "api_key",
+    "basic"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_trial",
+  "access_notes": "Free trial signup; API available on all helpdesk plans, private apps use API key, public apps need OAuth via partner portal approval.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.gorgias.com",
+  "verdict": "ready_with_caveats",
+  "blocker": "partner_or_app_review",
+  "blocker_note": "Public multi-tenant OAuth app requires Developer Portal approval and app review.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.gorgias.com/reference/authentication",
+    "access": "https://developers.gorgias.com",
+    "surface": "https://developers.gorgias.com/llms.txt",
+    "mcp": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546"
+  }
+}

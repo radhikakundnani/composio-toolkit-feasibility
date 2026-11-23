@@ -1,0 +1,32 @@
+{
+  "id": 96,
+  "app": "Devin",
+  "changes": [
+    {
+      "field": "access",
+      "from": "unknown",
+      "to": "paid_plan_required",
+      "why": "API creates Devin cloud sessions; pricing page lists Devin Cloud under Pro ($20/mo), Free plan has only limited usage. PAT creation itself is self-serve in Settings.",
+      "evidence": "https://devin.ai/pricing"
+    },
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "paid_plan",
+      "why": "Closest enum; cloud agent sessions need paid plan.",
+      "evidence": "https://docs.devin.ai/admin/billing/self-serve"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://docs.devin.ai/work-with-devin/devin-mcp",
+      "to": "https://devin.ai/pricing",
+      "why": "On-topic pricing citation",
+      "evidence": "https://devin.ai/pricing"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "auth_primary"
+  ],
+  "searches": 5
+}

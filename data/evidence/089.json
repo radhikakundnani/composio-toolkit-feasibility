@@ -1,0 +1,142 @@
+{
+ "id": 89,
+ "app": "Ramp",
+ "hint": "docs.ramp.com",
+ "given_category": "Finance and Fintech",
+ "queries": {
+  "auth": {
+   "query": "Ramp API authentication OAuth API key access token developer docs docs.ramp.com",
+   "log_id": "log_guOPNhQ9oOAF",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer-docs.ramp.com/docs/oauth-20",
+     "title": "OAuth 2.0",
+     "snippet": "Ramp API uses the [OAuth 2.0 protocol](https://datatracker.ietf.org/doc/html/rfc6749) to handle authorization and access control. Currently Ramp supports two grant types -- Client Credentials and Authorization Code.\n\nAuthorization Code Grant\nThere are three parties involved in the `Authorization Code` -- the client (your application), the server (Ramp) and the user (data owner);\nAs an overview, the flow has the following steps\n1. Your application sends the user to authenticate with Ramp\n2. The user sees the authorization prompt and approves the app\u2019s request for data access\n3. The user is redirected back via a `redirect_uri` with a temporary `authorization code`\n4. Your application exchanges the `authorization code` for an `access token`\n5. Ramp verifies the params and returns the `access_token`\n6. You application gets a new `access_token` with the `refresh_token`\nNow let's walkthrough all the steps\n###\nstep 1: user authenticates with Ramp\nTo start the `Authorization Code` flow, your application need to direct the prospective user to authenticate with Ramp by making a request in your browser to [https://app.ramp.com/v1/authorize](https://app.ramp.com/v1/authorize) with the followin"
+    },
+    {
+     "url": "https://docs.ramp.com/llms-guides/authorization.txt",
+     "title": "docs.ramp.com/llms-guides/authorization.txt",
+     "snippet": "summary: Ramp uses OAuth 2.0. Your app gets an access token from /developer/v1/token, authenticating with its client ID and secret (typically HTTP Basic Auth), and scopes control what the token can access.\ncontent:\nRamp uses OAuth 2.0. Your app gets an access token from `/developer/v1/token`, authenticating with its client ID and secret (typically HTTP Basic Auth), and scopes control what the token can access.\nFor a quick start, see the [Setup Guide](</developer-api/v1/getting-started>). For Ramp's own MCP server and CLI, see [Ramp MCP and Ramp CLI](<#ramp-mcp-and-ramp-cli>).\n## Supported grant types\n| Grant Type | Use Case | User Interaction |\n| --- | --- | --- |\n| **Client Credentials** | Internal integrations, server-to-server | None required |\n| **Authorization Code** | Third-party apps, public integrations | Authorized user consent required |\n| **Refresh Token** | Renew access after an Authorization Code grant | None after the initial authorization |\n## Permission model and scopes\nScopes follow the pattern `resource:permission`, where the permission is usually `read` or `write`, such as `transactions:read`. A few use other permissions, such as `cards:read_vault`. OpenID Connec"
+    },
+    {
+     "url": "https://docs.ramp.com/llms-guides/getting-started.txt",
+     "title": "docs.ramp.com/llms-guides/getting-started.txt",
+     "snippet": "## 1. Create your app and get credentials\nFirst, you'll need to create a developer app to get your API credentials.\n1. In your Ramp account, go to **Company \u2192 Developer** (you'll need admin access).\n2. Click **Create New App**.\n3. Name your app (e.g., \"API Quickstart\") and accept the Terms.\n4. Under **Grant types**, click **Add new grant type** \u2192 select **Client Credentials**.\n5. Under **Scopes**, click **Configure allowed scopes** and select `transactions:read`.\n6. Copy your **Client ID** and **Client Secret**. Store them securely \u2013 you'll need them in the next step.\nFor more details on authorization, see the [Authorization Guide](</developer-api/v1/authorization>).\n## 2. Get an access token\nWith your credentials, request an access token. Ramp authenticates this `/developer/v1/token` request with HTTP Basic Auth: base64-encode `client_id:client_secret` and send it in the `Authorization` header. The token authenticates your API requests.\nReplace `{environment-url}` with:\n- `https://demo-api.ramp.com` for Sandbox\n- `https://api.ramp.com` for Production\n## API URLs are different from the Ramp app URLs\nThe API base URL is not the same as the URL for the Ramp customer app. Make sure yo"
+    },
+    {
+     "url": "https://docs.ramp.com/llms-full.txt",
+     "title": "docs.ramp.com/llms-full.txt",
+     "snippet": "## Before you start\nConnect the agent through [Ramp MCP](</developer-api/v1/ramp-mcp>) or [Ramp CLI](</developer-api/v1/cli>). It uses the cards, funds, and permissions the connected user already has.\n\nRamp Data requires provisioned access. [Apply to the Ramp Data Partner Program\u2197](<https://ramp.com/data-partnerships>) to request credentials.\n\n### 1. Let customers connect Ramp\nIn your product, add a Ramp destination setup flow. Tell customers to open Ramp, go to **Settings > Integrations**, find your integration, click **Connect**, and generate an AI usage API key. The customer copies that key into your destination settings.\nStore the key as a customer-scoped secret and use it only for that customer's usage events. If the customer rotates or revokes the key in Ramp, prompt them to reconnect the destination.\nSend unified usage events to:\n```text\nhttps://api.ramp.com/developer/v1/ai-usage/unified\n```\nAuthenticate each request with the customer's Ramp API key:\n```http\nAuthorization: Bearer <customer-ramp-api-key>\nContent-Type: application/json\n```\n\n- **Store customer keys securely.** Treat each Ramp API key like a customer secret. Encrypt it at rest, restrict access, and support rotat"
+    },
+    {
+     "url": "https://support.ramp.com/what-to-do-if-oauth-credentials-are-leaked",
+     "title": "Ramp Help Center",
+     "snippet": "Ramp [provides an API](https://docs.ramp.com/developer-api/v1/overview/getting-started) to programmatically access data and take action. The Ramp API uses an OAuth 2.0 flow to generate credentials to auth against the Ramp API. The OAuth 2.0 flow generates a client ID, client secret, access token(s), and refresh token(s). You can find documentation for the OAuth 2.0 flow for the Ramp API [here](https://docs.ramp.com/developer-api/v1/authorization).\n\nA client secret is a private key that\u2019s generated for your app to authenticate against the API in conjunction with the client ID. Because the client secret is a private credential that\u2019s used to authenticate your app, if a client secret is leaked it should be rotated in the app settings page.\nFollow these steps to rotate a client secret. You need a role with permissions to view the Developer Console and manage Ramp API settings to see these options.\n1. Go to [app.ramp.com](https://app.ramp.com/) . On the left-hand sidebar, click on \u201cCompany\u201d > \u201cDeveloper\u201d.\n2. Click the name of the app whose secret leaked to open the configuration menu.\n3. Click **Rotate client secret** and then **Create** to create a new client secret. You may be prompte"
+    }
+   ]
+  },
+  "access": {
+   "query": "Ramp docs.ramp.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_jUX8eYmwatn9",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.ramp.com/accessing-the-developer-api",
+     "title": "Ramp Help Center",
+     "snippet": "Ramp\u2019s Developer API allows teams to programmatically access Ramp data and build automations or integrations tailored to their workflows. It provides secure, scoped access to objects like transactions, cards, users, and more.\n\nTo begin using the Ramp Developer API, you must first create a developer app to obtain your API credentials. Admin access is required.\nUse these steps to call the API for your own Ramp business, or to get sandbox credentials for\n\n1. Open [Developer apps](https://app.ramp.com/settings/ramp-developer/apps) in Ramp.\n2. For your first app, click **Start building**. If you already have an app, click **Create new app**.\n3. Name your app (e.g., \u201cAPI Quickstart\u201d) and accept the Terms.\n4. Under **Grant types**, confirm **Client credentials** is turned on.\n5. Under **Scopes**, click **Configure allowed scopes** and select the scopes available to your business that your use case needs, such as `transactions:read`. If a required scope is unavailable, submit a Developer API support ticket to ask about access.\n6. Copy your Client ID and Client Secret. Store these securely\u2014you\u2019ll need them to generate your access token."
+    },
+    {
+     "url": "https://ramp.com/legal/developer-terms/developer-terms/api-agreement",
+     "title": "API Agreement",
+     "snippet": "- **2.1** **API Access**. To receive access to the Ramp APIs in a sandbox or production environment, you must submit a request for Ramp review. Ramp may approve, condition, limit, or deny any request for access in our sole discretion, and may suspend or revoke access to either at any time for any reason. Access credentials for a Developer Account are non-transferable, non-assignable, and must be kept confidential. All activity occurring under your credentials is your responsibility.\n\nor functionality of your Application, and (d) if published for multi-tenant access, we may disclose information about your Application, including its security posture. Without limiting the generality of the foregoing, you must provide us with advance notice and an opportunity to review changes to the OAuth scopes used by your Application to access Customer Data. The specific use cases, data processing activities, and functionality for which your Application is approved (\u201cApproved Use Cases\u201d) are solely those disclosed to and approved by Ramp.\n\nYour Application must use an OAuth protocol approved by Ramp to access Customer Data. You may not store Customer credentials or use a client credentials grant to"
+    },
+    {
+     "url": "https://docs.ramp.com/llms-guides/authorization.txt",
+     "title": "docs.ramp.com/llms-guides/authorization.txt",
+     "snippet": "## Supported grant types\n| Grant Type | Use Case | User Interaction |\n| --- | --- | --- |\n| **Client Credentials** | Internal integrations, server-to-server | None required |\n| **Authorization Code** | Third-party apps, public integrations | Authorized user consent required |\n| **Refresh Token** | Renew access after an Authorization Code grant | None after the initial authorization |\n\n| `approvals:read` | Approvals | View approval data for transactions, reimbursements, and bills |\n| `approvals:write` | Approvals | Approve or reject pending approvals |\n\n`cards:read_vault` is available only to approved integrators; see [Virtual Cards](</developer-api/v1/virtual-cards#vault-api>). Scopes marked partners only appear in the partner Developer Console, not in a business's own Developer API settings. Some endpoints also require a Ramp plan feature and return `403` without it, even with the right scope.\n\n## Who can approve\nFor apps that access the whole business, an Admin or Business Owner must approve. Other users see \"An admin must connect this app.\" For apps that act as an individual user, an admin must first enable the app for the organization in **Manage Access**."
+    },
+    {
+     "url": "https://apidog.com/blog/ramp-api",
+     "title": "How to use Ramp API ?",
+     "snippet": "Developers access the Ramp API through a straightforward process involving account creation, key generation, and environment selection. Begin by signing up for a [Ramp business account ](https://ramp.com/?ref=apidog.com)if you lack one. Ramp verifies businesses during onboarding, a process that typically spans 1-3 business days.\n\nRamp structures its API pricing around the broader platform fees, ensuring predictability for developers.\n\nBasic access to the API comes free with any Ramp account. You incur no additional charges for standard endpoints like transactions or cards. However, advanced features\u2014such as custom webhook processing or high-volume data exports\u2014may require enterprise plans.\n\nFree tier supports unlimited projects\u2014download now to complement your Ramp API setup."
+    },
+    {
+     "url": "https://docs.ramp.com/llms-guides/getting-started.txt",
+     "title": "docs.ramp.com/llms-guides/getting-started.txt",
+     "snippet": "First, you'll need to create a developer app to get your API credentials.\n1. In your Ramp account, go to **Company \u2192 Developer** (you'll need admin access).\n2. Click **Create New App**.\n3. Name your app (e.g., \"API Quickstart\") and accept the Terms.\n4. Under **Grant types**, click **Add new grant type** \u2192 select **Client Credentials**.\n5. Under **Scopes**, click **Configure allowed scopes** and select `transactions:read`.\n6. Copy your **Client ID** and **Client Secret**. Store them securely \u2013 you'll need them in the next step.\n\nWith your credentials, request an access token. Ramp authenticates this `/developer/v1/token` request with HTTP Basic Auth: base64-encode `client_id:client_secret` and send it in the `Authorization` header. The token authenticates your API requests."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Ramp API reference REST GraphQL endpoints documentation docs.ramp.com",
+   "log_id": "log_07DDlkzG5xHv",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.ramp.com/developer-api/v1/reference/rest/transactions",
+     "title": "Transactions",
+     "snippet": "**Transactions**\nCard transactions, sorted by most recent `user_transaction_time`. Each transaction links to a user, a card, a merchant, optional receipts, and accounting field selections.\nPart of [Cards](https://docs.ramp.com/developer-api/v1/cards-and-funds). For the relationship to bills, vendors, and accounting fields, see [Data relationships](https://docs.ramp.com/developer-api/v1/data-relationships).\n**Accounting field locations.** Field selections live in two places: the root `accounting_field_selections` array (transaction-wide) and `line_items[i].accounting_field_selections` (splittable fields, even on single-line transactions).\n**Looking to:**\n- Sync transactions to your ERP? See [ERP Integrations](https://docs.ramp.com/developer-api/v1/erp-integrations#split-transaction-line-items).\n- Get real-time transaction events? See [Webhooks](https://docs.ramp.com/developer-api/v1/webhooks).\n## List transactions\nThis endpoint supports filtering and ordering. If state is not set, all transactions except declined transactions will be returned. Note that setting multiple ordering parameters is unsupported.\n## Query string parameters\nFilter transactions by accounting field selection. "
+    },
+    {
+     "url": "https://docs.ramp.com/developer-api/v1/api/purchase-orders",
+     "title": "Purchase Orders",
+     "snippet": "**Purchase Orders**\nList, retrieve, create, update, and archive purchase orders, and manage their line items. Access depends on the endpoint, your permissions, and the applicable Ramp plan.\nPart of [Procurement](https://docs.ramp.com/developer-api/v1/procurement). POs are the artifact a bill matches against \u2014 see [Bill Pay](https://docs.ramp.com/developer-api/v1/bill-pay) for the payment side and 3-way match.\n\n## Create a purchase order\n## Request body\nUnique identifier of associated business entity.\n`line_items`\narray<object>\nList of purchase order line items.\n`three_way_match_enabled`\nboolean\nWhether three-way match is enabled for the purchase order. I.e. whether an item receipt will be attached to indicate goods were received.\n\n`ramp_url`\nstring\nA stable URL that links to the purchase order in the Ramp web application."
+    },
+    {
+     "url": "https://docs.ramp.com/developer-api/v1/changelog",
+     "title": "Changelog \u2014 Ramp API docs",
+     "snippet": "- **Blanket purchase orders** \u2014 Set `request_blanket_purchase_order` and `is_total_amount_estimated` when creating or editing a procurement request. Purchase order responses include `can_issue_release_purchase_orders` and `is_total_amount_estimated`. Availability depends on the spend program and rollout. [View endpoint](https://docs.ramp.com/developer-api/v1/api/unified-requests#post-developer-v1-unified-requests) [View endpoint](https://docs.ramp.com/developer-api/v1/api/unified-requests#patch-developer-v1-unified-requests-unified-request-id)"
+    },
+    {
+     "url": "https://docs.ramp.com/openapi/developer-api.json",
+     "title": "docs.ramp.com/openapi/developer-api.json",
+     "snippet": "\"description\": \"Production\",\n\"url\": \"https://api.ramp.com\"\n\nfunctionality.\\nIf a"
+    },
+    {
+     "url": "https://docs.ramp.com/developer-api/v1/api/custom-records-matrix-tables",
+     "title": "Custom Records Matrix Tables",
+     "snippet": "**Custom Records Matrix Tables**\nMatrix tables \u2014 define lookup relationships across accounting dimensions (project \u2192 approver, department \u2192 cost center). Drives approval routing and conditional coding rules.\nPart of [Custom Records](https://docs.ramp.com/developer-api/v1/custom-records).\n\n## Create a Matrix table\nMatrix tables are special-purpose lookup tables where unique combinations of input values map to result values.\n## Request body\n`input_columns`\narray<object>\nInput columns that define the Matrix dimensions (references or number)\n`label`\nstring\nDisplay name for the Matrix table\n`result_columns`\narray<object>\nResult columns that store Matrix outputs\n`name`\nstring or null\noptional\nAPI name for the table\n## Response HTTP 201\n`table_id`\nstring\nID of the created Matrix table\nWas this section useful?\n`POST`\n`/developer/v1/custom-records/matrix-tables`\n```\ncurl \\  -X POST \\  -H \"Accept: application/json\" \\  -H \"Authorization: Bearer $RAMP_API_TOKEN\" \\  -H \"Content-Type: application/json\" \\  -d '{  \"input_columns\": [    {      \"column_type\": {        \"table_name\": \"departments\",        \"type\": \"native_table\"      },      \"label\": \"Department\",      \"name\": \"department\"    }  ],  \"l"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Ramp docs.ramp.com MCP server Model Context Protocol official",
+   "log_id": "log_WtBPCpHoHYaj",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.ramp.com/llms-guides/developer-mcp.txt",
+     "title": "docs.ramp.com/llms-guides/developer-mcp.txt",
+     "snippet": "Developer MCP is Ramp's unauthenticated Model Context Protocol server for developers building with Ramp's API. It gives AI assistants live access to Ramp's developer documentation, API reference, and OpenAPI schemas directly inside your coding workflow.\nUnlike Ramp MCP servers that access account data, Developer MCP does not require a Ramp account, OAuth login, API key, or developer app. It only serves public Ramp Developer API documentation.\nWhy use Developer MCP?\nDeveloper MCP reads from Ramp's published developer docs and OpenAPI exports, so assistants can look up current guides, endpoint reference material, request bodies, response shapes, and parameter definitions.\nAsk for an endpoint by operation ID, docs URL, HTTP method and path, or natural selector. Developer MCP can return the matching OpenAPI operation, including request and response schemas.\nUse Developer MCP to answer implementation questions without leaving your editor: authentication setup, pagination, webhooks, required fields, endpoint behavior, and schema details.\nGetting started\nServer URL: https://mcp.ramp.com/developer/mcp\nOpen Claude Desktop\nNavigate to Settings \u2192 Developer\nClick 'Edit config'\nAdd the Develope"
+    },
+    {
+     "url": "https://docs.ramp.com/developer-api/v1/ramp-data-mcp",
+     "title": "Ramp Data MCP",
+     "snippet": "The Ramp Data MCP server exposes Ramp's datasets \u2014 [Ramp Rate](https://docs.ramp.com/developer-api/v1/ramp-rate) software benchmarks and [AI Index](https://docs.ramp.com/developer-api/v1/ai-index) business AI adoption metrics \u2014 to MCP-compatible clients.\n**Server URL:** `https://mcp.ramp.com/ramp-data/mcp`\nOne MCP connection queries both datasets \u2014 the tools live on the same server. For the per-dataset tool list, see [AI Index \u2192 Available AI Index tools](https://docs.ramp.com/developer-api/v1/ai-index#available-ai-index-tools) and [Ramp Rate \u2192 Available Ramp Rate tools](https://docs.ramp.com/developer-api/v1/ramp-rate#available-ramp-rate-tools).\n\n### Claude Code\nAdd the Ramp Data MCP server to your Claude Code session:\nAdd Ramp Data MCP to Claude Code\nShell\n```\nclaude mcp add --transport http ramp-data https://mcp.ramp.com/ramp-data/mcp \\  --header \"Authorization: Bearer $RAMP_DATA_API_KEY\"\n```\nRun `/mcp` in your session to verify the connection.\n\nJSON\n```\n{  \"mcpServers\": {    \"ramp-data\": {      \"url\": \"https://mcp.ramp.com/ramp-data/mcp\",      \"headers\": {        \"Authorization\": \"Bearer ${env:RAMP_DATA_API_KEY}\"      }    }  }}\n```\n\nFor any MCP-compatible client, use the server"
+    },
+    {
+     "url": "https://docs.ramp.com/llms-guides/ramp-mcp.txt",
+     "title": "docs.ramp.com/llms-guides/ramp-mcp.txt",
+     "snippet": "Ramp MCP allows you to securely connect Ramp with AI assistants like ChatGPT and Claude, so you can query Ramp data and take actions with natural language. Admins can analyze data to identify spend trends and forecasting insights, while employees can check balances, request reimbursements, or get policy answers directly from their daily tools.\n\nGetting started\nA Ramp production or sandbox account\nAccess to your chosen AI platform (Claude, ChatGPT, etc.)\nUsing demo data\nReplace https://mcp.ramp.com/mcp with https://demo-mcp.ramp.com/mcp in any config below to use sample data instead of live Ramp data.\nAdd the Ramp MCP server to your Claude Code session:\nRun /mcp in your session to verify the connection.\nCursor desktop app required\nThe Cursor desktop app must be installed for this one-click link to work.\nOr add manually to ~/.cursor/mcp.json:\nAdd the following to your Claude Desktop config file:\nmacOS: ~/Library/Application Support/Claude/claude_desktop_config.json\nWindows: %APPDATA%\\Claude\\claude_desktop_config.json\nAdd the following to your VS Code MCP settings:\nFor any MCP-compatible client, use the server URL to configure a connection:\nProduction: https://mcp.ramp.com/mcp\nDemo: h"
+    },
+    {
+     "url": "https://support.ramp.com/hc/en-us/articles/45516494479891-Ramp-MCP",
+     "title": "Ramp Help Center",
+     "snippet": "Ramp MCP lets you securely connect Ramp with AI tools like Claude, ChatGPT, and Notion.\n\n### Claude\nOne-click installation from [Claude's MCP directory](https://claude.ai/directory/61bac03c-3f98-4b3c-affb-1b99533fa82c). Sign in to your Ramp account when prompted.\n### ChatGPT\nOne-click installation from the [ChatGPT app directory](https://chatgpt.com/apps/ramp/asdk_app_69250fb6281c819195b52a1556b0060c). Requires a ChatGPT Plus or Pro subscription.\n### Notion\nNotion AI can connect to Ramp MCP as an external data source. You can install Ramp from Notion's [connector marketplace](https://www.notion.com/@ramp), or use a custom configuration in Notion's MCP connections settings with the server URL `https://mcp.ramp.com/mcp`. See Notion's documentation for configuring external MCP servers.\n\n### Other MCP-compatible tools\nOther AI clients that support remote MCP servers and OAuth can connect using the server URL `https://mcp.ramp.com/mcp`. Clients with a hosted redirect URL must have it allowlisted by Ramp; see How do I get my redirect URI allowlisted for a custom MCP client?.\n\nTo explore with sample data and no Ramp account at all, use the demo server `https://mcp.ramp.com/mcp-apps/demo/m"
+    },
+    {
+     "url": "https://agents.ramp.com/docs/mcp",
+     "title": "agents.ramp.com/docs/mcp",
+     "snippet": "Use the [Ramp app](https://app.ramp.com) when a person needs to review context,\nhandle an exception, or complete work directly. The\n[Agent Tools reference](/docs/reference/agent-tools) lists every tool available\nin the CLI and MCP.\n\n## Custom MCP clients\nPoint the client at `https://mcp.ramp.com/mcp`. For the Ramp sandbox\n(demo.ramp.com, the same environment as the CLI's `--env sandbox`), use\n`https://demo-mcp.ramp.com/mcp`. Clients that read MCP JSON usually expect:\n```json\n{\n\"mcpServers\": {\n\"ramp\": {\n\"url\": \"https://mcp.ramp.com/mcp\"\n}\n}\n}\n```\nCustom clients and gateways need their exact redirect URI allowlisted before\nauthorization can complete:\n- Use `https://`, or `http://` only with `localhost` or `127.0.0.1`. Ramp also\naccepts the `claude://`, `cursor://`, `grokbot://`, and `perplexity-app://`\nschemes; other custom schemes are not supported.\n- Submit the exact host. Wildcard subdomains are not supported.\n- [Request redirect URI access](https://docs.ramp.com/developer-api/v1/mcp-redirect-whitelist-request)\nfor the client or gateway."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

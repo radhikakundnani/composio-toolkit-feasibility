@@ -1,0 +1,13 @@
+{
+  "id": 98,
+  "app": "Mermaid CLI",
+  "changes": [],
+  "confirmed": [
+    "mcp (community)",
+    "access",
+    "verdict",
+    "blocker",
+    "identity_issue"
+  ],
+  "searches": 3
+}

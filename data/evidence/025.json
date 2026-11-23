@@ -1,0 +1,142 @@
+{
+ "id": 25,
+ "app": "Pumble",
+ "hint": "pumble.com",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Pumble API authentication OAuth API key access token developer docs pumble.com",
+   "log_id": "log_qLrLD9qiE6Sy",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://cake-com.github.io/pumble-node-sdk/authorization.html",
+     "title": "Authorization | Pumble SDK",
+     "snippet": "Pumble uses OAuth2 in order to allow your app to access the API.\n- User first clicks on a link to Install/Authorize your app. This link can either be through Pumble's `Configure Apps` page or externally through a website.\n- This link will open the Pumble Consent screen that will display the scopes that are requested.\n- User clicks `Allow`, and Pumble will redirect the user to your `redirectUrl`. Pumble will add a query parameter to this url called `code`.\n- Using this code and your `clientSecret` (that is returned when you [create your app](/pumble-node-sdk/manifest.html)) you will be able to generate an access token.\n- With this access token you will be able to use the Pumble API.\nThe link that will open the Pumble consent screen is in this format:\nhttp\n```\nhttps://app.pumble.com/access-request?redirectUrl=<REDIRECT_URL>&clientId=<CLIENT_ID>&scopes=<SCOPES>&defaultWorkspaceId=<DEFAULT_WORKSPACE_ID>&isReinstall=true\n```\n| name | required | description |\n|---|---|---|\n| redirectUrl | true | The redirect URL where user will be redirected after they click `Allow`. This redirect URL must match one of your app's `redirectUrls`. This means that if you have a redirect URL of `https://exam"
+    },
+    {
+     "url": "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+     "title": "api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+     "snippet": "authenticated.\\n\\n* It's mandatory to include the token (access token issued to user/bot) and x-app-token (app token issued to your app, prefixed with 'xpat-') headers in every request, refer to [API Client](https://cake-com.github.io/pumble-node-sdk/api-client.html).\\n*"
+    },
+    {
+     "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+     "title": "How to Use AI and Automation in Pumble: API, AI Assistant, and MCP Server",
+     "snippet": "1. The [**Pumble API** **addon**](https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/) \u2014 generate an API key, send messages, react, and create channels via HTTP requests.\n2. The [**Pumble AI Assistant addon**](https://pumble.com/integrations/ai-assistant) \u2014 bring an AI provider into the workspace using your own API key.\n3. The [**Pumble MCP server**](https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/) \u2014 connect external AI agents (Claude, Gemini, Codex) to Pumble so they can search, read, and act.\n\n### Authentication and scopes\nTo interact with the API, you must first generate an API key within your Pumble workspace administration panel. This token must be passed inside the HTTP header of every request as a bearer token.\nYou first need to** install the API addon** on your Pumble workspace:\n1. In the left sidebar, click + Add apps.\n2. Select Install in the API section.\n3. Allow permissions.\nNow, you can **generate API keys** directly in Pumble:\n1. In the left sidebar, click API.\n2. Select Add API key.\n3. Enter API key name.\n4. Click Generate to complete the action.\nKeep in mind that the rate"
+    },
+    {
+     "url": "https://cake-com.github.io/pumble-node-sdk/manifest.html",
+     "title": "Overview | Pumble SDK",
+     "snippet": "To manually create an app with a manifest you should send a request to this Pumble API endpoint:\nhttp\n```\nPOST https://api-ga.pumble.com/workspaces/{workspace_id}/workspaceUsers/{workspace_user_id}/apps\n```\n\nAll the requests to manage your apps, need to you use `Authtoken` header.\nYou can find this value in `~/.pumblerc` file, under `PUMBLE_ACCESS_TOKEN` key, after you log in with `npx pumble-cli login`.\nYou will get a response with the full Manifest and your app's secrets:\njson\n```\n{\n//...your manifest\n\"id\": \"...\",\n\"clientSecret\": \"...\",\n\"appKey\": \"...\",\n\"signingSecret\": \"...\"\n}\n```\n| name | description |\n|---|---|\n| id | Your app's id. This will be used as the clientId in OAuth2 request. See [Authorization](/pumble-node-sdk/authorization.html). |\n| clientSecret | Your app's clientSecret. This will be used to generate access tokens. See [Authorization](/pumble-node-sdk/authorization.html). |\n| appKey | Your app's secret key. This should be sent on every Pumble request along with the access token. See [API](/pumble-node-sdk/api-client.html) |\n| signingSecret | Your app's signing key. Pumble will sign every request that will be sent to your endpoints with this key. See Verifying [Si"
+    },
+    {
+     "url": "https://cake-com.github.io/pumble-node-sdk/basic-concepts.html",
+     "title": "Basic Concepts | Pumble SDK",
+     "snippet": "2. **The bot**: Optionally you can have a bot that comes along with your app. The bot is a user that represents your app in every workspace that your app is installed.\nYou can use the bot to display useful information about your app logic or simply use it to communicate with users. For every workspace you will have a different bot ID.\nWhen your app is installed in a workspace the bot user will be created and your app will receive an authorization code that, when used, will generate access tokens for both the user who installed your app and the bot. See [Authorization](https://cake-com.github.io/pumble-node-sdk/authorization.html).\n\nYour app can use the Pumble API on behalf of every user that has authorized it, or the bot in the workspace where your app is installed. In order to use the built-in ApiClient you need to set up the `tokenStore` in your App and enable `redirect` to be able to capture user [authorizations](https://cake-com.github.io/pumble-node-sdk/authorization.html).\ntypescript\n```\nconst app: App = {\ntokenStore: new JsonFileTokenStore('tokens.json'),\nredirect: { enable: true }\n//... Triggers\n};\n```\n\n## Authorization \u200b\nWhen your App is published it will be visible to all"
+    }
+   ]
+  },
+  "access": {
+   "query": "Pumble pumble.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_zLpBpLgRKFna",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+     "title": "How to Use AI and Automation in Pumble: API, AI Assistant, and MCP Server",
+     "snippet": "The Pumble API addon provides simple HTTP endpoints to **handle** **messaging actions inside your workspace**. It is **available on all** [**Pumble plans**](https://pumble.com/pricing)** to Owners, Admins, and Members**.\n\nThis Pumble functionality doesn\u2019t cost any hidden per-user AI markup fees on top of your primary chat subscription. Instead, Pumble uses a bring-your-own-key (BYOK) pricing model, which means the AI infrastructure provider invoices you directly for the raw tokens your team uses. By using a BYOK model, you control your processing infrastructure, budget, and data access policies directly.\n\nFor the AI Assistant addon to work, you need to have an active account with a supported LLM infrastructure company."
+    },
+    {
+     "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+     "title": "Pumble API Overview",
+     "snippet": "By using the Pumble API addon, you can interact with [Pumble\u2019s API documentation](https://pumble-api-keys.addons.marketplace.cake.com/api-docs/) without using any complex authentication processes. This addon lets you generate an API key that allows you to send messages, reactions, and more via simple HTTP requests.\nInfo\nThe rate limit is up to 1000 requests per minute per user."
+    },
+    {
+     "url": "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+     "title": "api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+     "snippet": "(app token issued to"
+    },
+    {
+     "url": "https://pumble.com/help/integrations/add-pumble-apps/guide-to-pumble-integrations",
+     "title": "Guide to Pumble Addons",
+     "snippet": "| Subscription type | Maximum number of addons |\n|---|---|\n| Free subscription | Up to 3 addons |\n| Pro plan | Up to 10 addons |\n| Business and Enterprise plans | Unlimited number of addons |\nInfo\nOnly Owners and Admins can install apps. If your Workspace has Request App approval turned on, members can request an installation, and an Owner or Admin approves or declines it.\n\nWhen the Request App Approval option is turned on, members can send installation requests for review.\nTo turn on app requests:\n1. Click on the **three** **dots** next to your Workspace name\n2. Hover over **Workspace** **settings**\n3. Click on **Configure** **apps**\n4. Select the **Settings** tab\n5. Check the box next to **Allow members to request apps for approval**"
+    },
+    {
+     "url": "https://pumble.com/pricing",
+     "title": "Pricing - Pumble",
+     "snippet": "BEST VALUE\n#### PRO\nOrganization\n$ 2.49\nper seat Every active user or invited member listed on your Manage members page occupies one paid seat. This includes owner, admins, members and multi-channel guests. Deactivated members do not occupy a seat. /month billed annually (or $2.99 if billed monthly)\n[ Upgrade ](https://app.pumble.com/admin)\nAll FREE features, plus:\n[ Explore ](https://pumble.com/pro-plan)\nBEST VALUE\nProductivity Suite\n$ 12.99\nper seat Each unique user across all apps in your bundle occupies one paid seat. To free up a seat, a user must be deactivated from all workspaces in the organization. /month billed annually (or $15.99 if billed monthly)"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Pumble API reference REST GraphQL endpoints documentation pumble.com",
+   "log_id": "log_1_JXnZkC7k50",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+     "title": "api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+     "snippet": "URL:\\nhttps://api-ga.pumble.com/v1/.\\n\\nFor example, the endpoint to send a message looks as follows:\\nhttps://api-ga.pumble.com/v1/channels/{channelId}/messages, where you'll replace ID in curly braces with your actual channel"
+    },
+    {
+     "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+     "title": "How to Use AI and Automation in Pumble: API, AI Assistant, and MCP Server",
+     "snippet": "1. The [**Pumble API** **addon**](https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/) \u2014 generate an API key, send messages, react, and create channels via HTTP requests.\n2. The [**Pumble AI Assistant addon**](https://pumble.com/integrations/ai-assistant) \u2014 bring an AI provider into the workspace using your own API key.\n3. The [**Pumble MCP server**](https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/) \u2014 connect external AI agents (Claude, Gemini, Codex) to Pumble so they can search, read, and act.\n\nThe Pumble API addon provides simple HTTP endpoints to **handle** **messaging actions inside your workspace**. It is **available on all** [**Pumble plans**](https://pumble.com/pricing)** to Owners, Admins, and Members**.\nHowever, it doesn\u2019t support an interactive message builder framework or an Events API.\nIt is built to effectively handle:\n- **Generating unique workspace API keys**\n- **Sending messages**\n- **Deleting messages**\n- **Adding reactions or emojis in active threads**\n- **Creating new channels via standard POST requests**\n\n### Authentication and scopes\nTo interact with the API, you mus"
+    },
+    {
+     "url": "https://cake-com.github.io/pumble-node-sdk/api-client.html",
+     "title": "API Client | Pumble SDK",
+     "snippet": "`pumble-sdk` provides an API client (`ApiClient`) for easier interaction the Pumble API. `ApiClient` contains methods that perform respective API calls, which can be done on behalf of either a user or a bot.\nEvery Request to Pumble API must be sent with two headers:\n1. `x-app-token`: Your app token that you receive when app is created. See [manifest](https://cake-com.github.io/pumble-node-sdk/manifest.html).\n2. `token`: The access token of the user or bot. See [Authorization](https://cake-com.github.io/pumble-node-sdk/authorization.html).\n`ApiClient` automatically includes these headers in the requests, so they don't need to be specified manually when invoking its methods.\n\nFor more details about the usage of Pumble API, take a look at the Pumble API [documentation](https://docs.pumble.com).\n`client.v1.messages`\n| method | scopes | description |\n|---|---|---|\n| fetchMessage | `messages:read` | Get message by ID and channel ID |\n| fetchMessages | `channels:read` | Paginate through channel messages |\n| fetchThreadReplies | `channels:read` | Fetch thread messages |\n| postMessageToChannel | `messages:write`, `files:write`(optional) | Post a message to a channel |\n| dmUser | `channels:r"
+    },
+    {
+     "url": "https://github.com/infralayers/pumble-mcp/blob/main/SPEC.md",
+     "title": "pumble-mcp/SPEC.md at main \u00b7 infralayers/pumble-mcp",
+     "snippet": "Concretely: build a small local MCP server that wraps Pumble's official \"API Key addon\" REST API, exposing a handful of MCP tools (send message, list channel messages, edit message, list channels) that Claude Code can call directly.\n\nThe API-key addon is a plain REST API and doesn't need that machinery.\n## Pumble API Reference (confirmed from live OpenAPI spec)\nBase URL: `https://pumble-api-keys.addons.marketplace.cake.com` Full interactive docs: `https://pumble-api-keys.addons.marketplace.cake.com/api-docs/`\nAuth: header `ApiKey: <your-api-key>` on every request (OpenAPI `securitySchemes.ApiKeyAuth`, `in: header`, `name: ApiKey`). Note the header name is `ApiKey`, **not** `Api-Key` or `Authorization`.\nKey generated from Pumble workspace \u2192 install the \"API Key\" addon \u2192 generate key there (ephemeral message with the key value, copy it once).\nEndpoints used by this project (all under the base URL above):\n| Tool | Method & Path | Body / Query | Notes |\n|---|---|---|---|\n| Send message | `POST /sendMessage` | `{ channel? , channelId?, text, asBot? }` | Provide `channel` (name) OR `channelId`; `channelId` wins if both given. `asBot` defaults false. |\n| List messages | `GET /listMessages"
+    },
+    {
+     "url": "https://mindcloud.co/docs/universal/rest/pumble/latest",
+     "title": "Pumble API Documentation",
+     "snippet": "This is the complete API documentation for connecting to the Pumble API using MindCloud's Universal API. If you are new to MindCloud, start with the [Introduction](/docs/universal/rest/home/latest?app=pumble) to see how one API can sit in front of many different apps.\n\n## Quickstart\nBefore you run your first Pumble request, you need three things:\n1. A **MindCloud account** \u2014 sign in or create an account at [MindCloud](https://app.mindcloud.co).\n2. A **MindCloud API Key** \u2014 create one in [API Keys](https://app.mindcloud.co/user/api-keys). Keep it on your server.\n3. At least one **Pumble connection** \u2014 create or choose one in [Connections](https://app.mindcloud.co/credentials). Note its `connectionId`.\nEvery Pumble action uses the same URL pattern:\n```\nPOST https://connect.mindcloud.co/v2/universal/apps/pumble/actions/{actionSlug}/run\n```\nYou need a MindCloud API Key and a Pumble connection. Then call an action such as [Get Current User](/docs/universal/rest/pumble/latest/actions/get-current-user):\n```\ncurl --request POST \\\n--url \"https://connect.mindcloud.co/v2/universal/apps/pumble/actions/get-current-user/run\" \\\n--header \"Authorization: Bearer $MINDCLOUD_API_KEY\" \\\n--header \"Conte"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Pumble pumble.com MCP server Model Context Protocol official",
+   "log_id": "log_IB41uOu_fph_",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+     "title": "How to use the Pumble MCP server",
+     "snippet": "With the Pumble Model Context Protocol (MCP) server, you can connect third-party AI agents (e.g., Claude, Gemini, Codex) to Pumble and let them access content so they can search messages, find information, and take actions on your behalf.\n## How to connect to an MCP server #\nTo connect your AI assistant to the Pumble MCP server, you will have to create a Pumble addon and take credentials from there. To do this, you will first need to access Pumble addons.\n1. Click on the **three** **dots** next to the Workspace name\n2. Hover over **Workspace** **settings**\n3. Select **Configure** **apps**\n![configure apps](https://pumble.com/help/wp-content/uploads/2026/06/configure-apps-1.jpeg)\nOnce you have opened the Configure apps page, you can add your own addon. Here\u2019s how:\n1. Click on **+ Create app**\n2. Select **Create from scratch**\n![](https://pumble.com/help/wp-content/uploads/2026/06/create-app-from-scratch.jpeg)\n3. Enter app name\n4. Enter description\n5. Select User scopes\n6. Select Bot scopes\n7. Click on **Install app**\n![install app](https://pumble.com/help/wp-content/uploads/2026/06/install-app.jpeg)\nWhen the app is installed, make sure to copy the App key, user token, and bot token."
+    },
+    {
+     "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+     "title": "How to Use AI and Automation in Pumble: API, AI Assistant, and MCP Server",
+     "snippet": "1. The [**Pumble API** **addon**](https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/) \u2014 generate an API key, send messages, react, and create channels via HTTP requests.\n2. The [**Pumble AI Assistant addon**](https://pumble.com/integrations/ai-assistant) \u2014 bring an AI provider into the workspace using your own API key.\n3. The [**Pumble MCP server**](https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/) \u2014 connect external AI agents (Claude, Gemini, Codex) to Pumble so they can search, read, and act.\n\nFor the AI Assistant addon to work, you need to have an active account with a supported LLM infrastructure company.\nThe live provider support is currently available for Google Gemini and Open AI ChatGPT. Anthropic Claude, Perplexity, and Grok are in the future roadmap.\nIt\u2019s important to note that Claude doesn\u2019t function as an in-channel AI assistant provider yet. Claude is currently handled exclusively through the separate MCP server layer.\n\nPumble maintains a native MCP (Model Context Protocol) server hosted directly at pumble.com, helping you connect your workspace to your AI agent of choice.\nW"
+    },
+    {
+     "url": "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp",
+     "title": "Connect AI Agents to Team Chat via the Pumble MCP Server",
+     "snippet": "Here\u2019s how you can do the same, using the Pumble MCP server to drastically improve your team chat knowledge retrieval.\n- Pairing your team communication app with AI opens up new avenues for collaboration, which is exactly what the Pumble MCP server delivers.\n- Pumble\u2019s MCP server is ideal for sales, engineering, and marketing teams looking to automate routine, time-consuming tasks.\n\nAnd now, thanks to MCP (Model Context Protocol), business collaboration and AI tools don\u2019t have to remain separate. Team knowledge, client documentation, and important decisions \u2014 **your AI assistant keeps all data shared through Pumble in the palm of your hand, without the hassle of manual context switching**.\n\nThe [Pumble MCP](https://pumble.com/mcp) server makes it easier to connect your digital workspace to your AI agent of choice, such as Claude, Gemini, or Codex.\nIn simple terms, you are essentially plugging your Pumble workspace into an external AI ecosystem, which may encompass some of your other software besides Pumble.\nWith the distance out of the way, your AI agent becomes a new layer of internal corporate intelligence. It can fill in data gaps by reading, querying, and interpreting insights "
+    },
+    {
+     "url": "https://pumble.com/mcp",
+     "title": "Connect AI agents with the Pumble MCP",
+     "snippet": "##### PUMBLE MCP\n# Fully integrate AI agents in Pumble\nBring your AI agent into your Pumble workspace and streamline collaboration, stay in the loop, and get an efficient way to interact with your workspace.\n[ Set up your MCP ](https://app.pumble.com/admin/apps)\n\n## Connect your AI of choice in 4 simple steps\nSTEP 1\n### Configure apps\nGo to your Pumble workspace settings to set up apps and integrations.\n![Configure apps in Pumble](https://pumble.com/assets/images/redesign/mcp/step-1@2x.png)\nSTEP 2\n### Create a new app\nGo to *Create app \u2192 Create from scratch* to set up your AI agent.\n![Create a new app in Pumble](https://pumble.com/assets/images/redesign/mcp/step-2@2x.png)\nSTEP 3\n### Add app details\nEnter app info and control permissions to limit your AIs access your workspace.\n![Adding app details](https://pumble.com/assets/images/redesign/mcp/step-3@2x.png)\nSTEP 4\n### Install the app\nSelect Create app to use its app key and install app to use the user and bot tokens.\n![Installing a new app in Pumble](https://pumble.com/assets/images/redesign/mcp/step-4@2x.png)\nSTEP 5\n### Connect the app to your AI agent\nUse developer tools (e.g., your terminal) to connect your AI agent with Pumble"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/infralayers/pumble-mcp/main/README.md",
+     "title": "raw.githubusercontent.com/infralayers/pumble-mcp/main/README.md",
+     "snippet": "Universal, production-ready **Model Context Protocol (MCP)** server for **Pumble**. It connects autonomous AI agents and LLMs to your Pumble workspace with **100% official REST API coverage (26 tools)**, sub-millisecond in-memory entity resolution, affirmative execution receipts, and built-in anti-loop security guardrails.\nWorks seamlessly across **Cursor**, **Cline / Roo Code**, **Windsurf**, **Claude Desktop**, **Claude Code CLI**, **Google Antigravity**, **Zed**, and any custom agent framework.\n> **Security note:** the Pumble API key you configure grants broad,\n> workspace-wide access. Read the [Security / Permissions](#security--permissions)\n> section before installing.\n---\n## \u26a1 Highlights & Performance\n- **100% Official REST API Coverage**: 26 autonomous tools covering messaging, threads, scheduling, reactions, channel operations, user directories, and status updates.\n- **Ultra-Low Latency (~0.05ms Resolution)**: Standard API calls take **~1,500ms** to resolve user and channel identifiers over the network. Our in-memory RAM cache reduces steady-state lookups to **~0.05ms** (30,000x faster), completely eliminating network penalties.\n- **Boot-Time Prefetching**: Users and channe"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

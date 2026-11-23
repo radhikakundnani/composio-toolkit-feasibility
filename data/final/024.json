@@ -1,0 +1,36 @@
+{
+ "id": 24,
+ "app": "Lark (Larksuite)",
+ "category": "Communications and Messaging",
+ "one_liner": "Collaboration suite with messaging, docs, calendar, sheets and contacts.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Create a custom app in the Lark Developer Console; apply for scopes; tenant admin may need to approve.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "larksuite/lark-openapi-mcp (lark-mcp), https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "Admin approval of app and scopes in each tenant may be required.",
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token",
+  "access": "https://open.larksuite.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN",
+  "surface": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/group/overview",
+  "mcp": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction"
+ },
+ "identity_issue": "",
+ "verified": true
+}

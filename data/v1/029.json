@@ -1,0 +1,35 @@
+{
+  "id": 29,
+  "app": "Aircall",
+  "category": "Communications and Messaging",
+  "one_liner": "Cloud phone system for sales and support teams.",
+  "auth_methods": [
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "basic",
+  "access": "paid_plan_required",
+  "access_notes": "Requires an Aircall customer account for API keys; OAuth is limited to approved Technology Partners.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "Aircall MCP (beta, read-only), https://support.aircall.io/en-gb/articles/39677926959517",
+  "verdict": "ready_with_caveats",
+  "blocker": "paid_plan",
+  "blocker_note": "No free tier shown; Messaging API not on all plans; OAuth needs partner approval.",
+  "confidence": {
+    "auth": "high",
+    "access": "low",
+    "surface": "medium",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.aircall.io/docs/authentication",
+    "access": "https://developer.aircall.io/docs/public-vs-private-app",
+    "surface": "https://developer.aircall.io/api-references",
+    "mcp": "https://support.aircall.io/en-gb/articles/39677926959517"
+  },
+  "identity_issue": ""
+}

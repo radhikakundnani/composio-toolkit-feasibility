@@ -1,0 +1,142 @@
+{
+ "id": 44,
+ "app": "Salesforce Commerce Cloud",
+ "hint": "developer.salesforce.com/docs/commerce",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "Salesforce Commerce Cloud API authentication OAuth API key access token developer docs developer.salesforce.com/docs/commerce",
+   "log_id": "log_X5pLB4Z2MtKZ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html",
+     "title": "Authorization | SCAPI | B2C Commerce API",
+     "snippet": "A client for the B2C Commerce API can take many forms: anything from an online storefront to custom merchandising tools.\nTo authorize this wide range of client types, we\u2019ve defined a set of scopes based on the OAuth 2.1 standard. The [available scopes](/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html) give you control over exactly what clients are authorized to do with the SCAPI Admin APIs and Shopper APIs.\n\nBoth the Admin and Shopper APIs are authorized using an access token in the form of a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) (JWT).\nUsing JWTs offers the following benefits:\n- Coarse-grained client permissions with read-only and read-write permissions.\n- Allows you to grant the same permissions for multiple B2C Commerce instances.\n- Standardized, mature, and established technology.\nThe JWT access tokens for both SCAPI Admin APIs and Shopper APIs are included in your API requests as an HTTP header that follows the [Bearer authentication scheme](https://swagger.io/docs/specification/authentication/bearer-authentication/).\n\n| I need a\u2026 | Fastest path |\n|---|---|\n| **Shopper API token** | Create a SLAS client ([guide](/docs/commerce/commerce-api/g"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html",
+     "title": "Authorization for SCAPI Admin APIs",
+     "snippet": "Before you create your API client (or clients) for accessing the SCAPI Admin APIs, you must compile a list of OAuth scopes for each API family that you need to access. All the available scopes are listed in the [Authorization Scopes Catalog](/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html).\n\n3. Click **Add**.\n9. Go to the **Roles** section and do the following:\n1. Click **Add**.\n2. Look for the **Salesforce Commerce API** category and select the `Salesforce Commerce API`.\n3. Click **Add**.\n4. Click the filter button.\n5. Select an organization.\n6. For each instance that you want to access with the API client:\n1. Select the instance.\n2. Click **Add**.\n\n2. For the **Token Endpoint Auth Method** field, select `client_secret_post`.\n3. For the **Access Token Format** field, select `JWT`.\n\nTo request an access token for the SCAPI Admin APIs, make a request to Account Manager\u2019s `oauth2` resource.\nGet an access token with the [B2C CLI](/docs/commerce/commerce-api/guide/b2c-developer-tooling.html):\nFor a complete list of authentication CLI commands, see [Auth Commands](https://salesforcecommercecloud.github.io/b2c-developer-tooling/cli/auth.html).\n\nIn your request, you must provi"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/oauth.html",
+     "title": "Open Commerce API (deprecated) | B2C Commerce",
+     "snippet": "The OAuth 2.0 protocol is used for authentication and authorization where the shopping customer context provided by [JWT](https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/jwt.html) doesn\u2019t fit. When using the Data API in a server-to-server scenario, OAuth is used to authenticate requests in the context of a client ID, also known as a *Client Credentials Grant*. When using the Shop API or Data API in a scenario in which a *Business Manager user* interacts with the system, OAuth is used to authenticate requests in the context of the user.\n\n- In other scenarios, requests must be authenticated for a *Business Manager user*, for which OCAPI supports a *Business Manager user grant*. This grant type is used by the Shop API for use cases in which a user does something on behalf of a shopping customer, for example the creation and submission of a basket. The Shop API allows such a user to do more than a customer authenticated with [JWT](https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/jwt.html), such as adding price adjustments to the basket. This grant type can also be used to authenticate requests to the Dat"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/slas-private-client.html",
+     "title": "Private Client Use Cases | SCAPI | B2C Commerce API",
+     "snippet": "- A SLAS private client created in the SLAS Admin UI (with a client secret). See [Authorization for Shopper APIs](/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html).\n- Your short code, organization ID, and site ID. See [Base URL and Request Formation](/docs/commerce/commerce-api/guide/base-url.html).\n- The relevant scopes assigned to your SLAS client. See [Authorization Scopes Catalog](/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html).\n\nAlthough all three use cases feature the Open Commerce API (OCAPI)\u2019s `/baskets` endpoint, remember that a SLAS access token can be used with *any* Shopper API endpoint.\n\nSee the [Shopper Login and API Access Service (SLAS) API reference](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=shopper-login:Summary) for full details on how to make your API requests.\n\nThis use case describes what happens when the shopper adds a product to their basket without logging in first. It follows the [client credentials grant](https://tools.ietf.org/html/rfc6749#section-4.4) flow as defined by the OAuth 2.1 standard.\n\n1. A shopper opens a B2C Commerce shopping app and starts interacting with it.\n2. The shoppin"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html",
+     "title": "Secure Your Site | SCAPI | B2C Commerce API",
+     "snippet": "Authentication is about validating identity to make sure that the client (for example, a PWA Kit storefront) is who it says it is. An administrator provisions an API client with a secret (think of it like a password). The client uses the secret to request an access token. The API gateway authenticates the client\u2019s identity based on the access token.\nAuthorization is about validating access to a particular resource and making sure that the client has permission to perform certain tasks. An administrator provisions an API client with scopes that assign permissions to the client. The API client specifies a set of scopes when requesting an access token. The API gateway performs authorization on the basis of the access token. For more information, see [Authorization](/docs/commerce/commerce-api/guide/authorization.html).\nAvailability ensures that a service remains up and running. Availability is implemented for headless commerce using DoS protection, API rate limiting, and eCDN controls on authentication traffic. For API quota limits, see [Rate Limits](/docs/commerce/commerce-api/guide/throttle-rates.html). For platform DoS and DDoS protection, see [Denial-of-Service Protection in B2C C"
+    }
+   ]
+  },
+  "access": {
+   "query": "Salesforce Commerce Cloud developer.salesforce.com/docs/commerce API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_KjUCZiYUdoak",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+     "title": "SCAPI | B2C Commerce API",
+     "snippet": "The B2C Commerce API (SCAPI) is a set of RESTful APIs for building storefronts, merchant tools, and integrations on the B2C Commerce platform. It also goes by \u201cSalesforce Commerce API\u201d or just \u201cCommerce API.\u201d For B2C Commerce customers, the API is available at no extra cost."
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/custom-apis.html",
+     "title": "Salesforce Developers",
+     "snippet": "Only existing customers can access some of the links on this page. Visit [Salesforce Commerce Cloud GitHub Repositories and Access](https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-github-repo-access.html) for information about how to get access to the repositories."
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-vibes/guide/development-environment.html",
+     "title": "Development Environment Setup",
+     "snippet": "- A Commerce Cloud sandbox instance with Storefront Next enabled\n- Access to the [Commerce App Registry](https://github.com/SalesforceCommerceCloud/commerce-apps)\n\n`--local`), `cap tasks`, and `cap pull` commands require **job execution** and **WebDAV** access on your target instance. Job execution uses SCAPI when configured, with OCAPI available as a fallback. The `cap validate`, `cap package`, and `cap list --local` commands are local-only and require no authentication.\n\nFor SCAPI job execution, configure your Account Manager API client with the **Salesforce Commerce API** role for the instance and the `sfcc.jobs` and `sfcc.jobs.rw` scopes. Supply the instance hostname, short code, and tenant ID in your [B2C CLI configuration](/docs/commerce/commerce-vibes/guide/b2c-developer-tooling.html#configuration-and-authentication). Listing apps across all sites also requires site-discovery access (`sfcc.sites`). WebDAV access is still required for archive uploads and downloads."
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html",
+     "title": "Authorization for SCAPI Admin APIs",
+     "snippet": "With an access token from Account Manager (and the correct scopes), access any of the SCAPI Admin APIs, including: [Assignments](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=assignments:Summary), [Catalogs](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=catalogs:Summary), [Customers](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=customers:Summary), [Inventory Availability](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=inventory-availability:Summary), [Orders](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=orders:Summary), [Products](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=products:Summary), and [8 more](https://developer.salesforce.com/docs/commerce/commerce-api/references)."
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/base-url.html",
+     "title": "Base URL and Request Formation",
+     "snippet": "To look up the organization ID:\n1. Go to the Business Manager URL for your instance.\n2. Log in using your Account Manager credentials.\n3. Click App Launcher ![App Launcher](https://a.sfdcstatic.com/developer-website/sfdocs/commerce-cloud/media/shared/appLauncher.png) and then select **Administration** > **Site Development** > **Salesforce Commerce API Settings**."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Salesforce Commerce Cloud API reference REST GraphQL endpoints documentation developer.salesforce.com/docs/commerce",
+   "log_id": "log_ay9TPC-aJNh6",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.salesforce.com/docs/platform/connect-rest-api/references/connect-rest-api-commerce",
+     "title": "Commerce Connect REST API | Connect REST API Developer Guide",
+     "snippet": "## Commerce Connect REST API\n# Commerce Connect REST API (v68.0)\nDownload OpenAPI specification:[Download](https://developer.salesforce.com/static/connectrest/connect-rest-api/connect-rest-api-commerce/connect-rest-api-commerce.yaml)\n> **Note**: The API Reference has a new three-panel layout. Browse grouped endpoints on the left, review endpoint details in the center, and access examples on the right.\n\n## Commerce B2B Resources\nGet, create, update, and delete your commerce data. Work with address management, carts, checkouts, orders, products, promotions, taxes, wishlists, and search settings.\n## Commerce Webstore Checkouts\nStart a Commerce store checkout.\nIf a store is segmented into markets, this API looks at the language parameter appended to the URL to determine the shopper\u2019s locale and returns the appropriate values.\n*Available in: v55.0*\n##### path Parameters\n| webstoreId required | string <Id> ^(0ZE)\\w* The ID of the web store. |\n|---|---|\n##### query Parameters\n| effectiveAccountId | string ID of the buyer account or guest buyer profile for which the request is made. If unspecified, the default value is determined from context. *Available in: v55.0* |\n|---|---|\n##### Reques"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/references/shopper-baskets?meta=addItemToBasket",
+     "title": "Salesforce Developers",
+     "snippet": "addItemToBasket Add an item to a basket. Operation ID: addItemToBasket POST https://{shortCode}.api.commercecloud.salesforce.com/checkout/shopper-baskets/v1/organizations/{organizationId}/baskets/{basketId}/items Adds new items to a basket. The added items are associated with the specified shipment. If no shipment id is specified, the added items are associated with the default shipment."
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/base-url.html",
+     "title": "Base URL and Request Formation",
+     "snippet": "This guide covers how to construct well-formed requests to the B2C Commerce API with all required parameters. To identify your specific configuration information needed in your URLs, refer to the Configuration Values section.\nThe base URL for all requests to the B2C Commerce API follows a pattern to help you identify your B2C Commerce instance and direct your request to the correct API family. To understand the pattern, let\u2019s look at the base URL with placeholders (enclosed in curly braces) for the parts of the URL that vary according to your instance and API family:\nMake sure to specify `v1` for the version, unless you are working with the Shopper Baskets API. For the Shopper Baskets API, specify `v1` or `v2`, as applicable.\nReplace the placeholders with these example values:\n| Placeholder | Value |\n|---|---|\n| `{shortCode}` | `kv7kzm78` |\n| `{apiFamily}` | `product` |\n| `{apiName}` | `shopper-products` |\n| `{organizationId}` | `f_ecom_zzte_053` |\nWith example values, the base URL looks like this:\n\nFor each B2C Commerce instance that uses the B2C Commerce API, gather a set of configuration values related to that instance. These configuration values are required to complete the set"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/auth-z-scope-catalog.html",
+     "title": "Authorization Scopes Catalog",
+     "snippet": "In the following tables, the Endpoints column lists the endpoints that each scope provides access to, followed by the operation ID. Endpoint paths are relative to the API base path and omit the `/organizations/{organizationId}` prefix."
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/references/about-commerce-api/about.html",
+     "title": "About | B2C Commerce API",
+     "snippet": "Use B2C Commerce API (also known as Salesforce Commerce API or SCAPI) to build headless commerce experiences.\n\n- [Shopper Availability](https://developer.salesforce.com/docs/commerce/commerce-api/references?meta=shopper-availability:Summary)\n- `GET /product/shopper-availability/v1/organizations/{organizationId}/availability`\n- Retrieve availability data for one or more products with improved caching performance.\n- This new API deprecates the `expand=availability` parameter on the [Shopper Products API](https://developer.salesforce.com/docs/commerce/commerce-api/references/shopper-products?meta=Summary) `getProduct` and `getProducts` endpoints.\n\nNew APIs and endpoints:\n- [Jobs API](https://developer.salesforce.com/docs/commerce/commerce-api/references/jobs?meta=Summary)\n- POST `/jobs/{jobId}/executions`\n- Create a job execution.\n- GET `/jobs/{jobId}/executions/{id}`\n- Retrieve job execution details.\n- DELETE `/jobs/{jobId}/executions/{id}`\n- Delete a job execution.\n- POST `/job-execution-search`\n- Search job executions.\n- [Roles API](https://developer.salesforce.com/docs/commerce/commerce-api/references/roles?meta=Summary)\n- GET `/roles`\n- Retrieve role information.\n- GET/PUT/DELETE"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Salesforce Commerce Cloud developer.salesforce.com/docs/commerce MCP server Model Context Protocol official",
+   "log_id": "log_kZX9XkzmmD6N",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/agentic-mcp-shopper-tools-quick-start.html",
+     "title": "Agentic MCP Shopper Tools Quick Start (Pilot)",
+     "snippet": "AI agents like Claude, Agentforce, and ChatGPT are powerful, but they often struggle to give truly accurate, brand-based, storefront-specific suggestions. That\u2019s why we built the B2C Commerce [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Service, focusing on the most important users: your shoppers.\nThe B2C Commerce MCP Service is a fully-hosted service for linking an AI agent to real-time B2C Commerce data access. The B2C Commerce MCP Service provides MCP tools for the agentic shopper experience, and supports the latest standards, including Google\u2019s Agent to Agent (A2A), Model Context Protocol (MCP) /tools, HTTP SSE. Because it leverages a secure, standards-based protocol that supports robust authentication and authorization, the B2C Commerce MCP Service ensures data privacy and platform integrity.\n\nWith the B2C Commerce MCP Service, your AI agent always has access to the most up-to-date resources (product lists, details, and images) from Salesforce B2C Commerce. External AI assistants, such as ChatGPT and Perplexity, are enabled with seamless conversational access to a brand\u2019s ecommerce capabilities, so that shoppers can use natural language to disco"
+    },
+    {
+     "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+     "title": "MCP (Model Context Protocol)",
+     "snippet": "# MCP (Model Context Protocol) \u200b\nThe B2C MCP server connects your AI assistant to Salesforce B2C Commerce tools, documentation, and workflow skills. Build and debug storefronts, deploy code, and manage your sites through requests in your assistant.\nYour assistant can find and read guidance from our B2C Commerce, B2C CLI, operations runbooks, and Storefront Next [skill collections](https://salesforcecommercecloud.github.io/guide/agent-skills.html) through the [`skills_read` tool](https://salesforcecommercecloud.github.io/b2c-developer-tooling/toolsets.html#documentation), MCP resources, or the [MCP Skills extension](https://salesforcecommercecloud.github.io/b2c-developer-tooling/toolsets.html#documentation) in assistants that support it. **No separate skills installation is needed.** Documentation and skills work without B2C Commerce credentials; connected tasks use your existing [B2C configuration](https://salesforcecommercecloud.github.io/guide/configuration.html).\n\nAdd a **local / stdio** server using your client's MCP settings:\n| Setting | Value |\n|---|---|\n| Name | `b2c-dx-mcp` |\n| Command | `npx` |\n| Arguments | `-y @salesforce/b2c-dx-mcp@latest` |\nFor clients that accept an `"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/commerce-api/references/about-commerce-api/about.html",
+     "title": "About | B2C Commerce API",
+     "snippet": "Use B2C Commerce API (also known as Salesforce Commerce API or SCAPI) to build headless commerce experiences.\n\nUse the B2C DX Model Context Protocol (MCP) to enhance your development workflow by connecting an AI assistant, such as Claude, Cursor, or GitHub Copilot, to your B2C Commerce environment. The new B2C DX MCP server is a unified MCP that is the starting point for various development tools and storefronts. The B2C DX MCP server provides your AI assistant with real-time access to B2C Commerce APIs (SCAPI), storefront development, cartridge deployment, and Managed Runtime (MRT) deployments. For example, you can use natural language prompts to list SCAPI schemas, create a custom SCAPI endpoint, and deploy a storefront to MRT, among other things, without leaving your IDE!\nThe [B2C DX MCP Server](https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/) is available as a developer preview. The B2C DX MCP Server isn\u2019t generally available unless or until Salesforce announces its general availability in documentation or in press releases or public statements. All commands, parameters, and other features are subject to change or deprecation at any time, with or without no"
+    },
+    {
+     "url": "https://github.com/SalesforceCommerceCloud/pwa-kit/tree/develop/packages/pwa-kit-mcp",
+     "title": "pwa-kit/packages/pwa-kit-mcp at develop \u00b7 SalesforceCommerceCloud/pwa-kit",
+     "snippet": "# \ud83d\ude80 PWA Kit MCP Server\nAn MCP server that enhances the entire development lifecycle of PWA Kit storefront apps \u2014 from project creation and management to AI-assisted coding, testing, and implementation of best practices \u2014 all within your IDE.\n## \ud83d\udd0d What is MCP?\n**Model Context Protocol (MCP)** is an open protocol that enables secure, structured communication between host applications (like [Cursor IDE](https://www.cursor.so/) or other AI development tools) and external tools or data sources.\nIt allows AI agents to query context-aware services like this server to help developers build better software, faster.\n\ud83d\udc49 **[Read more at modelcontextprotocol.io](https://modelcontextprotocol.io/)**\n## What is PWA-Kit-MCP?\nPWA-Kit-MCP is a local STDIO MCP Server that communicates via STDIO and operates in conjunction with a running local process, making it a fully locally installed MCP server. It provides an initial suite of MCP tools intended to standardize and optimize the developer workflow for PWA Kit storefront development. These tools facilitate project creation, supply development guidelines, enable the generation of new pages, and support site validation through performance and accessibili"
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/sfra/guide/agentic-mcp-shopper-tools-quick-start.html",
+     "title": "Salesforce Developers",
+     "snippet": "AI agents like Claude, Agentforce, and ChatGPT are powerful, but they often struggle to give truly accurate, brand-based, storefront-specific suggestions. That's why we built the B2C Commerce [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Service, focusing on the most important users: your shoppers.\nThe B2C Commerce MCP Service is a fully-hosted service for linking an AI agent to real-time B2C Commerce data access. The B2C Commerce MCP Service provides MCP tools for the agentic shopper experience, and supports the latest standards, including Google\u2019s Agent to Agent (A2A), Model Context Protocol (MCP) /tools, HTTP SSE. Because it leverages a secure, standards-based protocol that supports robust authentication and authorization, the B2C Commerce MCP Service ensures data privacy and platform integrity.\n\nTo initialize an Agentforce session, call the [Shopper Agents API](https://developer.salesforce.com/docs/commerce/commerce-api/references/shopper-agents?meta=Summary) with a SLAS shopper token. You must include the `sfcc.shopper-agents.rw` scope and the `sessionInitKey` provided when the session starts.\n\nWith the B2C Commerce MCP Service, your AI agent alw"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

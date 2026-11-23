@@ -1,0 +1,12 @@
+{
+  "id": 77,
+  "app": "ClickUp",
+  "changes": [],
+  "confirmed": [
+    "auth",
+    "access",
+    "surface",
+    "mcp"
+  ],
+  "searches": 4
+}

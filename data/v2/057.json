@@ -1,0 +1,37 @@
+{
+  "id": 57,
+  "app": "Bright Data",
+  "category": "Web scraping",
+  "one_liner": "Web data platform: proxies, SERP, web unlocker, scraper and dataset APIs.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "New accounts get 5,000 free credits monthly, no card; API key from account settings used as Bearer token.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://mcp.brightdata.com ; github.com/brightdata/brightdata-mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Self-serve free tier; scale needs paid usage.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.brightdata.com/api-reference/authentication",
+    "access": "https://docs.brightdata.com/general/account/billing-and-pricing/free-tier",
+    "surface": "https://docs.brightdata.com/products/scrapers/fetch-api/send-first-request",
+    "mcp": "https://docs.brightdata.com/products/mcp-server/remote/oauth"
+  },
+  "verified": true
+}

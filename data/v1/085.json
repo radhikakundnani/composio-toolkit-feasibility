@@ -1,0 +1,34 @@
+{
+ "id": 85,
+ "app": "iPayX",
+ "category": "FX audit / fintech",
+ "one_liner": "FX audit API detecting hidden bank spreads versus mid-market rates.",
+ "auth_methods": [
+  "bearer_token"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "self_serve_free",
+ "access_notes": "Create account, generate ipx_live_ key in dashboard; sandbox keys ipx_test_ exist; soft monthly limits apply; pricing page linked.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_note": "https://mcp.ipayx.ai/mcp (vendor-hosted, Bearer key)",
+ "verdict": "ready_with_caveats",
+ "blocker": "narrow_api",
+ "blocker_note": "Only about 3 endpoints (audit, rates, audit/document); small vendor, plan limits unclear.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://ipayx.ai/docs/mcp-server",
+  "access": "https://ipayx.ai/developers",
+  "surface": "https://ipayx.ai/docs/api",
+  "mcp": "https://ipayx.ai/mcp"
+ }
+}

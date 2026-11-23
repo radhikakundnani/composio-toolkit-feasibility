@@ -1,0 +1,37 @@
+{
+ "id": 65,
+ "app": "Supabase",
+ "category": "Database / backend-as-a-service",
+ "one_liner": "Open-source Postgres backend with auth, storage, edge functions and APIs.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Management API via personal access token or OAuth2 app; project APIs use API keys; free plan available.",
+ "api_types": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://github.com/supabase/mcp/tree/main",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://supabase.com/docs/reference/api/introduction",
+  "access": "https://supabase.com/pricing",
+  "surface": "https://supabase.com/openapi.json",
+  "mcp": "https://supabase.com/docs/guides/ai-tools/mcp"
+ }
+}

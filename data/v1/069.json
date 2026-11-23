@@ -1,0 +1,36 @@
+{
+ "id": 69,
+ "app": "Datadog",
+ "category": "Observability / monitoring",
+ "one_liner": "Monitoring and observability platform for metrics, logs, traces, and monitors.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2"
+ ],
+ "auth_primary": "api_key",
+ "access": "unknown",
+ "access_notes": "API key plus application key (or personal access token) from an org; OAuth requires Datadog Partner Network sandbox. Plan needs not shown.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://github.com/datadog-labs/mcp-server",
+ "verdict": "ready_with_caveats",
+ "blocker": "other",
+ "blocker_note": "Keys are org/site-specific (regional domains); OAuth restricted to partners; free access not evidenced.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.datadoghq.com/api/latest/authentication",
+  "access": "https://docs.datadoghq.com/extend/integrations/api_integration",
+  "surface": "https://docs.datadoghq.com/api/latest.md",
+  "mcp": "https://docs.datadoghq.com/mcp_server"
+ }
+}

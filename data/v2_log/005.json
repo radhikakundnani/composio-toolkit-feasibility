@@ -1,0 +1,39 @@
+{
+  "id": 5,
+  "app": "Twenty",
+  "changes": [
+    {
+      "field": "auth_primary",
+      "from": "api_key",
+      "to": "oauth2",
+      "why": "Twenty OAuth2 (auth code+PKCE, dynamic client registration) is for external apps; API key only for internal scripts",
+      "evidence": "https://docs.twenty.com/developers/extend/oauth"
+    },
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "paid_plan",
+      "why": "No free cloud plan (trial only; self-host free); 'other' not allowed",
+      "evidence": "https://docs.twenty.com/user-guide/billing/overview"
+    },
+    {
+      "field": "access_notes",
+      "from": "Self-hosted is free; cloud has trial (card may be needed). Generate API key in settings or use OAuth.",
+      "to": "Self-hosted is free; cloud has a free trial without credit card (no free cloud plan). OAuth (dynamic registration) for external apps, API key for internal scripts; host URL varies per workspace.",
+      "why": "pricing page says trial without credit card",
+      "evidence": "https://twenty.com/pricing"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://onegtmlab.dev/tool-directory/crm/twenty",
+      "to": "https://twenty.com/pricing",
+      "why": "replace third-party directory with vendor pricing",
+      "evidence": "https://twenty.com/pricing"
+    }
+  ],
+  "confirmed": [
+    "mcp (docs.twenty.com MCP on workspace URL)",
+    "access"
+  ],
+  "searches": 4
+}

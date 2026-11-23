@@ -1,0 +1,34 @@
+{
+  "id": 58,
+  "app": "Sherlock",
+  "category": "OSINT tool",
+  "one_liner": "Open-source CLI that hunts usernames across social networks.",
+  "auth_methods": [
+    "none"
+  ],
+  "auth_primary": "none",
+  "access": "no_public_api",
+  "access_notes": "Local Python CLI/library needing no keys; no hosted vendor API. Runnable via Apify Actor wrapper.",
+  "api_types": [
+    "cli_or_library"
+  ],
+  "api_breadth": "none",
+  "mcp": "community",
+  "mcp_note": "github.com/Burnsedia/sherlock-mcp ; hub.docker.com/r/hackerdogs/sherlock-mcp",
+  "verdict": "not_buildable",
+  "blocker": "not_a_hosted_service",
+  "blocker_note": "Sherlock project is a CLI tool, not a hosted API; other products share the name.",
+  "identity_issue": "Many unrelated 'Sherlock' products (Sherlock Interview API, Synopsys, shebang, Aleph Alpha); hint points to sherlock-project OSINT CLI.",
+  "confidence": {
+    "auth": "medium",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md?plain=1",
+    "access": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md?plain=1",
+    "surface": "https://github.com/sherlock-project/sherlock/blob/master/sherlock_project/sherlock.py",
+    "mcp": "https://github.com/Burnsedia/sherlock-mcp/blob/master/README.md"
+  }
+}

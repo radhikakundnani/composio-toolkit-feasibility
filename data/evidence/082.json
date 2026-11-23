@@ -1,0 +1,142 @@
+{
+ "id": 82,
+ "app": "Plaid",
+ "hint": "plaid.com/docs",
+ "given_category": "Finance and Fintech",
+ "queries": {
+  "auth": {
+   "query": "Plaid API authentication OAuth API key access token developer docs plaid.com/docs",
+   "log_id": "log_BkJrQoNgjg3V",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plaid.com/docs/api/oauth",
+     "title": "plaid.com/docs/api/oauth",
+     "snippet": "#### API reference for Plaid OAuth endpoints\n| Endpoints |  |\n| --- | --- |\n| [/oauth/token](https://plaid.com/docs/api/oauth/index.html.md#oauthtoken) | Create or refresh an OAuth access token |\n| [/oauth/introspect](https://plaid.com/docs/api/oauth/index.html.md#oauthintrospect) | Get metadata about an OAuth token |\n| [/oauth/revoke](https://plaid.com/docs/api/oauth/index.html.md#oauthrevoke) | Revoke an OAuth token |\nThese endpoints are for customers, partners and services that are integrating with Plaid's OAuth service to obtain a token for sharing consumer reports or accessing the Plaid Dashboard or other Plaid services. They are not used for the Plaid Link flow where end users connect their financial institution accounts to Plaid using a bank's OAuth service. If you are a Plaid customer trying to ensure your app supports OAuth-based bank connections, see the [OAuth Guide](https://plaid.com/docs/link/oauth/index.html.md) instead.\n### Endpoints\n\\=\\*=\\*=\\*=\n#### /oauth/token\n#### Create or refresh an OAuth access token\n[/oauth/token](https://plaid.com/docs/api/oauth/index.html.md#oauthtoken) issues an access token and refresh token depending on the `grant_type` provided. This en"
+    },
+    {
+     "url": "https://plaid.com/core-exchange/docs/authentication/oauth-flow",
+     "title": "plaid.com/core-exchange/docs/authentication/oauth-flow",
+     "snippet": "**Prerequisites:** Before implementing the OAuth flow, ensure you have your [OAuth server configured](https://plaid.com/core-exchange/docs/authentication/oauth-server-setup/index.html.md) , client credentials generated, JWKS endpoint accessible, and consistency key implementation chosen.\nFor a runnable walkthrough of the full flow, see [FDX Explorer](https://plaid.com/core-exchange/docs/authentication/index.html.md#try-the-interactive-demo) on the Authentication overview.\nFlow at a glance\n-----------------\nFlow at a glance\n```bash\nUser -> Plaid -> Your /authorize -> User authenticates -> Your /token -> Plaid validates -> API access\n(redirect)                  (login + 2FA)         (code exchange)  (JWKS check)\n```\nThe OAuth flow, step by step\n-----------------------------\nThe Authorization Code Grant follows a five-step process. This guide describes the [OIDC flow](https://openid.net/specs/) . Plain OAuth 2.0 follows the same flow but without the ID token validation step.\n\naccess](https://plaid.com/core-exchange/docs/authentication/oauth-flow/index.html.md#step-2---the-user-completes-all-authentication-steps)\n3.  [You send Plaid an authorization code](https://plaid.com/core-exchang"
+    },
+    {
+     "url": "https://plaid.com/plaid-exchange/docs/authentication",
+     "title": "Authentication",
+     "snippet": "If you are using your existing OAuth identity provider. (For example, Okta, Auth0, Ping Identity, Azure Active Directory, AWS Cognito), please prepare all the URLs and settings required for access. This include firewall rules, scopes and audiences. Initially have these URLs ready:\n| End Point | Description |\n|---|---|\n| `authorization_endpoint` | Your OAuth landing page, where users can sign in and generate a `code` for Plaid |\n| `token_endpoint` | The token exchange endpoint where Plaid can use the `code` to generate an `id_token`, `access_token` and `refresh_token` |\n\nIn order to allow Plaid to authenticate its request for an access token, you will need to issue a client ID and client secret. You may create the client ID and client secret using your preferred method, but we provide some guidance [in this guide](https://plaid.com/plaid-exchange/docs/authentication/#client-id-and-client-secret). Once you have created a client ID and client secret, provide them to your Plaid contact.\n[##### Authorization flow overview](https://plaid.com/plaid-exchange/docs/authentication/#authorization-flow-overview)\nOnce you have a server and have issued Plaid a client ID and client secret, the aut"
+    },
+    {
+     "url": "https://plaid.com/docs/quickstart",
+     "title": "plaid.com/docs/quickstart",
+     "snippet": "Let's test out running Plaid locally by cloning the Quickstart app. You'll need API keys, which you can receive by signing up in the [Dashboard](https://dashboard.plaid.com/developers/keys) .\nYou'll have two different API keys, and there are two different Plaid environments. Today we'll start in the Sandbox environment. View the API Keys section of the Dashboard to find your Sandbox secret.\n###### API Key\n[View Keys in Dashboard](https://dashboard.plaid.com/developers/keys)\nclient\\_id\nPrivate identifier for your team\nsecret\nPrivate key, one for each of the two environments\n###### Environment\nSandbox\nGet started with test credentials and life-like data\nProduction\nTest or launch your app with unlimited live credentials\n\n##### Sandbox credentials\n```bash\nusername: user_good\npassword: pass_good\nIf prompted to enter a 2FA code: 1234\n```\n\nAs you might have noticed, you use both a server and a client-side component to access the Plaid APIs. The flow looks like this:\n**The Plaid flow** begins when your user wants to connect their bank account to your app.\n(An image of \"Step diagram\")\n**1**Call [/link/token/create](https://plaid.com/docs/api/link/index.html.md#linktokencreate) to create a `"
+    },
+    {
+     "url": "https://plaid.com/core-exchange/docs/authentication/oauth-server-setup",
+     "title": "plaid.com/core-exchange/docs/authentication/oauth-server-setup",
+     "snippet": "Quick reference\n----------------\n| Component | Requirement | Where to find details |\n| --- | --- | --- |\n| Discovery endpoint | `/.well-known/openid-configuration` | [Configuration requirements](https://plaid.com/core-exchange/docs/authentication/oauth-server-setup/index.html.md#configuration-requirements) |\n| JWKS endpoint | Public HTTPS endpoint | [JWKS section](https://plaid.com/core-exchange/docs/authentication/oauth-server-setup/index.html.md#jwks-json-web-key-set) |\n| Consistency key | 7+ character unique ID | [Unique user identifier](https://plaid.com/core-exchange/docs/authentication/oauth-server-setup/index.html.md#unique-user-identifier-consistency-key) |\n| Credentials | Client ID + Secret | [Credentials section](https://plaid.com/core-exchange/docs/authentication/oauth-server-setup/index.html.md#credentials) |\n| Required scopes | `openid`, `offline_access` | [Well-known configuration](https://plaid.com/core-exchange/docs/authentication/oauth-server-setup/index.html.md#well-known-configuration) |\nOAuth server setup\n-------------------\nYour OAuth 2.0 server needs to issue standards-compliant tokens. Plaid strongly recommends implementing [OpenID Connect](https://openid.net"
+    }
+   ]
+  },
+  "access": {
+   "query": "Plaid plaid.com/docs API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_1e4VezBzKfud",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different",
+     "title": "How are Sandbox, Production, Trial plan, and Limited Production different?",
+     "snippet": "| | Sandbox | Production (full) | Trial plan | Limited Production |\n|---|---|---|---|---|\n| **Cost** | Free | Paid | Free | Free |\n| **Data** | Mock | Real | Real | Real, with usage caps |\n| **Item limit** | Unlimited | Unlimited | 10 Production Items | Capped |\n| **Approval** | None | Required (a few business days; company + use-case info) | Auto-approved for most developers | Required |\n| **Availability** | All developers | All developers | US/CA developers, signups on or after April 15, 2026 | Existing Limited Production customers only (no new US/CA signups after April 15, 2026) |\n| **Best for** | Building and testing without touching live data | Deploying your application | Trying Plaid with real data before committing to a paid plan | Legacy free-tier access for existing customers |\n\n## Trial plan\nFor developers in the US and Canada who sign up on or after April 15, 2026, Plaid offers a [Trial plan](https://plaid.com/docs/account/billing/#trial-plans) \u2014 a free way to use Plaid with real production data before applying for full Production access. Trial plans are auto-approved for most developers and support up to 10 Production Items. Eight core products are included: [Auth](htt"
+    },
+    {
+     "url": "https://support.plaid.com/hc/en-us/articles/39994173227159-What-is-the-Plaid-Trial-plan",
+     "title": "What is the Plaid Trial plan?",
+     "snippet": "The Plaid Trial plan provides free access to Plaid's production APIs. You can connect real financial accounts, call production endpoints, and build projects \u2014 no business registration, security questionnaire, or sales process required.\n## Who can sign up\nThe Trial plan is available to developers who:\n- Are located in the United States or Canada\n- Do not already have an existing Plaid Production or Limited Production account\nUS and Canadian institutions are available on Trial plans, all other institutions are not currently available on this plan type. To get started, go to [dashboard.plaid.com/signup](https://dashboard.plaid.com/signup).\n## Agreements\nApplying for a Trial plan requires accepting Plaid's standard Master Services Agreement (MSA).\nIn the Agreements step of the application you'll check \"I agree to the latest Plaid Master Services Agreement,\" along with attestations about keeping your accounts, data, and code secure. The application can't be submitted without these.\n## What's included\nThe Trial plan includes access to the following products:\n- [Auth](https://plaid.com/docs/auth/) \u2014 retrieve account and routing numbers\n- [Transactions](https://plaid.com/docs/transactions/"
+    },
+    {
+     "url": "https://plaid.com/docs/sandbox",
+     "title": "plaid.com/docs/sandbox",
+     "snippet": "After testing in Sandbox, it is recommended to test in Production using a [Trial plan](https://plaid.com/docs/sandbox/index.html.md#testing-with-live-data-using-a-trial-plan) to ensure your application can handle [institution-specific behaviors](https://plaid.com/docs/link/oauth/index.html.md#institution-specific-behaviors) and real-world data before launching.\n\nMost products can be immediately tested in Sandbox with no extra configuration. Some products, such as Payment Initiation (UK and Europe), may require your account be specially enabled. If the product you want to test against is not available in Sandbox, file a request for access ticket via the [Dashboard](https://dashboard.plaid.com/support/new/admin/account-administration/request-product-access) .\n\nFree Trial plans (US and Canada only) are available to new Plaid teams created on or after April 15, 2026.\nUsing a Trial plan, you can test many Plaid products with real production data for free.\n\nLimited Production has been replaced with [Trial plans](https://plaid.com/docs/account/billing/index.html.md#trial-plans) for all Plaid teams created on or after April 15, 2026. Trial plans offer free access to the Plaid API and, unli"
+    },
+    {
+     "url": "https://support.plaid.com/hc/en-us/articles/15769780649751-How-do-I-get-access-to-OAuth-institutions",
+     "title": "How do I get access to OAuth institutions?",
+     "snippet": "### If you're on a Trial plan\n[Trial plan](https://plaid.com/docs/account/billing/#trial-plans) customers have access to all [OAuth institutions](https://plaid.com/docs/link/oauth/) without completing the full [Production](https://plaid.com/docs/quickstart/glossary/#production) registration requirements. Plaid collects the necessary information during Trial plan signup, so you do not need to separately provide application display information, company information, the MSA addendum, or the [Plaid security questionnaire](https://dashboard.plaid.com/overview/questionnaire-start). You can start connecting to OAuth institutions right away."
+    },
+    {
+     "url": "https://support.plaid.com/hc/en-us/articles/16110502116887-What-are-Plaid-s-prices-and-pricing-plans-and-how-do-they-differ",
+     "title": "What are Plaid's prices and pricing plans, and how do they differ?",
+     "snippet": "## Trial plan (free)\nFor developers in the US and Canada creating a new Plaid team on or after April 15, 2026, Plaid offers a free [Trial plan](https://plaid.com/docs/account/billing/#trial-plans). The Trial plan lets you use Plaid with real production data at no cost, with a cap of 10 Production Items. It includes eight bundled products: [Auth](https://plaid.com/docs/auth/), [Transactions](https://plaid.com/docs/transactions/) (including Transactions Refresh), [Balance](https://plaid.com/docs/balance/), [Identity](https://plaid.com/docs/identity/), [Assets](https://plaid.com/docs/assets/), [Liabilities](https://plaid.com/docs/liabilities/), [Investments](https://plaid.com/docs/investments/) (including Investments Refresh), and [Statements](https://plaid.com/docs/statements/). Almost all [OAuth institutions](https://plaid.com/docs/link/oauth/) are accessible immediately, without completing the full Production registration process. To sign up, visit [dashboard.plaid.com/signup](https://dashboard.plaid.com/signup).\nThe Trial plan is available to new Plaid accounts that have not yet applied for or been granted any form of Production access. If your team has a pending or approved Produ"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Plaid API reference REST GraphQL endpoints documentation plaid.com/docs",
+   "log_id": "log_J0iqxPBprmEh",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plaid.com/docs/api/products/statements",
+     "title": "plaid.com/docs/api/products/statements",
+     "snippet": "Statements\n===========\n#### API reference for Statements endpoints and webhooks\nFor how-to guidance, see the [Statements documentation](https://plaid.com/docs/statements/index.html.md) .\n| Endpoint | Description |\n| --- | --- |\n| [/statements/list](https://plaid.com/docs/api/products/statements/index.html.md#statementslist) | Get a list of statements available to download |\n| [/statements/download](https://plaid.com/docs/api/products/statements/index.html.md#statementsdownload) | Download a single bank statement |\n| [/statements/refresh](https://plaid.com/docs/api/products/statements/index.html.md#statementsrefresh) | Trigger on-demand statement extractions |\n| Webhook Name | Description |\n| --- | --- |\n| [STATEMENTS\\_REFRESH\\_COMPLETE](https://plaid.com/docs/api/products/statements/index.html.md#statements_refresh_complete) | Statements refresh completed |\n### Endpoints\n\\=\\*=\\*=\\*=\n#### /statements/list\n#### Retrieve a list of all statements associated with an Item.\nThe [/statements/list](https://plaid.com/docs/api/products/statements/index.html.md#statementslist) endpoint retrieves a list of all statements associated with an Item.\n#### Request fields\n<a id=\"statements-list-reques"
+    },
+    {
+     "url": "https://plaid.com/docs/api",
+     "title": "plaid.com/docs/api",
+     "snippet": "#### API endpoints and webhooks\nFor documentation on specific API endpoints and webhooks, use the navigation menu or search.\n#### API access\nTo gain access to the Plaid API, create an account on the [Plaid Dashboard](https://dashboard.plaid.com/) . Once you've completed the signup process and acknowledged our terms, we'll provide a live `client_id` and `secret` via the Dashboard.\n#### API protocols and headers\nThe Plaid API is JSON over HTTP. Requests are POST requests, and responses are JSON, with errors indicated in response bodies as `error_code` and `error_type` (use these in preference to HTTP status codes for identifying application-level errors). All responses come as standard JSON, with a small subset returning binary data where appropriate. The Plaid API is served over HTTPS TLS v1.2 to ensure data privacy; HTTP and HTTPS with TLS versions other than 1.2 are not supported. Clients must use an up to date root certificate bundle as the only TLS verification path; certificate pinning should never be used. All requests must include a `Content-Type` of `application/json` and the body must be valid JSON.\nAlmost all Plaid API endpoints require a `client_id` and `secret`. These ma"
+    },
+    {
+     "url": "https://plaid.com/docs/api/products/transactions",
+     "title": "plaid.com/docs/api/products/transactions",
+     "snippet": "Transactions\n=============\n#### API reference for Transactions endpoints and webhooks\nRetrieve and refresh up to 24 months of historical transaction data, including geolocation, merchant, and category information. For how-to guidance, see the [Transactions documentation](https://plaid.com/docs/transactions/index.html.md) .\n| Endpoints |  |\n| --- | --- |\n| [/transactions/sync](https://plaid.com/docs/api/products/transactions/index.html.md#transactionssync) | Get transaction data or incremental transaction updates |\n| [/transactions/get](https://plaid.com/docs/api/products/transactions/index.html.md#transactionsget) | Fetch transaction data |\n| [/transactions/recurring/get](https://plaid.com/docs/api/products/transactions/index.html.md#transactionsrecurringget) | Fetch recurring transaction data |\n| [/transactions/refresh](https://plaid.com/docs/api/products/transactions/index.html.md#transactionsrefresh) | Refresh transaction data |\n| [/categories/get](https://plaid.com/docs/api/products/transactions/index.html.md#categoriesget) | (Deprecated) Fetch all legacy transaction categories |"
+    },
+    {
+     "url": "https://plaid.com/docs/api/products/auth/index.html.md",
+     "title": "plaid.com/docs/api/products/auth/index.html.md",
+     "snippet": "#### API reference for Auth endpoints and webhooks\nRetrieve bank account information to set up electronic funds transfers, such as ACH payments in the US, EFT payments in Canada, Bacs payments in the UK, and IBAN / SEPA payments in the EU.\nFor how-to guidance, see the [Auth documentation](https://plaid.com/docs/auth/index.html.md) .\n| Endpoints |  |\n| --- | --- |\n| [/auth/get](https://plaid.com/docs/api/products/auth/index.html.md#authget) | Get bank account and routing number and verification status |\n| [/auth/verify](https://plaid.com/docs/api/products/auth/index.html.md#authverify) | Verify a user's bank account information using [Database Auth](https://plaid.com/docs/auth/coverage/database-auth/index.html.md) |\n| [/bank\\_transfer/event/list](https://plaid.com/docs/api/products/auth/index.html.md#bank_transfereventlist) | Search for updates on micro-deposit verification statuses based on filter criteria |\n| [/bank\\_transfer/event/sync](https://plaid.com/docs/api/products/auth/index.html.md#bank_transfereventsync) | Get updates on micro-deposit verification statuses using a cursor |\n| See also |  |\n| --- | --- |\n| [/processor/token/create](https://plaid.com/docs/api/processors/in"
+    },
+    {
+     "url": "https://plaid.com/docs/api/products/payment-initiation",
+     "title": "plaid.com/docs/api/products/payment-initiation",
+     "snippet": "#### API reference for Payment Initiation endpoints and webhooks\nMake payment transfers from your app. Plaid supports both domestic payments denominated in local currencies and international payments, generally denominated in Euro. Domestic payments can be made in pound sterling (typically via the Faster Payments network), Euro (via SEPA Credit Transfer or SEPA Instant) and other local currencies (Polish Zloty, Danish Krone, Swedish Krona, Norwegian Krone), typically via local payment schemes.\nFor payments in the US, see [Transfer](https://plaid.com/docs/api/products/transfer/index.html.md) .\n\n| Endpoints |  |\n| --- | --- |\n| [/payment\\_initiation/recipient/create](https://plaid.com/docs/api/products/payment-initiation/index.html.md#payment_initiationrecipientcreate) | Create a recipient |\n| [/payment\\_initiation/recipient/get](https://plaid.com/docs/api/products/payment-initiation/index.html.md#payment_initiationrecipientget) | Fetch recipient data |\n| [/payment\\_initiation/recipient/list](https://plaid.com/docs/api/products/payment-initiation/index.html.md#payment_initiationrecipientlist) | List all recipients |\n| [/payment\\_initiation/payment/create](https://plaid.com/docs/api/p"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Plaid plaid.com/docs MCP server Model Context Protocol official",
+   "log_id": "log__ZFcZlNrhM-8",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://plaid.com/docs/resources/mcp",
+     "title": "plaid.com/docs/resources/mcp",
+     "snippet": "Plaid offers two [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) servers:\n*   The **Dashboard MCP server** is a remote MCP server hosted by Plaid. It provides Production diagnostics and analytics tools, including tools for debugging Items, reviewing Link conversion data, and checking usage metrics.\n*   The **[Plaid AI coding toolkit](https://github.com/plaid/ai-coding-toolkit/tree/main/sandbox)** includes a local MCP server for development. It runs as a subprocess of an MCP client, such as Claude, Cursor, Codex, VS Code, or Zed, and provides tools for mock data generation, documentation search, Sandbox tokens, and webhook simulation.\nThis article covers the Dashboard MCP server. You can connect to it from an MCP client, or you can use it in a model provider's API as a remote MCP server.\n\nThe Dashboard MCP server works with Production data only. Your team must be approved for Production access with at least one Plaid product to use the MCP server.\n##### MCP client setup\nUse this option for an MCP client or hosted assistant, such as Claude.ai, ChatGPT, or another client that supports remote MCP server URLs.\nIn your client's MCP settings, add the Dashboard MCP server "
+    },
+    {
+     "url": "https://plaid.com/docs/mcp",
+     "title": "Documentation | Plaid",
+     "snippet": "#### Connect your LLM-powered application to Plaid\u2019s developer tools\nFor AI tools and applications, Plaid hosts a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that provides several tools to help you better understand your Plaid integration health, investigate user-facing issues, and more.\nThis documentation is intended for developers looking to build their own applications that can interact with the MCP server. Support for integrating this server with Claude.ai or Claude Desktop can be found on our [blog post](https://plaid.com/blog/plaid-mcp-ai-assistant-claude/) or on [Anthropic's website](https://support.anthropic.com/en/articles/10168395-setting-up-integrations-on-claude-ai).\nThe Dashboard MCP server is a new feature under active development and breaking changes may occur. Plaid currently offers limited official support.\n\nThe Dashboard MCP server only works with production data. You must be approved for production access with at least one Plaid product in order to use the MCP server.\n[##### Authorization](/docs/mcp/#authorization)\nIn order to connect to the Dashboard MCP server, you must first create an OAuth token with the scope `mcp:dashboard` and t"
+    },
+    {
+     "url": "https://plaid.com/core-exchange/docs/data-partner-mcp",
+     "title": "plaid.com/core-exchange/docs/data-partner-mcp",
+     "snippet": "The Plaid Data Partner MCP lets you use an AI agent to review production FDX request activity, troubleshoot individual calls, monitor integration health, and run and inspect validation for Core Exchange integrations.\n\nInstallation\n-------------\nUse an MCP client that supports remote servers. The server URL is:\n```\nhttps://data-partner.mcp.plaid.com/mcp\n```\nIf your client asks for a transport, choose Streamable HTTP.\nIf no team appears after you sign in, confirm that your Dashboard account is verified and belongs to the expected Data Partner team.\n### Claude Code\n```bash\nclaude mcp add --transport http --scope user plaid-dp-mcp https://data-partner.mcp.plaid.com/mcp\n```\nRun `/mcp`, select `plaid-dp-mcp`, and complete the browser sign-in. If you've already added the server as a connector in Claude, Claude Code loads it automatically when you sign in with the same account.\n### Claude (web or desktop)\nGo to **Customize** \u2192 **Connectors** \u2192 **Add custom connector** and enter the server URL.\nOn Team and Enterprise plans, an Owner must first add the URL under **Organization settings** \u2192 **Connectors**. See [Claude's custom connector documentation](https://support.claude.com/en/articles/11"
+    },
+    {
+     "url": "https://github.com/plaid/ai-coding-toolkit/blob/main/sandbox/README.md",
+     "title": "ai-coding-toolkit/sandbox/README.md at main \u00b7 plaid/ai-coding-toolkit",
+     "snippet": "# mcp-server-plaid: A Plaid MCP server\n## Overview\nA Model Context Protocol server for facilitating integration with Plaid. This server provides tools to generate mock financial data, search Plaid documentation, and interact with sandbox APIs for testing purposes.\n### Tools\n1. `search_documentation`\n- Search Plaid documentation for relevant information about products or API endpoints using with the help of Bill, the friendly robot platypus who reads our docs for fun.\n- Returns: Detailed information from Plaid's documentation\n2. `get_mock_data_prompt`\n- Return prompt to generate customized mock financial data for testing\n3. `get_sandbox_access_token`\n- Obtain a working access token for the Plaid sandbox environment\n- Returns: Access token and item ID for testing with sandbox mocked data\n4. `simulate_webhook`\n- Simulate a Plaid webhook event in the sandbox environment\n- Useful for testing your application's webhook handling\n- Returns: Webhook fired status and status code\n## Configuration\n### Obtaining API Credentials\n1. Sign in to your [Plaid Developer Dashboard](https://dashboard.plaid.com) account\n2. Navigate to **Developers** \u2192 **[Keys](https://dashboard.plaid.com/developers/keys)"
+    },
+    {
+     "url": "https://plaid.com/blog/plaid-mcp-ai-assistant-claude",
+     "title": "\u201cClaude, let\u2019s analyze and improve my Plaid integration\u201d",
+     "snippet": "*New Plaid MCP server brings data, insights, and troubleshooting into one conversation with Claude, Anthropic\u2019s AI assistant.*\nWe're excited to announce our new Model Context Protocol (MCP) server that will make it easier to manage your Plaid integration. Initially available through Anthropic's Claude, you can now access personalized data and insights. Through a simple conversation, optimize your Plaid Link conversion rates, monitor your Plaid usage metrics, and streamline support workflows with intelligence that adapts to your unique implementation patterns.\n*Note: The Plaid MCP Server can be accessed by adding this URL as a configuration into Claude: https://api.dashboard.plaid.com/mcp/sse. See below for further instructions.\n*Our MCP Server brings Plaid's developer tools directly into Claude, initially offering three tools:\n**1. Monitor Usage and Resource Allocation** **\u2013** Get immediate insights into your Plaid implementation's performance and usage patterns. Ask about API request volumes, usage trends, or product metrics to make informed decisions, reducing the need to access the Plaid Dashboard or contact your account manager.\n**2. Optimize Link Conversion \u2013** Instantly analy"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

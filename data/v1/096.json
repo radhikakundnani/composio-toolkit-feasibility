@@ -1,0 +1,35 @@
+{
+  "id": 96,
+  "app": "Devin",
+  "category": "AI software engineer",
+  "one_liner": "Autonomous AI software engineering agent with sessions, playbooks and knowledge.",
+  "auth_methods": [
+    "api_key",
+    "bearer_token"
+  ],
+  "auth_primary": "bearer_token",
+  "access": "unknown",
+  "access_notes": "Sign up and generate API key or service user token; plan requirements for API not stated in evidence.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://docs.devin.ai/work-with-devin/devin-mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "other",
+  "blocker_note": "Plan or pricing prerequisites for API access not shown in evidence.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "medium",
+    "access": "low",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.devin.ai/api-reference/authentication",
+    "access": "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "surface": "https://docs.devin.ai/api-reference",
+    "mcp": "https://docs.devin.ai/work-with-devin/devin-mcp"
+  }
+}

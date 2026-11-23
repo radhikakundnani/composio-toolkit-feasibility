@@ -1,0 +1,27 @@
+{
+  "id": 74,
+  "app": "Jira",
+  "changes": [
+    {
+      "field": "access_notes",
+      "from": "Create OAuth 2.0 (3LO) app in the Atlassian developer console, or use email plus API token basic auth; free developer instance offered.",
+      "to": "Create OAuth 2.0 (3LO) app in the Atlassian developer console, or use email plus API token basic auth; Jira Cloud Free plan (up to 10 users, no time limit, no credit card) gives a site to build against.",
+      "why": "Original 'free developer instance' claim not re-found; Free plan confirmed",
+      "evidence": "https://atlassian.com/software/jira/guides/more/jira-editions"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://developer.atlassian.com/platform/marketplace/getting-started",
+      "to": "https://atlassian.com/software/jira/guides/more/jira-editions",
+      "why": "Prior cite was a Marketplace getting-started page, not pricing/plan evidence",
+      "evidence": "https://atlassian.com/software/jira/guides/more/jira-editions"
+    }
+  ],
+  "confirmed": [
+    "auth",
+    "surface",
+    "mcp",
+    "access"
+  ],
+  "searches": 4
+}

@@ -1,0 +1,27 @@
+{
+  "id": 47,
+  "app": "Ecwid",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_overview.md",
+      "to": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+      "why": "Replace GitHub mirror with vendor doc: only paid-plan stores can access API; free paid-plan upgrade for test stores by emailing support",
+      "evidence": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+    },
+    {
+      "field": "blocker_note",
+      "from": "Free-plan stores cannot use the API; a paid test store is needed.",
+      "to": "Free-plan stores cannot use the API; a paid test store is needed (Ecwid offers a free paid-plan upgrade for test stores by emailing API support).",
+      "why": "Add vendor-documented workaround",
+      "evidence": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "blocker"
+  ],
+  "searches": 3
+}

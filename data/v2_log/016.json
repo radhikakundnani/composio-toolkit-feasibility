@@ -1,0 +1,19 @@
+{
+  "id": 16,
+  "app": "LiveAgent",
+  "changes": [
+    {
+      "field": "evidence.auth",
+      "from": "https://anchorterminal.com/tools/liveagent",
+      "to": "https://support.liveagent.com/741982-API-key",
+      "why": "v1 cited third-party anchorterminal; vendor article confirms admin generates API key in Configuration > System > API",
+      "evidence": "https://support.liveagent.com/741982-API-key"
+    }
+  ],
+  "confirmed": [
+    "mcp official built-in MCP server",
+    "access 30-day trial no card",
+    "auth_primary api_key"
+  ],
+  "searches": 5
+}

@@ -1,0 +1,20 @@
+{
+  "id": 8,
+  "app": "Close",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://onegtmlab.dev/tool-directory/crm/close",
+      "to": "https://close.com/pricing",
+      "why": "replace third-party directory with vendor pricing showing 14-day trial",
+      "evidence": "https://close.com/pricing"
+    }
+  ],
+  "confirmed": [
+    "mcp (mcp.close.com official)",
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

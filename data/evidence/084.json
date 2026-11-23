@@ -1,0 +1,142 @@
+{
+ "id": 84,
+ "app": "Paygent Connect",
+ "hint": "paygent (NMI-powered)",
+ "given_category": "Finance and Fintech",
+ "queries": {
+  "auth": {
+   "query": "Paygent Connect API authentication OAuth API key access token developer docs paygent NMI-powered",
+   "log_id": "log_d2S-8zCt7xEb",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.paygentic.io/authentication",
+     "title": "Authentication",
+     "snippet": "Paygentic uses API keys as bearer tokens for authentication. Every request must include a valid key.\n##\n\u200b\nKey structure\nKeys are tied to users and environments:\n- Each key belongs to one user\n- Inherits that user\u2019s permissions\n- Environment-specific: `sk_test_` (sandbox) or `sk_live_` (production)\n- Work only with their matching API endpoint\nSee [Environments](/environments) for details on sandbox vs production.\n##\n\u200b\nGetting keys\nAfter logging into the Paygentic dashboard:\n1. Navigate to More \u2192 Developer \u2192 API Keys\n2. Copy your key\nStore securely in environment variables or secret managers. Never expose in client-side code or commit to version control.\n##\n\u200b\nMaking requests\nInclude keys in the Authorization header using Bearer authentication scheme. All requests must use HTTPS. HTTP requests will fail. Unauthenticated requests will fail. For user permission management, see [Organizations](/platform/organizations)."
+    },
+    {
+     "url": "https://api.paygent.tech/docs",
+     "title": "Connecting an AI agent",
+     "snippet": "# Connecting an AI agent\nGive your agent an API key, and it can request and fund a virtual card on your behalf using USDG or ETH on Robinhood Chain.\n## 1 Get your API key\n[Sign in](/) to get one.\n## 2 Connect it to Claude Desktop\nClaude Desktop supports remote MCP servers on every plan, including free, with no special setup needed. Here is how to add Paygent.\n1. Open Claude Desktop and go to **Settings**\n2. Find **Connectors** (sometimes labeled MCP) and choose **Add custom connector**\n3. Set the **Name** to `Paygent`\n4. Set the **Remote MCP server URL** to your MCP URL with your API key appended as a query parameter, since some clients do not offer a separate header field:\n```\nhttps://mcp.paygent.tech/sse?api_key=pgt_live_your_api_key_here\n```\n5. Leave the OAuth fields blank, then click **Add**\n6. Start a new chat, confirm **Paygent** is enabled for that conversation (look for a tools icon near the message box), and just ask naturally. For example: *\"Use Paygent to create a card for me.\"*\nClaude will show you what it is about to do and ask for confirmation before calling any tool that funds or modifies something, so you stay in control at every step.\n## 3 Or configure any other MC"
+    },
+    {
+     "url": "https://docs.withpaygent.com/cli/commands/authentication",
+     "title": "docs.withpaygent.com/cli/commands/authentication",
+     "snippet": "The CLI talks to two services. Dashboard commands use a browser session; usage-tracking commands use an API key.\n## `paygent login`\nAuthenticate and store credentials for this machine.\n```bash\npaygent login\n```\nOpens a browser, signs you in, and saves the credential at mode `0600`.\n| Flag              | Description                                                   |\n| ----------------- | ------------------------------------------------------------- |\n| `--token <->`     | Read a session token from stdin instead of opening a browser. |\n| `--api-key <->`   | Read an API key from stdin, for usage-tracking commands.      |\n| `--no-browser`    | Print the URL instead of opening it.                          |\n| `--timeout <dur>` | How long to wait for the browser callback.                    |\nFor CI, authenticate without a browser:\n```bash\necho \"$PAYGENT_TOKEN\" | paygent login --token -\n```\nUsage-tracking commands (`usage send`, `agent ensure`, `customer ensure`) need an API key, never a session token:\n```bash\necho \"$PAYGENT_API_KEY\" | paygent login --api-key -\n```\nBoth credentials can be stored at once. Signing in with an API key does not sign you out of the dashboard."
+    },
+    {
+     "url": "https://docs.paygent.to/reference/api-reference",
+     "title": "Backend API Reference",
+     "snippet": "The Paygent backend exposes a small REST API. The SDK uses it. You also call it directly to manage plans, users, and subscriptions.\n**Base URL:** `https://api.paygent.to/api/v1`\n**Authentication:** Bearer token in `Authorization: Bearer pg_live_...` header. The product creation endpoint (`POST /products`) is the only exception \u2014 it's how you mint the first key.\n**Content type:** `application/json` for all request and response bodies.\n---\n## Products\n### POST /products\nCreate a new product (tenant). Returns the API key \u2014 exactly once. **No authentication required.**\n```\nimport httpx\nr = httpx.post(\n\"https://api.paygent.to/api/v1/products\",\njson={\n\"name\": \"MyAgent\",\n\"contact_name\": \"Jane Developer\",\n\n\"name\": \"MyAgent\",\n\"slug\": \"myagent\",\n\"contact_name\": \"Jane Developer\",\n\"contact_email\": \"jane@example.com\",\n\"created_at\": \"2026-05-06T12:00:00Z\",\n\"api_key\": \"pg_live_AbCd1234...\"\n}\n```"
+    },
+    {
+     "url": "https://docs.paygent.to/getting-started/quickstart",
+     "title": "Quickstart",
+     "snippet": "- **Python** 3.10 or later, **or** **Node** 18 or later (TypeScript)\n- A Paygent account \u2014 sign up at [paygent.to](https://paygent.to) to get your `pg_live_...` API key\n\n## 2. Initialize Paygent\n```\nfrom paygent import Paygent\npg = Paygent.init(api_key=\"pg_live_...\")\n```\n`Paygent.init()` connects to the backend, patches the OpenAI and Anthropic SDKs so every LLM call is intercepted, and starts the background sync thread for usage events. Call it once per process, ideally at app startup.\n```\nimport OpenAI from \"openai\";\nimport { Paygent } from \"@paygentjs/sdk\";\nconst pg = await Paygent.init({ apiKey: \"pg_live_...\" });\nconst openai = pg.instrument(new OpenAI());\n```\n\nBefore you can assign a plan, register the user with Paygent:\n**curl**\n```\ncurl -X POST https://api.paygent.to/api/v1/users \\\n-H \"Authorization: Bearer pg_live_...\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n\"external_user_id\": \"user_123\",\n\"name\": \"Alice\"\n}'\n```\n**Python (httpx)**\n```\nhttpx.post(\n\"https://api.paygent.to/api/v1/users\",\nheaders={\"Authorization\": \"Bearer pg_live_...\"},\njson={\"external_user_id\": \"user_123\", \"name\": \"Alice\"},\n)\n```\n`external_user_id` is whatever ID your application uses for this user \u2014 Pay"
+    }
+   ]
+  },
+  "access": {
+   "query": "Paygent Connect paygent NMI-powered API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_fuV_p6qGuiaH",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.paygent.to/getting-started/quickstart",
+     "title": "Quickstart",
+     "snippet": "**curl**\n```\ncurl -X POST https://api.paygent.to/api/v1/config/plans \\\n-H \"Authorization: Bearer pg_live_...\" \\\n-H \"Content-Type: application/json\" \\\n-d '{\n\"soft_gate_at\": 0.80,\n\"hard_gate_at\": 1.00,\n\"plans\": [\n{\n\"name\": \"free\",\n\"max_spend_per_period\": 5.00,\n\"max_spend_per_session\": 0.50,\n\"model_limits\": {\n\"gpt-4o-mini\": {\"max_tokens_per_period\": 10000}\n},\n\"cost_rates\": {\n\"gpt-4o-mini\": {\"input\": 0.00015, \"output\": 0.0006}\n}\n},\n{\n\"name\": \"pro\",\n\"max_spend_per_period\": 49.00,\n\"max_spend_per_session\": 5.00,\n\"model_limits\": {\n\"gpt-4o\": {\"max_tokens_per_period\": 50000},\n\"gpt-4o-mini\": {\"max_tokens_per_period\": 200000}\n},\n\"cost_rates\": {\n\"gpt-4o\": {\"input\": 0.0025, \"output\": 0.01},\n\"gpt-4o-mini\": {\"input\": 0.00015, \"output\": 0.0006}\n}\n}\n]\n}'\n```\n\nWhat these plans do:\n- **Free**: $5/period total cap, 0.50 per session, 10K GPT-4o-mini tokens, no GPT-4o access at all\n- **Pro**: $49/period total cap, $5 per session, 50K GPT-4o tokens *and* 200K GPT-4o-mini tokens\n- **Both**: soft warning at 80% of any limit; hard block at 100%"
+    },
+    {
+     "url": "https://paygent.to/pricing",
+     "title": "Pricing \u2014 Paygent | Free, Starter, Pro & Scale Plans",
+     "snippet": "### Free\nKick the tires. Everything included, capped low.\n$0 /mo\n- 5 active users/mo\n- 5,000 events/mo\n- 1 product\n[ Sign up free ](https://app.paygent.to/signin)\n### Starter\nFor your first production agent.\n$9 /mo\n- 50 active users/mo\n- 50,000 events/mo\n- 1 product\n[ Start with Starter ](https://app.paygent.to/signin)\nMost popular\n### Pro\nGrowing usage across a few products.\n$29 /mo\n- 250 active users/mo\n- 250,000 events/mo\n- 3 products\n[ Start with Pro ](https://app.paygent.to/signin)\n\nFree is a one-month trial of the full product. No credit card required to start. Limits reset each calendar month."
+    },
+    {
+     "url": "https://gopaygent.com/pricing",
+     "title": "Paygent | The Premier Stripe & PayPal Alternative",
+     "snippet": "## Developer & B2B\nFor SaaS, Wholesalers, and Platforms.\n![B2B Architecture](https://gopaygent.com/pricing/pricing_b2b_art_1776903240404.png)\nMonthly Gateway\n$15\nPer Transaction\n$0.10\n40% cheaper than Authorize.net ($25/mo)\n### Essential Add-ons:\nLevel III Advantage$45/mo\nACH Payments$25/mo\nCustomer Vault (Tokenization)Included\n\nIs there a free trial?\nWe offer a sandbox environment with full API access at no cost. You can test transactions, webhooks, and integrations before going live. No credit card required to start."
+    },
+    {
+     "url": "https://gopaygent.com",
+     "title": "Merchant Payments and Tapn Tap-to-Pay Solutions",
+     "snippet": "## Build faster with\nworld-class tooling\nFrom your first API call to processing millions \u2014 Paygent developer experience is designed for speed, reliability, and scale.\nRESTful APIs\nClean, predictable, and fully documented REST APIs for every payment workflow.\n\nJoin thousands of businesses already using Paygent to power their payment infrastructure. Start building for free.\nNo credit card required. Free plan available.\n$50B+\nPayment volume processed\n150+\nCountries supported\n99.99%\nPlatform uptime SLA"
+    },
+    {
+     "url": "https://docs.withpaygent.com/documentation/introduction/subscription-fees",
+     "title": "docs.withpaygent.com/documentation/introduction/subscription-fees",
+     "snippet": "Subscription fees are recurring or one-time charges that are **not** tied to individual usage events. Paygent supports three fee families \u2014 each can have **multiple named line items** on a single agent or plan.\n| Fee type           | Billing                                    | Examples                                       |\n| ------------------ | ------------------------------------------ | ---------------------------------------------- |\n| **Setup fee**      | One-time (first eligible invoice)          | Onboarding, integration, training              |\n| **Platform fee**   | Recurring (Monthly / Quarterly / Annually) | Base platform access, support, bundled credits |\n| **Seat-based fee** | Recurring per seat                         | Per-user licensing, team seats                 |\nConfigure fees on **Agents \u2192 Step 3: Pricing** or on any **Plan**."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Paygent Connect API reference REST GraphQL endpoints documentation paygent NMI-powered",
+   "log_id": "log_W3Ll4SqKXiBr",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.paygent.to/getting-started/assign-users-to-plans",
+     "title": "Assign Users to Plans",
+     "snippet": "## The two-step flow\nFor every end user of your product:\n1. **Create the user in Paygent** with `POST /users` \u2014 registers them once, links your `external_user_id` to Paygent\n2. **Subscribe them to a plan** with `POST /users/{user_id}/subscription` \u2014 assigns the plan and (when needed) the billing window\nMost teams call step 1 from their signup handler and step 2 from their checkout-success handler. You can also run both at signup if every user starts on a free plan.\n## User IDs are yours\nPaygent's `external_user_id` is whatever ID your application already uses for this user. It's an opaque string \u2014 Paygent doesn't validate format, just uniqueness within your product. Use the same value here that you'll later pass to the Paygent context (`paygent_context(user_id=...)` in Python, `paygentContext({ userId })` in TypeScript).\n```\nYour app                         Paygent\n--------                         -------\nuser.id = \"user_123\"   \u2500\u2500\u2500\u2500\u2500\u2500\u25ba   external_user_id = \"user_123\"\npaygent_user_id  = \"550e8400-...\" (Paygent's internal UUID)\n```\n\n## Step 1: Create the user\nRegister them once. If they already exist, the API returns 409 \u2014 treat it as idempotent in your signup handler.\nThese are plai"
+    },
+    {
+     "url": "https://docs.paygent.to/reference/api-reference",
+     "title": "Backend API Reference",
+     "snippet": "# Backend API Reference\nThe Paygent backend exposes a small REST API. The SDK uses it. You also call it directly to manage plans, users, and subscriptions.\n**Base URL:** `https://api.paygent.to/api/v1`\n**Authentication:** Bearer token in `Authorization: Bearer pg_live_...` header. The product creation endpoint (`POST /products`) is the only exception \u2014 it's how you mint the first key.\n**Content type:** `application/json` for all request and response bodies.\n---\n## Products\n### POST /products\nCreate a new product (tenant). Returns the API key \u2014 exactly once. **No authentication required.**"
+    },
+    {
+     "url": "https://docs.withpaygent.com/api-reference/prepaid-wallets-api",
+     "title": "API Reference \u2014 Prepaid Wallets | Paygent Documentation",
+     "snippet": "#\nAPI Reference \u2014 Prepaid Wallets\nCheck prepaid balances and top up credits programmatically. Endpoints live on the **Control Plane API** at `https://cp-api.withpaygent.com` and authenticate with your `paygent-api-key` header.\n##### Prerequisites\n**customer_id** is the customer\u2019s *external ID*. The customer must already have a **prepaid** wallet for the credit currency. Create wallets in the dashboard or via an order with platform-fee credit benefits. See [Credits & Wallets](/documentation/introduction/credits-and-wallets).\n## Authentication\nHeader\n```\n```\n##### API key in header only\nPass `paygent-api-key` as an HTTP header, not as a query parameter.\n---\n## Get prepaid balance\n`GET /api/v1/wallet/balance` returns all wallets for a customer. For prepaid wallets, use `available`, `pending`, and overage fields.\ncURL\n```\n```\n### Example response (prepaid)\n200 OK\n```\n```\nFor prepaid, check `available` before allowing usage. Ignore `postpaid_used` / `postpaid_limit` (they stay 0 on prepaid wallets).\n### Prepaid response fields\n---\n## Top up prepaid wallet\n`POST /api/v1/wallet/top-up` adds credits to a prepaid wallet. Overage is cleared first; the remainder goes to `available`.\ncURL\n```\n"
+    },
+    {
+     "url": "https://docs.paygent.to/getting-started/verify-its-working",
+     "title": "Verify It's Working",
+     "snippet": "TypeScript setup\nThe user/subscription setup above is plain REST. In a TypeScript project use `fetch` with the same payloads \u2014 see the [Backend API Reference](../../reference/api-reference/#post-users) for the `fetch` equivalents of every endpoint."
+    },
+    {
+     "url": "https://docs.withpaygent.com/api-reference/customers-api",
+     "title": "API Reference \u2014 Customers | Paygent Documentation",
+     "snippet": "#\nAPI Reference \u2014 Customers\nProvision and manage your customers in Paygent. The Customers API allows you to safely synchronize users from your own database to Paygent\u2019s billing system.\n## Create or Get Customer\nWhen a user registers or logs into your system, call this endpoint to check if they exist in Paygent. If they do not, Paygent will automatically provision a new customer record linked to your organization. This endpoint is idempotent and safe to call multiple times.\ncURL\n```\n```\n## Get Customer Subscription Status\nCall this endpoint when loading your customer\u2019s portal subscription page. It automatically calculates the customer\u2019s state and returns the recommended UI action (e.g. `upgrade`, `create_order`, `complete_payment`).\ncURL\n```\n```\n## List Customer Orders\nTo show an audit list of all contracts, plans, and historical orders in the client\u2019s invoice section, call this endpoint.\ncURL\n```\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Paygent Connect paygent NMI-powered MCP server Model Context Protocol official",
+   "log_id": "log_hL5lYbxZ5yJu",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://api.paygent.tech/docs",
+     "title": "Connecting an AI agent",
+     "snippet": "# Connecting an AI agent\nGive your agent an API key, and it can request and fund a virtual card on your behalf using USDG or ETH on Robinhood Chain.\n## 1 Get your API key\n[Sign in](/) to get one.\n## 2 Connect it to Claude Desktop\nClaude Desktop supports remote MCP servers on every plan, including free, with no special setup needed. Here is how to add Paygent.\n1. Open Claude Desktop and go to **Settings**\n2. Find **Connectors** (sometimes labeled MCP) and choose **Add custom connector**\n3. Set the **Name** to `Paygent`\n4. Set the **Remote MCP server URL** to your MCP URL with your API key appended as a query parameter, since some clients do not offer a separate header field:\n```\nhttps://mcp.paygent.tech/sse?api_key=pgt_live_your_api_key_here\n```\n5. Leave the OAuth fields blank, then click **Add**\n6. Start a new chat, confirm **Paygent** is enabled for that conversation (look for a tools icon near the message box), and just ask naturally. For example: *\"Use Paygent to create a card for me.\"*\nClaude will show you what it is about to do and ask for confirmation before calling any tool that funds or modifies something, so you stay in control at every step.\n## 3 Or configure any other MC"
+    },
+    {
+     "url": "https://npm.io/package/@paygent-ai/mcp-server",
+     "title": "@paygent-ai/mcp-server",
+     "snippet": "## Paygent MCP Server\nConnect **Cursor**, **Claude Desktop**, **VS Code**, and other AI assistants to your Paygent account.\nThe Paygent MCP server exposes **49 tools** (kept under 50 for Cursor / Antigravity) covering customers, agents, plans, invoices, payments, usage, wallets, orders, quotations, and billable metrics.\n**Production API URL:** `https://api.withpaygent.com/api`\n\n##### 2. Add to Cursor (`~/.cursor/mcp.json`)\nUntil `@paygent-ai/mcp-server` is published to npm, run the built local entry (or a path your team distributes):\n```json\n{\n\"mcpServers\": {\n\"paygent\": {\n\"command\": \"node\",\n\"args\": [\n\"/ABSOLUTE/PATH/TO/paygent-mcp-server/dist/index.js\",\n\"start\",\n\"--server-url\",\n\"https://api.withpaygent.com/api\",\n\"--api-key\",\n\"YOUR_PAYGENT_API_KEY\"\n]\n}\n}\n}\n```\nAfter npm publish (see below), replace the `node` + path with:\n```json\n{\n\"mcpServers\": {\n\"paygent\": {\n\"command\": \"npx\",\n\"args\": [\n\"-y\",\n\"@paygent-ai/mcp-server\",\n\"start\",\n\"--server-url\",\n\"https://api.withpaygent.com/api\",\n\"--api-key\",\n\"YOUR_PAYGENT_API_KEY\"\n]\n}\n}\n}\n```\n\n#### Local development only\n```bash\ncp .env.example .env   # set PAYGENT_API_KEY (and optionally PAYGENT_BASE_URL)\nnpm install\nnpm run build\n# With env vars fr"
+    },
+    {
+     "url": "https://github.com/FoxRick/paygentic-sdk",
+     "title": "GitHub - FoxRick/paygentic-sdk: PayGent SDK - REST client + MCP server for agentic payments",
+     "snippet": "- **SDK**: `npm install paygentic-sdk` \u2014 typed REST client for Node.js & browsers\n- **MCP Server**: `npx paygentic-sdk` \u2014 Model Context Protocol server with 13 tools\n\n### MCP Server (agent tools)\nAdd to your MCP client config:\n```\n{\n\"mcpServers\": {\n\"paygentic\": {\n\"command\": \"npx\",\n\"args\": [\"-y\", \"paygentic-sdk\"],\n\"env\": {\n\"PAYGENTIC_API_KEY\": \"pg_live_xxxxxxxxxxxx\",\n\"PAYGENTIC_BASE_URL\": \"https://paygentic-one.vercel.app\"\n}\n}\n}\n}\n```\nThen ask your agent:\n- \"Sign me up for PayGent\"\n- \"What's my wallet balance?\"\n- \"Send $3.50 to my transcription agent\"\n- \"Create an invoice for $15 for the data export task\"\n- \"Set a daily spending cap of $50 on my research agent\"\n- \"Show me the audit log for the last 7 days\"\n## MCP Tools\n| Tool | Description | Auth |\n|---|---|---|\n| `paygentic_signup` | Create account + wallet + API key | None |\n| `paygentic_check_balance` | Get wallet balance and status | API key |\n| `paygentic_list_wallets` | List all your wallets | API key |\n| `paygentic_create_wallet` | Create a new wallet | API key |\n| `paygentic_send_money` | Send money between wallets (previews first) | API key |\n| `paygentic_create_invoice` | Create a public invoice anyone can pay | API key |\n"
+    },
+    {
+     "url": "https://docs.withpaygent.com/documentation/paygent-sd-ks/installation",
+     "title": "docs.withpaygent.com/documentation/paygent-sd-ks/installation",
+     "snippet": "> For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.withpaygent.com/_mcp/server."
+    },
+    {
+     "url": "https://docs.withpaygent.com/documentation/introduction/agents-indicators",
+     "title": "docs.withpaygent.com/documentation/introduction/agents-indicators",
+     "snippet": "> For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.withpaygent.com/_mcp/server."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

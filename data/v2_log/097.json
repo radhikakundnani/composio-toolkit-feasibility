@@ -1,0 +1,28 @@
+{
+  "id": 97,
+  "app": "higgsfield",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://higgsfield.ai/cli",
+      "to": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent",
+      "why": "Cited page is the CLI; this page documents the vendor-hosted MCP URL mcp.higgsfield.ai/mcp (paid subscription, no API key).",
+      "evidence": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://higgsfield.ai/blog/higgsfield-api",
+      "to": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+      "why": "Help-center page states prepaid USD balance, no free tier ($5 minimum top-up per vendor blog).",
+      "evidence": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api"
+    }
+  ],
+  "confirmed": [
+    "access",
+    "auth_primary",
+    "mcp",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 3
+}

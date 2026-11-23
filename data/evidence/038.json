@@ -1,0 +1,142 @@
+{
+ "id": 38,
+ "app": "Pinterest",
+ "hint": "developers.pinterest.com",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "Pinterest API authentication OAuth API key access token developer docs developers.pinterest.com",
+   "log_id": "log_HZZsdeGl5NMJ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+     "title": "developer.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+     "snippet": "# Set up authentication and authorization\nPinterest API services are only available to authenticated and authorized users.\nMake sure your API requests on a user\"s behalf include a current access token that identifies the user and defines your permissions, or scopes, for using the API on their behalf.\n\n| Your app ID and client secret | You will provide these as credentials when requesting an OAuth access token.                                                                                                                                                                                                                                                                                                                                                                                                                                           | First, [Register your app](https://developers.pinterest.com/docs/getting-started/connect-app/). Then, find your [app ID](https://developers.pinterest.com/docs/faqs/faqs/#how-do-i-find-a-client-id-or-app-id) and [client secret ](https://developers.pinterest.com/docs/faqs/faqs/#how-do-i-find-my-apps-secret-key). |\n| Redirect URI                  | References"
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+     "title": "Pinterest Developers | Connect app",
+     "snippet": "1. Login or [create a business account](https://help.pinterest.com/business/article/create-an-advertiser-account). This is the account you will use to administer your app.\n2. Verify your account's email address\n3. Go to [**My apps**](/apps/) and click through to accept our Developer Terms of Service\n\n## Register your app details to get your app ID and secret key\nWhile logged into the Pinterest account you want to use to administer your app complete the following steps:\n![my app image](https://i.pinimg.com/originals/e4/98/6e/e4986eb1bdb46c112f33a67ab8945990.png)\n1. Select **Connect app** and complete our request form with your app information. Your app name can be in any language, but it must include at least 3 Latin letters or numbers (A-Z, a-z, 0-9) and can't contain the word \"Pinterest\".\n2. Submit your request for trial access.\nApplication requests are reviewed by Pinterest. You will receive an email notification after your app has been reviewed, letting you know whether it was approved or denied access.\nIf your app is approved for [Trial access](/docs/key-concepts/access-tiers/), you can log into your account and manage your app details on your My apps page. In your My apps view"
+    },
+    {
+     "url": "https://github.com/pinterest/api-quickstart/blob/main/README.md",
+     "title": "api-quickstart/README.md at main \u00b7 pinterest/api-quickstart",
+     "snippet": "Code that makes it easy to get started with the Pinterest API. For full details see the [getting started](https://developers.pinterest.com/docs/overview/welcome/) documentation.\n## Purpose\nThis repository has code that is intended to provide a quick start for working with the [Pinterest API v5](https://developers.pinterest.com/docs/api/v5/). There is currently python code that implements a number of use cases, JavaScript (nodejs) code with essentially the same functionality, a bash script that demonstrates the OAuth authentication and authorization flow, and an example application in PHP.\n\n1. Set up the environment with your credentials (app ID and secret). This configuration works with the code in all of the language-specific directories.\n- Get an application ID and secret by hitting the \"Connect app\" button at the [apps dashboard](https://developers.pinterest.com/apps/). You may first need to follow the steps required to [request trial access](https://developers.pinterest.com/docs/getting-started/connect-app/) to the Pinterest API. You can also find step-by-step instructions on the [Glitch-based tutorial](https://pinterest-oauth-tutorial.glitch.me/).\n- Once your app is connected,"
+    },
+    {
+     "url": "https://github.com/pinterest/api-quickstart/blob/main/bash/scripts/get_access_token.sh",
+     "title": "api-quickstart/bash/scripts/get_access_token.sh at main \u00b7 pinterest/api-quickstart",
+     "snippet": "#\n# This script uses curl, openssl, and some helper utilities to demonstrate how to\n# use OAuth authentication with the Pinterest API.\n#\n\n# Get configuration from environment or defaults.\n: \"${REDIRECT_PORT:=8085}\"\n: \"${PINTEREST_API_URI:=https://api.pinterest.com}\"\n: \"${PINTEREST_OAUTH_URI:=https://www.pinterest.com}\"\n: \"${REDIRECT_LANDING_URI:=https://developers.pinterest.com/apps/${PINTEREST_APP_ID}}\"\nREDIRECT_URI=\"http://localhost:${REDIRECT_PORT}/\"\n# Note that the application id and secrect have no defaults,\n# because it is best practice not to store credentials in code.\nB64AUTH=$(echo -n \"${PINTEREST_APP_ID}:${PINTEREST_APP_SECRET}\" | base64)\n# Get the authorization code by starting a browser session and handling the redirect.\necho 'getting auth_code...'\n# Specify the scopes for the user to authorize via OAuth.\n# This example requests typical read-only authorization.\n# For more information, see:\n# https://developers.pinterest.com/docs/getting-started/authentication-and-scopes/#requesting-the-right-scopes-for-your-app\nSCOPE=\"user_accounts:read\"\n# This call opens the browser with the oauth information in the URI.\nopen \"${PINTEREST_OAUTH_URI}/oauth/?consumer_id=${PINTEREST_APP_I"
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/getting-started/scopes",
+     "title": "Pinterest Developers",
+     "snippet": "Pinterest API services are only available to authenticated and authorized users.\nMake sure your API requests on a user\"s behalf include a current access token that identifies the user and defines your permissions, or scopes, for using the API on their behalf.\n\n| **What you need** | **Why you need it** | **How to get it** |\n|---|---|---|\n| Your app ID and client secret | You will provide these as credentials when requesting an OAuth access token. | First, [Register your app](/docs/getting-started/connect-app/). Then, find your [app ID](/docs/faqs/faqs/#how-do-i-find-a-client-id-or-app-id) and [client secret ](/docs/faqs/faqs/#how-do-i-find-my-apps-secret-key). |\n| Redirect URI | References your app's site, where Pinterest will send the user and an authorization code after the user authorizes your app in [Step 1](/docs/getting-started/set-up-authentication-and-authorization/#step-1-redirect-the-user-to-the-pinterest-oauth-page). You will later provide the redirect URI in [Step 3](/docs/getting-started/set-up-authentication-and-authorization/#step-3-get-the-access-token), when requesting the OAuth access token. | When you register your app, you provide at least one redirect URI. See ["
+    }
+   ]
+  },
+  "access": {
+   "query": "Pinterest developers.pinterest.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_-Az_DXw5yNuO",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.pinterest.com/docs/key-concepts/developer-guidelines",
+     "title": "Pinterest Developers | Access tiers",
+     "snippet": "The Pinterest API v5 significantly increases the scope of what is possible for you to create as a developer. If approved for API use, your app receives Trial access, which is best for exploring our API features. If you want to offer Pinterest capabilities to your users, we recommend upgrading to Standard access to get the full functionality that our API offers.\n\naccess tiers table\n| **Activity Type** | **in Trial Access** | **in Standard Access** |\n|---|---|---|\n| Pin Analytics | Yes | Yes |\n| Reading ads | Yes | Yes |\n| Reading audiences | Yes | Yes |\n| Reading boards | Yes | Yes |\n| Reading Pins | Yes | Yes |\n| Reading catalogs | Yes | Yes |\n| Creating ads | Yes | Yes |\n| Creating audiences | Yes | Yes |\n| Creating boards | Yes (visible only to creator) | Yes |\n| Creating Pins | Yes (visible only to creator) | Yes |\n| Creating catalogs | Yes | Yes |\n| Rate limits | Daily limits based on rate limit category. Please see the section on [Rate Limits](/docs/key-concepts/access-tiers/#rate-limits). | Increased rate limits based on activity. Please see the section on [Rate Limits](/docs/key-concepts/access-tiers/#rate-limits). |\n\n- Apps with Trial access are rate limited based on calls "
+    },
+    {
+     "url": "https://plugkit.co/blog/pinterest-api-guide",
+     "title": "Pinterest API: pins, boards and the approval you need first",
+     "snippet": "Two tiers, no others. From Pinterest's [access tiers guide](https://developers.pinterest.com/docs/key-concepts/access-tiers/), read today:\n| | Trial | Standard |\n|---|---|---|\n| Positioning | \"best for exploring our API features\" | \"get the full functionality that our API offers\" |\n| Can read and create | ads, audiences, boards, Pins, catalogs | same |\n| Visibility of what you create | boards and Pins visible only to their creator | normal public visibility |\n| Rate limit window | daily, per app | per minute, per user, per app |\n| All API requests | 1,000 per day | 100 per second per user per app |\n| Organic reads (`org_read`) | 1,000 per day | 1,000 per minute |\n| Organic writes (`org_write`) | 300 per day | 100 per minute |\n| Ads reads (`ads_read`) | 1,000 per day | 1,000 per minute |\n| Ads writes (`ads_write`) | 300 per day | 400 per minute |\n\nTo move up: the app must already be approved for Trial and comply with the Developer Guidelines, and you submit a video of your app completing an action with the Pinterest API that shows the OAuth flow. That applies even if you are the only user, and terminal or Postman screen recordings are accepted. Pinterest verifies your use case and y"
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/getting-started/business-access",
+     "title": "Pinterest Developers | Connect app",
+     "snippet": "There are a few steps you need to take in order to connect your first app.\n1. Login or [create a business account](https://help.pinterest.com/business/article/create-an-advertiser-account). This is the account you will use to administer your app.\n2. Verify your account's email address\n3. Go to [**My apps**](/apps/) and click through to accept our Developer Terms of Service\n\nWhile logged into the Pinterest account you want to use to administer your app complete the following steps:\n![my app image](https://i.pinimg.com/originals/e4/98/6e/e4986eb1bdb46c112f33a67ab8945990.png)\n1. Select **Connect app** and complete our request form with your app information. Your app name can be in any language, but it must include at least 3 Latin letters or numbers (A-Z, a-z, 0-9) and can't contain the word \"Pinterest\".\n2. Submit your request for trial access.\nApplication requests are reviewed each business day. As soon as your app has been reviewed you will receive an email notification letting you know if your app has been approved or denied access.\nIf your app is approved for [Trial access](/docs/key-concepts/access-tiers/), you can log into your account and manage your app details on your My apps"
+    },
+    {
+     "url": "https://community.pinterest.biz/t/known-issue-support-for-trial-access-pending-or-denied-access/50249",
+     "title": "KNOWN ISSUE: Support for Trial Access Pending or Denied Access",
+     "snippet": "We recognize that some developers are experiencing delays in the app-approval process for **trial access pending**, **upgrade to standard access pending**, or **trial access denials**. This topic is for providing instructions on how to get support.\n\n**For account-specific help with Trial or Standard access, [submit a support ticket](https://help.pinterest.com/contact?pinterest_api_and_developer_tools=api_access&origin=pbc).**\n\nPinterest\u2019s Developer Platform uses two access tiers to manage how apps interact with the API: Trial Access and Standard Access. Trial Access lets developers explore and test the API, but Pins and boards created through it are only visible to the app creator, not the public. Standard Access is intended for apps ready to launch to real users, offering full public visibility and higher rate limits, but it requires your app to already hold Trial Access and pass a review that includes a video demo of your app in action. For full details on both tiers, eligibility requirements, and the upgrade process, see [Understanding our access tiers](https://developer.pinterest.com/docs/key-concepts/access-tiers/) documentation."
+    },
+    {
+     "url": "https://pinbridge.io/blog/pinterest-api-guide",
+     "title": "The Pinterest API in 2026: access, tokens, your first pin and the limits",
+     "snippet": "Pinterest does not charge for API access. The cost is time: the app review, the demo video for the upgrade, and the code that keeps tokens fresh and stays under the rate limits. We put rough numbers on that in [build vs buy](https://www.pinbridge.io/blog/build-vs-buy-the-real-cost-of-building-your-own-pinterest-publishing-infrastructure/).\n## Step 1: get access\n### Register your app\n1. Log in to a Pinterest business account, or create one. This account administers the app.\n2. Verify the account\u2019s email address.\n3. Open [My apps](https://developers.pinterest.com/apps/), accept the Developer Terms of Service and click **Connect app**.\n4. Fill in the request form. The app name needs at least three Latin letters or digits and cannot contain the word \u201cPinterest\u201d.\nPinterest reviews the request and emails you the result. Pinterest names two common reasons for a denial at this stage: a privacy policy link that does not load, is not public or sits on a domain unrelated to your app, and an app description that is too vague. Describe what your app does with Pinterest data in plain detail.\nOnce approved, your app ID and app secret are on the My apps page. Pinterest has no single API key that w"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Pinterest API reference REST GraphQL endpoints documentation developers.pinterest.com",
+   "log_id": "log_Jj3z1ueuaesI",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://raw.githubusercontent.com/pinterest/api-description/main/v5/openapi.json",
+     "title": "raw.githubusercontent.com/pinterest/api-description/main/v5/openapi.json",
+     "snippet": "other).\\n\\nFor more information, [click here](https://help.pinterest.com/en/business/article/campaign-structure).\\n\\n**Notes:**\\n-"
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/api/v5/pins-list",
+     "title": "Pinterest Developers",
+     "snippet": "GET\n### /pins\nGet a list of the Pins owned by the \"operation user_account\".\n- By default, the \"operation user_account\" is the token user_account.\n- All Pins owned by the \"operation user_account\" are included, regardless of who owns the board they are on.\nOptional: Business Access: Specify an\n`ad_account_id`\nto use the owner of that ad_account as the \"operation user_account\".\nDisclaimer: There are known performance issues when filtering by field\n`creative_type`\nand including protected pins. If your request is timing out in this scenario, we encourage you to use [GET List Pins on Board](https://developers.pinterest.com/docs/api/v5/#operation/boards/list_pins)."
+    },
+    {
+     "url": "https://github.com/api-evangelist/pinterest/blob/main/graphql/pinterest-graphql.md",
+     "title": "pinterest/graphql/pinterest-graphql.md at main \u00b7 api-evangelist/pinterest",
+     "snippet": "This document describes a conceptual GraphQL schema for the Pinterest API v5. Pinterest is a visual discovery platform enabling users to save, organize, and discover ideas through images, videos, and links organized on boards. The REST API v5 covers pins, boards, users, advertising, catalogs, conversions, and analytics.\n**Base REST API:** [https://api.pinterest.com/v5](https://api.pinterest.com/v5)\n**Developer Documentation:** [https://developers.pinterest.com/docs/api/v5/](https://developers.pinterest.com/docs/api/v5/)\n**GitHub:** [https://github.com/pinterest](https://github.com/pinterest)\n---\n## Schema Source\nThis GraphQL schema is derived from the Pinterest REST API v5 surface, translating resource endpoints and their data models into a unified GraphQL type system. Pinterest does not publish an official GraphQL API; this schema is a conceptual mapping intended for tooling, documentation, and integration planning.\n\n## Authentication\nThe Pinterest API uses OAuth 2.0. Applications must obtain an access token with the appropriate scopes before making API calls. Available scopes include `pins:read`, `pins:write`, `boards:read`, `boards:write`, `ads:read`, `ads:write`, `catalogs:read"
+    },
+    {
+     "url": "https://github.com/pinterest/api-description/releases",
+     "title": "Releases \u00b7 pinterest/api-description",
+     "snippet": "## Pins, Boards & Search\nGET /pins\nPOST /pins\nGET /pins/{pin_id}\nPATCH /pins/{pin_id}\nDELETE /pins/{pin_id}\nPOST /pins/{pin_id}/save\nGET /boards/{board_id}/pins\nGET /boards/{board_id}/sections/{section_id}/pins\nGET /search/pins\n- \u26a0\ufe0f Added 'SEARCH_TEXT_AD' enum value to creative_type in responses.\nGET /pins\nGET /boards/{board_id}/pins\n- Added 'SEARCH_TEXT_AD' enum value to the creative_types query parameter.\n\n## Pins, Boards & Search\nGET /pins\nPOST /pins\nGET /pins/{pin_id}\nPATCH /pins/{pin_id}\nDELETE /pins/{pin_id}\nPOST /pins/{pin_id}/save\nGET /boards/{board_id}/pins\nGET /boards/{board_id}/sections/{section_id}/pins\nGET /search/pins\n- \u26a0\ufe0f Added 'CTV_VIDEO' enum value to creative_type in responses.\nGET /pins\nGET /boards/{board_id}/pins\n- Added 'CTV_VIDEO' enum value to the creative_types query parameter."
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/work-with-organic-content-and-users/create-boards-and-pins",
+     "title": "Pinterest Developers | Create boards and pins",
+     "snippet": "Make sure you do the following before creating boards and Pins:\n- Connect your [app](/docs/getting-started/connect-app/).\n- Generate an [access token](/docs/getting-started/set-up-authentication-and-authorization/) with the following scopes:\n- `boards:read`\n- `boards:write`\n- `pins:read`\n- `pins:write`\n## Creating and managing Pins and boards\nThe following endpoints allow an app to create and manage boards & Pins on behalf of an authenticated Pinterest user.\n### Boards\n- GET\nGet board\n- GET\nList Pins on board\n- POST\nCreate board\n- PATCH\nUpdate board\n- DELETE\nDelete board\n### Board sections\n- GET\nList board sections\n- POST\nCreate board section\n- PATCH\nUpdate board section\n- DELETE\nDelete board section\n- GET\nList Pins on board section\n### Pins\n- GET\nGet Pin\n- POST\nCreate Pin\n- POST\nSave Pin\n- DELETE\nDelete Pin"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Pinterest developers.pinterest.com MCP server Model Context Protocol official",
+   "log_id": "log_InB2WfGlTDMK",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.pinterest.com/about-pinterest-mcp",
+     "title": "Pinterest Developers",
+     "snippet": "Pinterest MCP Server brings the power of Pinterest data directly into the AI assistants, copilots, and agentic workflows you already use. Turn natural-language questions into fast, actionable insights, uncover performance opportunities in moments, and build what's next with more momentum than ever.\n\nMeet the Pinterest MCP\n## The common language of AI and APIs\nModel Context Protocol (MCP) is an open standard that enables AI assistants to connect directly with external services. The Pinterest MCP Server brings Pinterest data into the AI tools you already use, giving agents native access to rich inspiration and creative signals \u2014 without custom code or fragile integrations. It helps teams move from idea to on-brand creative direction with Pinterest intelligence available right where they work.\nBuilt for Pinterest workflows\nBring Pinterest Ads capabilities into the AI tools your team already uses. Query, analyze, and act through a consistent interface powered by the existing Pinterest API.\nOpen-standard integration\nBuilt on MCP, with compatibility across tools such as Claude, Cursor, and VS Code.\nSecure, scoped access\nOAuth 2.0 authorization and granular permissions keep credentials pr"
+    },
+    {
+     "url": "https://community.pinterest.biz/t/introducing-the-pinterest-mcp-server/51358",
+     "title": "Introducing the Pinterest MCP Server",
+     "snippet": "# [Introducing the Pinterest MCP Server](https://community.pinterest.biz/t/introducing-the-pinterest-mcp-server/51358)\nPinterest is bringing its data and Ads capabilities directly into the AI tools teams already use. Built on the open Model Context Protocol (MCP), the Pinterest MCP Server lets AI assistants, copilots, and agentic workflows securely access Pinterest intelligence through natural-language prompts.\nWant to learn more? Read all about it here: [Pinterest Developers](https://developers.pinterest.com/about-pinterest-mcp/)"
+    },
+    {
+     "url": "https://business.pinterest.com/blog/pinterest-ai-for-marketers",
+     "title": "Smarter decisions, faster results: Pinterest AI",
+     "snippet": "That's exactly what two new AI tools available from Pinterest are designed to do. At Cannes Lions 2026, Pinterest introduced connected updates that take a more practical approach to AI: Business Assistant and a new Model Context Protocol (MCP) server for partners. Together, they\u2019re AI that understands your business, works with your existing tools and helps you make smarter decisions faster.\n\nPinterest\u2019s open-source MCP server changes that. For the first time, approved partners can connect their own LLM agents and copilots directly to Pinterest data and workflows through a single, official integration layer.\n\nPinterest\u2019s MCP server is starting with a small group of alpha partners on June 1st. Some partners include PMG, Pacvue, Dentsu, Innovid by Mediaocean and Omnicom\u2019s Jump450."
+    },
+    {
+     "url": "https://developers.pinterest.com/about-pinterest-mcp",
+     "title": "Pinterest Developers | MCP Server",
+     "snippet": "## The common language of AI and APIs\nModel Context Protocol (MCP) is an open standard that enables AI assistants to connect directly with external services. The Pinterest MCP Server brings Pinterest data into the AI tools you already use, giving agents native access to rich inspiration and creative signals \u2014 without custom code or fragile integrations. It helps teams move from idea to on-brand creative direction with Pinterest intelligence available right where they work.\nBuilt for Pinterest workflows\nBring Pinterest Ads capabilities into the AI tools your team already uses. Query, analyze, and act through a consistent interface powered by the existing Pinterest API.\nOpen-standard integration\nBuilt on MCP, with compatibility across tools such as Claude, Cursor, and VS Code.\nSecure, scoped access\nOAuth 2.0 authorization and granular permissions keep credentials protected and access appropriately controlled.\nLess integration work\nSkip custom API wrappers. The MCP server manages authentication, rate limits, and response formatting, so teams can move faster.\nHow it works\n## Bring Pinterest intelligence into your AI workflow\nSet up the Pinterest MCP Server once in your preferred AI env"
+    },
+    {
+     "url": "https://github.com/N-Graves/pinterest-mcp-server/blob/main/README.md",
+     "title": "pinterest-mcp-server/README.md at main \u00b7 N-Graves/pinterest-mcp-server",
+     "snippet": "# pinterest-mcp-server\nA [Model Context Protocol](https://modelcontextprotocol.io) server for the **Pinterest API v5**.\n**263 of Pinterest's 266 published operations** are reachable. The three that are not are the OAuth token endpoints, excluded for a security reason rather than an access one. A test compares the catalogue against Pinterest's own OpenAPI spec, so when Pinterest ships an endpoint the build goes red.\nIt keeps itself authorised (Pinterest tokens expire after 30 days; this refreshes them), and it can pin local images, carousels and videos from one folder you choose.\nMIT licensed.\n## Install\n```\nnpm install -g @nasdigitaluk/pinterest-mcp\n```\n## Authorise once\nCreate an app at [developers.pinterest.com/apps](https://developers.pinterest.com/apps) and add `http://localhost:3034/oauth/redirect` as a redirect URI. Then:\n```\nPINTEREST_APP_ID=your-app-id PINTEREST_APP_SECRET=your-app-secret pinterest-mcp-auth\n```\nOpen the link it prints, sign in as the account the server should act as, and approve. It writes everything the server needs to `~/.pinterest-mcp-credentials` (mode `0600`) \u2014 the tokens, their expiry dates, and the app id and secret used to refresh them \u2014 and **print"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

@@ -1,0 +1,142 @@
+{
+ "id": 71,
+ "app": "Notion",
+ "hint": "developers.notion.com",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Notion API authentication OAuth API key access token developer docs developers.notion.com",
+   "log_id": "log_eiQGcQO09AFB",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.notion.com/guides/authorization/overview",
+     "title": "Authorization",
+     "snippet": "Authorization is the process of granting a connection or token access to Notion data. [Internal connections](/guides/connections-and-tokens/internal-connections) use a static credential called an internal connection API token, [personal access tokens](/guides/connections-and-tokens/personal-access-tokens) use a user-scoped static token, and [OAuth integrations](/guides/connections-and-tokens/oauth-integrations/overview) and [public integrations](/guides/connections-and-tokens/public-integrations/overview) use the [OAuth 2.0](https://oauth.net/2/) protocol.\n## Internal connection auth flow set-up\nTo use an internal connection, start by creating your connection in the [Developer portal](https://app.notion.com/developers/connections). The internal connection will be associated with the workspace of your choice. You are required to be a workspace owner to create a connection.\n\nOnce the connection is created, you can update its settings as needed under the `Configuration` tab and retrieve the API token in this tab. The API token will be used to authenticate REST API requests. The connection sends the same token in every API request.\n\nBefore a connection can interact with your Notion wor"
+    },
+    {
+     "url": "https://developers.notion.com/reference/create-a-token",
+     "title": "Create a token",
+     "snippet": "**Redirect URI requirements for public connections**The `redirect_uri` is a *required* field in the request body for this endpoint if:\n- the `redirect_uri` query parameter was set in the [Authorization URL](/guides/authorization/overview#step-1-navigate-the-user-to-the-connection%E2%80%99s-authorization-url) provided to users, *or*;\n- there are more than one `redirect_uri`s included in the [connection\u2019s settings](https://app.notion.com/developers/connections) under **OAuth Domain & URIs**.\nIn most cases, the `redirect_uri` field is required.This field is not allowed in the request body if:\n- there is one `redirect_uri` included in the [connection\u2019s settings](https://app.notion.com/developers/connections) under **OAuth Domain & URIs**, *and* the `redirect_uri` query parameter was not included in the Authorization URL.\n\nBasic authentication header of the form `Basic <encoded-value>`, where `<encoded-value>` is the base64-encoded string `username:password`.\n\nstring\nrequired\nAllowed value: `\"bearer\"`"
+    },
+    {
+     "url": "https://developers.notion.com/guides/get-started/handling-api-keys",
+     "title": "Secure API credentials",
+     "snippet": "Credentials authorize requests to the Notion API. This guidance applies to internal connection API tokens, OAuth access tokens, and [personal access tokens](/guides/connections-and-tokens/personal-access-tokens).\n## Protect your tokens\nAnyone who obtains a token can make requests allowed by its capabilities and content permissions. Depending on the token, this could expose or change workspace content. For a PAT, access is limited by the token\u2019s capabilities and the permissions of the person who created it. For an internal connection, access is limited to pages shared with the connection and its capabilities.\n- Don\u2019t share tokens in messages, support requests, issue trackers, or other public places.\n- Don\u2019t put tokens directly in source code or configuration files.\n- Store tokens in environment variables or an encrypted secret manager.\n- Use separate tokens for development, staging, and production.\n- Grant only the capabilities that each application needs.\n- Revoke tokens that you no longer use.\n## Store tokens outside your code\nUse an environment variable for local development. Add `.env` files to `.gitignore` and never commit them.\n```\n# .env file (never commit this file)\nNOTION_A"
+    },
+    {
+     "url": "https://developers.notion.com/guides/connections-and-tokens/oauth-integrations/overview",
+     "title": "OAuth integrations",
+     "snippet": "Use an OAuth integration when your internal tool needs to act on behalf of each person who uses it. Each user authorizes the app separately and grants it access to content. Your app uses an access token tied to that user. For example, a tool that helps teammates work with their own project pages can ask each person to connect their Notion account. A shared automation that updates one team tracker can use an [internal connection](/guides/connections-and-tokens/internal-connections), with access granted to the connection independently of any one person. Both options can serve internal tools. Choose OAuth when access needs to be authorized by each user,\n\n## Create an OAuth integration\n1\nOpen the Developer portal\nGo to [Developer connections](https://app.notion.com/developers/connections) in the Developer portal and select **New connection**.\n2\nConfigure your integration\nEnter the connection name. Under **Authentication method**, choose **OAuth**, and add your [redirect URIs](https://www.oauth.com/oauth2-servers/redirect-uris/). In **Installable in**, choose **Or select 1 or more workspaces** and select the workspaces. Then select **Create connection**.The workspace you\u2019re in becomes t"
+    },
+    {
+     "url": "https://developers.notion.com/guides/get-started/overview",
+     "title": "Connections and tokens",
+     "snippet": "## Build an app for your workspaces\nUse an OAuth integration for internal tools where each person authorizes their own access. Your app acts on behalf of the user who connects it.\n\nOAuth integrations and public integrations use the same OAuth authorization flow. Here, **OAuth integrations** are limited to selected workspaces, while **public integrations** are available to any workspace.\n| | Personal access token | Internal connection | OAuth integration | Public integration |\n|---|---|---|---|---|\n| Workspace scope | One workspace. | One workspace. | Workspaces you select when creating the integration. | Any workspace. |\n| Whose access does it use? | Yours. | The connection\u2019s own access, shared by the tool. | Each user\u2019s separately authorized access. | Each user\u2019s separately authorized access. |\n| Content access | Uses your existing page permissions. | Uses permissions granted to the connection. | Users grant access during authorization. | Users grant access during authorization. |\n| Authentication | A token you create for yourself. | An API token for the connection. | Access tokens obtained through OAuth. | Access tokens obtained through OAuth. |\n| Who manages it? | You. | The cre"
+    }
+   ]
+  },
+  "access": {
+   "query": "Notion developers.notion.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_usGN4dMjOGu1",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.notion.com/page/changelog?date=2026-10-09",
+     "title": "Changelog",
+     "snippet": "### Developer portal and personal access tokens\nThe new [Developer portal](https://www.notion.so/developers) is now available as a single place to manage developer tools for Notion, including connections, Workers, and personal access tokens.[Personal access tokens](/guides/connections-and-tokens/personal-access-tokens) (PATs) are user-scoped tokens for scripts, CLI workflows, Workers, and trusted tools that should act with one Notion user\u2019s permissions. PATs can be granted Notion API access, Workers access, or both.Workspace admins can now view and revoke PATs created in their workspace. On supported plans, admins can also configure who may create PATs with Notion API access. Defaults vary by plan: Free workspaces default to workspace owners only, Plus workspaces default to all workspace members, Business workspaces default to workspace owners only, and Enterprise workspaces default to workspace owners and selected groups."
+    },
+    {
+     "url": "https://activepieces.com/blog/notion-api-quickstart-get-a-key-and-make-your-first-call",
+     "title": "Notion API Quickstart: Get a Key and Make Your First Call",
+     "snippet": "You can create an integration on any of the four plans, so your plan tier doesn't restrict your ability to build integrations, though Business and Enterprise get a higher rate limit. Price per member is the other difference that matters for this decision.\n| Plan | API access per Notion docs | Price per member per month |\n|---|---|---|\n| Free | Included | $0 |\n| Plus | Included | $10 per seat / month |\n| Business | Included | Listed on Notion's pricing page |\n| Enterprise | Included | Quoted by Notion sales |\nBefore anyone approves spend, Free lets you prove the integration works. On Plus, the $2 gap between annual and monthly billing is the cost of staying flexible, so choose monthly only if you may drop the plan soon."
+    },
+    {
+     "url": "https://developers.notion.com/guides/connections-and-tokens/personal-access-tokens",
+     "title": "Personal access tokens",
+     "snippet": "Personal access tokens (PATs) let one Notion user call the Notion API or work with Notion Workers. A PAT belongs to one workspace. For Notion API requests, it uses the workspace membership and page permissions of the person who created it.\n\nCreate PATs in the [Developer portal](https://www.notion.so/developers). For each PAT, you choose:\n- A token name.\n- The workspace the token belongs to.\n- Capabilities for the token.\nYou can give a PAT either or both of these capabilities:\n| Capability | What it allows |\n|---|---|\n| **Notion API** | Read, create, update, and search content; read and create comments; and read supported user information through Notion\u2019s REST API. |\n| **Workers** | Deploy and manage [Notion Workers](/workers/get-started/overview) with the Notion CLI. |\n\n| Plan | Default PAT creation policy | Admin controls |\n|---|---|---|\n| Free | Workspace owners only. | Not configurable. |\n| Plus | All workspace members. | Not configurable. |\n| Business | Workspace owners only. | Admins can choose **Workspace owners only** or **All workspace members**. |\n| Enterprise | Workspace owners and selected groups. | Admins can choose **Workspace owners only**, **Workspace owners and sele"
+    },
+    {
+     "url": "https://notion.com/help/create-integrations-with-the-notion-api",
+     "title": "Notion API connections",
+     "snippet": "You can manage personal access tokens from Notion. Turn on Developer Mode from `Settings`, then open personal access tokens from the developer section in your sidebar. Visit our [developer hub](http://developers.notion.com/) for documentation, resources, and connection management tools.\n\n1. In your left sidebar, navigate to `Settings` and then the `Connections` tab.\n2. Who can create a connection depends on your workspace. On Free and Plus plans, only workspace owners can create connections. On Business and Enterprise plans, workspace owners can also let members, or members in certain groups, create them. If you can't create a connection, ask a workspace owner.\n3. Turn on [Developer Mode](https://www.notion.com/help/turn-on-developer-mode-to-use-developer-tools-in-notion), then open personal access tokens from the developer section in your sidebar.\n4. Click `+ New connection`.\n\n8. Click the `\u2022\u2022\u2022` next to the internal connection to copy its API token. You'll need this token for any API-based automations or workflows your team creates, or to link your workspace to some partner platforms.\n\nPlease note the following about connection owners:\n- Only full members and workspace owners can "
+    },
+    {
+     "url": "https://developers.notion.com/guides/authorization/overview",
+     "title": "Authorization",
+     "snippet": "Authorization is the process of granting a connection or token access to Notion data.\n\nTo use an internal connection, start by creating your connection in the [Developer portal](https://app.notion.com/developers/connections). The internal connection will be associated with the workspace of your choice. You are required to be a workspace owner to create a connection."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Notion API reference REST GraphQL endpoints documentation developers.notion.com",
+   "log_id": "log_00MafnDmcsTb",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.notion.com/reference",
+     "title": "Introduction",
+     "snippet": "Conventions\nThe base URL to send all API requests is `https://api.notion.com`. HTTPS is required for all API requests. The Notion API follows RESTful conventions when possible, with most operations performed via `GET`, `POST`, `PATCH`, and `DELETE` requests on page and database resources. Request and response bodies are encoded as JSON.\n\nCode samples & SDKs\nSamples requests and responses are shown for each endpoint. Requests are shown using the Notion [JavaScript SDK](https://github.com/makenotion/notion-sdk-js), and [cURL](https://curl.se/). These samples make it easy to copy, paste, and modify as you build your connection. Notion SDKs are open source projects that you can install to easily start building. You may also choose any other language or library that allows you to make HTTP requests.\n\nSupported endpoints\n| HTTP method | Endpoint |\n|---|---|\n| GET | [List all users](/reference/get-users) |\n| GET | [List block children](/reference/get-block-children) |\n| GET | [List comments](/reference/list-comments) |\n| GET | [Retrieve a page property item](/reference/retrieve-a-page-property) |\n| GET | [List file uploads](/reference/list-file-uploads) |\n| GET | [List data source templat"
+    },
+    {
+     "url": "https://developers.notion.com/guides/data-apis/working-with-markdown-content",
+     "title": "Working with markdown content",
+     "snippet": "The Notion API supports reading, writing, and updating page content using **markdown** as an alternative to the [block-based API](/guides/data-apis/working-with-page-content). This is especially useful for agentic systems and developer tools that work natively with markdown. Three API surfaces are available:\n| Operation | Endpoint | Description |\n|---|---|---|\n| Create | [`POST /v1/pages`](/reference/post-page) | Create a page with markdown content (via `markdown` body param) |\n| Read | [`GET /v1/pages/:page_id/markdown`](/reference/retrieve-page-markdown) | Retrieve a page\u2019s full content as markdown |\n| Update | [`PATCH /v1/pages/:page_id/markdown`](/reference/update-page-markdown) | Insert or replace content using markdown |\nAll three endpoints use [enhanced markdown](/guides/data-apis/enhanced-markdown) (`v1`) by default on current Notion-Versions. The REST examples in this guide select [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) (`v2`). For the JavaScript examples, use `@notionhq/client` v5.29.0 or later.\n\nWhere to send it:\n| Endpoint | Where |\n|---|---|\n| [`GET /v1/pages/:page_id/markdown`](/reference/retrieve-page-markdown) | Query parameter |\n| [`P"
+    },
+    {
+     "url": "https://notion.notion.site/API-Reference-914a8531daa84753aacdf01274df8ec5?pvs=4",
+     "title": "API Reference | Notion",
+     "snippet": "The base URL to send all API requests is `https://api.notion.com`. HTTPS is required for all API requests.\nThe Notion API follows RESTful conventions when possible, with most operations performed via `GET`, `POST`, `PATCH`, and `DELETE` requests on page and database resources. Request and response bodies are encoded as JSON.\n**JSON CONVENTIONS**\n- Top-level resources have an `\"object\"` property. This property can be used to determine the type of the resource (e.g. `\"database\"`, `\"user\"`, etc.)\n- Top-level resources are addressable by a UUIDv4 `\"id\"` property. You may omit dashes from the ID when making requests to the API, e.g. when copying the ID from a Notion URL.\n- Property names are in `snake_case` (not `camelCase` or `kebab-case`).\n- Temporal values (dates and datetimes) are encoded in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) strings. Datetimes will include the time value (`2020-08-12T02:12:33.231Z`) while dates will include only the date (`2020-08-12`)\n- The Notion API does not support empty strings. To unset a string value for properties like a `url`[Property value object](https://developers.notion.com/reference/property-value-object), for example, use an explicit "
+    },
+    {
+     "url": "https://developers.notion.com/guides/data-apis/working-with-page-content",
+     "title": "Working with page content",
+     "snippet": "[Pages](https://www.notion.com/help/category/write-edit-and-customize) are where users write everything from quick notes, to shared documents, to curated landing pages in Notion. Connections can help users turn Notion into the single source of truth by syndicating content or help users gather, connect, and visualize content inside Notion. In this guide, you\u2019ll learn about how the building blocks of page content are represented in the API and what you can do with them. By the end, you\u2019ll be able to create new pages with content, read content from other pages, and add blocks to existing pages.\n\nPage content can be read from a page using the [retrieve block children](/reference/get-block-children) endpoint. This endpoint returns a list of children for any block which supports children."
+    },
+    {
+     "url": "https://developers.notion.com/reference/post-search",
+     "title": "Search by title",
+     "snippet": "```\ncurl -X POST 'https://api.notion.com/v1/search?filter_properties=title&filter_properties=Status' \\\n-H \"Authorization: Bearer $NOTION_API_KEY\" \\\n-H 'Content-Type: application/json' \\\n-H 'Notion-Version: 2026-03-11' \\\n--data '{\"query\": \"Roadmap\", \"filter\": {\"property\": \"object\", \"value\": \"page\"}}'\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Notion developers.notion.com MCP server Model Context Protocol official",
+   "log_id": "log_DCQE_KN-_vA1",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+     "title": "Connect to Notion MCP",
+     "snippet": "The easiest way to connect is through your AI assistant\u2019s connector or plugin library. You can also browse available connections in Notion under **Settings** \u2192 **Notion MCP**.\n\n## Manual setup\nUse these instructions if you\u2019re adding Notion as a custom MCP server or configuring a client directly. The remote server URL is `https://mcp.notion.com/mcp`.\n\nRun this command in your terminal:\n```\nclaude mcp add --transport http notion https://mcp.notion.com/mcp\n```\nThen authenticate by running `/mcp` in Claude Code and following the OAuth flow.\n- `--scope local` (default): Available only to you in the current project\n- `--scope project`: Shared with your team via `.mcp.json` file\n- `--scope user`: Available to you across all projects\nUse the `/mcp` command to list and manage the MCP servers you have installed, and use the `/context` command to understand the context token usage of your current session, including the number of tokens used by each MCP server that\u2019s enabled.\nInstall the [Notion plugin for Claude Code](https://github.com/makenotion/claude-code-notion-plugin) to add the MCP server, Skills, and slash commands for common Notion workflows.\n\n```\n{\n\"mcpServers\": {\n\"notion\": {\n\"comma"
+    },
+    {
+     "url": "https://developers.notion.com/guides/mcp/build-mcp-client",
+     "title": "Build an MCP client for Notion",
+     "snippet": "## Connection requirements\nNotion provides a hosted [MCP (Model Context Protocol)](https://modelcontextprotocol.io/introduction) server that lets MCP clients work with Notion workspaces. Use Streamable HTTP at `https://mcp.notion.com/mcp`. If your client uses the deprecated `/sse` endpoint, [migrate to Streamable HTTP](/guides/mcp/get-started-with-mcp#migrate-from-the-legacy-sse-endpoint). Your client must support:\n- OAuth 2.0 Authorization Code flow with PKCE\n- Streamable HTTP (`/mcp`)\n- Token refresh handling\n- Secure credential storage\n\n## Step 7: Connect to MCP server with authentication\nUse the v2 TypeScript client and select the July 2026 protocol. The SDK\u2019s default mode uses the 2025 handshake. With the version pinned, the SDK calls `server/discover` and adds the July metadata and matching HTTP headers to subsequent requests.\n```\nimport { Client, StreamableHTTPClientTransport } from \"@modelcontextprotocol/client\"\nasync function createMcpClient(accessToken: string): Promise<Client> {\nconst client = new Client(\n{ name: \"notion-workspace-client\", version: \"1.0.0\" },\n{ versionNegotiation: { mode: { pin: \"2026-07-28\" } } }\n)\nawait client.connect(new StreamableHTTPClientTransport("
+    },
+    {
+     "url": "https://developers.notion.com/page/changelog",
+     "title": "Changelog",
+     "snippet": "### Notion MCP is retiring its legacy SSE endpoint\nIf your client connects to `https://mcp.notion.com/sse`, switch its transport to Streamable HTTP and its URL to `https://mcp.notion.com/mcp`. The legacy endpoint shuts down on **February 23, 2027**. See [Migrate from the legacy SSE endpoint](/guides/mcp/get-started-with-mcp#migrate-from-the-legacy-sse-endpoint).\n\n### Notion MCP supports MCP protocol version 2026-07-28\nThe Notion MCP Streamable HTTP endpoint at [`https://mcp.notion.com/mcp`](https://mcp.notion.com/mcp) now supports [MCP protocol version 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28). Existing MCP clients that negotiate the earlier 2025-era protocol on the same endpoint continue to work unchanged, so no client updates are required.\n\n### Developer portal and personal access tokens\nThe new [Developer portal](https://www.notion.so/developers) is now available as a single place to manage developer tools for Notion, including connections, Workers, and personal access tokens.[Personal access tokens](/guides/connections-and-tokens/personal-access-tokens) (PATs) are user-scoped tokens for scripts, CLI workflows, Workers, and trusted tools that should a"
+    },
+    {
+     "url": "https://developers.notion.com/guides/mcp",
+     "title": "Notion MCP",
+     "snippet": "Notion MCP lets an [MCP client](/guides/mcp/common-mcp-clients), such as Claude Code, Cursor, or Codex, connect to your Notion workspace through the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction).\n##\n\u200b\nHow Notion MCP works\nNotion MCP is a remote MCP server hosted by Notion. After you authorize a connection with OAuth, the MCP client can use Notion MCP tools to read and update content that you can access.\n\nMCP clients can combine Notion MCP tools to:\n- Search content in Notion and connected sources.\n- Read, create, and update Notion content.\n- Create pages and databases.\nSee [Supported tools](/guides/mcp/mcp-supported-tools) for the current tool list, or [connect an MCP client](/guides/mcp/get-started-with-mcp).\n##\n\u200b\nAdmin controls\nWorkspace owners can manage MCP client access in **Settings** \u2192 **Notion MCP** \u2192 **Manage workspace clients**. Limiting which clients members can connect needs the Enterprise plan. Organization owners can also use the Admin API to [list](/reference/admin/list-mcp-client-connections) and [revoke](/reference/admin/revoke-mcp-client-connection) members\u2019 connections. See [Admin controls for MCP](https://www.notion.com/help/notion"
+    },
+    {
+     "url": "https://developers.notion.com/guides/mcp/enterprise-managed-authorization",
+     "title": "Enterprise-managed authorization",
+     "snippet": "Notion MCP accepts an **ID-JAG** (Identity Assertion JWT Authorization Grant) at its token endpoint. An ID-JAG is a short-lived JWT that your company\u2019s identity provider (IdP) signs for one user and one MCP client. Your MCP client trades it for a Notion MCP access token without opening a browser or showing a consent screen. This page lists what Notion checks and what it returns. It\u2019s for developers of MCP clients and identity providers. The protocol itself is defined in two specs, and this page doesn\u2019t restate them:\n- [Identity Assertion JWT Authorization Grant](https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/) (IETF draft)\n- [MCP enterprise-managed authorization extension](https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/stable/enterprise-managed-authorization.mdx)\n\nEnterprise-managed authorization is part of the Enterprise plan. The workspace must use SAML SSO. An admin turns on **Enterprise-managed connections** in Notion\u2019s settings and enters the identity provider issuer URL. That URL must be a plain `https` URL with no query string, fragment, or credentials. It must also be on the host of the IdP that runs the workspace\u2019"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

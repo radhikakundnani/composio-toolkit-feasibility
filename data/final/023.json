@@ -1,0 +1,35 @@
+{
+ "id": 23,
+ "app": "Zoho Cliq",
+ "category": "Communications and Messaging",
+ "one_liner": "Zoho's team chat with channels, bots, and message cards.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Register a client in the Zoho API console to get client ID/secret; a free Cliq plan exists.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "Zoho MCP server for Cliq, https://zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "Per-user rate limits are strict (e.g. 15 requests/min on messages).",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://zoho.com/cliq/help/restapi/v3/oauth",
+  "access": "https://zoho.com/cliq/pricing.html",
+  "surface": "https://zoho.com/cliq/help/restapi/v2",
+  "mcp": "https://zoho.com/cliq/help/platform/zoho-cliq-mcp.html"
+ },
+ "identity_issue": "",
+ "verified": true
+}

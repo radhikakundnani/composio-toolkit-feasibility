@@ -1,0 +1,36 @@
+{
+ "id": 68,
+ "app": "MongoDB Atlas",
+ "category": "Database / DBaaS",
+ "one_liner": "Managed cloud MongoDB service with an Administration API for clusters and projects.",
+ "auth_methods": [
+  "oauth2",
+  "basic"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Free Atlas account; Free clusters never expire. Org Owner creates a service account (OAuth2 client credentials) or legacy digest API key for the Admin API.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://github.com/mongodb-js/mongodb-mcp-server",
+ "verdict": "ready_with_caveats",
+ "blocker": "narrow_api",
+ "blocker_note": "Admin API manages Atlas resources, not stored data; data access needs DB user credentials.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://mongodb.com/docs/atlas/api/api-authentication",
+  "access": "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster",
+  "surface": "https://mongodb.com/docs/atlas/api/atlas-admin-api-ref",
+  "mcp": "https://mongodb.com/docs/mcp-server/overview"
+ },
+ "verified": true
+}

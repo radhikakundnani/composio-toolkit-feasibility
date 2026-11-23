@@ -1,0 +1,142 @@
+{
+ "id": 19,
+ "app": "Gorgias",
+ "hint": "gorgias.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Gorgias API authentication OAuth API key access token developer docs gorgias.com",
+   "log_id": "log_bsRnxwazxoU6",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.gorgias.com/docs/authentication-types",
+     "title": "Authentication types",
+     "snippet": "To access the Gorgias API, you'll need an access token. This access token can be used for your own Private app (your own Gorgias account or development app) or for Public use (available to Gorgias customers). Learn more about [Application Types](/docs/application-types).\n###\nPermissions\nNote that Access Tokens (OAuth2 or API keys) have the same permissions as the user that holds them. This means that you can do anything an Admin can do using their Access Token. If you use an Access Token for an Observer Agent for example then you can only do the things that an Observer agent can do and so on for other Gorgias Roles. Learn more about roles [here](https://docs.gorgias.com/user/adding-team-members#user_permissions).\n#\nAccess Tokens (aka API Keys)\nAccess Tokens (aka API keys) are similar to user passwords except that they are created for applications that need access Gorgias' API and can be easily reset/revoked without changing the associated user password. Access Tokens are generated for each user and are **not on the level of the account**.\n###\nWhen should you use Access Tokens?\nRead more about different [Application Types](/docs/application-types) and the Authentication type you can"
+    },
+    {
+     "url": "https://developers.gorgias.com/docs/set-up-oauth2-app-store",
+     "title": "3. Set up OAuth2",
+     "snippet": "OAuth2 App credentials\nOnce you have [created your draft app](/docs/2-create-a-draft-app-submission-form) you will get access to your credentials: `Client ID` and `Client Secret`.\nThese credentials are necessary to identify your app when a Gorgias user \"installs\" your app and authorizes the requests to get the `access_token` from Gorgias.\n\nOAuth2 authorization flow\nThe authorization flow below provides a high-level view of the process of obtaining the **Access Token** needed to make OAuth2 bearer token requests.\n###\nUser clicks \"Connect App\" button\nOnce [approved by our team](/docs/5-submit-app-for-review) , your app will appear in our in-product App Store (Settings \u2192 Integrations) where Gorgias users can install the app by clicking **Connect App** in your app listing:\n> ###\n>\n> Note that the public link in the App Store will always go to the latest **approved** version of your app.\nOnce the Gorgias user clicks the **Connect App** button they will get redirected to the **App URL** that you specified in the [Draft App submission form](/docs/2-create-a-draft-app-submission-form) .\nThe redirect then takes the form of the following URL:\n`https://your-gorgias-app.com/oauth/install?accou"
+    },
+    {
+     "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+     "title": "Access Tokens (API Keys)",
+     "snippet": ">\n> Please remember that the API key authentication method can be used **only for private apps**. If you plan to build a public app you have to use OAuth2.\nEach access token (or API key) is tied to a specific user and has the same permissions as the user that holds them. Requests made with an access token will act on behalf of a user and will have access to the resources their permissions allow. As an admin, you can easily generate and revoke your access token in the settings of your account.\n**Example:** *If you use an Access Token for a user with an Observer Agent role, then you can only do the things that an Observer agent can. Learn more about roles[here](https://docs.gorgias.com/user/adding-team-members#user_permissions).*\n##\nHow do I get my API key?\n1. Log in to your Gorgias account\n2. Navigate to **Settings** \u2192 **REST API**\n3. Click the **Create API key** button\nOnce you have your credentials, you can start performing requests directly from the [API documentation](/reference-link/requests) .\n##\nRequest example\n```\ncurl --request GET \\\n--url https://your-customer-account.gorgias.com/api/account \\\n--header 'Authorization: Basic base64encode(USERNAME:API_KEY)'\n```\n> ###\n>\n> Sin"
+    },
+    {
+     "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+     "title": "developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+     "snippet": "In order to be able to have an approved public app with Gorgias, it is required that the app is using OAuth2 for authentication.\nYou can obtain the OAuth2 token by following these steps and requirements:\n<ol>\n<li> Creating an app on the partners\u2019 account</li>\n<li> Obtaining the client_id and client_secret</li>\n<li> Redirect authorization</li>\n<li> Post request to obtain the access token (has a 24 hours expiration time)</li>\n<li> Refresh token used to obtain the next token (does not have expiration time)</li>\n</ol>\n\nOnce the application is approved it will appear on the applications page in the helpdesk, and on that page, the connect app button will be available. The Gorgias users will click on the button to initiate the app installation and they will be redirected to the app URL which was specified on the app submission form in the partners\u2019 account. After you have received that request, the app should send an authorization redirect to the following URL: https\\://`{subdomain}`.gorgias.com/oauth/authorize\n<strong>The app authorization is received through redirects. </strong>\nEach Gorgias account has its own endpoint, which is defined by the subdomain. On these endpoints are sent all"
+    },
+    {
+     "url": "https://developers.gorgias.com/reference/authentication",
+     "title": "Authentication",
+     "snippet": "The Gorgias API supports two authentication methods:\n1. \ud83d\udd10 **Private app** \u2192 API key\n2. \ud83d\udc65 **Public app** \u2192 [OAuth2](/docs/set-up-oauth2-app-store)\nUsing [OAuth2](/docs/set-up-oauth2-app-store) is **mandatory** for public apps.\nFor testing purposes, you can perform requests directly from the API Reference using your API keys.\n1. Go to any endpoint (e.g: \"[Retrieve your account](https://developers.gorgias.com/reference/get_api-account)\")\n2. Use your email (username) and your API key"
+    }
+   ]
+  },
+  "access": {
+   "query": "Gorgias gorgias.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_mhXPJU6uDtOc",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.gorgias.com",
+     "title": "gorgias-developers",
+     "snippet": "\ud83e\udd16 1. Join Developer Portal\nSign up for our [Developer Portal](https://partners.gorgias.com/signup) to start our partnership. This step is required only if you plan to build a Public app.\n\nWe'll review it and let you know once it's approved and ready to be published in [our App Store](https://www.gorgias.com/apps). For Private apps there is no need for approval. Go ahead and use it!"
+    },
+    {
+     "url": "https://ringly.io/blog/gorgias-developer",
+     "title": "Gorgias for developers: what you can build on the API (2026)",
+     "snippet": "Gorgias exposes an open REST API (the current version is V2). It lets you read and write almost everything in your helpdesk programmatically: tickets, customers, messages, events, tags, integrations, and the sidebar widgets your agents see. The base URL is account-specific, in the form *https://{your-domain}.gorgias.com/api/*.\n\n**A private app touches only your own Gorgias account and needs no approval, so you can deploy it today.** That covers the overwhelming majority of what a single brand builds: an internal sync, a sidebar widget, a routing script. A public app is the other case: you're building something to distribute to other merchants through the Gorgias App Store, which means signing up on the developer portal, submitting the app, and passing review before it goes live.\n| | Private app | Public app |\n|---|---|---|\n| Accesses | Your own account data | Any merchant who installs it |\n| Approval | None | Submit + review required |\n| Distribution | Internal only | Gorgias App Store |\n| Best for | Brand-internal syncs, widgets, automations | Vendors building for the ecosystem |\n\n## Authentication: Basic auth and OAuth\nGetting credentials is the first hands-on step, and it's quic"
+    },
+    {
+     "url": "https://docs.gorgias.com/en-US/rest-api-208286",
+     "title": "Access your Gorgias REST API credentials",
+     "snippet": "### Requirements\n- Available on all [Helpdesk plans](https://www.gorgias.com/pricing)\n- The account owner and [admins](https://docs.gorgias.com/en-US/user-permissions-196938) can access the API credentials and create API keys"
+    },
+    {
+     "url": "https://developers.gorgias.com/docs/overview",
+     "title": "Overview",
+     "snippet": "1. Register on the Developer Portal to submit your app and manage your listing.\n2. Create a Draft app in the Developer Portal.\n3. Get Gorgias Sandbox to test your app: [create a trial account](https://www.gorgias.com/signup) and reach out to [[email protected]](https://developers.gorgias.com/cdn-cgi/l/email-protection#126677717a627360667c77606152757d60757b73613c717d7f) to convert it into a Sandbox account.\n1. \u26a0\ufe0f You need to complete steps 1-2 to convert Trial to Sandbox account.\n4. **[Set up OAuth2](https://developers.gorgias.com/docs/set-up-oauth2-app-store) for your app.**\n5. Build your app using our [API docs](https://developers.gorgias.com/reference-link/introduction) and test it.\n6. Complete the rest of the form on the Developer Portal and submit your app for review\n1. \u26a0\ufe0f Make sure to include testing instructions with a test account\n7. Once your app is approved, we will announce it at our next [Product Town Hall](https://www.gorgias.com/events/gorgias-product-town-hall-june).\n1. \ud83d\udce2 You can sync with our Partnerships team [[email protected]](https://developers.gorgias.com/cdn-cgi/l/email-protection#364253555e465744425853444576515944515f57451855595b) for additional opportunities "
+    },
+    {
+     "url": "https://helpcenter.gorgias.com/en-US/technology-partner-program-81978",
+     "title": "Technology partner program",
+     "snippet": "Gorgias is the leading helpdesk solution for eCommerce brands. We enable thousands of merchants to manage all their customer service - Facebook & Instagram, emails, chat, Voice & SMS - in a unified platform integrated with Shopify, BigCommerce, and Magento.\n\nIn this guide, you\u2019ll find an overview of our Technology Partner Program\u2019s tiers, requirements, and associated benefits.\nOur tiers are determined by the revenue your company has sourced to Gorgias. As you bring us more business, you'll be elevated to our Preferred Partner status, which unlocks tremendous benefits.\n\n### Gorgias Trusted Partner\nA Trusted Partner has proven to be a great fit for our Partner Program, by executing on agreed-upon deliverables, and adding value to our shared merchants.\n#### Requirements\n- Schedule an onboarding call with a Partner Manager\n- Complete the Gorgias Partner Training\n- Sign the Partnership Agreement\n- Source 1 closed-won referral to Gorgias\n#### Benefits\n- Listed in our App Marketplace directory\n- Dedicated Partner Manager Access\n- Co-hosted events opportunities (invite only)\n- Team Training exchange\n\n#### Requirements\n- Schedule an onboarding call with a Partner Manager\n- Complete the Gorg"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Gorgias API reference REST GraphQL endpoints documentation gorgias.com",
+   "log_id": "log_VWwKHZo4i0yG",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.gorgias.com/reference/get-customer.md",
+     "title": "developers.gorgias.com/reference/get-customer.md",
+     "snippet": "# Retrieve a customer"
+    },
+    {
+     "url": "https://developers.gorgias.com/reference/list-messages.md",
+     "title": "developers.gorgias.com/reference/list-messages.md",
+     "snippet": "# List messages\nList messages matching the given parameters, paginated."
+    },
+    {
+     "url": "https://developers.gorgias.com/reference/get-event.md",
+     "title": "developers.gorgias.com/reference/get-event.md",
+     "snippet": "\"name\": \"id\",\n\"schema\": {\n\"type\": \"integer\"\n},\n\"required\": true,\n\"description\": \"The ID of the event to retrieve.\"\n}\n\n\"type\": \"ticket-closed\",\n\"user_id\": 123,\n\"uri\": \"/api/events/1234/\"\n}\n}\n}\n}\n}\n}"
+    },
+    {
+     "url": "https://developers.gorgias.com/llms.txt",
+     "title": "developers.gorgias.com/llms.txt",
+     "snippet": "## API Reference: Gorgias REST API\n- Account\n- [The Account object](https://developers.gorgias.com/reference/the-account-object.md)\n- [Retrieve your account](https://developers.gorgias.com/reference/get-account.md)\n- [List settings](https://developers.gorgias.com/reference/list-account-settings.md): List account settings matching the given parameters, paginated.\n- [Create a setting](https://developers.gorgias.com/reference/create-account-setting.md): Create a setting for the current account.\n- [Update a setting](https://developers.gorgias.com/reference/update-account-setting.md): Update a setting for the current account.\n\n- [List customers](https://developers.gorgias.com/reference/list-customers.md):\n\n- [Create a customer](https://developers.gorgias.com/reference/create-customer.md)"
+    },
+    {
+     "url": "https://developers.gorgias.com/reference/create-ticket",
+     "title": "Create a ticket",
+     "snippet": "https://{domain}.gorgias.com/api/tickets\n\nClick `Try It!` to start a request and see the response here! Or choose an example:\napplication/json"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Gorgias gorgias.com MCP server Model Context Protocol official",
+   "log_id": "log_VeVO6nCIQQ71",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+     "title": "Connect your AI assistant to the Gorgias MCP",
+     "snippet": "The Gorgias MCP lets you work with your Gorgias helpdesk using an AI assistant, like Claude or ChatGPT. Once you connect the MCP, your AI assistant can access your Gorgias data and account, so you can manage your helpdesk through conversations. For example, you can use an AI assistant to read and analyze your tickets, audit your account, configure AI Agent, and update your settings.\nMCP (Model Context Protocol) is the standard that lets an AI tool connect to another app like Gorgias.\nYou can add the Gorgias MCP from Claude's connector directory or ChatGPT's plugin directory. If you use another AI client, such as Claude Code, Codex, Cursor, or Copilot, you can create a custom connector for the MCP instead.\n\n- A Gorgias account on any [Helpdesk plan](https://www.gorgias.com/pricing).\n- An account with Claude, ChatGPT, or another MCP-compatible AI assistant.\n- Your Gorgias subdomain. This is the `your-brand` part of your account URL (`your-brand.gorgias.com`). You'll enter it when you authorize the connection.\n\nGorgias MCP works with any MCP-compatible AI client. The setup process varies by client, but the connection URL is the same: [https://mcp.gorgias.com/mcp](https://mcp.gorgias.c"
+    },
+    {
+     "url": "https://gorgias.com/blog/gorgias-mcp",
+     "title": "How to Use Claude or ChatGPT with Gorgias",
+     "snippet": "Gorgias MCP connects your Gorgias account directly to Claude, ChatGPT, Cursor, or any other MCP-compatible AI tool. No more exporting data or re-explaining context every time you need a different angle on your tickets. Ask a question, follow up, and execute, all in the same conversation.\n\nThe Model Context Protocol (MCP) enables AI systems to link directly with other tools.\nThe Gorgias MCP provides a first-party bridge, giving you a secure, direct connection between your chosen AI assistant and your Gorgias account.\nOnce connected, your LLM of choice can:\n- Read and search your tickets and customer history\n- Analyze patterns across CSAT scores, [ticket volume](https://www.gorgias.com/blog/ticket-volume), and resolution time\n- Review your macros, rules, and tags\n- Audit your AI Agent guidances and handoff tickets\n- Draft new AI Agent guidances based on your existing setup\n- Check user permissions and team configuration\n\n**What you need:**\n- A Gorgias paid plan (any plan, AI Agent not required)\n- An active subscription to Claude, ChatGPT, Cursor, or another MCP-compatible tool\n**Steps:**\n1. Open your AI tool and navigate to its settings. Look for an Integrations, Connectors, or MCP s"
+    },
+    {
+     "url": "https://mcp.gorgias.com",
+     "title": "Gorgias MCP Server",
+     "snippet": "Model Context Protocol server for Gorgias.\nThis URL hosts an MCP endpoint, not a website. To use it, point an MCP client (Claude Desktop, Claude Code, etc.) at:\n```\nhttps://mcp.gorgias.com/mcp\n```\nOn first connect you'll be asked which Gorgias account to authorize. You can also skip that step by appending `?gorgias_subdomain=<your-subdomain>` \u2014 the part before `.gorgias.com` in your Gorgias account URL."
+    },
+    {
+     "url": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+     "title": "Gorgias MCP is now in Open Beta \ud83c\udf89 - Gorgias Updates",
+     "snippet": "**Gorgias MCP is in open beta today**, a first-party server that plugs your workspace into Claude, ChatGPT, Cursor, and any MCP-compatible tool.\n\n- **Helpdesk hygiene.** Identify gaps in your tagging system, and clean up stale Rules and Macros.\n- **AI Agent review.** Audit your Guidances and handover tickets, and draft and preview new instructions with confidence.\n- **Ad-hoc reporting.** Create reports from plain-English prompts, like ticket volume trends by channel and intent, complete with key metrics and insights in under a minute.\n- **Workflow automation:** Connect Gorgias to your stack and automate custom workflows, like flagging unhappy VIPs in Slack the second they write in.\n\n## **What you need**\n- **Your Gorgias account.** Any plan works. AI Agent is not required. Gorgias MCP is included at no extra cost.\n- **Your own AI tool subscription.** Bring an active account with Claude, ChatGPT, Cursor, or any MCP-capable tool. You bring the LLM, we bring the connection."
+    },
+    {
+     "url": "https://community.gorgias.com/c/tips-tricks-874d4d/troubleshoot-your-gorgias-mcp-connection-issues",
+     "title": "\ud83d\udee0\ufe0f Troubleshoot your Gorgias MCP connection issues | Gorgias",
+     "snippet": "***1. Error: \u201cThis URL hosts an MCP endpoint\u201d***\nThis indicates that the URL was opened in a browser, as if it was a website. You need to add it inside your AI client's connectors settings, since this is a connection endpoint. Find the instructions [here](https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546#install-the-gorgias-mcp-on-claude-desktop).\n---\n***2. Error: \u201cAuthorization with MCP server failed\u201d***\nCheck the name of the subdomain that you have added to the end of your MCP server URL. It should contain only the first part of your Gorgias URL, without any dots, quotation marks, or spaces.\nFor example, if your Gorgias login link is ***simply-gorgias****.gorgias.com*, then your MCP URL will be https://mcp.gorgias.com/mcp?gorgias_subdomain=***simply-gorgias***\n\na) If you\u2019re on Enterprise or connected to a Team plan, reach out to the Owner (probably your manager or system admin), so they can first add it to your org accounts. Share [these instructions](https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546#connect-to-team-and-enterprise-plans) with them.\nb) If you\u2019re an individual user with Free, Pro, or Max plan, type"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

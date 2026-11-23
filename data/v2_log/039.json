@@ -1,0 +1,28 @@
+{
+  "id": 39,
+  "app": "Threads (Meta)",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://github.com/baguskto/threads-mcp/blob/main/README.md",
+      "to": "https://github.com/baguskto/threads-mcp",
+      "why": "Previous README URL 404; repo page live. Third-party repo, not Meta, so community stays correct (Meta official MCPs cover Ads, devtools, WhatsApp only).",
+      "evidence": "https://developers.facebook.com/documentation/mcp"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://blog.lots.social/threads-api-free-access-posting-limits-app-review",
+      "to": "https://developers.facebook.com/documentation/threads/create-posts",
+      "why": "Replaced third-party blog with Meta doc: without advanced access for threads_content_publish you can only post for Threads testers.",
+      "evidence": "https://developers.facebook.com/documentation/threads/create-posts"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 3
+}

@@ -1,0 +1,36 @@
+{
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM",
+  "one_liner": "Open-source CRM with per-workspace REST and GraphQL APIs.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_trial",
+  "access_notes": "Self-hosted is free; cloud has trial (card may be needed). Generate API key in settings or use OAuth.",
+  "api_types": [
+    "rest",
+    "graphql"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://docs.twenty.com/developers/extend/mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "other",
+  "blocker_note": "No free cloud plan; credentials are per-workspace so host URL varies for self-hosted.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.twenty.com/developers/extend/oauth",
+    "access": "https://onegtmlab.dev/tool-directory/crm/twenty",
+    "surface": "https://docs.twenty.com/developers/api-and-webhooks/api",
+    "mcp": "https://docs.twenty.com/developers/extend/mcp"
+  }
+}

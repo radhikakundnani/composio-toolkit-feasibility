@@ -1,0 +1,142 @@
+{
+ "id": 49,
+ "app": "Amazon Selling Partner",
+ "hint": "developer-docs.amazon.com/sp-api",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "Amazon Selling Partner API authentication OAuth API key access token developer docs developer-docs.amazon.com/sp-api",
+   "log_id": "log_XCVRA1Nom4Vm",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/amazon-seller-central-partner-network-authorization-workflow",
+     "title": "Selling Partner Appstore Authorization Workflow",
+     "snippet": "# Selling Partner Appstore Authorization Workflow\nAuthorize a public SP-API application by using the Selling Partner Appstore flow.\nA selling partner can start the authorization process for your public application from two places:\n- Your application's detail page in the Selling Partner Appstore (described in this topic).\n- Your website (described in [Website Authorization Workflow](https://developer-docs.amazon.com/sp-api/docs/website-authorization-workflow)).\nIn the Selling Partner Appstore workflow, selling partners use the Selling Partner Appstore to find and authorize applications that help them manage their Amazon selling business. Before a selling partner can use your application, they must authorize it to access their account information through an OAuth workflow.\nThis topic includes:\n- A step-by-step table showing the authorization workflow.\n- Detailed information about the URIs, parameters, and tokens used in the workflow.\n##\nSelling Partner Appstore authorization workflow\nThe following overview diagram shows the authorization flow after the selling partner finds your app's detail page in the Selling Partner Appstore.\nView authorization workflow overview diagram\nSeller fin"
+    },
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/tutorial-test-selling-partner-api-endpoints",
+     "title": "Tutorial: Test Selling Partner API Endpoints",
+     "snippet": "Selling Partner API (SP-API) provides [sandbox environments](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) where you can test the SP-API endpoints without affecting production data.\n\n- If you have your own selling partner account, you can [self authorize](https://developer-docs.amazon.com/sp-api/docs/self-authorization) your application to access your account information.\n- If you don\u2019t have your own selling partner account, you can do one of the following:\n- Use the Solution Provider Portal to register a sandbox application, with which you can call sandbox endpoints without seller authorization and while your developer profile is under review. For more information, refer to [Step 4: Register a Sandbox Application](https://developer-docs.amazon.com/sp-api/docs/onboarding-step-4-register-your-first-sandbox-application) and [Step 5: Make Your First Call to the SP-API Sandbox endpoint](https://developer-docs.amazon.com/sp-api/docs/onboarding-step-5-make-your-first-call-to-the-sp-api-sandbox).\n- Use a [third-party OAuth workflow](https://developer-docs.amazon.com/sp-api/docs/selling-partner-appstore-authorization-workflow). With this workflow, third-par"
+    },
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+     "title": "Step 6: Set up the Authorization Workflow",
+     "snippet": "Choose your authorization method based on your application type:\n- **Public applications:** Must use [OAuth 2.0](https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications) through [Login with Amazon](https://developer.amazon.com/apps-and-games/login-with-amazon) (LWA). Selling partners can authorize your application [through the Selling Partner Appstore](https://developer-docs.amazon.com/sp-api/docs/selling-partner-appstore-authorization-workflow) or [through your website](https://developer-docs.amazon.com/sp-api/docs/website-authorization-workflow).\n- **Private applications:** You can [self-authorize](https://developer-docs.amazon.com/sp-api/docs/self-authorization) these applications directly from the Solution Provider Portal.\n\n###\nLogin with Amazon (LWA)\nAmazon's OAuth 2.0 service that handles authorization between your application, selling partners, and the SP-API. During runtime, both public and private applications call LWA to exchange a refresh token for an access token to include in requests to the SP-API.\n\n###\nToken\nA secure digital key that represents authorization to access SP-API resources on behalf of a selling partner.\n###\nAccess token"
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+     "title": "Connect to the SP-API",
+     "snippet": "- Get the application authorized by a selling partner or, if you're a private developer, authorize it yourself. For details, refer to [Authorizing Selling Partner API applications](https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications).\n##\nStep 1. Request a Login with Amazon access token\nA Login with Amazon (LWA) access token authorizes your application to take certain actions on behalf of a selling partner. An LWA access token expires one hour after it is issued.\n> ###\n> Note\n>\n>\n>\n> An LWA access token must be included in calls to all operations *except* restricted operations, which return Personally Identifiable Information (PII). When calling restricted operations, instead of including an LWA access token, you include a Restricted Data Token (RDT). For information about getting RDTs and calling restricted operations, refer to the [Tokens API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/tokens-api).\nTo request an LWA access token, make a secure HTTP POST to the LWA authentication server (`https://api.amazon.com/auth/o2/token`) with the following parameters:\n| Name | Description | Required |\n|---|---|---|\n| `grant_type` | The "
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/self-authorization",
+     "title": "Authorize Private Applications",
+     "snippet": "Before your private application can call the Selling Partner API (SP-API) on behalf of your organization, you must authorize the application to access your account information. This process is called *self-authorization*. You can self-authorize your application in draft status because there is no reason to publish a private application.\n\nThe following table shows the authorization flow when you self-authorize your private application.\n| Step | Actor | Action | Additional details |\n|---|---|---|---|\n| 1 | You | Review authorization limits. (You can't add authorizations to an application after it reaches the maximum authorization limit.) | [Authorization limits](https://developer-docs.amazon.com/sp-api/docs/application-authorization-limits) |\n| 2 | You | Sign in to Solution Provider Portal, Seller Central, or Vendor Central. | Tool sign-in details |\n| 3 | You | Locate your application and choose **Authorize app** for each account that you want to authorize. This process generates a refresh token for each authorized account. | Generate a refresh token |\n| 4 | You | Store the refresh tokens securely. | Token storage details |\n| 5 | Your application | (During runtime) Exchanges refresh "
+    }
+   ]
+  },
+  "access": {
+   "query": "Amazon Selling Partner developer-docs.amazon.com/sp-api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_Mnv-BvYGvVeJ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/amazon-seller-data-access",
+     "title": "Amazon Seller Data Access",
+     "snippet": "Sellers that have a professional selling account and authorized third parties that are registered as Selling Partner API (SP-API) developers can use the SP-API to programmatically access Amazon's Seller data (also referred to as business user data), including customers' data. Through SP-API, sellers and authorized third parties have access to various tools and downloadable reports that include listings, returns, inventory, orders, product recommendations, payments, feedback, and analytics. Sellers can also access the data directly on [Seller Central](https://developer-docs.amazon.com/sp-api/docs/seller-central-urls).\n\nIf you want to integrate with the SP-API, you must first register as a private developer.\nYou only need to register as a developer once, in any [region and store](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids), to have continuous access to the SP-API. As part of registration, you must complete a Developer Profile. The Developer Profile collects the following:\n- Your organization\u2019s contact information\n- Information about the data you require from Amazon Services APIs\n- Security and use information (to ensure your compliance with Amazon\u2019s [policies and a"
+    },
+    {
+     "url": "https://developer.amazonservices.com/start/getting-started-for-private-developers",
+     "title": "Getting started for private developers",
+     "snippet": "Before creating a private application, you must first be registered as an Amazon Seller using [Amazon Seller Central](https://sellercentral.amazon.com/?ld=NSGoogle&pageName=US%3ASPDS%3ASPAPI-private-developer). Only Professional Selling Accounts can register to develop or integrate with Selling Partner API. Individual accounts are not eligible. You can upgrade your account to a professional plan at any time.\nYou must be a primary account user to complete registration.\nGo to [Solution Provider Portal](https://solutionproviderportal.amazon.com/?ref_=devhub_nav_spp&ld=NSGoogle&pageName=US%3ASPDS%3ASPAPI-private-developer)\n\nReview the [Acceptable Use Policy (AUP)](https://developer-docs.amazon.com/sp-api/docs/policies-and-agreements?ld=NSGoogle&pageName=US%3ASPDS%3ASPAPI-private-developer), [the Data Protection Policy (DPP)](https://developer-docs.amazon.com/sp-api/docs/policies-and-agreements?ld=NSGoogle&pageName=US%3ASPDS%3ASPAPI-private-developer) and the [Amazon Services API Developer Agreement](https://developer-docs.amazon.com/sp-api/docs/policies-and-agreements?ld=NSGoogle&pageName=US%3ASPDS%3ASPAPI-private-developer) requirements before submitting your profile."
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/roles-in-the-selling-partner-api",
+     "title": "Selling Partner API Roles",
+     "snippet": "Roles are the mechanism by which the Selling Partner API (SP-API) determines whether a developer or application has access to an operation or resource. Roles protect access to personally identifiable information (PII) and other sensitive data, and ensure that developers only access data that their application requires.\nAs a developer, you must request and qualify for a particular role to gain access to the operations and resources that the role provides. If you call an operation for which you don't have the required roles, you get a 403 error.\n##\nChoose your roles\nUse the following topics to identify which role you need for each SP-API operation and type:\n- [Role Mappings for Operations](https://developer-docs.amazon.com/sp-api/docs/role-mappings)\n- [Role Mappings for Types](https://developer-docs.amazon.com/sp-api/docs/role-mappings-for-types)\nAfter you know which roles you need, you request them through your developer profile. Amazon evaluates the information you submit and approves or denies your request. If denied, you can address the reason for the denial and then resubmit your profile.\n###\nAdd your approved roles to your application\nWhen you [register your SP-API application]"
+    },
+    {
+     "url": "https://commercespine.com/articles/amazon-selling-partner-api",
+     "title": "Amazon Selling Partner API: what it takes to get access",
+     "snippet": "**TL;DR:** The Amazon Selling Partner API is Amazon's developer interface for reading and managing seller and vendor data. Private seller apps need a professional selling account and a developer profile that Amazon reviews, with roles picked from 17 options. Every call then runs inside per-operation rate limits. Commerce Spine already carries Amazon's approval and gives your own agent a read-only API, starting with a free plan on one account.\n## What is the Amazon Selling Partner API?\nThe Amazon Selling Partner API (SP-API) is the program through which software reads and manages a seller's or vendor's Amazon business data. You register as a developer first and then register an application. Its Reports API alone covers inventory, orders for fulfillment, tax information and returns, according to [Amazon's Reports API documentation](https://developer-docs.amazon.com/sp-api/docs/reports-api).\n\nA seller with a professional selling account can register, and only the primary account user can complete it. Individual selling accounts are not eligible for private seller applications, though Amazon lets you upgrade to a professional plan at any time. [amz-registration]\nPublic developers carry"
+    },
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/onboarding-overview",
+     "title": "Onboarding as a Developer",
+     "snippet": "This guide walks you through the steps to build applications for a selling partner (seller or vendor) by using the [Selling Partner API](https://sell.amazon.com/developers) (SP-API). The SP-API offers a collection of REST-based APIs that you can use to automate selling operations such as order processing, shipment tracking, and payment management.\n##\nRequirements\nTo integrate with the SP-API, you need the following prerequisites:\n- Basic understanding of REST APIs\n- Some programming experience\n\nApplications fall into two categories:\n- **Public applications:** These applications are available to multiple selling partners through the selling partner's website or through the [Selling Partner Appstore](https://developer-docs.amazon.com/sp-api/docs/what-is-the-selling-partner-appstore). Public applications are widely accessible solutions that address common needs and are designed for multiple selling partners to use. Public applications require Amazon approval for publishing to the Selling Partner Appstore and selling partners must authorize their use.\n\n###\nDeveloper\nA person or organization who builds applications using the SP-API on behalf of a selling partner. Developers fall into tw"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Amazon Selling Partner API reference REST GraphQL endpoints documentation developer-docs.amazon.com/sp-api",
+   "log_id": "log_XPsiaJ5kkAY5",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+     "title": "Connect to the SP-API",
+     "snippet": "These instructions show you the steps to connect to the Selling Partner API (SP-API). For links to additional examples, refer to [SP-API SDKs](https://developer-docs.amazon.com/sp-api/docs/sp-api-sdks).\n##\nPrerequisites\nBefore your application can connect to SP-API, you must:\n- Register the application. For details, refer to [Registering your application](https://developer-docs.amazon.com/sp-api/docs/registering-your-application).\n- Get the application authorized by a selling partner or, if you're a private developer, authorize it yourself. For details, refer to [Authorizing Selling Partner API applications](https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications).\n\nAn SP-API URI contains the following components.\n| Name | Description | Example |\n|---|---|---|\n| HTTP method | The HTTP method. | `GET` |\n| Endpoint | An [SP-API endpoint](https://developer-docs.amazon.com/sp-api/docs/sp-api-endpoints). | `https://sellingpartnerapi-na.amazon.com` |\n| Path | Resource location. | `/catalog/2022-04-01/items/{asin}` |\n| Query string | The query parameters. | `?marketplaceIds=ATVPDKIKX0DER` |\n| Path parameter | The path parameters. | `EXAMPLEASIN` |\nFor ex"
+    },
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/request-and-filter-data-with-graphql",
+     "title": "Request and filter data with a GraphQL query",
+     "snippet": "To complete this tutorial you will need:\n- The appropriate role for the data you're requesting. This tutorial uses Sales and Traffic data in its examples, which requires the [Brand Analytics role](https://developer-docs.amazon.com/sp-api/docs/roles-in-the-selling-partner-api).\n##\nStep 1: Create a query request\nCreate an async query request by specifying the query. The query must be a valid GraphQL query which adheres to the [schema](https://sellercentral.amazon.com/datakiosk-schema-explorer). The query input parameters can be modified as desired and response fields can be included or excluded in any order.\nCall the [`createQuery`](https://developer-docs.amazon.com/sp-api/reference/createquery) operation, providing the query in the body.\n###\nRequest examples\n**Example 1:** Create a query request for `salesAndTrafficByDate` to get a subset of fields in the response.\n```\nPOST https://sellingpartnerapi-na.amazon.com/dataKiosk/2023-11-15/queries\n{\n\"query\": \"{analytics_salesAndTraffic_2024_04_24{salesAndTrafficByDate(startDate:\\\"2023-01-01\\\" endDate:\\\"2023-10-31\\\" aggregateBy:DAY marketplaceIds:[\\\"ATVPDKIKX0DER\\\"]){endDate marketplaceId startDate traffic{averageOfferCount browserPageView"
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api",
+     "title": "Selling Partner API",
+     "snippet": "Welcome to Selling Partner API Documentation. Learn how to get started and build applications with Amazon's REST-based SP-API."
+    },
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/reference",
+     "title": "Welcome to API References",
+     "snippet": "Welcome to the Selling Partner API reference.\nNavigate to an API to reach its landing page. Select an operation to open its specification.\nEach operation has request and response schemas, as well as examples. You can edit the values of the arguments in the request, which dynamically updates the example request in the language of your choice.\nFor information about how to authenticate and call the SP-API, refer to [Connect to the SP-API](https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api)."
+    },
+    {
+     "url": "https://developer-docs.amazon.com/sp-api/docs",
+     "title": "Welcome to SP-API Documentation",
+     "snippet": "Welcome to the Selling Partner API (SP-API) documentation site, where you can find multiple resources to help you integrate with SP-API.\nThis site is for developers who want to create applications for selling partners (applications for sellers, vendors, or both).\n\n| **[API references](https://developer-docs.amazon.com/sp-api/reference)** | Interactive API references for all of the SP-APIs |"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Amazon Selling Partner developer-docs.amazon.com/sp-api MCP server Model Context Protocol official",
+   "log_id": "log_52GUc1_z_SpS",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/amzn/selling-partner-api-samples/blob/main/use-cases/sp-api-dev-mcp/sp-api-dev-assistant-mcp-server/README.md",
+     "title": "selling-partner-api-samples/use-cases/sp-api-dev-mcp/sp-api-dev-assistant-mcp-server/README.md at main \u00b7 amzn/selling-partner-api-samples",
+     "snippet": "# Amazon SP-API Developer MCP Server\nA Model Context Protocol (MCP) server that provides tools for interacting with Amazon's Selling Partner API (SP-API), including live API execution, API catalog exploration, migration assistance, code generation, code optimization, and documentation search.\n## Features\n### SP-API Execute\n- `sp_api_execute` - Execute live Amazon SP-API requests\n- Handles OAuth token refresh and AWS Signature V4 signing\n- Validates parameters against the API catalog\n- Builds URLs with path/query parameter substitution\n- Returns formatted responses with highlights, insights, and next steps\n- Optionally generates Node.js code snippets\n- Supports region-based endpoint routing (NA, EU, FE)\n**Parameters**:\n| Parameter | Required | Description |\n|---|---|---|\n| `endpoint` | Yes | SP-API endpoint ID (e.g., `orders_getOrders`) |\n| `parameters` | Yes | Complete set of API parameters as key-value pairs |\n| `method` | No | HTTP method override (`GET`, `POST`, `PUT`, `DELETE`) |\n| `additionalHeaders` | No | Extra request headers |\n| `rawMode` | No | Return raw response without formatting (default: `false`) |\n| `generateCode` | No | Generate a code snippet for the request (defa"
+    },
+    {
+     "url": "https://github.com/amzn/selling-partner-api-samples/blob/main/use-cases/amazon-data-kiosk-mcp-server",
+     "title": "selling-partner-api-samples/use-cases/amazon-data-kiosk-mcp-server at main \u00b7 amzn/selling-partner-api-samples",
+     "snippet": "# Data Kiosk MCP Server\nA Model Context Protocol (MCP) server that enables AI assistants like Claude Desktop to interact with Amazon's Data Kiosk API for analyzing seller and vendor data.\n**This MCP server example runs locally in your test environment and provides a foundation for development and experimentation. Developers utilizing this sample solution are responsible for its implementation, usage patterns, and ensuring compliance with Amazon's Acceptable Use Policy (AUP) and Data Protection Policy (DPP).**\n0729.mov\n## Overview\nThis MCP server provides a bridge between AI assistants and Amazon's Data Kiosk API, allowing for powerful analytics capabilities through natural language conversations. It enables users to:\n- Query Sales and Traffic data for Amazon sellers\n- Analyze Economics and Profitability metrics\n- Examine Vendor Analytics data\n- Build and execute GraphQL queries\n- Monitor query processing\n- Download and analyze query results\n## Architecture\nThe project is structured as a monorepo with three packages:\n1. **common**: Shared utilities and base functionality\n- Authentication with Amazon Selling Partner API\n- Base API interaction\n- GraphQL query helpers\n- Utility functio"
+    },
+    {
+     "url": "https://github.com/amzn/selling-partner-api-samples/tree/main",
+     "title": "GitHub - amzn/selling-partner-api-samples: Sample code for Amazon Selling Partner API use cases",
+     "snippet": "## Local MCP for SP-API\nThe [`@amazon-sp-api-release/sp-api-dev-mcp`](https://www.npmjs.com/package/@amazon-sp-api-release/sp-api-dev-mcp) package is a local MCP (Model Context Protocol) server for SP-API that bundles multiple developer tools into a single npm package. It is published from the [`sp-api-dev-mcp`](https://github.com/amzn/selling-partner-api-samples/tree/main/use-cases/sp-api-dev-mcp) source in the selling-partner-api-samples GitHub repository.\n### Installation\n```\nnpm install -g @amazon-sp-api-release/sp-api-dev-mcp\n```\n### Available Servers\n| Server | Command |\n|---|---|\n| SP-API Dev Assistant | `sp-api-dev-assistant-mcp-server` |\n| SP-API Workflow Builder | `sp-api-workflow-mcp` |\n### Usage with npx\n```\nnpx -y @amazon-sp-api-release/sp-api-dev-mcp sp-api-dev-assistant-mcp-server\nnpx -y @amazon-sp-api-release/sp-api-dev-mcp sp-api-workflow-mcp-server\n```\n**Required secret:** `NPM_TOKEN` \u2014 a granular npm access token with read/write permission for `@amazon-sp-api-release/sp-api-dev-mcp`."
+    },
+    {
+     "url": "https://github.com/amzn/selling-partner-agentic-toolkit",
+     "title": "GitHub - amzn/selling-partner-agentic-toolkit: Skills for managing an Amazon seller account via SP-API, through the Amazon Selling Partner Connector (MCP). Write actions are always human-in-the-loop (drafted for your approval).",
+     "snippet": "# Amazon Selling Partner\nSkills for managing an Amazon seller account via SP-API, through the Amazon Selling Partner Connector (MCP). Write actions are always human-in-the-loop (drafted for your approval).\n## Connector\nThe bundled `.mcp.json` registers the Amazon Selling Partner Connector (MCP server) at `https://sellingpartner-ai.amazon.com/mcp`. You authorize access through the standard Seller Central OAuth consent flow; the assistant can only use tools allowed by your Seller Central roles. Write actions are drafted for your approval.\n\n- **sp-api-knowledge** \u2014 answer SP-API developer questions and guide integration design, grounded in the SP-API documentation.\n\nWhen you use these skills, the assistant sends requests to the Amazon Selling Partner Connector (MCP) at (`https://sellingpartner-ai.amazon.com/mcp`) over an authenticated connection:"
+    },
+    {
+     "url": "https://github.com/aws-samples/sample-amazon-spapi-mcp-server",
+     "title": "GitHub - aws-samples/sample-amazon-spapi-mcp-server",
+     "snippet": "# SP-API MCP Server\n> **\u26a0\ufe0f Disclaimer:** This is a prototype/proof-of-concept and is NOT a production-level application. It is intended for local development, testing, and demonstration purposes only. Do not deploy to production environments without additional security hardening, comprehensive testing, and a full security review.\nA Model Context Protocol (MCP) server that provides unified access to all Amazon Selling Partner APIs (SP-APIs). Connect any MCP-compatible AI agent to Seller Central and Vendor Central data through natural language.\n## Features\n- **Dual-mode operation** \u2014 Seller, Vendor, or Both account types with dynamic tool filtering\n- **Full SP-API coverage** \u2014 Orders, Catalog, Pricing, Inventory, Reports, Feeds, Listings, Notifications, Vendor Orders/Shipments/Invoices, and more\n- **Composite tools** \u2014 Automatic report polling, feed submission workflows\n- **Rate limiting** \u2014 Built-in per-API rate limiting with queue-before-fail strategy\n- **Auto-pagination** \u2014 Fetches all pages with configurable safety caps\n- **Error handling** \u2014 Structured errors with categories and suggested actions\n- **Retry logic** \u2014 Exponential backoff for transient failures (429, 5xx)\n## Quick "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

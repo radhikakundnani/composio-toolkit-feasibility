@@ -1,0 +1,142 @@
+{
+ "id": 75,
+ "app": "Asana",
+ "hint": "developers.asana.com",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Asana API authentication OAuth API key access token developer docs developers.asana.com",
+   "log_id": "log_pj-W671xyPy9",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.asana.com/docs/oauth",
+     "title": "OAuth",
+     "snippet": "At its core, OAuth (\"Open Authorization\") is a mechanism for applications to access the Asana API on behalf of a user, all without the application having access to the user's username and password. Instead, the application gets a *token*, which can be used in subsequent API calls through the addition of an [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization):\n```\n-H \"Authorization: Bearer ACCESS_TOKEN\"\n```\n*In the above example,*`ACCESS_TOKEN`* should be replaced by the actual token received during the* [token exchange](/docs/oauth#token-exchange-endpoint).\nMost of the time, OAuth is the preferred method of authentication for developers, users, and Asana as a platform. If you are [building a custom app](/docs/building-custom-apps), you should consider building a secure OAuth flow to authenticate users of your app.\n> ###\n> Quick reference\n>\n>\n>\n> If you are already using an [OAuth library](https://oauth.net/code/) and/or have a deep understanding of OAuth, you may wish to skip ahead to the quick reference below:\n>\n> - Asana supports the [authorization code grant](https://oauth.net/2/grant-types/authorization-code/) flow\n> - Applications can"
+    },
+    {
+     "url": "https://developers.asana.com/docs/getting-started-with-asana-oauth",
+     "title": "OAuth Code Samples / Libraries",
+     "snippet": "Testing in Postman\nTo quickly test Asana OAuth with scopes:\n1. Use [Asana's Postman Collection](/docs/postman-collection)\n2. In the [developer console](https://app.asana.com/0/my-apps), set your app's redirect URL to:\n```\nhttps://oauth.pstmn.io/v1/callback\n```\n1. Under **Manage Distribution** on the left sidebar of the developer console, make sure that the Asana workspace for your user can access your app under **Specific workspaces** or choose **Any workspace**.\n1. In Postman, select **Asana** at the top level of the collection, then select the **Authorization** tab. Enter these settings (leave defaults for other settings):\n- **Auth** **Type**: OAuth 2.0\n- **Grant** **Type**: Authorization Code\n- **Callback** **URL**: `https://oauth.pstmn.io/v1/callback`\n- **Auth** **URL**: `https://app.asana.com/-/oauth_authorize`\n- **Access** **Token** **URL**: `https://app.asana.com/-/oauth_token`\n- **Client** **ID**: (enter your test ID)\n- **Client** **Secret**: (enter your secret from the Asana developer console)\n- **Scope**: (space separated list of scopes from the sheet above) (e.g., `tasks:read tasks:write projects:read`, no quotes)\n- **State**: (enter a random string like `1234`)\n1. Selec"
+    },
+    {
+     "url": "https://developers.asana.com/docs/personal-access-token",
+     "title": "Personal access token",
+     "snippet": "A personal access token (PAT) contains your security credentials for the Asana platform. Much like an API key, generating a PAT allows you to access (i.e., make requests to) the Asana REST API upon successful authentication.\nA user can create many, but not unlimited, personal access tokens. When creating a token, you must give it a description to help you remember what you created the token for.\n> ###\n> PAT or OAuth?\n>\n>\n>\n> If you build an app, and the app needs to perform actions on behalf of users (e.g., getting data from Asana or making changes within Asana), you should use [OAuth](/docs/oauth).\n---\n#\nGenerating a PAT\nYou can generate a personal access token from the Asana [developer console](https://app.asana.com/0/my-apps).\n> ###\n> API explorer\n>\n>\n>\n> Your PAT also gives you access to the API explorer, where you can make API requests (and view responses) directly in your browser window. For more information, see [API explorer](/docs/api-explorer).\n##\nExample\nPersonal access tokens should be used similarly to OAuth access tokens when accessing the API (i.e., passing them in the `Authorization` header).\nBelow is an example of a cURL request authenticating with a PAT:\n```\ncurl "
+    },
+    {
+     "url": "https://developers.asana.com/docs/authentication",
+     "title": "Authentication",
+     "snippet": "Personal access token\nA [personal access token](/docs/personal-access-token) (PAT) is the quickest and simplest way to authenticate in the API. PATs are long-lived tokens allowing programmatic authentication to the API and should be stored securely. PATs provide the same authorization (i.e., permissions and level of access to Asana data) through the *API* as the user who generated them has in the Asana *web product*.\nUsing a PAT is a good way to get started quickly with the API regardless of which auth type you end up using in production. If you are building a script or simple app that doesn\u2019t need to support multiple users logging in, then using a PAT with your production app is a sufficient option.\nIf your app needs more access to data than you have in Asana, then you should consider using a [Service Account](https://help.asana.com/s/article/service-accounts). You will likely want to use [OAuth](/docs/oauth) if your app needs to support multiple users signing in to use the app.\nPATs are generated in the [developer console](https://app.asana.com/0/my-apps). See the [PAT documentation](/docs/personal-access-token) for more information.\n###\nPAT attribution\nIf you generate a PAT from"
+    },
+    {
+     "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+     "title": "Integrating with Asana's MCP Server",
+     "snippet": "The Asana V2 MCP server is generally available and uses OAuth for authorization. You'll pre-register your MCP app in the [developer console](https://app.asana.com/0/my-apps), where you can create both standard API apps and MCP apps.\n\n**Important:** Tokens issued for MCP apps only work with the MCP server. This separation follows [MCP security best practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)\u2014if a token is compromised, the blast radius is contained. If you need to make standard Asana API requests, create a separate API app and obtain tokens through the standard OAuth or PAT flow.\n---\n##\nCreate your OAuth app\nStart by creating an OAuth app in the Asana developer console. This app will handle authentication for your MCP client.\n###\nStep 1: Create your app\n1. Go to the [developer console](https://app.asana.com/0/my-apps) and sign in\n2. Click \"Create new app\"\n3. Enter your app name (e.g., \"My MCP Client\")\n4. Select \"MCP app\" as the app type\n5. Click \"Create app\"\nYou'll see your app's **Client ID** and **Client secret**. Keep these handy\u2014you'll need them for authentication.\n> ###\n> Client secret\n>\n>\n>\n> Your client secret is a *secret"
+    }
+   ]
+  },
+  "access": {
+   "query": "Asana developers.asana.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_cwwnQM5kh4dG",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://activepieces.com/blog/asana-api-guide-get-tasks-projects-and-users-in-2026",
+     "title": "Asana API Guide: Get Tasks, Projects, and Users in 2026",
+     "snippet": "Asana's API is a REST interface that speaks JSON at `https://app.asana.com/api/1.0`, and you can list tasks with a personal access token and a `GET /tasks` call, the same kind of call that tools like [Activepieces](https://www.activepieces.com) make under the hood when they talk to Asana.\n\nThe official reference lives at [developer.asana.com](https://developer.asana.com/reference).\n\n### Which Asana plans include API access\nYou create a personal access token from your own account's developer settings, and Asana's developer documentation describes the API as available to Asana accounts.\nPlan details change over time. Confirm them on Asana's pricing page and the developer docs before you build a dependency on a particular tier. To check access, make a single `GET /users/me` call with your token.\n\n| | Personal access token | OAuth app | Service account |\n|---|---|---|---|\n| Who it acts as | The user who created it | Each user who authorizes the app | A dedicated non-human user, where your Asana plan offers one |\n| Best for | Your own scripts and one-off pulls | Products used by other people | Unattended jobs that should outlive any one employee |\n| How it's sent | `Authorization: Beare"
+    },
+    {
+     "url": "https://developers.asana.com/docs/personal-access-token/(/docs/(/docs/developer-sandbox)",
+     "title": "Asana",
+     "snippet": "The Asana API is a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer)ful interface, providing programmatic access to much of the data in the system. It provides predictable URLs for accessing resources, and uses built-in\n\n- Applications can be created from the [\"Apps\" tab of your account settings](https://app.asana.com/-/account_api), where you will find your Client ID and Client Secret.\n- The endpoint for user authorization is `https://app.asana.com/-/oauth_authorize`\n- The endpoint for token exchange is `https://app.asana.com/-/oauth_token`\n- The endpoint for revoking a token is `https://app.asana.com/-/oauth_revoke`\n- Asana supports the Authorization Code Grant flow.\n- Once an access token has been obtained your application can make calls on behalf of the user\n\nTo implement the Authorization Code Grant flow (the most typical flow for most applications), there are three steps:\n1. Send the user to the authorization endpoint so that they can approve access of your app to their Asana account\n2. Receive a redirect back from the authorization endpoint with a **code** embedded in the parameters\n3. Exchange the code via the token exchange endpoint for a `**refresh_toke"
+    },
+    {
+     "url": "https://developers.asana.com/docs/developer-sandbox.md",
+     "title": "developers.asana.com/docs/developer-sandbox.md",
+     "snippet": "Before moving forward with making sample API requests or building apps that leverage that Asana API, we recommend first getting an Asana developer sandbox. A developer sandbox is a temporary Asana domain with limited users.\nDeveloper sandboxes are intended for:\n* Developers building or maintaining a third-party integration with Asana (i.e., submitting your completed integration to get listed in our [app directory](https://asana.com/apps))\n* Existing Asana [Starter](https://asana.com/plan/starter) customers or higher tiers who require a separate environment to perform risk-free testing on the API\nSandboxes can include [Enterprise](https://asana.com/enterprise), [Advanced](https://asana.com/plan/advanced), and [Starter](https://asana.com/plan/starter) features upon request, and are valid for a maximum of one year. Extensions requested after one year will go through Legal review. Approval is not guaranteed, though you may be eligible to request a *new* sandbox.\nTo see the feature differences between the Asana plans, please visit our [pricing page](https://asana.com/pricing)."
+    },
+    {
+     "url": "https://asana.com/id/terms/developer-terms",
+     "title": "API Terms",
+     "snippet": "These Asana Developer Terms (the \u201cTerms\u201d) describe your rights and responsibilities when accessing our publicly available application programming interfaces (\u201cAPI(s)\u201d), registering external servers using the Model Context Protocol (\u201cMCP Servers\" or \u201cMCP(s)\u201d) to interoperate with our AI features (\u201cAsana AI\u201d), and all related developer tools and documentation provided by Asana (the \u201cDocumentation\u201d).\n\n1. API Access & Registration.\n1. Developer Portal. You may use Asana\u2019s Developer Portal (the \u201cDeveloper Portal\u201d) and other resources to access our APIs, register MCPs, submit information about your App to the Service, and make use of certain marketing tools and services. You may use such resources solely to exercise your rights and fulfill your obligations under this Agreement. To access the Developer Portal, you may be required to activate or validate your status as an Asana customer.\n2. Registration. To use our APIs or submit information or content about your App for publishing through the Service, you must follow the registration and credentialing requirements described in the Developer Portal and/or our Documentation. All access keys, tokens, or developer credentials are Asana\u2019s Conf"
+    },
+    {
+     "url": "https://asana.com/developers/documentation",
+     "title": "Build an app with Asana",
+     "snippet": "user, apps can also be created and then shared with only organizations of your choice. By default, all apps start out private to the developer. You can change the sharing permissions of your app in the Manage distribution tab inside the developer console.\nAsana apps use features like our rest API, app components, and webhooks. Learn more about how these features are used to power our most [common use cases](https://developers.asana.com/v1.1/docs/common-use-cases).\n\n1. Choose your test workspace. You can test in any of your existing workspaces, create a free account, or [request a developer sandbox](https://developers.asana.com/docs/developer-sandbox). The developer sandbox will allow you to test premium features not included in a free account."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Asana API reference REST GraphQL endpoints documentation developers.asana.com",
+   "log_id": "log_Yq_eogVDe3ZX",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.asana.com/reference/tasks",
+     "title": "Tasks",
+     "snippet": "| `created_by` | object | [Opt In](https://developers.asana.com/docs/inputoutput-options). A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks. |\n| `created_by.gid` | string | Globally unique identifier of the resource. |\n|\n\nobject | [Opt In](https://developers.asana.com/docs/inputoutput-options). A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks."
+    },
+    {
+     "url": "https://developers.asana.com/reference/rest-api-reference",
+     "title": "Overview",
+     "snippet": "This is the interface for interacting with the Asana platform. This reference is generated from our [OpenAPI Specification](https://raw.githubusercontent.com/Asana/openapi/master/defs/asana_oas.yaml), and contains a comprehensive reference for objects, schemas, and endpoints available in the API.\nFor contextual information, guides, and tutorials regarding API usage, visit our [guides](https://developers.asana.com/docs/overview).\n\nThe Asana API is a [REST](https://developer.mozilla.org/en-US/docs/Glossary/REST)ful interface with predictable resource-oriented URLs, accepts [JSON](https://www.json.org/json-en.html) or [form-encoded](https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data) requests, returns JSON, and uses standard [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) features ([verbs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), [response codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), etc.)\nAPI endpoints are relative to the following [base URL](https://swagger.io/docs/specification/api-host-and-base-path/):\n```\nhttps://app.asana.com/api/1.0\n```\nSome requests return *compact* representations of"
+    },
+    {
+     "url": "https://developers.asana.com/reference/searchtasksforworkspace",
+     "title": "Search tasks in a workspace",
+     "snippet": "To mirror the functionality of the Asana web app's advanced search feature, the Asana API has a task search endpoint that allows you to build complex filters to find and retrieve the exact data you need."
+    },
+    {
+     "url": "https://github.com/anthropics/claude-tag-plugins/blob/a8dc06bd73402afc88572a8a280bfebf200228bc/asana/skills/asana-api/references/api.md",
+     "title": "claude-tag-plugins/asana/skills/asana-api/references/api.md at a8dc06bd73402afc88572a8a280bfebf200228bc \u00b7 anthropics/claude-tag-plugins",
+     "snippet": "# Asana REST API \u2014 Endpoint Reference\nAll endpoints are rooted at `https://app.asana.com/api/1.0`. Every request carries `Authorization: Bearer ${ASANA_TOKEN}` (the value is injected by the runtime \u2014 a placeholder is fine) and `Accept: application/json`; write requests add `Content-Type: application/json`.\nReads return `{\"data\": ...}`; writes send `{\"data\": {...}}` and may add an `{\"options\": {...}}` sibling (`opt_fields`, `opt_pretty`). Errors return `{\"errors\": [...]}`. Objects are keyed by string `gid`. Compact records carry only `gid`, `name`, `resource_type` \u2014 expand with `opt_fields`.\nOfficial docs: `https://developers.asana.com/reference/rest-api-reference`."
+    },
+    {
+     "url": "https://developers.asana.com/docs/quick-start",
+     "title": "Quick start guide",
+     "snippet": "The [Asana API](https://developers.asana.com/reference/rest-api-reference) helps ensure all of your information is up to date and that your teams stay efficient and in-the-loop. It provides a means for software and scripts to read information from *inside* Asana, input information from *outside* Asana, and automatically react when things change. This can include:\n- Consistently doing repetitive or tedious tasks\n- Creating reports on the state of tasks and projects\n- Staying in sync with other software used in your organization (e.g., Slack, Salesforce, etc.)\n\n> - The Asana API is a RESTful interface with predictable resource-oriented URLs, accepts JSON or form-encoded requests, returns JSON, and uses standard HTTP features (verbs, response codes, etc.)\n> - The [API reference](https://developers.asana.com/reference/rest-api-reference) is comprehensive reference for objects, schemas, and endpoints available in the API\n> - To quickly authorize your API requests, create a [personal access token](https://developers.asana.com/docs/personal-access-token) via the [developer console](https://app.asana.com/0/my-apps)\n> - API endpoints are relative to the following [base URL](https://swagger."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Asana developers.asana.com MCP server Model Context Protocol official",
+   "log_id": "log_3fyBFmGaDH-C",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+     "title": "Integrating with Asana's MCP Server",
+     "snippet": "This guide walks you through connecting your MCP client to the official Asana MCP server. You'll create an OAuth app in the Asana developer console and use it to authenticate your MCP client.\n##\nOverview\nThe Asana V2 MCP server is generally available and uses OAuth for authorization. You'll pre-register your MCP app in the [developer console](https://app.asana.com/0/my-apps), where you can create both standard API apps and MCP apps.\nThe same registration steps apply to Asana's Command MCP server. Each user needs a Command license. For client-specific setup, see [Using Asana's Command MCP Server](https://developers.asana.com/docs/using-asanas-command-mcp-server).\n**Important:** Tokens issued for MCP apps only work with the MCP server. This separation follows [MCP security best practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)\u2014if a token is compromised, the blast radius is contained. If you need to make standard Asana API requests, create a separate API app and obtain tokens through the standard OAuth or PAT flow.\n---\n##\nCreate your OAuth app\nStart by creating an OAuth app in the Asana developer console. This app will handle authentica"
+    },
+    {
+     "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+     "title": "Using Asana's MCP Server",
+     "snippet": "Asana offers a Model Context Protocol (MCP) server that allows AI assistants and other applications to access the Asana Work Graph. This server provides a way to interact with your Asana workspace through various AI platforms and tools that support MCP.\nWith this server, you can:\n1. Access Asana data from compatible AI applications\n2. Create and manage tasks and projects through natural language\n3. Generate reports and summaries based on Asana data\n4. Analyze project data and get AI-powered insights\n\nRequirements\n1. A compatible MCP client (Streamable HTTP is supported). [There is a partial list of existing clients here!](https://developers.asana.com/docs/mcp-clients)\n2. The above MCP client app (or the Asana MCP app, for beta clients) must not be blocked in your workspace via Asana [app management](https://help.asana.com/s/article/app-management-and-integrations?language=en_US). If it is, you will be prompted to send a request for your admin to unblock the app for your domain when trying to authorize.\n---\n#\nConnecting to Asana's MCP Server\nThe Asana MCP V2 server is available at: `https://mcp.asana.com/v2/mcp`.\nThis server requires authentication with your Asana account. When conn"
+    },
+    {
+     "url": "https://developers.asana.com/docs/connecting-mcp-clients-to-asanas-v2-server",
+     "title": "Connecting Coding Clients to Asana's V2 server",
+     "snippet": "The V2 MCP server (`https://mcp.asana.com/v2/mcp`) requires OAuth 2.0 authentication with a registered client ID and client secret. Pre-registration provides better security and gives organizations control over which applications can access their Asana data through app management. This guide shows you how to connect different MCP clients to the V2 server.\n\n1. Create an Asana MCP app\nFollow the guide: [Integrating with Asana's MCP Server](https://developers.asana.com/docs/integrating-with-asanas-mcp-server)\nYou'll receive a **client ID** and **client secret** - keep these handy for the next step.\n\nWhen creating your Asana MCP app, set the OAuth redirect URL in the developer console based on which client you're using:\n- **Claude Code**: `http://localhost:8080/callback`\n- **Cursor**: `cursor://anysphere.cursor-mcp/oauth/callback`\n- **VS Code**: Both`http://127.0.0.1:33418/`and `https://vscode.dev/redirect`\n- **Most other clients** (Windsurf, Kiro, Codex): `http://localhost:3334/oauth/callback`\nThe redirect URL **must match exactly** between your Asana app settings and your client configuration.\n\n`mcp-remote` is a community-maintained npm package that acts as a bridge between MCP clien"
+    },
+    {
+     "url": "https://developers.asana.com/docs/mcp-tools-reference",
+     "title": "MCP Tools Reference",
+     "snippet": "The Asana V2 MCP server exposes a set of tools that allow AI assistants to read from and write to your Asana workspace. This page describes the tools, what they do, and when to use them. Availability and tool versions can vary by client and rollout. Use `tools/list` in your connected client to see which tools are available to your session.\n> **This list changes over time.** Tools may be added, updated, or deprecated as the tool set evolves. Always use the `tools/list` MCP command in your client to get the current tool schemas. Subscribe to the [developer changelog](https://forum.asana.com/c/forum-en/api/api-changelog/204) for update notifications.\n##\n**How to use this reference**\nTools are grouped into three categories:\n- **Read tools** return data from your workspace without making any changes.\n- **Write tools** create, modify, or delete data in your workspace.\n- **Interactive tools** display task search results or let you review a task or project before creating it. Availability depends on whether the client supports interactive apps.\n**Access and permissions:** MCP apps in Asana do not use permission scopes. When a user authorizes an MCP client, the token automatically requests "
+    },
+    {
+     "url": "https://developers.asana.com/docs/using-asanas-command-mcp-server",
+     "title": "Using Asana's Command MCP Server",
+     "snippet": "Asana's Command MCP server lets compatible AI clients work with Command Teamspaces, tickets, and releases. You can search, create, and update tickets, add comments, manage blocking dependencies, and read release status.\n\nConnecting to Asana's Command MCP Server\n**Server URL:** `https://mcp.asana.com/v2/command/mcp`\nEach user signs in with their own Asana account and authorizes access. To see available tools and their parameters, use your client's `tools/list` request.\n##\nCreate an Asana MCP app\n1. Open the [developer console](https://app.asana.com/0/my-apps), select **Create new app**, and choose **MCP app** as the app type.\n2. In **OAuth**, add the redirect URL required by your client. It must match exactly.\n3. In **Manage distribution**, allow the workspace where the app will be used.\nUse the app's **Client ID** and **Client secret** when configuring your client. See [Integrating with Asana's MCP Server](/docs/integrating-with-asanas-mcp-server) for app registration details. Use the Command server URL above when connecting.\n\n1. [Create a custom MCP plugin in ChatGPT](https://developers.openai.com/api/docs/guides/custom-mcp-server) with the Command server URL.\n2. Select OAuth auth"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

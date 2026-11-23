@@ -1,0 +1,142 @@
+{
+ "id": 68,
+ "app": "MongoDB Atlas",
+ "hint": "mongodb.com/docs/atlas/api",
+ "given_category": "Developer, Infra and Data platforms",
+ "queries": {
+  "auth": {
+   "query": "MongoDB Atlas API authentication OAuth API key access token developer docs mongodb.com/docs/atlas/api",
+   "log_id": "log_o-IEoBzVrSDJ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://mongodb.com/docs/atlas/api/api-authentication",
+     "title": "Atlas Administration API Authentication Methods - Atlas - MongoDB Docs",
+     "snippet": "We recommend you use service accounts instead of API keys to authenticate to the Atlas Administration API. API keys are a legacy authentication method.\nTo use the Atlas Administration API to manage your Atlas clusters, you must authenticate your API requests. The Atlas Administration API accepts the following authentication methods:\n- Service account access tokens ([OAuth 2.0)](https://oauth.net/2/)\nTo learn how to use service accounts and API keys to configure programmatic access to your Atlas organizations and projects, see the [Atlas Administration API Getting Started](/docs/atlas/configure-api-access/#std-label-atlas-admin-api-access) guide.\nThe Atlas Administration API doesn't provide access to the data stored in your clusters. To read or write data in a database, you must authenticate to your cluster using the credentials for a [database user](https://www.mongodb.com/docs/manual/reference/database-users/#std-label-security-database-users) with the appropriate read or write [roles](https://www.mongodb.com/docs/manual/reference/built-in-roles/#std-label-database-user-roles). You can use the Atlas Administration API to create and manage database users.\n\nService accounts are the "
+    },
+    {
+     "url": "https://mongodb.com/docs/api/doc/atlas-admin-api-v2/2023-10-01.md",
+     "title": "mongodb.com/docs/api/doc/atlas-admin-api-v2/2023-10-01.md",
+     "snippet": "The Atlas Administration API supports OAuth2 Service Accounts and HTTP Digest-based API keys. Service accounts are the recommended authentication method and API keys are considered a legacy option.\nTo authenticate with a Service Account, first exchange its client ID and secret for an access token using the OAuth 2.0 Client Credentials flow. Atlas provides a token endpoint at `POST https://cloud.mongodb.com/api/oauth/token`, which returns a Bearer token that is reusable and valid for 1 hour (3600 seconds).\nFor example, to [return a list of your organizations](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-listorgs) with [cURL](https://en.wikipedia.org/wiki/CURL), first generate an access token and then use that token to call the same Atlas Administration API endpoint shown in the current example:\n```\nACCESS_TOKEN=$(curl -fsS --request POST https://cloud.mongodb.com/api/oauth/token \\\n--header \"Authorization: Basic $(printf '%s' \"${CLIENT_ID}:${CLIENT_SECRET}\" | base64 | tr -d '\\n')\" \\\n--header \"Content-Type: application/x-www-form-urlencoded\" \\\n--header \"Accept: application/json\" \\\n--data \"grant_type=client_credentials\" | jq -r '.access_token')\ncurl --hea"
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/api/service-accounts/generate-oauth2-token",
+     "title": "Generate Service Account Token - Atlas - MongoDB Docs",
+     "snippet": "# Generate Service Account Token\nIf you use service accounts, a token is required to make requests to the Atlas Administration API. To learn more, see [Service Accounts Overview.](https://mongodb.com/docs/atlas/api/api-authentication/#std-label-service-accounts-overview)\nNote\n[IP access lists](https://mongodb.com/docs/atlas/security/ip-access-list/#std-label-access-list) apply to *using* service account access tokens, not creating or [revoking](https://mongodb.com/docs/atlas/api/service-accounts/revoke-oauth2-token/#std-label-revoke-oauth2-token-atlas) them. You can generate a token from any IP address, but you can only use it to call the API if your IP address is on the access list.\n## Resource\n```\nPOST https://cloud.mongodb.com/api/oauth/token\n```\n\nThe response includes:\n| Name | Type | Description |\n|---|---|---|\n| access_token | string | The service account access token for authenticating API requests. |\n| token_type | string | The mechanism for token authorization, here represented as `Bearer`. |\n| expires_in | integer | The duration the access token is valid, in seconds. |\n## Example Request\nReplace `{BASE64-AUTH}` in the following example with your base64-encoded service acc"
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/configure-api-access?interface=atlas-api&programmatic-access=service-account",
+     "title": "Get Started with the Atlas Administration API - Atlas - MongoDB Docs",
+     "snippet": "The Atlas Administration API doesn't provide access to the data stored in your clusters. To read or write data in a database, you must authenticate to your cluster using the credentials for a [database user](https://www.mongodb.com/docs/manual/reference/database-users/#std-label-security-database-users) with the appropriate read or write [roles](https://www.mongodb.com/docs/manual/reference/built-in-roles/#std-label-database-user-roles). You can use the Atlas Administration API to create and manage database users.\nTo use the Atlas Administration API to manage your Atlas clusters, you must authenticate your API requests with one of the following authentication methods:\nTo learn about these methods, see [Atlas Administration API Authentication Methods.](/docs/atlas/api/api-authentication/#std-label-api-authentication)\nThe following sections describe how to use service accounts and API keys to configure programmatic access to your Atlas organizations and projects.\n\n## Required Access\nTo create a service account or API keys for an organization, you must have [`Organization Owner`](/docs/atlas/reference/user-roles/#mongodb-authrole-Organization-Owner) access to that organization.\nTo gra"
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/app-connections/partner-integration-guide",
+     "title": "Integrate Your App with Atlas App Connections - Atlas - MongoDB Docs",
+     "snippet": "Atlas App Connections is the MongoDB Atlas OAuth 2.1 platform that enables your application to act on behalf of Atlas users through user-delegated access. When a user authorizes your application, your application receives a set of tokens it can use to call the Atlas Administration API with the same permissions the user holds in their Atlas organizations. For an overview of the platform and how organizations manage connected applications, see [Atlas App Connections Overview.](https://mongodb.com/docs/atlas/app-connections/#std-label-atlas-app-connections)\nThis guide covers the full integration:\n- Initiating the OAuth 2.1 Authorization Code flow with Proof Key for Code Exchange (PKCE)\n- Exchanging authorization codes for tokens and refreshing tokens\n- Using the Atlas Administration API with delegated access\n- Understanding the scope and limits of delegated access\n- Configuring network access and managing database users\n- Handling revocation and errors\n### Key Concepts\n- ****Delegated access**** Your application acts on behalf of an Atlas user, not as itself. The user's own organization roles and project permissions determine what operations succeed. If the user cannot perform an acti"
+    }
+   ]
+  },
+  "access": {
+   "query": "MongoDB Atlas mongodb.com/docs/atlas/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_IGcBDwMujOnl",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://mongodb.com/docs/atlas/configure-api-access",
+     "title": "Get Started with the Atlas Administration API - Atlas - MongoDB Docs",
+     "snippet": "## Required Access\nTo create a service account or API keys for an organization, you must have [`Organization Owner`](https://mongodb.com/docs/atlas/reference/user-roles/#mongodb-authrole-Organization-Owner) access to that organization.\nTo grant a service account access to a project, you must have [`Organization Owner`](https://mongodb.com/docs/atlas/reference/user-roles/#mongodb-authrole-Organization-Owner) access to the organization that owns the project.\nTo grant API keys access to a project, you must have [`Project Owner`](https://mongodb.com/docs/atlas/reference/user-roles/#mongodb-authrole-Project-Owner) access for that project."
+    },
+    {
+     "url": "https://github.com/mongodb-partners/partner-api-quickstart-for-partners",
+     "title": "GitHub - mongodb-partners/partner-api-quickstart-for-partners: Creating this repo for sharing quickstart on MongoDB Partner API for our ISV and Tech Partners",
+     "snippet": "The **MongoDB Atlas Admin API - V2** lets a trusted third-party application call Atlas Admin API endpoints **on behalf of an authenticated Atlas user**, without ever seeing that user's credentials.\n\nNormally, calling the Atlas Admin API requires an API key belonging to the organization. With the MongoDB Atlas Admin API - V2 model:\n- The **user logs in** to Atlas in their browser via standard OAuth.\n- The partner app receives a short-lived **delegated access token** scoped to what that user is allowed to do.\n- The partner app calls Atlas APIs using that token \u2014 **no org-level API key needed**.\nThe partner app never sees the user's password and holds only a short-lived, user-scoped token.\n\nMongoDB Atlas OAuth is currently **invite-only**. Client credentials are **not self-provisioned** \u2014 MongoDB provisions them manually on your behalf.\n### Procedure\nTo get onboarded and receive credentials:\n1. **Register as a partner.** Contact your MongoDB partner manager or solutions engineer to initiate onboarding.\n2. **Agree on app configuration.** You and the MongoDB team align on `redirect_uris`, `client_type`, `grant_types`, and `resources`.\n3. **MongoDB provisions your OAuth app.** The MongoD"
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/app-connections/partner-integration-guide",
+     "title": "Integrate Your App with Atlas App Connections - Atlas - MongoDB Docs",
+     "snippet": "Atlas App Connections is the MongoDB Atlas OAuth 2.1 platform that enables your application to act on behalf of Atlas users through user-delegated access. When a user authorizes your application, your application receives a set of tokens it can use to call the Atlas Administration API with the same permissions the user holds in their Atlas organizations.\n\nBefore you begin, confirm that you have:\n- Approved design partner status.\n- A registered OAuth application. MongoDB provides you with a `client_id` during onboarding. Confidential clients (server-side web applications) also receive a `client_secret`. Public clients (native and single-page applications) authenticate with only the `client_id` and do not receive a secret.\n- A redirect URI registered with your OAuth application. Redirect URIs must use HTTPS except for loopback addresses (`localhost`, `127.0.0.1`, `::1`), which may use HTTP on any port. Redirect URIs must not contain fragments (`#`)."
+    },
+    {
+     "url": "https://docs.atlas.mongodb.com/api/atlas-admin-api",
+     "title": "Manage Deployments with the Atlas Administration API",
+     "snippet": "As with changes made through the Atlas web interface, changes made through the API are subject to Atlas [billing](/billing/). If you incur charges, you must have a valid credit card on file with Atlas or risk having your account locked.\n\nA user with the [`Project Read Only`](/reference/user-roles/#mongodb-authrole-Project-Read-Only) in a Atlas project can't modify any resource within that project whether through the Atlas user interface or the API.\n- **API Network Access List** The Atlas secures access to its API through an [access list](/configure-api-access/#std-label-enable-api-access-list). This list restricts access to the API to specific IP or CIDR addresses. Each [Programmatic API Key](/reference/api/apiKeys/) has its own API access list. Each API Key must make any API requests from an IP address on the API access list."
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/configure-api-access-org",
+     "title": "Manage Programmatic Access to an Organization - Atlas - MongoDB Docs",
+     "snippet": "Use the following procedures to manage programmatic access to an organization. To learn more, see [Grant Programmatic Access to an Organization.](https://mongodb.com/docs/atlas/configure-api-access/#std-label-about-org-api-keys)\nImportant\nWe recommend you use service accounts instead of API keys to authenticate to the Atlas Administration API. API keys are a legacy authentication method.\n## Required Access\nTo perform any of the following actions, you must have [`Organization Owner`](https://mongodb.com/docs/atlas/reference/user-roles/#mongodb-authrole-Organization-Owner) access to Atlas."
+    }
+   ]
+  },
+  "surface": {
+   "query": "MongoDB Atlas API reference REST GraphQL endpoints documentation mongodb.com/docs/atlas/api",
+   "log_id": "log_wumlVF0u3eGp",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://mongodb.com/docs/atlas/api/api-rate-limit",
+     "title": "Atlas Administration API Rate Limits - Atlas - MongoDB Docs",
+     "snippet": "Atlas uses *rate limiting* to control the rate of requests sent to the V2 API endpoints within a specified timeframe to prevent overload and ensure fair usage. Atlas uses the Token Bucket Algorithm to limit the number of requests it processes. The API response headers offer real-time visibility into rate limit quotas, current usage, and reset times.\n## Overview\nEach Atlas endpoint is associated with an *endpoint set* (a collection of endpoints that share the same rate limits) and *scope* (resource scopes organization, project, user, or IP address) that define its rate limits. The limits for the endpoints vary as only endpoints within the same endpoint set and scope are rate limited using the same token bucket. Therefore, Atlas doesn't apply a uniform API limit across all the API requests made by an Atlas organization or project.\n\nYou can view the rate limits for all the endpoint sets and scopes by sending a `GET` request to the `rateLimits` resource.\nExample Request to Return Rate Limits for all Endpoint Sets and Scopes\n```\ncurl --include --header \"Authorization: Bearer ${ACCESS_TOKEN}\" \\ --header \"Accept: application/vnd.atlas.2025-03-12+json\" \\ --header \"Content-Type: application"
+    },
+    {
+     "url": "https://docs.atlas.mongodb.com/reference/api/clusters-get-all-key",
+     "title": "Get All Clusters in All Projects",
+     "snippet": "## Request\u00b6\nBase URL: `https://cloud.mongodb.com/api/atlas/v1.0`\n```\nGET /clusters\n```\n\n[prettyprint](https://en.wikipedia.org/wiki//Prettyprint?oldid=791126873) format. | `false` |\n| envelope | boolean | Optional | Flag that indicates whether Atlas wraps the response in an [envelope](/api/#std-label-api-envelope). Some API clients cannot access the HTTP response headers or status code. To remediate this, set `envelope=true` in the query. Endpoints that return a list of results use the **results** object as an envelope. Atlas adds the **status** parameter to the response body. | `false` |\n\n```\ncurl --user \"{PUBLIC-KEY}:{PRIVATE-KEY}\" --digest \\     --include \\     --request GET \"https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/clusters/?pretty=true\"\n```"
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/cli/current/command/atlas-api",
+     "title": "atlas api - Atlas CLI - MongoDB Docs",
+     "snippet": "# atlas api\nAccess all features of the Atlas Administration API through the Atlas CLI by using the 'atlas api <tag> <operationId>' command.\nThis feature streamlines script development by letting you interact directly with any Atlas Administration API endpoint through the Atlas CLI.\nFor more information on - Atlas Administration API see: [https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/) - Getting started with the Atlas Administration API: [https://www.mongodb.com/docs/atlas/configure-api-access/#std-label-atlas-admin-api-access](https://www.mongodb.com/docs/atlas/configure-api-access/#std-label-atlas-admin-api-access)\nThe atlas api sub-command is automatically generated from the MongoDB Atlas Admin API and offers full coverage of the Admin API. Admin API capabilities have their own release lifecycle, which you can check via the provided API endpoint documentation link.\n## Syntax\nCommand Syntax\n```\natlas api <tag> <operationId> [options]\n```\nImportant\nBoth `<tag>` and `<operationId>` must be in camelCase.\n## Arguments\n| Name | Type | Required | Description |\n|---|---|---|---|\n| <tag> | string | true | The category of "
+    },
+    {
+     "url": "https://mongodb.com/docs/atlas/api/atlas-admin-api-ref",
+     "title": "Atlas Administration API Reference - Atlas - MongoDB Docs",
+     "snippet": "The Atlas Administration API follows the principles of the REST architectural style to expose a number of internal resources that enable programmatic access to administrative features in Atlas. To view the full list of available Atlas Administration API endpoints, see the [Atlas Administration API Specification.](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/)\nThe Atlas Administration API doesn't provide access to the data stored in your clusters. To read or write data in a database, you must authenticate to your cluster using the credentials for a [database user](https://www.mongodb.com/docs/manual/reference/database-users/#std-label-security-database-users) with the appropriate read or write [roles](https://www.mongodb.com/docs/manual/reference/built-in-roles/#std-label-database-user-roles). You can use the Atlas Administration API to create and manage database users.\n\nThe API has the following features:\n- **Resource Versioning** Atlas provides a versioned Atlas Administration API, which includes versioning at the individual Atlas Administration API resource-level. Use these resources and the following sections to learn more about the Atlas Administration API:\n- **JSON "
+    },
+    {
+     "url": "https://mongodb.com/docs/api/doc/atlas-admin-api-v2/2025-02-19/operation/operation-listgroupclusterproviderregions",
+     "title": "Return All Cloud Provider Regions | Atlas Admin API v2 documentation (2025-02-19)",
+     "snippet": "## Return All Cloud Provider Regions\nGET /api/atlas/v2/groups/{groupId}/clusters/provider/regions\nReturns the list of regions available for the specified cloud provider at the specified tier.\nRole requirements\n- Project Read Only\n#### Path parameters\n- groupId string Required\nUnique 24-hexadecimal digit string that identifies your project. Use the /groups endpoint to retrieve all projects to which the authenticated user has access.\n**NOTE**: Groups and projects are synonymous terms. Your group id is the same as your project id. For existing groups, your group/project id remains the same. The resource and corresponding endpoints use the term groups.\nFormat should match the following pattern: `^([a-f0-9]{24})$`.\n\n- providers array[string]\nCloud providers whose regions to retrieve. When you specify multiple providers, the response can return only tiers and regions that support multi-cloud clusters.\n- tier string\nCluster tier for which to retrieve the regions."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "MongoDB Atlas mongodb.com/docs/atlas/api MCP server Model Context Protocol official",
+   "log_id": "log_BDAvNZ-DlHXg",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/mongodb-js/mongodb-mcp-server/blob/main/README.md",
+     "title": "mongodb-mcp-server/README.md at main \u00b7 mongodb-js/mongodb-mcp-server",
+     "snippet": "# MongoDB MCP Server\nA Model Context Protocol server for interacting with MongoDB Databases and MongoDB Atlas.\n### Quick Start\n#### Using the official MongoDB plugins for AI agents\nMongoDB MCP Server comes bundled with the official MongoDB plugins for AI agents. The following plugins are available:\n**`mongodb-atlas`** \u2014 connects to the MongoDB-hosted Atlas MCP server over OAuth. This does not require you to run anything locally, and is the recommended way to connect to MongoDB Atlas from your AI agent:\n- Cursor: [marketplace](https://cursor.com/marketplace/mongodb/mongodb-atlas)\n- VSCode: Open the Extensions view (`\u21e7\u2318X` / `Ctrl+Shift+X`), search for `@agentPlugins`, and install `mongodb-atlas`.\n- Claude: [marketplace](https://claude.com/plugins/mongodb-atlas)\n- Codex: Open `/plugins` and install `mongodb-atlas`.\n- GitHub Copilot CLI: Run `copilot plugin install mongodb-atlas`.\n- Grok: Open `/marketplace` in Grok Build and install `mongodb-atlas`.\n**`mongodb`** \u2014 runs the MongoDB MCP server locally and connects to any self-managed deployment:\n- Cursor: [marketplace](https://cursor.com/marketplace/mongodb/mongodb)\n- Claude: [marketplace](https://claude.com/plugins/mongodb)\n- Gemini: "
+    },
+    {
+     "url": "https://mongodb.com/docs/mcp-server/overview",
+     "title": "MongoDB MCP Server Overview - MongoDB MCP Server - MongoDB Docs",
+     "snippet": "You can use the MongoDB MCP Server with any MongoDB deployment, including MongoDB Atlas, MongoDB Atlas Local, MongoDB Community Edition, and MongoDB Enterprise Advanced.\nMongoDB offers two MCP Server deployment types: Local MCP for MongoDB MCP Server, which you run and manage yourself, and MongoDB Atlas Managed MCP Server, which MongoDB hosts and manages for you in Atlas.\n\nModel Context Protocol (MCP) is an open standard developed by Anthropic to standardize how LLMs connect to and interact with external resources and services. MCP consists of a client-server architecture with the following key components:\n- **MCP Host**: Application or environment where you want to use MCP, such as a chat interface or IDE. For example, Claude Desktop or VS Code.\n- **MCP Clients**: Components within the host that handle connections to MCP servers. For a list of clients that support MCP, see [MCP Clients.](https://modelcontextprotocol.io/clients)\n- **MCP Servers**: Programs that expose specific capabilities to the client. For example, the MongoDB MCP Server.\nThe primary way that MCP servers expose capabilities to clients is through [tools](https://modelcontextprotocol.io/docs/concepts/tools). Tools "
+    },
+    {
+     "url": "https://github.com/mongodb-developer/mcp-mongodb-atlas/blob/main/README.md",
+     "title": "mcp-mongodb-atlas/README.md at main \u00b7 mongodb-developer/mcp-mongodb-atlas",
+     "snippet": "# MongoDB Atlas MCP Server\nAn MCP (Model Context Protocol) server for managing MongoDB Atlas projects. This package provides tools for creating and managing MongoDB Atlas clusters, users, and network access through the MCP interface.\n\n### MCP Tools\n- `create_atlas_cluster` - Create a new MongoDB Atlas cluster in an existing project\n- `setup_atlas_network_access` - Configure network access for an Atlas project\n- `create_atlas_user` - Create a new database user with atlasAdmin role\n- `get_atlas_connection_strings` - Retrieve connection strings for a cluster\n- `list_atlas_projects` - List all Atlas projects accessible with the provided API key\n- `list_atlas_clusters` - List all clusters in a specific Atlas project\n## Installation\n```\nnpm install mcp-mongodb-atlas\n```\n## Usage\n### As a Command Line Tool\nYou can run the Atlas Project Manager directly from the command line:\n```\n# Using environment variables\nexport ATLAS_PUBLIC_KEY=\"your-public-key\"\nexport ATLAS_PRIVATE_KEY=\"your-private-key\"\nnpx mcp-mongodb-atlas\n# Or passing keys as arguments\nnpx mcp-mongodb-atlas \"your-public-key\" \"your-private-key\"\n```\n### With Cline (VSCode Extension)\nTo use with Cline in VSCode, add the server confi"
+    },
+    {
+     "url": "https://mongodb.com/docs/mcp-server/local-mcp/configuration/methods",
+     "title": "MongoDB MCP Server Configuration Methods - MongoDB MCP Server - MongoDB Docs",
+     "snippet": "- Operating system environment variables\nThe MCP Server uses Atlas API credentials or a connection string to access a cluster.\n\nMost MCP Server configuration file examples set the `type` field to `\"stdio\"`.\n`type` can be set to one of the following:\n- `\"stdio\"`, which uses the standard input and output for communications with the MCP Server. `stdio` is suitable for most AI clients. Typically use `stdio`.\n- `\"http\"`, which enables HTTP communications with the MCP Server. You can then use HTTP to interact with the MCP Server from a Web client.\nWarning\nHTTP is **NOT** recommended for production use without implementing authentication and security.\n\nYou can use the Atlas API credentials obtained in [MongoDB MCP Server Prerequisites for Running Atlas Tools](https://mongodb.com/docs/mcp-server/prerequisites/#std-label-mcp-server-prerequisites) to connect to an Atlas cluster.\nNote\nAs you'll see in the next section, you can also connect to an Atlas cluster using a MongoDB connection string if you don't want to use Atlas API credentials for security or another reason.\nUse environment variables instead of command line arguments for sensitive configuration settings such as login credentials a"
+    },
+    {
+     "url": "https://mongodb.com/docs/mcp-server/tools",
+     "title": "MongoDB MCP Server Tools - MongoDB MCP Server - MongoDB Docs",
+     "snippet": "The MongoDB MCP Server allows you to interact with MongoDB clusters using natural language queries from AI clients that support MCP. This page describes the MCP Server tools.\n## Overview\nThe MongoDB MCP Server provides the following tool categories:\n- **Atlas tools**, which perform operations on Atlas system resources, like organizations, projects, clusters, database user accounts, and retrieving performance recommendations.\n- **Local Atlas deployment tools**, which allow you to list, connect to, create, and delete local Atlas deployments.\n- **Database tools**, which perform operations such as inserting, updating, and deleting documents, and running queries and aggregation pipelines.\n- **Assistant tools**, which search the MongoDB Assistant knowledge base for official documentation and curated guidance.\n\nThe Atlas tools are only available if you have set up Atlas API credentials as described in [Get Started with the MongoDB MCP Server.](https://mongodb.com/docs/mcp-server/get-started/#std-label-mcp-get-started)\n\n| `atlas-connect-cluster` | Connects to an Atlas cluster using the configured service account. If you configured the MCP server without specifying a connection string, this"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

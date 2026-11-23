@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "app": "Salesforce",
+  "changes": [
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "paid_plan",
+      "why": "API enabled by default only on Enterprise/Performance/Unlimited/Developer; Professional needs add-on, Group/Essentials none; 'other' not allowed",
+      "evidence": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest_compatible_editions.htm"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest_compatible_editions.htm",
+      "to": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+      "why": "cited atlas URL replaced with current live docs path seen in search",
+      "evidence": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "auth",
+    "access",
+    "verdict"
+  ],
+  "searches": 4
+}

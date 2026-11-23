@@ -1,0 +1,35 @@
+{
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM",
+  "one_liner": "CRM and marketing platform with a broad object-based REST API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Free developer account and test account; OAuth app for multi-account use; service keys for single account.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "access": "https://developers.hubspot.com/developer-platform-basics",
+    "surface": "https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis",
+    "mcp": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+  }
+}

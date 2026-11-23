@@ -1,0 +1,34 @@
+{
+  "id": 6,
+  "app": "Podio",
+  "category": "Work management / CRM",
+  "one_liner": "Work management platform with REST API for apps, items and tasks.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Free and paid accounts have full API; grab API key from account settings.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developers.podio.com/authentication",
+    "access": "https://developers.podio.com/index/faq",
+    "surface": "https://developers.podio.com/index/api",
+    "mcp": "https://progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide"
+  }
+}

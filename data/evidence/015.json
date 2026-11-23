@@ -1,0 +1,142 @@
+{
+ "id": 15,
+ "app": "Pylon",
+ "hint": "usepylon.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Pylon API authentication OAuth API key access token developer docs usepylon.com",
+   "log_id": "log_ckWCRHVHoUGL",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+     "title": "Authentication | Pylon",
+     "snippet": "How to authenticate with Pylon's API\nThe Pylon API uses [Bearer](https://www.rfc-editor.org/rfc/rfc6750#section-2.1) authentication. This means you\u2019ll need to pass your API token in the header of your request:\n### API regions\nPylon\u2019s API is available in two regions. Use the base URL that matches where your Pylon tenant is hosted:\n- US region: https://api.usepylon.com\n- EU region: https://api.eu.usepylon.com\nBoth regions use the same API endpoints and authentication. Configure your integration to use the region where your Pylon tenant is hosted.\nYou can tell a token's region from its prefix:\nPrefix\nRegion\n`pylon_api_eu_`\nEU\n`pylon_api_`\nUS\nTokens created before prefixes were introduced have no prefix. Sending a token to the other region's API returns `401` with the `wrong_region_token` error code, and the message names the correct URL.\nOnce you've created a token, call the [`/me`](https://docs.usepylon.com/pylon-docs/developer/api/api-reference/me) endpoint to retrieve details about your organization and confirm your token works.\n## Create an API token\nOnly Admins can create and manage API tokens.\n1. Go to **Settings > Integrations & dev > API**. On the **Tokens** tab, click **Creat"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+     "title": "Pylon MCP | Pylon",
+     "snippet": "- **Server URL (US):** `https://mcp.usepylon.com`\n- **Server URL (EU):** `https://mcp.eu.usepylon.com`\n- **Auth:** OAuth 2.0 or an API token. Actions are performed as the signed-in user or the token's identity, with that identity's current role and permissions.\n- **Transport:** Streamable HTTP (stateless; no server-side sessions).\n\n#### OAuth\nUse OAuth with AI tools that offer an interactive connection flow. Add the regional MCP URL to your client, then sign in to Pylon when prompted. MCP requests run as the user who authorizes the connection.\n#### API token\nUse an existing API token for headless workers, scripts, or MCP clients that support custom authorization headers. You don't need a separate MCP token or an interactive sign-in.\n1. Configure your client with your workspace's regional MCP URL.\n2. Include this header on every MCP request:\nReplace `<API_TOKEN>` with the token value. Use `https://mcp.usepylon.com` for US workspaces and `https://mcp.eu.usepylon.com` for EU workspaces; the token must belong to the same region.\nA token with its own identity uses the role assigned to that identity. A token linked to a teammate or bot uses that user's current role and permissions. The i"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/cli",
+     "title": "CLI | Pylon",
+     "snippet": "## Authenticate\nCreate a Pylon API token as described in [Authentication](/pylon-docs/developer/api/authentication), then run:\nPaste your token into the hidden prompt. The CLI saves it for future requests. On macOS, it uses Keychain when available. For automation, you can provide the token through the `PYLON_TOKEN` environment variable instead.\nConfirm your connection:\nRequests use the permissions associated with your API token.\n### EU organizations\nThe CLI uses the US API by default. For an EU organization, add `--base-url` to your requests:\nYou can also set `PYLON_BASE_URL=https://api.eu.usepylon.com` in your environment.\n\n## Sign out\nThis removes the saved credential from the CLI. To revoke the token itself, manage it in Pylon\u2019s API token settings."
+    },
+    {
+     "url": "https://c1.ai/docs/product/admin/mcp-server/pylon",
+     "title": "Set up the Pylon MCP server",
+     "snippet": "- **Pylon MCP** \u2014 listed as plain **Pylon** in your catalog. C1 registers Pylon\u2019s own hosted MCP server (`mcp.usepylon.com`) as a downstream server C1 governs. Authentication is always per-user OAuth using dynamic client registration (DCR) \u2014 Pylon\u2019s hosted MCP server doesn\u2019t support a bearer token or API key, so there\u2019s no integration to create in Pylon first. Tool calls run with the connected user\u2019s own Pylon seat permissions.\n- **Pylon API** \u2014 C1 hosts its own MCP server that translates Pylon\u2019s REST API into tools. Authentication is a single shared bearer token (an API token generated in Pylon), so every tool call reaches Pylon as one shared identity.\n| | Pylon MCP | Pylon API |\n|---|---|---|\n| **Who hosts the MCP server** | Pylon | C1 |\n| **Authentication** | Per-user OAuth with dynamic client registration (DCR) only \u2014 no bearer token or API key option | Bearer token (API token) only \u2014 no OAuth option |\n| **Access scoping** | The connected user\u2019s own Pylon seat and role permissions \u2014 not independently scoped | Whatever the API token\u2019s seat can reach in Pylon |\n| **Tool surface** | Pylon\u2019s own tool set: search, read, create, and update issues, accounts, and contacts | Issues, acc"
+    },
+    {
+     "url": "https://support.usepylon.com/articles/4735104435-how-do-i-create-an-api-token",
+     "title": "How do I create a Pylon API token?",
+     "snippet": "To create a Pylon API token, sign in as a user with permission to manage API tokens, then open **Settings \u2192 API Tokens**. If you do not see that page, ask a workspace admin to create the token or update your access.\n1. Open **Settings \u2192 API Tokens**.\n2. Select **Create**.\n3. Enter a token name, then finish creation.\n4. Copy the token immediately and store it in a secure location. Pylon only shows the full token value once.\nUse the token to authenticate Pylon API requests with a Bearer header:\n- `Authorization: Bearer <token>`\nIf you need read-only access, a workspace admin should choose an appropriate role for the token when creating it."
+    }
+   ]
+  },
+  "access": {
+   "query": "Pylon usepylon.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_HS2SzAp3VAhu",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://usepylon.com/pricing",
+     "title": "Pricing | Pylon",
+     "snippet": "Your customers reach you in Slack, Teams, email and WhatsApp, and requests are coming in faster than you can hire. Pylon brings every channel into one queue and lets AI handle the busywork. You pay for the seats and AI credits your team uses, never per ticket.\n\nDoes Pylon offer a free trial or free plan?\n![](https://cdn.prod.website-files.com/6a2c6d7ab6674379553c0824/6a33f8e0a58c2b44b153f9e1_bar.svg)![](https://cdn.prod.website-files.com/6a2c6d7ab6674379553c0824/6a33f8e0a58c2b44b153f9e1_bar.svg)\nPylon offers free trials for prospects. Your sales representative will work with you on setting up the demo organization."
+    },
+    {
+     "url": "https://usepylon.com/pylon-facts",
+     "title": "Pricing, Channels, and Product (Updated November 10, 2026)",
+     "snippet": "Also on every plan: Pylon MCP server, MCP connectors, coding-agent connectors, custom API actions, user memories, agentic usage analytics, and \"bring your own agent.\"\n## Pricing (as of November 10, 2026)\nPylon pricing = seats + agentic credits. Pylon does not charge per ticket.\n| Plan | Price | Highlights |\n|---|---|---|\n| **Professional** | **$89 per seat/month**, annual contract | Core support, viewer seats, analytics, automations, Skills, broadcasts, MCP, API, integrations |\n| **Advanced** (recommended) | **$139 per seat/month**, annual contract | Everything in Professional + RBAC, customer portal, custom reporting, data warehouse, Microsoft Teams and Google Chat channels; SAML SSO add-on |\n| **Enterprise** | Custom quote | Everything in Advanced + MSA, SAML SSO, SCIM, sandbox, data retention controls, priority support SLAs |\n\n**Add-ons:**\n- **Phone:** $35 per seat/month (calls, recordings, transcripts, IVR, transfers, international, number porting)\n- **Account Intelligence:** $10 per customer account/month (health scores, account notebooks, CSM home view)\n- **SAML SSO on Advanced:** $125/month (included in Enterprise)\n\n**Free trial:** **Yes.** Pylon offers free trials for prosp"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+     "title": "Authentication | Pylon",
+     "snippet": "The Pylon API uses [Bearer](https://www.rfc-editor.org/rfc/rfc6750#section-2.1) authentication. This means you\u2019ll need to pass your API token in the header of your request:\n### API regions\nPylon\u2019s API is available in two regions. Use the base URL that matches where your Pylon tenant is hosted:\n- US region: https://api.usepylon.com\n- EU region: https://api.eu.usepylon.com\nBoth regions use the same API endpoints and authentication. Configure your integration to use the region where your Pylon tenant is hosted."
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+     "title": "API | Pylon",
+     "snippet": "Programmatic access to read and write data in Pylon\nPylon\u2019s API can be used to programmatically access and take action on data within Pylon.\nOnly Admin users can create API tokens. To learn more about Admins, see [Roles & User Management](https://docs.usepylon.com/pylon-docs/platform/roles-and-user-management).\nSome common use cases for our API include:\n- Fetching information about customers\n- Fetching information about issues\n- Creating issues programmatically"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/messages",
+     "title": "Messages | Pylon",
+     "snippet": "Only messages authored by the API token's user can be edited. Emails, customer messages, and redacted messages cannot be edited. Callers without issue write access can edit only their own internal notes."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Pylon API reference REST GraphQL endpoints documentation usepylon.com",
+   "log_id": "log_G-SvUHow4_yL",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/contacts",
+     "title": "Contacts | Pylon",
+     "snippet": "### Get all contacts\nget/contacts\nReturns a paginated list of contacts for the organization.\n**Rate limit:** 300 requests per minute\nAuthorizations\nAuthorizationstringRequired\nAuthorization: Bearer\nQuery parameters\ncursorstringOptional\nThe cursor to use for pagination.\nlimitinteger \u00b7 int64Optional\nThe number of contacts to fetch. Defaults to 100. Must be greater than 0 and less than 1000.\n\n### Get a contact by its ID or external ID\nget/contacts/{id}\nReturns a single contact by ID or external ID.\n**Rate limit:** 300 requests per minute\nAuthorizations\nAuthorizationstringRequired"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/tasks-and-projects.md",
+     "title": "docs.usepylon.com/pylon-docs/developer/api/api-reference/tasks-and-projects.md",
+     "snippet": "## Get all tasks\n> Returns a paginated list of tasks for the organization.\\\n> \\\n> \\*\\*Rate limit:\\*\\* 300 requests per minute\n```json\n{\"openapi\":\"3.0.3\",\"info\":{\"title\":\"Pylon API.\",\"version\":\"1.0.0\"},\"tags\":[],\"servers\":[{\"description\":\"US region\",\"url\":\"https://api.usepylon.com\"},{\"description\":\"EU region\",\"url\":\"https://api.eu.usepylon.com\"}],\"security\":[{\"bearerAuth\":[]}],\"components\":{\"securitySchemes\":{\"bearerAuth\":{\"description\":\"Authorization: Bearer <token>\",\"scheme\":\"bearer\",\"type\":\"http\"}},\"responses\":{\"GetTasksResponse\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/GetTasksResponseBody\"}}},\"description\":\"\"},\"BadRequestApiResponse\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/ErrorApiResponseBody\"}}},\"description\":\"The request was invalid or could not be completed.\"},\"UnauthorizedApiResponse\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/ErrorApiResponseBody\"}}},\"description\":\"The request could not be authenticated for this API.\"},\"ForbiddenApiResponse\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/ErrorApiResponseBody\"}}},\"description\":\"The authenticated caller or organi"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts",
+     "title": "Accounts | Pylon",
+     "snippet": "# Accounts\n### Get a list of accounts\nget/accounts\nReturns a paginated list of accounts for the organization.\n**Rate limit:** 300 requests per minute\nAuthorizations\nAuthorizationstringRequired\nAuthorization: Bearer\nQuery parameters\ncursorstringOptional\nThe cursor to use for pagination.\nlimitinteger \u00b7 int64Optional\nThe number of accounts to fetch. Defaults to 100. Must be greater than 0 and less than 1000.\n### Create a new account\npost/accounts\nCreates a new account with the specified name and optional metadata.\n**Rate limit:** 300 requests per minute\nAuthorizations\nAuthorizationstringRequired\nAuthorization: Bearer\nBody\naccount_typestring \u00b7 enumOptional\nThe type of the account. Must be one of \"customer\", \"internal\", \"community\", or \"partner\". Defaults to \"customer\" if not specified.\nDefault: `customer`Example: `customer`Possible values:\ndomainstringOptional\nDeprecated. Please use Domains and PrimaryDomain instead.\ndomainsstring[]Optional\nThe domains of the account, without any leading scheme, for example stripe.com. Must specify one domain as primary.\nlogo_urlstringOptional\nThe logo URL of the account. Must be a square .png, .jpg or .jpeg.\nnamestringRequired\nThe name of the account."
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/conventions",
+     "title": "API conventions | Pylon",
+     "snippet": "How Pylon's API handles IDs, timestamps, pagination, search filters, updates, files, and slugs\nThese rules apply across Pylon's API. The [API reference](https://docs.usepylon.com/pylon-docs/developer/api/api-reference) lists each endpoint's parameters; this page explains how they behave.\n## Requests and responses\n- Send request bodies as JSON with `Content-Type: application/json`. The one exception is [`POST /attachments`](https://docs.usepylon.com/pylon-docs/developer/api/conventions#upload-a-file), which takes `multipart/form-data`.\n- Successful responses put the result in `data` and include a `request_id`. List and search responses also include `pagination`.\n- Unknown fields are ignored, not rejected. A misspelled field name is silently dropped, so check the field names in the reference.\n- Sending `null` for an optional field is the same as leaving it out.\n## IDs\nMost endpoints take Pylon IDs. A few path parameters also accept another identifier:\nPath\nAccepts\n`/issues/{id}` and its sub-paths\nIssue ID or issue number\n`/accounts/{id}`, and account activities, highlights, and files\nAccount ID or account external ID\n`/contacts/{id}`\nContact ID or contact external ID\nSee [External ID"
+    },
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/custom-fields",
+     "title": "Custom Fields | Pylon",
+     "snippet": "### Get all custom fields\nget/custom-fields\nReturns all custom field definitions for the specified object type. Use `slug` (and `select_metadata.options[].slug` for option values) in API writes and filters.\n**Rate limit:** 300 requests per minute\nAuthorizations\nAuthorizationstringRequired\nAuthorization: Bearer\nQuery parameters"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Pylon usepylon.com MCP server Model Context Protocol official",
+   "log_id": "log_7tewM4tHTopV",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+     "title": "Pylon MCP | Pylon",
+     "snippet": "The Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol (e.g. Claude, ChatGPT, Cursor). AI tools authenticate with OAuth or an API token and can read and update issues, accounts, contacts, knowledge base articles, tasks and projects, triggers, and more within the authenticated identity's permissions.\n- **Server URL (US):** `https://mcp.usepylon.com`\n- **Server URL (EU):** `https://mcp.eu.usepylon.com`\n- **Auth:** OAuth 2.0 or an API token. Actions are performed as the signed-in user or the token's identity, with that identity's current role and permissions.\n- **Transport:** Streamable HTTP (stateless; no server-side sessions).\n### Setup in Pylon\nOpen **Settings > AI Controls > MCP Server** in Pylon. Copy your workspace's regional MCP URL from **Installation** and use it in your AI tool. For client-specific instructions, see [connecting to the Pylon MCP Server](https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server?lang=en).\n### Authentication\nBoth methods use the same regional MCP URL. Choose the method your client supports.\n#### OAuth\nUse OAuth with AI tools that offer an interactive connection flow. Add the regional"
+    },
+    {
+     "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server?lang=en",
+     "title": "Connecting to the Pylon MCP Server",
+     "snippet": "The Pylon MCP server at [https://mcp.usepylon.com](https://mcp.usepylon.com) provides AI tools access to your Pylon data. It uses OAuth authentication with your Pylon account.\nThe application you connect to Pylon's MCP will only have access to data you would have access to in Pylon, and will read and write on behalf of you.\n## Common Clients\n### Claude Code\n```plaintext\nclaude mcp add pylon --transport http https://mcp.usepylon.com/\n```\nThen, in Claude Code, run the `/mcp` command and select the `pylon` MCP to authenticate.\n### Claude Desktop and Web\nIn \"Admin Settings\", add a custom connector named \"Pylon\" with URL `https://mcp.usepylon.com/`\nLeave \"OAuth Client ID\" and \"OAuth Client Secret\" blank.\nNavigate to \"Settings > Connectors\" and click the \"Connect\" button next to the Pylon MCP to authenticate.\n\n### Cursor\nAdd to your Cursor MCP settings:\n`~/.cursor/mcp.json` :\n```plaintext\n{ \"mcpServers\": { ... \"pylon\": { \"url\": \"https://mcp.usepylon.com/\" } ... } }\n```\nNavigate to \"Cursor Settings > Tools & MCP\" and click \"Connect\" next to the Pylon MCP to authenticate.\n## Authentication Flow\n**Note:** The Pylon MCP server only supports OAuth authentication. API key authentication is not"
+    },
+    {
+     "url": "https://usepylon.com/integrations/mcp",
+     "title": "Pylon MCP | Connect Your Data to AI Tools",
+     "snippet": "# Pylon MCP\nConnect your Pylon data to AI tools like Claude, ChatGPT, and Cursor.\nOops! Something went wrong while submitting the form.\nTrusted by 1,500+ B2B customers globally\n\nWork with your Pylon data inside any AI tool\nRead and update issues, accounts, and contacts directly from AI tools that support the Model Context Protocol, including Claude, ChatGPT, and Cursor.\nKeep access secure and scoped to each user\nEvery action runs on behalf of the authenticated user through OAuth, so an AI tool can only see and change the same data that the user can already access in the Pylon dashboard.\n\nStep 1\nEnable MCP Access for your users\nGrant the MCP access role to the Member or Admin users who need it. Access follows the same scoping as the Pylon dashboard \u2014 the MCP can never return data or make writes a user couldn't already perform in the UI.\nStep 2\nConfigure the MCP Server in Pylon\nIn your Pylon dashboard, go to Settings \u2192 AI Controls \u2192 MCP Server to configure and enable the server.\nStep 3\nConnect your AI tool\nAdd the server URL `https://mcp.usepylon.com` in your AI tool of choice. The tool authenticates via OAuth 2.0, and connects over stateless streamable HTTP.\n\nMCP is an open standard"
+    },
+    {
+     "url": "https://usepylon.com/blog/connect-pylon-chatgpt-mcp",
+     "title": "How to connect Pylon to ChatGPT with MCP | Pylon",
+     "snippet": "You can connect ChatGPT to Pylon in two ways. The fastest is Pylon\u2019s native ChatGPT app: install it from Settings > Plugins in ChatGPT (some older views, including very old iOS or Android apps, show Apps instead of Plugins) and sign in with your Pylon account. You can also add the Pylon MCP server to ChatGPT as a custom MCP server. Either way, ChatGPT authenticates with OAuth and uses tools that read or write the same data your user can already see in Pylon.\n\nFrom [Pylon MCP docs](https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp):\n- A Pylon workspace on a plan that includes the Pylon MCP server (listed on every plan in [Features by tier](https://www.usepylon.com/pricing)).\n- A Pylon user with the **MCP Access** permission, which the standard Member and Admin roles include.\n- Permission for each tool operation you expect ChatGPT to run. MCP cannot return data the user cannot see, or write what the user cannot write in the Pylon UI.\n- ChatGPT access that allows custom MCP servers or plugins. OpenAI documents workspace permissions and security restrictions, including Lockdown, for adding custom MCP servers ([Add custom MCP server](https://developers.openai.com/api/docs/guid"
+    },
+    {
+     "url": "https://pydantic.dev/docs/ai/harness/pylon",
+     "title": "Pylon",
+     "snippet": "`Pylon` connects an agent to [Pylon](https://www.usepylon.com)\u2019s hosted MCP server so it can search, read, create, and update support issues, look up and update accounts, and look up contacts as the signed-in user.\n\naccDescr: Inside your agent, the model calls tools of the Pylon capability, prefixed pylon_, and gets their results. Your auth function gives the capability a token for each run. The capability sends tools/call with an OAuth Bearer token to the Pylon MCP server at mcp.usepylon.com, which rejects a Pylon REST API token, and with read_only=True it drops the tools not marked read-only.\n\nYou need a Pylon Member or Admin seat with the `MCP Access` role; Viewer and Integration users cannot sign in. Pylon MCP takes an OAuth access token. Pylon REST API tokens do not work with it.\nYour application gets one by running the standard MCP authorization flow: the server names its authorization server and supports dynamic client registration, so any MCP OAuth client library can sign the user in. Store the token it returns and pass it as `auth` or `PYLON_ACCESS_TOKEN`.\n\n## Connect\n```python\nfrom pydantic_ai import Agent\nfrom pydantic_ai_harness import Pylon\nagent = Agent('openai:gpt-6."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

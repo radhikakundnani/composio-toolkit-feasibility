@@ -1,0 +1,142 @@
+{
+ "id": 37,
+ "app": "systeme.io",
+ "hint": "systeme.io (funnel builder)",
+ "given_category": "Marketing, Ads, Email and Social",
+ "queries": {
+  "auth": {
+   "query": "systeme.io API authentication OAuth API key access token developer docs systeme.io funnel builder",
+   "log_id": "log_GvW2oBqlgqMR",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://rollout.com/integration-guides/systeme.io/how-to-build-a-public-systemeio-integration-building-the-auth-flow",
+     "title": "How to build a systeme.io API integration",
+     "snippet": "Create a `.env` file to store your Systeme.io credentials:\n```\nSYSTEME_CLIENT_ID=your_client_id SYSTEME_CLIENT_SECRET=your_client_secret SYSTEME_REDIRECT_URI=http://localhost:3000/callback\n```\n## Understanding Systeme.io's OAuth 2.0 flow\nSysteme.io uses OAuth 2.0 for authorization. Here's the gist:\n1. We redirect the user to Systeme.io's authorization page\n2. User grants permission\n3. Systeme.io redirects back to our app with an authorization code\n4. We exchange this code for access and refresh tokens\nSimple, right? Let's make it happen!\nFirst, let's create the authorization URL:\n```\nconst express = require ( 'express' ) ; const axios = require ( 'axios' ) ; require ( 'dotenv' ) . config ( ) ; const app = express ( ) ; app . get ( '/auth' , ( req , res ) => { const authUrl = ` https://systeme.io/oauth/authorize?client_id= ${ process . env . SYSTEME_CLIENT_ID } &redirect_uri= ${ encodeURIComponent ( process . env . SYSTEME_REDIRECT_URI ) } &response_type=code ` ; res . redirect ( authUrl ) ; } ) ;\n```\nNow, let's handle the callback and exchange the code for tokens:\n```\napp . get ( '/callback' , async ( req , res ) => { const { code } = req . query ; try { const response = await axio"
+    },
+    {
+     "url": "https://developer.systeme.io/reference/api",
+     "title": "Public API",
+     "snippet": "Welcome to this comprehensive guide for the Systeme.io Public API. Our API serves as a bridge, enabling developers to interact with Systeme's core functionalities programmatically. It is meticulously designed to offer a seamless integration experience, allowing you to manage contacts, tags, and a variety of other operations integral to our platform.\n\nTo begin using the Systeme.io Public API, you must first obtain an authentication key. This key is your ticket to unlocking the API's capabilities. Simply navigate to the profile settings within your Systeme.io dashboard, and generate a new key under the \"Public API keys\" section. Once you have your key, you're all set to embark on your first API request journey!\n\nAuthentication\nTo authenticate with the Systeme.io Public API, your only option right now is to attach your API key to the `X-API-Key` header of each request. Let us know which authentication methods you would like to see implemented next!\n#\nRate-Limiting\nOur Public API implements a rate-limiting system to maintain service stability and availability for all users. Here's how it works:\n- **Refill Rate**: Your request quota is periodically replenished. The `X-RateLimit-Refill` "
+    },
+    {
+     "url": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+     "title": "How to use the systeme.io public API (Application Programming Interface)",
+     "snippet": "## 3. How to generate your API keys\nAPI keys are unique identifiers that authenticate requests to our public API. They enable you to programmatically access and manage various resources on our platform.\nTo connect an external integration, you first need to generate a secure API key. Click on your profile picture and select **Settings** (1). In the left menu, click **MCP & API keys** (2).\n![](https://help.systeme.io/uploads/migrated/fa6ffd3ee9cb3003499ac29b.png)\nScroll down to the Public API keys section and click **Create** (3).\n![](https://help.systeme.io/uploads/migrated/e3685ff42c8459acffc06b30.png)\nGive your key a name, set an expiration date, and click **Save** (4).\n![](https://help.systeme.io/uploads/migrated/2b88b528594830eccc5a10ca.png)\n> **Note:** To keep your API key active indefinitely, leave the 'Expiration' field empty.\nYour key is now ready.\n![](https://help.systeme.io/uploads/migrated/4b128832d665adb618c1aeff.png)\n\n> **Notes:**\n>\n> - To easily identify and manage your tokens, each must have a unique name.\n> - A token can only be copied immediately after creating it. If you forgot to copy your token, delete it and create a new one.\n> - As a security measure, we will s"
+    },
+    {
+     "url": "https://developer.systeme.io/reference/api_funnels_get_collection.md",
+     "title": "developer.systeme.io/reference/api_funnels_get_collection.md",
+     "snippet": "Started\\nTo begin utilizing the Systeme.io Public API, you must first obtain an authentication key. This key is your passcard to unlocking the API's capabilities. Simply navigate to the profile settings within your Systeme.io dashboard, and generate a new key under the \\\"Public API keys\\\" section.\n\nAuthentication\\nTo authenticate with the Systeme.io Public API, your only option right now is to attach your API key to the `X-API-Key` header of each request.\\nLet"
+    },
+    {
+     "url": "https://mindcloud.co/docs/universal/rest/systeme-io/0.0.8/introduction/authentication",
+     "title": "Systeme.io API Authentication",
+     "snippet": "How to authenticate Systeme.io API requests: one Bearer API key plus a connectionId. MindCloud stores your API key securely \u2014 set it once, never resend it.\nEvery Systeme.io API request through MindCloud needs two things: a **MindCloud API Key** and a `connectionId` for your Systeme.io account. This page covers both, plus exactly how to send them, so you do not need to visit any other page to get authenticated.\n## Steps to authenticate\n1. Create a **MindCloud account** at [app.mindcloud.co](https://app.mindcloud.co) if you do not already have one.\n2. Generate a **MindCloud API Key** in [API Keys](https://app.mindcloud.co/user/api-keys). This is the Bearer token you send on every request. Keep it on your server.\n3. Create a **Systeme.io connection** in [Connections](https://app.mindcloud.co/credentials). Systeme.io uses an API key. You generate the key in your Systeme.io account, then paste it in when you create the connection \u2014 MindCloud stores it securely and never returns it in a response.\n4. Copy the connection\u2019s `connectionId` \u2014 you will send it on every request alongside your MindCloud API Key.\n## How requests are authenticated\nAuthentication has two layers. Your **MindCloud AP"
+    }
+   ]
+  },
+  "access": {
+   "query": "systeme.io systeme.io funnel builder API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_jf-VZsVCA_1s",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+     "title": "How to use the systeme.io public API (Application Programming Interface)",
+     "snippet": "**a. Contacts, tags, and custom field management:**\n- **Contacts:** Create new contacts, update existing ones, list your audience with advanced filters, or delete contacts.\n- **Tags:** Create, assign, list, and remove tags from contacts.\n- **Custom fields:** Retrieve available contact custom fields and their identifiers (slugs) to correctly fill in contact information.\n\n**d. Price plans and coupon management:**\n- **Create, edit, and delete:** Generate new price plans and coupons, or partially update and delete existing ones.\n- **List and search**: Browse through all your existing price plans and coupons, or fetch specific items by their ID."
+    },
+    {
+     "url": "https://systeme.io/pricing",
+     "title": "systeme.io Pricing \u2014 Free, Startup, Webinar, Unlimited Plans",
+     "snippet": "# Choose your plan\n2 months free\nFree migration\nMonthly billingAnnual billing\nNo credit card required\nNo credit card required\nNo credit card required\nNo credit card required\nFor teams\nNo credit card required\n\nWith systeme.io, every plan allows you to create unlimited sub-accounts. Each sub-account is a fully fledged systeme.io account with its own full set of limits The limits for each sub-account are the same as those of your main account's plan, at no extra cost.\n\nSysteme.io has four plans based primarily on contact limits. Free: 2,000 contacts, 3 sales funnels, 1 course. Startup ($17/month): 5,000 contacts, 10 sales funnels, 5 courses. Webinar ($47/month): 10,000 contacts, 50 sales funnels, 20 courses, plus evergreen webinars. Unlimited ($97/month): unlimited contacts, funnels, courses and automation rules. All plans include unlimited email sends, unlimited sub-accounts, 0% transaction fees, and the same set of core tools.\nDoes systeme.io have a free plan and what are its limits?\nYes, the free plan supports up to 2,000 contacts, 3 sales funnels, 1 blog, 1 course, 1 affiliate program, and 1 custom domain. Emails sent are unlimited. The free plan never expires and does not require"
+    },
+    {
+     "url": "https://funnelgoodies.com/systeme-io-review",
+     "title": "Systeme.io Review 2026: Free Plan, White Label, API & MCP Tested",
+     "snippet": "### Genuinely Free Plan\n2,000 contacts, 3 funnels, 1 course, 1 blog, a custom domain, unlimited emails and students \u2014 forever, with no credit card. The most generous free tier in the category.\n### Sub-Accounts & White Label\nUnlimited isolated client workspaces plus full white-labeling \u2014 your domain, logo, colors, and branded dashboard with zero Systeme.io branding. Included on the $97 Unlimited plan.\n### Public API + MCP\nA documented REST API with webhooks for contacts, tags, courses, funnels, and pages \u2014 plus an official MCP server so ChatGPT and Claude can work with your account directly.\n### Built-In Affiliate Program\nRun your own affiliate program on every tier \u2014 including the free plan. Systeme's own program pays 60% lifetime recurring, one of the most generous in the industry.\n\n### Systeme.io Pricing\nFour tiers, starting at $0 forever. Annual billing gives you two months free (~17% off). Prices below are monthly; annual figures shown underneath.\nFree\n$0/mo\nForever \u2014 no credit card\n- 2,000 contacts\n- 3 funnels, 1 course, 1 blog\n- Unlimited emails & students\n- 1 custom domain\n- Built-in affiliate program\n[Start Free](https://systeme.io/?sa=sa002231939107a9d4f934fd04279650212745"
+    },
+    {
+     "url": "https://systeme-io-pricing.systeme.io/pricing",
+     "title": "Systeme.io Pricing Plans - Get 40% Discount Lifetime Today!",
+     "snippet": "**Get 40% Discount on all Systeme.io Plans for Lifetime!**\nChoose a plan tailored to your needs and cancel whenever you want:\n**Pay annually and get 40% Off. \ud83c\udf81**\n**This Offer will expire soon!**\n**Choose your plan now and get up to a 40% discount with our special Annual Anniversary offer, celebrating our 7th year at the top of the market!**"
+    },
+    {
+     "url": "https://systeme.io/features",
+     "title": "Systeme.io features: all-in-one marketing platform",
+     "snippet": "Over **500,000 entrepreneurs** use systeme.io to build sales funnels, send automated email campaigns, host online courses, manage affiliate programs, and sell digital and physical products from a single dashboard. The free plan includes **2,000 contacts**, unlimited emails, and your first funnel at no cost, no credit card required.\n\n## Create sales funnels\nOur funnel builder makes everything super simple and easy to do\nsysteme.io's funnel builder includes a drag-and-drop editor, A/B split testing, one-click upsells, order bumps, and countdown timers. You can build an opt-in funnel, a sales funnel, or a webinar funnel using pre-made templates, no code required.\n\nMost features are available on every plan, including the free plan. Paid plans start at $17/month and raise your limits on contacts, funnels, courses, and more. Evergreen webinars are available starting on the Webinar plan.\n\nMemberships work through the same system, so you can sell access to a course or community through a funnel and automate access on purchase. The free plan includes 1 course with up to 500 students. Paid plans increase the number of courses you can host and give you unlimited students"
+    }
+   ]
+  },
+  "surface": {
+   "query": "systeme.io API reference REST GraphQL endpoints documentation systeme.io funnel builder",
+   "log_id": "log_68ps-NNCqAmQ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.systeme.io/reference/api_funnels_post.md",
+     "title": "developer.systeme.io/reference/api_funnels_post.md",
+     "snippet": "# Creates a Funnel resource.\nCreates a Funnel resource.\n\nvariety of other operations integral to our platform.\n\nAPI\\nOur documentation is your roadmap to the Systeme.io Public API. It details the endpoints available, their respective URLs, the expected formats for requests and responses, and outlines the basic constraints to be aware of.\\n\\n##"
+    },
+    {
+     "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+     "title": "How to use the systeme.io public API (Application Programming Interface)",
+     "snippet": "API keys are unique identifiers that authenticate requests to our public API. They enable you to programmatically access and manage various resources on our platform.\nTo connect an external integration, you first need to generate a secure API key. Click on your profile picture and select **Settings** (1). In the left menu, click **MCP & API keys** (2).\n\nGive your key a name, set an expiration date, and click **Save** (4).\n\nOur API opens up some interesting possibilities. Below you will find the main actions you can perform using our public API:\n**a. Contacts, tags, and custom field management:**\n- **Contacts:** Create new contacts, update existing ones, list your audience with advanced filters, or delete contacts.\n- **Tags:** Create, assign, list, and remove tags from contacts.\n- **Custom fields:** Retrieve available contact custom fields and their identifiers (slugs) to correctly fill in contact information.\n**b. Newsletters and campaigns management:**\n- **Newsletters:** Create new drafts, update existing ones, target audiences (using include/exclude tags), configure sender details, schedule or remove scheduling, send test emails, send newsletters directly, delete drafts, and fetc"
+    },
+    {
+     "url": "https://developer.systeme.io/llms.txt",
+     "title": "developer.systeme.io/llms.txt",
+     "snippet": "## API Reference\n- [Public API](https://developer.systeme.io/reference/api.md)\n- [Retrieves the collection of AutomationRule resources.](https://developer.systeme.io/reference/api_automationrules_get_collection.md): Retrieves the collection of AutomationRule resources.\n- [Creates a AutomationRule resource.](https://developer.systeme.io/reference/api_automationrules_post.md): Creates a AutomationRule resource.\n- [Retrieves a AutomationRule resource.](https://developer.systeme.io/reference/api_automationrules_id_get.md): Retrieves a AutomationRule resource.\n- [Removes the AutomationRule resource.](https://developer.systeme.io/reference/api_automationrules_id_delete.md): Removes the AutomationRule resource.\n- [Updates the AutomationRule resource.](https://developer.systeme.io/reference/api_automationrules_id_patch.md): Updates the AutomationRule resource.\n- [Retrieves the collection of Booking resources.](https://developer.systeme.io/reference/api_booking-calendarbookings_get_collection.md): Retrieves the collection of Booking resources.\n- [Retrieves the collection of Event resources.](https://developer.systeme.io/reference/api_booking-calendarevents_get_collection.md): Retrieves the "
+    },
+    {
+     "url": "https://developer.systeme.io/reference/api_funnels_get_collection.md",
+     "title": "developer.systeme.io/reference/api_funnels_get_collection.md",
+     "snippet": "\"description\": \"# Introduction\\nWelcome to the comprehensive guide for the Systeme.io Public API. Our API serves as a bridge, enabling developers to interact with Systeme's core functionalities programmatically. It is meticulously designed to offer a seamless integration experience, allowing you to manage contacts, tags, and a variety of other operations integral to our platform. Adhering to RESTful conventions, our API ensures an intuitive and consistent interaction pattern for all users.\\n\\n# Getting Started\\nTo begin utilizing the Systeme.io Public API, you must first obtain an authentication key.\n\nAPI\\nOur documentation is your roadmap to the Systeme.io Public API. It details the endpoints available, their respective URLs, the expected formats for requests and responses, and outlines the basic constraints to be aware of.\\n\\n##"
+    },
+    {
+     "url": "https://developer.systeme.io/reference/api_funnels_funnelidsteps_post.md",
+     "title": "developer.systeme.io/reference/api_funnels_funnelidsteps_post.md",
+     "snippet": "# Creates a FunnelStep resource.\nCreates a FunnelStep resource.\n\n\"description\": \"# Introduction\\nWelcome to the comprehensive guide for the Systeme.io Public API. Our API serves as a bridge, enabling developers to interact with Systeme's core functionalities programmatically. It is meticulously designed to offer a seamless integration experience, allowing you to manage contacts, tags, and a variety of other operations integral to our platform.\n\nAPI\\nOur documentation is your roadmap to the Systeme.io Public API. It details the endpoints available, their respective URLs, the expected formats for requests and responses, and outlines the basic constraints to be aware of.\\n\\n##"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "systeme.io systeme.io funnel builder MCP server Model Context Protocol official",
+   "log_id": "log_6uyDiyKp8T-N",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+     "title": "How to use the systeme.io MCP server (Model Context Protocol)",
+     "snippet": "The new MCP server feature gives users, partners, and developers a powerful new way to interact with [systeme.io](http://systeme.io) using AI tools.\n## 1. What is MCP?\nMCP (Model Context Protocol) is a standard that enables AI assistants (such as ChatGPT or Claude) to connect securely to external platforms.\nWith MCP, you can use natural language commands to interact with your [systeme.io](http://systeme.io) data. For example, you can ask ChatGPT to find a contact or add a tag just by typing a sentence.\nOur MCP feature currently provides direct access to specific contact-management features, allowing you to use AI to manage your contacts, tags, and contact fields.\n## 2. How does our MCP server work?\nThe [systeme.io](http://systeme.io) MCP server allows AI applications to access specific contact-management tools within your account.\nIt creates a bridge between:\n- **The host**: Your AI tool (e.g., ChatGPT, Claude).\n- **The server:** Your [systeme.io](http://systeme.io) account.\nOnce connected, the AI can execute commands to manage your contacts and tags automatically.\nFor technical details, please refer to our official MCP documentation: [https://developer.systeme.io/docs/mcp-server]("
+    },
+    {
+     "url": "https://systeme.io/mcp",
+     "title": "Run your business with AI",
+     "snippet": "systeme.io includes a built-in MCP server that lets you **connect AI tools like ChatGPT or Claude directly to your account**. Once connected, your AI can access your content to create and manage things like funnels, contacts, courses, and products, and even chain several actions together in a single request. Sensitive actions always require your confirmation first.\n\nGenerate a secure MCP key from your account settings, then use it to connect your favorite AI tool like ChatGPT or Claude\n### Let AI access your content\nGive your AI context before asking it to act. Ask how many email campaigns you have and what's inside a specific one, so it has everything it needs to start creating content for you\n\nAsk AI to create content inside your account\nOnce your AI has the context it needs, ask it to build things directly inside your account. Create a funnel, draft a newsletter, or set up a new digital product, just by describing what you want\n\nThe systeme.io MCP (Model Context Protocol) server is a standard that securely connects your systeme.io account to AI assistants like ChatGPT or Claude. It allows you to interact with your business data using natural language, enabling you to build funne"
+    },
+    {
+     "url": "https://developer.systeme.io/docs/mcp-server",
+     "title": "MCP Server",
+     "snippet": "Welcome to the Systeme.io MCP Server overview. The Model Context Protocol (MCP) is an open standard designed to connect AI models with external data and tools. Our MCP server acts as a bridge between your Systeme.io account and AI-powered environments (such as ChatGPT, Claude Desktop, or other MCP-compatible clients).\nBy leveraging the MCP server, you can grant AI agents the ability to perform contact (contacts, tags, and contact fields) and newsletter management actions within your account using natural language commands. This integration significantly enhances productivity by bringing your contact data (contacts, tags, and fields) into the AI\u2019s context window.\n#\nGetting Started\nTo begin using the Systeme.io MCP server, you must first obtain an MCP key. You can generate a new key by navigating to the profile settings within your Systeme.io dashboard under the [\"MCP & API keys\"](https://systeme.io/dashboard/profile/public-api-settings) section. Once you have your key, you can configure your MCP-compatible client to connect to our server.\n\nSecurity is a priority for our integration. To authenticate with the MCP server, you must use your MCP key. The server supports two authenticatio"
+    },
+    {
+     "url": "https://help.systeme.io/article/11229-how-to-connect-your-systemeio-account-with-chatgpt-using-mcp-keys",
+     "title": "How to connect your systeme.io account to ChatGPT using MCP keys",
+     "snippet": "What you will need:\n- A [systeme.io](systeme.io) account\n- An MCP key generated from your systeme.io account ([How to use the systeme.io MCP server (Model Context Protoco](https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp#3-How-to-generate-your-MCP-keys-usC9d)l)\n- A ChatGPT account\nTo connect [systeme.io](http://systeme.io) to ChatGPT using an MCP key, log in to your ChatGPT account, open the left side menu, and click **Plugins** (1).\n\nClick **Add** (2), and select **Add custom MCP server** (3).\n\nIn the setup popup, enter the following details:\n- **Name (4):** [Systeme.io](http://Systeme.io) MCP\n- **Description (optional) (5):** [Systeme.io](http://Systeme.io) official MCP server\n- **Connection (6):** Server URL\n- **Server URL (7):** [https://mcp.systeme.io/mcp?mcpKey=YOUR_KEY](https://mcp.systeme.io/mcp?mcpKey=YOUR_KEY)\n> **Note:** Replace YOUR_KEY with the MCP key you created on your [systeme.io](http://systeme.io) account.\n- **Authentication (8):** No Authentication\nTick the **I understand and want to continue** box (9), then click **Create as a plugin** (10)."
+    },
+    {
+     "url": "https://help.systeme.io/article/11408-how-to-manage-your-funnels-with-the-systeme-io-mcp-server",
+     "title": "How to manage your funnels with the systeme.io MCP server",
+     "snippet": "In this article, you will learn how to manage your [systeme.io](http://systeme.io) funnels using natural language through our native MCP server. By connecting an AI tool like ChatGPT or Claude, you can easily create and retrieve funnels and opt-in funnel steps seamlessly without leaving your chat window.\nWhat you will need:\n- A [systeme.io](http://systeme.io/) account\n- An MCP key generated from your systeme.io account ([How to use the systeme.io MCP server (Model Context Protocol))](/article/9489-how-to-use-systeme-ios-mcp#3-How-to-generate-your-MCP-keys-usC9d)\n- An AI tool connected to your systeme.io account using MCP keys:\n- [How to connect your systeme.io account with Claude using MCP keys](https://help.systeme.io/article/11230-how-to-connect-your-systemeio-account-with-claude-using-mcp-keys)\n- [How to connect your systeme.io account with ChatGPT using MCP keys](https://help.systeme.io/article/11229-how-to-connect-your-systemeio-account-with-chatgpt-using-mcp-keys)\n## 1. Managing funnels\nThe MCP server allows you to perform basic actions on your funnels directly from the chat. Just provide the name of the funnel and specify the action you want to perform.\n**a. Create a funnel:"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

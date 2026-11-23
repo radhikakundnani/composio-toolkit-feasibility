@@ -1,0 +1,37 @@
+{
+ "id": 21,
+ "app": "Slack",
+ "category": "Communications and Messaging",
+ "one_liner": "Team messaging platform with channels, DMs, files and workflow apps.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Register an app at api.slack.com/apps; OAuth v2 install per workspace. Free sandbox via Developer Program.",
+ "api_types": [
+  "rest",
+  "websocket"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://mcp.slack.com/mcp (docs.slack.dev/ai/slack-mcp-server)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "Workspace admin approval may be needed per install; Marketplace review only for public listing.",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://api.slack.com/authentication/oauth-v2",
+  "access": "https://api.slack.com/docs/developer-sandbox",
+  "surface": "https://docs.slack.dev/apis/web-api",
+  "mcp": "https://docs.slack.dev/ai/slack-mcp-server"
+ },
+ "identity_issue": "",
+ "verified": true
+}

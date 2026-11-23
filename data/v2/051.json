@@ -1,0 +1,36 @@
+{
+  "id": 51,
+  "app": "DataForSEO",
+  "category": "SEO data API",
+  "one_liner": "Pay-as-you-go SEO, SERP, keyword and backlink data APIs.",
+  "auth_methods": [
+    "basic",
+    "oauth2"
+  ],
+  "auth_primary": "basic",
+  "access": "self_serve_trial",
+  "access_notes": "Free account gives API login/password and $1 trial credit; pay-as-you-go with $50 minimum top-up thereafter.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.dataforseo.com/v3/mcp ; github.com/dataforseo/mcp-server-typescript",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Credentials self-serve; usage prepaid after small trial credit.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.dataforseo.com/v3/auth",
+    "access": "https://dataforseo.com/pricing",
+    "surface": "https://docs.dataforseo.com/v3.md",
+    "mcp": "https://dataforseo.com/model-context-protocol"
+  },
+  "verified": true
+}

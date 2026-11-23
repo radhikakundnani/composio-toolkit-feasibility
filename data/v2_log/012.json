@@ -1,0 +1,26 @@
+{
+  "id": 12,
+  "app": "Intercom",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+      "to": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "why": "v1 help-center URL not seen in fresh results; dev docs confirm free development workspace",
+      "evidence": "https://developers.intercom.com/docs/build-an-integration/getting-started"
+    },
+    {
+      "field": "mcp_note",
+      "from": "https://developers.intercom.com/docs/guides/mcp",
+      "to": "https://developers.intercom.com/docs/guides/mcp (US and EU hosted workspaces; endpoint mcp.intercom.com/mcp)",
+      "why": "added region detail",
+      "evidence": "https://developers.intercom.com/docs/guides/mcp"
+    }
+  ],
+  "confirmed": [
+    "mcp official",
+    "access self_serve_free",
+    "auth oauth2"
+  ],
+  "searches": 3
+}

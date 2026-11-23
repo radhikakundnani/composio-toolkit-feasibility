@@ -1,0 +1,142 @@
+{
+ "id": 4,
+ "app": "Attio",
+ "hint": "attio.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "Attio API authentication OAuth API key access token developer docs attio.com",
+   "log_id": "log_PqzJ-ZqaXFy9",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.attio.com/rest-api/guides/authentication",
+     "title": "Authenticating requests",
+     "snippet": "In order to make requests to the Attio REST API, you need to generate an access token. There are two ways to generate an access token:\n1. By implementing an OAuth 2.0 flow\n2. By generating an API key for your workspace\nYou should prefer the OAuth 2.0 flow if building an app for multiple workspaces. If you are building an app for a single workspace, you can manually generate an API key to make requests on behalf of that workspace only.\n## Generating access tokens\n### OAuth 2.0\nAttio implements the standard [OAuth 2.0 specification](https://datatracker.ietf.org/doc/html/rfc6749), using the Authorization Code Grant Flow ([RFC 6749 section 4.1](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)). You can find the reference for our OAuth authorize, token exchange and introspect endpoints [here](/docs/oauth/authorize). If you would prefer a tutorial on how to implement an OAuth 2.0 flow into an existing app, you can find one [here](/rest-api/tutorials/connect-an-app-through-oauth). We recommend using a well-established library for making OAuth requests, because they apply many of the security recommendations added after the original OAuth protocol was released. You can find some "
+    },
+    {
+     "url": "https://docs.attio.com/rest-api/tutorials/connect-an-app-through-oauth",
+     "title": "Connect an app to Attio through OAuth",
+     "snippet": "If you\u2019re building an app that needs to make requests to Attio\u2019s REST API on behalf of many users, you should use OAuth 2.0 to authenticate your app. This tutorial will walk you through the process of modifying an example Node.js app to connect to Attio through OAuth. We\u2019ll start with a boilerplate app and modify it step-by-step to support generating an OAuth token for each user and then use that token to display a list of tasks they have in Attio.\nIf you would prefer to jump straight ahead to reference information for each endpoint in our OAuth flow, you can find documentation [here](/docs/oauth/authorize).\n\n2\nConfigure OAuth\nOur next job is to enable OAuth 2.0 for the app. Head to the OAuth tab in your app\u2019s settings and enable OAuth 2.0 via the toggle at the top of the page.Next, configure the redirect URIs for your app. For our tutorial, we\u2019ll use the following URL:\n```\nhttp://localhost:3050/integrations/attio/callback\n```\nOf course, for a real app, you\u2019d also include a publicly available URL such as `https://my-app.com/integrations/attio/callback`.Lastly, we need to configure the app\u2019s scopes. Heads to the scopes tab to enable these. For our demonstration app, we\u2019ll set tasks,"
+    },
+    {
+     "url": "https://docs.attio.com/sdk/guides/authenticating-to-external-services",
+     "title": "Authenticating to external services",
+     "snippet": "How to use connections in your app\n1. Head to the **Connections** tab in your app\u2019s settings, found in the [developer console](https://build.attio.com).\n2. Configure a workspace and/or user connection for your app. Choose the type of connection that best suits the authentication requirements of your external service.\n3. Retrieve the connection value in your server-side app code by calling either [`getUserConnection`](/sdk/server/connections/get-user-connection) or [`getWorkspaceConnection`](/sdk/server/connections/get-workspace-connection).\n4. Use the connection value to authenticate to the external service when making HTTP requests.\n\nConnection types\nAttio currently supports the following authentication types:\n- **Secret** - Stores a string secret, such as an API key.\n- **OAuth 2.0** - Stores an OAuth 2.0 access token. Authentication to external services which support the [OAuth 2.0 authorization code flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1) is managed automatically by Attio.\nWhen configuring an OAuth 2.0 connection, you must register Attio\u2019s redirect URL with your external provider so it can redirect users back to Attio after they authorize. Your redirect "
+    },
+    {
+     "url": "https://docs.attio.com/docs/oauth/token",
+     "title": "Token",
+     "snippet": "Response\n\u200b\nstring\nrequired\nAn access token for the workspace which can be used to make authenticated requests to the Attio REST API.\n\u200b\nstring\ndefault:\"Bearer\"\nrequired\nThe type of token. Always `\"Bearer\"`."
+    },
+    {
+     "url": "https://attio.com/developers/authentication",
+     "title": "Overview - Attio Docs",
+     "snippet": "Sign in Authentication Authentication The Attio API uses access tokens keys to identify and authorise calls to the developer API. Tokens can be generated in your Workspace settings. See this guide for more information on how to generate access tokens. Your API keys are able to authenticate to Attio and perform actions on your account so it's important that you keep them safe in the same way that you would a password. If you are building an integration for other Workspaces to use, we also provide OAuth flows for the Attio API. Please contact us for more information. Using Access Tokens We accept both Bearer and Basic HTTP Authentication. We recommend using Bearer Authentication. If you are using HTTP Basic Authentication, you should provide your API key as the Basic Authentication username. You can safely leave the password blank. If you are using HTTP Bearer Authentication you should provide your API key in the Authorization header as the Bearer value. To keep your API key secure you should always connect to the Attio API using HTTPS. Scopes Attio uses scopes to limit the access your integrations have to our API. You can configure which scopes your integration access to has in your"
+    }
+   ]
+  },
+  "access": {
+   "query": "Attio attio.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_-hScWrmOjyxM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pipeline.zoominfo.com/sales/attio-api",
+     "title": "Attio API Review [August 2026]: Limits & ZoomInfo",
+     "snippet": "**Attio's API** is a public REST surface exchanging JSON over HTTPS, with [OAuth 2.0 authentication](https://docs.attio.com/rest-api/guides/authentication) for multi-workspace apps and API keys for single-workspace use, published rate limits of [100 reads/sec and 25 writes/sec](https://docs.attio.com/rest-api/guides/rate-limiting), a webhook system with [at-least-once delivery guarantees](https://docs.attio.com/rest-api/guides/webhooks), and an endpoint catalogue spanning custom objects, records, lists, notes, tasks, files, meetings, and call recordings.\nThe [developer docs](https://docs.attio.com) are public, an [OpenAPI spec](https://docs.attio.com/rest-api/endpoint-reference/openapi) is downloadable, and API access ships on every plan, including free.\n\n| **API type** | REST over HTTPS, JSON request/response |\n| **Authentication** | OAuth 2.0 (multi-workspace) or API key (single-workspace), both as Bearer tokens |\n| **Base URL** | https://api.attio.com (endpoints versioned under /v2/) |\n| **Rate limits** | [100 req/sec reads, 25 req/sec writes](https://docs.attio.com/rest-api/guides/rate-limiting) |\n\n| **Pricing / access** | Bundled on all plans including Free ($0); no separate A"
+    },
+    {
+     "url": "https://docs.attio.com/rest-api/guides/authentication",
+     "title": "Authenticating requests",
+     "snippet": "In order to make requests to the Attio REST API, you need to generate an access token. There are two ways to generate an access token:\n1. By implementing an OAuth 2.0 flow\n2. By generating an API key for your workspace\nYou should prefer the OAuth 2.0 flow if building an app for multiple workspaces.\n\nOAuth for unpublished apps\nWhile you develop your app, it can grant tokens for the workspace it is installed in. To get access tokens for other workspaces, you\u2019ll need to share your app with those workspaces or publish it. An unpublished app can be installed in up to 25 workspaces. See [installation limit](/share/private-invites#installation-limit) for more information. Before your app has an approved release, the version that an OAuth install gets depends on whether the workspace had a development install of your app before. See [OAuth flows for unpublished apps](/share/the-publication-lifecycle#oauth-flows-for-unpublished-apps).\n###\n\u200b\nAPI key\nIf you only need a token for a single workspace, you can generate an API key in the developer settings page of your apps. You can find docs on to do this [here](https://attio.com/help/apps/other-apps/generating-an-api-key).\n\nscopes tab in your ap"
+    },
+    {
+     "url": "https://attio.com/legal/terms-and-conditions",
+     "title": "Terms and Conditions | Attio",
+     "snippet": "\u201c**Approved Developer**\u201d means a party that has been approved by Attio to enter into the Developer Program;\n\n\u201c**Developer Program**\u201d means an application development program that is provided by Attio under which it provides an Approved Developer some or all of the Attio Services, subject to the restrictions and limitations as set out in this Attio Customer Agreement, within which the Developer may develop an Integration App;\n\n\"**Free Trial**\u201d means a potentially limited period during which Attio may offer some or all of the Attio Services free of any Fees and subject to usage restrictions, as determined by Attio in its sole discretion. On expiry of the Free Trial, You will be liable for all Fees set out in the chosen Plan. In the absence of an expiry date of a Free Trial, You may continue to receive some or all of the Attio Services until such time as Attio (in its sole discretion) requires You to upgrade to a paid-for Plan or removes, suspends or terminates Your access to the Attio Services, for any reason and without notice;\n\n4.1. Subject to this Attio Customer Agreement and in consideration of the full payment, timely of all applicable Fees by You to Attio, or in the case of a F"
+    },
+    {
+     "url": "https://github.com/apideck-libraries/api-skills/blob/main/providers/claude/plugin/skills/attio/SKILL.md",
+     "title": "api-skills/providers/claude/plugin/skills/attio/SKILL.md at main \u00b7 apideck-libraries/api-skills",
+     "snippet": "- **Implementation difficulty:** straightforward \u2014 Self-Service OAuth + Free Plan, No Partnership or App Review Required\n- **Vendor partnership required:** no\n- **Apideck-managed credentials:** available \u2014 For testing: the consent screen shows Apideck; production needs your own Attio app.\n- **Account type required:** Any Attio workspace, including the Free plan.\n- **Consumer access level:** Workspace admin; a non-admin can only send an install request for an admin to approve.\n- **Sandbox:** available ([signup](https://app.attio.com/welcome/sign-in)) \u2014 Test in a free workspace or a 14-day Pro trial; Attio support also provides development workspaces on request.\n- **Costs:** No API add-on or fee is listed by Attio.\n- **Rate limits:** 100 requests per second for reads and 25 per second for writes, across the whole API.\n- **Authentication:** Authorization Code flow.\n- **Webhooks:** Native - company, contact, opportunity, user and note events (created, updated, deleted)"
+    },
+    {
+     "url": "https://frontal.so/gtm-apis/crm-apis/attio-api-review",
+     "title": "Attio API review: seats, credits and a real rate limit",
+     "snippet": "Attio API pricing is really seat pricing. Four tiers, each adding credits per seat and capabilities rather than API access, because every tier already has that.\n### Free\n$0\nper user/month\n- Full REST API access\n- 100 seat credits a month\n- 250 workspace credits a month\n### Plus\n$44\n/user/mo, $35 annual\n- 500 seat credits a month\n- 1,500 workspace credits a month\n- Billed monthly or annually\n### Pro\n$99\n/user/mo, $79 annual\n- 1,000 seat credits a month\n- 10,000 workspace credits a month\n- The tier Attio marks as popular\n### Enterprise\nCustom\nbilled annually\n- 2,500 seat credits a month\n- Custom workspace credits\nWorkspace credits can be topped up at $85 a month for an extra 5,000, or $70 a month on an annual commitment. Annual billing takes roughly 20% off every seat price. The free plan is a real plan rather than a trial, and because API access is on it, you can build and test an integration end to end before anyone is billed.\n\n- Full REST API on the free plan, so you can build and test before anyone is billed.\n- You define the objects and attributes, so the schema matches your motion rather than a vendor's idea of a deal.\n\nThe free plan makes the evaluation honest. Full API access"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Attio API reference REST GraphQL endpoints documentation attio.com",
+   "log_id": "log_BmSY5gz8QZpW",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.attio.com/rest-api/guides/activities",
+     "title": "Working with activities",
+     "snippet": "## Required scopes\nThe activity APIs use two [scopes](/rest-api/guides/authentication):\n- `activity_configuration` for reading and writing activities themselves and their attributes.\n- `activity_record` for reading and writing activity records.\nActivity records link to object records, so the activity record endpoints additionally require `activity_configuration:read`, `object_configuration:read` and `record_permission:read`. Creating referenced records as part of a write also needs `record_permission:read-write`.\n## Creating an activity\nCreate an activity with `POST /v2/activities`. Besides a slug and its display names, you must pick the [schema](/docs/activities#schemas) the activity extends: `activities`, `interactions`, `calls` or `emails`. When creating custom activities, it\u2019s good practice to prefix the slug with an app-specific prefix like `{app_name}_site_visits` to prevent conflicts.\nThe response contains the new activity, including the schemas it directly extends:\nThe choice of schema is permanent: `PATCH /v2/activities/{activity}` can update the slug and nouns, but rejects `extends` with a `400`. You can list all activities with `GET /v2/activities` and fetch a single one"
+    },
+    {
+     "url": "https://docs.attio.com/rest-api/guides/filtering-and-sorting",
+     "title": "Filtering and sorting",
+     "snippet": "Attio supports two distinct formats for filtering. There is the verbose format, which supports a wider variety of operators and conditions, and a shorthand format, which is useful for quick equality checks.\n### Shorthand filters\nShorthand filters generally look like this:\nPeople called with the email\n```\nPOST /v2/objects/companies/records/query\nContent-Type: application/json\n{\n\"filter\": {\n\"name\": \"John Smith\",\n\"email_addresses\": \"john@smith.com\"\n}\n}\n```\n\nWe have examples of filtering by each attribute type in our [attribute types documentation](/rest-api/attribute-types/attribute-types)."
+    },
+    {
+     "url": "https://docs.attio.com/rest-api/endpoint-reference/records/list-records",
+     "title": "List records",
+     "snippet": "#### Authorizations\nThis API uses OAuth 2.0 with the authorization code grant flow.\n#### Scopes\nView, and optionally write, records.\nobject_configuration:read\nView, and optionally write, the configuration and attributes of objects.\n#### Path Parameters\nobject\nstring\nrequired\nA UUID or slug to identify the object to list records for.\nExample:\n`\"people\"`"
+    },
+    {
+     "url": "https://docs.attio.com/rest-api/endpoint-reference/users/list-user-record-entries.md",
+     "title": "docs.attio.com/rest-api/endpoint-reference/users/list-user-record-entries.md",
+     "snippet": "# List user record entries\n> List all entries, across all lists, for which this user record is the parent.\nRequired scopes: `record_permission:read`, `object_configuration:read`, `list_entry:read`.\nSupported token levels: `workspace`, `user`.\n## OpenAPI\n````yaml https://api.attio.com/openapi/standard-objects get /v2/objects/users/records/{record_id}/entries\nopenapi: 3.1.0\ninfo:\ntitle: Attio Standard Objects\nversion: 2.0.0\nservers:\n- url: https://api.attio.com\ndescription: Production\nsecurity:\n- oauth2: []\npaths:\n/v2/objects/users/records/{record_id}/entries:\nget:\ntags:\n- Users\nsummary: List user record entries\ndescription: >-\nList all entries, across all lists, for which this user record is the\nparent.\nRequired scopes: `record_permission:read`, `object_configuration:read`,\n`list_entry:read`.\nSupported token levels: `workspace`, `user`.\nparameters:\n- schema:\ntype: string\ndescription: A UUID of the user record to fetch entries for.\nexample: 5e3fb280-007b-495a-a530-9354bde01de1\nrequired: true\nname: record_id\nin: path\n- schema:\ntype: integer\ndescription: >-\nThe maximum number of results to return. The default is `100` and\nthe maximum is `1000`. See the [full guide to pagination\nhere](/"
+    },
+    {
+     "url": "https://docs.attio.com/rest-api/endpoint-reference/tasks/list-tasks",
+     "title": "List tasks",
+     "snippet": "This API uses OAuth 2.0 with the authorization code grant flow.\n#### Scopes\ntask:read\nView, and optionally write, tasks.\nobject_configuration:read\nView, and optionally write, the configuration and attributes of objects.\nView, and optionally write, records.\nuser_management:read\nView workspace members."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Attio attio.com MCP server Model Context Protocol official",
+   "log_id": "log_kpkm60eqXibL",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.attio.com/mcp/overview",
+     "title": "Attio MCP",
+     "snippet": "Connect your AI tools to Attio using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction), an open standard that lets AI assistants interact with your Attio CRM workspace.\n## What is Attio MCP?\nAttio MCP is Attio\u2019s hosted MCP server that gives AI tools secure access to your Attio workspace. It\u2019s designed to work seamlessly with popular AI assistants like Claude, ChatGPT, Cursor, and more.\n### Why use Attio MCP?\n- **Easy setup** \u2014 Connect through simple OAuth with one-click installation for supported AI tools\n- **Natural language CRM management** \u2014 Manage your entire Attio workspace through conversational AI instead of clicking through multiple screens\n- **Full workspace access** \u2014 AI tools can search, read, create, and update records across your CRM\u2014people, companies, deals, tasks, and notes\n- **Optimized for AI** \u2014 Built specifically for AI agents with efficient data formatting and human-readable responses\n- **Secure by design** \u2014 Authenticates as your Attio user with OAuth, and read operations are auto-approved while write operations request confirmation\n\n### Prerequisites\nBefore connecting Attio MCP, ensure you have:\n1. An active Attio workspace\n2. An"
+    },
+    {
+     "url": "https://attio.com/platform/mcp/llms.txt",
+     "title": "attio.com/platform/mcp/llms.txt",
+     "snippet": "> Attio's MCP server connects your CRM to the AI tools your team already has open. Sign in once from ChatGPT, Claude, Notion, or anything else that speaks MCP, then search records, log notes, create tasks, and update deals without switching tabs. Your AI tools can read from Attio and write back to it, over Universal Context \u2014 the deepest context layer in agentic CRM \u2014 with access scoped to each person and actions verified before they run.\n## What is Attio's MCP server?\nMCP (Model Context Protocol) is an open standard for connecting AI tools to the systems they need. Attio's MCP server makes your workspace available to any MCP client, so the tool you already have open can read from Attio and write back to it.\nIt combines three things:\n- **Speaks your language.** No views to build, no filters to set. Get insights and take action in conversation.\n- **Full workspace access.** Search, create, and update across your CRM records and activities.\n- **Secure by design.** Authenticate via OAuth with user-scoped permissions.\nThe result: your CRM stops being a place you always have to go and becomes something your AI tools can always reach, in every tool your team already works in.\n\n## Core Cap"
+    },
+    {
+     "url": "https://attio.com/help/reference/how-to-guides/attio-mcp-prompts-and-best-practices",
+     "title": "attio.com/help/reference/how-to-guides/attio-mcp-prompts-and-best-practices",
+     "snippet": "Attio MCP connects external AI assistants like Claude and ChatGPT to your Attio workspace, so you can search your CRM, update records, log notes, and manage tasks in natural language from wherever you already work with AI.\n\n**MCP** (Model Context Protocol) is an open standard that lets AI assistants securely interact with other systems. Your AI assistant connects to Attio's MCP server, you sign in with your Attio account, and the assistant can then use a set of Attio tools: searching records, creating and updating records, working with notes and tasks, managing views, and reading emails and meeting data.\nSee the [full list of the Attio MCP\u2019s tools](https://docs.attio.com/mcp/overview#supported-tools).\nThree things are worth understanding before you connect:\n- **It acts as you.** The AI assistant authenticates as your Attio user through OAuth. It can only see and change what your own permissions allow.\n- **You control what runs without asking.** By default, your AI assistant asks for your approval before running most Attio tools. In your assistant's settings, you can allow specific tools, like read tools that search and view data, to run without asking. If you're in a managed worksp"
+    },
+    {
+     "url": "https://docs.attio.com/sdk/guides/ai",
+     "title": "AI-assisted development",
+     "snippet": "The Attio Documentation MCP\nAttio provides an MCP server so that agents may autonomously search our documentation. The URL for the MCP server is: `https://docs.attio.com/mcp`.\nThrough experimentation, we have found that the Documentation MCP is the most effective way to provide the content of this site to AI agents.\n####\n\u200b\nEnabling for Claude Code\nBy default, new apps are pre-configured to use the MCP server in Claude Code via a `.mcp.json` file. To enable this MCP server, please start a new Claude Code session and confirm your usage of the MCP. To enable the MCP server in Claude Code for pre-existing apps, please configure a new or pre-existing `.mcp.json` file with the following content:\n```\n{\n\"mcpServers\": {\n\"attio-docs\": {\n\"type\": \"http\",\n\"url\": \"https://docs.attio.com/mcp\"\n}\n}\n}\n```"
+    },
+    {
+     "url": "https://github.com/cursor/plugins/blob/5bf2b154/third_party/attio/README.md?plain=1",
+     "title": "plugins/third_party/attio/README.md at 5bf2b1544db739998121a306340631963c2ff3de \u00b7 cursor/plugins",
+     "snippet": "# Attio\nCursor plugin that connects agents to [Attio](https://attio.com) through Attio's official remote [Model Context Protocol](https://modelcontextprotocol.io/) server.\nSearch, create, and update CRM records (people, companies, deals, and custom objects), work with lists, notes, and tasks, and search emails, meetings, and comments in the signed-in Attio workspace.\n## Install\n1. Open **Cursor Settings \u2192 Plugins**.\n2. Search for **Attio**.\n3. Click **Install**, then complete the Attio sign-in prompt.\nOr run `/add-plugin attio` in chat.\n## MCP\n```json\n{\n\"mcpServers\": {\n\"attio\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.attio.com/mcp\"\n}\n}\n}\n```\nAuth is OAuth against Attio. Cursor prompts for Attio user login when the plugin connects \u2014 there is no API key or client ID to configure.\n## Before you connect\nYou need an Attio account with access to a workspace. Attio MCP is available to all workspace members.\n## What agents can do\n| Category | Capabilities |\n| --- | --- |\n| Records & objects | Search, create, update, upsert, and merge people, companies, deals, and custom objects |\n| Lists | Inspect lists and attributes, add records, and update list entries and stages |\n| Notes | Search, creat"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

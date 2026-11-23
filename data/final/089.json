@@ -1,0 +1,35 @@
+{
+ "id": 89,
+ "app": "Ramp",
+ "category": "Corporate cards / spend management",
+ "one_liner": "Corporate card and spend management platform with transactions, cards, and procurement APIs.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "approval_required",
+ "access_notes": "Admin on a Ramp customer account creates developer app under Company > Developer; non-customers can submit a sandbox request form; API agreement says access is subject to Ramp review. Custom MCP clients may need Ramp approval.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Ramp MCP (docs.ramp.com/llms-guides/ramp-mcp.txt); also Developer MCP for docs",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Requires a Ramp customer account and admin; Ramp may approve or deny API access requests.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer-docs.ramp.com/docs/oauth-20",
+  "access": "https://ramp.com/legal/developer-terms/developer-terms/api-agreement",
+  "surface": "https://docs.ramp.com/developer-api/v1/reference/rest/transactions",
+  "mcp": "https://docs.ramp.com/llms-guides/ramp-mcp.txt"
+ },
+ "verified": true
+}

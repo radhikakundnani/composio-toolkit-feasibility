@@ -1,0 +1,12 @@
+{
+  "id": 23,
+  "app": "Zoho Cliq",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

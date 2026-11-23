@@ -1,0 +1,12 @@
+{
+  "id": 79,
+  "app": "Smartsheet",
+  "changes": [],
+  "confirmed": [
+    "access",
+    "mcp",
+    "blocker",
+    "verdict"
+  ],
+  "searches": 4
+}

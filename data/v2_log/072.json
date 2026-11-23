@@ -1,0 +1,12 @@
+{
+  "id": 72,
+  "app": "Airtable",
+  "changes": [],
+  "confirmed": [
+    "auth",
+    "access",
+    "surface",
+    "mcp"
+  ],
+  "searches": 4
+}

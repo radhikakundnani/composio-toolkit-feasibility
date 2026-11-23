@@ -1,0 +1,47 @@
+{
+  "id": 13,
+  "app": "Freshdesk",
+  "changes": [
+    {
+      "field": "access",
+      "from": "paid_plan_required",
+      "to": "self_serve_trial",
+      "why": "Every new account gets a 14-day full-feature trial, no credit card; API not on free Sprout plan so paid plan needed after trial",
+      "evidence": "https://support.freshdesk.com/support/solutions/articles/50000011778-understanding-freshdesk-pricing-plans"
+    },
+    {
+      "field": "access_notes",
+      "from": "API key via Basic auth; API access starts on Growth plan, not on free Sprout plan.",
+      "to": "API key via Basic auth; 14-day full-access trial available, but API/API key is not available on the free Sprout plan (Growth and above) so paid plan needed after trial.",
+      "why": "",
+      "evidence": "https://support.freshdesk.com/support/solutions/articles/50000001047-do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan-"
+    },
+    {
+      "field": "blocker_note",
+      "from": "API access requires paid Growth plan or higher per third-party sources.",
+      "to": "Trial includes API; after trial API requires paid Growth+ (vendor: free plan has 0 API calls).",
+      "why": "",
+      "evidence": "https://support.freshdesk.com/support/solutions/articles/225439-what-are-the-rate-limits-for-the-api-calls-to-freshdesk-"
+    },
+    {
+      "field": "evidence.access",
+      "from": "https://docs.nexla.com/user-guides/connectors/freshdesk_api",
+      "to": "https://support.freshdesk.com/support/solutions/articles/50000011778-understanding-freshdesk-pricing-plans",
+      "why": "replaced third-party nexla citation with vendor pages",
+      "evidence": "https://support.freshdesk.com/support/solutions/articles/50000011778-understanding-freshdesk-pricing-plans"
+    },
+    {
+      "field": "confidence.access",
+      "from": "medium",
+      "to": "high",
+      "why": "vendor docs",
+      "evidence": ""
+    }
+  ],
+  "confirmed": [
+    "mcp official (vendor support article, Freshdesk 2021/Omni 2026 only, metered)",
+    "auth_primary api_key",
+    "verdict ready_with_caveats/paid_plan"
+  ],
+  "searches": 6
+}

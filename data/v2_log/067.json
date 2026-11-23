@@ -1,0 +1,48 @@
+{
+ "id": 67,
+ "app": "Snowflake",
+ "changes": [
+  {
+   "field": "access_notes",
+   "from": "Needs a customer Snowflake account; OAuth security integration or key-pair JWT per account. Trial availability inferred, not explicit.",
+   "to": "Needs a Snowflake account; official self-service 30-day trial with $400 credits at signup.snowflake.com. OAuth security integration or key-pair JWT set up per account by an admin.",
+   "why": "Trial is now explicit (30 days, $400 credits), no longer inferred",
+   "evidence": "https://signup.snowflake.com"
+  },
+  {
+   "field": "blocker",
+   "from": "other",
+   "to": "partner_or_app_review",
+   "why": "was \"other\"; admin-approved per-account integration is closest to app_review",
+   "evidence": "https://signup.snowflake.com"
+  },
+  {
+   "field": "blocker_note",
+   "from": "Per-account setup of OAuth integration or key pair by an admin; no central app registration.",
+   "to": "Per-account admin setup of OAuth security integration or key pair; no central app registration.",
+   "why": "rephrased",
+   "evidence": "https://signup.snowflake.com"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://docs.snowflake.com/en/user-guide/ecosystem-partner-connect?utm_cta=website-resources-vhol",
+   "to": "https://signup.snowflake.com",
+   "why": "Trial signup page",
+   "evidence": "https://signup.snowflake.com"
+  },
+  {
+   "field": "confidence.access",
+   "from": "low",
+   "to": "high",
+   "why": "Trial explicitly documented",
+   "evidence": "https://signup.snowflake.com"
+  }
+ ],
+ "confirmed": [
+  "mcp (docs.snowflake.com CREATE MCP SERVER / managed MCP)",
+  "auth_primary",
+  "access=self_serve_trial",
+  "verdict"
+ ],
+ "searches": 3
+}

@@ -1,0 +1,142 @@
+{
+ "id": 76,
+ "app": "Monday.com",
+ "hint": "developer.monday.com",
+ "given_category": "Productivity and Project Management",
+ "queries": {
+  "auth": {
+   "query": "Monday.com API authentication OAuth API key access token developer docs developer.monday.com",
+   "log_id": "log_uU9BGrw6KGK3",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.monday.com/apps/docs/choosing-auth",
+     "title": "Choosing an authentication method",
+     "snippet": "The monday API uses token-based authentication. To successfully authenticate with our GraphQL API, every request should include an API token in the request\u2019s \u201cAuthorization\u201d header.\nGenerally speaking, there are four ways your app can get an access token to use:\n- Seamless Authentication using monday SDK\n- Seamless Authentication using shortTermToken\n- Using an OAuth Access Token\n- Using a user\u2019s global API token\n##\nMethod 1: Seamless Authentication\nWe offer two mechanisms for seamless authentication, which eliminate most of the overhead of user and token management in your app. We recommend using Seamless Authentication if your app only needs to make API calls when a user is interacting with it.\nUsing Seamless Authentication has the following advantages:\n- Your app does not need to store and manage API keys\n- You can host client-side apps fully on monday servers\n- Your users do not need to take additional steps to authorize your app or supply an API key\n###\nSeamless authentication in a view app using the monday SDK\nIf you have a view app, use the [SeamlessApiClient SDK methods](https://github.com/mondaycom/monday-graphql-api/tree/main/packages/api#seamlessapiclient) to make API ca"
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/oauth",
+     "title": "OAuth and Permissions",
+     "snippet": "OAuth 2.0 is a protocol that lets your app request authorization to read or modify data in a user's monday account. At the end of the OAuth process, your app gets an access token that belongs to the user and grants access to specified permission scopes.\nYou can set up OAuth for your app in just two steps: **configuring your app** and **going through the standard OAuth flow**.\n> **A new OAuth 2.1 flow is available**\n>\n> monday.com now supports an improved OAuth 2.1 flow with expiring access tokens, refresh tokens, and token revocation. This page describes the current (legacy) flow. If you are building a new integration or want to upgrade your existing app, see [Migrating to the new OAuth 2.1 flow](https://developer.monday.com/apps/docs/migrating-to-the-new-oauth-flow).\n#\nConfigure your scopes and redirect URLs\nTo start, you must first configure your app's scopes and redirect URLs. If you don't have an app, follow these steps to [create an app](https://developer.monday.com/apps/docs/create-an-app) in the monday UI and locate your [`client_id` and `client_secret`](https://developer.monday.com/apps/docs/the-developer-center#basic-information).\nOnce your app has been created, set the sc"
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/migrating-to-the-new-oauth-flow",
+     "title": "Migrating to the new OAuth 2.1 flow",
+     "snippet": "The new OAuth 2.1 flow introduces several important changes to how your app handles authentication tokens. This guide covers only what you need to change in your existing integration - the authorization request (step 1 of the [OAuth flow](https://developer.monday.com/apps/docs/oauth#the-oauth-flow)) remains the same URL, with PKCE parameters required for the new flow.\nThe key differences in the new flow are:\n- **Access tokens now expire** - decode the JWT and read the `exp` claim to know when to refresh.\n- **Refresh tokens** - use them to obtain new access tokens without user re-authorization. Refresh tokens rotate on every use and are single-use; they also carry an `exp` claim.\n- **Token revocation** - explicitly revoke tokens when they are no longer needed.\n- **New token endpoint URL** - token exchange uses a different endpoint.\n- **PKCE is required** - every authorization request and token exchange in the new flow must use PKCE (`S256`).\n\n1. Enable the new OAuth flow\nBefore migrating, enable the new OAuth flow for your app version in the [Developer Center](https://developer.monday.com/apps/docs/the-developer-center#oauth):\n1. Go to your app in the Developer Center.\n2. Navigate t"
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/connect-to-the-platform-agent-over-a2a",
+     "title": "Connect to the monday.com Platform Agent over A2A",
+     "snippet": "#\nStep 1: Create a monday.com app\nYou only need to do this once.\n1. In the monday.com Developer Center, [create an app](https://developer.monday.com/apps/docs/create-an-app).\n2. Under **OAuth & Permissions**:\n- Enable the **new OAuth flow** (OAuth 2.1).\n- Add your redirect URL.\n- Choose the [scopes](https://developer.monday.com/apps/docs/oauth#set-up-permission-scopes) your use case needs, for example `me:read`, `boards:read`, `boards:write`, and `workspaces:read`.\n3. Save the **client ID** and **client secret**.\n---\n#\nStep 2: Get a user access token\nUse the standard OAuth 2.1 authorization code flow with PKCE (`S256`). Most A2A clients run this flow automatically from the agent card.\n| Endpoint | URL |\n|---|---|\n| **Authorization server metadata** | `https://auth.monday.com/oauth_ms/.well-known/oauth-authorization-server` |\n| **Authorize** | `https://auth.monday.com/oauth2/authorize` |\n| **Token and refresh** | `https://auth.monday.com/oauth_ms/oauth/token` |\nAccess tokens expire after **24 hours**. Use the refresh token to get a new access token.\n> Each refresh returns a **new refresh token** and invalidates the previous one. Always store the latest refresh token.\n---\n#\nStep 3: S"
+    },
+    {
+     "url": "https://apps.developer.monday.com/docs/integration-authorization",
+     "title": "Authorization for Integration Recipes",
+     "snippet": "Every request from the Monday server to your app will be accompanied with a JWT token in the `Authorization` header. The token will be signed by your app's **Signing Secret**. The JWT token can be decoded to get additional metadata about the request.\nYou can decode the JWT token using a library like [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken). The token will have this structure:\n```json\n{\n\"accountId\": 1825528,\n\"userId\": 4012689,\n\"aud\": \"https://www.yourserver.com/endpoint\",\n\"exp\": 1606808758,\n\"shortLivedToken\": \"SHORT_LIVED_TOKEN_HERE\",\n\"iat\": 1606808458\n}\n```\n\nSeamless Authentication\nThe JWT token will also contain a short-lived API key that that can be used to authenticate against the monday API. The token will be valid for 1 minute and have the same permission scopes as your app.\nWe will not issue a short-lived token if your app's endpoints do not start with `https://`.\n###\nWhen will monday send a request to my app?\nThe monday server will send a request to your app in six scenarios, all of which will contain the JWT token. Here are the six scenarios:\n- Directs a user to your app's Authorization URL.\n- Subscribe to a [Custom Trigger](/docs/custom-trigger).\n- Unsubs"
+    }
+   ]
+  },
+  "access": {
+   "query": "Monday.com developer.monday.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_TB4Txw4hIOQ4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.monday.com/api-reference/docs/developer-sandbox",
+     "title": "monday.com Developer Account \u2014 Free Sandbox for App & API Testing",
+     "snippet": "A **developer account** (also called a **sandbox account**) is a free monday.com account designed for building and testing [monday apps](https://developer.monday.com/apps/docs/intro) and [API](https://developer.monday.com/docs/authentication) integrations. It runs in an environment separate from your production or work data, so you can experiment without affecting live workflows.\n\nOther account options\n| Option | When to use it |\n|---|---|\n| **Existing monday.com account** | You already have an account and only need light testing. |\n| **Trial account** | You want to evaluate monday.com beyond development. [Sign up for a trial](https://auth.monday.com/users/sign_up_new?source=web_main&origin=hp_fullbg_page_header#soft_signup_from_step). |\n| **Trial extension** | Your trial is ending but you need more time. [Contact support](https://monday.com/helpcenter/contact-support) to request an extension. |\n#\nWhat's included\nDeveloper accounts include everything in the [Free plan](https://support.monday.com/hc/en-us/articles/360010487220-Understanding-the-Free-Plan), plus higher limits and advanced capabilities tailored for app development. They also include select Pro and Enterprise features "
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs",
+     "title": "monday.com GraphQL API",
+     "snippet": "**Admin**, **member**, and **guest** users are all able to utilize the monday.com API.\n**Admins** and **members** have access to their own [API tokens](https://developer.monday.com/api-reference/docs/authentication#accessing-api-tokens). **Guests** cannot access an API key but can utilize API features through other authentication methods, like OAuth or a shortLivedToken.\n**Viewers**, users who have been deactivated or disabled, users with unconfirmed emails, or users on student accounts **cannot** access the API.\nFor building and testing apps or API integrations without touching production data, use a free [developer account](/docs/developer-sandbox)."
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/intro",
+     "title": "What is a monday app?",
+     "snippet": "For more thorough testing, we also offer free developer accounts designed specifically for app builders. You can sign up for a free developer account [here](https://auth.monday.com/users/sign_up_new?developer=true&utm_source=dev_documentation#soft_signup_from_step) and start building right away.\n##\nWhat\u2019s included in a developer account?\nDeveloper accounts include everything in the [Free plan](https://support.monday.com/hc/en-us/articles/360010487220-Understanding-the-Free-Plan), along with higher limits, advanced capabilities tailored for app development. They also include select Pro and Enterprise features commonly needed for building and testing apps.\nThese accounts include:\n- Access to all monday.com products\n- Up to 10 seats\n- Up to 1,000 items per product\n- Unlimited boards, dashboards, and workdocs\n- Automations: 25,000 actions/month\n- Integrations: 25,000 actions/month\n- API complexity limit: 10M\n- Account-, column-, and item-level permissions\n- Access to all column types\n- Private and shareable boards\n- Item and board views\n- Activity log tracking and filtering\n- Templates\n- Hacker theme\nIf your app requires additional testing capacity, submit a request [here](https://deve"
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/getting-started",
+     "title": "Making your first monday.com API request",
+     "snippet": "The first step is to sign up and create a trial [account](https://auth.monday.com/users/sign_up_new?source=web_main&origin=hp_fullbg_page_header#soft_signup_from_step). For building and testing apps or API integrations, use a [developer account](https://developer.monday.com/docs/developer-sandbox) ([sign up](https://auth.monday.com/users/sign_up_new?developer=true&utm_source=dev_documentation#soft_signup_from_step)). If you already have a monday.com account, skip to the next step!\n#\nEnable Developer mode\n*Developer mode* is a valuable tool that makes developing with monday easier by exposing template IDs, column IDs, doc IDs, and more. It allows you to easily retrieve these IDs, which many methods in our API require. Follow these steps to enable it:\n1. Click on your profile picture in the top right corner of your monday account.\n2. Select **monday.labs**.\n3. Type *Developer mode* in the search bar.\n4. Click **Activate** and close the modal.\n5. Wait for the page to refresh.\n6. Refresh the page and reopen your profile menu."
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/rate-limits",
+     "title": "Rate limits \u2014 monday.com API",
+     "snippet": "The limit varies based on how you're making the call:\n| Usage | Limit |\n|---|---|\n| Individual query | 5,000,000 (5M) complexity points |\n| Using app tokens to access the API | Read and writes are limited to 5M complexity points per minute* each |\n| Using API playground to access the API | Reads and writes are limited to 5M complexity points per minute* each or 1M for trial/free accounts |\n| Using personal API tokens to access the API | Reads and writes have a combined budget of 10M points per minute* or 1M for trial, NGO, and free accounts |\n\nThe limit varies based on your [monday.com plan](https://monday.com/pricing):\n| Tier | Daily call limit (resets at midnight UTC) |\n|---|---|\n| Free | 200 |\n| Standard/Basic | 1,000 |\n| Pro/Trial | 10,000 |\n| Enterprise | 25,000 |\n\nThe limit varies based on your [monday.com plan](https://monday.com/pricing) and the type of request:\n| Tier | Maximum concurrent requests |\n|---|---|\n| Enterprise | 250 |\n| Pro | 100 |\n| Other | 40 |"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Monday.com API reference REST GraphQL endpoints documentation developer.monday.com",
+   "log_id": "log_wf644RgZP9Us",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.monday.com/api-reference/docs/introduction-to-graphql",
+     "title": "GraphQL overview",
+     "snippet": "The monday.com API is built with GraphQL, a flexible query language that allows you to return as much or as little data as you need. It's important to know that GraphQL is an application layer that parses the query you send it and returns (or changes) data accordingly.\nUnlike REST APIs, where multiple endpoints return different data, GraphQL always exposes one endpoint and allows you to determine the structure of the returned data. Our API uses the following endpoint: `https://api.monday.com/v2`.\nThis document will walk through the GraphQL operations and object types to help you understand the essential components of a request. We will also discuss the GraphQL visual interface that enables you to test your queries and mutations, and finally, we cover where you can access the monday.com schema. Let's get started!\n\n**Queries** perform the READ operation and do not change or alter any data. The result of each query will be formatted in the same way as the query itself. The following example retrieves the ID, title, and type of each column on board 1234567890.\n\n{\n\"id\": \"name\",\n\"title\": \"Name\",\n\"type\": \"name\"\n},\n{\n\"id\": \"subitems\",\n\"title\": \"Subitems\",\n\"type\": \"subtasks\"\n},\n{\n\"id\": \"per"
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/getting-started",
+     "title": "Making your first monday.com API request",
+     "snippet": "The first step is to sign up and create a trial [account](https://auth.monday.com/users/sign_up_new?source=web_main&origin=hp_fullbg_page_header#soft_signup_from_step). For building and testing apps or API integrations, use a [developer account](https://developer.monday.com/docs/developer-sandbox) ([sign up](https://auth.monday.com/users/sign_up_new?developer=true&utm_source=dev_documentation#soft_signup_from_step)). If you already have a monday.com account, skip to the next step!\n#\nEnable Developer mode\n*Developer mode* is a valuable tool that makes developing with monday easier by exposing template IDs, column IDs, doc IDs, and more. It allows you to easily retrieve these IDs, which many methods in our API require. Follow these steps to enable it:\n1. Click on your profile picture in the top right corner of your monday account.\n2. Select **monday.labs**.\n3. Type *Developer mode* in the search bar.\n4. Click **Activate** and close the modal.\n5. Wait for the page to refresh.\n6. Refresh the page and reopen your profile menu.\n\nIf you are already familiar with the monday.com building blocks, you can explore our GraphQL schema [here](https://api.monday.com/v2/get_schema) or in our [API p"
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+     "title": "Build on monday.com with AI - MCP, API, and Agent Integration",
+     "snippet": "boards, items, and columns, exposes a full [GraphQL API](https://developer.monday.com/api-reference/reference), and includes a native AI layer for agents, workflows, and AI-assisted work.\n\n| | Platform MCP | Apps MCP |\n|---|---|---|\n| **Purpose** | Read and write monday.com data | Manage monday.com apps |\n| **Capabilities** | Query boards, create items, update columns, manage users, execute GraphQL | Scaffold apps, create features, deploy, promote versions, search developer docs |\n| **Transport** | Hosted remote (Streamable HTTP) | Local via npx |\n| **Auth** | OAuth 2.1 | Personal API token |\n| **Config** | `\"url\": \"https://mcp.monday.com/mcp\"` | `npx @mondaydotcomorg/monday-api-mcp -t <token> --mode apps` |\nThe **Platform MCP** is the primary integration surface. It wraps the [monday.com GraphQL API](https://developer.monday.com/api-reference/reference) and provides structured tools for common operations.\n\nFor use cases that need the full API surface - batch operations, complex nested queries, or direct schema introspection - the monday.com [GraphQL API](https://developer.monday.com/api-reference/reference) is available directly:\n```\ncurl -X POST https://api.monday.com/v2 \\\n-H \"Au"
+    },
+    {
+     "url": "https://monday.com/openapi.json",
+     "title": "monday.com/openapi.json",
+     "snippet": "\"summary\": \"Execute a GraphQL query or mutation\",\n\"description\": \"The single endpoint for all monday.com API operations. Send GraphQL queries and mutations as JSON in the request body.\","
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/javascript-sdk",
+     "title": "JavaScript SDK",
+     "snippet": "A comprehensive guide to the monday.com JavaScript/TypeScript SDK for interacting with the GraphQL API.\nThe monday.com JavaScript SDK (`@mondaydotcomorg/api`) provides a typed, ergonomic way to interact with the monday.com GraphQL API from Node.js or browser environments. It wraps [`graphql-request`](https://www.npmjs.com/package/graphql-request) and ships with pre-built operations, full TypeScript types generated from the API schema, and automatic API versioning.\nA companion package (`@mondaydotcomorg/setup-api`) scaffolds a GraphQL codegen pipeline so you can write custom queries with full type safety.\n\nApiClient\n`ApiClient` is the main entry point. It requires an API token and optionally accepts an API version and request configuration.\n##\nCreating a client\n```\nimport { ApiClient } from '@mondaydotcomorg/api';\nconst client = new ApiClient({\ntoken: '<YOUR_API_TOKEN>',\n});\n```\n###\nConstructor options\n| Option | Type | Required | Default | Description |\n|---|---|---|---|---|\n| `token` | `string` | Yes | \u2014 | Your monday.com API token (personal or OAuth). Sent as the `Authorization` header. |\n| `apiVersion` | `string` | No | `'2026-01'` (current at SDK release) | API version in `yyyy"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Monday.com developer.monday.com MCP server Model Context Protocol official",
+   "log_id": "log_-8SESA9czldz",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+     "title": "Integrate with the monday MCP server",
+     "snippet": "The hosted MCP server is the recommended way to connect to monday.com. It requires no local setup, updates automatically, and handles all the infrastructure for you.\n- **Server URL:** `https://mcp.monday.com/mcp`\n- **Transport:** Streamable HTTP\n- **Auth:** OAuth 2.0 or Bearer token with a [personal API token](https://developer.monday.com/docs/authentication)\n> **SSE transport is deprecated and not supported.** Older guides and configs may still reference `https://mcp.monday.com/sse` or an SSE-based transport. The hosted Platform MCP supports **Streamable HTTP only** at `https://mcp.monday.com/mcp`. Update any client that still points at `/sse` \u2014 SSE will not be brought back.\n> **The monday MCP server is a wrapper around the monday.com platform API.** Every tool call executes in the context of the authenticated user and respects that user's monday.com permissions. See the [MCP security overview](https://developer.monday.com/docs/monday-mcp-security-overview) for the full security architecture.\n#\nChoosing an authentication path\nHow you authenticate depends on what you're building:\n| Use case | Guide | Before customers can connect |\n|---|---|---|\n| Personal use and testing | [Authent"
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp.md",
+     "title": "developer.monday.com/api-reference/docs/mondaycom-mcp.md",
+     "snippet": "The [Platform MCP](https://github.com/mondaycom/mcp) is monday.com's hosted MCP (Model Context Protocol) server, maintained by the monday.com AI team. It lets AI agents read and write monday.com data \u2014 creating items, updating columns, querying boards, and more \u2014 through a standardized protocol supported by all major AI platforms.\nConnect using the hosted server. No local setup is required:\n```json\n{\n\"mcpServers\": {\n\"monday-mcp\": {\n\"url\": \"https://mcp.monday.com/mcp\"\n}\n}\n}\n```\n> \ud83d\udea7 MCP tool calls are executed as GraphQL API requests and count toward your account's [daily API call limit](https://developer.monday.com/api-reference/docs/rate-limits#daily-call-limit)."
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/compatible-mcp-clients",
+     "title": "Compatible MCP Clients for monday.com",
+     "snippet": "Connect monday.com to pre-approved third-party agents through the hosted MCP permission, or approve additional clients as dynamic connectors\nThe [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open standard that enables AI assistants to securely connect to external data sources and tools. The monday.com hosted MCP server lets you interact with your monday.com account through natural language \u2014 create items, query boards, build dashboards, and more \u2014 from your preferred AI platform.\n**Server URL:** `https://mcp.monday.com/mcp`\n**Transport:** Streamable HTTP\n> **SSE transport is deprecated and not supported.** Do not use `https://mcp.monday.com/sse`. Connect with Streamable HTTP at `https://mcp.monday.com/mcp` only.\n\nConnecting from coding tools\nMost MCP-compatible coding tools (Cursor, Claude Code, VS Code, Windsurf, etc.) accept a remote MCP server configuration. Add the hosted server URL and authenticate via OAuth when prompted:\n```\n{\n\"mcpServers\": {\n\"monday-mcp\": {\n\"url\": \"https://mcp.monday.com/mcp\"\n}\n}\n}\n```\nFor authentication options, API version control, and advanced configuration, see [Integrate with the monday MCP server](https://developer.monday.com/"
+    },
+    {
+     "url": "https://github.com/mondaycom/mcp/blob/master/README.md",
+     "title": "mcp/README.md at master \u00b7 mondaycom/mcp",
+     "snippet": "# \ud83d\ude80 monday.com MCP\n\n**Enable AI agents to operate reliably within real workflows. This MCP is monday.com's open framework for connecting agents into your work OS - giving them secure access to structured data, tools to take action, and the context needed to make smart decisions.**\n## \ud83c\udf1f Overview\nThis repository, maintained by the monday.com AI team, provides a comprehensive set of tools for AI agent developers who want to integrate with monday.com. Whether you're building AI assistants, automations, or custom integrations, our tools make it easy to connect to the monday.com platform.\n\n### \ud83d\udcbb monday API MCP Server\nThe `@mondaydotcomorg/monday-api-mcp` package provides a plug-and-play server implementation for the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). It allows AI agents to interact with the monday.com API without needing to build complex integrations.\n### \ud83e\udd16 Agent Toolkit\nThe `@mondaydotcomorg/agent-toolkit` package provides a powerful set of tools and utilities for building AI agents that interact with the monday.com API, supporting both OpenAI and Model Context Protocol (MCP) implementations.\n## \ud83d\ude80 Quick Start: Hosted MCP (Recommended)\n**The fastest, most r"
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+     "title": "Build on monday.com with AI - MCP, API, and Agent Integration",
+     "snippet": "monday.com provides full headless access to its platform through MCP servers, a GraphQL API, and typed SDKs. Any MCP-compatible AI tool connects natively.\n\nmonday.com provides two MCP servers covering different parts of the developer lifecycle, plus direct API access for advanced use cases. The Platform Agent is also available over the [A2A protocol](https://developer.monday.com/docs/connect-to-the-platform-agent-over-a2a).\n| | Platform MCP | Apps MCP |\n|---|---|---|\n| **Purpose** | Read and write monday.com data | Manage monday.com apps |\n| **Capabilities** | Query boards, create items, update columns, manage users, execute GraphQL | Scaffold apps, create features, deploy, promote versions, search developer docs |\n| **Transport** | Hosted remote (Streamable HTTP) | Local via npx |\n| **Auth** | OAuth 2.1 | Personal API token |\n| **Config** | `\"url\": \"https://mcp.monday.com/mcp\"` | `npx @mondaydotcomorg/monday-api-mcp -t <token> --mode apps` |\nThe **Platform MCP** is the primary integration surface. It wraps the [monday.com GraphQL API](https://developer.monday.com/api-reference/reference) and provides structured tools for common operations. The **Apps MCP** is purpose-built for app"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

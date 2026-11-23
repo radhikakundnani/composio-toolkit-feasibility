@@ -1,0 +1,12 @@
+{
+  "id": 93,
+  "app": "Fathom",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict"
+  ],
+  "searches": 3
+}

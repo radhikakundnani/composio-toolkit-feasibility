@@ -1,0 +1,12 @@
+{
+  "id": 14,
+  "app": "Front",
+  "changes": [],
+  "confirmed": [
+    "mcp official mcp.frontapp.com/mcp",
+    "access free dev account",
+    "auth oauth2",
+    "verdict ready"
+  ],
+  "searches": 3
+}

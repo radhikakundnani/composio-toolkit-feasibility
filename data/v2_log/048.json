@@ -1,0 +1,20 @@
+{
+  "id": 48,
+  "app": "Gumroad",
+  "changes": [
+    {
+      "field": "evidence.auth",
+      "from": "https://api.gumroad.com/api",
+      "to": "https://gumroad.com/help/article/280-create-application-api",
+      "why": "Old auth URL 404 per flags; use live help article on OAuth app / access token",
+      "evidence": "https://gumroad.com/help/article/280-create-application-api"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict"
+  ],
+  "searches": 3
+}

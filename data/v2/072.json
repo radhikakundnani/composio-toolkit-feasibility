@@ -1,0 +1,36 @@
+{
+  "id": 72,
+  "app": "Airtable",
+  "category": "Productivity / Database",
+  "one_liner": "Spreadsheet-database hybrid with REST API for bases, tables, and records.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Register OAuth integration or create PATs on any plan; Free plan limited to 1,000 API calls/month.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.airtable.com/mcp",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://airtable.com/developers/web/api/authentication.md",
+    "access": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+    "surface": "https://airtable.com/developers/web/api/list-records.md",
+    "mcp": "https://airtable.com/developers/agents/mcp/getting-started"
+  },
+  "verified": true
+}

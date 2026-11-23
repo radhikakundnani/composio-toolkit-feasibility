@@ -1,0 +1,38 @@
+{
+ "id": 95,
+ "app": "Reducto",
+ "category": "Document parsing",
+ "one_liner": "Agentic document platform for parsing, extracting, splitting and editing documents.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "auth_primary": "api_key",
+ "access": "self_serve_free",
+ "access_notes": "Sign up (personal emails allowed), get API key; $150 free usage then pay-as-you-go.",
+ "api_types": [
+  "rest",
+  "sdk_only",
+  "cli_or_library"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://docs.reducto.ai/mcp-server (hosted server)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.reducto.ai/api-reference/parse",
+  "access": "https://reducto.ai/pricing",
+  "surface": "https://docs.reducto.ai/agent-guide",
+  "mcp": "https://docs.reducto.ai/mcp-server"
+ },
+ "verified": true
+}

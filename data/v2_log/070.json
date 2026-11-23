@@ -1,0 +1,34 @@
+{
+ "id": 70,
+ "app": "Sentry",
+ "changes": [
+  {
+   "field": "access_notes",
+   "from": "Create org or user auth tokens or an integration in the Sentry UI; accounts without a paid plan get a free plan.",
+   "to": "Free Developer plan assigned without a paid plan (14-day Business trial first); create org/user auth tokens or an integration in the Sentry UI.",
+   "why": "Docs confirm automatic free Developer plan",
+   "evidence": "https://docs.sentry.io/pricing"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://docs.sentry.io/accounts/pricing",
+   "to": "https://docs.sentry.io/pricing",
+   "why": "Official pricing doc confirming free Developer plan",
+   "evidence": "https://docs.sentry.io/pricing"
+  },
+  {
+   "field": "confidence.access",
+   "from": "medium",
+   "to": "high",
+   "why": "confirmed",
+   "evidence": "https://docs.sentry.io/pricing"
+  }
+ ],
+ "confirmed": [
+  "mcp (docs.sentry.io/product/sentry-mcp, mcp.sentry.dev)",
+  "auth_primary",
+  "verdict",
+  "blocker"
+ ],
+ "searches": 3
+}

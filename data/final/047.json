@@ -1,0 +1,36 @@
+{
+ "id": 47,
+ "app": "Ecwid",
+ "category": "Ecommerce",
+ "one_liner": "Embeddable ecommerce widget/store platform (Lightspeed) with REST API.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "auth_primary": "oauth2",
+ "access": "paid_plan_required",
+ "access_notes": "REST API only on paid Ecwid plans; register an app for OAuth tokens, or custom app for own store.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_note": "Third-party: popmcp.com/mcp-servers/ecwid, vinkius Ecwid MCP",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "Free-plan stores cannot use the API; a paid test store is needed (Ecwid offers a free paid-plan upgrade for test stores by emailing API support).",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+  "access": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+  "surface": "https://docs.ecwid.com/api-reference/advanced/rest-api-calls",
+  "mcp": "https://popmcp.com/mcp-servers/ecwid"
+ },
+ "verified": true
+}

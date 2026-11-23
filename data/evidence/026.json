@@ -1,0 +1,142 @@
+{
+ "id": 26,
+ "app": "Discord",
+ "hint": "discord.com",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Discord API authentication OAuth API key access token developer docs discord.com",
+   "log_id": "log_1pJ10JCTFPjW",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.discord.com/developers/topics/oauth2",
+     "title": "OAuth2",
+     "snippet": "OAuth2 enables application developers to build applications that utilize authentication and data from the Discord API. Within Discord, there are multiple types of OAuth2 authentication. We support the authorization code grant, the implicit grant, client credentials, and some modified special-for-Discord flows for Bots and Webhooks.\n## Shared Resources\nThe first step in implementing OAuth2 is [registering a developer application](https://discord.com/developers/applications) and retrieving your client ID and client secret. Most people who will be implementing OAuth2 will want to find and utilize a library in the language of their choice. For those implementing OAuth2 from scratch, please see [RFC 6749](https://tools.ietf.org/html/rfc6749) for details. After you create your application with Discord, make sure that you have your `client_id` and `client_secret` handy. The next step is to figure out which OAuth2 flow is right for your purposes.\n###### OAuth2 URLs\n| URL | Description |\n|---|---|\n| [https://discord.com/oauth2/authorize](https://discord.com/oauth2/authorize) | Base authorization URL |\n| [https://discord.com/api/oauth2/token](https://discord.com/api/oauth2/token) | Token URL"
+    },
+    {
+     "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/account-linking-with-discord",
+     "title": "Account Linking from Your Game",
+     "snippet": "This feature requires the **Default Presence Scopes** (`openid` and `sdk.social_layer_presence`). Use [`Client::GetDefaultPresenceScopes`](https://discord.com/developers/docs/social-sdk/classdiscordpp_1_1Client.html#a5bf47e8021826ac03b53046fdd757a93) when configuring your OAuth2 flow. See the [OAuth2 Scopes guide](/developers/discord-social-sdk/core-concepts/oauth2-scopes) for details on all available scopes.\n---\n## Our Authentication Flow\nOAuth2 is the standard authentication flow that allows users to sign in using their Discord account. The process follows these steps:\n1. [Request authorization](/developers/discord-social-sdk/development-guides/account-linking-with-discord#step-1-request-authorization): Your game sends an authentication request to Discord.\n2. [User Approval](/developers/discord-social-sdk/development-guides/account-linking-with-discord#step-2-user-approval): The user approves the request, granting access to your application.\n3. [Receive Authorization Code](/developers/discord-social-sdk/development-guides/account-linking-with-discord#step-3-receiving-the-authorization-code): After approval, Discord redirects the user to your app with an authorization code.\n4. [Ex"
+    },
+    {
+     "url": "https://docs.discord.com/developers/discord-social-sdk/development-guides/account-linking-on-web",
+     "title": "Account Linking on Web",
+     "snippet": "The flow is built on standard OAuth2. You redirect the player to Discord to authorize your application, Discord sends them back to your site with a code, and you exchange that code for the player\u2019s Discord user ID. These docs cover the web flow, where your server holds a client secret. For the complete account linking reference, including server-side linking and PKCE for public clients such as native and mobile apps, see [Account Linking with Discord](/developers/discord-social-sdk/development-guides/account-linking-with-discord).\n\n## How Account Linking Works\n1. The player clicks a \u201cConnect Discord\u201d button on your site\n2. You redirect them to Discord\u2019s authorization URL with your client ID, redirect URI, and requested scopes\n3. The player reviews and approves the authorization on Discord\n4. Discord redirects back to your site with a short-lived authorization code\n5. Your server exchanges the code for an access token\n6. You call Discord\u2019s API to retrieve the player\u2019s Discord user ID\n7. You store the mapping between their Discord user ID and their ID in your game\nThe Discord user ID you receive is stable and permanent. Store it alongside your game\u2019s own player ID so you can look up "
+    },
+    {
+     "url": "https://docs.discord.com/developers/reference",
+     "title": "API Reference",
+     "snippet": "Authenticating with the Discord API can be done in one of three ways:\n1. Using a bot token found on the Bot page within your app\u2019s settings. For more information on bots see [bots vs user accounts](/developers/topics/oauth2#bot-vs-user-accounts).\n2. Using an OAuth2 bearer token gained through the [OAuth2 API](/developers/topics/oauth2).\n3. Using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) with credentials as the client ID and client secret found on the **OAuth2** page of your app\u2019s settings in the format `client_id:client_secret` as a Base64 encoded string. Only applicable for [OAuth2 API](/developers/topics/oauth2) token endpoints.\nFor all authentication types, authentication is performed with the `Authorization` HTTP header in the format `Authorization: TOKEN_TYPE TOKEN`. **Example Bot Token Authorization Header**\n```\nAuthorization: Bot [REDACTED_DISCORD_BOT_TOKEN]\n```\n**Example Bearer Token Authorization Header**\n```\nAuthorization: Bearer CZhtkLDpNYXgPH9Ml6shqh2OwykChw\n```\n**Example Basic Token Authorization Header**\n```\nAuthorization: Basic MTk4NjIyNDgzNDcxOTI1MjQ4OlEzS052N0NSRW5DYS1nS0xMajFEOGV1ZFl1SmZ1Nm96\n`"
+    },
+    {
+     "url": "https://docs.discord.com/developers/platform/oauth2-and-permissions",
+     "title": "OAuth2 and Permissions",
+     "snippet": "## Two Ways to Authenticate\n### Bot Token\nWhen you create a bot user in the Developer Portal, Discord generates a **bot token**. Your code uses this token to authenticate as the bot user, a dedicated application account separate from a regular user account. **Bot tokens:**\n- Authenticate as the bot user, not on behalf of any person\n- Are used for Gateway connections and most REST API calls\n- Grant the permissions the bot was given when added to a server\n- Should be treated like passwords and never exposed publicly\n### OAuth2 User Token\nWhen you need to act on behalf of a user, you use OAuth2 to get a user access token. The user logs in with Discord and authorizes your app for specific scopes. **User tokens:**\n- Let your app read or write data on behalf of the user as authorized by requested scopes\n- Are scoped, so you only get access to what the user grants\n- Are short-lived and must be refreshed\n- Should be treated like passwords and never exposed publicly\n## Scopes\nScopes define what your app is allowed to do. They are requested during the OAuth2 authorization flow and must be declared in the Developer Portal. Common scopes include:\n| Scope | What It Grants |\n|---|---|\n| `bot` | "
+    }
+   ]
+  },
+  "access": {
+   "query": "Discord discord.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_bKcPZ6CoqHSx",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.discord.com/developers/topics/oauth2",
+     "title": "OAuth2",
+     "snippet": "These are a list of all the OAuth2 scopes that Discord supports. Some scopes require approval from Discord to use. Requesting them from a user without approval from Discord may cause errors or undocumented behavior in the OAuth2 flow.\nTo inquire about access about scopes that are only available to approved partners, speak to your Discord account representative to see if they are a fit for your needs."
+    },
+    {
+     "url": "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+     "title": "Getting Started with Privileged Intent Review",
+     "snippet": "### 1. The review threshold is now based on users, not servers\nPreviously, apps in fewer than 100 servers could access Privileged Intents by toggling them on in the Developer Portal, and apps in 100+ servers needed to apply for access. That threshold is now based on the number of unique users who can see your app across all the servers it\u2019s in. If that number exceeds 10,000, your app needs to apply for Privileged Intent access. This means a bot in 50 large servers could hit the threshold, while a bot in 200 small servers might not. This change focuses on how many users your app reaches, not how many servers it\u2019s installed in.\n### 2. Apps must reapply annually for continued access\nApps that already have Privileged Intent access granted from a prior review must reapply each year through the Developer Portal for their continued access. You\u2019ll receive advance notice before your reapplication date, so this shouldn\u2019t sneak up on you. This process allows you to update and keep your use case documentation current to demonstrate your continued need for access."
+    },
+    {
+     "url": "https://docs.discord.com/developers/gateway/you-might-not-need-a-privileged-intent",
+     "title": "You Might Not Need a Privileged Intent",
+     "snippet": "As a reminder, developers may access only the data necessary for their app\u2019s functionality. We encourage you to review our [Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy) and [Developer Terms of Service](https://support-dev.discord.com/hc/en-us/articles/8562894815383-Discord-Developer-Terms-of-Service), along with this guide, to make sure your app and its use of intended privileged intents are consistent with those policies.\n### Who does this apply to?\nAll apps that are considering or have already enabled privileged intents. Apps with server-installed user counts fewer than 10,000 can toggle privileged intents in the Developer Portal. Once your app grows past 10,000 users, you\u2019ll need to apply for continued access and share information about your app and intended use cases for the requested intents. Planning ahead saves you from a migration later."
+    },
+    {
+     "url": "https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy",
+     "title": "Discord Developer Policy",
+     "snippet": "Beginning on October 7, 2024, in regions where Discord supports monetization through its Premium Apps products, all developers who offer paid features or capabilities for their Application will be required to:\n- (i) support purchase of such features or capabilities through Discord\u2019s Premium Apps products; and,\n- (ii) offer such features or capabilities at prices on Discord that are no higher than the prices at which they are offered through other payment options.\n\u201cPaid features or capabilities\u201d can include things like subscriptions to your Application, access to certain features or content, one-time purchases, recurring subscriptions, and more. Only paid features or capabilities that are offerings supported by Discord\u2019s Premium Apps products will be subject to these requirements."
+    },
+    {
+     "url": "https://support-dev.discord.com/api/v2/help_center/en-us/articles/40281523410967.json",
+     "title": "support-dev.discord.com/api/v2/help_center/en-us/articles/40281523410967.json",
+     "snippet": "built.</p><p><strong>Today, we're announcing changes to how Discord Apps access Privileged Intents (Guild Members, Presence, and Message Content): a new user-based threshold for when access requires review, and an annual process to reapply for continued access.</strong></p><p>If"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Discord API reference REST GraphQL endpoints documentation discord.com",
+   "log_id": "log_SLCy_ctqDkmv",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.discord.com/developers/reference",
+     "title": "API Reference",
+     "snippet": "**Base URL**\n```\nhttps://discord.com/api\n```\n## API Versioning\nSome API and Gateway versions are now non-functioning, and are labeled as discontinued in the table below for posterity. Trying to use these versions will fail and return 400 Bad Request.\nDiscord exposes different versions of our API[.](https://c.tenor.com/BuZl66EegkgAAAAC/westworld-dolores.gif) You should specify which version to use by including it in the request path like `https://discord.com/api/v{version_number}`. Omitting the version number from the route will route requests to the current default version (marked below). You can find the change log for the newest API version [here](/developers/change-log).\n\nDiscord\u2019s Gateway API is used for maintaining persistent, stateful websocket connections between your client and our servers."
+    },
+    {
+     "url": "https://docs.discord.com/developers/resources/invite",
+     "title": "Invite Resource",
+     "snippet": "## Bulk-Add Target Users\nAdds multiple target users to an existing invite. Requires the caller to be the inviter or have the `MANAGE_GUILD` permission. Returns a 204 empty response on success."
+    },
+    {
+     "url": "https://docs.discord.com/developers/resources/channel",
+     "title": "Channels Resource",
+     "snippet": "## Get Channel\nGet a channel by ID. Returns a [channel](/developers/resources/channel#channel-object) object. If the channel is a thread, a [thread member](/developers/resources/channel#thread-member-object) object is included in the returned result.\n## Modify Channel\nUpdate a channel\u2019s settings. Returns a [channel](/developers/resources/channel#channel-object) on success, and a 400 BAD REQUEST on invalid parameters.\nAll parameters to this endpoint are optional."
+    },
+    {
+     "url": "https://docs.discord.com/developers/resources/message",
+     "title": "Message Resource",
+     "snippet": "Represents a message sent in a channel within Discord.\n\n## Get Channel Pins\nRetrieves the list of pins in a channel. Requires the `VIEW_CHANNEL` permission. If the user is missing the `READ_MESSAGE_HISTORY` permission in the channel, then no pins will be returned.\n\n## Get Pinned Messages (deprecated)\nGets the first 50 pinned messages in a channel, returning an array of [message](/developers/resources/message#message-object) objects on success. This endpoint is deprecated. Use [Get Channel Pins](/developers/resources/message#get-channel-pins) instead. This endpoint is deprecated. Use [Pin Message](/developers/resources/message#pin-message) instead. This endpoint is deprecated. Use [Unpin Message](/developers/resources/message#unpin-message) instead."
+    },
+    {
+     "url": "https://docs.discord.com/developers/resources/user",
+     "title": "User Resource",
+     "snippet": "Users in Discord are generally considered the base entity. Users can spawn across the entire platform, be members of guilds, participate in text and voice chat, and much more. Users are separated by a distinction of \u201cbot\u201d vs \u201cnormal.\u201d"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Discord discord.com MCP server Model Context Protocol official",
+   "log_id": "log_vtGIREywtuh9",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://discord.com/servers/model-context-protocol-1312302100125843476",
+     "title": "Model Context Protocol - Discord Server | Programming",
+     "snippet": "## About\nYour community for all things MCP (Model Context Protocol). Connect with server developers, share insights, and stay updated on the latest releases. Whether you're building or exploring MCP servers, you'll find your place here.\nIf you are an MCP server author, claim the spcial mcp-server-author flair to get access to conversations and updates targeted specifically at MCP server authors.\n\n# Model Context Protocol\nCommunity for MCP (Model Context Protocol) enthusiasts.\n2,012 Online\n14,563 Members\n## About\nYour community for all things MCP (Model Context Protocol). Connect with server developers, share insights, and stay updated on the latest releases. Whether you're building or exploring MCP servers, you'll find your place here.\nIf you are an MCP server author, claim the spcial mcp-server-author flair to get access to conversations and updates targeted specifically at MCP server authors."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/purduehackers/discord-mcp/main/README.md",
+     "title": "raw.githubusercontent.com/purduehackers/discord-mcp/main/README.md",
+     "snippet": "Discord MCP connects your agent to Discord through the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro). Search discussions and post messages with your bot\u2019s permissions. Use your bot token with the hosted server, or [run it yourself](#self-host).\n\nPaste this prompt into your agent to configure its MCP connection:\n```text\nInstall Discord MCP for this agent using the instructions at\nhttps://github.com/purduehackers/discord-mcp.\nUse the hosted Streamable HTTP server at\nhttps://discord.purduehackers.com/mcp with X-Discord-Token\nset from my DISCORD_BOT_TOKEN environment variable.\nConfigure this client's user-level MCP settings and preserve existing servers.\nIf the token is missing, help me create a Discord bot and set it locally;\ndo not ask me to paste the token into chat or commit it to a repository.\nReconnect, call diagnose_connection, and show which bot and servers I can use.\nDo not send messages or change Discord during setup.\n```\n### Get a bot token\n1. [Create a Discord application](https://discord.com/developers/applications). Open **Bot** and copy its token.\n2. Install the bot in your server with the permissions you need.\n3. Enable **Mes"
+    },
+    {
+     "url": "https://github.com/cappyeo/discord-mcp",
+     "title": "GitHub - cappyeo/discord-mcp: Open-source Discord MCP server for Claude, Codex, Cursor and other AI clients: 222 typed tools, caller-owned bots, safety controls and verifiable guild builds.",
+     "snippet": "# Discord MCP\n**An open-source Model Context Protocol (MCP) server for Discord.** Connect Claude, Codex, Cursor, and other MCP-compatible AI clients to your own Discord bot. Manage messages, channels, roles, moderation, and server setup through 222 typed tools.\n\nRequires **Node.js 22.12+** and [your own Discord bot](https://cappyeo.github.io/discord-mcp/start/create-discord-bot/) installed in a server you control. Works on Windows, macOS, and Linux.\n```\nnpm install -g @discord-mcp/cli\n```\nSet the bot token in your terminal:\n```\n# macOS / Linux\nexport DISCORD_TOKEN=\"Bot YOUR_DISCORD_BOT_TOKEN\"\n```\n```\n# Windows PowerShell\n$env:DISCORD_TOKEN = \"Bot YOUR_DISCORD_BOT_TOKEN\"\n```\nGenerate a client configuration and verify the connection (Codex example):\n```\ndiscord-mcp setup --profile devbot --client codex\ndiscord-mcp doctor --profile devbot --online\ndiscord-mcp smoke --profile devbot\n```"
+    },
+    {
+     "url": "https://github.com/massgen/MassGen/blob/main/massgen/configs/docs/DISCORD_MCP_SETUP.md",
+     "title": "MassGen/massgen/configs/docs/DISCORD_MCP_SETUP.md at main \u00b7 massgen/MassGen",
+     "snippet": "This guide provides detailed instructions for setting up the Discord MCP (Model Context Protocol) server with MassGen and Claude Code. The Discord MCP server enables AI assistants to interact with Discord platform features including sending messages, managing channels, handling reactions, and more.\n\n#### Step 5: Invite Bot to Your Server\n1. Go to \"OAuth2\" \u2192 \"URL Generator\" in the left sidebar\n2. Under \"Scopes\", select:\n- `bot`\n- `applications.commands` (if using slash commands)\n3. Under \"Bot Permissions\", select the permissions your bot needs:\n- Send Messages\n- Read Messages/View Channels\n- Manage Messages\n- Add Reactions\n- Manage Channels (if needed)\n- Manage Webhooks (if needed)\n4. Copy the generated URL and open it in your browser\n5. Select the server you want to add the bot to\n6. Click \"Authorize\"\n## Configuration\n### Using with MassGen Configuration File\n#### Step 1: Create or Update Configuration File\nCreate a new YAML configuration file or use the provided example:\n```\nagent : id : \" claude_code_discord_mcp \" backend : type : \" claude_code \" cwd : \" claude_code_workspace_discord_mcp \" permission_mode : \" bypassPermissions \" # Discord MCP server configuration mcp_servers : di"
+    },
+    {
+     "url": "https://github.com/tolgasumer/discord-mcp",
+     "title": "GitHub - tolgasumer/discord-mcp: Enable AI agents to interact with Discord using this Model Context Protocol (MCP) server. Provides a full suite of tools and real-time event streams for the Discord API.",
+     "snippet": "A Model Context Protocol (MCP) server that provides Discord functionality to AI assistants and applications.\n\nThe server exposes a set of tools that can be called by an MCP client. These tools provide a way to interact with the Discord API in a structured manner.\n### General\n- `ping`: Checks the health of the server and the connection to Discord.\n### Guilds\n- `get_guild_info`: Get information about a specific Discord server (guild).\n- `list_guild_members`: List all members in a Discord server (guild).\n### Channels\n- `list_channels`: List channels in a Discord server (guild).\n- `get_channel_info`: Get information about a specific Discord channel.\n### Messages\n- `send_message`: Sends a message to a Discord channel with support for embeds, replies, and TTS.\n- `get_channel_messages`: Retrieves message history from a Discord channel with pagination support.\n- `edit_message`: Edits a Discord message's content or embeds.\n- `delete_message`: Deletes a Discord message.\n- `add_reaction`: Adds an emoji reaction to a Discord message.\n### Roles\n- `list_roles`: Lists all roles in a Discord server (guild).\n- `get_role_info`: Get information about a specific Discord role.\n- `create_role`: Creates "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

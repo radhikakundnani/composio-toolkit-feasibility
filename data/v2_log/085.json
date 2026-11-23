@@ -1,0 +1,54 @@
+{
+ "id": 85,
+ "app": "iPayX",
+ "changes": [
+  {
+   "field": "access",
+   "from": "self_serve_free",
+   "to": "paid_plan_required",
+   "why": "API plans start at Developer $99/mo (100 audits, sandbox); free is only 3 lifetime audits via web (MCP free tier 10/day claimed in docs, conflicting)",
+   "evidence": "https://ipayx.ai/developers?lang=en"
+  },
+  {
+   "field": "access_notes",
+   "from": "Create account, generate ipx_live_ key in dashboard; sandbox keys ipx_test_ exist; soft monthly limits apply; pricing page linked.",
+   "to": "Developer API plan $99/mo (100 audits/mo, sandbox) up to Enterprise; pricing page free tier is 3 lifetime audits; MCP docs mention a limited free tier (10/day) but docs conflict.",
+   "why": "",
+   "evidence": "https://ipayx.ai/pricing"
+  },
+  {
+   "field": "blocker",
+   "from": "narrow_api",
+   "to": "paid_plan",
+   "why": "paid plan needed for API; also narrow API",
+   "evidence": "https://ipayx.ai/pricing"
+  },
+  {
+   "field": "blocker_note",
+   "from": "Only about 3 endpoints (audit, rates, audit/document); small vendor, plan limits unclear.",
+   "to": "API keys on paid plans from $99/mo; only ~3 endpoints; conflicting free-tier info across docs.",
+   "why": "",
+   "evidence": "https://ipayx.ai/developers?lang=en"
+  },
+  {
+   "field": "confidence.access",
+   "from": "medium",
+   "to": "medium",
+   "why": "docs conflict",
+   "evidence": "https://ipayx.ai/pricing"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://ipayx.ai/developers",
+   "to": "https://ipayx.ai/pricing",
+   "why": "pricing page",
+   "evidence": "https://ipayx.ai/pricing"
+  }
+ ],
+ "confirmed": [
+  "mcp",
+  "auth_primary",
+  "verdict"
+ ],
+ "searches": 3
+}

@@ -1,0 +1,142 @@
+{
+ "id": 12,
+ "app": "Intercom",
+ "hint": "intercom.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Intercom API authentication OAuth API key access token developer docs intercom.com",
+   "log_id": "log_gHr4pSv5wCiy",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.intercom.com/building-apps/docs/authentication-types",
+     "title": "Authentication | Intercom and Fin Developer Platform",
+     "snippet": "To access the Intercom API, you have two authentication options depending on whether you app is public or private.\n- An [Access Token](/docs/build-an-integration/learn-more/authentication#access-tokens) is for if you're using the API to access data in **your own** Intercom workspace, in other words, building a private app.\n- [OAuth](/docs/build-an-integration/learn-more/authentication#oauth) is for if you're building a public app that accesses **other people's** Intercom data.\n## Access Tokens\nAccess Tokens can be used for the following cases:\n- You want to use the API to build a private Intercom app\n- You want to run scripts to create or get data from your Intercom workspace\n- You want to use the API to programmatically automate certain actions in your Intercom workspace\nIn all of these cases, the data you are accessing is your own team's customer data.\n\n### How to get your Access Token\nWe provide you with an Access Token as soon as you [create an app](https://www.intercom.com/signup/developer) on your workspace.\nYou can find your Access Token in the **Configure > Authentication** section in your app within the [Developer Hub](https://app.intercom.io/a/apps/_/developer-hub/app-pac"
+    },
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+     "title": "Setting up OAuth | Intercom and Fin Developer Platform",
+     "snippet": "# Setting up OAuth\nIf you are building a public integration that will have access to **other peoples'** Intercom data you are required to set up OAuth. This guide will walk you through the process.\n- [Setting up OAuth](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#setting-up-oauth)\n- [Provide the initial information](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#provide-the-initial-information)\n- [Redirect URLs](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#redirect-urls)\n- [Permissions](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#permissions)\n- [People & conversation data](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#people--conversation-data)\n- [Workspace data](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#workspace-data)\n- [Get the authorization code](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth#g"
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "Create Auth Token Request | Intercom and Fin Developer Platform",
+     "snippet": "## Create Auth Token Request\nThe fields accepted when storing a new third-party credential. Set `token_type` to `text` (the default) to store a plain credential value, or to `oauth` to have Intercom obtain and manage an access token via the OAuth client-credentials grant.\nname*string*required\nA name for the credential, so a teammate can identify it later.\nExample:\"Fulfilment API key\"\ntoken_type*string*\nThe type of credential to store. Defaults to `text`.\nEnum:\"text\"\"oauth\"\nExample:\"text\"\ntoken_value*string*\nThe credential value. Required when `token_type` is `text`. Must be omitted when `token_type` is `oauth`. Stored encrypted and never returned by any endpoint.\nExample:\"[REDACTED_STRIPE_KEY]\"\nrequest_header_key*string*\nThe request header the credential is sent in. Required when `token_type` is `text`. Must be omitted when `token_type` is `oauth`, where it is fixed to `Authorization`.\nExample:\"Authorization\"\ntoken_prefix*string*\nAn optional prefix placed before the credential value in the header, for example `Bearer`. Must be omitted when `token_type` is `oauth`, where it is fixed to `Bearer`.\nExample:\"Bearer\"\ndescription*string*\nAn optional description of what the credential is us"
+    },
+    {
+     "url": "https://developers.intercom.com/docs/personal-access-tokens",
+     "title": "Intercom API Developer Docs",
+     "snippet": "### Note: Access Tokens have replaced API Keys\nIf you're currently using API Keys to access the Intercom API, you should **[switch to using Access Tokens](https://developers.intercom.com/v2.0/docs/replacing-your-api-keys-with-access-tokens-step-by-step-guide)** before API Keys are deprecated in early-2018.\nYou'll need an Access Token if you want to use the API to access data in your own Intercom app.\nIf you intend to make an integration available publicly, and therefore need to access other people's Intercom data, you will [need to set up OAuth](https://developers.intercom.io/docs/setting-up-oauth) instead.\nIf you're unsure, use [this guide](https://developers.intercom.io/docs/switching-from-api-keys-1) to work out whether you need an Access Token or OAuth.\n### Access Tokens should never be shared outside of your company\nYour Access Token can give access to your private Intercom data and should be treated like a password. If an integration provider asks you for your Access Token, please do not do so and let us know - integrations are required to use OAuth rather than asking users for Access Tokens.\n# Creating your Access Token\nCreating your Access Token is simple and you can get a "
+    },
+    {
+     "url": "***REDACTED***",
+     "title": "Auth Tokens | Intercom and Fin Developer Platform",
+     "snippet": "## Auth Tokens\nRead and write the third-party credentials stored in your workspace, so you can find the id of the credential a data connector should authenticate with, and store a new one without leaving your integration. Reading requires an OAuth token with the `read_auth_tokens` scope; creating and updating require the `write_auth_tokens` scope and an access token associated with a teammate. You can create a `text` credential to send yourself, or an `oauth` credential whose access token Intercom obtains and refreshes automatically via the client-credentials grant. Only credentials with a `token_type` of `text` can be updated. No endpoint ever returns a credential value, client secret, refresh configuration, or OAuth configuration.\nSchemasOperations\n## List all auth tokens\n#### Request\nReturns a paginated list of the workspace's stored third-party credentials. Use this to discover the id of a credential you want a data connector to authenticate with \u2014 that id is not otherwise available over REST. Only metadata is returned; credential values are never exposed. The list is not exhaustive: credentials a teammate created are listed, as are those created by some Intercom integrations, "
+    }
+   ]
+  },
+  "access": {
+   "query": "Intercom intercom.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_Cq_B8sAPrZiQ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://pipeline.zoominfo.com/sales/intercom-api",
+     "title": "Intercom API Review: Full Developer Breakdown [2026]",
+     "snippet": "| **API type** | REST over HTTPS, JSON responses |\n| **Authentication** | Access Token (private apps) or [OAuth 2.0](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth) (public apps) |\n\n| **Rate limits** | [10,000 calls/min](https://developers.intercom.com/docs/references/rest-api/errors/rate-limiting/) per app; 25,000 calls/min per workspace |\n\n| **Pricing / access** | Included on all paid plans; [$29/seat/mo](https://www.intercom.com/pricing) entry (Essential, billed annually) |\n\nNo permanent free API tier; the 14-day trial ends and access stops without a paid plan |\n\nAPI access starts with any paid **Intercom** plan.\nThe [pricing page](https://www.intercom.com/pricing) lists API access across Essential ($29/seat/month), Advanced ($85/seat/month), and Expert ($132/seat/month), with no separate developer signup or API-specific fee. A [14-day cardless free trial](https://www.intercom.com/legal/terms-and-policies) gives access to the full API during the trial period.\n\nOne constraint for private apps: Access Tokens are static credentials with no built-in rotation, expiry, or scope control. If you need delegated access, credential rota"
+    },
+    {
+     "url": "https://intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+     "title": "Intercom developer FAQs",
+     "snippet": "You can[ create a new developer workspace](https://app.intercom.com/a/developer-signup) for developing apps. Developer workspaces are free and intended for development purposes only. Once you've created the new workspace you can[ follow this guide](https://developers.intercom.com/docs/build-an-integration/getting-started/) to create an app and make your first API call.\n\nresponse this means that the API you are trying to use is not available on your app's plan.\nIn order to access the API you'll need to upgrade your plan. You can find out more about Intercom plans[ on this page](https://www.intercom.com/help/en/articles/8420845-intercom-plans-explained).\n\nIf you visit the Test & Publish > Your Workspaces page of your app in the [Developer Hub](https://app.intercom.com/a/apps/_/developer-hub) then you should see all the workspaces you (as an Intercom teammate) are a member of.\nYou can click on Install app next to the workspace you want to install the given app on. This app will then be installed and an[ Access Token](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/#access-tokens) will be provided for that workspace so you can access its data through"
+    },
+    {
+     "url": "https://developers.intercom.com/docs/applying-for-oauth",
+     "title": "Intercom API Developer Docs",
+     "snippet": "The only thing you need to setup OAuth is an Intercom account. If you're already signed up, great!\nIf not, then just follow the instructions [**here**](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/how-do-i-sign-up-for-a-free-trial-of-intercom) to sign up for a free trial of Intercom. For more detailed information on the different products and pricing options available you can check out our pricing [**page**](https://www.intercom.com/pricing).\n\nThe main difference between your TEST and main app is that the TEST app limits OAuth access to your Intercom teammates \u2013 you can't request OAuth access from someone that it not a teammate in your TEST app. In order to do so, you'll need to go through the approval process to get OAuth approval in your main Intercom app (once you're ready to make your integration live)."
+    },
+    {
+     "url": "https://developers.intercom.com/docs",
+     "title": "Overview | Intercom and Fin Developer Platform",
+     "snippet": "Public apps (sometimes referred to as integrations) are apps that are available for any customer to install. These apps have access to other peoples' Intercom data, which means there are specific requirements in order to publish them, such as setting up OAuth and submitting to the Intercom team for review.\n### Set up a development workspace\nTo develop a public app you will need to use a development workspace: [sign up here](https://www.intercom.com/signup/developer) to create your free account.\nThis will give you access to your [Developer Hub](https://app.intercom.com/a/apps/_/developer-hub), where you can configure webhooks, define your endpoints for Messenger and Inbox apps, set up OAuth, and submit your app for review.\nDevelopment Workspaces vs. Paid Workspaces\nDevelopment workspaces have [limitations listed here](https://developers.intercom.com/docs/build-an-integration/getting-started#step-1-create-an-intercom-workspace) and do not have the full functionality of a paid Intercom workspace. Development workspaces are only available for the US region."
+    },
+    {
+     "url": "https://wso2.com/integration-platform/docs/connectors/catalog/communication/intercom/setup-guide",
+     "title": "Setup Guide | WSO2 Integrator Documentation",
+     "snippet": "This guide walks you through creating an Intercom account and obtaining the API access token required to use the Intercom connector.\n1. Navigate to the [Intercom website](https://www.intercom.com/) and sign up or log in.\n2. Ensure you have a paid plan (Starter or higher) \u2014 API access is not available on the free trial.\n1. Log in to your Intercom account.\n2. Navigate to **Settings** (gear icon in the top-right corner) and select **For Developers** from the left sidebar.\n3. In the Developer Hub, select **Your Apps**, then select **New app** or choose an existing app.\n4. Go to the **Configure** tab and scroll down to the **Access Token** section to generate your token."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Intercom API reference REST GraphQL endpoints documentation intercom.com",
+   "log_id": "log_SXVOSasmA_nB",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.intercom.com/docs/references/2.11/rest-api/api.intercom.io/conversations/retrieveconversation",
+     "title": "Retrieve a conversation | Intercom and Fin Developer Platform",
+     "snippet": "##### Headers\nIntercom-Version*string*[(intercom_version)](https://developers.intercom.com/docs/references/2.11/rest-api/api.intercom.io/models/intercom_version)\nIntercom API version.\nBy default, it's equal to the version set in the app package.\nDefault:\"2.11\"\nEnum:\"1.0\"\"1.1\"\"1.2\"\"1.3\"\"1.4\"\"2.0\"\"2.1\"\"2.2\"\"2.3\"\"2.4\"\nExample:2.11\n- The production API server\nhttps://api.intercom.io/conversations/{conversation_id}\n- The european API server\nhttps://api.eu.intercom.io/conversations/{conversation_id}\n- The australian API server\nhttps://api.au.intercom.io/conversations/{conversation_id}\n```\ncurl -i -X GET \\\n'https://api.intercom.io/conversations/123?display_as=plaintext' \\\n-H 'Authorization: Bearer <YOUR_TOKEN_HERE>' \\\n-H 'Intercom-Version: 2.11'\n```"
+    },
+    {
+     "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts.md",
+     "title": "developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts.md",
+     "snippet": "# Contacts\nEverything about your contacts\n- [GET /companies/{company_id}/contacts](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts/listattachedcontacts.md): You can fetch a list of all contacts that belong to a company.\n- [POST /contacts/{contact_id}/companies](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts/attachcontacttoacompany.md): You can attach a company to a single contact.\n- [GET /contacts/{contact_id}/companies](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts/listcompaniesforacontact.md): You can fetch a list of companies that are associated to a contact.\n- [DELETE /contacts/{contact_id}/companies/{company_id}](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts/detachcontactfromacompany.md): You can detach a company from a single contact.\n- [GET /contacts/{contact_id}/notes](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/contacts/listnotes.md): You can fetch a list of notes that are associated to a contact.\n- [POST /contacts/{contact_id}/notes](https://developers.intercom.com/docs/references/rest-api/api.intercom.io"
+    },
+    {
+     "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/calls/listcalls.md",
+     "title": "developers.intercom.com/docs/references/rest-api/api.intercom.io/calls/listcalls.md",
+     "snippet": "# List all calls\nRetrieve a paginated list of calls.\nEndpoint: GET /calls\nVersion: 2.16\nSecurity: bearerAuth\n## Query parameters:\n- `page` (integer)\nThe page of results to fetch. Defaults to first page\n- `per_page` (integer)\nHow many results to display per page. Defaults to 25. Max 25.\n## Header parameters:\n- `Intercom-Version` (string)\n## Response 200 fields (application/json):\n- `type` (string)\nString representing the object's type. Always has the value `list`.\nExample: list\n- `data` (array)\nA list of calls.\n- `data.type` (string)\nString representing the object's type. Always has the value `call`.\nExample: call\n- `data.id` (string)\nThe id of the call.\nExample: 123\n- `data.conversation_id` (string)\nThe id of the conversation associated with the call, if any.\nExample: 456\n- `data.admin_id` (string)\nThe id of the admin associated with the call, if any.\nExample: 789\n- `data.contact_id` (string)\nThe id of the contact associated with the call, if any.\nExample: 6762f0dd1bb69f9f2193bb83\n- `data.state` (string)\nThe current state of the call.\nExample: completed\n- `data.initiated_at` (any)\n- `data.recording_url` (string)\nAPI URL to download or redirect to the call recording if available.\nEx"
+    },
+    {
+     "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/conversations/searchconversations",
+     "title": "Search conversations | Intercom and Fin Developer Platform",
+     "snippet": "#### Request\nYou can search for multiple conversations by the value of their attributes in order to fetch exactly which ones you want.\nTo search for conversations, you need to send a `POST` request to `https://api.intercom.io/conversations/search`.\nThis will accept a query object in the body which will define your filters in order to search for conversations.\nOptimizing search queries\nSearch queries can be complex, so optimizing them can help the performance of your search. Use the `AND` and `OR` operators to combine multiple filters to get the exact results you need and utilize pagination to limit the number of results returned. The default is `20` results per page and maximum is `150`. See the [pagination section](https://developers.intercom.com/docs/build-an-integration/learn-more/rest-apis/pagination/#example-search-conversations-request) for more details on how to use the `starting_after` param."
+    },
+    {
+     "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io.md",
+     "title": "developers.intercom.com/docs/references/rest-api/api.intercom.io.md",
+     "snippet": "# Intercom API\nThe intercom API reference.\nVersion: 2.16\nLicense: MIT\n## Servers\nThe production API server\n```\nhttps://api.intercom.io\n```\nThe european API server\n```\nhttps://api.eu.intercom.io\n```\nThe australian API server\n```\nhttps://api.au.intercom.io\n```\n## Security\n### bearerAuth\nType: http\nScheme: bearer\n## Download OpenAPI description\n- [Intercom API](https://developers.intercom.com/_bundle/docs/references/@2.16/rest-api/api.intercom.io.yaml)\n## Admins\n- [GET /me](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/admins/identifyadmin.md): You can view the currently authorised admin along with the embedded app object (a \"workspace\" in legacy terminology). > \ud83d\udea7 Single Sign On If you are building a custom \"Log in with Intercom\" flow for y\n- [PUT /admins/{admin_id}/away](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/admins/setawayadmin.md): You can set an Admin as away for the Inbox.\n- [GET /admins/activity_logs](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/admins/listactivitylogs.md): You can get a log of activities by all admins in an app.\n- [POST /admins/activity_logs/search](https://developers.inter"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Intercom intercom.com MCP server Model Context Protocol official",
+   "log_id": "log_FU1Dh85Ub4x0",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.intercom.com/docs/guides/mcp",
+     "title": "Model Context Protocol (MCP) | Intercom and Fin Developer Platform",
+     "snippet": "Region availability\nThe Intercom MCP server is available for US and EU hosted workspaces. AU hosted workspaces are not yet supported. Connect using the endpoint that matches your workspace's hosted region \u2014 see the connection URLs below.\n## What is Model Context Protocol?\nMCP is a protocol that enables AI tools and applications to connect with Intercom's data and services in a secure, standardized way. It provides a structured method for AI models to:\n- Find and retrieve Intercom data (conversations, contacts, etc.)\n- Access specific tools and functionality provided by Intercom\n- Maintain context about your Intercom workspace when working with AI assistants\n## How MCP Works\nIntercom hosts a remote MCP server that follows the authenticated remote MCP specification ([docs](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization)). This server handles requests from AI tools and provides access to Intercom data through a secure interface.\n**Connection URLs:**\nUse the endpoint for your workspace's hosted region. You can tell your region from your workspace URL: `app.intercom.com` is US hosted and `app.eu.intercom.com` is EU hosted.\n| Region | Streamable HTTP (Recomm"
+    },
+    {
+     "url": "https://intercom.com/integrations/connectors/intercom-mcp-server",
+     "title": "intercom.com/integrations/connectors/intercom-mcp-server",
+     "snippet": "description: \"Let AI tools securely access your Intercom data through the Model Context Protocol.\n\nIntercom's MCP server lets AI tools and CLIs (like Claude Code, Claude Desktop, ChatGPT, Cursor, and VS Code) securely access your Intercom data through the Model Context Protocol. Query conversations, contacts, companies, and Help Center articles, and create or update articles directly from your AI tool. Available for US-hosted Intercom workspaces.\n## What you can do\n-   Connect via the Streamable HTTP endpoint at https://mcp.intercom.com/mcp\n-   Read conversations, contacts, and companies; read and write Help Center articles\n-   Works with MCP-compatible clients including Claude Code, Claude Desktop, ChatGPT, Cursor, and VS Code\n-   Authenticate with OAuth, scoped to your existing Intercom permissions\n-   Available for US-hosted Intercom workspaces\n## How it works\nAdd the Intercom MCP server to your AI tool using the Streamable HTTP endpoint https://mcp.intercom.com/mcp. Available for US-hosted Intercom workspaces.\nAuthenticate with OAuth to grant access scoped to your existing Intercom permissions. Works with MCP-compatible clients including Claude Code, Claude Desktop, ChatGPT, Cu"
+    },
+    {
+     "url": "https://intercom.com/help/en/articles/15481203-fin-agent-api-mcp-server",
+     "title": "Fin Agent API: MCP Server",
+     "snippet": "The Fin Agent API exposes a remote [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that lets external AI agents call Fin as a tool. Instead of rebuilding support logic in your own agent, you can plug in Fin\u2019s knowledge base, procedures, and multi-turn conversation capabilities directly from within any MCP-compatible client, including Claude, Claude Code, Cursor, or your own agent framework.\n# Use cases\nThe Fin Agent API MCP server is designed for multi-agent scenarios where your own agent needs access to Fin\u2019s capabilities:\n- **Embedded support in product agents.** Give your product\u2019s AI assistant the ability to answer support questions using your configured Fin knowledge, without duplicating your knowledge base or content.\n- **Procedure automation.** Let an orchestrating agent trigger Fin procedures (refunds, upgrades, cancellations) on behalf of users and handle multi-turn interactions programmatically.\n- **Capability-driven routing.** Use list_fin_capabilities to determine what actions are available for a given user, then route to the right tool in your agent\u2019s decision logic.\n- **Developer tooling.** Surface your Fin knowledge inside developer tools like "
+    },
+    {
+     "url": "https://intercom.com/blog/introducing-model-context-protocol-fin",
+     "title": "intercom.com/blog/introducing-model-context-protocol-fin",
+     "snippet": "The **Model Context Protocol (MCP)** provides a standard way for AI to securely connect to your business systems \u2013 without building custom integrations. With MCP, businesses can integrate AI faster, scale it across more systems, and deliver better support with less effort. In a world where speed and relevance define great support, MCP Connectors make it simple, secure, and scalable to unlock the value of AI across your tools.\nMCP integrations rely on two key roles:\n-   **Clients** (like Fin) that request and use external data.\n-   **Servers** that expose data from business systems, like the Intercom Helpdesk.\nAt Intercom, we\u2019re embracing MCP across both sides of the equation:\n**Fin as an MCP client**\nFin can connect to MCP servers through a simpler, standardized setup. Non-technical users can quickly integrate Fin with a wide range of tools. Once connected, Fin can access data, perform actions in external systems, and more.\n**The Intercom MCP Server**\nBusinesses can now make their Intercom conversation data accessible to external AI systems \u2013 uncovering insights, troubleshooting issues, and powering richer analytics with secure, scalable access.\n\nFin can already connect directly to"
+    },
+    {
+     "url": "https://github.com/cursor/plugins/blob/main/third_party/intercom/README.md",
+     "title": "plugins/third_party/intercom/README.md at main \u00b7 cursor/plugins",
+     "snippet": "# Intercom\nCursor plugin that connects agents to [Intercom](https://www.intercom.com) through Intercom's official remote [Model Context Protocol](https://modelcontextprotocol.io/) server.\nSearch conversations and contacts, look up companies, and list, search, create, or update Help Center articles in the signed-in Intercom workspace.\n\n## MCP\n```\n{\n\"mcpServers\": {\n\"intercom\": {\n\"type\": \"http\",\n\"url\": \"https://mcp.intercom.com/mcp\"\n}\n}\n}\n```\nAuth is OAuth 2.0 against Intercom with Dynamic Client Registration (DCR) and PKCE. Cursor registers itself and prompts for Intercom sign-in when the plugin connects \u2014 there is no API key or client ID to configure.\n## Regions\nThis plugin points at the US endpoint. Intercom MCP is available for US and EU hosted workspaces; AU is not supported yet.\n| Region | Workspace URL | MCP URL |\n|---|---|---|\n| US | `app.intercom.com` | `https://mcp.intercom.com/mcp` |\n| EU | `app.eu.intercom.com` | `https://mcp.eu.intercom.com/mcp` |\nIf your workspace is EU-hosted, change the `url` in `mcp.json` to `https://mcp.eu.intercom.com/mcp` after install.\n\n- Bearer-token auth is also supported by Intercom's server, but this plugin uses the recommended OAuth flow."
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

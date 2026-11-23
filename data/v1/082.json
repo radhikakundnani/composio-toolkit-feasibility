@@ -1,0 +1,35 @@
+{
+ "id": 82,
+ "app": "Plaid",
+ "category": "Fintech data/banking API",
+ "one_liner": "Connects apps to bank accounts for transactions, auth, and payment initiation.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "auth_primary": "api_key",
+ "access": "self_serve_trial",
+ "access_notes": "Dashboard signup gives client_id/secret; free Sandbox and free Trial plan (real data, 10 Items) for US/CA teams created after Apr 2026.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "Plaid Dashboard MCP (remote, hosted by Plaid) and sandbox MCP in plaid/ai-coding-toolkit",
+ "verdict": "ready_with_caveats",
+ "blocker": "other",
+ "blocker_note": "Full Production and some OAuth institutions need approval; Trial plan is capped.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://plaid.com/docs/quickstart",
+  "access": "https://support.plaid.com/hc/en-us/articles/39994173227159-What-is-the-Plaid-Trial-plan",
+  "surface": "https://plaid.com/docs/api",
+  "mcp": "https://plaid.com/docs/resources/mcp"
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "id": 84,
+ "app": "Paygent Connect",
+ "category": "Payments",
+ "one_liner": "Unknown; evidence covers several unrelated products named Paygent.",
+ "auth_methods": [
+  "bearer_token"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "unknown",
+ "access_notes": "gopaygent.com Paygent Connect: merchant signup page and 'wholesale rates' pitch; sandbox mentioned on homepage but no public key-issuance steps found.",
+ "api_types": [
+  "unknown"
+ ],
+ "api_breadth": "unknown",
+ "mcp": "none_found",
+ "mcp_note": "",
+ "verdict": "needs_outreach",
+ "blocker": "contact_sales",
+ "blocker_note": "Paygent Connect (gopaygent.com) exposes only a marketing docs page; no public API reference or self-serve credentials found; onboarding via merchant signup/sales.",
+ "identity_issue": "Probable match: gopaygent.com 'Paygent Connect' embedded-finance API platform (Pathfinder API, Collect.js, Three-Step Redirect); public docs thin, NMI link inferred from feature names only.",
+ "confidence": {
+  "auth": "low",
+  "access": "low",
+  "surface": "low",
+  "mcp": "low"
+ },
+ "evidence": {
+  "auth": "https://gopaygent.com",
+  "access": "https://gopaygent.com/signup",
+  "surface": "https://gopaygent.com/developers/docs",
+  "mcp": "https://gopaygent.com"
+ },
+ "verified": true
+}

@@ -1,0 +1,36 @@
+{
+  "id": 42,
+  "app": "WooCommerce",
+  "category": "Ecommerce",
+  "one_liner": "Open-source WordPress ecommerce plugin with a REST API for store data.",
+  "auth_methods": [
+    "api_key",
+    "basic"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Merchant generates consumer key/secret in WooCommerce > Settings > Advanced > REST API; no developer program, per-store credentials.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "WooCommerce core product/order abilities exposed via WordPress MCP Adapter plugin (default-enabled from WooCommerce 11.3); vendor-published, runs per store.",
+  "verdict": "ready_with_caveats",
+  "blocker": "not_a_hosted_service",
+  "blocker_note": "Self-hosted per-store; each merchant must supply site URL and keys, HTTPS and pretty permalinks needed.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "medium"
+  },
+  "evidence": {
+    "auth": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+    "access": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+    "surface": "https://developer.woocommerce.com/docs/apis/rest-api/v3",
+    "mcp": "https://developer.woocommerce.com/docs/features/mcp"
+  },
+  "verified": true
+}

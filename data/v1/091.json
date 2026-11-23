@@ -1,0 +1,34 @@
+{
+  "id": 91,
+  "app": "NotebookLM",
+  "category": "AI research assistant",
+  "one_liner": "Google notebook tool for AI-grounded research over user-provided sources.",
+  "auth_methods": [
+    "oauth2"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_trial",
+  "access_notes": "Gemini Notebook API is OAuth, personal Google accounts in Public Preview; Enterprise API needs licenses (14-day free trial) and IAM role.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_note": "https://notebook.googleapis.com/mcp (Gemini Notebook API remote MCP)",
+  "verdict": "ready_with_caveats",
+  "blocker": "other",
+  "blocker_note": "Personal API is Public Preview; Enterprise API requires licenses and Google Cloud setup; surface limited to notebooks and sources.",
+  "identity_issue": "Product renamed Gemini Notebook; two distinct APIs (personal preview vs Enterprise on Google Cloud).",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.google.com/notebook/docs/authentication",
+    "access": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+    "surface": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "mcp": "https://developers.google.com/notebook/docs/mcp"
+  }
+}

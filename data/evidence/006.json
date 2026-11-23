@@ -1,0 +1,142 @@
+{
+ "id": 6,
+ "app": "Podio",
+ "hint": "podio.com",
+ "given_category": "CRM and Sales",
+ "queries": {
+  "auth": {
+   "query": "Podio API authentication OAuth API key access token developer docs podio.com",
+   "log_id": "log_xovGzvTeg4An",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.podio.com/authentication/app_auth",
+     "title": "Authentication: App authentication flow - Podio API Documentation",
+     "snippet": "The app authentication flow is suitable in situations where you only need data from a single app and do not wish authenticate as a specific user. It is similar to the [username & password flow](https://developers.podio.com/authentication/username_password), but uses the app ID and a special app token as the login credentials.\n\nTo gain an access token, you make a **POST request** to our endpoint with your authentication parameters placed in the **request body**. The **grant_type** parameter set to **app**.\n```\nHTTP METHOD: POST\nURL: https://api.podio.com/oauth/token/v2\nHEADER:  \"Content-Type: application/json\"\nBODY:\n{\n\"grant_type\": \"app\",\n\"app_id\": YOUR_PODIO_APP_ID,\n\"app_token\": YOUR_PODIO_APP_TOKEN,\n\"client_id\": YOUR_CLIENT_ID,\n\"redirect_uri\": YOUR_URL,\n\"client_secret\": YOUR_CLIENT_SECRET\n}\n```\nYou can find the Podio App ID and Podio App Token by going to your app in Podio and clicking the Developer link in the settings dropdown.\nIf your app is successfully authenticated and the credentials provided are valid, the API will return the access token:\n```\n{\n\"access_token\": ACCESS_TOKEN\n\"token_type\": \"bearer\",\n\"expires_in\": EXPIRES_IN,\n\"refresh_token\": REFRESH_TOKEN,\n\"ref\":\n{\n\"type\": \""
+    },
+    {
+     "url": "https://developers.podio.com/authentication",
+     "title": "Authentication - Podio API Documentation",
+     "snippet": "The Podio API uses the [OAuth2 protocol](http://oauth.net/2/) for authentication. This allows external apps to request authorization to Podio without having direct access to the user's password. Our API supports different OAuth flows depending on what kind of integration you are making.\nBefore you can use the Podio API you must [register your application](https://developers.podio.com/api-key). Your application is assigned a unique identifier, called \"Client ID\", together with a \"Client Secret\". You will need both of these to authenticate. The Client Secret should not be shared with anyone.\n### Authentication flows\nPodio supports four different ways of autheticating depending on what kind of application you are building:\n- **[Server-side flow](https://developers.podio.com/authentication/server_side)** This is the preferred way of authenticating for web apps.\n- **[Client-side flow](https://developers.podio.com/authentication/client_side)** Use the client-side flow if your application does not have a server. Examples: Browser extensions, web app running purely in the browser, mobile or desktop applications.\n- **[Username & password flow](https://developers.podio.com/authentication/use"
+    },
+    {
+     "url": "https://developers.podio.com/authentication/server_side",
+     "title": "Authentication: Server-side flow - Podio API Documentation",
+     "snippet": "The server-side flow works by sending your user to Podio to authorize. It's a four step process:\n1. You redirect your user to Podio for authorization\n2. Podio redirects back to your web app with an authorization code\n3. You use the authorization code to obtain an access token\n4. You use the access token for all API requests\nThe first step is to redirect your user to Podio's authorization endpoint, providing your client_id and a redirect_uri. The redirect_uri must be on the same domain as the domain you specified when you applied for your API Key. The endpoint you must redirect to is:\n`https://podio.com/oauth/authorize?client_id=YOUR_APP_ID&redirect_uri=YOUR_URL&scope=SCOPE_STRING`\nNote: Repeated **Request** and **Response** parameters will be discarded and only the value of last Request and Response parameter is considered\nIf the user is not logged in to Podio he will be asked to login. Then we will present a screen showing what the user is granting access to:\n![](https://dszkox6mytr3m.cloudfront.net/images/developer/podio_authorize_screen.png)\nIf the user for some reason denies access, the application is not authorized, and the OAuth flow will redirect the user back to the URL, pa"
+    },
+    {
+     "url": "https://developers.podio.com/doc/oauth-authorization/get-access-token-22359",
+     "title": "OAuth authorization | Get access token",
+     "snippet": "## [OAuth authorization](https://developers.podio.com/doc/oauth-authorization): Get access token\nGets a new access token for use when accessing the API.\nPodio supports 4 ways of obtaining an access token:\n- **password**: Use the end users mail and password to access the API. This is only valid for trusted clients\n- **authorization_code**: Use the authorization code obtained from step one of the authorization (see the area for more information)\n- **refresh_token**: Use the refresh token obtained previously from one of the above methods.\n- **app**: Login as an app with the id of the app and the apps login token\nThis operation can return a wide variety of error codes. For details see the OAuth 2 specification.\n**Usage**\n- **Ruby Gem** [o_auth.rb](https://github.com/podio/podio-rb/blob/master/lib/podio/models/o_auth.rb#L24)\n```\nPodio::OAuth.get_access_token( attributes )\n```\n**Parameters**\n- ****app_id**** The id of the app to login as, if using \"*app*\" grant type\n- ****app_token**** The token of the app, gotten from the app configuration, if using \"*app*\" grant type\n- ****client_id**** The key of the API client\n- ****client_secret**** The secret of the client. This will be generated b"
+    },
+    {
+     "url": "https://developers.podio.com/doc/oauth-authorization",
+     "title": "OAuth authorization | API Documentation",
+     "snippet": "## OAuth authorization\nThis API uses OAuth 2.0 (http://oauth.net/2/) for authentication users of the API. Currently supported is draft-10 of the specification. It is recommended to read http://tools.ietf.org/html/draft-ietf-oauth-v2-10.\n## Authorizing\nTo be able to access the API, a third party will have to register with Podio. This will result in a client being created, which can then be used when authenticating. Authentication can be done in one or two steps:\n### One step\nThis is only valid for trusted clients. When validating in one step, the token endpoint will be contacted directly with mail and password of the end-user, and will receive an access token in return.\n### Two step\nThis is for all other clients. When validating the user is sent to a Podio webpage along with the client id and any state. The user then logs in as normal and either grants or denies access for the client. If granted the user is sent back to the redirect url along with a authorization code. Secondly the client uses the token endpoint with the code from step one to get an access token.\n**Two step authorization is not yet completed!**\n## Accessing\nWhen accessing any protected resource of the API, the acces"
+    }
+   ]
+  },
+  "access": {
+   "query": "Podio podio.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_M-wRMMt7oTc0",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.podio.com/index/faq",
+     "title": "Frequently Asked Questions",
+     "snippet": "The Podio API is available to use for both paid and free Podio accounts. Both have full access to the API and the same base rate Limit A and Limit B apply. There is no extra charge for using the API as long as the usage is within these base rate limits. Paid accounts have an additional capability of upgrading to higher API rate limits by purchasing an API Add-on.\n\nApp tokens are available in the developer info section of any Podio app, but sometimes it's useful to be able to get app token programmatically. This allows you to e.g. configure script automatically. To apply for programmatic access to app tokens, visit [https://support.sharefile.com/s/](https://support.sharefile.com/s/) and contact us with a brief description of your project and the client_id of the API key you are using."
+    },
+    {
+     "url": "https://podio.com/site/pricing",
+     "title": "Pricing | Flexible Plans for Teams of All Sizes | Podio",
+     "snippet": "| | ##### Free | ##### Plus | ##### Premium |\n| Included Features 2 | Start structuring your work $ 0 per user per month [Start Free ](https://podio.com/signup) --- | Collaborate with teams and clients $ 11.2014 per user per month [Buy Now ](https://podio.com/signup) --- | Build Automated Business Solutions $ 19.2024 per user per month [Buy Now ](https://podio.com/signup) [Try Premium ](https://podio.com/signup?start_trial=true) *30 Days Free for all Premium features --- |\n| | - Task Management - Apps and Workspaces - Up to 5 users | - Everything included in Free plan - Unlimited items - Unlimited client users - User management - Light user role - Simple Workflows - Read-only access | - Everything included in Plus plan - Advanced Workflow Automation - AI Assistant (Beta) Coming Soon - Visual Reports - Partner Extension Offers |\n| | * Prices exclude applicable taxes. Final pricing is shown at checkout. | | |\n|---|---|---|---|\n| Included Features | | | |\n| General Features | | | |\n| Unlimited Workspaces | Included in Free | Included in Plus | Included in Premium |\n| Unlimited Apps | Included in Free | Included in Plus | Included in Premium |\n| Granular App Permissions | Included in F"
+    },
+    {
+     "url": "https://developers.podio.com",
+     "title": "Developers - Podio API Documentation",
+     "snippet": "You'll need a Podio account, first of all. Then you should review [our Terms of API use](https://api.sharefile.com/home/tos) and then [grab an API key](https://developers.podio.com/api-key) for each app you want to build from your account settings page."
+    },
+    {
+     "url": "https://developers.podio.com/authentication",
+     "title": "Authentication - Podio API Documentation",
+     "snippet": "The Podio API uses the [OAuth2 protocol](http://oauth.net/2/) for authentication. This allows external apps to request authorization to Podio without having direct access to the user's password. Our API supports different OAuth flows depending on what kind of integration you are making.\nBefore you can use the Podio API you must [register your application](https://developers.podio.com/api-key). Your application is assigned a unique identifier, called \"Client ID\", together with a \"Client Secret\". You will need both of these to authenticate. The Client Secret should not be shared with anyone."
+    },
+    {
+     "url": "https://developers.podio.com/index/limits",
+     "title": "Concepts and conventions: Rate limits",
+     "snippet": "The Podio API only allows you to make a certain amount of API calls each hour. The general limit is 1,000 API calls per hour, but if the API call is deemed resource-intensive, a lower rate of 250 calls per hour is enforced. So Podio API uses a two-limit model.\n- Limit A = 250 calls per hour. It applies to resource-intensive operations marked \"Limit A\" or \"Rate-Limited\" in the API reference.\n- Limit B = 1,000 calls per hour. It applies to all standard API operations marked \"Limit B\" or \"Standard\" in the API reference.\n\nIf you have a project that requires a higher rate limit, get an API Add-on for your related API key. An API Add-on will give your key increased rate limits (both Limit A and B). We have multiple tiers available for API Add-ons, so you can choose which tier is most relevant for your anticipated usage. Read [product documentation](https://progress.com/podio/documentation/using-podio/upgrade-and-billing/what-add-ons-in-podio) to learn more about how to choose, buy and manage Add-ons.\nIn case your project requires a rate limit higher than the available API Add-ons, [contact us](https://progress.com/podio/documentation/welcome) with a brief description of your project, you"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Podio API reference REST GraphQL endpoints documentation podio.com",
+   "log_id": "log_lrcSGq6F4Gei",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.podio.com/index/api",
+     "title": "Concepts and conventions: Conventions and structure of the API",
+     "snippet": "The API is available at **https://api.podio.com**. It is [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and uses [json](http://json.org/) as the exchange format. SSL is mandatory and used for all communication. [OAuth2](/authentication) is used for authorization and authentication.\n### HTTP methods & URLs\nThe API uses the following HTTP methods for object manipulation:\n- **`GET`** Used for object retrieval\n- **`POST`** Used for object creation and object actions\n- **`PUT`** Used for object update\n- **`DELETE`** Used for object deletion\nThe API is slash-aware, meaning a URL with a trailing slash is not the same as one without it. If the ressource you are working on is a list of objects, a trailing slash should be added. If not, no trailing slash should be added. E.g. `/widget/space/1/` has a trailing slash because the resource returns a list of widgets on the given space. When creating a new widget the same resource is used, just with a POST, as you are adding to that list. When operating on a single widget `/widget/1` is used, as the resource is a single object."
+    },
+    {
+     "url": "https://github.com/LeoYeAI/openclaw-master-skills/blob/main/skills/api-gateway/references/podio/README.md",
+     "title": "openclaw-master-skills/skills/api-gateway/references/podio/README.md at main \u00b7 LeoYeAI/openclaw-master-skills",
+     "snippet": "# Podio Routing Reference\n**App name:** `podio` **Base URL proxied:** `api.podio.com`\n## API Path Pattern\n```\n/podio/{resource}/{id}/\n```\nNote: Many Podio endpoints use trailing slashes.\n## Common Endpoints\n### Organizations\n#### List Organizations\n```\nGET /podio/org/\n```\n#### Get Organization\n```\nGET /podio/org/{org_id}\n```\n### Spaces (Workspaces)\n#### List Spaces in Organization\n```\nGET /podio/space/org/{org_id}/\n```\n#### Get Space\n```\nGET /podio/space/{space_id}\n```\n#### Create Space\n```\nPOST /podio/org/{org_id}/space/\nContent-Type: application/json\n{\n\"name\": \"New Workspace\",\n\"privacy\": \"closed\"\n}\n```\n### Applications\n#### List Apps in Space\n```\nGET /podio/app/space/{space_id}/\n```\n#### Get App\n```\nGET /podio/app/{app_id}\n```\n### Items\n#### Filter Items\n```\nPOST /podio/item/app/{app_id}/filter/\nContent-Type: application/json\n{\n\"limit\": 30,\n\"offset\": 0,\n\"sort_by\": \"created_on\",\n\"sort_desc\": true,\n\"filters\": {\n\"status\": [1, 2]\n}\n}\n```\n#### Get Item\n```\nGET /podio/item/{item_id}\n```\n#### Create Item\n```\nPOST /podio/item/app/{app_id}/\nContent-Type: application/json\n{\n\"fields\": {\n\"title\": \"New Item\",\n\"status\": 1\n}\n}\n```\n#### Update Item\n```\nPUT /podio/item/{item_id}\nContent-Type: app"
+    },
+    {
+     "url": "https://developers.podio.com/models/space",
+     "title": "Podio API Documentation",
+     "snippet": "# Podio API Documentation\n## Model: Space\n- [Get list of organization workspaces](/doc/spaces/get-list-of-organization-workspaces-238875316)\n- [Get all spaces on organization](/doc/organizations/get-all-spaces-on-organization-11902608)\n- [Get available spaces](/doc/spaces/get-available-spaces-1911961)\n- [Get space by org and URL label](/doc/spaces/get-space-by-org-and-url-label-476929)\n- [Get space by URL](/doc/spaces/get-space-by-url-22481)\n- [Get top spaces](/doc/spaces/get-top-spaces-22477)\n- [Get space](/doc/spaces/get-space-22389)\n- [Get space by org and URL](/doc/organizations/get-space-by-org-and-url-22388)\n- [Get spaces on organization](/doc/organizations/get-spaces-on-organization-22387)"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/podio/refs/heads/main/openapi/podio-items-api-openapi.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/podio/refs/heads/main/openapi/podio-items-api-openapi.yml",
+     "snippet": "description: 'Podio is a work management and collaboration platform. The Podio API\nprovides programmatic access to apps, items, tasks, webhooks, and\nrelated resources. Authentication is OAuth 2.0; pass the access\ntoken in the `Authorization: OAuth2 <access_token>` header on API\nrequests. This specification captures a representative subset of\nendpoints from https://developers.podio.com/doc.\n'"
+    },
+    {
+     "url": "https://developers.podio.com/doc/views/get-view-27450",
+     "title": "Views | Get view - Podio API Documentation",
+     "snippet": "# Podio API Documentation\n## [Views](https://developers.podio.com/doc/filters): Get view\nReturns the definition for the given view. The view can be either a view id, a standard view or \"last\" for the last view used.\n**Parameters**\n- ****app_id******* Required.\n- ****view_id_or_name******* Required.\n**Response** `{ \"sort_by\": How the results should be sorted, see the area for details. \"sort_desc\": True if the result should sorted descending, false otherwise, \"filters\": The filters on this view [ { \"key\": The key of the filter (see the area for details), \"values\": The value(s) to be used for filtering, depends on the type of field. See the area for details. \"humanized_values\": A human-friendly text representation of values, }, ... (more filters) ], \"fields\": Any specific settings for fields { \"{field_id}\": The setting for the given field { \"delta_offset\": The offset from the fields normal delta, \"width\": Any specific width the field is rendered as, \"hidden\": True if the field is hidden, False otherwise, \"use\": The use of the column either \"x_axis\" or \"y_axis\", if any }, ... (more fields) }, \"groupings\": individual groups data, if grouping is present, otherwise {} { \"total\": total cou"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Podio podio.com MCP server Model Context Protocol official",
+   "log_id": "log_UidbHAJ6cxEz",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://mcp.podio.com",
+     "title": "mcp.podio.com",
+     "snippet": "Server\",\"version\":\"2.0.0\",\"description\":\"MCP server exposing Podio API tools for integration with ChatGPT, Copilot Studio, and other MCP-compatible clients.\",\"transport\":\"Streamable HTTP (POST /mcp)\",\"mcp_endpoint\":\"/mcp\",\"authentication\":{\"type\":\"oauth2\",\"flow\":\"authorization_code\",\"authorization_url\":\"https://mcp.podio.com/oauth/authorize\",\"token_url\":\"https://mcp.podio.com/oauth/token\",\"discovery_url\":\"https://mcp.podio.com/.well-known/oauth-authorization-server\",\"description\":\"OAuth2"
+    },
+    {
+     "url": "https://help.podia.com/en/articles/16664966-getting-started-with-podia-mcp",
+     "title": "Getting started with Podia MCP",
+     "snippet": "**Podia MCP** is a Model Context Protocol server that connects your Podia account to AI tools such as Claude and ChatGPT.\nOnce connected, you can ask the AI to browse products, search contacts, draft email broadcasts, create content, and more, all from a single conversation.\n# What's an MCP?\nAn MCP, or **Model Context Protocol**, is an open standard that lets AI tools securely connect to external apps and services. An MCP server acts as a bridge between the AI and a connected service, allowing the AI to access information and perform supported actions based on your instructions.\nWith Podia MCP, you can ask an AI tool to work with your Podia account, such as browsing products, searching contacts, drafting email broadcasts, creating content, and more.\nPodia MCP helps streamline administrative work and makes it easier to find information that might otherwise require navigating several areas of your account.\n## How it works\nUsing Podia MCP involves three steps:\n1. **Ask:** Describe what you want to accomplish in plain language.\n2. **Build:** Podia MCP finds information, completes supported actions, or creates content based on your request.\n3. **Review:** Open your Podia Admin dashboard"
+    },
+    {
+     "url": "https://progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide",
+     "title": "Podio AI & MCP Podio MCP Server Integration Guide - Progress Podio",
+     "snippet": "The Podio MCP (Model Context Protocol) Server connects AI assistants \u2014 **ChatGPT, Microsoft Copilot Studio, Claude Desktop**, and any other MCP-compatible platform \u2014 directly to your Podio data. Once connected, your AI assistant can read and write your Podio workspaces, apps, and items using plain natural language.\n**No coding required to get started**. The server is live at **[https://mcp.podio.com](https://mcp.podio.com)** \u2014 just point your AI platform at it and log in with your Podio account.\n> **Beta notice:**\n>\n> The Podio MCP Server is currently in *beta* and is intended for evaluation and testing. Features, limits, and behavior may change before general availability.\n## What You Can Do\nThe Podio MCP Server gives your AI assistant 22 tools covering both reading and writing your Podio data:\n| Category | Examples |\n|---|---|\n| Browse | List organizations, workspaces, apps, and members |\n| Read data | Fetch items with full field values, filter and search across your account |\n| Write data | Create and update items, post comments |\n| Tasks | Create, update, reassign, and complete tasks |\n| Notifications | Read recent activity and notifications |\n\nThe server uses **shared default "
+    },
+    {
+     "url": "https://martechdb.com/vendors/podio",
+     "title": "Podio MCP server review: official URL and setup for Claude, ChatGPT and Cursor",
+     "snippet": "# Podio MCP server\nYes. Podio publishes an official MCP server at https://mcp.podio.com/mcp. It's hosted and lets you sign in with your Podio account. It offers 27 tools. We last checked it on 23 Nov 2026.\nOfficial: answers MCP requests at mcp.podio.com, on Podio's own domain podio.com. Checked 23 Nov 2026. Maintained by [Stuart Brameld](https://martechdb.com/methodology#who).\n\n### Does Podio have an official MCP server?\nYes. Podio publishes its MCP server itself. Its address is on Podio's own domain (mcp.podio.com). MartechDB only lists servers a vendor publishes, never community copies.\n### What is the Podio MCP server URL?\nThe address is https://mcp.podio.com/mcp."
+    },
+    {
+     "url": "https://podium.build/docs/recipes/mcp-server",
+     "title": "Recipe: Build a Claude MCP Server",
+     "snippet": "Build a full MCP server that lets Claude (or any MCP client) search products, manage taste profiles, execute purchases, create bounties, and check loyalty balances \u2014 all through natural conversation.\n##\n\u200b\nWhat You\u2019ll Build\n##\n\u200b\nPrerequisites\n```\nmkdir podium-mcp-server && cd podium-mcp-server\nnpm init -y\nnpm install @modelcontextprotocol/sdk @podium-sdk/node-sdk zod\nnpm install -D typescript @types/node\n```\n```\n// tsconfig.json\n{\n\"compilerOptions\": {\n\"target\": \"ES2022\",\n\"module\": \"Node16\",\n\"moduleResolution\": \"Node16\",\n\"outDir\": \"./dist\",\n\"strict\": true,\n\"esModuleInterop\": true\n},\n\"include\": [\"src\"]\n}\n```\n##\n\u200b\nThe Complete Server\n```\n// src/index.ts\nimport { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';\nimport { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';\nimport { createPodiumClient } from '@podium-sdk/node-sdk';\nimport { z } from 'zod';\nconst client = createPodiumClient({\napiKey: process.env.PODIUM_API_KEY!,\n});\nconst server = new McpServer({\nname: 'podium-commerce',\nversion: '1.0.0',\n});\n// --- Product Discovery ---\nserver.tool(\n'search_products',\n{\ncategories: z.string().optional().describe('Comma-separated category filter'),\nlimit: z.n"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

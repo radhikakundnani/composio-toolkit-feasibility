@@ -1,0 +1,35 @@
+{
+  "id": 15,
+  "app": "Pylon",
+  "category": "Support and Helpdesk",
+  "one_liner": "B2B customer support platform across Slack, Teams, email and chat.",
+  "auth_methods": [
+    "bearer_token",
+    "oauth2"
+  ],
+  "auth_primary": "bearer_token",
+  "access": "unknown",
+  "access_notes": "Admin users create API tokens in Settings; evidence does not state whether free trial or paid plan is needed.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "other",
+  "blocker_note": "Plan/trial requirement for API access not shown in evidence.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "low",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "access": "https://docs.usepylon.com/pylon-docs/developer/api",
+    "surface": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts",
+    "mcp": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp"
+  }
+}

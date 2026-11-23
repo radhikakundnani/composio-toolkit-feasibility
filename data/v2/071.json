@@ -1,0 +1,36 @@
+{
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity / Docs",
+  "one_liner": "Workspace for notes, docs, and databases with a REST API.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Create a connection in the Developer portal on any plan, including Free; internal token or OAuth for public integrations.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://mcp.notion.com/mcp (Notion MCP)",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.notion.com/guides/authorization/overview",
+    "access": "https://activepieces.com/blog/notion-api-quickstart-get-a-key-and-make-your-first-call",
+    "surface": "https://developers.notion.com/reference",
+    "mcp": "https://developers.notion.com/guides/mcp"
+  },
+  "verified": true
+}

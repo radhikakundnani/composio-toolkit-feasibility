@@ -1,0 +1,13 @@
+{
+  "id": 32,
+  "app": "Meta Ads",
+  "changes": [],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 2
+}

@@ -1,0 +1,13 @@
+{
+ "id": 88,
+ "app": "Brex",
+ "changes": [],
+ "confirmed": [
+  "mcp official (beta, developer.brex.com/docs/mcp)",
+  "access approval_required",
+  "auth_primary bearer_token",
+  "verdict",
+  "blocker"
+ ],
+ "searches": 3
+}

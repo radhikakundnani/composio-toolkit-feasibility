@@ -1,0 +1,37 @@
+{
+ "id": 64,
+ "app": "Cloudflare",
+ "category": "Cloud infrastructure / CDN",
+ "one_liner": "Network and edge platform: DNS, CDN, security, Workers and Zero Trust.",
+ "auth_methods": [
+  "bearer_token",
+  "api_key",
+  "oauth2"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "self_serve_free",
+ "access_notes": "Create a scoped API token in a Cloudflare account; free plan exists for many endpoints. OAuth clients also creatable.",
+ "api_types": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://github.com/cloudflare/mcp; managed remote MCP servers on developers.cloudflare.com",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developers.cloudflare.com/api/resources/user/subresources/tokens/methods/create",
+  "access": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+  "surface": "https://developers.cloudflare.com/api",
+  "mcp": "https://github.com/cloudflare/mcp"
+ }
+}

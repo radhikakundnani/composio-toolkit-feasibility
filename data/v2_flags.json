@@ -1,0 +1,834 @@
+{
+ "url_status": {
+  "https://activepieces.com/blog/notion-api-quickstart-get-a-key-and-make-your-first-call": 200,
+  "https://airtable.com/developers/agents/mcp/getting-started": 200,
+  "https://airtable.com/developers/web/api/authentication.md": 200,
+  "https://airtable.com/developers/web/api/list-records.md": 200,
+  "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1": 200,
+  "https://api.docs.dealcloud.com/docs/apikeys": 200,
+  "https://api.docs.dealcloud.com/docs/data/rows/get": 200,
+  "https://api.docs.dealcloud.com/docs/token": 200,
+  "https://api.docs.dealcloud.com/mcp/getting-started": 200,
+  "https://api.slack.com/authentication/oauth-v2": 200,
+  "https://api.slack.com/docs/developer-sandbox": 200,
+  "https://apidocs.fan": 200,
+  "https://apify.com/pricing.md": 200,
+  "https://atlassian.com/software/jira/guides/more/jira-editions": 200,
+  "https://attio.com/pricing": 200,
+  "https://cake-com.github.io/pumble-node-sdk/authorization.html": 200,
+  "https://close.com/pricing": 200,
+  "https://coda.io/developers/apis/v1?ad_group_id=137901396152&ad_id=REMOVED&campaign_id=17400847121": 200,
+  "https://community.coda.io/t/accessing-coda-api-from-a-3rd-party-software/47539": 200,
+  "https://copper.com/mcp": 200,
+  "https://core.telegram.org/api/obtaining_api_id": 200,
+  "https://core.telegram.org/bots/api": 200,
+  "https://datadoghq.com/blog/datadog-api-authentication": 200,
+  "https://dataforseo.com/model-context-protocol": 200,
+  "https://dataforseo.com/pricing": 200,
+  "https://dev.frontapp.com/docs/mcp-server": 200,
+  "https://dev.frontapp.com/docs/oauth": 200,
+  "https://dev.frontapp.com/docs/partnering-with-front": 200,
+  "https://dev.frontapp.com/reference/introduction": 200,
+  "https://developer-docs.amazon.com/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow": 200,
+  "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview": 200,
+  "https://developer-docs.amazon.com/sp-api/reference": 200,
+  "https://developer-docs.ramp.com/docs/oauth-20": 403,
+  "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools": 200,
+  "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token": 200,
+  "https://developer.adobe.com/commerce/webapi/get-started/create-integration": 200,
+  "https://developer.aircall.io/api-references": 200,
+  "https://developer.aircall.io/docs/authentication": 200,
+  "https://developer.aircall.io/docs/public-vs-private-app": 200,
+  "https://developer.atlassian.com/cloud/jira/platform/rest/v2": 200,
+  "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps": 200,
+  "https://developer.atlassian.com/cloud/rovo-mcp": 200,
+  "https://developer.bigcommerce.com/api-docs/getting-started/basics/api-environment": 200,
+  "https://developer.bigcommerce.com/developer/docs/beta/store-management-mcp": 200,
+  "https://developer.brex.com/docs/mcp": 200,
+  "https://developer.brex.com/docs/partner_onboarding": 200,
+  "https://developer.brex.com/guides/authentication": 200,
+  "https://developer.brex.com/openapi/team_api.md": 200,
+  "https://developer.clickup.com/docs/apis-available-by-plan": 200,
+  "https://developer.clickup.com/docs/authentication": 200,
+  "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server": 200,
+  "https://developer.clickup.com/openapi/clickup-api-v2-reference.json": 200,
+  "https://developer.close.com/api/overview": 200,
+  "https://developer.close.com/integrations": 200,
+  "https://developer.close.com/mcp": 200,
+  "https://developer.copper.com/introduction/authentication.html": 200,
+  "https://developer.copper.com/leads/list-leads-search.html": 200,
+  "https://developer.gladly.com/rest": 200,
+  "https://developer.helpscout.com/llms.txt": 200,
+  "https://developer.helpscout.com/mailbox-api/overview/authentication": 200,
+  "https://developer.intuit.com/docs/api/accounting": 404,
+  "https://developer.monday.com/api-reference/docs/developer-sandbox": 200,
+  "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp": 200,
+  "https://developer.monday.com/api-reference/docs/introduction-to-graphql": 200,
+  "https://developer.monday.com/apps/docs/choosing-auth": 200,
+  "https://developer.pinterest.com/about-pinterest-mcp": 200,
+  "https://developer.pinterest.com/docs/getting-started/set-up-authentication-and-authorization": 200,
+  "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html": 403,
+  "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html": 403,
+  "https://developer.salesforce.com/docs/commerce/commerce-api/references/about-commerce-api/about.html": 403,
+  "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/agentic-mcp-shopper-tools-quick-start.html": 403,
+  "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html": 403,
+  "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html": 403,
+  "https://developer.salesforce.com/docs/platform/api-rest/guide/resources-list.html": 403,
+  "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html": 403,
+  "https://developer.systeme.io/docs/mcp-server": 200,
+  "https://developer.systeme.io/llms.txt": 200,
+  "https://developer.vonage.com/en/api/developer/numbers": 200,
+  "https://developer.vonage.com/en/getting-started/concepts/authentication": 200,
+  "https://developer.vonage.com/en/mcp-server/technical-details": 200,
+  "https://developer.vonage.com/en/messages/getting-started": 200,
+  "https://developer.woocommerce.com/docs/apis/rest-api/authentication": 200,
+  "https://developer.woocommerce.com/docs/apis/rest-api/v3": 200,
+  "https://developer.woocommerce.com/docs/features/mcp": 200,
+  "https://developer.xero.com/documentation/api/Accounts": 200,
+  "https://developer.xero.com/documentation/guides/remote-mcp/overview": 200,
+  "https://developer.xero.com/faq": 200,
+  "https://developer.xero.com/pricing": 200,
+  "https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_fields": 200,
+  "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development": 200,
+  "https://developer.zendesk.com/documentation/authentication/api-tokens-to-oauth": 200,
+  "https://developers.asana.com/docs/authentication": 200,
+  "https://developers.asana.com/docs/developer-sandbox.md": 200,
+  "https://developers.asana.com/docs/integrating-with-asanas-mcp-server": 200,
+  "https://developers.asana.com/reference/rest-api-reference": 200,
+  "https://developers.binance.com/en/docs/agent-native/mcp-server": 202,
+  "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/rest-api/general": 202,
+  "https://developers.binance.com/en/docs/products/oms/Fast-API/base-urls": 202,
+  "https://developers.binance.com/en/docs/products/oms/integration-guide": 202,
+  "https://developers.clay.com/public-api/authentication": 200,
+  "https://developers.clay.com/routines/api": 200,
+  "https://developers.cloudflare.com/api": 200,
+  "https://developers.cloudflare.com/changelog/post/2026-06-03-public-oauth-clients": 200,
+  "https://developers.facebook.com/docs/marketing-api/access": 200,
+  "https://developers.facebook.com/docs/marketing-apis": 200,
+  "https://developers.facebook.com/docs/whatsapp/access-tokens": 200,
+  "https://developers.facebook.com/docs/whatsapp/cloud-api": 200,
+  "https://developers.facebook.com/docs/whatsapp/permissions": 200,
+  "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md": 200,
+  "https://developers.facebook.com/documentation/mcp": 200,
+  "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp": 200,
+  "https://developers.facebook.com/documentation/threads/create-posts": 200,
+  "https://developers.facebook.com/documentation/threads/get-started/get-access-tokens-and-permissions": 200,
+  "https://developers.facebook.com/documentation/threads/reference.md": 200,
+  "https://developers.fathom.ai/api-reference": 200,
+  "https://developers.fathom.ai/faq": 200,
+  "https://developers.fathom.ai/mcp-docs": 200,
+  "https://developers.freshdesk.com/api": 200,
+  "https://developers.google.com/google-ads/api/docs/api-policy/access-levels.md.txt": 200,
+  "https://developers.google.com/google-ads/api/reference/rpc/v25/overview": 200,
+  "https://developers.google.com/google-ads/api/rest/auth": 200,
+  "https://developers.google.com/notebook/docs/authentication": 200,
+  "https://developers.google.com/notebook/docs/mcp": 200,
+  "https://developers.google.com/notebook/docs/rate-limits": 200,
+  "https://developers.gorgias.com": 200,
+  "https://developers.gorgias.com/llms.txt": 200,
+  "https://developers.gorgias.com/reference/authentication": 200,
+  "https://developers.grain.com/authentication.html": 200,
+  "https://developers.grain.com/endpoints.html": 200,
+  "https://developers.hubspot.com/developer-platform-basics": 200,
+  "https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis": 200,
+  "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview": 200,
+  "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server": 200,
+  "https://developers.intercom.com/building-apps/docs/authentication-types": 200,
+  "https://developers.intercom.com/docs/build-an-integration/getting-started": 200,
+  "https://developers.intercom.com/docs/guides/mcp": 200,
+  "https://developers.intercom.com/docs/references/rest-api/api.intercom.io.md": 200,
+  "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server_available_tools": 200,
+  "https://developers.klaviyo.com/en/docs/set_up_oauth": 200,
+  "https://developers.klaviyo.com/en/reference/get_profiles": 200,
+  "https://developers.klaviyo.com/en/v2024-02-15/docs/build_your_integration": 200,
+  "https://developers.notion.com/guides/authorization/overview": 200,
+  "https://developers.notion.com/guides/mcp": 200,
+  "https://developers.notion.com/reference": 200,
+  "https://developers.pinterest.com/docs/api/v5/pins-list": 200,
+  "https://developers.pinterest.com/docs/key-concepts/developer-guidelines": 200,
+  "https://developers.pipedrive.com/docs/api/v1/Deals": 200,
+  "https://developers.pipedrive.com/docs/api/v1/Oauth": 200,
+  "https://developers.podio.com/authentication": 200,
+  "https://developers.podio.com/index/api": 200,
+  "https://developers.podio.com/index/faq": 200,
+  "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server": 200,
+  "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication": 200,
+  "https://developers.smartsheet.com/api/smartsheet/guides/getting-started": 200,
+  "https://developers.smartsheet.com/api/smartsheet/openapi.md": 200,
+  "https://developers.squarespace.com/commerce-apis/products": 200,
+  "https://developers.squarespace.com/mcp/connect-a-client": 200,
+  "https://developers.squarespace.com/oauth": 200,
+  "https://devin.ai/pricing": 200,
+  "https://docs.ahrefs.com/docs/mcp/introduction": 200,
+  "https://docs.ahrefs.com/en/api": 200,
+  "https://docs.ahrefs.com/llms.txt": 200,
+  "https://docs.ahrefs.com/openapi.json": 200,
+  "https://docs.apify.com/api/v2": 200,
+  "https://docs.apify.com/integrations/api": 200,
+  "https://docs.apify.com/mcp": 200,
+  "https://docs.attio.com/mcp/overview": 200,
+  "https://docs.attio.com/rest-api/endpoint-reference/records/list-records": 200,
+  "https://docs.attio.com/rest-api/guides/authentication": 200,
+  "https://docs.bigcommerce.com/developer/api-reference/rest/admin/catalog/products/get-products": 200,
+  "https://docs.bigcommerce.com/developer/docs/overview/sandboxes": 200,
+  "https://docs.brightdata.com/api-reference/authentication": 200,
+  "https://docs.brightdata.com/general/account/billing-and-pricing/free-tier": 200,
+  "https://docs.brightdata.com/products/mcp-server/remote/oauth": 200,
+  "https://docs.brightdata.com/products/scrapers/fetch-api/send-first-request": 200,
+  "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks": 200,
+  "https://docs.consensus.app/api-get-started": 403,
+  "https://docs.consensus.app/api-plans-and-access": 403,
+  "https://docs.consensus.app/consensus-mcp": 403,
+  "https://docs.consensus.app/enterprise/connection-reference": 403,
+  "https://docs.datadoghq.com/api/latest.md": 200,
+  "https://docs.datadoghq.com/api/latest/authentication": 200,
+  "https://docs.datadoghq.com/mcp_server": 200,
+  "https://docs.dataforseo.com/v3.md": 200,
+  "https://docs.dataforseo.com/v3/auth": 200,
+  "https://docs.devin.ai/api-reference": 200,
+  "https://docs.devin.ai/api-reference/authentication": 200,
+  "https://docs.devin.ai/work-with-devin/devin-mcp": 200,
+  "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review": 200,
+  "https://docs.discord.com/developers/reference": 200,
+  "https://docs.ecwid.com/api-reference/advanced/rest-api-calls": 200,
+  "https://docs.ecwid.com/get-started/make-your-first-api-request": 200,
+  "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid": 200,
+  "https://docs.firecrawl.dev/api-reference": 200,
+  "https://docs.firecrawl.dev/authentication": 200,
+  "https://docs.firecrawl.dev/mcp-server": 200,
+  "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api": 200,
+  "https://docs.github.com/rest/repos": 200,
+  "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546": 200,
+  "https://docs.helpscout.com/article/1140-mailbox-api": 200,
+  "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports": 200,
+  "https://docs.higgsfield.ai/docs/authentication": 200,
+  "https://docs.higgsfield.ai/docs/openapi.json": 200,
+  "https://docs.mrscraper.com/docs/api/authentication": 200,
+  "https://docs.mrscraper.com/docs/getting-started/mcp-server": 200,
+  "https://docs.mrscraper.com/docs/guides/programmatically": 200,
+  "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api": 200,
+  "https://docs.ramp.com/developer-api/v1/reference/rest/transactions": 200,
+  "https://docs.ramp.com/llms-guides/ramp-mcp.txt": 200,
+  "https://docs.reducto.ai/agent-guide": 200,
+  "https://docs.reducto.ai/api-reference/parse": 200,
+  "https://docs.reducto.ai/mcp-server": 200,
+  "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication": 200,
+  "https://docs.sendgrid.com/api-reference/mail-send/mail-send": 200,
+  "https://docs.sentry.io/ai/mcp": 200,
+  "https://docs.sentry.io/api/auth": 200,
+  "https://docs.sentry.io/api/requests": 200,
+  "https://docs.sentry.io/pricing": 200,
+  "https://docs.slack.dev/ai/slack-mcp-server": 200,
+  "https://docs.slack.dev/apis/web-api": 200,
+  "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication": 200,
+  "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/reference": 200,
+  "https://docs.snowflake.com/en/sql-reference/sql/create-mcp-server": 200,
+  "https://docs.stripe.com/mcp": 200,
+  "https://docs.stripe.com/stripe-apps/api-authentication/oauth": 200,
+  "https://docs.stripe.com/test-mode": 200,
+  "https://docs.twenty.com/developers/api-and-webhooks/api": 200,
+  "https://docs.twenty.com/developers/extend/mcp": 200,
+  "https://docs.twenty.com/developers/extend/oauth": 200,
+  "https://docs.usepylon.com/pylon-docs/developer/api": 200,
+  "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/accounts": 200,
+  "https://docs.usepylon.com/pylon-docs/developer/api/authentication": 200,
+  "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp": 200,
+  "https://docs.waterfall.io/v1/authentication": 200,
+  "https://docs.waterfall.io/v1/book-demo": 200,
+  "https://docs.waterfall.io/v1/introduction": 200,
+  "https://firecrawl.dev/pricing": 200,
+  "https://github.com/Burnsedia/sherlock-mcp/blob/master/README.md": 200,
+  "https://github.com/Garoth/sendgrid-mcp/blob/main/README.md": 200,
+  "https://github.com/amzn/selling-partner-agentic-toolkit": 200,
+  "https://github.com/andrewginns/mermaid-mcp-server": 200,
+  "https://github.com/baguskto/threads-mcp": 404,
+  "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md?plain=1": 200,
+  "https://github.com/cappyeo/discord-mcp": 200,
+  "https://github.com/cloudflare/mcp": 200,
+  "https://github.com/github/github-mcp-server": 200,
+  "https://github.com/googleads/google-ads-mcp/blob/main/README.md": 200,
+  "https://github.com/intuit/quickbooks-online-mcp-server": 200,
+  "https://github.com/mermaid-js/mermaid-cli/tree/master": 200,
+  "https://github.com/mharnett/mcp-linkedin-ads": 200,
+  "https://github.com/neo4j/mcp": 200,
+  "https://github.com/netlify/netlify-mcp": 200,
+  "https://github.com/netlify/open-api/blob/HEAD/swagger.yml": 200,
+  "https://github.com/sherlock-project/sherlock/blob/master/sherlock_project/sherlock.py": 200,
+  "https://gopaygent.com": 200,
+  "https://gopaygent.com/developers/docs": 200,
+  "https://gopaygent.com/signup": 200,
+  "https://grain.com/release-note/06-18-2025": 200,
+  "https://gumroad.com/api": 200,
+  "https://gumroad.com/help/article/280-create-application-api": 200,
+  "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad": 200,
+  "https://help.coda.io/hc/en-us/articles/44722756780173-Using-the-Coda-MCP": 403,
+  "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication": 200,
+  "https://help.getharvest.com/api-v2/introduction/overview/general": 200,
+  "https://help.gladly.com/generate-api-tokens-and-create-webhooks": 200,
+  "https://help.gohighlevel.com/support/solutions/articles/155000003054-private-integrations-everything-you-need-to-know": 200,
+  "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server": 200,
+  "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation": 200,
+  "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server": 403,
+  "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API": 403,
+  "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api": 200,
+  "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-connect-higgsfield-to-ai-agent": 200,
+  "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api": 200,
+  "https://integrations.sh/otter.ai": 200,
+  "https://ipayx.ai/docs/api": 200,
+  "https://ipayx.ai/docs/mcp-server": 200,
+  "https://ipayx.ai/mcp": 200,
+  "https://ipayx.ai/pricing": 200,
+  "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access": 200,
+  "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08": 200,
+  "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2025-11": 200,
+  "https://linear.app/developers/graphql": 200,
+  "https://linear.app/docs/mcp": 200,
+  "https://linear.app/pricing.md": 200,
+  "https://liveagent.com/pricing": 200,
+  "https://mailchimp.com/developer/marketing/api-concepts/authentication": 200,
+  "https://mailchimp.com/developer/marketing/api-concepts/methods-and-parameters": 200,
+  "https://mailchimp.com/developer/marketing/build/get-started/generate-your-api-key": 200,
+  "https://mailchimp.com/help/use-mailchimp-connector-claude": 200,
+  "https://marketplace.gohighlevel.com/docs/oauth/external-auth/OAuth2": 200,
+  "https://mcp.podio.com": 200,
+  "https://mongodb.com/docs/atlas/api/api-authentication": 200,
+  "https://mongodb.com/docs/atlas/api/atlas-admin-api-ref": 200,
+  "https://mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster": 200,
+  "https://mongodb.com/docs/mcp-server/overview": 200,
+  "https://mrscraper.com/pricing": 200,
+  "https://neo4j.com/docs/aura/api/authentication": 200,
+  "https://neo4j.com/docs/aura/classic/platform/api/authentication": 404,
+  "https://neo4j.com/docs/query-api/current/query": 200,
+  "https://netlify.com/pricing.md": 200,
+  "https://onegtmlab.dev/tool-directory/crm/copper": 200,
+  "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token": 200,
+  "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/group/overview": 200,
+  "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction": 200,
+  "https://open.larksuite.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN": 200,
+  "https://pipedrive.com/en/features/mcp-server": 200,
+  "https://pipedrive.com/en/pricing": 403,
+  "https://pitchbook.com/api-agreement": 403,
+  "https://pitchbook.com/help/pitchbook-api": 403,
+  "https://pitchbook.com/media/press-releases/pitchbook-launches-an-agentic-platform-assistant-and-new-pitchbook-data-mcp-to-meet-investors-rapidly-evolving-workflow-needs": 403,
+  "https://plaid.com/docs/account/billing": 200,
+  "https://plaid.com/docs/api": 200,
+  "https://plaid.com/docs/quickstart": 200,
+  "https://plaid.com/docs/resources/mcp": 200,
+  "https://plain.com/docs/api-reference/graphql/authentication": 200,
+  "https://plain.com/docs/graphql/introduction": 200,
+  "https://plain.com/docs/integrations/mcp-server": 200,
+  "https://plain.com/llms.txt": 200,
+  "https://popmcp.com/mcp-servers/ecwid": 200,
+  "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration": 200,
+  "https://pumble.com/mcp": 200,
+  "https://ramp.com/legal/developer-terms/developer-terms/api-agreement": 200,
+  "https://raw.githubusercontent.com/api-evangelist/magento-2/refs/heads/main/apis.yml": 200,
+  "https://raw.githubusercontent.com/chaindead/telegram-mcp/main/README.md": 200,
+  "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json": 200,
+  "https://reducto.ai/pricing": 200,
+  "https://seranking.com/api-pricing.html": 200,
+  "https://seranking.com/api/data/domain-analysis": 200,
+  "https://seranking.com/api/data/getting-started": 200,
+  "https://seranking.com/api/integrations/mcp": 200,
+  "https://shopify.dev/docs/agents/catalog/storefront-catalog": 200,
+  "https://shopify.dev/docs/api/admin-rest/latest/resources/product": 200,
+  "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens": 200,
+  "https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard": 200,
+  "https://signup.snowflake.com": 200,
+  "https://stackone.com/connectors/gladly/mcp": 200,
+  "https://static.developer.intuit.com/output_html/qbo/docs/develop/authentication-and-authorization/oauth-2.0.html": 200,
+  "https://static.developer.intuit.com/output_html/qbo/docs/get-started/partner-faq.html": 200,
+  "https://stripe.com/docs/api": 200,
+  "https://supabase.com/docs/guides/ai-tools/mcp": 200,
+  "https://supabase.com/docs/reference/api/introduction": 200,
+  "https://supabase.com/openapi.json": 200,
+  "https://supabase.com/pricing": 200,
+  "https://support.aircall.io/en-gb/articles/39677926959517": 200,
+  "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api": 200,
+  "https://support.freshdesk.com/support/solutions/articles/50000011778-understanding-freshdesk-pricing-plans": 200,
+  "https://support.freshdesk.com/support/solutions/articles/50000014407": 200,
+  "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API": 403,
+  "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP": 403,
+  "https://support.grain.com/en/articles/15507288-grain-api": 200,
+  "https://support.liveagent.com/647358-MCP-Integration-for-agents": 200,
+  "https://support.liveagent.com/741982-API-key": 200,
+  "https://support.liveagent.com/911737-API-v3": 200,
+  "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Overview-of-60-Day-Free-Trial-Plans-for-New-SendGrid-Accounts": 200,
+  "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys": 200,
+  "https://support.zendesk.com/hc/en-us/articles/11400026079130": 200,
+  "https://systeme.io/pricing": 200,
+  "https://transcriptapi.com/blog/build-youtube-monitoring-agent": 200,
+  "https://transcriptapi.com/docs/api": 200,
+  "https://transcriptapi.com/docs/mcp": 200,
+  "https://transcriptapi.com/openapi.json": 200,
+  "https://twenty.com/pricing": 200,
+  "https://twilio.com/docs/ai/mcp": 200,
+  "https://twilio.com/docs/usage/api-security-reference-guide/secure-auth": 200,
+  "https://twilio.com/docs/usage/trials": 200,
+  "https://twilio.com/docs/voice/api": 200,
+  "https://university.clay.com/docs/clay-api-cli": 200,
+  "https://university.clay.com/docs/connect-to-clay-mcp": 200,
+  "https://vercel.com/docs/agent-resources/vercel-mcp": 200,
+  "https://vercel.com/docs/rest-api": 200,
+  "https://vercel.com/docs/rest-api/getting-started": 200,
+  "https://zoho.com/cliq/help/platform/zoho-cliq-mcp.html": 200,
+  "https://zoho.com/cliq/help/restapi/v2": 200,
+  "https://zoho.com/cliq/help/restapi/v3/oauth": 200,
+  "https://zoho.com/cliq/pricing.html": 200,
+  "https://zoho.com/crm/developer/docs/api/v8/api-limits.html": 200,
+  "https://zoho.com/crm/developer/docs/api/v8/get-records.html?source_from=developer-docs": 200,
+  "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html": 200,
+  "https://zoho.com/crm/developer/docs/mcp/overview.html": 200
+ },
+ "apps": {
+  "1": {
+   "app": "Salesforce",
+   "flags": []
+  },
+  "2": {
+   "app": "HubSpot",
+   "flags": []
+  },
+  "3": {
+   "app": "Pipedrive",
+   "flags": []
+  },
+  "4": {
+   "app": "Attio",
+   "flags": []
+  },
+  "5": {
+   "app": "Twenty",
+   "flags": []
+  },
+  "6": {
+   "app": "Podio",
+   "flags": []
+  },
+  "7": {
+   "app": "Zoho CRM",
+   "flags": []
+  },
+  "8": {
+   "app": "Close",
+   "flags": []
+  },
+  "9": {
+   "app": "Copper",
+   "flags": []
+  },
+  "10": {
+   "app": "DealCloud",
+   "flags": []
+  },
+  "11": {
+   "app": "Zendesk",
+   "flags": []
+  },
+  "12": {
+   "app": "Intercom",
+   "flags": []
+  },
+  "13": {
+   "app": "Freshdesk",
+   "flags": []
+  },
+  "14": {
+   "app": "Front",
+   "flags": []
+  },
+  "15": {
+   "app": "Pylon",
+   "flags": []
+  },
+  "16": {
+   "app": "LiveAgent",
+   "flags": []
+  },
+  "17": {
+   "app": "Plain",
+   "flags": []
+  },
+  "18": {
+   "app": "Help Scout",
+   "flags": []
+  },
+  "19": {
+   "app": "Gorgias",
+   "flags": []
+  },
+  "20": {
+   "app": "Gladly",
+   "flags": [
+    "low_conf:mcp"
+   ]
+  },
+  "21": {
+   "app": "Slack",
+   "flags": []
+  },
+  "22": {
+   "app": "Twilio",
+   "flags": []
+  },
+  "23": {
+   "app": "Zoho Cliq",
+   "flags": []
+  },
+  "24": {
+   "app": "Lark (Larksuite)",
+   "flags": []
+  },
+  "25": {
+   "app": "Pumble",
+   "flags": []
+  },
+  "26": {
+   "app": "Discord",
+   "flags": []
+  },
+  "27": {
+   "app": "Telegram",
+   "flags": []
+  },
+  "28": {
+   "app": "WhatsApp Business",
+   "flags": []
+  },
+  "29": {
+   "app": "Aircall",
+   "flags": [
+    "low_conf:access"
+   ]
+  },
+  "30": {
+   "app": "Vonage",
+   "flags": []
+  },
+  "31": {
+   "app": "Google Ads",
+   "flags": [
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "32": {
+   "app": "Meta Ads",
+   "flags": []
+  },
+  "33": {
+   "app": "LinkedIn Ads",
+   "flags": []
+  },
+  "34": {
+   "app": "GoHighLevel",
+   "flags": []
+  },
+  "35": {
+   "app": "Mailchimp",
+   "flags": []
+  },
+  "36": {
+   "app": "Klaviyo",
+   "flags": []
+  },
+  "37": {
+   "app": "systeme.io",
+   "flags": []
+  },
+  "38": {
+   "app": "Pinterest",
+   "flags": []
+  },
+  "39": {
+   "app": "Threads (Meta)",
+   "flags": [
+    "dead_link:mcp -> HTTP 404"
+   ]
+  },
+  "40": {
+   "app": "SendGrid",
+   "flags": []
+  },
+  "41": {
+   "app": "Shopify",
+   "flags": []
+  },
+  "42": {
+   "app": "WooCommerce",
+   "flags": []
+  },
+  "43": {
+   "app": "BigCommerce",
+   "flags": []
+  },
+  "44": {
+   "app": "Salesforce Commerce Cloud",
+   "flags": []
+  },
+  "45": {
+   "app": "Magento (Adobe Commerce)",
+   "flags": [
+    "low_conf:mcp"
+   ]
+  },
+  "46": {
+   "app": "Squarespace",
+   "flags": []
+  },
+  "47": {
+   "app": "Ecwid",
+   "flags": []
+  },
+  "48": {
+   "app": "Gumroad",
+   "flags": []
+  },
+  "49": {
+   "app": "Amazon Selling Partner",
+   "flags": [
+    "citation:access not seen in any Composio tool output",
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "50": {
+   "app": "fanbasis",
+   "flags": [
+    "low_conf:mcp"
+   ]
+  },
+  "51": {
+   "app": "DataForSEO",
+   "flags": []
+  },
+  "52": {
+   "app": "SE Ranking",
+   "flags": []
+  },
+  "53": {
+   "app": "Ahrefs",
+   "flags": []
+  },
+  "54": {
+   "app": "MrScraper",
+   "flags": []
+  },
+  "55": {
+   "app": "Apify",
+   "flags": [
+    "mcp_provenance: official claimed from third-party source apify.com"
+   ]
+  },
+  "56": {
+   "app": "Firecrawl",
+   "flags": []
+  },
+  "57": {
+   "app": "Bright Data",
+   "flags": []
+  },
+  "58": {
+   "app": "Sherlock",
+   "flags": [
+    "identity: Many unrelated 'Sherlock' products (Sherlock Interview API, Synopsys, shebang, A"
+   ]
+  },
+  "59": {
+   "app": "Waterfall.io",
+   "flags": []
+  },
+  "60": {
+   "app": "Clay",
+   "flags": []
+  },
+  "61": {
+   "app": "GitHub",
+   "flags": [
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "62": {
+   "app": "Vercel",
+   "flags": []
+  },
+  "63": {
+   "app": "Netlify",
+   "flags": [
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "64": {
+   "app": "Cloudflare",
+   "flags": [
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "65": {
+   "app": "Supabase",
+   "flags": []
+  },
+  "66": {
+   "app": "Neo4j",
+   "flags": [
+    "dead_link:access -> HTTP 404",
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "67": {
+   "app": "Snowflake",
+   "flags": []
+  },
+  "68": {
+   "app": "MongoDB Atlas",
+   "flags": []
+  },
+  "69": {
+   "app": "Datadog",
+   "flags": []
+  },
+  "70": {
+   "app": "Sentry",
+   "flags": []
+  },
+  "71": {
+   "app": "Notion",
+   "flags": []
+  },
+  "72": {
+   "app": "Airtable",
+   "flags": []
+  },
+  "73": {
+   "app": "Linear",
+   "flags": []
+  },
+  "74": {
+   "app": "Jira",
+   "flags": []
+  },
+  "75": {
+   "app": "Asana",
+   "flags": []
+  },
+  "76": {
+   "app": "Monday.com",
+   "flags": []
+  },
+  "77": {
+   "app": "ClickUp",
+   "flags": []
+  },
+  "78": {
+   "app": "Coda",
+   "flags": []
+  },
+  "79": {
+   "app": "Smartsheet",
+   "flags": []
+  },
+  "80": {
+   "app": "Harvest",
+   "flags": [
+    "identity: Some results (support.greenhouse.io Harvest API v3) concern Greenhouse's unrelat"
+   ]
+  },
+  "81": {
+   "app": "Stripe",
+   "flags": []
+  },
+  "82": {
+   "app": "Plaid",
+   "flags": []
+  },
+  "83": {
+   "app": "Binance",
+   "flags": []
+  },
+  "84": {
+   "app": "Paygent Connect",
+   "flags": [
+    "unknown:access",
+    "unknown:api_breadth",
+    "low_conf:auth",
+    "low_conf:access",
+    "low_conf:surface",
+    "low_conf:mcp",
+    "identity: Probable match: gopaygent.com 'Paygent Connect' embedded-finance API platform (P"
+   ]
+  },
+  "85": {
+   "app": "iPayX",
+   "flags": []
+  },
+  "86": {
+   "app": "QuickBooks",
+   "flags": [
+    "dead_link:surface -> HTTP 404",
+    "mcp_provenance: GitHub source, confirm org belongs to vendor"
+   ]
+  },
+  "87": {
+   "app": "Xero",
+   "flags": []
+  },
+  "88": {
+   "app": "Brex",
+   "flags": []
+  },
+  "89": {
+   "app": "Ramp",
+   "flags": []
+  },
+  "90": {
+   "app": "PitchBook",
+   "flags": []
+  },
+  "91": {
+   "app": "NotebookLM",
+   "flags": [
+    "identity: Product renamed Gemini Notebook; two distinct APIs (personal preview vs Enterpri"
+   ]
+  },
+  "92": {
+   "app": "Otter AI",
+   "flags": []
+  },
+  "93": {
+   "app": "Fathom",
+   "flags": []
+  },
+  "94": {
+   "app": "Consensus",
+   "flags": []
+  },
+  "95": {
+   "app": "Reducto",
+   "flags": []
+  },
+  "96": {
+   "app": "Devin",
+   "flags": []
+  },
+  "97": {
+   "app": "higgsfield",
+   "flags": [
+    "identity: Hint names the CLI; API is a separate product with its own billing."
+   ]
+  },
+  "98": {
+   "app": "Mermaid CLI",
+   "flags": [
+    "identity: Mermaid Chart (mermaid.ai) and MERMAID API (readthedocs) are different products "
+   ]
+  },
+  "99": {
+   "app": "YouTube Transcript",
+   "flags": [
+    "identity: Hint is TranscriptAPI, a third-party service, not an official YouTube/Google API"
+   ]
+  },
+  "100": {
+   "app": "Grain",
+   "flags": []
+  }
+ }
+}

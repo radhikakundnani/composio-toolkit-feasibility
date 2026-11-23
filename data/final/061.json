@@ -1,0 +1,37 @@
+{
+ "id": 61,
+ "app": "GitHub",
+ "category": "Developer platform",
+ "one_liner": "Code hosting and collaboration platform with repos, PRs, issues and Actions.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "jwt_service_account"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Register an OAuth app or GitHub App, or create a personal access token; free with a GitHub account.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "GitHub MCP server (docs.github.com set-up-the-github-mcp-server)",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+  "access": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+  "surface": "https://docs.github.com/rest/repos",
+  "mcp": "https://github.com/github/github-mcp-server"
+ },
+ "verified": true
+}

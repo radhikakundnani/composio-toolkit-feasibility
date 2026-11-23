@@ -1,0 +1,35 @@
+{
+ "id": 59,
+ "app": "Waterfall.io",
+ "category": "B2B contact enrichment",
+ "one_liner": "B2B data API for prospecting, contact and company enrichment, email verification.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "auth_primary": "api_key",
+ "access": "approval_required",
+ "access_notes": "API access by approval: request key via website or book call; team reviews every request; pricing via contact.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "none_found",
+ "mcp_note": "",
+ "verdict": "needs_outreach",
+ "blocker": "contact_sales",
+ "blocker_note": "Keys issued only after manual approval; contact support@waterfall.io for access and pricing.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "medium",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://docs.waterfall.io/v1/authentication",
+  "access": "https://docs.waterfall.io/v1/book-demo",
+  "surface": "https://docs.waterfall.io/v1/introduction",
+  "mcp": ""
+ },
+ "verified": true
+}

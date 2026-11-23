@@ -1,0 +1,19 @@
+{
+  "id": 27,
+  "app": "Telegram",
+  "changes": [
+    {
+      "field": "blocker",
+      "from": "other",
+      "to": "narrow_api",
+      "why": "Bot API only acts as a bot; user-level access requires MTProto sessions - closest enum is narrow_api",
+      "evidence": "https://core.telegram.org/bots/tutorial"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary"
+  ],
+  "searches": 2
+}

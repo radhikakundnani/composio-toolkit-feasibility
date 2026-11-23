@@ -1,0 +1,11 @@
+{
+  "id": 10,
+  "app": "DealCloud",
+  "changes": [],
+  "confirmed": [
+    "mcp (api.docs.dealcloud.com, read-only, needs Celeste license)",
+    "access gated",
+    "verdict/blocker"
+  ],
+  "searches": 3
+}

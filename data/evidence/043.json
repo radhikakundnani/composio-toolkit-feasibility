@@ -1,0 +1,142 @@
+{
+ "id": 43,
+ "app": "BigCommerce",
+ "hint": "developer.bigcommerce.com",
+ "given_category": "Ecommerce",
+ "queries": {
+  "auth": {
+   "query": "BigCommerce API authentication OAuth API key access token developer docs developer.bigcommerce.com",
+   "log_id": "log_8i0WSeeA0E7l",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.bigcommerce.com/api-docs/getting-started/basics/api-environment",
+     "title": "API Accounts",
+     "snippet": "BigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce\u2019s REST APIs: store-level credentials, app-level credentials, and account-level credentials. This section describes the difference between the three, how to obtain and revoke account credentials, and the use cases for each. It also contains a reference for available OAuth scopes and provides a compelling list of reasons to migrate from legacy API tokens to OAuth credentials.\nEvery parent set of API credentials that you request for your store is its own **API account**. At its simplest, an API account consists of the following:\n- The `client_id` uniquely identifies the app or user, or the *client*, making a request.\n- The `client_secret` is a cryptographically secure value known only to the client and BigCommerce.\nEvery active API account has at least one `access_token`. [Store-level API accounts](/developer/docs/overview/api-fundamentals/api-accounts#store-level-api-accounts) include a static access token that does not change. [App-level API accounts](/developer/docs/overview/api-fundamentals/api-accounts#app-level-api-accounts) expect each application to generate a unique access tok"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+     "title": "docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+     "snippet": "> **Note**\n>\n> #### Store owner access_token constraint\n>\n> Typically, only [store owners](https://support.bigcommerce.com/s/article/Store-API-Accounts#creating) and authorized users can create API accounts and `access_token`s for a store. However, when an app is approved to be publicly available for additional stores to install, it can generate `access_token`s *on behalf* of store owners and authorized users.\n\nBigCommerce uses a modified version of the [OAuth2 authorization code grant (tools.ietf.org)](https://tools.ietf.org/html/rfc6749#section-4.1). The sequence is as follows:\n1. The merchant initiates installing your app by signing in to their store control panel and doing one of the following:\n* clicking **Install** in the [App Marketplace](https://www.bigcommerce.com/apps/), or\n* following a direct installation link.\n2. The merchant accepts the app's OAuth scope permissions. The OAuth consent view presented to the merchant requires them to approve all the scopes to install the app; at this time, merchants cannot pick and choose scopes.\n3. The merchant's [browser sends a GET request to the app](#receiving-the-auth-callback) server's `GET /auth` endpoint that contains some of t"
+    },
+    {
+     "url": "https://developer-beta.bigcommerce.com/docs/start/authentication",
+     "title": "Authentication",
+     "snippet": "### Access tokens\nMost of our REST endpoints and GraphQL Admin API endpoints use the `X-Auth-Token` header to authenticate to BigCommerce servers. For more about the APIs that do **NOT** use the `X-Auth-Token` header, consult this article's sections on [dynamic tokens](/docs/start/authentication#dynamic-tokens) and [same-origin CORS authentication](/docs/start/authentication#same-origin-cors-authentication).\nThe `X-Auth-Token` header uses access tokens to authenticate requests. [Create an OAuth API account](/docs/start/authentication/api-accounts#api-accounts) to generate access tokens. Pass the access token as the value of the `X-Auth-Token` header of the request you want to authenticate.\n#### The X-Auth-Client header is deprecated\nYour API account's client ID is [no longer a required header value (opens in a new tab)](https://developer.bigcommerce.com/changelog#posts/o-auth-client-id-is-no-longer-required-for-requests-to-api-bigcommerce-com).\nFor a request to succeed, the access token's API account must have permission to receive the response. Configure your API account with the minimum set of OAuth scopes that your implementation needs.\nTo find the specific OAuth scopes your req"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/storefront/guides/customer-authentication/customer-login",
+     "title": "Customer Login API",
+     "snippet": "When a user signs into your web app, you can use the Customer Login API to authenticate the user to your BigCommerce store through SSO.\nYou can use the Customer Login API in the following use cases:\n- Integrate with an SSO provider or identity provider (IdP)\n- Set up continuous login between a BigCommerce store and another application\n- Enable alternative sign-in methods (ex. phone number and SMS password)\nStorefront customers are signed in using the access point URL `/login/token/{token}`. The `{token}` must be a JSON Web Token (JWT) containing parameters for the customer login request signed by your application\u2019s OAuth client secret. For more information on the OAuth protocol, see [OAuth](https://oauth.net/2/).\n\nA customer account has a single active storefront session. Signing the customer in again or signing them out through any method invalidates all customer access tokens previously issued for that account, regardless of each token\u2019s `expiresAt` value. For details, see [Customer session behavior](https://docs.bigcommerce.com/developer/docs/storefront/guides/customer-authentication/customer-login#customer-session-behavior).\n### Customer Login JWT payload reference\n| Field Name"
+    },
+    {
+     "url": "https://developer-beta.bigcommerce.com/api-docs/getting-started/authentication",
+     "title": "Authentication - Getting Started - API Docs",
+     "snippet": "Two types of API credentials are available to developers wishing to make requests against BigCommerce APIs:\n1. Store API Credentials (created in a store\u2019s control panel)\n2. App API Credentials (created in the [Developer Portal](https://devtools.bigcommerce.com))\n**Store API Credentials** are generated when a Store API Account is created in a store\u2019s control panel (**Advanced Settings** > **API Accounts**). These credentials are used to programmatically interact with an individual store\u2019s data using BigCommerce\u2019s APIs. Both OAuth and token-based authentication are possible with Store API Credentials\nDevelopers can also create **App API Credentials** in the BigCommerce [Developer Portal](https://devtools.bigcommerce.com). App API Credentials are used during the OAuth flow to request authorization \u201con behalf\u201d of a store owner, allowing the app to make API requests against store data. App API Credentials are OAuth only, and the store owner must install the app before the app is granted access to the store.\n## Obtaining Store API Credentials\nTo generate store API Credentials, log into the store, then:\n1. Navigate to **Advanced Settings** > **API Accounts** > **Create API Account**.\n2. G"
+    }
+   ]
+  },
+  "access": {
+   "query": "BigCommerce developer.bigcommerce.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_poNImXMeW6qQ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+     "title": "Becoming a Partner",
+     "snippet": "The BigCommerce Partner Program includes access to resources, training, sales enablement, partner support, and a referral network to increase your client base and build better ecommerce experiences.\n\nYou don\u2019t need to be a partner to build and test an app. You can test in any BigCommerce store. You need an approved Technology Partner account to submit an app to the BigCommerce App Marketplace.\n\nWe recommend using the email address you want to use for development. This is the email address that your sandbox store and Developer Portal access will be created under. After you register, you can add additional users to the account.\nTo submit an app to the App Marketplace, a contact on your partner account must also have the Billing/Financial role. To assign it, go to **Account Profile** > **Manage Members** in the Partner Portal and edit the contact who should have the role. For the full list of account requirements, see [Before you submit](https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/approval-requirements#before-you-submit).\n\n3. **Sign in to the Developer Portal.** Go to the [Developer Portal](https://build.bigcommerce.com/) and sign in with your sandbox store own"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/beginning-development",
+     "title": "Beginning App Development",
+     "snippet": "Before you register and install a draft app, you need the following:\n1. A BigCommerce store to test app installation. You can use any store you own. Partners can also create a [sandbox store](https://docs.bigcommerce.com/developer/docs/overview/sandboxes).\n2. A [Developer Portal](https://build.bigcommerce.com/) account (required to register apps).\n3. A [BigCommerce partnership](https://www.bigcommerce.com/partners/) (required to publish apps to the App Marketplace). To apply, see [Becoming a partner](https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner)."
+    },
+    {
+     "url": "https://docs.bigcommerce.com",
+     "title": "BigCommerce Developers",
+     "snippet": "### Create a sandbox store\nSign up for a free BigCommerce trial store to test API calls and build integrations without affecting live data.\n### Generate API credentials\nNavigate to **Settings > API Accounts** in your store control panel. Create credentials with the scopes you need."
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/overview",
+     "title": "B2B Edition Overview",
+     "snippet": "Before you can start building a custom B2B solution, you\u2019ll need a developer sandbox that can access our APIs. Use these steps to obtain the necessary tools and proceed with your development workflow.\n### Create a Sandbox Store\nTo request a non-transactional sandbox store for development, fill out the form located in the \u201cCreate A Sandbox Store\u201d step of the [BigCommerce API Overview](/developer/api-reference/about-our-apis). The developer sandbox is free of charge.\nTo request B2B Edition provisioning on your store, install the [B2B Edition app](https://www.bigcommerce.com/apps/b2b-edition/) from the marketplace and then [contact our support team](https://support.bigcommerce.com/s/#contact) to start the process. If you are a [BigCommerce Partner](https://www.bigcommerce.com/partners/become-a-partner/), reach out to your partner manager to request B2B Edition.\n\nYou can [create an API account](https://support.bigcommerce.com/s/article/B2B-Edition-Settings) from **Settings** > **API Accounts** in your B2B Edition control panel to authenticate requests to the REST Management API."
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/beta/powered-by/api-documentation",
+     "title": "Powered by API Documentation",
+     "snippet": "Powered by is a collection of partner-focused APIs that enables you to offer BigCommerce stores to your merchants and seamlessly onboard them to our ecommerce platform. Additionally, you can decide whether you own the billing relationship for your merchant\u2019s BigCommerce products or let BigCommerce manage billing directly with the merchant.\n\nEligible apps must be submitted through the [Developer Portal](https://build.bigcommerce.com/apps) and approved. They must also be configured as a [single-click app](/developer/docs/integrations/apps/guide/types-of-apps) to support the auto-installation process. This configuration is performed by BigCommerce following app submission and approval.\n\nIn order to access the Powered by API, a franchise needs to be created for you in our development and production environments. Once the franchise has been created, you will be provided with credentials for each environment. Credentials are delivered securely through [Keybase](https://keybase.io/) which supports end-to-end encryption. You will need to create a Keybase account to receive your credentials if you don\u2019t have one."
+    }
+   ]
+  },
+  "surface": {
+   "query": "BigCommerce API reference REST GraphQL endpoints documentation developer.bigcommerce.com",
+   "log_id": "log_KdwGsDDpTKhg",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.bigcommerce.com/api-docs/storefront/themes-api/themes/apply",
+     "title": "developer.bigcommerce.com/api-docs/storefront/themes-api/themes/apply",
+     "snippet": "BigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce's REST APIs: store-level credentials, app-level credentials, and account-level credentials. This section describes the difference between the three, how to obtain and revoke account credentials, and the use cases for each. It also contains a reference for available OAuth scopes and provides a compelling list of reasons to migrate from legacy API tokens to OAuth credentials.\n\nAccount-level API accounts are designed to work with the GraphQL Account API, which manages resources beyond the scope of a single store. For example, [managing control panel users](/developer/api-reference/graphql/account/overview) in the BigCommerce ecosystem. Current and future features available using the GraphQL Account API toolset allow developers to build custom integrations and solutions that require high-level access to store and platform resources. Using this API, you can integrate with third-party applications, streamline and automate business processes, and manage multiple merchant stores per account.\n\n* Use `https://api.bigcommerce.com` as the gateway URL instead of the BigCommerce store's secure ho"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/storefront/headless/products/overview",
+     "title": "Working with Products",
+     "snippet": "This section demonstrates how to use BigCommerce\u2019s GraphQL Storefront API and REST Products API to query and manage product data for headless storefronts.\n## Retrieving product data\nBigCommerce\u2019s [GraphQL Storefront API](/developer/docs/storefront/guides/graphql-storefront-api) makes it possible to query storefront data from a remote site. By leveraging the power of GraphQL, you can access product information for any product from any page.\nThe following example demonstrates how to fetch product data using the GraphQL Storefront API. It relies on the [GraphQL Cursor Connections Specification model](https://relay.dev/graphql/connections.htm) to handle pagination.\n**Product Listing Page query example**\n```\nfunction getProductInfo(params) {    const storeUrl = new URL(params.store_url);    // Use the store's canonical URL which should always resolve    const graphQLUrl = `${storeUrl.origin}/graphql`;    // Set up GraphQL query    const graphQLQuery = `        query productListing {            site {                products {                    pageInfo {                        startCursor                        endCursor                        }                    edges {              "
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/rest/overview",
+     "title": "REST API Overview",
+     "snippet": "BigCommerce REST APIs respond to each request with an HTTP status code that depends on the result from the request. Error responses might also include an error message in the body to assist in resolving the problem.\n### 2xx Success\n2xx codes are returned for requests that were understood and processed successfully.\n| Code | Text | Purpose |\n|---|---|---|\n| **200** | **OK** | For successful `GET` and `PUT` requests. |\n| **201** | **Created** | For a successful `POST` request. |\n| **202** | **Accepted** | For a request that resulted in a scheduled task being created to perform the actual request. |\n| **204** | **No Content** | For a successful request that produced no response (such as `DELETE` requests). |\n| **207** | **Multi-Status** | Multiple operations have taken place and the status for each operation can be viewed in the body of the response. Typically indicates that a partial failure has occurred. |\n\nFor more information on handling 400 errors skillfully, see [API Request Architecture](https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/integration-design#404-and-422-client-errors).\n\n| `application/json` |\n| `User-Agent` | String | We ask that you specify a "
+    },
+    {
+     "url": "https://developer-beta.bigcommerce.com/docs/api",
+     "title": "API Reference | BigCommerce Dev Center",
+     "snippet": "# API Reference\nBuild applications that grow merchant business using our extensive collection of endpoints, webhooks, and other core solutions.\n[GraphQL APIs\nFind the mutations and queries you need from our GraphQL Storefront, Admin, and Account APIs.](/docs/graphql-storefront)"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/catalog/products/get-products",
+     "title": "List Products",
+     "snippet": "### Authentication\nX-Auth-Tokenstring\n### OAuth scopes\n| UI Name | Permission | Parameter |\n|---|---|---|\n| Products | modify | `store_v2_products` |\n| Products | read-only | `store_v2_products_read_only` |\n### Authentication header\n| Header | Argument | Description |\n|---|---|---|\n| `X-Auth-Token` | `access_token` | For more about API accounts that generate `access_token`s, see our [Guide to API Accounts](https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts#api-accounts). |\n### Further reading\nFor example requests and more information about authenticating BigCommerce APIs, see [Authentication and Example Requests](***REDACTED***\n\nFor a list of API status codes, see [API Status Codes](https://docs.bigcommerce.com/developer/api-reference/rest/overview#rest-http-status-codes).\n### Path parameters\nstore_hashstringRequired\nPermanent ID of the BigCommerce store."
+    }
+   ]
+  },
+  "mcp": {
+   "query": "BigCommerce developer.bigcommerce.com MCP server Model Context Protocol official",
+   "log_id": "log_NAANayuLusEn",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+     "title": "docs.bigcommerce.com/developer/api-reference/mcp/overview",
+     "snippet": "> For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.bigcommerce.com/_mcp/server.\n# MCP Server Overview\n> Connect AI agents to BigCommerce storefronts using the Model Context Protocol (MCP). Search products, manage carts, and hand off to checkout through natural language.\nAn MCP server implements the Model Context Protocol so AI agents \u2014 like Claude, Cursor, and others \u2014 can discover and call tools over a standard protocol. In practice, an MCP server exposes a set of functions that agents can call to accomplish real-world tasks.\nThe BigCommerce MCP server lets AI agents interact with a BigCommerce storefront using purpose-built commerce tools. Agents can search products, manage a shopping cart, and hand off to checkout \u2014 all through natural language.\n## Available tool sets\n| Tool set                                                      | Authentication                                              |\n| ------------------------------------------------------------- | ----------------------------------------------------------- |\n| [B2C Storefront](/developer/api-reference/mcp/storefront/b2c) | Guest and logged-in customer shopping flows     "
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+     "title": "docs.bigcommerce.com/developer/docs/ai-agent-setup",
+     "snippet": "> For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.bigcommerce.com/_mcp/server.\n# Docs MCP Server\nThe docs site exposes a **Model Context Protocol (MCP) server** that AI tools can search and reference. Once connected, your AI tool can answer questions like *\"How does the BigCommerce checkout API work?\"* by pulling directly from the docs.\n> **Docs search only**\n>\n> This server lets your AI tool search and reference the BigCommerce documentation. It can't read or change your store, orders, catalog, or account settings. If you're looking for an MCP server that interacts with your storefront, see the [BigCommerce MCP Server](/developer/api-reference/mcp/overview). For everything else, use the [REST and GraphQL APIs](/developer/api-reference).\n**`BigCommerce docs MCP server`**\n```text title=\"BigCommerce docs MCP server\" showLineNumbers={false}\nhttps://docs.bigcommerce.com/_mcp/server\n```\nFor schema-aware workflows, you can also download BigCommerce [OpenAPI Specifications](/developer/api-reference/openapi-specifications) and add them to tools that import OpenAPI files.\n\n**For a single project**, click the **Copy page** dropdown in the uppe"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/beta/store-management-mcp",
+     "title": "docs.bigcommerce.com/developer/docs/beta/store-management-mcp",
+     "snippet": "> For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.bigcommerce.com/_mcp/server.\n# Store Management MCP\n> Connect an MCP-compatible AI agent to your BigCommerce store to manage catalog, pricing, inventory, and promotions, to look up and refund orders, and to read store details.\nStore Management MCP lets an AI agent \u2014 Claude, Cursor, ChatGPT, or any other Model Context Protocol (MCP)-compatible client \u2014 work directly with your BigCommerce store's catalog, pricing, inventory, orders, promotions, and store profile. This guide covers how an administrator turns on access, how to connect a client, and how to use the tools available in the closed beta.\n> **Beta access**\n>\n> Store Management MCP is in an invite-only closed beta and isn't available by default. To request access, submit the form on the [Commerce AI Labs](https://www.commerce.com/ai-labs/) page.\n\n### Server address\nEach store has its own MCP address:\n```text showLineNumbers={false}\nhttps://api.bigcommerce.com/stores/{store_hash}/mcp\n```\nPoint your MCP client at the address for the store you want to connect. Because the address identifies the store, the connection flow has no sepa"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/storefront/session-sync",
+     "title": "Storefront Session Sync",
+     "snippet": "The BigCommerce MCP server supports session sync for Stencil storefronts. After syncing, the MCP session is linked to the shopper\u2019s existing browser session \u2014 carrying their login state, cart, and identity context into the AI agent without exposing cookies.\n## How session sync works\nStencil maintains shopper state through `HttpOnly` browser cookies. Because the AI agent backend runs on a separate host from the storefront, those cookies cannot reach it directly.\nSession sync bridges this gap using a short-lived opaque token:\n1. **Stencil generates a token** \u2014 The storefront calls the `generateSessionSyncToken` GraphQL mutation. The token is a one-time opaque token linked to the shopper\u2019s current session, valid for 60 seconds.\n2. **The token is passed to the agent** \u2014 Your storefront customization passes the token to the AI agent backend (for example, via a chat widget initialization payload).\n3. **The agent includes the token at MCP initialization** \u2014 The agent passes the token in the `X-Bc-Storefront-Sync-Token` header when initializing the MCP connection.\n4. **MCP redeems the token** \u2014 The MCP server validates and atomically consumes the token, retrieves the linked storefront sess"
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/webmcp",
+     "title": "docs.bigcommerce.com/developer/api-reference/mcp/webmcp",
+     "snippet": "> For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.bigcommerce.com/_mcp/server.\n\nWebMCP lets AI agents that work inside a shopper's browser discover and call your store's shopping tools directly, instead of guessing their way around your storefront's pages and buttons.\n## Overview\nWebMCP is a browser standard that lets a website tell an in-browser AI agent what it can do. A site exposes a set of tools, and the agent calls them as structured functions through `document.modelContext`.\nOn BigCommerce, WebMCP is available on your storefront through a partnership with Cloudflare. It exposes your store's shopping tools to browser-based agents, so shoppers who use an AI assistant can search your catalog, review products, build a cart, and get a checkout link on your store. You don't need to edit your theme or write code.\nWebMCP uses the same tool format as [storefront MCP](/developer/api-reference/mcp/overview), so agents treat your storefront's tools like any other MCP tools.\n\nOnce WebMCP is active on your store, a shopper's browser agent can handle requests like:\n* \"Find a lightweight jacket in my size under \\$150.\"\n* \"Show me the top 5 be"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

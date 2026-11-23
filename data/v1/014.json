@@ -1,0 +1,35 @@
+{
+  "id": 14,
+  "app": "Front",
+  "category": "Support and Helpdesk",
+  "one_liner": "Shared inbox and customer operations platform for email and messaging.",
+  "auth_methods": [
+    "oauth2",
+    "bearer_token"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Free developer sandbox account; API tokens for testing, OAuth required for integrations acting on customer accounts.",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "https://dev.frontapp.com/docs/mcp-server",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Published App Store apps need OAuth; rate limits vary by plan.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://dev.frontapp.com/docs/oauth",
+    "access": "https://dev.frontapp.com/docs/partnering-with-front",
+    "surface": "https://dev.frontapp.com/reference/introduction",
+    "mcp": "https://dev.frontapp.com/docs/mcp-server"
+  }
+}

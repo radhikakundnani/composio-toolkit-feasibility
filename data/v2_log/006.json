@@ -1,0 +1,27 @@
+{
+  "id": 6,
+  "app": "Podio",
+  "changes": [
+    {
+      "field": "evidence.mcp",
+      "from": "https://progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide",
+      "to": "https://mcp.podio.com",
+      "why": "vendor-run endpoint (mcp.podio.com) plus Progress (Podio owner) doc; official confirmed",
+      "evidence": "https://mcp.podio.com"
+    },
+    {
+      "field": "confidence.mcp",
+      "from": "medium",
+      "to": "high",
+      "why": "vendor-hosted server endpoint and Progress docs both seen",
+      "evidence": "https://progress.com/podio/documentation/using-podio/podio-mcp-server"
+    }
+  ],
+  "confirmed": [
+    "mcp official",
+    "access (free plan 5 users/100 items, API on free accounts)",
+    "auth",
+    "verdict"
+  ],
+  "searches": 3
+}

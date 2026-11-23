@@ -1,0 +1,34 @@
+{
+ "id": 63,
+ "app": "Netlify",
+ "changes": [
+  {
+   "field": "access_notes",
+   "from": "Generate a personal access token in the Netlify UI or register an OAuth2 app; plan tier requirements not shown.",
+   "to": "Free plan ($0, 300 credits/mo, deploy via API); generate a personal access token in the Netlify UI or register an OAuth2 app.",
+   "why": "Pricing page now shows Free $0 forever with API deploys, resolving prior \"plan tier requirements not shown\"",
+   "evidence": "https://netlify.com/pricing.md"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+   "to": "https://netlify.com/pricing.md",
+   "why": "Pricing page confirms free plan",
+   "evidence": "https://netlify.com/pricing.md"
+  },
+  {
+   "field": "confidence.access",
+   "from": "medium",
+   "to": "high",
+   "why": "Free plan confirmed on pricing page",
+   "evidence": "https://netlify.com/pricing.md"
+  }
+ ],
+ "confirmed": [
+  "mcp",
+  "auth_primary",
+  "verdict",
+  "blocker"
+ ],
+ "searches": 3
+}

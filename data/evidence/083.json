@@ -1,0 +1,142 @@
+{
+ "id": 83,
+ "app": "Binance",
+ "hint": "binance-docs.github.io",
+ "given_category": "Finance and Fintech",
+ "queries": {
+  "auth": {
+   "query": "Binance API authentication OAuth API key access token developer docs binance-docs.github.io",
+   "log_id": "log_1Sz4Pu--3Pod",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.binance.com/en/docs/products/oms/Fast-API/base-urls",
+     "title": "Environments and API base URLs",
+     "snippet": "| Environment | Base URL |\n|---|---|\n| Production | **[https://www.binanceapis.com/oauth-api](https://www.binanceapis.com/oauth-api)** |\nFast API does **not** use `X-MBX-APIKEY` or request signing. It authenticates over OAuth with a Client ID and Client Secret.\n## Remarks\n1. When Link clients start to use oAuth, they will get their unique \u201cClient ID\u201d and \u201cClient secret\u201d.\n2. When each User grants permission via oAuth, the Link client will get an unique \u201cUser\u2019s open ID\u201d and an \"Access token\".\n3. Access token will be expired once the User\u2019s API key is generated.\n4. **Each user account** can only use the Fast API to connect with **Each Link client Once**.\n5. Link client need to provide a public key for encrypting User\u2019s API key, when requesting the API generation. Additionally, Link clients should be able to decrypt the API key package, and store it safely.\n6. When Link client request to generate a user's API key, it should state clearly if this API key should have certain permission(s). In request params:\n- enableTrade \u2192 whether to enable Spot & Margin Trading\n- enableFutureTrade \u2192 whether to enable Futures Trading\n- enableMargin \u2192 whether to enable Margin Loan, Repay and Transfer\n- e"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/products/login/web-integration",
+     "title": "Integrate Binance Login with your web application",
+     "snippet": "Binance APIs utilize the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) protocol for authentication and authorization. Binance supports common OAuth 2.0 scenarios such as those for web server, single page (browser based), mobile and native applications. This document will guide you through how your application communicates with Binance's OAuth 2.0 server to secure a user's consent for performing an API request on his behalf.\nTo begin, your application must identify the necessary permissions, or `scopes`. Visit the [Binance Developer Center](https://developers.binance.com/en/oauth-management), sign up for a Binance entity account, and from there, navigate to your console to create an OAuth application and get your own client ID and client secret. For now, Binance Login (Oauth2.0), is exclusively offered to close ecosystem partners. Please reach to our business team for further information.\nDepending on your specific application type, you can select one of the two different authorization flows listed here:\n1. For web applications, please refer to the \u2018Authorization Code Flow\u2019 section;\n2. For browser-based applications as well as mobile and native applications, please refer to the \u2018"
+    },
+    {
+     "url": "https://developers.binance.info/en/docs/products/binance-open-api/apis",
+     "title": "Binance Developer Docs",
+     "snippet": "# OAuth 2.0 APIs for Binance APIs\n```\nCodecurl 'https://www.binanceapis.com/oauth-api/v1/user-info' \\\n--header 'Authorization: Bearer {access_token}'\n```\n**Parameters:**\n| Name | Type | Mandatory | Description |\n|---|---|---|---|\n| access_token | String | YES | |\n**Response:**\n```\nCode{\n\"code\": \"000000\",\n\"message\": null,\n\"data\": {\n\"userId\": \"e10e20b7f20947e7bd206b15ce3dae90\"\n},\n\"success\": true\n}\n```\n## API 2. Revoke access_token\n```\nCodecurl --request POST 'https://www.binanceapis.com/oauth-api/v1/revoke-token' \\\n--header 'Authorization: Bearer {access_token}'\n```\n**Parameters:**\n| Name | Type | Mandatory | Description |\n|---|---|---|---|\n| access_token | String | YES | |\n**Response:**\n```\nCode{\n\"code\": \"000000\",\n\"message\": null,\n\"data\": true, // true means clear access_token success\n\"success\": true\n}\n```"
+    },
+    {
+     "url": "https://developers.binance.com/docs/mini-program/webapp/generate-signature-offline",
+     "title": "Generate JS-SDK Signature | Binance Open Platform",
+     "snippet": "1. Developer should apply a pair of `clientId` and `secret` from Binance.\n- If you already have another pair for oauth login of Binance for your website, you can just use that one. So that you can share the openid between your website and web application.\n1. Request for the `access_token` with the `clientId` and `secret` from Binance Server. It will return the `access_token` with expiration time.\n2. Request for ticket with `access_token` from Binance Server. It will return the ticket with expiration time.\n- Please make sure that your `secret` , `access_token` and `ticket` is saved on your server and cannot be accessed by others.\n1. After the webapp is loaded on the Binance app, the developer should try to initialize the jssdk with the signature, which is calculated on the developer's server.\nThe fields to be signed include:\n- clientId\n- noncestr (nonce) (random string)\n- Valid JS-SDK ticket\n- timestamp(ts)\n- url (URL of the current web page, excluding # and the part after it).\nAll parameters to be signed are sorted by ASCII code (dictionary order) from smallest to largest, and stitched into string1 using URL key-value pairs (i.e. key1=value1&key2=value2...). The string1 is encrypte"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/products/oms/integration-guide",
+     "title": "OMS Toolkit \u2014 Integration Guideline",
+     "snippet": "|\n| [Fast API](https://developers.binance.com/en/docs/products/oms/integration-guide#9-fast-api) | Create an API key for a user through OAuth, without them leaving your app. |\n---\n## 2. Onboarding Checklist\n### Items you provide to Binance\n- **Completed entity verification (KYB)** on your Binance account. This is required for the OMS Toolkit account itself, whether or not you go on to use Fast API.\n- Which product families you need \u2014 Spot, USD-M Futures, COIN-M Futures, Portfolio Margin.\n[Fast API](https://developers.binance.com/en/docs/products/oms/integration-guide#9-fast-api) is a **separate onboarding on top of the above**, and it carries its own **second KYB review** \u2014 **Entity KYB** and **OAuth Security KYB** \u2014 applied for through the Binance Developer Center, plus a 60\u00d760 logo and a callback URL. You can run OMS Toolkit without Fast API; trade tagging needs only the account KYB above.\n### Items Binance provides to you\n- Partner permissions on your own Binance account, which its API key then carries.\n- Your **client codes** \u2014 one for Spot and a separate one for Futures. These are the values you put in the `x-` prefix on every order, so keep them straight: a spot code on a fut"
+    }
+   ]
+  },
+  "access": {
+   "query": "Binance binance-docs.github.io API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_bpBRW42_1GLi",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.binance.com/en/docs/products/oms/integration-guide",
+     "title": "OMS Toolkit \u2014 Integration Guideline",
+     "snippet": "- **Completed entity verification (KYB)** on your Binance account. This is required for the OMS Toolkit account itself, whether or not you go on to use Fast API."
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/products/link-and-trade/Fast-API/Introduction",
+     "title": "Fast API",
+     "snippet": "### Minimum requirements for Fast API:\n- `account:status`\n- `create:apikey` (For Spot & Margin trading permission, and Futures trading permission) *Or* `create:apikey:margin` (For Margin Loan, repay, and Transfer permission) *Or* `create:apikey:options` (For European Options Trading permission)\n- `user:openId`"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/products/connect-2.0/basics/6.apply-developer-account",
+     "title": "How to apply partner developer account",
+     "snippet": "# How to apply partner developer account\nIf you are a partner (client) who wants to integrate Binance Pay Onchain\u2019s Open API. Please contact Binance Pay Onchain team and provide the following items:\n- [Public key](https://developers.binance.com/en/docs/products/connect-2.0/basics/3.request-signing) for API requests (private key kept by the partner/client safely);\n- IP addresses used to config whitelist;\n- Webhook callback url;\n- The domains of the URL/Universal Link that you will pass to the `redirectUrl` and `failRedirectUrl` parameters of the pre-order API, as well as the schema of the Deeplink of the `redirectDeepLink` and `failRedirectDeepLink` parameters. Which are used to config whitelist for redirecting users back to your platform when on/off ramp completed;\n- A logo image in format of 80 x 80 pixel png, which will be displayed on the Binance Pay Onchain page.\nOnce Binance Pay Onchain receives these items and completes the configuration, Binance Pay Onchain will provide the following items to the partner (client):\n- Client id;\n- Sign access token;\n- Public key and partner code for webhook (private key kept by Binance Pay Onchain safely);\nThen the partner (client) will be abl"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/products/institutional-buy-sell/quick-start",
+     "title": "Getting Started",
+     "snippet": "4. Apply for [Developer's Account](https://developers.binance.com/en/docs/products/institutional-buy-sell/basics/6.apply-developer-account), exchange public keys, configure API credentials, and allowlist server IP addresses.\n5. Implement request signing and verify a discovery endpoint in QA.\n6. Implement the required Buy and/or Sell flow.\n7. Implement the required partner-hosted fiat confirmation, refund, and payout APIs."
+    },
+    {
+     "url": "https://developers.binance.info/en/docs/products/oms/integration-guide",
+     "title": "OMS Toolkit \u2014 Integration Guideline",
+     "snippet": "- **Completed entity verification (KYB)** on your Binance account. This is required for the OMS Toolkit account itself, whether or not you go on to use Fast API."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Binance API reference REST GraphQL endpoints documentation binance-docs.github.io",
+   "log_id": "log_gGNmmg3IkzzK",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md?plain=1",
+     "title": "binance-spot-api-docs/rest-api.md at master \u00b7 binance/binance-spot-api-docs",
+     "snippet": "- The following base endpoints are available. Please use whichever works best for your setup:\n- **https://api.binance.com**\n- **https://api-gcp.binance.com**\n- **https://api1.binance.com**\n- **https://api2.binance.com**\n- **https://api3.binance.com**\n- **https://api4.binance.com**\n- The last 4 endpoints in the point above (`api1`-`api4`) should give better performance but have\nless stability.\n\n## General Information on Endpoints\n- For `GET` endpoints, parameters must be sent as a `query string`.\n- For `POST`, `PUT`, and `DELETE` endpoints, the parameters may be sent as a `query string` or in\nthe `request body` with content type `application/x-www-form-urlencoded`. You may mix parameters\nbetween both the `query string` and `request body` if you wish to do so.\n- Parameters may be sent in any order.\n- If a parameter sent in both the `query string` and `request body`, the `query string` parameter\nwill be used.\n\n- Each endpoint has a security type indicating required API key permissions, shown next to the\nendpoint name (e.g.,"
+    },
+    {
+     "url": "https://binance-docs.github.io/apidocs/websocket_api/en",
+     "title": "CHANGELOG for Binance's API",
+     "snippet": "- [Price Range Execution Rule](/en/docs/products/spot/faqs/price_range_execution_rules)\n- New Endpoints/Methods\n- REST API:\n- `GET /api/v3/executionRules`\n- `GET /api/v3/referencePrice`\n- `GET /api/v3/referencePrice/calculation`\n- WebSocket API:\n- `executionRules`\n- `referencePrice`\n- `referencePrice.calculation`\n\nFollowing the announcement from [2025-04-07](/en/docs/products/spot/CHANGELOG#2025-04-07), all documentation related with `listenKey` for use on `wss://stream.binance.com` has been removed.\n**We remind you that you should instead get user data updates by subscribing to the [User Data Stream on the WebSocket API](/en/docs/catalog/core-trading-spot-trading/api/ws-api/user-data-stream). This will offer better performance (lower latency).**\nPlease refer to the list of requests and methods below for more information.\nThe features will remain available until a future retirement announcement is made.\n- REST API\n- `POST /api/v3/userDataStream`\n- `PUT /api/v3/userDataStream`\n- `DELETE /api/v3/userDataStream`\n- WebSocket API\n- `userDataStream.start`\n- `userDataStream.ping`\n- `userDataStream.stop`\n\n- The `POST /api/v3/order/oco` endpoint is now deprecated on the REST API. You should"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/rest-api/general",
+     "title": "General - Spot REST API",
+     "snippet": "Current exchange trading rules and symbol information\nGET\n/api/v3/exchangeInfo\nhttps://api.binance.com\n\nQuery execution rules for symbols.\nGET\n/api/v3/executionRules\nhttps://api.binance.com\n### Query Execution Rules \u203a Request Weight\nThis endpoint consumes IP-based request weight. Heavier endpoints consume more of your IP rate limit capacity.\n\n## Test connectivity\nTest connectivity to the Rest API.\nGET\n/api/v3/ping\nhttps://api.binance.com\n### Test connectivity \u203a Request Weight\nThis endpoint consumes IP-based request weight. Heavier endpoints consume more of your IP rate limit capacity.\nLearn more in the [Rate limits](/en/docs/products/spot/rest-api#limits) section."
+    },
+    {
+     "url": "https://github.com/ccxt/ccxt/wiki/binance",
+     "title": "binance",
+     "snippet": "Every endpoint in `binance`'s `api` definition is exposed as an **implicit method** \u2014 a thin, generated wrapper around the raw exchange endpoint. Use these for exchange-specific functionality the [CCXT API](https://github.com/docs/exchanges/binance) does not cover.\nThese methods are available in every CCXT language \u2014 TypeScript, JavaScript, Python, PHP, C#, Go and Java. Call them by the camelCase name shown in the tables below (e.g. `sapiGetCopyTradingFuturesUserStatus`); Python and PHP use the snake_case form (`sapi_get_copytrading_futures_userstatus`), and Go uses the PascalCase form (`SapiGetCopyTradingFuturesUserStatus`). Switch tabs for the call in each language:\n\nPath parameters wrapped in `{}` (e.g. `{pair}`) are substituted from `params`; everything else in `params` is sent as the query string or request body. **Cost** is the rate-limiter weight of each call.\n\ud83d\udcda **Official binance API documentation:** [developers.binance.com](https://developers.binance.com/en)\n> 830 implicit endpoints across 20 access groups.\n## sapi\n**Base URL**: `https://api.binance.com/sapi/v1`\n|"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/account",
+     "title": "Account - Futures (USD\u24c8-M) REST API",
+     "snippet": "## Account Information V2 (USER_DATA)\nGet current account information. User in single-asset/ multi-assets mode will see different value, see comments in response section for detail.\nGET\n/fapi/v2/account\nhttps://fapi.binance.com\nThis is a signed endpoint and a **signature** must be included in the request parameters.Learn more about how to generate a valid **signature** in the [Endpoint Security Type](https://developers.binance.com/en/docs/products/derivatives-trading-usds-futures/general-info#endpoint-security-type)"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Binance binance-docs.github.io MCP server Model Context Protocol official",
+   "log_id": "log_j9sNNznOXoDl",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+     "title": "Binance MCP Server",
+     "snippet": "# Binance MCP Server\nBinance MCP Server\nConnect your AI agent to Binance with a single URL. Your agent can read market data, check balances, trade Spot / Margin / Convert / USD\u24c8-M / COIN-M Futures, and move funds between wallets inside a dedicated Agentic sub-account \u2014 no local install, no API keys on your device.\n\n## What's an MCP?\nModel Context Protocol (MCP) is an open standard that lets AI agents connect to external apps and services. Instead of just answering questions, an AI with MCP access can take actions on your behalf.\n## What your agent can do\n#### Check the market\n\"What\u2019s the current BTCUSDT price and 24h change?\" \u2014 tickers, order books, candlesticks, funding rates.\n#### Check your balance\n\"Show my Agentic account balance across all wallets.\" \u2014 plus a read-only view of your main account.\n#### Trade\n\"Buy $100 of BNB at market on spot.\" \u2014 Spot, Margin, Convert, USD\u24c8-M Futures, and COIN-M Futures.\n#### Move funds between wallets\n\"Move 2,000 USDT from my Spot wallet to my USD\u24c8-M wallet.\" \u2014 inside your Agentic sub-account only.\n## What your agent can access\nWhen you connect, you choose which scopes to grant. Start with the least you need:\n- **Market data** (public, no auth) "
+    },
+    {
+     "url": "https://binance.com/en/support/announcement/detail/07d45cdd3831498f8a4ff339031a8480",
+     "title": "Introducing Binance Agent OS | ,binance news,binance announcement",
+     "snippet": "Binance is excited to announce the launch of **Binance Agent OS**, a developer platform built as part of Binance Intelligence. It connects compatible AI applications and agents to supported Binance capabilities through user-controlled permissions.\nBinance Agent OS brings together Binance APIs, Binance Wallet Agentic Hub, Binance x402, Binance Skill Hub, and support for the Model Context Protocol (MCP), into a more coherent ecosystem for developers, users, and the broader industry.\n\nBinance Agent OS is designed to reduce fragmentation across agentic crypto integrations. Instead of stitching together one-off connections, developers can access a controlled platform with a discoverable set of capabilities:\n- **Binance APIs**: Programmatic access to supported Binance trading, market, wallet, and on-chain features.\n- **Binance Wallet Agentic Hub**: Wallet capabilities designed for agent-driven interactions, subject to user permissions.\n- **Binance x402**: Payment and settlement primitives designed to support agent-driven payment flows.\n- **Binance Skill Hub**: A place for developers to discover and use modular capabilities across market data, wallets, trading, and on-chain activity.\n- **"
+    },
+    {
+     "url": "https://binance.com/en/blog/ecosystem/5991233187660196794",
+     "title": "Built for AI Agent Integration | Binance Blog",
+     "snippet": "Binance Agent OS is a gateway and toolkit for connecting AI agents to Binance. Our built-in MCP server currently supports trading and market data access, with payment and on-chain capabilities coming in future releases. In the meantime, developers can add these capabilities through other Agent OS tools.\n## How to Connect Your AI Agent in Minutes\nConnect your AI agent to Binance by adding the Binance MCP server to your agent environment, then authenticate it from your Binance account.\nFor Claude Code users:\n1. **Add the MCP server.** Open your terminal, then copy and paste the following command:\n*claude mcp add binance-mcp-server --transport http https://agent.binance.com/mcp/agentic*\n2. **Open your agent environment** and enter /mcp. This lists your connected MCP servers, including binance-mcp-server.\n3. **Start authentication.** Select binance-mcp-server and press Enter, then choose [Authenticate]. Your browser will redirect to an authentication page.\n4. **Select your agent.** From the dropdown, choose which agent you want to connect to Binance.\n5. **Set permissions.** Toggle which features and products this agent can access. Anything left off stays inaccessible until you enable i"
+    },
+    {
+     "url": "https://developers.binance.com/en/docs/agent-native/mcp-server",
+     "title": "MCP Server",
+     "snippet": "# MCP Server\n[Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is an open standard that lets AI agents and coding assistants connect to external tools and data sources over a single, well-defined transport \u2014 instead of every integration needing its own custom API glue.\n## Who this is for\n- **Building a trading bot or want an AI agent to act on your Binance account?** Use the [Binance MCP Server](/en/docs/agent-native/mcp-server/agentic)."
+    },
+    {
+     "url": "https://developers.binance.info/en/docs/agent-native/mcp-server/agentic",
+     "title": "Binance MCP Server",
+     "snippet": "# Binance MCP Server\nBinance MCP Server\nConnect your AI agent to Binance with a single URL. Your agent can read market data, check balances, trade Spot / Margin / Convert / USD\u24c8-M / COIN-M Futures, and move funds between wallets inside a dedicated Agentic sub-account \u2014 no local install, no API keys on your device.\n\n## What's an MCP?\nModel Context Protocol (MCP) is an open standard that lets AI agents connect to external apps and services. Instead of just answering questions, an AI with MCP access can take actions on your behalf.\n## What your agent can do\n#### Check the market\n\"What\u2019s the current BTCUSDT price and 24h change?\" \u2014 tickers, order books, candlesticks, funding rates.\n#### Check your balance\n\"Show my Agentic account balance across all wallets.\" \u2014 plus a read-only view of your main account.\n#### Trade\n\"Buy $100 of BNB at market on spot.\" \u2014 Spot, Margin, Convert, USD\u24c8-M Futures, and COIN-M Futures.\n#### Move funds between wallets\n\"Move 2,000 USDT from my Spot wallet to my USD\u24c8-M wallet.\" \u2014 inside your Agentic sub-account only.\n## What your agent can access\nWhen you connect, you choose which scopes to grant. Start with the least you need:\n- **Market data** (public, no auth) "
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

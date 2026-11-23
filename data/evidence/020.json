@@ -1,0 +1,142 @@
+{
+ "id": 20,
+ "app": "Gladly",
+ "hint": "gladly.com",
+ "given_category": "Support and Helpdesk",
+ "queries": {
+  "auth": {
+   "query": "Gladly API authentication OAuth API key access token developer docs gladly.com",
+   "log_id": "log_Yw7U2qZR5JId",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.gladly.com/rest",
+     "title": "Gladly API",
+     "snippet": "Clients can access the **REST API** via HTTPS at your organization's Gladly domain (e.g. `https://{organization}.gladly.com`).\nResources follow REST semantics and utilize industry-standard HTTP verbs, response codes, and authentication schemes. In addition, all responses and payloads are in JSON with consistent error codes and formats.\n\n# Getting Started\nThink of this section as getting the keys to unlocking your access to the Gladly APIs. First, you'll need to set up an account with the necessary API permissions. With these permissions, you can then go on to create the API Token(s) you need to access Gladly's API resources.\n## Creating API Tokens\nYou must create an API token to access Gladly API resources (see above Permissions). If your profile already has access to the **API User** permission, you'll see a menu item titled **More settings**. Click **More settings**:\n![API Token Menu](https://developer.gladly.com/assets/permissions-token-nav.png)\nClick **API Tokens**, then the **Create Token** button on the upper right-hand corner of the page:\n![API Token Add](https://developer.gladly.com/assets/permissions-token-add.png)\nA token will be generated and named, by default, **New Tok"
+    },
+    {
+     "url": "https://help.gladly.com/developer-tutorials/docs/app-building-how-to",
+     "title": "help.gladly.com/developer-tutorials/docs/app-building-how-to",
+     "snippet": "App Platform Apps provide a mechanism for Gladly to retrieve data as well as take actions in external systems. App platform apps utilize REST based APIs exposed by external systems in order to retrieve data as well as take actions in those systems. An App Platform App defines go text templates for creating the REST requests as well as transforming the data returned by the responses to those requests.\nThe APIs from these external systems are exposed to Gladly via GraphQL. API requests are mapped to GraphQL Query or Mutation operation fields.\n\nAuthentication header go text templates have access to the following context data:\n```\n{\n\"integration\": {\n// Dynamic configuration associated with the app platform app\n\"configuration\": {},\n// Secrets needed for making REST calls against the external system\n// associated with the app platform app\n\"secrets\": {}\n}\n}\n```\nWhere the \"configuration\" attribute contains data for configuring the behavior of the app as well as the user name required for authenticating against the external system. The \"secrets\" attribute contains any sensitive credentials that are required for authenticating against the external system.\n\nThe configuration for requesting an"
+    },
+    {
+     "url": "https://help.gladly.com/docs/rydership-app-platform-installation",
+     "title": "RyderShip App Platform Installation",
+     "snippet": "**Gather your RyderShip credentials** \u2013 both installation methods below need the same values:\n- **Application ID and Client Secret**: Request API access from RyderShip by contacting your Onboarding Specialist or Customer Success Manager, or by submitting RyderShip's API access request form. RyderShip will issue you an Application ID (client ID) and Client Secret, along with a User Scope of either `user_read` or `user_manage`.\n- **Refresh Token**: RyderShip authenticates using OAuth2, so unlike a static API key, this requires a one-time manual authorization step to generate. See Complete the RyderShip authorization flow below.\nThe RyderShip integration authenticates via OAuth2 \u2013 unlike Klaviyo, WooCommerce, and ShipMonk, a manual authorization flow is required before you can install the app.\n1. In a browser, issue a GET request to `/oauth/authorize` on your RyderShip environment (Sandbox: `https://sandbox.whiplash.app`, Production: `https://www.getwhiplash.com`), including your `scope`, `response_type=code`, `redirect_uri`, and `client_id` as parameters.\n2. Log in with your RyderShip web app credentials. You'll be redirected to your redirect_uri with a `code` parameter appended. Ret"
+    },
+    {
+     "url": "https://help.gladly.com/developer-tutorials/docs/appcfg-apps-install",
+     "title": "Install an App",
+     "snippet": ">\n>\n> You need to have access to a Gladly user with email that corresponds to the org email domain. This means you cannot use user@company_b.com for an org that\u2019s domain is set to user@company_a.com\n1. To manage external apps in a Gladly environment, you will need the [latest version](https://github.com/gladly/app-platform-appcfg-cli/releases/latest) of. Specifically, you will use the [appcfg apps](https://github.com/gladly/app-platform-appcfg-cli/blob/main/docs/appcfg_apps.md) set of commands.\n2. Since these commands run against a Gladly environment, you will need to:\n1. Know your Gladly host, either `your-org.us-1.gladly.com` for production orgs or `your-org.us-uat.gladly.qa` for sandbox environments\n2. Have a dedicated Gladly user with the role API User\n3. Generate an API token associated with that user\n3. You have validated, tested, and built the app using `appcfg`.\n> API Tokens\n>\n>\n>\n> [API tokens](https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks) are associated with users so you need to be logged in as the user you will be using for installation.\n## Setup\nAuthentication can be supplied either via flags during the command itself or as environment variables "
+    },
+    {
+     "url": "https://help.gladly.com/developer-tutorials/docs/configure-an-app",
+     "title": "help.gladly.com/developer-tutorials/docs/configure-an-app",
+     "snippet": "> [!CAUTION]\n> Secure API Tokens\n>\n> - Do not store API Token information directly in App Platform files, or pass token information from one function to another (e.g., short-lived tokens).\n> - Do not pass API Token information or elicit for that information via Guides.\n>\n> See [Non-Oauth apps](https://help.gladly.com/developer-tutorials/docs/configure-an-app#nonoauth-apps) to learn how how external app secrets should be uploaded via the appcfg CLI and how to register an OAUTH App.\n\n#### Non-Oauth apps\n```bash\nappcfg apps config create <application identifier> \\\n--name \"My Configuration\" \\\n--config '{\"non-secret\":\"configuration\", \"host\":\"www.example.com\"}' \\\n--secrets '{\"a-secret\":\"api-token\"}' \\\n--activate\n```\n> [!NOTE]\n> Tip\n>\n> The `\u2014config` flag is required even if the configuration is empty\nNow an instance of the external app has been associated with the required configuration (such as API token stored on the configuration), and is officially ready for use.\n\n### Oauth\n> [!WARNING]\n> Registering your Oauth domain\n>\n> Make sure that have contacted Gladly Support to register your Oauth domain before running the command below\n1. #### Create configuration\n```bash\nappcfg apps config "
+    }
+   ]
+  },
+  "access": {
+   "query": "Gladly gladly.com API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_8_Dpv1JSte_4",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://help.gladly.com/generate-api-tokens-and-create-webhooks",
+     "title": "Generate API Tokens and Create Webhooks",
+     "snippet": "API tokens are required to use Gladly APIs for security and authentication purposes. Tokens can be accessed and created by users who at least have an API user [role](https://help.gladly.com/docs/managing-users-and-roles).\n## Before you start\n- For integrations not built by Gladly, a Gladly Administrator should [create](https://help.gladly.com/docs/managing-users-and-roles) a new user with an API role + Agent and/or Administrator (check with your integration partner to confirm the required roles) account for *each* integration. This account should be used to access Gladly to create the API tokens or webhooks.\n- The integration partner should provide the email address to be used with the integration's user account in Gladly. They must also access emails from this account to activate their Gladly account to create API tokens or webhooks.\n- API tokens are tied to a single user account and a particular environment. For example, an API token attached to Gladly user *developer@customer.com* in the Sandbox environment is not valid for *developer@customer.com* in the Production environment."
+    },
+    {
+     "url": "https://developer.gladly.com/rest",
+     "title": "Gladly API",
+     "snippet": "# Getting Started\nThink of this section as getting the keys to unlocking your access to the Gladly APIs. First, you'll need to set up an account with the necessary API permissions. With these permissions, you can then go on to create the API Token(s) you need to access Gladly's API resources.\n## Creating API Tokens\nYou must create an API token to access Gladly API resources (see above Permissions). If your profile already has access to the **API User** permission, you'll see a menu item titled **More settings**. Click **More settings**:"
+    },
+    {
+     "url": "https://help.gladly.com/docs/smile-app-platform-installation",
+     "title": "help.gladly.com/docs/smile-app-platform-installation",
+     "snippet": "API access is available on Smile\u2019s **Plus and Enterprise** plans. In Smile Admin, go to **Settings > Developer tools**, find the **Manage API keys** card, and select **Generate new API key**. Name the key after this integration and grant the seven read scopes the card needs \u2014 customer:read, points_transaction:read, reward_fulfillment:read, points_product:read, earning_rule:read, points_settings:read, and vip_tier:read \u2014 plus a write scope only for an action you enable: points_transaction:write for Adjust points, or points_purchase:write for Purchase reward. Select **Generate** and copy the key immediately; Smile shows it only once."
+    },
+    {
+     "url": "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly",
+     "title": "Gladly",
+     "snippet": "Trial Access\n| Question | Answer |\n|---|---|\n| **Offers free trial?** | Gladly typically requires a demo and custom pricing. Request a demo and trial access at [https://www.gladly.com/request-demo](https://www.gladly.com/request-demo). |\n| **Requires requires paid sandbox** | Contact Gladly for sandbox or trial environment access. |\n| **Requires partnership to obtain authentication?** | No. Once you have a Gladly account, API credentials can be obtained from your account settings. |\n---\n###\n\u200b\nAuthentication (HTTP Basic Authentication)\nGladly uses HTTP Basic Authentication with your Agent Email and API Token.\n1. Log in to your **Gladly account** at https://.gladly.com.\n2. Navigate to **Settings** \u2192 **Developers** or **API Settings** (admin access required).\n3. Generate or copy your **API Token**.\n4. Enter your **Agent Email** as the username and **API Token** as the password in Alloy Automation.\n5. Also configure your **Gladly subdomain** in the connection settings."
+    },
+    {
+     "url": "https://help.gladly.com/product-docs/docs/set-up-the-gladly-ai-gorgias-integration",
+     "title": "Set Up the Gladly AI + Gorgias Integration",
+     "snippet": "> Gorgias requires any paid plan (Starter or above) to enable this integration. API access is included on every plan.\n\n### Requirements\n| Field | Description |\n|---|---|\n| **Gorgias subdomain** | Your organization's subdomain (e.g., `your-company` from `your-company.gorgias.com`) |\n| **API key** | Generated by a Gorgias Admin user in Settings \u2192 REST API |\n| **API key user email** | The email address of the user who generated the key |\n| **Support email address** | The email address connected to your Gorgias email integration (e.g., `support@your-company.com`) |\n\n#### What Gorgias plan do I need to use Gladly AI?\nAny paid Gorgias plan works. API access is included on every plan."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Gladly API reference REST GraphQL endpoints documentation gladly.com",
+   "log_id": "log_kXPuR1dTQeta",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://developer.gladly.com/rest",
+     "title": "Gladly API",
+     "snippet": "## REST API\nClients can access the **REST API** via HTTPS at your organization's Gladly domain (e.g. `https://{organization}.gladly.com`).\nResources follow REST semantics and utilize industry-standard HTTP verbs, response codes, and authentication schemes. In addition, all responses and payloads are in JSON with consistent error codes and formats.\n## Lookup API\nThe Gladly **Lookup API** allows your organization to provide data services to power the agent's experience with a complete view of your customers' information, transactions, and activity. You can provide a web service that implements the Lookup API and Gladly will call it when that data is needed.\nLike the REST API, the Lookup API is specified using REST semantics, and exchanges JSON requests and responses authenticated and signed with secure keys.\nGladly will perform lookups when certain activities occur within Gladly, such as when a customer's profile is loaded.\n\nYour sandbox environment is accessible at `https://{organization}.gladly.qa`, where `organization` is your company name. For specific API endpoints, see documentation below.\n\n## BasicAuth\nGladly API uses token-based **Basic Authentication**. API tokens are associ"
+    },
+    {
+     "url": "https://help.gladly.com/developer-tutorials/docs/ingest-conversation-contents",
+     "title": "help.gladly.com/developer-tutorials/docs/ingest-conversation-contents",
+     "snippet": "### Option 1: Conversation Data export\nUse the below data as a reference.\n**URL:** [GET File API](https://developer.gladly.com/rest/#operation/getFile) **Filters:** N/A **Cadence:** 24 hours **Available For:** 14 days **Note:** This data is 24 hours behind.\n#### Why use this API\nThis API is great to be able to store messages in bulk as opposed to having to retrieve messages one by one.\n#### Relevant API notes\n- You might wish to supplement this information with a [GET Customer](https://developer.gladly.com/rest/#tag/Customers) call to get more information (e.g.: custom Attributes) about the customer.\n- We recommend doing the above for all Customers in **customers.jsonl**.\n- You might also wish to supplement this information with a [GET Conversation](https://developer.gladly.com/rest/#operation/getConversation) API call to retrieve which** inboxId** the conversation is in.\n- Inbox IDs can change through the lifetime of a conversation.\n- We recommend doing the above for all conversations in **conversation_items.jsonl**.\n- You might also wish to match up against inbox names using [GET Inbox](https://developer.gladly.com/rest/#operation/getInboxes) API.\n- The **topics.jsonl** and **age"
+    },
+    {
+     "url": "https://help.gladly.com/developer-tutorials/docs/app-platform-apps-developement",
+     "title": "help.gladly.com/developer-tutorials/docs/app-platform-apps-developement",
+     "snippet": "App Platform Apps retrieve data and take actions in external systems using REST APIs. Configuration uses Go text templates for generating REST requests and transforming responses. APIs are exposed via GraphQL Query and Mutation operations.\n## Key Documentation References\n- [Go text template language](https://pkg.go.dev/text/template)\n- [Sprig template functions](https://masterminds.github.io/sprig)\n- [Gladly template functions](https://github.com/gladly/app-platform-appcfg-cli/blob/main/docs/appcfg_platform_template-functions.md)\n- [Gladly XML DOM](https://github.com/gladly/app-platform-appcfg-cli/blob/main/docs/appcfg_platform_xml.md)"
+    },
+    {
+     "url": "https://help.gladly.com/developer-tutorials/docs/data-pulls-1",
+     "title": "help.gladly.com/developer-tutorials/docs/data-pulls-1",
+     "snippet": "Data Pulls in the Gladly App Platform allow you to extend your customer view by retrieving and integrating data from external systems into Gladly.\n\nThe App Platform uses a combination of configuration files, Go templates, and GraphQL schemas to define how data is retrieved, transformed, and made available within Gladly.\n## Using Data Pulls\nCurrently, Data Pulls are available in:\n- Customer Profile (displayed using Cards)\n- Sidekick\n- Routing\n- Rules\n### Use Cases\nData Pulls should be used any time you want to retrieve data that is connected with a Customer. For example:\n- Order Management: getting Customer\u2019s order history\n- Routing based on Customer Lifetime value\n\nAn App can be configured to pull data from external systems. Data Pulls are used throughout Gladly and this data can be used to assist Agents and allow Customers to self-serve via Sidekick.\n\n### High-level approach\n- Identify the inputs and outputs of the REST APIs for the data you wish to bring into Gladly.\n- Use the appcfg tool tool to create the request URL, headers, and/or body go templates.\n- Determine whether or not the response data is in an acceptable format for use in Gladly.\n- If the data is not in an acceptabl"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/api-evangelist/gladly/refs/heads/main/apis.yml",
+     "title": "raw.githubusercontent.com/api-evangelist/gladly/refs/heads/main/apis.yml",
+     "snippet": "Brand-hosted \"Lookup\" endpoint that Gladly calls outbound to enrich a conversation with first-party\ncustomer data. Lets brands keep system-of-record customer data in their own services while presenting\na unified profile inside the Gladly Hero agent workspace and to Sidekick AI.\n\nname: Gladly Tasks API\ndescription: >-\nA task is a way to create and do internal follow-up work for a customer within Gladly. Tasks have\na due date, an assignee, a description of what is needed for a customer, and can be commented on.\nThese can be created through the API to assign items to work within Gladly.\n\nGladly is a San Francisco\u2013based people-centered customer service AI platform. The Gladly Hero agent workspace unifies\nvoice, chat, SMS, email, and social into a single, channel-agnostic conversation per Customer, while Gladly Sidekick\nAI handles routine resolutions, drafts replies, and hands off to humans with full context. Brands integrate via the\nREST API, the Chat SDK (Web/iOS/Android), the Help Center widget, the embedded App Platform, webhooks, and a\nbrand-hosted Lookup API. Customers include JetBlue, Allbirds, Crate & Barrel, Warby Parker, Ulta, Nordstrom, TUMI,\nUGG, Tory Burch, and Breeze Airwa"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Gladly gladly.com MCP server Model Context Protocol official",
+   "log_id": "log_7vZpXWaG3QjM",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://vinkius.com/en/ai-agent-connect/gladly/copilot",
+     "title": "How to set up Gladly in Claude and other AIs",
+     "snippet": "About a minute, right in your Claude settings\n1. 1In Claude, open Customize and choose Connectors (claude.ai or the desktop app).\n2. 2Click +, choose Add custom connector, and paste your Gladly link as the remote MCP server URL.\n3. 3Click Add and start a new chat. Ask for something real: Gladly is now part of your Claude.\nConfiguration \u00b7 claude_desktop_config.jsonCopy\n```\n{\n\"mcpServers\": {\n\"gladly-mcp\": {\n\"url\": \"https://edge.vinkius.com/vk_preview_03uR9xTUvWnqJpjKpskEEGk3YezNOqopK12xAt0P/mcp\"\n}\n}\n}\n```\n\n1. 1In Le Chat, open Connectors and choose to add a custom connector.\n2. 2Paste your Gladly link as the remote MCP server URL. The link above is the URL.\n3. 3Save and authorize, then ask something real. Gladly is now part of Le Chat.\nConfiguration \u00b7 claude_desktop_config.jsonCopy\n```\n{\n\"mcpServers\": {\n\"gladly-mcp\": {\n\"url\": \"https://edge.vinkius.com/vk_preview_03uR9xTUvWnqJpjKpskEEGk3YezNOqopK12xAt0P/mcp\"\n}\n}\n}\n```\n\nMCP Connection URL\nhttps://edge.vinkius.com/vk_preview_03uR9xTUvWnqJpjKpskEEGk3YezNOqopK12xAt0P/mcp\nConnection Token\nvk_live_\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\nGo to Dashboard"
+    },
+    {
+     "url": "https://stackone.com/connectors/gladly/mcp",
+     "title": "Gladly MCP Server for AI Agents (65 Actions)",
+     "snippet": "for AI Agents\nConnect your AI agent to StackOne's Gladly MCP server and give it 65 MCP tools out of the box. Auth, tool execution, and security all managed.\n\n### 65 Agent Actions\nCreate, read, update, and delete across Gladly \u2014 and extend your agent's capabilities with custom actions.\n![](/_astro/light-orange-fingerprint.R770-NAv.svg)\nAuthentication\n### Agent Tool Authentication\nPer-user OAuth in one call. Your Gladly MCP server gets session-scoped tokens with zero credentials stored on your infra.\n\nA Gladly MCP server lets AI agents read and write Gladly data through the [Model Context Protocol](/platform/mcp/) \u2014 Anthropic's open standard for connecting LLMs to external tools. StackOne's Gladly MCP server ships with 65 pre-built actions, fully extensible via the [Connector Builder](/platform/ai-integration-builder/) \u2014 plus managed authentication, prompt injection defense, observability, and agent execution runtime. Connect it from MCP clients like [Claude Desktop](/platform/mcp/ai-agent/claude-desktop/), [Claude Code](/platform/mcp/ai-agent/claude-code/), [Cursor](/platform/mcp/ai-agent/cursor/), [Goose](/platform/mcp/ai-agent/goose/), and VS Code, or from agent frameworks like Op"
+    },
+    {
+     "url": "https://electraindex.com/mcp/gladly-mcp-by-usefulapi",
+     "title": "Gladly MCP by usefulapi MCP Server: 16 tools, setup & live status \u00b7 Electra Index",
+     "snippet": "**Gladly MCP by usefulapi** is an MCP server, a connector that lets an AI assistant use it as a tool. It is hosted: an assistant connects to it over the internet, nothing to install.\n\nAs declared in the Official MCP Registry \u00b7 hosted endpoint tested by Electra Index 3m ago (live check)\nHosted endpoint\n- `https://gladly.usefulapi.io/mcp` streamable-http\nIn Claude Code: `claude mcp add --transport http gladly-mcp-by-usefulapi https://gladly.usefulapi.io/mcp`\nMCP settings (Claude Desktop, Cursor and other MCP clients)\n```\n{\n\"mcpServers\": {\n\"gladly-mcp-by-usefulapi\": {\n\"url\": \"https://gladly.usefulapi.io/mcp\"\n}\n}\n}\n```\n## Live check\nElectra Index connected to the hosted endpoint 3m ago\nONLINE Gladly MCP by usefulapi answered an MCP connection on 09 Nov 2026 and introduced itself as `gladly-mcp 1.6.3` (MCP protocol 2025-06-18).\n\nHow do I connect Gladly MCP by usefulapi?\nUse the hosted endpoint `https://gladly.usefulapi.io/mcp` in your assistant's MCP settings. The exact settings are in \"How to connect\" above, as declared in the Official MCP Registry."
+    },
+    {
+     "url": "https://gladys.com/en/guide/my-profile-and-ai-assistant/connecting-my-ai-assistant",
+     "title": "Connecting my AI assistant",
+     "snippet": "Gladys can connect to your favourite AI assistant through the **MCP (Model Context Protocol)**. Once connected, your assistant accesses the data you already see in Gladys and can act for you: check your tasks, write a meeting report, answer a question about a project, etc.\n\n## Getting the connector address\nThe **Connect an AI** area shows the unique address of your Gladys connector, to copy and paste into your assistant's settings:\n```\nhttps://mcp.gladys.com/\n```\nThis address is the same whichever assistant you choose.\n**The AI only accesses the data you already see in Gladys** \u2014 it can neither see nor change more than what you yourself have access to.\n\n### Gemini\nGemini is not yet fully MCP-compatible: the connection goes through the **CLI** (command-line tool), not the web app.\n1. 1\nInstall **Gemini CLI**, Google's command-line tool (recent version).\n2. 2\nAdd Gladys to the `~/.gemini/settings.json` file as in the example below, with the **httpUrl** key (not `url`).\n3. 3\nRestart Gemini CLI: on first use, your browser opens Gladys to authorise the connection.\n4. 4\nType `/mcp` in Gemini CLI to check that Gladys is connected and see its actions.\n```json\n{\n\"mcpServers\": {\n\"gladys\": { "
+    },
+    {
+     "url": "https://gladysassistant.com/docs/integrations/mcp",
+     "title": "Connect an MCP client to Gladys | Gladys Assistant",
+     "snippet": "The Model Context Protocol (MCP) is an open protocol developed by Anthropic that allows exposing tools and functions that AI agents can use to retrieve information or interact with real-world devices.\n\nGladys Assistant integrates an MCP server that enables your compatible AI agents (Claude Desktop, Perplexity, Mistral Le Chat, etc.) to communicate with your smart home. Currently available capabilities include:\n- \ud83c\udf21\ufe0f Retrieve device states (latest value or history of values)\n- temperature\n- humidity\n- open/closed (contact)\n- lamp\n- smart plug\n- air quality\n- carbon monoxide (CO)\n- carbon dioxide (CO\u2082)\n- energy\n- brightness\n- motion\n- PM10\n- PM2.5\n- angle\n- distance\n- leak\n- level\n- formaldehyde (HCHO)\n- precipitation\n- presence\n- pressure\n- rain\n- smoke\n- VOC (volatile organic compounds)\n- volume\n- \ud83d\udcf7 View your cameras and describe what it sees (if your client is compatible)\n- \ud83d\udca1 Turn lights on/off\n- \ud83d\udd0c Control switches and outlets\n- \ud83c\udfac Launch scenes\nThe MCP system works with 2 components:\n1. **The MCP client**: This is your AI agent (Claude Desktop, Perplexity, Mistral Le Chat...)\n2. **The MCP server**: Integrated into Gladys, it exposes available functions that the client can call\nBy d"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

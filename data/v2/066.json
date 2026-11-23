@@ -1,0 +1,36 @@
+{
+ "id": 66,
+ "app": "Neo4j",
+ "category": "Graph database",
+ "one_liner": "Graph database; Aura cloud service offers a management API and Query API.",
+ "auth_methods": [
+  "oauth2",
+  "basic"
+ ],
+ "auth_primary": "oauth2",
+ "access": "paid_plan_required",
+ "access_notes": "Aura API credentials require billing info on file even for Free/Professional instances (unrestricted only on VDC/AuraDS Enterprise); 25 req/min free limit.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://github.com/neo4j/mcp",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "Billing info needed for Aura API credentials; data access via per-instance Query API with DB credentials.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://neo4j.com/docs/aura/api/authentication",
+  "access": "https://neo4j.com/docs/aura/classic/platform/api/authentication",
+  "surface": "https://neo4j.com/docs/query-api/current/query",
+  "mcp": "https://github.com/neo4j/mcp"
+ },
+ "verified": true
+}

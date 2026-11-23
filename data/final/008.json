@@ -1,0 +1,37 @@
+{
+ "id": 8,
+ "app": "Close",
+ "category": "CRM",
+ "one_liner": "Sales CRM for SMBs with REST API for leads, contacts and opportunities.",
+ "auth_methods": [
+  "api_key",
+  "basic",
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_trial",
+ "access_notes": "14-day free trial, no free plan; API keys (HTTP Basic) or OAuth app via developer docs.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://developer.close.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://developer.close.com/integrations",
+  "access": "https://close.com/pricing",
+  "surface": "https://developer.close.com/api/overview",
+  "mcp": "https://developer.close.com/mcp"
+ },
+ "verified": true
+}

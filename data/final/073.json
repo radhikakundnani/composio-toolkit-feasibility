@@ -1,0 +1,36 @@
+{
+ "id": 73,
+ "app": "Linear",
+ "category": "Project Management",
+ "one_liner": "Issue tracking and project management tool with a GraphQL API.",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "auth_primary": "oauth2",
+ "access": "self_serve_free",
+ "access_notes": "Create OAuth2 app or personal API key in settings; API and webhooks included on all plans including Free.",
+ "api_types": [
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_note": "https://linear.app/docs/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_note": "",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://linear.app/developers/graphql",
+  "access": "https://linear.app/pricing.md",
+  "surface": "https://linear.app/developers/graphql",
+  "mcp": "https://linear.app/docs/mcp"
+ },
+ "verified": true
+}

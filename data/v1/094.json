@@ -1,0 +1,35 @@
+{
+  "id": 94,
+  "app": "Consensus",
+  "category": "AI research search",
+  "one_liner": "AI academic search engine over 400M+ scholarly papers.",
+  "auth_methods": [
+    "api_key",
+    "oauth2"
+  ],
+  "auth_primary": "api_key",
+  "access": "self_serve_free",
+  "access_notes": "Sign in, create key in API & MCP dashboard; every plan incl. Free has API access (30 calls/month on Free).",
+  "api_types": [
+    "rest"
+  ],
+  "api_breadth": "narrow",
+  "mcp": "official",
+  "mcp_note": "https://mcp.consensus.app/mcp",
+  "verdict": "ready_with_caveats",
+  "blocker": "narrow_api",
+  "blocker_note": "API is paper search and threads only; Free tier limited to 30 calls a month.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "high",
+    "surface": "medium",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://docs.consensus.app/enterprise/connection-reference",
+    "access": "https://docs.consensus.app/api-get-started",
+    "surface": "https://docs.consensus.app/api-get-started",
+    "mcp": "https://docs.consensus.app/consensus-mcp"
+  }
+}

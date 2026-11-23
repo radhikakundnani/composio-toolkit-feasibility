@@ -1,0 +1,35 @@
+{
+ "id": 33,
+ "app": "LinkedIn Ads",
+ "category": "Advertising",
+ "one_liner": "Manage LinkedIn ad accounts, campaigns, creatives and conversions via Marketing API.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "auth_primary": "oauth2",
+ "access": "approval_required",
+ "access_notes": "Apply for Advertising API access via developer portal; starts Development tier (5 editable ad accounts), Standard tier needs separate application.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_note": "Community servers e.g. https://github.com/mharnett/mcp-linkedin-ads",
+ "verdict": "ready_with_caveats",
+ "blocker": "partner_or_app_review",
+ "blocker_note": "Access requires LinkedIn approval; Standard tier application needed for multi-account management.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "surface": "high",
+  "mcp": "medium"
+ },
+ "evidence": {
+  "auth": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2025-11",
+  "access": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+  "surface": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+  "mcp": "https://github.com/mharnett/mcp-linkedin-ads"
+ },
+ "verified": true
+}

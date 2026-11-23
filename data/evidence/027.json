@@ -1,0 +1,142 @@
+{
+ "id": 27,
+ "app": "Telegram",
+ "hint": "core.telegram.org",
+ "given_category": "Communications and Messaging",
+ "queries": {
+  "auth": {
+   "query": "Telegram API authentication OAuth API key access token developer docs core.telegram.org",
+   "log_id": "log_ln-lHO4ajCat",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://core.telegram.org/bots/telegram-login.md",
+     "title": "core.telegram.org/bots/telegram-login.md",
+     "snippet": "Telegram offers a [compact tool](#using-the-telegram-login-library) to quickly add Telegram login buttons to your interface. You can also directly access our library's [JS API](#available-methods).\n\nAlternatively, Telegram supports the standard [OpenID Connect](https://en.wikipedia.org/wiki/OpenID#OpenID_Connect_(OIDC%29) protocol. This allows you to integrate Telegram authentication into your application using any OIDC-compatible library or authentication platform (e.g.,  Keycloak, Authentik, Auth0 etc.).\nOur implementation follows the standard [Authorization Code Flow](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth) with **PKCE** support.\n\n#### TL;DR\n- **[Set up a bot](#setting-up-a-bot)** to represent your application.\n- **[Register your Allowed URLs](#registering-your-allowed-urls)** via [@BotFather](https://t.me/botfather) and obtain your Client ID and Secret.\n- **[Add the Telegram Login library](#using-the-telegram-login-library)** to your page.\n- **[Integrate Native SDKs](#native-sdks)** if you are building an iOS or Android mobile application.\n- **[Validate ID tokens](#validating-id-tokens)** to cryptographically verify incoming requests.\n\n[**@BotFather*"
+    },
+    {
+     "url": "https://core.telegram.org/api/auth",
+     "title": "User Authorization",
+     "snippet": "# User Authorization\nAuthorization is associated with a client's encryption key identifier: **auth_key_id**. No additional parameters need to be passed into methods following authorization.\nTo log in as a [bot](/bots), follow [these instructions \u00bb](/api/bots).\nThe following alternative login flows are also available to users:\n- [QR code-based login flow \u00bb](/api/qr-login).\n- [Passkey login flow \u00bb](/api/passkeys).\n### Sending a verification code\nExample implementations: [Telegram for Android](https://github.com/DrKLO/Telegram/blob/master/TMessagesProj/src/main/java/org/telegram/ui/LoginActivity.java), [TDLib](https://github.com/tdlib/td/tree/master/td/telegram/SendCodeHelper.cpp).\n\n#### Future auth tokens\nWhen invoking [auth.logOut](/method/auth.logOut) on a previously authorized session, the server may return a `future_auth_token`, which should be stored in the local database.\nA `future_auth_token` is also contained in the [auth.authorization](/constructor/auth.authorization) returned when logging in.\nAt all times, the future auth token database should contain at most 20 tokens: evict older tokens as new tokens are added to stay below this limit.\nWhen invoking [auth.sendCode](/metho"
+    },
+    {
+     "url": "https://core.telegram.org/api/url-authorization",
+     "title": "Seamless Telegram Login",
+     "snippet": "### OAuth authorization\n```\nurlAuthResultRequest#3cd623ec flags:# request_write_access:flags.0?true request_phone_number:flags.1?true match_codes_first:flags.5?true is_app:flags.6?true bot:User domain:string browser:flags.2?string platform:flags.2?string ip:flags.2?string region:flags.2?string match_codes:flags.3?Vector<string> user_id_hint:flags.4?long verified_app_name:flags.7?string = UrlAuthResult;\nurlAuthResultAccepted#623a8fa0 flags:# url:flags.0?string = UrlAuthResult;\n---functions---\nmessages.requestUrlAuth#894cc99c flags:# peer:flags.1?InputPeer msg_id:flags.1?int button_id:flags.1?int url:flags.2?string in_app_origin:flags.3?string = UrlAuthResult;\nmessages.acceptUrlAuth#67a3f0de flags:# write_allowed:flags.0?true share_phone_number:flags.3?true peer:flags.1?InputPeer msg_id:flags.1?int button_id:flags.1?int url:flags.2?string match_code:flags.4?string = UrlAuthResult;\nmessages.declineUrlAuth#35436bbc url:string = Bool;\nmessages.checkUrlAuthMatchCode#c9a47b0b url:string match_code:string = Bool;\n```\nTelegram allows websites to log in with Telegram using the OpenID Connect (OIDC) protocol, see [here \u00bb](https://core.telegram.org/bots/telegram-login) for more info on how to "
+    },
+    {
+     "url": "https://core.telegram.org/gateway/verification-tutorial",
+     "title": "Authorization via Telegram Gateway: Quick-start Guide",
+     "snippet": "> **TLDR**: open [this page](https://gateway.telegram.org) and log in with your Telegram phone number, then fund your account [here](https://gateway.telegram.org/account/budget) and note down your [API token](https://gateway.telegram.org/account/api).\n\n#### Obtaining your API Token\nBefore invoking API methods, you must obtain an access token in your Telegram Gateway account settings. To do so, open [this page](https://gateway.telegram.org/account/api) and click \u2018*Copy Token*\u2019.\nThe token must be passed in every request in one of two ways:\n- In the HTTP header: `Authorization: Bearer <token>`\n- As the `access_token` parameter.\nIn this guide, we\u2019ll assume you decided to use a *bearer token*.\n> To increase security, you can limit which IPs or IP ranges are allowed to use your API token from [this page](https://gateway.telegram.org/account/api).\n\nimport requests\n# Base API url, your Gateway API token and a phone number\nBASE_URL = 'https://gatewayapi.telegram.org/'\nTOKEN = 'AAEFAAAAQKI_mDsJppSEQRr3kLOz9SatBxq48BgQLSHLRv'\nPHONE = '+391234567890'\nHEADERS = {\n'Authorization': f'Bearer {TOKEN}',\n'Content-Type': 'application/json'\n}\n\nIf you let Telegram generate a code for you (i.e., you did "
+    },
+    {
+     "url": "https://core.telegram.org/api/links",
+     "title": "Deep links",
+     "snippet": "### Login code link\nContains the phone number verification code to use during [user authorization \u00bb](https://core.telegram.org/api/auth).\n`t.me` syntax:\n```\nt.me/login/<code>\n```\n`tg:` syntax:\n```\ntg://login?code=<code>\n```\nParameters:\n| Name | Optional | Description |\n|---|---|---|\n| `code` | Required | Login code. |"
+    }
+   ]
+  },
+  "access": {
+   "query": "Telegram core.telegram.org API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_gyeIIf0jJnxZ",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://core.telegram.org/api/obtaining_api_id",
+     "title": "Creating your Telegram Application",
+     "snippet": "We welcome all developers to use our [API](https://core.telegram.org/api#telegram-api) and source code to create Telegram-like messaging applications on our platform free of charge.\n> In order to ensure consistency and security across the Telegram ecosystem, **all third-party client apps** must comply with the [**API Terms of Service**](https://core.telegram.org/api/terms).\n### Obtaining api_id\nIn order to obtain an **API id** and develop your own application using the Telegram API you need to do the following:\n- Sign up for Telegram using an official application.\n- Log in to your Telegram core: [https://my.telegram.org](https://my.telegram.org).\n- Go to [\"API development tools\"](https://my.telegram.org/apps) and fill out the form.\n- You will get basic addresses as well as the **api_id** and **api_hash** parameters required for user authorization.\n- For the moment each number can only have one api_id connected to it.\nWe will be sending important developer notifications to the phone number that you use in this process, so please use an up-to-date number connected to your active Telegram account."
+    },
+    {
+     "url": "https://core.telegram.org/api/terms",
+     "title": "Telegram API Terms of Service",
+     "snippet": "We welcome all developers to use our API and source code to [create Telegram-like messaging applications](https://core.telegram.org/api/obtaining_api_id) on our platform free of charge. In order to ensure consistency and security across the Telegram ecosystem, all third-party client apps must comply with the following Terms of Service.\n\n**2.1.** You must [obtain your own api_id](https://core.telegram.org/api/obtaining_api_id#obtaining-api-id) for your application.\n**2.2.** We offer our API free of charge, but your users must be aware of the fact that your app uses the Telegram API and is part of the Telegram ecosystem. This fact must be featured prominently in the app's description in the app stores and in the in-app intro if your app has it."
+    },
+    {
+     "url": "https://core.telegram.org",
+     "title": "Telegram APIs",
+     "snippet": "We offer three kinds of APIs for developers. The **Bot API** allows you to easily create programs that use Telegram messages for an interface. The **Telegram API and TDLib** allow you to build your own customized Telegram clients. You are welcome to use both APIs free of charge. Lastly, the **Gateway API** allows any business, app or website to send verification codes through Telegram instead of traditional SMS.\n\nThis API allows you to connect bots to our system. [**Telegram Bots**](https://core.telegram.org/bots) are special accounts that do not require an additional phone number to set up. These accounts serve as an interface for code running somewhere on your server.\n\nBot developers can also make use of our [**Payments API**](https://core.telegram.org/bots/payments) to accept **payments** from Telegram users around the world.\n\nThis API allows you to build your own customized Telegram clients. It is 100% open for all developers who wish to create Telegram applications on our platform. Feel free to study the open [source code](https://telegram.org/apps#source-code) of existing Telegram applications for examples of how things work here. Don't forget to [register](https://core.teleg"
+    },
+    {
+     "url": "https://core.telegram.org/api/obtaining_api_id.md",
+     "title": "core.telegram.org/api/obtaining_api_id.md",
+     "snippet": "We welcome all developers to use our [API](/api.md#telegram-api) and source code to create Telegram-like messaging applications on our platform free of charge.\n\nIn order to obtain an **API id** and develop your own application using the Telegram API you need to do the following:\n* Sign up for Telegram using an official application.\n* Log in to your Telegram core: [https://my.telegram.org](https://my.telegram.org).\n* Go to [\"API development tools\"](https://my.telegram.org/apps) and fill out the form.\n* You will get basic addresses as well as the **api_id** and **api_hash** parameters required for user authorization.\n* For the moment each number can only have one api_id connected to it.\nWe will be sending important developer notifications to the phone number that you use in this process, so please use an up-to-date number connected to your active Telegram account."
+    },
+    {
+     "url": "https://core.telegram.org/api/terms.md",
+     "title": "core.telegram.org/api/terms.md",
+     "snippet": "We welcome all developers to use our API and source code to [create Telegram-like messaging applications](/api/obtaining_api_id.md) on our platform free of charge. In order to ensure consistency and security across the Telegram ecosystem, all third-party client apps must comply with the following Terms of Service.\n\napi_id](/api/obtaining_api_id.md#obtaining-api-id) for your application.\n**2.2.** We offer our API free of charge, but your users must be aware of the fact that your app uses the Telegram API and is part of the Telegram ecosystem. This fact must be featured prominently in the app's description in the app stores and in the in-app intro if your app has it."
+    }
+   ]
+  },
+  "surface": {
+   "query": "Telegram API reference REST GraphQL endpoints documentation core.telegram.org",
+   "log_id": "log_QxcGh32wQQ_W",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://core.telegram.org/api/profile",
+     "title": "User profiles",
+     "snippet": "Use [account.updateStatus](https://core.telegram.org/method/account.updateStatus) to change the online status of the current account.\nChanging the online status will emit an [updateUserStatus](https://core.telegram.org/constructor/updateUserStatus) update."
+    },
+    {
+     "url": "https://core.telegram.org/type/messages.Messages",
+     "title": "messages.Messages",
+     "snippet": "| [messages.getMessages](https://core.telegram.org/method/messages.getMessages) | Returns the list of messages by their IDs. |\n\nReturns the message history in a peer. Results are ordered by date (descending). |\n\nlocations](https://core.telegram.org/api/live-location) sent to a specific chat: returns up to 1 location message ([messageMediaGeoLive](https://core.telegram.org/constructor/messageMediaGeoLive)) per chat participant. |"
+    },
+    {
+     "url": "https://core.telegram.org/methods",
+     "title": "Available methods",
+     "snippet": "| [help.getTermsOfServiceUpdate](https://core.telegram.org/method/help.getTermsOfServiceUpdate) | Look for updates of telegram's terms of service |\n| [help.acceptTermsOfService](https://core.telegram.org/method/help.acceptTermsOfService) | Accept the new terms of service |\n\n### Fetching [configuration](https://core.telegram.org/api/config)\nFetching configuration\n| Name | Description |\n|---|---|\n| [help.getAppConfig](https://core.telegram.org/method/help.getAppConfig) | Get app-specific configuration, see [client configuration](https://core.telegram.org/api/config#client-configuration) for more info on the result. |\n| [help.getAppUpdate](https://core.telegram.org/method/help.getAppUpdate) | Returns information on update availability for the current application. |\n| [help.getConfig](https://core.telegram.org/method/help.getConfig) | Returns current configuration, including data center configuration. |"
+    },
+    {
+     "url": "https://core.telegram.org/bots/api",
+     "title": "Telegram Bot API",
+     "snippet": "> The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.\n> To learn how to create and set up a bot, please consult our [**Introduction to Bots**](https://core.telegram.org/bots) and [**Bot FAQ**](https://core.telegram.org/bots/faq).\n\n### Making requests\nAll queries to the Telegram Bot API must be served over HTTPS and need to be presented in this form: `https://api.telegram.org/bot<token>/METHOD_NAME`. Like this for example:\n```\nhttps://api.telegram.org/bot123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11/getMe\n```\nWe support **GET** and **POST** HTTP methods. We support four ways of passing parameters in Bot API requests:\n- [URL query string](https://en.wikipedia.org/wiki/Query_string)\n- application/x-www-form-urlencoded\n- application/json (except for uploading files)\n- multipart/form-data (use to upload files)\nThe response contains a JSON object, which always has a Boolean field 'ok' and may have an optional String field 'description' with a human-readable description of the result. If 'ok' equals *True*, the request was successful and the result of the query can be found in the 'result' field. In case of an unsuccessful request, 'ok' equals *Fa"
+    },
+    {
+     "url": "https://core.telegram.org/api/offsets",
+     "title": "Pagination in the API",
+     "snippet": "# Pagination in the API\nLots of Telegram API methods provide access to potentially large lists of objects, which requires pagination.\nIn order to fetch only relevant subset of results for each request there is a number of available input parameters. Here is a list in order how they are applied in API.\nTypically, results are returned in reverse chronological order with descending object ID values.\n\n### `offset_id`-based pagination\nFor most methods where results are real-time data (e.g. any chat history) `offset` value is not passed directly. Instead it is calculated from the passed `offset_id` and `add_offset` parameter values as `offsetFromID(offset_id) + add_offset`, where `offsetFromID(offset_id)` is a number of results from the beginning of list up to the result with ID `offset_id`, inclusive.\n\n- [messages.getHistory](https://core.telegram.org/method/messages.getHistory) supports all result navigation parameters including message ID hashes and except filters\n- [channels.getParticipants](https://core.telegram.org/method/channels.getParticipants) supports simple navigation using **limit** and **offset**, along with filtering and `hash` reducing using the user IDs of returned parti"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Telegram core.telegram.org MCP server Model Context Protocol official",
+   "log_id": "log_U7a015IAzeW2",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://github.com/iflow-mcp/telegram-mcp-server/blob/main/README.md",
+     "title": "telegram-mcp-server/README.md at main \u00b7 iflow-mcp/telegram-mcp-server",
+     "snippet": "# Telegram MCP Server\n**Revival update (September 2025).** The server now runs on the official `@modelcontextprotocol/sdk` transport, backed by the MtCute Telegram client and a sequential background archive worker writing into SQLite. **Breaking changes.** MCP clients must target `http://localhost:8080/mcp`; message history now lives in `data/messages.db`, and new sync tools drive archival jobs. The legacy implementation remains published as branch `legacy-0.x` and tag `v0-legacy` if you need the old `/sse` flow. **Key changes:** `/mcp` endpoint, MtCute session handling, message-sync job queue, SQLite archive, new CLI helpers in `client.js`.\nAn MCP server allowing AI assistants (like Claude or Cursor) to interact with your Telegram account using the user client API (not the bot API). The stack rides on the official `@modelcontextprotocol/sdk` Streamable HTTP transport and exposes Telegram-oriented tools for listing dialogs, fetching messages, and managing background sync jobs.\n## Tools\n| Tool | Description |\n|---|---|\n| `listChannels` | Lists available dialogs/channels (limit configurable). |\n| `searchChannels` | Searches dialogs by title or username. |\n| `getChannelMessages` | Fet"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/chaindead/telegram-mcp/main/README.md",
+     "title": "raw.githubusercontent.com/chaindead/telegram-mcp/main/README.md",
+     "snippet": "# Telegram MCP server\nThe server is a bridge between the Telegram API and the AI assistants and is based on the [Model Context Protocol](https://modelcontextprotocol.io).\n> [!IMPORTANT]\n> Ensure that you have read and understood the [Telegram API Terms of Service](https://core.telegram.org/api/terms) before using this server.\n> Any misuse of the Telegram API may result in the suspension of your account.\n\nThe Model Context Protocol (MCP) is a system that lets AI apps, like Claude Desktop or Cursor, connect to external tools and data sources. It gives a clear and safe way for AI assistants to work with local services and APIs while keeping the user in control.\n## What does this server do?\n### Capabilities\n- [x] Get current account information (`tool: tg_me`)\n- [x] List dialogs with optional unread filter (`tool: tg_dialogs`)\n- [x] Mark dialog as read (`tool: tg_read`)\n- [x] Retrieve messages from specific dialog (`tool: tg_dialog`)\n- [x] Send draft messages to any dialog (`tool: tg_send`)\n\n### NPX\nYou can run the latest version directly using npx (supports macOS, Linux, and Windows):\n```bash\nnpx -y @chaindead/telegram-mcp\n```\nWhen using NPX, modify the standard commands and configura"
+    },
+    {
+     "url": "https://github.com/Sarang-Nambiar/telegram-mcp",
+     "title": "GitHub - Sarang-Nambiar/telegram-mcp: An MCP server for telegram",
+     "snippet": "# telegram-mcp\nAn MCP (Model Context Protocol) server for Telegram that enables AI assistants to interact with Telegram chats programmatically.\n## Features\n### Tools\n#### Message Reading & Sending\n- **`read_message`** - Read messages from an active chat with a user\n- Supports reading the latest K messages from a conversation\n- Automatically filters and formats message data\n- **Prompt Template**: `read_message_prompt()` - Guides conversation partner selection and message retrieval\n- **`send_message`** - Send messages to a user on Telegram\n- Supports Telegram's markdown formatting (bold, italic, links, code blocks, etc.)\n- **Prompt Template**: `send_message_prompt()` - Handles fuzzy matching of usernames and user confirmation\n- **`get_unread_count`** - Check unread message counts across active conversations\n- Retrieves unread counts from the top K chats\n- Returns aggregated unread message statistics\n- **Prompt Template**: `get_unread_count_prompt()` - Summarizes unread counts and suggests follow-up actions\n#### Message Management\n- **`delete_message`** - Delete messages from a conversation\n- Supports deleting single or multiple messages\n- Optional `remove_for_everyone` flag to delete"
+    },
+    {
+     "url": "https://github.com/mcp-telegram/mcp-telegram",
+     "title": "mcp-telegram/mcp-telegram: Telegram MCP server: connect your personal Telegram account to Claude, ChatGPT, Cursor and any MCP client. 182 tools over MTProto. Self-host with npx or Docker, or use the hosted version. \u00b7 GitHub",
+     "snippet": "## Repository\n- Public, MIT License\n- Website: https://mcp-telegram.com\n- Stars: 69 \u00b7 Watchers: 0 \u00b7 Forks: 26\n- Default branch: main \u00b7 Releases: 82 \u00b7 Tags: 85\n- Created: 2026-03-10\n# Telegram MCP Server\n\n**Telegram MCP Server** \u2014 a Model Context Protocol server that connects AI assistants like Claude and ChatGPT to Telegram via the MTProto protocol. Unlike bots, this runs as a **userbot** -- it operates under your personal Telegram account using [GramJS](https://github.com/nicedoc/gramjs), giving full access to your chats, contacts, and message history.\n## Features\n- **Comprehensive tool coverage** -- the most full-featured Telegram MCP server available\n- **MTProto protocol** -- direct Telegram API access, not the limited Bot API\n- **Userbot** -- operates as your personal account, not a bot\n- **Full-featured** -- messaging, reactions, polls, scheduled messages, stickers, media, contacts, and more\n- **Forum Topics** -- list topics, read per-topic messages, send to specific topics, per-topic unread counts\n- **Stickers** -- search sticker sets, browse installed/recent stickers, send stickers to any chat\n- **Account & profile management** -- update profile, set emoji status, birthday, "
+    },
+    {
+     "url": "https://github.com/sparfenyuk/mcp-telegram/blob/main/README.md",
+     "title": "mcp-telegram/README.md at main \u00b7 sparfenyuk/mcp-telegram",
+     "snippet": "The server is a bridge between the Telegram API and the AI assistants and is based on the [Model Context Protocol](https://modelcontextprotocol.io).\nImportant\nEnsure that you have read and understood the [Telegram API Terms of Service](https://core.telegram.org/api/terms) before using this server. Any misuse of the Telegram API may result in the suspension of your account.\n\nThe Model Context Protocol (MCP) is a system that lets AI apps, like Claude Desktop, connect to external tools and data sources. It gives a clear and safe way for AI assistants to work with local services and APIs while keeping the user in control.\n## What does this server do?\nAs of not, the server provides read-only access to the Telegram API.\n- Get the list of dialogs (chats, channels, groups)\n- Get the list of (unread) messages in the given dialog\n- Mark chanel as read\n- Retrieve messages by date and time\n- Download media files\n- Get the list of contacts\n- Draft a message\n- ...\n\n## Installation\n```\nuv tool install git+https://github.com/sparfenyuk/mcp-telegram\n```\nNote\nIf you have already installed the server, you can update it using `uv tool upgrade --reinstall` command.\n\n### Telegram API Configuration\nBefor"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

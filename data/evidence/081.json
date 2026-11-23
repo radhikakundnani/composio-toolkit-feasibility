@@ -1,0 +1,142 @@
+{
+ "id": 81,
+ "app": "Stripe",
+ "hint": "stripe.com/docs/api",
+ "given_category": "Finance and Fintech",
+ "queries": {
+  "auth": {
+   "query": "Stripe API authentication OAuth API key access token developer docs stripe.com/docs/api",
+   "log_id": "log_HagBB0OJPULP",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+     "title": "OAuth 2.0",
+     "snippet": "## Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.\nA user authenticating with OAuth follows these steps.\n1. On your site, the user clicks a link that redirects them to Stripe.\n2. On Stripe, the user selects the appropriate account and accepts permissions for installing the app.\n3. After the app is installed, authentication is complete and the user is redirected to a defined URI.\n\n2. Edit the following fields in the [app manifest](https://docs.stripe.com/stripe-apps/reference/app-manifest):\nYour app manifest should look like this:\n```\n{\n\"id\": \"com.example.my-app\",\n\"version\": \"0.0.1\",\n\"name\": \"Your Stripe App\",\n\"icon\": \"./[YOUR_APP]_icon_32.png\",\n\"permissions\": [\n// Your app permissions here\n],\n\"stripe_api_access_type\": \"oauth\",\n\"distribution_type\": \"public\",\n\"allowed_redirect_uris\": [\n// Your redirect URIs here\n]\n}\n```\n- Set `stripe_api_access_type` to `oauth`.\n- Set `distribution_type` to `public`.\n- Set your `allowed_redirect_uris`. These are the URLs that users are redirected to after installing your app using OAuth. The first one in the list is used as the default redirect.\n\n## Exchange the authorization code for an access "
+    },
+    {
+     "url": "https://docs.stripe.com/api/authentication?lang=connect",
+     "title": "Authentication | Stripe API Reference",
+     "snippet": "The Stripe API uses [API keys](https://docs.stripe.com/keys) to authenticate requests. You can view and manage your API keys in [the Stripe Dashboard](https://dashboard.stripe.com/login?redirect=/apikeys).\nTest mode secret keys start with `sk_test_` and have unrestricted access to their sandboxes. In live mode, you configure a [restricted API key](https://docs.stripe.com/keys#create-restricted-api-key) (starts with `rk_live_`) with specific API permissions. Using a restricted API key with only a subset of API permissions limits the damage a bad actor could cause if they obtained the key. In both test mode and live mode, you can create as many restricted API keys as you need for different use cases or components of your application. We also create a live mode secret key (starts with `sk_live_`) that grants access to all Stripe API resources. To protect your business, use restricted API keys instead.\nYour API keys carry many privileges. Follow [best practices](https://docs.stripe.com/keys-best-practices) to keep your keys safe. Don\u2019t embed secret or restricted API keys in source code or client-side applications. Instead, use your server platform\u2019s secrets vault to provide keys to you"
+    },
+    {
+     "url": "https://docs.stripe.com/stripe-apps/api-authentication",
+     "title": "API authentication methods",
+     "snippet": "| Method | Description | Use cases |\n|---|---|---|\n| [Platform key](https://docs.stripe.com/stripe-apps/build-backend#using-stripe-apis) Default | Your account\u2019s secret API key makes requests to the Stripe API on behalf of your user\u2019s account. | - You want to manage fewer keys per install. - Private preview You want to distribute your app with [Embedded Stripe Apps](https://docs.stripe.com/stripe-apps/embedded-apps). |\n| [OAuth 2.0](https://docs.stripe.com/stripe-apps/api-authentication/oauth) | Use industry standard OAuth 2.0 to generate access tokens to interact with the Stripe API. Initialize the Stripe SDK with the access token for the account you\u2019re operating on behalf of. | - You already use OAuth to interact with other systems. - Users need to manage the integration from your software. |\n| [Restricted API key](https://docs.stripe.com/stripe-apps/api-authentication/rak) | When a user installs your app, Stripe generates a permissioned, restricted API key that users need to copy and paste into your software to interact with Stripe. | - Your software can\u2019t support platform or OAuth onboarding. - Your users run your software on-premise. |\n## Configure\nTo configure the API authent"
+    },
+    {
+     "url": "https://github.com/stripe/stripe-python/blob/bb711be1/stripe/_oauth.py",
+     "title": "stripe-python/stripe/_oauth.py at bb711be19105d79b2263db9af02f9a03ecfe4eba \u00b7 stripe/stripe-python",
+     "snippet": "class OAuth(object):\nclass OAuthToken(StripeObject):\naccess_token: Optional[str]\n\"\"\"\nThe access token you can use to make requests on behalf of this Stripe account. Use it as you would any Stripe secret API key.\nThis key does not expire, but may be revoked by the user at any time (you'll get a account.application.deauthorized webhook event when this happens).\n\"\"\"\nscope: Optional[str]\n\"\"\"\nThe scope granted to the access token, depending on the scope of the authorization code and scope parameter.\n\"\"\"\nlivemode: Optional[bool]\n\"\"\"\nThe live mode indicator for the token. If true, the access_token can be used as a live secret key. If false, the access_token can be used as a test secret key.\nDepends on the mode of the secret API key used to make the request.\n\"\"\"\ntoken_type: Optional[Literal[\"bearer\"]]\n\"\"\"\nWill always have a value of bearer.\n\"\"\"\nrefresh_token: Optional[str]\n\"\"\"\nCan be used to get a new access token of an equal or lesser scope, or of a different live mode (where applicable).\n\"\"\"\nstripe_user_id: Optional[str]\n\"\"\"\nThe unique id of the account you have been granted access to, as a string.\n\"\"\"\nstripe_publishable_key: Optional[str]\n\"\"\"\nA publishable key that can be used with this"
+    },
+    {
+     "url": "https://docs.stripe.com/stripe-apps/pkce-oauth-flow.md",
+     "title": "docs.stripe.com/stripe-apps/pkce-oauth-flow.md",
+     "snippet": "You can implement OAuth with your *UI extension* (A set of APIs that allow you to inject user interface elements into the Stripe Dashboard using TypeScript and React) in the Dashboard to retrieve access tokens from an OAuth provider instead of building an OAuth backend. If the user gives your *Stripe App* (An app that you can build on top of Stripe to customize the functionality of the Stripe Dashboard UI, leverage Stripe user data, store data on Stripe, and more) access to an OAuth provider, they can interact with the services of the OAuth provider directly from your Stripe app in the Dashboard.\n\n## Before you begin\n- Ensure that your OAuth provider supports the [Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce) flow.\n- If you haven\u2019t already, create an app with your OAuth provider to connect and use with your Stripe App.\n- [Create a Stripe app](https://docs.stripe.com/stripe-apps/create-app.md) and [build a UI](https://docs.stripe.com/stripe-apps/build-ui.md). The UI extension retrieves the access token from the OAuth provider with the PKCE flow.\n\n## Retrieve "
+    }
+   ]
+  },
+  "access": {
+   "query": "Stripe stripe.com/docs/api API access requirements developer account pricing plan free trial partner program approval",
+   "log_id": "log_vasrqvBm13Jp",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://docs.stripe.com/stripe-apps/api-authentication/managed-api-keys",
+     "title": "Managed API keys",
+     "snippet": "## Prerequisites\nTo use app-managed API keys, you must add the `api_key_write` permission to your [Stripe App manifest](https://docs.stripe.com/stripe-apps/reference/app-manifest). This permission requires explicit approval, so you must also submit your app to Stripe for review even if earlier versions were approved.\nThe standard app review process can take several days, but Stripe can expedite it for early access partners.\nAfter we approve your app with this permission, it has access to the [API Keys](https://docs.stripe.com/api/v2/api-keys?api-version=preview) endpoints.\n## Installation requirements\nUsers must install your app using the standard Stripe App installation flow. App-managed keys can only be created after:\n- The user has authorized your app.\n- Your app has been granted the `api_key_write` permission.\n- The user\u2019s account is activated (for live mode keys).\n## Usage\nAuthenticate your API requests using an API key of your app. You can use either an unrestricted key or a restricted key that has the `api_key_write` Connect permission."
+    },
+    {
+     "url": "https://docs.stripe.com/partners",
+     "title": "Stripe Partner Ecosystem",
+     "snippet": "To become a Stripe partner, you must:\n1. Create and activate a free [Stripe account](https://dashboard.stripe.com/register).\n2. Make sure you\u2019re not on the [Stripe Restricted Businesses list](https://www.stripe.com/restricted-businesses).\n3. Meet the requirements of the individual track.\n4. Complete the [partner application](https://www.stripe.com/partners/become-a-partner).\n5. Accept the [Stripe Partner Ecosystem Agreement](https://www.stripe.com/legal/partner-ecosystem).\n\nPartners receive the following core benefits:\n- Access to training and certifications.\n- Marketing campaign assets, how-to guides, and templates.\n- Stripe Partner badges and co-branding guidelines.\n- Market development funds (MDF).\n- [Partner directory listing](https://stripe.com/partners).\n- Deal registration to request co-selling support.\n- Partner portal access.\n- Partner program support.\n\nThe program includes two tiers:\n- Partner\n- Premier\nAll partners complete a vetting process and enter the program at the Partner tier. They can advance to the Premier tier when they meet additional track-specific criteria, and unlock additional benefits.\n## Partner program tracks, requirements and tailored benefits\nPartners"
+    },
+    {
+     "url": "https://docs.stripe.com/keys",
+     "title": "API keys",
+     "snippet": "The difference is in governance: agent-tagged keys are automatically subject to [approval rules](https://docs.stripe.com/account/approvals), which require a designated reviewer to approve sensitive actions before they take effect. Stripe provides a set of default rules when you create your first agent-tagged key. These rules cover high-risk actions such as payouts, refunds, and account configuration changes."
+    },
+    {
+     "url": "https://docs.stripe.com/provisioning",
+     "title": "Integrate the Provisioning API into your platform",
+     "snippet": "| Actor or object | Responsibility |\n|---|---|\n| Platform account | Authenticates API calls with an approved restricted key or, where required, its platform secret key. |\n| Platform tenant | Your durable authorization boundary, such as a workspace or organization. |\n| Connected account | The Stripe account that owns projects, provider connections, resources, the payment profile, credentials, and usage. |\n| Application environment | Your deployment boundary, such as preview or production. |\n| Platform backend | Resolves the authenticated user to a tenant and connected account, calls Stripe, persists state, and handles secrets. |\n| Provider | A third party that advertises Services and owns the underlying infrastructure.\n\n## Read, plan, approve, then write\nUse read-only endpoints in your backend to prepare a plan. Before your backend makes a write request, require approval from a user authorized by your product policy.\nRequire fresh approval to:\n- Create a project.\n- Start a provider connection request or submit provider-requested information.\n- Register a payment method or increase a usage limit.\n- Create, link, update, rotate, remove, or unlink a resource.\n- Unlink a provider connec"
+    },
+    {
+     "url": "https://docs.stripe.com/baas/start-integration/onboarding-overview",
+     "title": "Onboarding overview",
+     "snippet": "At any time, you can explore an integration in a [sandbox](/sandboxes) environment using our [sample app](/issuing/sample-app). After you sign the legal agreement, Stripe configures your program to the capabilities required for your business model. After you receive approval, you can begin submitting live transactions.\n| | Sandbox | Live |\n|---|---|---|\n| Usage limits | With no permissions necessary, explore a broad set of platform use cases by using the sample app or the [Issuing](/api/issuing/authorizations) or [Treasury for platforms](/api/treasury/financial_accounts) APIs | Limited to what you\u2019re approved for |\n| Immediate access | Yes | No, you\u2019re granted access after you receive bank partner approval |\n| Use real funds | No | Yes |"
+    }
+   ]
+  },
+  "surface": {
+   "query": "Stripe API reference REST GraphQL endpoints documentation stripe.com/docs/api",
+   "log_id": "log_iEDIThKJo1lY",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://stripe.com/docs/api",
+     "title": "Stripe API Reference",
+     "snippet": "The Stripe API is organized around [REST](https://en.wikipedia.org/wiki/Representational_State_Transfer). Our API has predictable resource-oriented URLs, accepts [form-encoded](https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms) request bodies, returns [JSON-encoded](https://www.json.org/) responses, and uses standard HTTP response codes, authentication, and verbs."
+    },
+    {
+     "url": "https://docs.stripe.com/api/customers/list",
+     "title": "List all customers | Stripe API Reference",
+     "snippet": "# [List all customers](https://docs.stripe.com/api/customers/list) v1\nGET /v1/customers\nReturns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.\n### Parameters\n- ####\nemailstring\nA case-sensitive filter on the list based on the customer\u2019s `email` field. The value must be a string.\nThe maximum length is 512 characters.\n### More parameters\n- ####\ncreatedobject | integer\n- ####\nending_beforestring\n- ####\nlimitinteger\n- ####\nstarting_afterstring\n- ####\ntest_clockstring\n### Returns\nA dictionary with a `data` property that contains an array of up to `limit` customers, starting after customer `starting_after`. Passing an optional `email` will result in filtering to customers with only that exact email address. Each entry in the array is a separate customer object. If no more customers are available, the resulting array will be empty.\n```\ncurl -G https://api.stripe.com/v1/customers \\  -u \":\" \\  -H \"Stripe-Version: 2026-11-18.endive\" \\  -d limit=3\n```\n\n\"footer\": null,        \"rendering_options\": null      },      \"livemode\": false,      \"metadata\": {},      \"name\": \"Jenny Rosen\",      \"next_invoice_sequence\": 1,   "
+    },
+    {
+     "url": "https://docs.stripe.com/api/payment_intents/list",
+     "title": "List all PaymentIntents | Stripe API Reference",
+     "snippet": "# [List all PaymentIntents](https://docs.stripe.com/api/payment_intents/list) v1\nGET /v1/payment_intents\nReturns a list of PaymentIntents.\n### Parameters\n- ####\ncustomerstring\nOnly return PaymentIntents for the customer that this customer ID specifies.\n- ####\ncustomer_accountstring\nOnly return PaymentIntents for the account representing the customer that this ID specifies.\n### More parameters\n- ####\ncreatedobject | integer\n- ####\nending_beforestring\n- ####\nlimitinteger\n- ####\nstarting_afterstring\n### Returns\nA dictionary with a `data` property that contains an array of up to `limit` PaymentIntents, starting after PaymentIntent `starting_after`. Each entry in the array is a separate PaymentIntent object. If no other PaymentIntents are available, the resulting array is empty.\n```\ncurl -G https://api.stripe.com/v1/payment_intents \\  -u \":\" \\  -H \"Stripe-Version: 2026-11-18.endive\" \\  -d limit=3\n```\nResponse\n```\n{  \"object\": \"list\",  \"url\": \"/v1/payment_intents\",  \"has_more\": false,  \"data\": [    {      \"id\": \"pi_3MtwBwLkdIwHu7ix28a3tqPa\",      \"object\": \"payment_intent\",      \"amount\": 2000,      \"amount_capturable\": 0,      \"amount_details\": {        \"tip\": {}      },      \"amount_re"
+    },
+    {
+     "url": "https://docs.stripe.com/api/payment-record/list?api-version=2026-10-28.preview",
+     "title": "List Payment Records | Stripe API Reference",
+     "snippet": "# [List Payment Records](https://docs.stripe.com/api/payment-record/list) v1\nGET /v1/payment_records\nList all the Payment Records for a given merchant.\n### Parameters\n- ####\ncreated_aftertimestamp\nOnly return Payment Records that were created after this unix timestamp.\n- ####\ncreated_beforetimestamp\nOnly return Payment Records that were created before this unix timestamp.\n- ####\nending_beforestring\nA cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.\n- ####\nlimitinteger\nA limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.\n- ####\nstarting_afterstring\nA cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.\n### Returns\nA dictionary with a data property that "
+    },
+    {
+     "url": "https://docs.stripe.com/api/charges/list",
+     "title": "List all charges | Stripe API Reference",
+     "snippet": "# [List all charges](https://docs.stripe.com/api/charges/list) v1\nGET /v1/charges\nReturns a list of charges you\u2019ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.\n### Parameters\n- ####\ncustomerstring\nOnly return charges for the customer specified by this customer ID.\n### More parameters\n- ####\ncreatedobject | integer\n- ####\nending_beforestring\n- ####\nlimitinteger\n- ####\npayment_intentstring\n- ####\nstarting_afterstring\n- ####\ntransfer_groupstringConnect only\n### Returns\nA dictionary with a `data` property that contains an array of up to `limit` charges, starting after charge `starting_after`. Each entry in the array is a separate charge object. If no more charges are available, the resulting array will be empty. If you provide a non-existent customer ID, this call raises an error.\n```\ncurl -G https://api.stripe.com/v1/charges \\  -u \":\" \\  -H \"Stripe-Version: 2026-11-18.endive\" \\  -d limit=3\n```"
+    }
+   ]
+  },
+  "mcp": {
+   "query": "Stripe stripe.com/docs/api MCP server Model Context Protocol official",
+   "log_id": "log_EsW4CFLkvMYW",
+   "ok": true,
+   "error": null,
+   "results": [
+    {
+     "url": "https://stripe.com/docs/mcp",
+     "title": "Model Context Protocol (MCP)",
+     "snippet": "## Let your AI agents interact with the Stripe API by using our MCP server.\nThe Stripe Model Context Protocol (MCP) server provides tools that AI agents can use to interact with the Stripe API and search the Stripe knowledge base, including documentation and support articles.\n## Set up Stripe MCP with a plugin Recommended\n[Agent plugins](/agents/plugin) for Stripe automatically configure the Stripe MCP server, install our [skills](/skills), and make sure they\u2019re up-to-date. You get our latest capabilities without configuration or maintenance.\nTo install, run:\n```\nnpm install -g @stripe/cli@latest\nstripe agent setup\n```\nThis command automatically detects which agents you use, and runs the applicable commands.\n## Manually set up Stripe MCP\nIf your MCP client doesn\u2019t support [agent plugins](/agents/plugin) for Stripe, or you prefer to configure the Stripe MCP server and install the skills manually, follow these instructions:\n## Manage MCP access and sessions\nStripe\u2019s MCP server supports two authentication methods:\n1. **OAuth**: Use OAuth when a client accesses Stripe on behalf of your Stripe user account.\n2. **Agent API keys**: Use an [agent API key](/keys#agent-keys) when an AI appli"
+    },
+    {
+     "url": "https://github.com/stripe/ai/blob/main/tools/modelcontextprotocol/README.md",
+     "title": "ai/tools/modelcontextprotocol/README.md at main \u00b7 stripe/ai",
+     "snippet": "The Stripe [Model Context Protocol](https://modelcontextprotocol.com/) server allows you to integrate with Stripe APIs through function calling. This protocol supports various tools to interact with different Stripe services.\n## Setup\nStripe hosts a remote MCP server at [https://mcp.stripe.com](https://mcp.stripe.com). View the docs [here](https://docs.stripe.com/mcp).\n## Local\nTo run the Stripe MCP server locally using npx, use the following command:\n```\n# Basic usage\nnpx -y @stripe/mcp --api-key=YOUR_STRIPE_SECRET_KEY\n# To configure a Stripe connected account\nnpx -y @stripe/mcp --api-key=YOUR_STRIPE_SECRET_KEY --stripe-account=CONNECTED_ACCOUNT_ID\n```\nMake sure to replace `YOUR_STRIPE_SECRET_KEY` with your actual Stripe secret key. Alternatively, you could set the STRIPE_SECRET_KEY in your environment variables.\n**Note:** Tool permissions are controlled by your Restricted API Key (RAK). Create a RAK with the desired permissions at [https://dashboard.stripe.com/apikeys](https://dashboard.stripe.com/apikeys)\n### Usage with Claude Desktop\nAdd the following to your `claude_desktop_config.json`. See [here](https://modelcontextprotocol.io/quickstart/user) for more details.\n```\n{\n\"mcpSe"
+    },
+    {
+     "url": "https://github.com/stripe/ai/tree/main/tools",
+     "title": "ai/tools at main \u00b7 stripe/ai",
+     "snippet": "## Model Context Protocol\nStripe hosts a remote MCP server at `https://mcp.stripe.com`. This allows secure MCP client access via OAuth. View the docs [here](https://docs.stripe.com/mcp#remote).\nIt can also be used to create autonomous agents.\nFor a local MCP, see the [MCP](/stripe/ai/blob/main/modelcontextprotocol) package.\n## Agent Toolkit\nThe Stripe Agent Toolkit enables popular agent frameworks including Model Context Protocol (MCP), OpenAI's Agent SDK, LangChain, CrewAI, and Vercel's AI SDK to integrate with Stripe APIs through function calling. The library is not exhaustive of the entire Stripe API. It includes support for MCP, Python, and TypeScript and is built directly on top of the Stripe [Python](https://github.com/stripe/stripe-python) and [Node](https://github.com/stripe/stripe-node) SDKs.\n\n## Model Context Protocol\nThe Stripe Agent Toolkit also exposes tools in the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/) format. Or, to run a local Stripe MCP server using npx, use the following command:\n```\nnpx -y @stripe/mcp --api-key=YOUR_STRIPE_SECRET_KEY\n```\nTool permissions are controlled by your Restricted API Key (RAK). Create a RAK with the desired perm"
+    },
+    {
+     "url": "https://docs.stripe.com/treasury/agents.md",
+     "title": "docs.stripe.com/treasury/agents.md",
+     "snippet": "Automate financial operations with AI agents.\nInstall Stripe\u2019s [Model Context Protocol](https://docs.stripe.com/mcp.md) server to automate everyday financial tasks with AI agents. Ask your agent to analyze your data, set up recipients, transfer funds\u2014all while approving sensitive money movement actions. To learn where Treasury is available, see [Availability](https://stripe.com/money-management/availability#explore).\nIf your MCP client doesn\u2019t support [agent plugins](https://docs.stripe.com/agents/plugin.md) for Stripe, or you prefer to configure the Stripe MCP server and install the skills manually, follow these instructions:\n\n```json\n{\n\"mcpServers\": {\n\"stripe\": {\n\"url\": \"https://mcp.stripe.com\"\n}\n}\n}\n```\n#### Claude Code\nRun the following command to add the Stripe MCP server to Claude Code:\n```bash\nclaude mcp add --transport http stripe https://mcp.stripe.com/\n```\nAfter you add the server, start Claude Code and run the `/mcp` command to authenticate Stripe with OAuth.\nTo authenticate with an [agent API key](https://docs.stripe.com/keys.md#agent-keys) instead of OAuth, add the server to your project\u2019s `.mcp.json` file and reference an environment variable that holds your agent API"
+    },
+    {
+     "url": "https://docs.stripe.com/agentic-commerce/monetize-mcp",
+     "title": "Monetize your Model Context Protocol (MCP) server",
+     "snippet": "# Monetize your Model Context Protocol (MCP) server[Public preview](https://docs.stripe.com/release-phases)\n## Charge AI agents for one-time payments using MPP.\nThis guide shows how to charge AI agents for one-time purchases, such as service bookings, donations, or digital goods, by using a Model Context Protocol (MCP) server, Stripe, and the [Machine Payments Protocol (MPP)](https://docs.stripe.com/payments/machine/mpp).\nThe approach in this guide is experimental and works with AI agents that support MCP and can make HTTP requests that handle MPP. You can accept payments from agents with a variety of payment methods, including cards through [Shared Payment Tokens (SPTs)](https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens) and [stablecoin payments](https://docs.stripe.com/payments/stablecoin-payments).\n\nWhen an AI agent calls one of your MCP tools, you can collect payment before you return a result.\nWhen MPP defines the HTTP payment handshake:\n1. The client requests a resource without payment.\n2. Your server returns an HTTP `402` response with a payment challenge.\n3. The client obtains an SPT credential and retries the request.\n4. Your server verifies payment a"
+    }
+   ]
+  }
+ },
+ "n_results": 20,
+ "failed_queries": []
+}

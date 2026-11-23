@@ -1,0 +1,36 @@
+{
+  "id": 36,
+  "app": "Klaviyo",
+  "category": "Email/SMS Marketing",
+  "one_liner": "Marketing automation and CRM for ecommerce: profiles, campaigns, flows, events.",
+  "auth_methods": [
+    "oauth2",
+    "api_key"
+  ],
+  "auth_primary": "oauth2",
+  "access": "self_serve_free",
+  "access_notes": "Create free test account, generate private API key; OAuth app for partners. Conversations and Bulk Export APIs are gated/invite-only.",
+  "api_types": [
+    "rest",
+    "sdk_only"
+  ],
+  "api_breadth": "broad",
+  "mcp": "official",
+  "mcp_note": "Klaviyo MCP server, 300+ tools (https://developers.klaviyo.com/en/docs/klaviyo_mcp_server_available_tools)",
+  "verdict": "ready",
+  "blocker": "none",
+  "blocker_note": "Only niche APIs (Conversations, Bulk Export beta) are gated.",
+  "identity_issue": "",
+  "confidence": {
+    "auth": "high",
+    "access": "medium",
+    "surface": "high",
+    "mcp": "high"
+  },
+  "evidence": {
+    "auth": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "access": "https://developers.klaviyo.com/en/v2024-02-15/docs/build_your_integration",
+    "surface": "https://developers.klaviyo.com/en/reference/get_profiles",
+    "mcp": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server_available_tools"
+  }
+}

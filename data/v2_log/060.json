@@ -1,0 +1,21 @@
+{
+  "id": 60,
+  "app": "Clay",
+  "changes": [
+    {
+      "field": "evidence.access",
+      "from": "https://cleanlist.ai/blog/2026-10-16-clay-api-guide",
+      "to": "https://university.clay.com/docs/clay-api-cli",
+      "why": "Replace third-party blog (cleanlist.ai) with vendor page stating developer platform on all plans incl. free",
+      "evidence": "https://university.clay.com/docs/clay-api-cli"
+    }
+  ],
+  "confirmed": [
+    "mcp",
+    "access",
+    "auth_primary",
+    "verdict",
+    "blocker"
+  ],
+  "searches": 3
+}

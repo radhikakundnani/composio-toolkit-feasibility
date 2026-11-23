@@ -1,0 +1,28 @@
+{
+ "id": 61,
+ "app": "GitHub",
+ "changes": [
+  {
+   "field": "evidence.access",
+   "from": "https://apiterms.com/api/github.com",
+   "to": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+   "why": "apiterms.com is a third-party aggregator; replaced with vendor docs showing PAT/GitHub App/OAuth app tokens",
+   "evidence": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api"
+  },
+  {
+   "field": "evidence.mcp",
+   "from": "https://docs.github.com/api/article/body?pathname=/en/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server",
+   "to": "https://github.com/github/github-mcp-server",
+   "why": "Vendor-org repo github/github-mcp-server (\"GitHub's official MCP Server\"); docs state available to all users regardless of plan",
+   "evidence": "https://github.com/github/github-mcp-server"
+  }
+ ],
+ "confirmed": [
+  "mcp",
+  "access",
+  "auth_primary",
+  "verdict",
+  "blocker"
+ ],
+ "searches": 3
+}

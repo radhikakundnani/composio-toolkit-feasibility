@@ -1,0 +1,40 @@
+{
+ "id": 82,
+ "app": "Plaid",
+ "changes": [
+  {
+   "field": "mcp",
+   "from": "official",
+   "to": "community",
+   "why": "Dashboard MCP is a Production diagnostics/usage tool and local MCP is a coding toolkit with mock data; developer-tooling, not product data/actions",
+   "evidence": "https://plaid.com/docs/resources/mcp"
+  },
+  {
+   "field": "mcp_note",
+   "from": "Plaid Dashboard MCP (remote, hosted by Plaid) and sandbox MCP in plaid/ai-coding-toolkit",
+   "to": "Plaid Dashboard MCP (diagnostics/usage for approved Production teams) and sandbox MCP in plaid/ai-coding-toolkit are developer tooling, not product data access",
+   "why": "same",
+   "evidence": "https://plaid.com/docs/resources/mcp"
+  },
+  {
+   "field": "blocker",
+   "from": "other",
+   "to": "partner_or_app_review",
+   "why": "'other' not allowed; full Production needs approval",
+   "evidence": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different"
+  },
+  {
+   "field": "evidence.access",
+   "from": "https://support.plaid.com/hc/en-us/articles/39994173227159-What-is-the-Plaid-Trial-plan",
+   "to": "https://plaid.com/docs/account/billing",
+   "why": "official pricing page lists free Trial plan (10 Items)",
+   "evidence": "https://plaid.com/docs/account/billing"
+  }
+ ],
+ "confirmed": [
+  "access",
+  "auth_primary",
+  "verdict"
+ ],
+ "searches": 3
+}

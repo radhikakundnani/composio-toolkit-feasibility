@@ -1,0 +1,36 @@
+{
+ "id": 96,
+ "app": "Devin",
+ "category": "AI software engineer",
+ "one_liner": "Autonomous AI software engineering agent with sessions, playbooks and knowledge.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "auth_primary": "bearer_token",
+ "access": "paid_plan_required",
+ "access_notes": "Personal access tokens (cog_) are self-serve at Settings > Devin API; service-user keys for production. Devin Cloud sessions are listed under Pro ($20/mo); Free has limited usage.",
+ "api_types": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_note": "https://docs.devin.ai/work-with-devin/devin-mcp",
+ "verdict": "ready_with_caveats",
+ "blocker": "paid_plan",
+ "blocker_note": "Cloud-session API use likely needs a paid plan (Pro/Teams) or Enterprise; Free plan usage is limited.",
+ "identity_issue": "",
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "surface": "medium",
+  "mcp": "high"
+ },
+ "evidence": {
+  "auth": "https://docs.devin.ai/api-reference/authentication",
+  "access": "https://devin.ai/pricing",
+  "surface": "https://docs.devin.ai/api-reference",
+  "mcp": "https://docs.devin.ai/work-with-devin/devin-mcp"
+ },
+ "verified": true
+}
