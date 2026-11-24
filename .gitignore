@@ -5,3 +5,5 @@ __pycache__/
 .venv/
 .DS_Store
 interview-notes.md
+# raw scraped tool results: can contain third-party secrets from web pages; regenerated on rerun
+data/cache/

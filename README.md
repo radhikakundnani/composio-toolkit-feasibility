@@ -139,7 +139,7 @@ data/
   v2_log/              every change the verifier made, and why
   ground_truth.json    my hand-checked sample (with sources)
   adjudications.json   every dispute I settled, and why
-  cache/               raw Composio tool results (with log IDs)
+  cache/               raw Composio tool results (local only, gitignored: scraped pages can hold leaked keys)
 site/
   index.html           the case study page
   results.json         everything, for other agents to read
